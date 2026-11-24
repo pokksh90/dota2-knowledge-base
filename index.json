@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
-    "updated_at": "2026-11-25 04:22"
+    "updated_at": "2026-11-25 05:20"
   },
   "modules": [
     {
@@ -90,7 +90,7 @@
       "title": "英雄天赋树",
       "count": 984,
       "status": "verified-partial",
-      "note": "123 英雄 × 4 层 × 2 选项 = 984 条；826 条解析出 special_bonus_value，158 条为机制型/无统一数值（value_pending），仅 17 条文案占位未解"
+      "note": "123 英雄 × 4 层 × 2 选项 = 984 条；text 取自 dotaconstants abilities.json 的官方 dname（100% 无占位符），912 条解析出单一数值 special_bonus_value，72 条为多值/机制型"
     },
     {
       "file": "data/neutral_items.json",

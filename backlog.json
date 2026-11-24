@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 04:22",
+    "updated_at": "2026-11-25 05:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -74,10 +74,10 @@
       "id": "talent-values",
       "title": "补齐天赋剩余数值",
       "file": "data/talents.json",
-      "current": 826,
+      "current": 912,
       "target": 984,
       "status": "pending",
-      "note": "984 条天赋中 826 条已解析 special_bonus_value；158 条为机制型（改目标/改穿透/改状态）或无统一数值，标 value_pending；17 条文案占位待补"
+      "note": "984 条文案已全部去占位（改用官方 dname 成品文案）；912 条带单一数值；72 条为多值（如 +9%/18%）或纯机制型，无法归为单一数字，保持 special_bonus_value=null 属正常"
     },
     {
       "id": "neutral-items-audit",
@@ -91,6 +91,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 05:20",
+      "task": "talent-values",
+      "added": 0,
+      "result": "新增 scripts/resolve_talent_values.py：从英雄脚本 AbilityValues 块解析 special_bonus 增量（含嵌套块与符号归一），文案改用 dotaconstants abilities.json 的 dname 官方成品；天赋文案占位符 85→0，带值 826→912，72 条多值/机制型保留 null",
+      "next": "knowledge-base 缺 Kez/Ringmaster/Muerta 等新英雄（heroes 仍 123），可作为下一轮增量；talent 72 条多值天赋仅剩人工核对"
+    },
     {
       "time": "2026-11-25 04:22",
       "task": "matchups+quality-audit+talent-repair",
