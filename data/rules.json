@@ -24,7 +24,12 @@
           "Level",
           "Attack_Speed",
           "Move_Speed",
-          "Status_Resistance"
+          "Status_Resistance",
+          "Talents",
+          "Neutral_Items",
+          "Observer_Ward",
+          "Sentry_Ward",
+          "Stacking"
         ],
         "url_template": "https://liquipedia.net/dota2/<page>",
         "verified_at": "2026-11-24",
@@ -757,6 +762,136 @@
       },
       "key_implication": "「卡整分钟」是野区节奏的核心：清野要赶在整分钟前完成，堆叠要赶在整分钟前拉出，两者都是同一套时钟。",
       "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "talent-system",
+      "category": "成长系统",
+      "title": "天赋树结构",
+      "certainty": "verified",
+      "statement": "每个英雄有 8 个天赋，按 10/15/20/25 级四层排列，每层两个天赋二选一，选定后不可更改、不可重置；天赋不消耗技能点，独立于技能等级。",
+      "detail": "天赋是完全被动的加成或对某个技能/机制的特殊修改（如把某技能变为可穿透技能免疫、改变施法目标等）。数据见 data/talents.json：每个英雄 4 层 × 2 选项，字段 special_bonus_value 为游戏脚本里的实际增/减量（如 +10、+6.0）；该字段为空表示该天赋不是单纯数值增量（机制型天赋）或数值未被脚本以统一格式写出，需按游戏内文本核对。",
+      "values": {
+        "tiers": [
+          10,
+          15,
+          20,
+          25
+        ],
+        "options_per_tier": 2,
+        "reset": "不可重置"
+      },
+      "key_implication": "10 级前不存在天赋差异，因此 1~9 级的所有对线强度判断都只由技能与属性决定；15/20/25 是三个强度台阶，节奏点与天赋选择直接挂钩。",
+      "source": "Valve 官方 herodata + 游戏脚本 npc_heroes/heroes/*.txt",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "neutral-item-crafting",
+      "category": "物品系统",
+      "title": "中立装备＝打造制（不再是野怪掉落）",
+      "certainty": "verified",
+      "statement": "7.40 起中立装备不由野怪掉落，改为用「疯狂石（Madstone）」在商店打造：每档在固定时间解锁，累计消耗对应数量的疯狂石，必须先打造上一档才能打造下一档。",
+      "detail": "每名英雄只有 1 个中立装备栏，不可掉落、不可出售、不可放入背包/储藏处；同一部位重新打造会直接替换旧装备。每次打造从该档的若干候选物品中随机给出可选项（可保留旧装备）。",
+      "values": {
+        "unlock": {
+          "T1": "05:00",
+          "T2": "15:00",
+          "T3": "25:00",
+          "T4": "35:00",
+          "T5": "60:00"
+        },
+        "madstone_cap": {
+          "05:00": 5,
+          "15:00": 15,
+          "25:00": 25,
+          "35:00": 35,
+          "60:00": 45,
+          "70:00": "解除上限"
+        },
+        "cost": {
+          "T1": 6,
+          "T2": 10,
+          "T3": 10,
+          "T4": 10,
+          "T5": 10
+        },
+        "slots": 1
+      },
+      "key_implication": "「打野掉中立装备」是过期认知：中立装备的获取节奏由时间线与疯狂石累积速度决定，因此刷野效率只间接影响打造时间点。疯狂石与时间双门槛意味着提前囤石头不会提前拿到高档装备。",
+      "source": "Liquipedia Dota 2 Wiki: Neutral Items",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "warding-basics",
+      "category": "地图机制",
+      "title": "守卫（真假眼）基础数值",
+      "certainty": "verified",
+      "statement": "观察者守卫（Observer）免费、库存 2 上限 4、补货 135 秒，提供 1600 半径地面视野、持续 360 秒；哨兵守卫（Sentry）售价 50（卖 25）、库存 3 上限 8、补货 70 秒，提供 1050 半径真视、持续 420 秒。",
+      "detail": "两者放置范围均为 500（不受施法距离加成影响），隐形且相位，按固定攻击次数拆除：英雄 2 下、非英雄 10 下（幻象与兵线英雄按非英雄计）。都可 CTRL 施放给友军英雄共享；同格无限叠加。观察者守卫被拆的赏金随游戏时间增长（每分钟 +4 金、+8 经验）。哨兵落地瞬间在 150 半径提供 12 秒飞行视野；7.40 起不能放在友方 1 秒内放置的同类守卫 300 半径内。",
+      "values": {
+        "observer": {
+          "cost": 0,
+          "stock_init": 2,
+          "stock_max": 4,
+          "restock": 135,
+          "vision": 1600,
+          "duration": 360,
+          "bounty_gold_per_min": 4,
+          "bounty_xp_per_min": 8
+        },
+        "sentry": {
+          "cost": 50,
+          "sell": 25,
+          "stock_init": 3,
+          "stock_max": 8,
+          "restock": 70,
+          "true_sight": 1050,
+          "duration": 420,
+          "plant_vision": 150,
+          "plant_vision_time": 12
+        },
+        "plant_range": 500,
+        "hero_hits": 2,
+        "non_hero_hits": 10
+      },
+      "key_implication": "真视属团队视野而非放置者个人视野；哨兵不能反隐观察者守卫以外的普通单位（只揭示隐形单位与守卫）。观察者守卫免费 + 低库存意味着「眼权」是团队资源配额问题，不是金钱问题。",
+      "source": "Liquipedia Dota 2 Wiki: Observer Ward / Sentry Ward",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "pulling-mechanics",
+      "category": "对线机制",
+      "title": "拉野与拉线",
+      "certainty": "verified",
+      "statement": "拉野＝在 XX:53~XX:55 用攻击吸引野怪仇恨，把它带出刷新框，使其在整分钟时不阻挡刷新（堆叠）；拉线＝把野怪带到己方小兵行进路线上，让小兵追打野怪。",
+      "detail": "小兵每 30 秒出一波（:00/:30），通常在该波到达塔前约 15 秒经过野区入口，因此拉线窗口约为每波出线后 15 秒（xx:15 / xx:45）— 具体取决于所在线段的距离，越靠近基地越晚。小兵与野怪互打会消耗兵线血量，兵线因此回推、对方少吃到整波补刀与经验；这也是「双拉」的动机：先拉小野营地，再拉大野营地，使一波兵被两批野怪磨死。拉野失败（野怪回位、兵线未被打断）反而免费送对方一波兵。5:00 前小兵不会响应英雄的拉仇恨（不能被拉着走）。",
+      "values": {
+        "stack_window": "XX:53~XX:55",
+        "wave_interval": 30,
+        "pull_window_offset": 15
+      },
+      "key_implication": "拉野同时是「资源操作」和「兵线操作」：它改变的是双方的补刀/经验差，不只是自己多打了几只野怪。",
+      "source": "Liquipedia Dota 2 Wiki: Stacking（Pulling 重定向）/ Creeps",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "spawn-blocking",
+      "category": "地图机制",
+      "title": "封野（Spawn Blocking）",
+      "certainty": "verified",
+      "statement": "只要刷新框内存在任何单位（守卫、英雄、小兵、召唤物、信使、幻象、被拉的野怪）该营地本分钟就不刷新；把守卫放进刷新框即可长期封野。",
+      "detail": "刷新框大小因营地而异，页面给出的推荐堆叠方向即为「最短出框路径」。封野常用于：压制对方拉野营地、保护自己打野路线、阻止对方堆叠远古。",
+      "values": {
+        "blockers": "任意单位",
+        "duration": "持续到单位离开"
+      },
+      "key_implication": "封野与堆叠是同一引擎的两个反向操作：一个让营地永不刷新，一个让营地一次刷两批。判断「这营地能不能封」只看刷新框是否被占。",
+      "source": "Liquipedia Dota 2 Wiki: Stacking / Neutral Creeps",
       "patch": "7.42",
       "verified_at": "2026-11-24"
     }

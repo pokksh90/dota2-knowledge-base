@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-24",
@@ -16,9 +16,9 @@
     {
       "file": "data/rules.json",
       "title": "底层规则(公理层)",
-      "count": 55,
+      "count": 60,
       "status": "verified-partial",
-      "note": "55条底层规则（对局结构15 + 机制细节40）；其中19条已按公开wiki逐值核对并带 values 字段（肉山时间窗/掉落、神符间隔、野怪刷新与堆叠、补刀与反补阈值、兵线时间表、金钱与经验公式、复活时间表、视野数值、攻速与移速边界、买活成本、昼夜循环、塔防与背门保护）。"
+      "note": "60条底层规则；其中24条已按公开wiki逐值核对并带 values 字段（含本轮新增：天赋树结构、中立装备打造制、守卫数值、拉野与封野）。"
     },
     {
       "file": "data/inference.json",
@@ -82,6 +82,20 @@
       "count": 303,
       "status": "stable",
       "note": "道具价格、品质、合成件、属性、主动效果描述、冷却与蓝耗；排除配方与零价物品。"
+    },
+    {
+      "file": "data/talents.json",
+      "title": "英雄天赋树",
+      "count": 123,
+      "status": "verified-partial",
+      "note": "123英雄 × 4层(10/15/20/25级) × 2选项；special_bonus_value 为游戏脚本中的实际数值(660/907 已取到)，其余为机制型天赋或待核对。"
+    },
+    {
+      "file": "data/neutral_items.json",
+      "title": "中立装备(打造制)",
+      "count": 48,
+      "status": "verified-partial",
+      "note": "7.42 中立装备 T1~T5 共48件候选池(12/9/9/8/10)，含属性与技能描述；打造规则见 rules:neutral-item-crafting。不再由野怪掉落。"
     }
   ],
   "data_source": {

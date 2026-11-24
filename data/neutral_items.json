@@ -1,0 +1,1449 @@
+{
+  "meta": {
+    "source": "Liquipedia Neutral Items (7.42) + dotaconstants",
+    "craft": {
+      "resource": "Madstone",
+      "unlock_time": {
+        "1": "05:00",
+        "2": "15:00",
+        "3": "25:00",
+        "4": "35:00",
+        "5": "60:00"
+      },
+      "madstone_cap": {
+        "5:00": 5,
+        "15:00": 15,
+        "25:00": 25,
+        "35:00": 35,
+        "60:00": 45,
+        "70:00": "unlimited"
+      },
+      "cost": {
+        "1": 6,
+        "2": 10,
+        "3": 10,
+        "4": 10,
+        "5": 10
+      },
+      "note": "必须先做低一档；每人同时只有 1 件，不可掉落/出售/进背包，重铸会替换"
+    },
+    "note": "中立装备每档为随机候选（4~5 选 1，可保留上一档），本文件为候选池清单"
+  },
+  "tiers": {
+    "1": [
+      {
+        "id": "ash_legion_shield",
+        "name_en": "Ash Legion Shield",
+        "tier": 1,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "slow",
+            "value": "20"
+          },
+          {
+            "key": "block_amount",
+            "value": "180"
+          },
+          {
+            "key": "block_radius",
+            "value": "800"
+          },
+          {
+            "key": "duration",
+            "value": "6"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Shield Wall",
+            "type": "active",
+            "description": "Reduce your own movement speed by 20 to provide a 180 physical damage barrier to allied player controlled targets in a 800 unit radius. Lasts for 6 seconds."
+          }
+        ]
+      },
+      {
+        "id": "chipped_vest",
+        "name_en": "Chipped Vest",
+        "tier": 1,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "damage_return_hero",
+            "value": "40"
+          },
+          {
+            "key": "damage_return_creep",
+            "value": "20"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Chipper",
+            "type": "passive",
+            "description": "Every time you are attacked, you return 40 damage to heroes and 20 damage to creeps."
+          }
+        ]
+      },
+      {
+        "id": "dagger_of_ristul",
+        "name_en": "Dagger of Ristul",
+        "tier": 1,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "bonus_damage",
+            "value": "30"
+          },
+          {
+            "key": "duration",
+            "value": "10"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Imbrue",
+            "type": "active",
+            "description": "Consume health to temporarily gain 30 damage for 10 seconds."
+          }
+        ]
+      },
+      {
+        "id": "dormant_curio",
+        "name_en": "Dormant Curio",
+        "tier": 1,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "item_potency",
+            "value": "30"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Hidden Potential",
+            "type": "passive",
+            "description": "Neutral Artifacts you craft while holding a Dormant Curio have their potency increased by 30%."
+          }
+        ]
+      },
+      {
+        "id": "duelist_gloves",
+        "name_en": "Duelist Gloves",
+        "tier": 1,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "bonus_attack_speed",
+            "value": "26"
+          },
+          {
+            "key": "radius",
+            "value": "1200"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Boldness",
+            "type": "passive",
+            "description": "Grants 26 attack speed as long as there are enemy heroes within 1200 units."
+          }
+        ]
+      },
+      {
+        "id": "foragers_kit",
+        "name_en": "Forager's Kit",
+        "tier": 1,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "gold_amount",
+            "value": "30"
+          },
+          {
+            "key": "radius",
+            "value": "1200"
+          },
+          {
+            "key": "tree_radius",
+            "value": "250"
+          },
+          {
+            "key": "tree_creation_interval",
+            "value": "5.0"
+          },
+          {
+            "key": "max_trees",
+            "value": "3"
+          },
+          {
+            "key": "old_destroy_radius",
+            "value": "2500"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Forage",
+            "type": "passive",
+            "description": "When the cooldown is ready, nearby trees that can be foraged will appear. By standing next to a tree for 0.75s, you can forage the tree and find flora, fungi or a bag of gold containing 30 gold."
+          }
+        ]
+      },
+      {
+        "id": "kobold_cup",
+        "name_en": "Kobold Cup",
+        "tier": 1,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "movespeed_pct",
+            "value": "10"
+          },
+          {
+            "key": "buff_radius",
+            "value": "1000"
+          },
+          {
+            "key": "buff_duration",
+            "value": "8"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "One for the Road",
+            "type": "active",
+            "description": "Increases movement speed of all allied units by 10% in a 1000 unit radius around the caster for 8 seconds."
+          }
+        ]
+      },
+      {
+        "id": "occult_bracelet",
+        "name_en": "Occult Bracelet",
+        "tier": 1,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "mana_regen",
+            "value": "0.4"
+          },
+          {
+            "key": "stack_limit",
+            "value": "8"
+          },
+          {
+            "key": "stack_duration",
+            "value": "6"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Rites of Eloshar",
+            "type": "passive",
+            "description": "Each time the wearer is attacked, they gain a stack of 0.4 mana regen, up to 8 stacks. Stacks last for 6 seconds."
+          }
+        ]
+      },
+      {
+        "id": "polliwog_charm",
+        "name_en": "Pollywog Charm",
+        "tier": 1,
+        "behavior": [
+          "Unit Target",
+          "Instant Cast"
+        ],
+        "attrib": [
+          {
+            "key": "regen_boost",
+            "value": "8"
+          },
+          {
+            "key": "water_movespeed",
+            "value": "10"
+          },
+          {
+            "key": "duration",
+            "value": "14"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Ribbit",
+            "type": "active",
+            "description": "Increases the health regeneration of a target ally by 8 for 14 seconds. While standing in water, the blessed unit also moves 10% faster."
+          }
+        ]
+      },
+      {
+        "id": "possessed_mask",
+        "name_en": "Possessed Mask",
+        "tier": 1,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "lifesteal",
+            "value": "7"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Lifesteal",
+            "type": "passive",
+            "description": "Heals the attacker for 7 HP on each attack."
+          }
+        ]
+      },
+      {
+        "id": "stonefeather_satchel",
+        "name_en": "Stonefeather Satchel",
+        "tier": 1,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "knockback_resistance",
+            "value": "30"
+          },
+          {
+            "key": "feather_movespeed",
+            "value": "15"
+          },
+          {
+            "key": "rocks_armor",
+            "value": "5"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Transmogrify",
+            "type": "toggle",
+            "description": "Toggle to switch the contents of the Satchel between a pound of Feathers or Rocks. Feathers: increase movement speed by 15 and distance of forced movement effects applied to the wearer by 30%. Rocks: increase armor by 5 and decrease the distance of forced movement effects applied to the wearer by 30%."
+          }
+        ]
+      },
+      {
+        "id": "weighted_dice",
+        "name_en": "Weighted Dice",
+        "tier": 1,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "roll_count",
+            "value": "2"
+          },
+          {
+            "key": "bonus_max_damage",
+            "value": "8"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Loaded",
+            "type": "passive",
+            "description": "Increases your base damage maximum by 8. When calculating your base damage or creep bounty from last hits, the value is computed 2 times and the highest value is taken."
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "crippling_crossbow",
+        "name_en": "Crippling Crossbow",
+        "tier": 2,
+        "behavior": "Unit Target",
+        "attrib": [
+          {
+            "key": "slow_pct",
+            "value": "65"
+          },
+          {
+            "key": "heal_reduce",
+            "value": "40"
+          },
+          {
+            "key": "duration",
+            "value": "4"
+          },
+          {
+            "key": "damage",
+            "value": "25"
+          },
+          {
+            "key": "projectile_speed",
+            "value": "1400"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Hobble",
+            "type": "active",
+            "description": "Hits an enemy for 25 damage, then slows them by 65% and reduces Health Restoration by 40% for 4 seconds. The slow gradually fades over the duration of the spell."
+          }
+        ]
+      },
+      {
+        "id": "defiant_shell",
+        "name_en": "Defiant Shell",
+        "tier": 2,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "counter_damage",
+            "value": "80"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Reciprocity",
+            "type": "passive",
+            "description": "When attacked, the hero counter-attacks a target within their attack range for 80% of their regular attack damage."
+          }
+        ]
+      },
+      {
+        "id": "essence_ring",
+        "name_en": "Essence Ring",
+        "tier": 2,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "health_gain",
+            "value": "240"
+          },
+          {
+            "key": "health_gain_duration",
+            "value": "14"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Life Essence",
+            "type": "active",
+            "description": "Increases your current and max health by 240 for 14 seconds."
+          }
+        ]
+      },
+      {
+        "id": "mana_draught",
+        "name_en": "Mana Draught",
+        "tier": 2,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "mana_restore",
+            "value": "90"
+          },
+          {
+            "key": "mana_restore_pct",
+            "value": "3"
+          },
+          {
+            "key": "heal_duration",
+            "value": "6"
+          },
+          {
+            "key": "water_acceleration",
+            "value": "30"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Bottoms Up",
+            "type": "active",
+            "description": "Restores 90 + 3% of the caster's maximum mana over 6 seconds. If the hero is attacked by an enemy hero or Roshan, the effect is lost. Hold Control to use on an allied hero."
+          },
+          {
+            "title": "Fill Up",
+            "type": "passive",
+            "description": "Cooldown Speed of Mana Draught is increased by 30% while in water."
+          }
+        ]
+      },
+      {
+        "id": "medallion_of_courage",
+        "name_en": "Medallion of Courage",
+        "tier": 2,
+        "behavior": "Unit Target",
+        "attrib": [
+          {
+            "key": "ally_armor",
+            "value": "10"
+          },
+          {
+            "key": "enemy_armor",
+            "value": "-6"
+          },
+          {
+            "key": "duration",
+            "value": "8"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Valor",
+            "type": "active",
+            "description": "Increases armor by 10 or decreases armor by -6 for 8s depending on if cast on an ally or enemy. Cannot be cast on self."
+          }
+        ]
+      },
+      {
+        "id": "poor_mans_shield",
+        "name_en": "Poor Man's Shield",
+        "tier": 2,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "damage_block_melee",
+            "value": "40"
+          },
+          {
+            "key": "damage_block_ranged",
+            "value": "25"
+          },
+          {
+            "key": "block_chance",
+            "value": "50"
+          },
+          {
+            "key": "block_chance_hero",
+            "value": "100"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Damage Block",
+            "type": "passive",
+            "description": "Gives a 100% chance to block 40 damage from incoming attacks on melee heroes, and 25 damage on ranged. Has a 50% chance to block damage from creeps."
+          }
+        ]
+      },
+      {
+        "id": "searing_signet",
+        "name_en": "Searing Signet",
+        "tier": 2,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "damage_threshold",
+            "value": "60"
+          },
+          {
+            "key": "burn_damage",
+            "value": "75"
+          },
+          {
+            "key": "burn_duration",
+            "value": "6"
+          },
+          {
+            "key": "burn_tickrate",
+            "value": ".25"
+          },
+          {
+            "key": "creep_penalty",
+            "value": "50"
+          },
+          {
+            "key": "max_range",
+            "value": "2000"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Burn Through",
+            "type": "passive",
+            "description": "Instances of magic damage from spells over 60 ignites enemies, causing them to take 75 magic damage over 6 seconds. Burn damage against non-hero targets is decreased by 50%."
+          }
+        ]
+      },
+      {
+        "id": "seeds_of_serenity",
+        "name_en": "Seeds of Serenity",
+        "tier": 2,
+        "behavior": [
+          "Point Target",
+          "AOE"
+        ],
+        "attrib": [
+          {
+            "key": "aura_health_regen",
+            "value": "3"
+          },
+          {
+            "key": "aura_health_regen_pct",
+            "value": "25"
+          },
+          {
+            "key": "radius",
+            "value": "400"
+          },
+          {
+            "key": "duration",
+            "value": "8"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Verdurous Dale",
+            "type": "active",
+            "description": "Target the ground with a 400 radius. Provides health regeneration to all allied units while they are in the area of effect equal to 3 + 25% of the caster's health regeneration at the time of casting. Lasts 8 seconds."
+          }
+        ]
+      },
+      {
+        "id": "pogo_stick",
+        "name_en": "Tumbler's Toy",
+        "tier": 2,
+        "behavior": "No Target",
+        "attrib": [
+          {
+            "key": "leap_distance",
+            "value": "350"
+          },
+          {
+            "key": "leap_speed",
+            "value": "1300.0"
+          },
+          {
+            "key": "leap_acceleration",
+            "value": "20000.0"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Vault",
+            "type": "active",
+            "description": "Propels your hero forward 350 units. Tumbler's Toy gets disabled for 3 seconds if its owner receives damage from a player source."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "id": "cloak_of_flames",
+        "name_en": "Cloak of Flames",
+        "tier": 3,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "damage",
+            "value": "40"
+          },
+          {
+            "key": "radius",
+            "value": "375"
+          },
+          {
+            "key": "damage_illusions",
+            "value": "25"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Immolate",
+            "type": "passive",
+            "description": "Burns enemy units in a 375 unit radius for 40 damage per second. Illusions deal 25 damage per second."
+          }
+        ]
+      },
+      {
+        "id": "gunpowder_gauntlets",
+        "name_en": "Gunpowder Gauntlet",
+        "tier": 3,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "bonus_damage",
+            "value": "40"
+          },
+          {
+            "key": "splash_radius",
+            "value": "250"
+          },
+          {
+            "key": "splash_pct",
+            "value": "60"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Beat the Crowd",
+            "type": "passive",
+            "description": "Your next attack deals an additional 40 magic damage and splashes to units within 250 units for 60% of the original attack's damage plus the additional magic damage."
+          }
+        ]
+      },
+      {
+        "id": "jidi_pollen_bag",
+        "name_en": "Jidi Pollen Bag",
+        "tier": 3,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "health_regen_loss",
+            "value": "65"
+          },
+          {
+            "key": "hp_damage",
+            "value": "9"
+          },
+          {
+            "key": "debuff_radius",
+            "value": "900"
+          },
+          {
+            "key": "debuff_duration",
+            "value": "9"
+          },
+          {
+            "key": "damage_interval",
+            "value": "1"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Pollinate",
+            "type": "active",
+            "description": "Spreads pollen on all enemy units in a 900 unit radius for 9 seconds, decreasing their health restoration by 65% and dealing damage per second, the total equal to 9% of their maximum health."
+          }
+        ]
+      },
+      {
+        "id": "partisans_brand",
+        "name_en": "Partisan's Brand",
+        "tier": 3,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "bonus_damage_pct",
+            "value": "7"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Brand",
+            "type": "passive",
+            "description": "Increases spell damage dealt to player controlled targets by 7%."
+          }
+        ]
+      },
+      {
+        "id": "psychic_headband",
+        "name_en": "Psychic Headband",
+        "tier": 3,
+        "behavior": "Unit Target",
+        "attrib": [
+          {
+            "key": "push_length",
+            "value": "400"
+          },
+          {
+            "key": "push_duration",
+            "value": "0.3"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Psychic Push",
+            "type": "active",
+            "description": "Pushes the target unit away from you 400 distance."
+          }
+        ]
+      },
+      {
+        "id": "serrated_shiv",
+        "name_en": "Serrated Shiv",
+        "tier": 3,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "proc_chance",
+            "value": "30"
+          },
+          {
+            "key": "hp_dmg",
+            "value": "10"
+          },
+          {
+            "key": "hp_dmg_rosh",
+            "value": "200"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Gut 'Em",
+            "type": "passive",
+            "description": "Attacks have a 30% chance to have True Strike and deal 10% of the target's current health as bonus physical damage. Deals a flat bonus of 200 against Roshan."
+          }
+        ]
+      },
+      {
+        "id": "spellslinger",
+        "name_en": "Spellslinger",
+        "tier": 3,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "mana_pct",
+            "value": "20"
+          },
+          {
+            "key": "duration",
+            "value": "8"
+          },
+          {
+            "key": "restore_tickrate",
+            "value": "2"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Salvo",
+            "type": "passive",
+            "description": "20% of the mana used to cast abilities is recovered over 8 seconds."
+          }
+        ]
+      },
+      {
+        "id": "stormcrafter",
+        "name_en": "Stormcrafter",
+        "tier": 3,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "range",
+            "value": "700"
+          },
+          {
+            "key": "damage",
+            "value": "90"
+          },
+          {
+            "key": "slow",
+            "value": "40"
+          },
+          {
+            "key": "slow_duration",
+            "value": "0.4"
+          },
+          {
+            "key": "max_targets",
+            "value": "2"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Bottled Lightning",
+            "type": "passive",
+            "description": "Zaps 2 enemy targets within 700 range, dealing 90 damage and a 40% slow for 0.4 seconds."
+          }
+        ]
+      },
+      {
+        "id": "unrelenting_eye",
+        "name_en": "Unrelenting Eye",
+        "tier": 3,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "max_slow_res",
+            "value": "60"
+          },
+          {
+            "key": "hero_reduction",
+            "value": "12"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Relentless",
+            "type": "passive",
+            "description": "Increases slow resistance by 60%. This bonus is reduced by 12% for every enemy hero within the wearer's attack radius."
+          }
+        ]
+      }
+    ],
+    "4": [
+      {
+        "id": "conjurers_catalyst",
+        "name_en": "Conjurer's Catalyst",
+        "tier": 4,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "duration",
+            "value": "6"
+          },
+          {
+            "key": "damage_threshold",
+            "value": "150"
+          },
+          {
+            "key": "damage_aoe",
+            "value": "300"
+          },
+          {
+            "key": "damage",
+            "value": "80"
+          },
+          {
+            "key": "damage_creep",
+            "value": "20"
+          },
+          {
+            "key": "cooldown",
+            "value": "0.1"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Spellover",
+            "type": "passive",
+            "description": "Dealing 150 spell damage to an enemy causes them to overheat and deal damage to their allies in a 300 unit radius. Hero targets deal 80 damage to their allies, other targets deal 20 damage."
+          }
+        ]
+      },
+      {
+        "id": "dandelion_amulet",
+        "name_en": "Dandelion Amulet",
+        "tier": 4,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "magic_block",
+            "value": "300"
+          },
+          {
+            "key": "min_damage",
+            "value": "75"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Magical Damage Block",
+            "type": "passive",
+            "description": "Every 10s, blocks up to 300 magic damage from damage instances over 75 damage."
+          }
+        ]
+      },
+      {
+        "id": "enchanters_bauble",
+        "name_en": "Enchanter's Bauble",
+        "tier": 4,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "enchantment_bonus_base",
+            "value": "10"
+          },
+          {
+            "key": "enchantment_bonus_growth",
+            "value": "35"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Enchant",
+            "type": "passive",
+            "description": "Increases the bonuses of the item's Neutral Enchantment by 10%. Every time this item is crafted again the bonus is increased by 35%."
+          }
+        ]
+      },
+      {
+        "id": "flayers_bota",
+        "name_en": "Flayer's Bota",
+        "tier": 4,
+        "behavior": "No Target",
+        "attrib": [
+          {
+            "key": "duration",
+            "value": "9"
+          },
+          {
+            "key": "base_damage",
+            "value": "15"
+          },
+          {
+            "key": "attack_speed",
+            "value": "30"
+          },
+          {
+            "key": "death_radius",
+            "value": "1500"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Bloodthirst",
+            "type": "active",
+            "description": "Gain 15% base damage and 30 attack speed for 9 seconds."
+          },
+          {
+            "title": "Bloodrush",
+            "type": "passive",
+            "description": "Enemy heroes dying within 1500 units reset the cooldown of Bloodthirst."
+          }
+        ]
+      },
+      {
+        "id": "giant_maul",
+        "name_en": "Giant's Maul",
+        "tier": 4,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "crit_multiplier",
+            "value": "150"
+          },
+          {
+            "key": "movespeed_slow",
+            "value": "10"
+          },
+          {
+            "key": "attack_slow",
+            "value": "15"
+          },
+          {
+            "key": "cast_slow",
+            "value": "20"
+          },
+          {
+            "key": "debuff_duration",
+            "value": "3"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Crushing Blow",
+            "type": "passive",
+            "description": "Empowers the next attack to be a critical hit dealing 150% damage. Hitting an enemy with an empowered attack temporarily decreases their movement speed by 10%, attack speed by 15%, and cast speed by 20% for 3 seconds."
+          }
+        ]
+      },
+      {
+        "id": "idol_of_screeauk",
+        "name_en": "Idol of Scree'auk",
+        "tier": 4,
+        "behavior": "No Target",
+        "attrib": [
+          {
+            "key": "duration",
+            "value": "6.5"
+          },
+          {
+            "key": "slow_resist",
+            "value": "60"
+          },
+          {
+            "key": "evasion",
+            "value": "40"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "False Flight",
+            "type": "active",
+            "description": "Gain 60% slow resistance, phased movement, and 40% evasion for 6.5 seconds."
+          }
+        ]
+      },
+      {
+        "id": "rattlecage",
+        "name_en": "Rattlecage",
+        "tier": 4,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "radius",
+            "value": "600"
+          },
+          {
+            "key": "slow_duration",
+            "value": "0.2"
+          },
+          {
+            "key": "damage_reset_interval",
+            "value": "7"
+          },
+          {
+            "key": "damage_threshold",
+            "value": "220"
+          },
+          {
+            "key": "slow",
+            "value": "100"
+          },
+          {
+            "key": "projectile_speed",
+            "value": "1000"
+          },
+          {
+            "key": "projectile_damage",
+            "value": "110"
+          },
+          {
+            "key": "target_count",
+            "value": "2"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Reverberate",
+            "type": "passive",
+            "description": "After taking 220 damage from any source, the wearer fires a projectile at up to 2 random enemies in a 600 radius, prioritizing heroes, that deal 110 physical damage and slow the targets movement and attack speed by 100% for 0.2s."
+          }
+        ]
+      },
+      {
+        "id": "metamorphic_mandible",
+        "name_en": "Metamorphic Mandible",
+        "tier": 4,
+        "behavior": "No Target",
+        "attrib": [
+          {
+            "key": "duration",
+            "value": "5"
+          },
+          {
+            "key": "bonus_magic_resistance",
+            "value": "40"
+          },
+          {
+            "key": "bonus_movespeed",
+            "value": "15"
+          },
+          {
+            "key": "size_decrease",
+            "value": "20"
+          },
+          {
+            "key": "armor_decrease",
+            "value": "30"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Pupate",
+            "type": "active",
+            "description": "Enter into an insect form for 5 seconds, increasing magic resistance by 40% and movement speed by 15%. While an insect, your size is decreased and your armor is reduced by 30%."
+          }
+        ]
+      }
+    ],
+    "5": [
+      {
+        "id": "demonicon",
+        "name_en": "Book of the Dead",
+        "tier": 5,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "summon_duration",
+            "value": "65"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Greater Demonic Summoning",
+            "type": "active",
+            "description": "Summon 2 demonic warriors and 2 demonic archers that last 65 seconds. The Warrior burns mana every hit and deals magical damage to whoever kills it. The Archer has a basic dispel ability with a slow and a passive movement speed aura."
+          }
+        ]
+      },
+      {
+        "id": "dezun_bloodrite",
+        "name_en": "Dezun Bloodrite",
+        "tier": 5,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "health_pct",
+            "value": "25"
+          },
+          {
+            "key": "aoe_pct",
+            "value": "20"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Blood Invocation",
+            "type": "passive",
+            "description": "Spells have a 20% larger Area of Effect, but now additionally cost health equal to 25% of their mana cost."
+          }
+        ]
+      },
+      {
+        "id": "divine_regalia",
+        "name_en": "Divine Regalia",
+        "tier": 5,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "outgoing_damage",
+            "value": "25"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Exalted",
+            "type": "passive",
+            "description": "Increases outgoing damage by 25%. Dying permanently disables this Neutral Item and the current Enchantment is lost."
+          }
+        ]
+      },
+      {
+        "id": "fallen_sky",
+        "name_en": "Fallen Sky",
+        "tier": 5,
+        "behavior": "Point Target",
+        "attrib": [
+          {
+            "key": "burn_dps_buildings",
+            "value": "60"
+          },
+          {
+            "key": "burn_dps_units",
+            "value": "60"
+          },
+          {
+            "key": "burn_duration",
+            "value": "6"
+          },
+          {
+            "key": "stun_duration",
+            "value": "1.6"
+          },
+          {
+            "key": "burn_interval",
+            "value": "1.0"
+          },
+          {
+            "key": "land_time",
+            "value": "1"
+          },
+          {
+            "key": "impact_radius",
+            "value": "315"
+          },
+          {
+            "key": "max_duration",
+            "value": "2.5"
+          },
+          {
+            "key": "impact_damage_buildings",
+            "value": "110"
+          },
+          {
+            "key": "impact_damage_units",
+            "value": "150"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Fallen Sky",
+            "type": "active",
+            "description": "Transform into a meteor that strikes down at the target area after 1 seconds in a 315 AoE, stunning enemies for 1.6 seconds and dealing impact damage. Continues to deal damage every 1 seconds to enemy units and buildings for 6 seconds. Building Impact Damage: 110 Building Over Time Damage: 60 Non-Building Impact Damage: 150 Non-Building Over Time Damage: 60 Fallen Sky cannot be used for 3 seconds after taking damage from an enemy hero or Roshan."
+          }
+        ]
+      },
+      {
+        "id": "harmonizer",
+        "name_en": "Harmonizer",
+        "tier": 5,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "manacost_reduction",
+            "value": "7"
+          },
+          {
+            "key": "spell_lifesteal",
+            "value": "9"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Balance",
+            "type": "passive",
+            "description": "Gain 7% spell mana cost reduction for every ability off cooldown and 9% Spell Lifesteal for every ability on cooldown."
+          }
+        ]
+      },
+      {
+        "id": "minotaur_horn",
+        "name_en": "Minotaur Horn",
+        "tier": 5,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "duration",
+            "value": "3"
+          },
+          {
+            "key": "magic_resist",
+            "value": "60"
+          },
+          {
+            "key": "model_scale",
+            "value": "40"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Lesser Avatar",
+            "type": "active",
+            "description": "Applies a basic dispel. Grants 60% magic resistance and immunity to reflected and pure damage for 3s. For the duration of the effect, any negative effect from enemy spells has no effect. Dispel Type: Basic Dispel"
+          }
+        ]
+      },
+      {
+        "id": "riftshadow_prism",
+        "name_en": "Riftshadow Prism",
+        "tier": 5,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "outgoing_damage",
+            "value": "60"
+          },
+          {
+            "key": "incoming_damage",
+            "value": "200"
+          },
+          {
+            "key": "duration",
+            "value": "20"
+          },
+          {
+            "key": "health_cost",
+            "value": "4"
+          },
+          {
+            "key": "illusion_effectiveness",
+            "value": "100"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Refract",
+            "type": "active",
+            "description": "Spend 4% of your current life total to create a full health strong illusion that lasts for 20 seconds. The illusion has 60% outgoing damage, takes 200% of incoming damage, and has 100% Item Potency."
+          }
+        ]
+      },
+      {
+        "id": "spider_legs",
+        "name_en": "Spider Legs",
+        "tier": 5,
+        "behavior": [
+          "Instant Cast",
+          "No Target"
+        ],
+        "attrib": [
+          {
+            "key": "turn_rate",
+            "value": "50"
+          },
+          {
+            "key": "bonus_movement_speed_active",
+            "value": "25"
+          },
+          {
+            "key": "duration",
+            "value": "12"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Skitter",
+            "type": "active",
+            "description": "Grants you 25% bonus movement speed, 50% improved turn rate, and free pathing for 12 seconds. Walking over trees causes them to be destroyed."
+          }
+        ]
+      },
+      {
+        "id": "stygian_desolator",
+        "name_en": "Stygian Desolator",
+        "tier": 5,
+        "behavior": null,
+        "attrib": [
+          {
+            "key": "corruption_armor",
+            "value": "-13"
+          },
+          {
+            "key": "corruption_duration",
+            "value": "7.0"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Greater Corruption",
+            "type": "passive",
+            "description": "Your attacks reduce the target's armor by -13 for 7 seconds."
+          }
+        ]
+      },
+      {
+        "id": "heavy_blade",
+        "name_en": "Witchbane",
+        "tier": 5,
+        "behavior": [
+          "Point Target",
+          "AOE"
+        ],
+        "attrib": [
+          {
+            "key": "radius",
+            "value": "300"
+          },
+          {
+            "key": "damage",
+            "value": "4"
+          }
+        ],
+        "abilities": [
+          {
+            "title": "Cleanse",
+            "type": "active",
+            "description": "Dispel all enemies and allies in a 300 unit radius. Dispel Type: Basic Dispel"
+          },
+          {
+            "title": "Subjugate",
+            "type": "passive",
+            "description": "Your attacks deal bonus magical damage equal to 4% of your target's Max Mana."
+          }
+        ]
+      }
+    ]
+  }
+}
