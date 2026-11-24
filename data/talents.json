@@ -9,9 +9,9 @@
       25
     ],
     "stats": {
-      "options": 984,
-      "with_value": 912,
-      "pending": 72,
+      "options": 1016,
+      "with_value": 939,
+      "pending": 77,
       "text_pending": 0
     },
     "text_source": "dotaconstants abilities.json 的 dname（官方 tooltip 成品文案）；special_bonus_value 取自英雄脚本 AbilityValues"
@@ -9852,6 +9852,326 @@
               "text_raw": "+{s:value} Agility",
               "value_pending": false,
               "special_bonus_value": "+80"
+            }
+          ]
+        }
+      ]
+    },
+    "ringmaster": {
+      "levels": [
+        {
+          "level": 10,
+          "options": [
+            {
+              "name": "special_bonus_unique_ringmaster_dagger_charge",
+              "text": "+1 Impalement Arts Charge",
+              "text_raw": "+{s:bonus_AbilityCharges} Impalement Arts Charge",
+              "value_pending": false,
+              "special_bonus_value": "+1"
+            },
+            {
+              "name": "special_bonus_unique_ringmaster_whip_radius",
+              "text": "+75 Tame the Beasts Radius",
+              "text_raw": "+{s:bonus_start_width} Tame the Beasts Radius",
+              "value_pending": false,
+              "special_bonus_value": "+75"
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "options": [
+            {
+              "name": "special_bonus_unique_ringmaster_dagger_penetrates",
+              "text": "Impalement Arts Penetrates One Target",
+              "text_raw": "Impalement Arts Penetrates One Target",
+              "value_pending": false,
+              "special_bonus_value": null
+            },
+            {
+              "name": "special_bonus_unique_ringmaster_whip_debuff_immunity",
+              "text": "Debuff Immunity While Channeling Tame the Beasts",
+              "text_raw": "Debuff Immunity While Channeling Tame the Beasts",
+              "value_pending": false,
+              "special_bonus_value": null
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "options": [
+            {
+              "name": "special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration",
+              "text": "+2s Impalement Arts Bleed and Slow Duration",
+              "text_raw": "+{s:bonus_bleed_duration}s Impalement Arts Bleed and Slow Duration",
+              "value_pending": false,
+              "special_bonus_value": "+2"
+            },
+            {
+              "name": "special_bonus_unique_ringmaster_whip_damage",
+              "text": "+75/+300 Tame the Beasts Min/Max Damage",
+              "text_raw": "+{s:bonus_damage_min}/+{s:bonus_damage_max} Tame the Beasts Min/Max Damage",
+              "value_pending": false,
+              "special_bonus_value": null
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "options": [
+            {
+              "name": "special_bonus_unique_ringmaster_wheel_radius",
+              "text": "+150 Wheel of Wonder Radius and Range",
+              "text_raw": "+{s:bonus_mesmerize_radius} Wheel of Wonder Radius and Range",
+              "value_pending": false,
+              "special_bonus_value": "+150"
+            },
+            {
+              "name": "special_bonus_unique_ringmaster_the_box_strong_dispel_and_flying",
+              "text": "Escape Act Grants Strong Dispel and Flying",
+              "text_raw": "Escape Act Grants Strong Dispel and Flying",
+              "value_pending": false,
+              "special_bonus_value": null
+            }
+          ]
+        }
+      ]
+    },
+    "muerta": {
+      "levels": [
+        {
+          "level": 10,
+          "options": [
+            {
+              "name": "special_bonus_unique_muerta_dead_shot_range",
+              "text": "+300 Dead Shot Cast Range",
+              "text_raw": "+{s:bonus_AbilityCastRange} Dead Shot Cast Range",
+              "value_pending": false,
+              "special_bonus_value": "+300"
+            },
+            {
+              "name": "special_bonus_attack_speed_20",
+              "text": "+20 Attack Speed",
+              "text_raw": "+{s:value} Attack Speed",
+              "value_pending": false,
+              "special_bonus_value": "+20"
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "options": [
+            {
+              "name": "special_bonus_unique_muerta_the_calling_num_revenants",
+              "text": "The Calling summons 2 additional revenants",
+              "text_raw": "The Calling summons {s:bonus_num_revenants} additional revenants",
+              "value_pending": false,
+              "special_bonus_value": "2"
+            },
+            {
+              "name": "special_bonus_intelligence_15",
+              "text": "+15 Intelligence",
+              "text_raw": "+{s:value} Intelligence",
+              "value_pending": false,
+              "special_bonus_value": "+15"
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "options": [
+            {
+              "name": "special_bonus_unique_muerta_pierce_the_veil_duration",
+              "text": "+2s Pierce the Veil Duration",
+              "text_raw": "+{s:bonus_duration}s Pierce the Veil Duration",
+              "value_pending": false,
+              "special_bonus_value": "+2"
+            },
+            {
+              "name": "special_bonus_unique_muerta_the_calling_slow",
+              "text": "+20% The Calling Movement Slow",
+              "text_raw": "+{s:bonus_aura_movespeed_slow}% The Calling Movement Slow",
+              "value_pending": false,
+              "special_bonus_value": "+20"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "options": [
+            {
+              "name": "special_bonus_unique_muerta_gunslinger_double_shot_chance",
+              "text": "+15% Gunslinger Chance",
+              "text_raw": "+{s:bonus_double_shot_chance}% Gunslinger Chance",
+              "value_pending": false,
+              "special_bonus_value": "+15"
+            },
+            {
+              "name": "special_bonus_unique_muerta_dead_shot_charges",
+              "text": "2 Dead Shot Charges",
+              "text_raw": "{s:bonus_AbilityCharges} Dead Shot Charges",
+              "value_pending": false,
+              "special_bonus_value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    "kez": {
+      "levels": [
+        {
+          "level": 10,
+          "options": [
+            {
+              "name": "special_bonus_unique_kez_switch_weapons_swap_bonus",
+              "text": "+6% Switch Discipline Swap Bonuses",
+              "text_raw": "+{s:bonus_katana_swap_bonus_damage}% Switch Discipline Swap Bonuses",
+              "value_pending": false,
+              "special_bonus_value": "+6"
+            },
+            {
+              "name": "special_bonus_unique_kez_raptor_dance_radius",
+              "text": "+50 Raptor Dance Radius",
+              "text_raw": "+{s:bonus_radius} Raptor Dance Radius",
+              "value_pending": false,
+              "special_bonus_value": "+50"
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "options": [
+            {
+              "name": "special_bonus_unique_kez_falcon_rush_duration",
+              "text": "+2.0s Falcon Rush Duration",
+              "text_raw": "+{s:bonus_duration}s Falcon Rush Duration",
+              "value_pending": false,
+              "special_bonus_value": "+2.0"
+            },
+            {
+              "name": "special_bonus_unique_kez_raptor_dance_strikes",
+              "text": "+1 Raptor Dance Strike",
+              "text_raw": "+{s:bonus_strikes} Raptor Dance Strike",
+              "value_pending": false,
+              "special_bonus_value": "+1"
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "options": [
+            {
+              "name": "special_bonus_unique_kez_kazura_katana_bleed_damage",
+              "text": "+3.5% Kazurai Katana Damage Per Second",
+              "text_raw": "+{s:bonus_katana_bleed_attack_damage_pct}% Kazurai Katana Damage Per Second",
+              "value_pending": false,
+              "special_bonus_value": "+3.5"
+            },
+            {
+              "name": "special_bonus_unique_kez_falcon_rush_attack_speed",
+              "text": "40 Bonus Attack Speed During Falcon Rush",
+              "text_raw": "{s:bonus_bonus_attack_speed} Bonus Attack Speed During Falcon Rush",
+              "value_pending": false,
+              "special_bonus_value": "40"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "options": [
+            {
+              "name": "special_bonus_unique_kez_mark_damage",
+              "text": "+80% Shodo Sai Critical Strike",
+              "text_raw": "+{s:bonus_base_crit_pct}% Shodo Sai Critical Strike",
+              "value_pending": false,
+              "special_bonus_value": "+80"
+            },
+            {
+              "name": "special_bonus_unique_kez_echo_slash_strike_count",
+              "text": "+1 Echo Slash Attack",
+              "text_raw": "+{s:bonus_katana_strikes} Echo Slash Attack",
+              "value_pending": false,
+              "special_bonus_value": "+1"
+            }
+          ]
+        }
+      ]
+    },
+    "largo": {
+      "levels": [
+        {
+          "level": 10,
+          "options": [
+            {
+              "name": "special_bonus_unique_largo_1",
+              "text": "+15 Frogstomp Damage",
+              "text_raw": "+{s:bonus_damage_per_stomp} Frogstomp Damage",
+              "value_pending": false,
+              "special_bonus_value": "+15"
+            },
+            {
+              "name": "special_bonus_unique_largo_2",
+              "text": "2.5x Catchy Lick Health Regen",
+              "text_raw": "{s:bonus_dispel_hp_regen}x Catchy Lick Health Regen",
+              "value_pending": false,
+              "special_bonus_value": "2.5"
+            }
+          ]
+        },
+        {
+          "level": 20,
+          "options": [
+            {
+              "name": "special_bonus_unique_largo_3",
+              "text": "1% Croak of Genius Max Health DPS",
+              "text_raw": "{s:bonus_damage_hp_pct}% Croak of Genius Max Health DPS",
+              "value_pending": false,
+              "special_bonus_value": "1"
+            },
+            {
+              "name": "special_bonus_unique_largo_4",
+              "text": "+100 Catchy Lick Cast Range / +50 Pull Distance",
+              "text_raw": "+{s:bonus_AbilityCastRange} Catchy Lick Cast Range / +{s:bonus_pull_distance} Pull Distance",
+              "value_pending": false,
+              "special_bonus_value": null
+            }
+          ]
+        },
+        {
+          "level": 30,
+          "options": [
+            {
+              "name": "special_bonus_unique_largo_8",
+              "text": "2 Catchy Lick Charges",
+              "text_raw": "2 Catchy Lick Charges",
+              "value_pending": false,
+              "special_bonus_value": "2"
+            },
+            {
+              "name": "special_bonus_unique_largo_6",
+              "text": "50% Groovin' Armor Aura",
+              "text_raw": "{s:bonus_armor_ally_pct}% Groovin' Armor Aura",
+              "value_pending": false,
+              "special_bonus_value": "50"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "options": [
+            {
+              "name": "special_bonus_unique_largo_7",
+              "text": "+30% Amphibian Rhapsody Song Effects",
+              "text_raw": "+{s:bonus_heal_burst}% Amphibian Rhapsody Song Effects",
+              "value_pending": false,
+              "special_bonus_value": "+30"
+            },
+            {
+              "name": "special_bonus_unique_largo_5",
+              "text": "2x Frogstomp Stomps/Interval",
+              "text_raw": "{s:bonus_total_ticks}x Frogstomp Stomps/Interval",
+              "value_pending": false,
+              "special_bonus_value": "2"
             }
           ]
         }

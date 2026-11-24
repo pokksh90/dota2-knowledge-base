@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
-    "updated_at": "2026-11-25 05:20"
+    "updated_at": "2026-11-25 06:22"
   },
   "modules": [
     {
@@ -32,23 +32,23 @@
     {
       "file": "data/heroes.json",
       "title": "英雄与定位",
-      "count": 123,
+      "count": 127,
       "status": "stable",
-      "note": "123个英雄，含中文名/英文名/位置/定位/要点 + aliases 558条绰号与缩写(含官方中文名/拉丁缩写/旧译名，零冲突) + base_stats 基础属性。"
+      "note": "127 个英雄（本轮补齐 2023–2026 新英雄：百戏大王/琼英碧灵/凯/朗戈），含中文名/英文名/位置/定位/要点 + aliases 绰号缩写 + base_stats。"
     },
     {
       "file": "data/items.json",
       "title": "装备与出装",
       "count": 60,
       "status": "stable",
-      "note": "55件核心装备（含 7.42 新增血鞭/双蛇杖/瑞斯托的虔诚/莫迪吉安战靴/破天/铸星）+ 5位置出装框架；价格以 item_base.json 为准。"
+      "note": "60 件核心装备（含 7.42 新增血鞭/双蛇杖/瑞斯托的虔诚/莫迪吉安战靴/破天/铸星）+ 5 位置出装框架；价格以 item_base.json 为准。"
     },
     {
       "file": "data/matchups.json",
       "title": "克制与搭配",
       "count": 140,
       "status": "stable",
-      "note": "137条克制/配合关系，每条带 basis 机制依据(8类)，映射到 rules/inference 层，可回溯验证。本轮补 10 条（幻象清场、减治疗、真视反隐、护甲抗爆发等）。"
+      "note": "140 条克制/配合关系，每条带 basis 机制依据(8类)，映射到 rules/inference 层；9 对为双向成对表述（info，非重复）。"
     },
     {
       "file": "scripts/fetch_data.py",
@@ -67,14 +67,14 @@
     {
       "file": "data/hero_base.json",
       "title": "英雄基础属性+技能索引",
-      "count": 123,
+      "count": 127,
       "status": "stable",
-      "note": "来自公开数据源(dotaconstants)的英雄基础属性：三围与成长、血量/蓝量/护甲/魔抗、攻击、移速、视野、攻击前后摇；abilities 为技能 key 列表，明细查 ability_base.json。"
+      "note": "127 个英雄的公开基础属性（dotaconstants），含技能 key 列表。"
     },
     {
       "file": "data/ability_base.json",
       "title": "技能基础数据",
-      "count": 759,
+      "count": 790,
       "status": "stable",
       "note": "技能名、描述、行为类型、伤害类型、是否穿透BKB、蓝耗、冷却、关键数值 attrib（已剔除生成字段）。可据此判断「这个技能能否被驱散/BKB挡」。"
     },
@@ -88,9 +88,9 @@
     {
       "file": "data/talents.json",
       "title": "英雄天赋树",
-      "count": 984,
+      "count": 1016,
       "status": "verified-partial",
-      "note": "123 英雄 × 4 层 × 2 选项 = 984 条；text 取自 dotaconstants abilities.json 的官方 dname（100% 无占位符），912 条解析出单一数值 special_bonus_value，72 条为多值/机制型"
+      "note": "127 英雄 × 4 层 × 2 选项 = 1016 条；text 为官方 dname 成品文案（0 占位），939 条带单一数值，77 条为多值/机制型。"
     },
     {
       "file": "data/neutral_items.json",

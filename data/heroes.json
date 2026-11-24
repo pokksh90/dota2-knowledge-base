@@ -2,7 +2,8 @@
   "meta": {
     "title": "英雄与定位",
     "description": "英雄主定位、分路、玩法要点。coach_note 为供 LLM 直接消费的自然语言要点。定位为稳定常识，具体数值类信息不在此处编造。",
-    "source_note": "position/lane/roles/coach_note 均为稳定领域常识(source=stable)；需版本核对的数值一律未填写。"
+    "source_note": "position/lane/roles/coach_note 均为稳定领域常识(source=stable)；需版本核对的数值一律未填写。",
+    "count": 127
   },
   "heroes": [
     {
@@ -7479,6 +7480,251 @@
         "day_vision": 1800,
         "night_vision": 800,
         "legs": 6
+      }
+    },
+    {
+      "id": "ringmaster",
+      "name_zh": "百戏大王",
+      "name_en": "Ringmaster",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "远程",
+        "强控",
+        "救人",
+        "反幻象",
+        "操作复杂"
+      ],
+      "coach_note": "远程辅助，一套技能给足控制与救人：驯兽术持续施法后甩鞭造成伤害并恐惧敌人（蓄力越久伤害与恐惧越久），逃生技把友方装进箱子（相位移动、额外魔抗与减速抗性、无法被指定），尖刀戏掷匕首造成即时伤害+按目标最大生命百分比流血，聚光灯让灯下敌人几率丢失攻击、隐身显形、幻象持续掉血，大招奇观轮滚出后击退并减速、敌人盯着轮子看会被迷住走向它、首个着迷者触发爆炸倒计时。被动暗黑狂欢主持让附近敌方英雄阵亡时随机获得一次性纪念品（幻象/力量/推人/独轮车等）。定位是功能型 5 号：靠控制链和救人保核，不靠输出。",
+      "strengths": [
+        "控制与恐惧时长可蓄力",
+        "唯一能装箱救人的辅助",
+        "聚光灯天然反幻象反隐身"
+      ],
+      "weaknesses": [
+        "技能多、操作门槛高",
+        "本体脆、怕被打断持续施法",
+        "清线推塔能力弱"
+      ],
+      "source": "verified",
+      "aliases": [
+        "百戏大王",
+        "百戏",
+        "Ringmaster",
+        "RM"
+      ],
+      "base_stats": {
+        "id": 131,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "base_str": 21,
+        "base_agi": 11,
+        "base_int": 25,
+        "str_gain": 2.1,
+        "agi_gain": 1.6,
+        "int_gain": 3,
+        "attack_range": 575,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": 0.6,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
+    },
+    {
+      "id": "muerta",
+      "name_zh": "琼英碧灵",
+      "name_en": "Muerta",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "远程",
+        "智力核心",
+        "混伤",
+        "虚无",
+        "后期"
+      ],
+      "coach_note": "智力远程核心（也可中单）。输出靠普攻+技能混伤：弹无虚发向单位或树开枪、命中后沿矢量方向跳弹并对穿过的单位造成伤害、击中英雄停下并恐惧；唤魂召亡魂环绕区域，减速+穿越时伤害与沉默；神枪在手开启后普攻有几率再射一枪（后期主要 DPS 来源）；幽魂子弹把目标打成虚无并击退（对物理免疫、不能攻击、受魔法伤害增加），是保命/开团工具。大招越界让自身进入虚无并获得攻击力与相位移动，被动使她始终能攻击虚无目标。被动超自然按附近敌方英雄阵亡叠技能增强。怕高爆发法系与长手消耗，需要 BKB/魔抗撑过中期。",
+      "strengths": [
+        "普攻与技能双线输出",
+        "虚无机制克制纯物理",
+        "后期叠层带来技能增强"
+      ],
+      "weaknesses": [
+        "身板脆、怕爆发法系",
+        "前期刷钱与对线都偏弱",
+        "依赖装备成型"
+      ],
+      "source": "verified",
+      "aliases": [
+        "琼英碧灵",
+        "Muerta",
+        "muerta"
+      ],
+      "base_stats": {
+        "id": 138,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 28,
+        "base_attack_max": 31,
+        "base_str": 19,
+        "base_agi": 21,
+        "base_int": 23,
+        "str_gain": 2,
+        "agi_gain": 2.7,
+        "int_gain": 3.6,
+        "attack_range": 575,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 295,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
+    },
+    {
+      "id": "kez",
+      "name_zh": "凯",
+      "name_en": "Kez",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "近战",
+        "敏捷核心",
+        "双形态",
+        "高操作",
+        "爆发"
+      ],
+      "coach_note": "高操作敏捷近战核心。核心是流派变换：长刀形态偏持续伤害与控制（回音重斩直线两段斩击并减速、制敌爪钩钩单位或树摆荡过去、影武长刀给攻击和技能叠可叠加持续伤害并可主动引爆定身、猛禽之舞短暂无敌并斩出按最大生命百分比的辐射斩击带吸血）；双钗形态偏暴击与反打（翔影之钗普攻几率暴击、可主动缴械自己并锁定朝向招架该方向攻击、利爪飞掷掷钗沉默、天隼冲击冲向目标并重复一次攻击、渡鸦之纱隐身+提速+削弱敌方视野）。切换武器后首次攻击/技能有额外收益。操作量大、连招依赖熟练度，怕硬控与范围伤害，需要 BKB 与吸血续航。",
+      "strengths": [
+        "两套武器覆盖持续输出与反打",
+        "猛禽之舞提供无敌窗口",
+        "自带沉默、招架、隐身多种应对手段"
+      ],
+      "weaknesses": [
+        "操作与连招要求极高",
+        "近战贴身，怕硬控和 AOE",
+        "技能多，容易打空/浪费冷却"
+      ],
+      "source": "verified",
+      "aliases": [
+        "凯",
+        "Kez",
+        "kez"
+      ],
+      "base_stats": {
+        "id": 145,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1.5,
+        "base_mana": 75,
+        "base_mana_regen": 0.25,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 28,
+        "base_str": 20,
+        "base_agi": 27,
+        "base_int": 20,
+        "str_gain": 2.8,
+        "agi_gain": 3.5,
+        "int_gain": 1.7,
+        "attack_range": 225,
+        "attack_rate": 1.9,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": 1,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
+    },
+    {
+      "id": "largo",
+      "name_zh": "朗戈",
+      "name_en": "Largo",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "近战",
+        "力量辅助",
+        "治疗",
+        "增幅",
+        "节奏型"
+      ],
+      "coach_note": "力量近战辅助，玩法围绕大招两栖狂想曲：开启后被缴械、技能栏切换成三首乐曲（巨腹闪电战：范围魔法伤害并给友军技能增强与攻击附加魔法伤害；疾步生风：给附近友军提速与减速抗性；大屿灵药：治疗附近友军），只有踩在节拍上弹奏才生效，成功一次叠一层律动（加护甲、降乐曲蓝耗），漏拍掉一层。小技能提供拉人与控制：动人之舐舔目标并拉回一小段、附弱驱散、击杀或驱散后自身回血；蛙力千钧扔小青蛙落地反复践踏（伤害+短晕+减速）；灵呱一闪给友方英雄降蓝耗并让伤害在后续时间里回响（该英雄耗蓝会缩短增益时长）。被动安可延长自身/队友增益持续时间。定位是节奏型 5 号，价值在治疗+增幅+控制，不是输出。",
+      "strengths": [
+        "三首乐曲覆盖伤害/提速/治疗",
+        "给核心降蓝耗+伤害回响的增幅",
+        "舔人弱驱散+拉回的先手小控制"
+      ],
+      "weaknesses": [
+        "大招缴械自己、弹奏需节拍操作",
+        "近战辅助身板一般、怕被集火",
+        "增幅依赖队友配合"
+      ],
+      "source": "verified",
+      "aliases": [
+        "朗戈",
+        "Largo",
+        "largo"
+      ],
+      "base_stats": {
+        "id": 155,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 37,
+        "base_attack_max": 43,
+        "base_str": 24,
+        "base_agi": 14,
+        "base_int": 21,
+        "str_gain": 3.6,
+        "agi_gain": 1.3,
+        "int_gain": 2.6,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "dotaconstants",
-    "count": 759
+    "count": 790
   },
   "abilities": {
     "antimage_mana_break": {
@@ -30836,6 +30836,1310 @@
       "mana_cost": "0",
       "cooldown": "0",
       "attrib": []
+    },
+    "ringmaster_tame_the_beasts": {
+      "key": "ringmaster_tame_the_beasts",
+      "name_en": "Tame the Beasts",
+      "desc": "CHANNELED - Ringmaster twirls his whip for up to 1 second then cracks it. Whipped enemies are damaged and flee in fear from Ringmaster. Channel time exponentially increases damage and extends the fear duration, but reduces the radius.",
+      "behavior": [
+        "Point Target",
+        "AOE",
+        "Channeled"
+      ],
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": [
+        "90",
+        "105",
+        "120",
+        "135"
+      ],
+      "cooldown": [
+        "16",
+        "14",
+        "12",
+        "10"
+      ],
+      "attrib": [
+        {
+          "key": "start_width",
+          "header": "RADIUS START:",
+          "value": "450"
+        },
+        {
+          "key": "end_width",
+          "header": "RADIUS END:",
+          "value": "200"
+        },
+        {
+          "key": "damage_min",
+          "header": "MIN DAMAGE:",
+          "value": [
+            "50",
+            "75",
+            "100",
+            "125"
+          ]
+        },
+        {
+          "key": "damage_max",
+          "header": "MAX DAMAGE:",
+          "value": [
+            "180",
+            "280",
+            "380",
+            "480"
+          ]
+        },
+        {
+          "key": "fear_duration_min",
+          "header": "MIN FEAR DURATION:",
+          "value": [
+            "0.1",
+            "0.2",
+            "0.3",
+            "0.4"
+          ]
+        },
+        {
+          "key": "fear_duration_max",
+          "header": "MAX FEAR DURATION:",
+          "value": [
+            "0.6",
+            "0.8",
+            "1",
+            "1.2"
+          ]
+        }
+      ]
+    },
+    "ringmaster_the_box": {
+      "key": "ringmaster_the_box",
+      "name_en": "Escape Act",
+      "desc": "Ringmaster packs himself or an allied hero into a mobile, extradimensional box. Boxed units gain phased movement, slow resistance, bonus magic resistance, and bonus movement speed. They are also untargetable, muted, silenced, and disarmed. The box will pop open after the effect expires or it moves out of the initial area.",
+      "behavior": "Unit Target",
+      "dmg_type": null,
+      "bkbpierce": "No",
+      "mana_cost": "120",
+      "cooldown": [
+        "38",
+        "32",
+        "26",
+        "20"
+      ],
+      "attrib": [
+        {
+          "key": "leash_radius",
+          "header": "RADIUS:",
+          "value": "500"
+        },
+        {
+          "key": "invis_duration",
+          "header": "DURATION:",
+          "value": [
+            "2",
+            "2.4",
+            "2.8",
+            "3.2"
+          ]
+        },
+        {
+          "key": "move_speed",
+          "header": "BONUS MOVEMENT SPEED:",
+          "value": [
+            "0%",
+            "8%",
+            "16%",
+            "24%"
+          ]
+        },
+        {
+          "key": "magic_resist",
+          "header": "BONUS MAGIC RESISTANCE:",
+          "value": [
+            "50%",
+            "60%",
+            "70%",
+            "80%"
+          ]
+        },
+        {
+          "key": "slow_resist",
+          "header": "SLOW RESISTANCE:",
+          "value": "100%"
+        }
+      ]
+    },
+    "ringmaster_impalement": {
+      "key": "ringmaster_impalement",
+      "name_en": "Impalement Arts",
+      "desc": "Ringmaster throws one of his daggers to a precise point of his choosing. If he strikes an enemy, the dagger deals impact damage, briefly slows the unit hit, and causes them to bleed. The bleeding deals a percentage of the victim's maximum health in damage every second to heroes and flat damage per second to creeps.",
+      "behavior": "Point Target",
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": "50",
+      "cooldown": "1",
+      "attrib": [
+        {
+          "key": "damage_impact",
+          "header": "IMPACT DAMAGE:",
+          "value": [
+            "20",
+            "40",
+            "60",
+            "80"
+          ]
+        },
+        {
+          "key": "bleed_health_pct",
+          "header": "MAX HEALTH DAMAGE PER SECOND (HEROES):",
+          "value": [
+            "3%",
+            "4%",
+            "5%",
+            "6%"
+          ]
+        },
+        {
+          "key": "bleed_creep_dps",
+          "header": "DAMAGE PER SECOND (CREEPS):",
+          "value": [
+            "60",
+            "75",
+            "90",
+            "105"
+          ]
+        },
+        {
+          "key": "bleed_duration",
+          "header": "DURATION:",
+          "value": "4"
+        },
+        {
+          "key": "slow_percent",
+          "header": "MOVEMENT SLOW:",
+          "value": "100%"
+        },
+        {
+          "key": "slow_duration",
+          "header": "SLOW DURATION:",
+          "value": [
+            "0.5",
+            "0.6",
+            "0.7",
+            "0.8"
+          ]
+        }
+      ]
+    },
+    "ringmaster_empty_souvenir": {
+      "key": "ringmaster_empty_souvenir",
+      "name_en": "Souvenir Slot",
+      "desc": "Gather souvenirs from kills and assists.",
+      "behavior": "Passive",
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": false,
+      "cooldown": false,
+      "attrib": []
+    },
+    "ringmaster_spotlight": {
+      "key": "ringmaster_spotlight",
+      "name_en": "Spotlight",
+      "desc": "Ringmaster shines 3 spotlights that sweep over an area. Enemies in the light have a chance to miss their attacks and are revealed if invisible. Illusions hit by the beam fade away, losing a percentage of their maximum health each second. These effects linger for 0.3 seconds after leaving the light.",
+      "behavior": [
+        "Point Target",
+        "AOE"
+      ],
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": "50",
+      "cooldown": "30",
+      "attrib": [
+        {
+          "key": "radius",
+          "header": "RADIUS:",
+          "value": "275"
+        },
+        {
+          "key": "illusion_percent_damage",
+          "header": "ILLUSION MAX HEALTH LOSS:",
+          "value": "30%"
+        },
+        {
+          "key": "miss_chance",
+          "header": "MISS CHANCE:",
+          "value": "45%"
+        }
+      ]
+    },
+    "ringmaster_wheel": {
+      "key": "ringmaster_wheel",
+      "name_en": "Wheel of Wonder",
+      "desc": "Ringmaster rolls the Wheel of Wonder to the targeted location, knocking aside enemies along the way. After it reaches its target, enemies in range of the wheel take damage over time and are slowed by -50%. Enemy heroes who face the wheel for more than 0.5 seconds are mesmerized and drawn towards it. The first enemy to be mesmerized triggers a timer for the wheel to explode. If the timer is not triggered, it will automatically explode after 4 seconds.",
+      "behavior": [
+        "Point Target",
+        "AOE"
+      ],
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": [
+        "150",
+        "225",
+        "300"
+      ],
+      "cooldown": [
+        "90",
+        "80",
+        "70"
+      ],
+      "attrib": [
+        {
+          "key": "min_range",
+          "header": "MINIMUM RANGE:",
+          "value": "700"
+        },
+        {
+          "key": "mesmerize_radius",
+          "header": "RADIUS:",
+          "value": "500"
+        },
+        {
+          "key": "wheel_stun",
+          "header": "TIMER DURATION:",
+          "value": [
+            "2.5",
+            "2.75",
+            "3"
+          ]
+        },
+        {
+          "key": "aura_damage",
+          "header": "AURA DAMAGE PER SECOND:",
+          "value": [
+            "50",
+            "70",
+            "90"
+          ]
+        },
+        {
+          "key": "explosion_damage",
+          "header": "EXPLOSION DAMAGE:",
+          "value": [
+            "275",
+            "425",
+            "575"
+          ]
+        }
+      ]
+    },
+    "ringmaster_tame_the_beasts_crack": {
+      "key": "ringmaster_tame_the_beasts_crack",
+      "name_en": "Crack",
+      "desc": "*CRACK*",
+      "behavior": [
+        "No Target",
+        "Instant Cast",
+        "Hidden"
+      ],
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": "0",
+      "cooldown": "0.5",
+      "attrib": []
+    },
+    "muerta_dead_shot": {
+      "key": "muerta_dead_shot",
+      "name_en": "Dead Shot",
+      "desc": "",
+      "behavior": "Unit Target",
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": [
+        "100",
+        "120",
+        "140",
+        "160"
+      ],
+      "cooldown": [
+        "16",
+        "14",
+        "12",
+        "10"
+      ],
+      "attrib": []
+    },
+    "muerta_the_calling": {
+      "key": "muerta_the_calling",
+      "name_en": "The Calling",
+      "desc": "",
+      "behavior": [
+        "Point Target",
+        "AOE"
+      ],
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": [
+        "135",
+        "150",
+        "165",
+        "180"
+      ],
+      "cooldown": [
+        "30",
+        "28",
+        "26",
+        "24"
+      ],
+      "attrib": []
+    },
+    "muerta_gunslinger": {
+      "key": "muerta_gunslinger",
+      "name_en": "Gunslinger",
+      "desc": "",
+      "behavior": [
+        "No Target",
+        "Instant Cast"
+      ],
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": false,
+      "cooldown": false,
+      "attrib": []
+    },
+    "muerta_spectral_slug": {
+      "key": "muerta_spectral_slug",
+      "name_en": "Spectral Slug",
+      "desc": "",
+      "behavior": "Unit Target",
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": "75",
+      "cooldown": "0",
+      "attrib": []
+    },
+    "muerta_pierce_the_veil": {
+      "key": "muerta_pierce_the_veil",
+      "name_en": "Pierce the Veil",
+      "desc": "",
+      "behavior": "No Target",
+      "dmg_type": "Magical",
+      "bkbpierce": null,
+      "mana_cost": [
+        "150",
+        "250",
+        "350"
+      ],
+      "cooldown": [
+        "75",
+        "60",
+        "45"
+      ],
+      "attrib": []
+    },
+    "muerta_supernatural": {
+      "key": "muerta_supernatural",
+      "name_en": "Supernatural",
+      "desc": "",
+      "behavior": [
+        "Passive",
+        "Hidden"
+      ],
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": false,
+      "cooldown": false,
+      "attrib": []
+    },
+    "kez_echo_slash": {
+      "key": "kez_echo_slash",
+      "name_en": "Echo Slash",
+      "desc": "Kez slashes forward in a 800 distance line with his Katana, attacking enemies in an area and applying a brief 100% impact slow. After a short delay, the area is attacked again.",
+      "behavior": "No Target",
+      "dmg_type": "Physical",
+      "bkbpierce": null,
+      "mana_cost": [
+        "75",
+        "90",
+        "105",
+        "120"
+      ],
+      "cooldown": [
+        "21",
+        "18",
+        "15",
+        "12"
+      ],
+      "attrib": [
+        {
+          "key": "katana_echo_damage",
+          "header": "ATTACK DAMAGE:",
+          "value": [
+            "30%",
+            "45%",
+            "60%",
+            "75%"
+          ]
+        },
+        {
+          "key": "echo_base_damage",
+          "header": "BASE DAMAGE:",
+          "value": [
+            "40",
+            "70",
+            "100",
+            "130"
+          ]
+        },
+        {
+          "key": "katana_strikes",
+          "header": "ATTACKS:",
+          "value": "2"
+        },
+        {
+          "key": "strike_interval",
+          "header": "ECHO DELAY:",
+          "value": "1.2"
+        },
+        {
+          "key": "katana_radius",
+          "header": "SLASH RADIUS:",
+          "value": "200"
+        }
+      ]
+    },
+    "kez_grappling_claw": {
+      "key": "kez_grappling_claw",
+      "name_en": "Grappling Claw",
+      "desc": "Kez swings on a grappling hook towards the target unit or tree. When the grappling hook collides with the target, that unit has slowed movement speed. Upon reaching the enemy target, Kez lands an attack on them.",
+      "behavior": "Unit Target",
+      "dmg_type": null,
+      "bkbpierce": "No",
+      "mana_cost": "40",
+      "cooldown": [
+        "13",
+        "11",
+        "9",
+        "7"
+      ],
+      "attrib": [
+        {
+          "key": "debuff_duration",
+          "header": "SLOW DURATION:",
+          "value": [
+            "0.7",
+            "0.8",
+            "0.9",
+            "1"
+          ]
+        },
+        {
+          "key": "katana_ms_slow_pct",
+          "header": "MOVE SLOW:",
+          "value": [
+            "70%",
+            "80%",
+            "90%",
+            "100%"
+          ]
+        }
+      ]
+    },
+    "kez_kazurai_katana": {
+      "key": "kez_kazurai_katana",
+      "name_en": "Kazurai Katana",
+      "desc": "Katana attacks and abilities apply a stacking damage over time to enemies that deals a percentage of the original attack's damage as additional damage over time. Kez may activate the ability to impale the target with his attack, preventing them from moving or turning. The target's Katana debuff bursts, causing some of the stacks to deal damage instantly.",
+      "behavior": [
+        "Attack Modifier",
+        "Unit Target"
+      ],
+      "dmg_type": "Physical",
+      "bkbpierce": "Yes",
+      "mana_cost": "40",
+      "cooldown": [
+        "24",
+        "18",
+        "12",
+        "6"
+      ],
+      "attrib": [
+        {
+          "key": "katana_bleed_duration",
+          "header": "DURATION:",
+          "value": "7"
+        },
+        {
+          "key": "katana_bleed_attack_damage_pct",
+          "header": "DAMAGE PER SECOND:",
+          "value": [
+            "3%",
+            "6%",
+            "9%",
+            "12%"
+          ]
+        },
+        {
+          "key": "impale_duration",
+          "header": "IMPALE DURATION:",
+          "value": "0.5"
+        },
+        {
+          "key": "bleed_as_rupture_pct",
+          "header": "STACKS AS BURST DAMAGE:",
+          "value": "50%"
+        },
+        {
+          "key": "max_stacks",
+          "header": "MAX BURST STACKS:",
+          "value": "500"
+        }
+      ]
+    },
+    "kez_switch_weapons": {
+      "key": "kez_switch_weapons",
+      "name_en": "Switch Discipline",
+      "desc": "Kez switches between his Kazurai Katana and Shodo Sai. He gains different attack capabilities and abilities based on the weapon equipped. The abilities level up together, and when an ability is used, the associated alternate weapon ability also goes on cooldown. Kez deals extra damage on the first Katana hit or ability after switching to Katana, and gains bonus speed after switching to Sai.",
+      "behavior": [
+        "No Target",
+        "Instant Cast"
+      ],
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": false,
+      "cooldown": "8",
+      "attrib": [
+        {
+          "key": "katana_base_ms",
+          "header": "KATANA MOVEMENT SPEED:",
+          "value": "0"
+        },
+        {
+          "key": "katana_attack_range",
+          "header": "KATANA ATTACK RANGE:",
+          "value": "225"
+        },
+        {
+          "key": "katana_base_attack_time",
+          "header": "KATANA BASE ATTACK TIME:",
+          "value": "1.9"
+        },
+        {
+          "key": "katana_agility_bonus_base_damage",
+          "header": "KATANA BONUS AGILITY BASE DAMAGE:",
+          "value": "12%"
+        },
+        {
+          "key": "katana_swap_bonus_damage",
+          "header": "KATANA SWAP BONUS DAMAGE:",
+          "value": "12%"
+        },
+        {
+          "key": "sai_base_ms",
+          "header": "SAI MOVEMENT SPEED:",
+          "value": "0"
+        },
+        {
+          "key": "sai_attack_range",
+          "header": "SAI ATTACK RANGE:",
+          "value": "150"
+        },
+        {
+          "key": "sai_base_attack_time",
+          "header": "SAI BASE ATTACK TIME:",
+          "value": "1.5"
+        },
+        {
+          "key": "sai_swap_bonus_movement_speed",
+          "header": "SAI SWAP MOVEMENT SPEED:",
+          "value": "12%"
+        },
+        {
+          "key": "sai_swap_duration",
+          "header": "SAI SWAP SPEED DURATION:",
+          "value": "2"
+        }
+      ]
+    },
+    "kez_raptor_dance": {
+      "key": "kez_raptor_dance",
+      "name_en": "Raptor Dance",
+      "desc": "Kez enters into an uncontrollable state for 1 second, becoming invulnerable for 0.2s and receiving a basic dispel. If the cast completes successfully, Kez performs a series of deadly radial slashes around him that deal a fixed damage attack based on the target's max health with enhanced lifesteal.",
+      "behavior": [
+        "No Target",
+        "AOE"
+      ],
+      "dmg_type": "Physical",
+      "bkbpierce": "Yes",
+      "mana_cost": [
+        "100",
+        "125",
+        "150"
+      ],
+      "cooldown": [
+        "40",
+        "35",
+        "30"
+      ],
+      "attrib": [
+        {
+          "key": "strikes",
+          "header": "STRIKES:",
+          "value": "4"
+        },
+        {
+          "key": "radius",
+          "header": "RADIUS:",
+          "value": "425"
+        },
+        {
+          "key": "base_damage",
+          "header": "BASE DAMAGE:",
+          "value": [
+            "50",
+            "100",
+            "150"
+          ]
+        },
+        {
+          "key": "max_health_damage_pct",
+          "header": "MAX HEALTH AS DAMAGE:",
+          "value": [
+            "2.75%",
+            "3.25%",
+            "3.75%"
+          ]
+        }
+      ]
+    },
+    "kez_falcon_rush": {
+      "key": "kez_falcon_rush",
+      "name_en": "Falcon Rush",
+      "desc": "Kez gains the ability to rush towards enemy targets to deliver echoing secondary attacks with reduced damage and Item Potency. While in this state, Kez has phased collision and slow resistance.",
+      "behavior": [
+        "Hidden",
+        "No Target",
+        "Instant Cast"
+      ],
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": [
+        "85",
+        "90",
+        "95",
+        "100"
+      ],
+      "cooldown": [
+        "21",
+        "18",
+        "15",
+        "12"
+      ],
+      "attrib": [
+        {
+          "key": "rush_range",
+          "header": "RUSH RANGE:",
+          "value": "525"
+        },
+        {
+          "key": "rush_speed",
+          "header": "RUSH SPEED:",
+          "value": "850"
+        },
+        {
+          "key": "base_echo_damage",
+          "header": "ECHO ATTACK DAMAGE:",
+          "value": [
+            "30%",
+            "35%",
+            "40%",
+            "45%"
+          ]
+        },
+        {
+          "key": "slow_resist",
+          "header": "SLOW RESISTANCE:",
+          "value": [
+            "15%",
+            "30%",
+            "45%",
+            "60%"
+          ]
+        },
+        {
+          "key": "duration",
+          "header": "DURATION:",
+          "value": [
+            "3.75",
+            "4.5",
+            "5.25",
+            "6"
+          ]
+        }
+      ]
+    },
+    "kez_talon_toss": {
+      "key": "kez_talon_toss",
+      "name_en": "Talon Toss",
+      "desc": "Kez throws a Sai at the target unit, applying a fixed damage attack and silence.",
+      "behavior": [
+        "Hidden",
+        "Unit Target",
+        "AOE"
+      ],
+      "dmg_type": "Physical",
+      "bkbpierce": "No",
+      "mana_cost": [
+        "60",
+        "65",
+        "70",
+        "75"
+      ],
+      "cooldown": [
+        "13",
+        "11",
+        "9",
+        "7"
+      ],
+      "attrib": [
+        {
+          "key": "radius",
+          "header": "RADIUS:",
+          "value": "0"
+        },
+        {
+          "key": "damage",
+          "header": "DAMAGE:",
+          "value": [
+            "60",
+            "120",
+            "180",
+            "240"
+          ]
+        },
+        {
+          "key": "silence_duration",
+          "header": "SILENCE DURATION:",
+          "value": [
+            "2",
+            "2.25",
+            "2.5",
+            "2.75"
+          ]
+        }
+      ]
+    },
+    "kez_shodo_sai": {
+      "key": "kez_shodo_sai",
+      "name_en": "Shodo Sai",
+      "desc": "Kez has a chance to critically strike the target when attacking with Sais. Kez may activate the ability to disarm himself, lock his facing, and parry attacks and attack effects from the targeted direction for 1.5 seconds. If an attack is parried from an enemy Hero in this way, that Hero is stunned for 0.4s and gains a Mark. When a Marked target is attacked by Kez, it will guarantee a critical strike and stun the target. The sub-ability may be used to cancel the blocking early.",
+      "behavior": [
+        "Hidden",
+        "Point Target",
+        "Instant Cast"
+      ],
+      "dmg_type": null,
+      "bkbpierce": "Yes",
+      "mana_cost": [
+        "30",
+        "20",
+        "10",
+        "0"
+      ],
+      "cooldown": [
+        "24",
+        "18",
+        "12",
+        "6"
+      ],
+      "attrib": [
+        {
+          "key": "sai_proc_vuln_chance",
+          "header": "CRITICAL CHANCE:",
+          "value": "24%"
+        },
+        {
+          "key": "base_crit_pct",
+          "header": "CRITICAL DAMAGE:",
+          "value": [
+            "125%",
+            "150%",
+            "175%",
+            "200%"
+          ]
+        },
+        {
+          "key": "stun_duration",
+          "header": "MARK STUN DURATION:",
+          "value": [
+            "0.5",
+            "0.6",
+            "0.7",
+            "0.8"
+          ]
+        },
+        {
+          "key": "vuln_duration",
+          "header": "MARK DURATION:",
+          "value": "8"
+        },
+        {
+          "key": "parry_bonus_crit",
+          "header": "PARRY BONUS CRITICAL STRIKE:",
+          "value": "0%"
+        },
+        {
+          "key": "parry_bonus_stun_duration",
+          "header": "PARRY BONUS MARK STUN:",
+          "value": "0"
+        }
+      ]
+    },
+    "kez_ravens_veil": {
+      "key": "kez_ravens_veil",
+      "name_en": "Raven's Veil",
+      "desc": "Kez releases a wave of smoke that applies his Mark to nearby enemy heroes, briefly reducing their vision. Kez receives a basic dispel and gains bonus movement speed and invisibility until he attacks or casts a spell.",
+      "behavior": [
+        "Hidden",
+        "No Target"
+      ],
+      "dmg_type": null,
+      "bkbpierce": "Yes",
+      "mana_cost": [
+        "100",
+        "125",
+        "150"
+      ],
+      "cooldown": [
+        "40",
+        "35",
+        "30"
+      ],
+      "attrib": [
+        {
+          "key": "blast_radius",
+          "header": "WAVE RADIUS:",
+          "value": "1500"
+        },
+        {
+          "key": "blast_speed",
+          "header": "WAVE SPEED:",
+          "value": "1500"
+        },
+        {
+          "key": "buff_duration",
+          "header": "BUFF DURATION:",
+          "value": [
+            "8",
+            "10",
+            "12"
+          ]
+        },
+        {
+          "key": "blind_duration",
+          "header": "VISION DEBUFF DURATION:",
+          "value": "4"
+        },
+        {
+          "key": "bonus_ms",
+          "header": "BONUS MOVEMENT SPEED:",
+          "value": [
+            "15%",
+            "25%",
+            "35%"
+          ]
+        },
+        {
+          "key": "slow",
+          "header": "SLOW:",
+          "value": "0%"
+        }
+      ]
+    },
+    "kez_shodo_sai_parry_cancel": {
+      "key": "kez_shodo_sai_parry_cancel",
+      "name_en": "Cancel",
+      "desc": "Stop blocking physical attacks.",
+      "behavior": [
+        "No Target",
+        "Instant Cast",
+        "Hidden"
+      ],
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": false,
+      "cooldown": "0",
+      "attrib": []
+    },
+    "largo_catchy_lick": {
+      "key": "largo_catchy_lick",
+      "name_en": "Catchy Lick",
+      "desc": "Largo licks the targeted unit with his tongue, pulling it back a short distance, applying a basic dispel, and dealing damage if it's an enemy. Killing or dispelling an effect from a target grants Largo temporary health regeneration. DISPEL TYPE: Basic Dispel",
+      "behavior": "Unit Target",
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": [
+        "80",
+        "85",
+        "90",
+        "95"
+      ],
+      "cooldown": [
+        "15",
+        "12",
+        "9",
+        "6"
+      ],
+      "attrib": [
+        {
+          "key": "damage",
+          "header": "DAMAGE:",
+          "value": [
+            "85",
+            "170",
+            "255",
+            "340"
+          ]
+        },
+        {
+          "key": "pull_distance",
+          "header": "ENEMY PULL DISTANCE:",
+          "value": [
+            "235",
+            "265",
+            "295",
+            "325"
+          ]
+        },
+        {
+          "key": "pull_distance_ally",
+          "header": "ALLY PULL DISTANCE:",
+          "value": "375"
+        },
+        {
+          "key": "dispel_hp_regen",
+          "header": "BONUS HEALTH REGEN:",
+          "value": [
+            "2.5",
+            "5",
+            "7.5",
+            "10"
+          ]
+        },
+        {
+          "key": "buff_duration",
+          "header": "HEALTH REGEN DURATION:",
+          "value": "8"
+        }
+      ]
+    },
+    "largo_frogstomp": {
+      "key": "largo_frogstomp",
+      "name_en": "Frogstomp",
+      "desc": "Largo tosses froglings to an area. They stomp the ground every 1 second, dealing damage and ministuns, and enemies in the area have reduced movement speed.",
+      "behavior": [
+        "Point Target",
+        "AOE"
+      ],
+      "dmg_type": "Magical",
+      "bkbpierce": "No",
+      "mana_cost": [
+        "85",
+        "95",
+        "105",
+        "115"
+      ],
+      "cooldown": [
+        "20",
+        "18",
+        "16",
+        "14"
+      ],
+      "attrib": [
+        {
+          "key": "damage_per_stomp",
+          "header": "DAMAGE PER STOMP:",
+          "value": [
+            "36",
+            "48",
+            "60",
+            "72"
+          ]
+        },
+        {
+          "key": "total_ticks",
+          "header": "NUMBER OF STOMPS:",
+          "value": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ]
+        },
+        {
+          "key": "slow",
+          "header": "SLOW:",
+          "value": [
+            "12%",
+            "18%",
+            "24%",
+            "30%"
+          ]
+        },
+        {
+          "key": "radius",
+          "header": "RADIUS:",
+          "value": "350"
+        }
+      ]
+    },
+    "largo_croak_of_genius": {
+      "key": "largo_croak_of_genius",
+      "name_en": "Croak of Genius",
+      "desc": "Largo strums a tune to a friendly hero. The hero's items and abilities have reduced mana cost and a percentage of their damage reverberates over the following 5 seconds. When an affected hero spends mana, the remaining buff duration is reduced by 0.5s. Duration is not reduced for Largo himself.",
+      "behavior": "Unit Target",
+      "dmg_type": "Magical",
+      "bkbpierce": null,
+      "mana_cost": "40",
+      "cooldown": "25",
+      "attrib": [
+        {
+          "key": "damage_per_second",
+          "header": "BASE DAMAGE PER SECOND:",
+          "value": "0"
+        },
+        {
+          "key": "damage_portion_pct",
+          "header": "DAMAGE REVERB:",
+          "value": [
+            "25%",
+            "30%",
+            "35%",
+            "40%"
+          ]
+        },
+        {
+          "key": "mana_cost_reduction",
+          "header": "MANA COST REDUCTION:",
+          "value": "15%"
+        },
+        {
+          "key": "duration",
+          "header": "BUFF DURATION:",
+          "value": [
+            "15",
+            "20",
+            "25",
+            "30"
+          ]
+        }
+      ]
+    },
+    "largo_encore": {
+      "key": "largo_encore",
+      "name_en": "Encore",
+      "desc": "Buffs that Largo applies to himself or his team have extended duration.",
+      "behavior": [
+        "Passive",
+        "Hidden"
+      ],
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": false,
+      "cooldown": false,
+      "attrib": [
+        {
+          "key": "buff_amplification",
+          "header": "BONUS DURATION:",
+          "value": "15%"
+        }
+      ]
+    },
+    "largo_amphibian_rhapsody": {
+      "key": "largo_amphibian_rhapsody",
+      "name_en": "Amphibian Rhapsody",
+      "desc": "Largo gets ready to groove. He is disarmed and his ability bar switches to 3 song abilities, each with different effects. Songs are only effective if strummed on the beat. Every time he strums successfully, he gains a stack of Groovin'. Each stack gives him bonus armor and reduces the mana cost of every song, but he loses a stack if he misses a beat. Stacks linger for a short duration when Largo's song ends.",
+      "behavior": [
+        "No Target",
+        "Instant Cast"
+      ],
+      "dmg_type": "Magical",
+      "bkbpierce": null,
+      "mana_cost": "0",
+      "cooldown": "1.5",
+      "attrib": [
+        {
+          "key": "radius",
+          "header": "RADIUS:",
+          "value": "800"
+        },
+        {
+          "key": "rhythm_interval",
+          "header": "BEAT INTERVAL:",
+          "value": "1"
+        },
+        {
+          "key": "max_stacks",
+          "header": "MAX STACKS:",
+          "value": "5"
+        },
+        {
+          "key": "armor_per_stack",
+          "header": "ARMOR PER STACK:",
+          "value": [
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "key": "song_cost_reduction_per_stack_tooltip",
+          "header": "SONG MANA COST REDUCTION PER STACK:",
+          "value": [
+            "1",
+            "1.5",
+            "2"
+          ]
+        },
+        {
+          "key": "stack_duration",
+          "header": "STACK LINGER DURATION:",
+          "value": "5"
+        }
+      ]
+    },
+    "largo_song_fight_song": {
+      "key": "largo_song_fight_song",
+      "name_en": "Bullbelly Blitz",
+      "desc": "Largo plays a song that deals 24 magical damage to nearby enemies. The song also increases nearby allied heroes' spell amplification and grants their attacks additional magic damage.",
+      "behavior": [
+        "No Target",
+        "Instant Cast",
+        "Hidden"
+      ],
+      "dmg_type": "Magical",
+      "bkbpierce": null,
+      "mana_cost": [
+        "25",
+        "35",
+        "45"
+      ],
+      "cooldown": "0.2",
+      "attrib": [
+        {
+          "key": "burst_damage",
+          "header": "DAMAGE:",
+          "value": [
+            "24",
+            "37",
+            "50"
+          ]
+        },
+        {
+          "key": "damage_per_stack",
+          "header": "DAMAGE PER STACK:",
+          "value": "0"
+        },
+        {
+          "key": "magic_damage_bonus",
+          "header": "ADDITIONAL MAGIC DAMAGE:",
+          "value": [
+            "20%",
+            "25%",
+            "30%"
+          ]
+        },
+        {
+          "key": "spell_amp_bonus",
+          "header": "SPELL AMP:",
+          "value": [
+            "6%",
+            "8%",
+            "10%"
+          ]
+        },
+        {
+          "key": "battle_burst_duration",
+          "header": "BUFF DURATION:",
+          "value": "1"
+        }
+      ]
+    },
+    "largo_song_double_time": {
+      "key": "largo_song_double_time",
+      "name_en": "Hotfeet Hustle",
+      "desc": "Largo plays a song that increases nearby friendly units' movement speed and grants a brief slow resistance.",
+      "behavior": [
+        "No Target",
+        "Instant Cast",
+        "Hidden"
+      ],
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": [
+        "25",
+        "35",
+        "45"
+      ],
+      "cooldown": "0.2",
+      "attrib": [
+        {
+          "key": "movespeed_bonus_burst",
+          "header": "MOVE SPEED:",
+          "value": [
+            "16%",
+            "20%",
+            "24%"
+          ]
+        },
+        {
+          "key": "slow_resistance",
+          "header": "SLOW RESISTANCE:",
+          "value": [
+            "70%",
+            "75%",
+            "80%"
+          ]
+        },
+        {
+          "key": "movement_burst_duration",
+          "header": "MOVEMENT DURATION:",
+          "value": "1"
+        },
+        {
+          "key": "slow_resistance_burst_duration",
+          "header": "SLOW RESISTANCE DURATION:",
+          "value": "0.3"
+        }
+      ]
+    },
+    "largo_song_good_vibrations": {
+      "key": "largo_song_good_vibrations",
+      "name_en": "Island Elixir",
+      "desc": "Largo plays a song that heals nearby friendly heroes.",
+      "behavior": [
+        "No Target",
+        "Instant Cast",
+        "Hidden"
+      ],
+      "dmg_type": null,
+      "bkbpierce": null,
+      "mana_cost": [
+        "25",
+        "35",
+        "45"
+      ],
+      "cooldown": "0.2",
+      "attrib": [
+        {
+          "key": "heal_burst",
+          "header": "HEAL:",
+          "value": [
+            "30",
+            "55",
+            "80"
+          ]
+        }
+      ]
     }
   }
 }

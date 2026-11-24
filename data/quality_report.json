@@ -17,7 +17,7 @@
     "matchups.json: 双向成对记录 huskar<->dazzle（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）"
   ],
   "counts": {
-    "heroes": 123,
+    "heroes": 127,
     "rules": 61,
     "inference": 26
   }

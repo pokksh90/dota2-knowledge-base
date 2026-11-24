@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 05:20",
+    "updated_at": "2026-11-25 06:22",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -74,10 +74,10 @@
       "id": "talent-values",
       "title": "补齐天赋剩余数值",
       "file": "data/talents.json",
-      "current": 912,
-      "target": 984,
+      "current": 939,
+      "target": 1016,
       "status": "pending",
-      "note": "984 条文案已全部去占位（改用官方 dname 成品文案）；912 条带单一数值；72 条为多值（如 +9%/18%）或纯机制型，无法归为单一数字，保持 special_bonus_value=null 属正常"
+      "note": "1016 条文案已全部去占位（官方 dname）；939 条带单一数值；77 条为多值（如 +9%/18%、+75/+300）或纯机制型，保持 null 属正常。"
     },
     {
       "id": "neutral-items-audit",
@@ -87,10 +87,26 @@
       "target": 48,
       "status": "done",
       "note": "按 7.42 重建为四级制：4×4组×3件=48 件；分档/费用/选项规则全部替换为官方口径"
+    },
+    {
+      "id": "new-heroes",
+      "title": "补齐新英雄（2023–2026）",
+      "file": "data/heroes.json / hero_base / ability_base / talents",
+      "current": 4,
+      "target": 4,
+      "status": "done",
+      "note": "新增百戏大王(ringmaster)/琼英碧灵(muerta)/凯(kez)/朗戈(largo)：含中文名、定位、coach_note、aliases、基础属性、技能明细与 4 层天赋（共 32 个天赋选项）。原库 123 → 127 英雄，与 dotaconstants 对齐。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 06:22",
+      "task": "new-heroes",
+      "added": 4,
+      "result": "补齐 4 个新英雄（百戏大王/琼英碧灵/凯/朗戈）：heroes 123→127、hero_base 123→127、ability_base +31 个技能、talents 984→1016（939 带值、0 文案占位）；新增 scripts/add_new_heroes.py 可重跑",
+      "next": "matchups 尚未覆盖新英雄（可补 3~5 条克制关系）；7.42 英雄改动与物品数值未逐条核对"
+    },
     {
       "time": "2026-11-25 05:20",
       "task": "talent-values",
