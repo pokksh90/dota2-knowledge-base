@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-24 22:31",
+    "updated_at": "2026-11-24 22:48",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -36,7 +36,7 @@
       "id": "matchups-expand",
       "title": "继续扩充克制关系",
       "file": "data/matchups.json",
-      "current": 95,
+      "current": 107,
       "target": 140,
       "status": "pending",
       "desc": "覆盖尚未有克制的英雄。每条带 basis(8类机制依据)，并保证机制可回溯到 rules/inference。优先补高频英雄的经典克制对。"
@@ -68,6 +68,14 @@
       "result": "matchups 85→95：新增10条克制+2条协同；删除2条target非英雄的非法条目(monkey-king-bar/linkens-sphere，机制已在items中说明)",
       "note": "basis分布不均：control 26 偏多、vision 仅6，下轮优先补 vision/mobility",
       "next": "继续 matchups-expand(95/140)；或按vision短板定向补"
+    },
+    {
+      "time": "2026-11-24 22:48",
+      "task": "matchups-expand（定向补短板）",
+      "added": 12,
+      "result": "matchups 95→107：vision+3、mobility+3、aoe+3(含2条协同)、resource+1、damage-type+1",
+      "note": "basis 分布：control 26 仍最多，vision 9 / resource 8 / physical 8 / damage-type 8 偏少；relation 上 counter 48 多于 countered_by 36",
+      "next": "继续 matchups-expand(107/140)；或转 inference-expand(14/26) 提推理层厚度"
     }
   ]
 }

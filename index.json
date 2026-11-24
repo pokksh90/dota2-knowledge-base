@@ -44,7 +44,7 @@
     {
       "file": "data/matchups.json",
       "title": "克制与搭配",
-      "count": 95,
+      "count": 107,
       "status": "stable",
       "note": "85条克制/配合关系，每条带 basis 机制依据(8类)，映射到 rules/inference 层，可回溯验证。"
     },

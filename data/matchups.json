@@ -679,6 +679,90 @@
       "target_id": "ursa",
       "reason": "两极反转把目标聚拢并控住，熊战士贴脸爆发窗口最大化",
       "basis": "control"
+    },
+    {
+      "hero_id": "bounty-hunter",
+      "relation": "counter",
+      "target_id": "riki",
+      "reason": "追踪提供真视与标记，隐身刺客的行踪被团队全程掌握，先手权与信息优势全失",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "slardar",
+      "relation": "counter",
+      "target_id": "clinkz",
+      "reason": "鱼人碎击的真视让骨弓隐身与扫射失去意义，减甲还放大其低血身材的被秒风险",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "bounty-hunter",
+      "relation": "counter",
+      "target_id": "templar-assassin",
+      "reason": "追踪真视破除圣堂的隐匿威胁，标记后其切入位置暴露，团队可预判集火",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "spirit-breaker",
+      "relation": "counter",
+      "target_id": "shadow-fiend",
+      "reason": "冲撞突进无视距离直取无位移的脆皮法核，影魔贴身即被连环控住无法拉开",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "storm-spirit",
+      "relation": "counter",
+      "target_id": "drow-ranger",
+      "reason": "风暴之灵可远程突进贴身，卓尔游侠无位移且怕近身，一旦被黏住无法输出",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "slark",
+      "relation": "counter",
+      "target_id": "sniper",
+      "reason": "暗影突袭越过前排直取矮人狙击手，能量点持续黏人，远程射程优势被贴身作废",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "anti-mage",
+      "relation": "counter",
+      "target_id": "tinker",
+      "reason": "修补匠法力池大且依赖技能循环，法术护盾削减其魔法爆发，法力虚空按缺失蓝量放大伤害",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "leshrac",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "闪电风暴与裂地脉冲是多段范围伤害，米波的多个分身会同时吃到全额伤害",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "jakiro",
+      "relation": "counter",
+      "target_id": "broodmother",
+      "reason": "冰火双AOE可覆盖蛛网与蜘蛛群，范围清线直接压制其铺网控图与多单位推进",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "outworld-destroyer",
+      "relation": "counter",
+      "target_id": "terrorblade",
+      "reason": "奥术球为纯伤害、无视护甲，正打在恐怖利刃高护甲低血的短板上，且吸智力削弱其续航",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "jakiro",
+      "relation": "synergy",
+      "target_id": "tidehunter",
+      "reason": "毁灭+冰封路径+液态火的连续范围控场，覆盖窗口足以让AOE伤害打满",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "leshrac",
+      "relation": "synergy",
+      "target_id": "enigma",
+      "reason": "黑洞固定住多人后，裂地脉冲与闪电风暴可在静止目标上打满多段范围伤害",
+      "basis": "aoe"
     }
   ]
 }
