@@ -44,9 +44,9 @@
     {
       "file": "data/matchups.json",
       "title": "克制与搭配",
-      "count": 127,
+      "count": 137,
       "status": "stable",
-      "note": "127条克制/配合关系，每条带 basis 机制依据(8类)，映射到 rules/inference 层，可回溯验证。"
+      "note": "137条克制/配合关系，每条带 basis 机制依据(8类)，映射到 rules/inference 层，可回溯验证。本轮补 10 条（幻象清场、减治疗、真视反隐、护甲抗爆发等）。"
     },
     {
       "file": "scripts/fetch_data.py",

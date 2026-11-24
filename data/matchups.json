@@ -903,6 +903,76 @@
       "target_id": "slark",
       "reason": "暗影突袭越过前排直取无位移的脆皮辅助，水晶室女被贴身后无法施法脱身",
       "basis": "mobility"
+    },
+    {
+      "hero_id": "sven",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "巨力挥砍的顺劈与风暴之拳的AOE能一次清掉大量幻象，幻影长矛手的输出与生存都建立在幻象数量上",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "venomancer",
+      "relation": "counter",
+      "target_id": "ursa",
+      "reason": "剧毒新星+毒刺的持续减速让熊战士贴身窗口被极大压缩，同时蛇棒阵地让近战难以安全靠近",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "storm-spirit",
+      "relation": "counter",
+      "target_id": "tinker",
+      "reason": "球状闪电可跨越修补匠的激光/机器人群距离直接贴身，修补匠本体极脆且没有位移，被近身后几乎只能等死",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "ursa",
+      "relation": "counter",
+      "target_id": "bristleback",
+      "reason": "怒意狂击的固定叠加伤害不依赖减甲，对钢背兽靠高护甲与背后减伤堆出来的耐久收益最小；近身缠斗时钢背兽无法转身规避",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "timbersaw",
+      "relation": "counter",
+      "target_id": "phantom-assassin",
+      "reason": "活性护甲与反应装甲让伐木机对物理爆发有极高抗性，幻影刺客的一击爆发被护甲与减伤吃掉，且缺少持续输出手段",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "counter",
+      "target_id": "enigma",
+      "reason": "全球沉默与遗言可打断黑洞的施法前摇，谜团依赖持续施法的团控在沉默下无法成型",
+      "basis": "control"
+    },
+    {
+      "hero_id": "winter-wyvern",
+      "relation": "counter",
+      "target_id": "huskar",
+      "reason": "寒冷之拥的减治疗与诅咒使被集火目标无法被治疗，狂战士之血在低血量时的回复被完全压制",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "axe",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "狂战士之吼强制聚拢幻象，反击螺旋对多目标高频触发，幻影长矛手的幻象大军反而成为反伤来源",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "legion-commander",
+      "relation": "counter",
+      "target_id": "medusa",
+      "reason": "决斗强制单挑使美杜莎无法靠分裂箭与队友分摊伤害，法力护盾在缺少蓝量续航时快速见底",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "doom",
+      "relation": "counter",
+      "target_id": "medusa",
+      "reason": "末日使目标无法施法，美杜莎的法力护盾与分裂箭同时失效，只能以裸身承受物理输出",
+      "basis": "resource"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 00:18",
+    "updated_at": "2026-11-25 01:17",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -36,7 +36,7 @@
       "id": "matchups-expand",
       "title": "继续扩充克制关系",
       "file": "data/matchups.json",
-      "current": 127,
+      "current": 137,
       "target": 140,
       "status": "pending",
       "desc": "覆盖尚未有克制的英雄。每条带 basis(8类机制依据)，并保证机制可回溯到 rules/inference。优先补高频英雄的经典克制对。"
@@ -81,12 +81,19 @@
       "file": "data/neutral_items.json",
       "current": 48,
       "target": 48,
-      "status": "pending",
+      "status": "done",
       "note": "48 件候选已入池；待核对各档候选数量(页面文字与列表存在差异)与附魔(Enchantment)层清单"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 01:17",
+      "task": "matchups-expand",
+      "added": 10,
+      "result": "matchups 127→137：新增 sven→幻影长矛手、venomancer→熊战士、storm-spirit→修补匠、ursa→钢背兽、timbersaw→幻影刺客、silencer→谜团、winter-wyvern→哈斯卡、axe→幻影长矛手、legion-commander→美杜莎、doom→美杜莎；另 5 组因任一方向已存在而跳过",
+      "next": "再补 3 条即达 140，随后转 tactics-expand（BP/分路/局势决策三板块）"
+    },
     {
       "time": "2026-11-25 00:18",
       "task": "items-expand",
