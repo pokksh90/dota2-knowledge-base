@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 01:17",
+    "updated_at": "2026-11-25 01:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -87,6 +87,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 01:19",
+      "task": "7.42 版本纠偏",
+      "added": 1,
+      "result": "修正 glyph-of-fortification（7.42：2 点能量、6 分钟充能、7 秒间隔、不再因建筑被拆重置）；新增 tormentor-cycle（15:00 首现、4000 护盾、反伤 15%+5%/次上限 30%、每死必掉大战号角、第 2 次起掉魔晶、赏金 125+50/次）；rules 60→61",
+      "next": "7.42 新增 6 件道具/5 件中立宝物尚未入 item_base 与 items.json，下轮优先补；随后 tactics-expand"
+    },
     {
       "time": "2026-11-25 01:17",
       "task": "matchups-expand",

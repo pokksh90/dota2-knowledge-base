@@ -701,17 +701,21 @@
       "category": "对局结构",
       "title": "塔防（Glyph）生效规则",
       "certainty": "verified",
-      "statement": "塔防使己方建筑 7 秒内免疫伤害、己方小兵 3 秒免疫伤害；效果期间二塔及以上的塔获得「一次攻击打 5 个目标」的多重攻击。",
-      "detail": "塔防是全队共享冷却，首座一塔、首座二塔、首个近战兵营被拆时会重置冷却；开局存在初始冷却。它只提供 100% 伤害减免，不阻止「斩杀类」秒杀效果。",
+      "statement": "塔防使己方建筑 7 秒内免疫伤害、己方小兵 3 秒免疫伤害；7.42 起为「2 点能量点数」，充能 6 分钟，两次使用之间间隔 7 秒，摧毁建筑不再重置冷却。",
+      "detail": "塔防是全队共享的资源（2 点），因此同一波推进最多连续用两次；效果期间二塔及以上的塔获得「一次攻击打 5 个目标」的多重攻击。它提供 100% 伤害减免，但不阻止「斩杀类」秒杀效果。",
       "values": {
         "building_duration_s": 7,
         "creep_duration_s": 3,
-        "multishot_targets": 5
+        "multishot_targets": 5,
+        "charges": 2,
+        "recharge_min": 6,
+        "use_cooldown_s": 7,
+        "reset_on_building_loss": false
       },
       "key_implication": "塔防是用来「拖时间等队友」的，不是用来硬守的：7 秒结束后该丢的塔还是会丢，正确用法是卡在对方进场/推塔节奏上。",
-      "source": "Liquipedia Dota 2 Wiki",
+      "source": "Liquipedia Dota 2 Wiki: Version 7.42",
       "patch": "7.42",
-      "verified_at": "2026-11-24"
+      "verified_at": "2026-11-25"
     },
     {
       "id": "backdoor-protection",
@@ -894,6 +898,30 @@
       "source": "Liquipedia Dota 2 Wiki: Stacking / Neutral Creeps",
       "patch": "7.42",
       "verified_at": "2026-11-24"
+    },
+    {
+      "id": "tormentor-cycle",
+      "category": "对局结构",
+      "title": "痛苦魔方（Tormentor）：时间、掉落与奖励",
+      "certainty": "verified",
+      "statement": "痛苦魔方 7.42 起 15:00 首次出现（原 20:00）；被击杀后每次复活护盾更高、反伤更强，且每次死亡都掉「大战号角（Greater Horn of Battle）」，第 2 次死亡起额外掉阿哈利姆魔晶。",
+      "detail": "护盾 4000（原 3000）；基础反伤 15%（原 30%），每次死亡 +5%，上限 30%；随时间仍会自然增强。团队赏金由固定 175 改为 125 + 每次死亡 +50。大战号角是消耗品，使用后在三条兵线各召一波超级兵 —— 这是 7.42 节奏变快的核心原因：一个魔方就能直接换掉一座一塔。",
+      "values": {
+        "first_spawn": "15:00",
+        "shield": 4000,
+        "reflect_base_pct": 15,
+        "reflect_per_death_pct": 5,
+        "reflect_cap_pct": 30,
+        "team_gold": "125 + 50/次",
+        "drops": {
+          "every": "大战号角",
+          "from_2nd_death": "阿哈利姆魔晶"
+        }
+      },
+      "key_implication": "魔方从「20 分钟的可选目标」变成「15 分钟必须争夺的节奏点」：拿到号角等于免费获得一次三线超级兵推进，能直接兑换建筑；因此 15:00 前的视野与集结优先级要高于同时期的小规模团战。",
+      "source": "Liquipedia Dota 2 Wiki: Version 7.42 / Tormentor",
+      "patch": "7.42",
+      "verified_at": "2026-11-25"
     }
   ]
 }
