@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Dota2 知识库字段契约 Schema",
+  "description": "各数据文件的字段契约。核心约定：id 稳定索引；source 标记数据可信度（official/stable/pending）；coach_note 为供 LLM 直接消费的自然语言要点。",
+  "definitions": {
+    "source": {
+      "type": "string",
+      "enum": ["official", "stable", "pending"],
+      "description": "official=已核对权威源; stable=稳定领域常识; pending=待按版本核对（数值类默认）"
+    }
+  },
+  "hero": {
+    "type": "object",
+    "required": ["id", "name_zh", "name_en", "position"],
+    "properties": {
+      "id": { "type": "string", "description": "稳定英文小写标识，如 anti-mage" },
+      "name_zh": { "type": "string" },
+      "name_en": { "type": "string" },
+      "position": { "type": "integer", "minimum": 1, "maximum": 5, "description": "分路位置 1=核心carry 2=中单 3=劣势路 4=软辅 5=硬辅" },
+      "lane": { "type": "string", "enum": ["safe", "mid", "off", "support", "roam"], "description": "默认分路" },
+      "roles": { "type": "array", "items": { "type": "string" }, "description": "定位标签如 carry/mid/offlane/support/ganker/tank/pusher" },
+      "tags": { "type": "array", "items": { "type": "string" }, "description": "玩法关键词，供检索" },
+      "coach_note": { "type": "string", "description": "供 LLM 直接消费的自然语言要点：怎么玩/核心思路/何时发力/怕什么" },
+      "strengths": { "type": "array", "items": { "type": "string" } },
+      "weaknesses": { "type": "array", "items": { "type": "string" } },
+      "source": { "$ref": "#/definitions/source" }
+    }
+  },
+  "item": {
+    "type": "object",
+    "required": ["id", "name_zh", "name_en", "category"],
+    "properties": {
+      "id": { "type": "string" },
+      "name_zh": { "type": "string" },
+      "name_en": { "type": "string" },
+      "category": { "type": "string", "description": "分类：offensive/defensive/utility/mobility/magic/support/consumable" },
+      "purpose": { "type": "string", "description": "一句话用途" },
+      "coach_note": { "type": "string", "description": "供 LLM 消费：什么情况出、克制什么、给谁出" },
+      "core_for": { "type": "array", "items": { "type": "integer" }, "description": "哪些位置(1-5)常见核心出" },
+      "source": { "$ref": "#/definitions/source" }
+    }
+  },
+  "matchup": {
+    "type": "object",
+    "required": ["hero_id", "relation", "target_id"],
+    "properties": {
+      "hero_id": { "type": "string" },
+      "target_id": { "type": "string" },
+      "relation": { "type": "string", "enum": ["counter", "countered_by", "synergy"] },
+      "reason": { "type": "string", "description": "克制/配合的机制原因，供 LLM 解释" },
+      "source": { "$ref": "#/definitions/source" }
+    }
+  },
+  "tactic_timing": {
+    "type": "object",
+    "required": ["phase", "note"],
+    "properties": {
+      "phase": { "type": "string", "description": "阶段标识如 laning/early/mid/late" },
+      "time_range": { "type": "string", "description": "大致时间窗，如 0-10min" },
+      "note": { "type": "string", "description": "供 LLM 消费的该阶段要点" },
+      "source": { "$ref": "#/definitions/source" }
+    }
+  }
+}

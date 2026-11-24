@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# 本地缓存 / 生成物
+.cache/
+data/stats.json
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 含项目内部信息的文档不入公开仓库
+COACH_INTEGRATION_PROMPT.md

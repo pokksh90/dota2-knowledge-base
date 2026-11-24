@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "name": "Dota2 专业知识库（三层可回溯）",
+    "version": "0.2.0",
+    "status": "rules-inference-applied",
+    "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
+    "last_updated": "2026-11-24",
+    "schema": "schema/knowledge-schema.json",
+    "architecture": {
+      "layer1": "rules.json —— 底层规则/公理：伤害公式、护甲魔抗、攻速、经济、经验、地图资源、先手博弈",
+      "layer2": "inference.json —— 逻辑推理/定理：由公理纯逻辑推导，含 前提→推导→结论→应用 链条与 confidence 标记",
+      "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
+    }
+  },
+  "modules": [
+    {
+      "file": "data/rules.json",
+      "title": "底层规则(公理层)",
+      "count": 13,
+      "status": "stable",
+      "note": "13条基础机制：护甲/魔抗/伤害类型/攻速/EHP/经济/经验/地图/肉山/视野/先手/站位。公式确定性标 verified。"
+    },
+    {
+      "file": "data/inference.json",
+      "title": "逻辑推理(定理层)",
+      "count": 14,
+      "status": "stable",
+      "note": "14条逻辑推导洞察，每条含前提→推导→结论→应用，可回溯验证；含多条对网上常见误解的数学证伪。"
+    },
+    {
+      "file": "data/heroes.json",
+      "title": "英雄与定位",
+      "count": 123,
+      "status": "stable",
+      "note": "123个英雄，覆盖位置1-5(近全英雄)。应用层，定位/机制为稳定常识。"
+    },
+    {
+      "file": "data/items.json",
+      "title": "装备与出装",
+      "count": 39,
+      "status": "stable",
+      "note": "31件核心装备 + 5位置出装框架。应用层。"
+    },
+    {
+      "file": "data/matchups.json",
+      "title": "克制与搭配",
+      "count": 95,
+      "status": "stable",
+      "note": "85条克制/配合关系，每条带 basis 机制依据(8类)，映射到 rules/inference 层，可回溯验证。"
+    },
+    {
+      "file": "data/stats.json",
+      "title": "版本数值(待生成)",
+      "count": 0,
+      "status": "pending",
+      "note": "由 scripts/fetch_data.py 从 OpenDota 回填英雄属性/装备价格，本地运行生成。"
+    },
+    {
+      "file": "scripts/fetch_data.py",
+      "title": "数值抓取脚本",
+      "count": 1,
+      "status": "stable",
+      "note": "从 OpenDota 公开 API 拉英雄属性/装备价格回填 stats.json，本地运行(需外网)。"
+    },
+    {
+      "file": "data/tactics.json",
+      "title": "战术与节奏",
+      "count": 1,
+      "status": "stable",
+      "note": "分线职责、时间点、目标物、团战决策。应用层。"
+    }
+  ],
+  "data_source": {
+    "verified": "护甲公式、魔抗25%、伤害三分类、攻速公式等确定机制，已按公开共识填写并可数学验证。",
+    "reasoned": "由底层规则逻辑推导的结论，含定性假设，非网上抄录。",
+    "stable": "英雄定位/装备用途/克制逻辑等稳定常识。",
+    "pending_numeric": "属性成长、装备价格、具体胜率等版本数值，需从 OpenDota/Stratz 核对后回填。",
+    "constraint": "严格遵守项目约束：只提供公开通用知识与逻辑推导，不涉及读内存/注入/对手资料。"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "title": "底层规则（公理层）",
+    "description": "Dota2 最基础的机制与公式，作为逻辑推理的公理前提。每条的 certainty 标记：verified=机制确定；stable=通用稳定；versioned=数值随版本变动(仅作定性)。",
+    "note": "只收录可查证的基础机制，不收录攻略结论。攻略结论应在 inference.json 中由本层推导得出。"
+  },
+  "principles": [
+    {
+      "id": "armor-formula",
+      "category": "伤害与防御",
+      "title": "护甲减伤公式",
+      "statement": "正护甲 A 时，物理伤害减免率 DR = 0.06·A / (1 + 0.06·A)；负护甲时伤害加成 1 - 0.94^(-|A|) 方向。",
+      "certainty": "verified",
+      "key_implication": "换算为有效生命后，每点护甲恒等于增加 6% 基础有效物理生命。"
+    },
+    {
+      "id": "magic-resistance",
+      "category": "伤害与防御",
+      "title": "魔抗",
+      "statement": "多数英雄基础魔抗 25%；多源魔抗按乘法叠加（1 - ∏(1-各源魔抗)），不简单相加。",
+      "certainty": "verified",
+      "key_implication": "魔抗叠加存在边际递减（乘法叠加），堆得越多单件收益越低。"
+    },
+    {
+      "id": "damage-types",
+      "category": "伤害与防御",
+      "title": "伤害三分类",
+      "statement": "物理伤害受护甲减免；魔法伤害受魔抗减免；纯粹伤害无视护甲与魔抗，直接扣血。",
+      "certainty": "verified",
+      "key_implication": "克制关系的本质往往是伤害类型错配：高甲怕纯粹/魔法，高魔抗怕物理。"
+    },
+    {
+      "id": "attack-speed",
+      "category": "输出效率",
+      "title": "攻速与 DPS",
+      "statement": "攻击间隔 = BAT / (1 + IAS)，其中 IAS 为攻速加成。DPS = 攻击力 × (1 + IAS) / BAT。",
+      "certainty": "verified",
+      "key_implication": "攻击力与攻速对 DPS 的贡献均为线性，两者乘积决定输出，故「攻力×攻速」需平衡投入。"
+    },
+    {
+      "id": "effective-hp",
+      "category": "伤害与防御",
+      "title": "有效生命（EHP）",
+      "statement": "有效物理生命 EHP = HP × (1 + 0.06·A)（正护甲）；有效魔法生命 = HP / (1 - 魔抗)。",
+      "certainty": "verified",
+      "key_implication": "「堆肉」应看 EHP 而非单看 HP 或护甲，护甲与血量存在最优配比。"
+    },
+    {
+      "id": "economy-sources",
+      "category": "经济系统",
+      "title": "金钱来源",
+      "statement": "金钱来自补刀、击杀、助攻、推塔、野区资源、神符等；其中补刀与野区是可稳定获取的「被动收入」，击杀是「风险收入」。",
+      "certainty": "stable",
+      "key_implication": "稳定收入决定下限，风险收入决定上限，滚雪球靠把风险收入转化为稳定收入（推塔/控图）。"
+    },
+    {
+      "id": "snowball-feedback",
+      "category": "经济系统",
+      "title": "滚雪球正反馈",
+      "statement": "经济差 → 装备差 → 战力差 → 更易击杀/推塔 → 更大经济差，构成正反馈循环。",
+      "certainty": "stable",
+      "key_implication": "优势方应主动扩大地图控制加速循环，劣势方必须打断循环（抓单/偷盾/守高翻盘）。"
+    },
+    {
+      "id": "experience-level",
+      "category": "经验与等级",
+      "title": "经验与等级",
+      "statement": "经验来自击杀、助攻、补刀（含反补减少对方经验）、野区；等级决定技能强度，关键大招等级是节奏转折点。",
+      "certainty": "stable",
+      "key_implication": "反补的隐性价值是「让对方少经验」，与「自己多金钱」同样重要。"
+    },
+    {
+      "id": "map-control",
+      "category": "地图与资源",
+      "title": "地图控制 = 资源控制",
+      "statement": "控制三路线权与野区，即控制兵线与野区资源的获取权，进而控制经济与经验差。",
+      "certainty": "stable",
+      "key_implication": "推进的本质是把「地图控制」转化为「资源垄断」，塔是地图控制的关键节点。"
+    },
+    {
+      "id": "roshan-value",
+      "category": "地图与资源",
+      "title": "肉山（不朽盾）价值",
+      "statement": "不朽盾提供一次复活（容错），后期刷新碎片等强化。复活 = 一次「失误不致命」的容错。",
+      "certainty": "stable",
+      "key_implication": "盾的本质是「降低团战风险成本」，使持盾方可以打得更激进，是中期关键战略资源。"
+    },
+    {
+      "id": "vision-information",
+      "category": "核心博弈",
+      "title": "视野 = 信息 = 决策质量",
+      "statement": "视野提供敌方位置与动向信息，信息决定决策质量；缺乏信息导致被gank/被先手。",
+      "certainty": "stable",
+      "key_implication": "眼/反隐的「信息价值」远高于其金钱成本，视野投入产出比极高。"
+    },
+    {
+      "id": "first-move-value",
+      "category": "核心博弈",
+      "title": "先手价值",
+      "statement": "Dota2 是不完全信息下的实时博弈，先手控制能压缩对手「反应与决策时间」，使先手方先输出一轮。",
+      "certainty": "stable",
+      "key_implication": "先手控制的价值 = 对手无法反应期间我方造成的伤害/击杀，故先手英雄价值极高。"
+    },
+    {
+      "id": "positioning-economy",
+      "category": "核心博弈",
+      "title": "站位与容错",
+      "statement": "站位决定被先手/被集火的风险，容错（复活/薄葬/BKB/位移）决定失误成本。",
+      "certainty": "stable",
+      "key_implication": "核心的「输出环境」与「容错装」的投入，本质是买「失误不致命」的保险。"
+    }
+  ]
+}

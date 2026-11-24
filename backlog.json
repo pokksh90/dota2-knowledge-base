@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
+    "updated_at": "2026-11-24 22:31",
+    "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
+  },
+  "queue": [
+    {
+      "id": "inference-expand",
+      "title": "扩充推理洞察(定理层)",
+      "file": "data/inference.json",
+      "current": 14,
+      "target": 26,
+      "status": "pending",
+      "desc": "新增可证正确的推导，参照现有结构(premises/derivation/conclusion/application/confidence)。候选主题：控制链时长数学、暴击期望值、吸血vs反伤博弈、买活的经济时机、推塔vs拿盾抉择、分线线权的价值、魔抗/护甲配比、先手vs反手阈值、多目标英雄(米波/幻影长矛手)的AOE克制数学。每条须能由 rules 层推导。"
+    },
+    {
+      "id": "tactics-expand",
+      "title": "细化战术层",
+      "file": "data/tactics.json",
+      "current": 1,
+      "target": 4,
+      "status": "pending",
+      "desc": "补充板块：①BP策略(选人顺序/阵容搭配/克制链)；②分路对线细节(拉野/控线/换线/线权)；③局势决策树(顺风/均势/逆风的关键决策)。保持与 rules/inference 一致。"
+    },
+    {
+      "id": "items-expand",
+      "title": "扩充装备库",
+      "file": "data/items.json",
+      "current": 39,
+      "target": 60,
+      "status": "pending",
+      "desc": "补充核心装备(coach_note+category+core_for)。候选：散失/紫苑各类、以太之镜、飓风长戟、赤红甲、强袭、天鹰戒、圣洁吊坠、魔龙枪、死灵书(如版本在)、各类鞋、血棘、否决、紫怨、大炮、慧光等。数值(价格)留空或pending，不编造。"
+    },
+    {
+      "id": "matchups-expand",
+      "title": "继续扩充克制关系",
+      "file": "data/matchups.json",
+      "current": 95,
+      "target": 140,
+      "status": "pending",
+      "desc": "覆盖尚未有克制的英雄。每条带 basis(8类机制依据)，并保证机制可回溯到 rules/inference。优先补高频英雄的经典克制对。"
+    },
+    {
+      "id": "quality-audit",
+      "title": "质量审查",
+      "file": "全部",
+      "current": 0,
+      "target": 1,
+      "status": "pending",
+      "desc": "校验一致性：hero id 在各文件引用是否都存在、basis 是否对应合法机制、JSON是否合法、字段是否完整、有无重复/矛盾。发现问题做修正。长期可持续。"
+    }
+  ],
+  "completed": [],
+  "run_log": [
+    {
+      "time": "2026-11-24 22:18",
+      "task": "items-expand",
+      "added": 10,
+      "result": "items 29→39，新增辉耀/强袭/血棘/以太之镜/阿托斯/刃甲/莲花/刷新球/动力鞋/风杖",
+      "next": "下轮继续补装备或转 matchups-expand"
+    },
+    {
+      "time": "2026-11-24 22:31",
+      "task": "matchups-expand（手动轮）",
+      "added": 12,
+      "removed": 2,
+      "result": "matchups 85→95：新增10条克制+2条协同；删除2条target非英雄的非法条目(monkey-king-bar/linkens-sphere，机制已在items中说明)",
+      "note": "basis分布不均：control 26 偏多、vision 仅6，下轮优先补 vision/mobility",
+      "next": "继续 matchups-expand(95/140)；或按vision短板定向补"
+    }
+  ]
+}

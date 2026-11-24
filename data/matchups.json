@@ -1,0 +1,684 @@
+{
+  "meta": {
+    "title": "克制与搭配",
+    "description": "英雄克制/被克制/配合关系。relation: counter=克制target, countered_by=被target克制, synergy=与target配合。reason 供 LLM 解释；basis 为机制依据类别，可回溯到 rules/inference 层。",
+    "source_note": "克制/配合逻辑为稳定机制常识(source=stable)，具体版本胜率未纳入。",
+    "basis_legend": {
+      "damage-type": "伤害类型错配 → rules.damage-types / inference.counter-essence-damage-type",
+      "resource": "法力/资源克制(烧蓝) → 资源依赖型英雄的软肋",
+      "control": "控制/先手/沉默 → rules.first-move-value",
+      "vision": "视野/真视(反隐/反闪避) → rules.vision-information",
+      "mobility": "机动(切入/风筝/位移) → 站位与先手",
+      "aoe": "AOE(清幻象/召唤/聚怪) → 多目标克制",
+      "sustain": "续航/复活/保命(治疗/薄葬) → rules.positioning-economy(容错)",
+      "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
+    }
+  },
+  "matchups": [
+    {
+      "hero_id": "anti-mage",
+      "relation": "counter",
+      "target_id": "medusa",
+      "reason": "法力燃烧直接烧蓝破美杜莎护盾",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "anti-mage",
+      "relation": "counter",
+      "target_id": "storm-spirit",
+      "reason": "烧蓝+魔抗克制高蓝耗法核",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "anti-mage",
+      "relation": "countered_by",
+      "target_id": "axe",
+      "reason": "嘲讽+反击螺旋克制近战普攻",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "anti-mage",
+      "relation": "countered_by",
+      "target_id": "slardar",
+      "reason": "减甲+硬控限制机动",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "anti-mage",
+      "relation": "synergy",
+      "target_id": "io",
+      "reason": "艾欧连接提供回蓝与传送，补足前期弱势",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "phantom-assassin",
+      "relation": "counter",
+      "target_id": "drow-ranger",
+      "reason": "跳切入近身秒脆皮远程",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "phantom-assassin",
+      "relation": "countered_by",
+      "target_id": "axe",
+      "reason": "嘲讽破切入+反伤",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "phantom-assassin",
+      "relation": "synergy",
+      "target_id": "magnus",
+      "reason": "buff增伤+团控聚怪放大暴击",
+      "basis": "control"
+    },
+    {
+      "hero_id": "faceless-void",
+      "relation": "counter",
+      "target_id": "tinker",
+      "reason": "时间结界定住高机动英雄",
+      "basis": "control"
+    },
+    {
+      "hero_id": "faceless-void",
+      "relation": "countered_by",
+      "target_id": "disruptor",
+      "reason": "静电场沉默+拉回限制切入",
+      "basis": "control"
+    },
+    {
+      "hero_id": "faceless-void",
+      "relation": "synergy",
+      "target_id": "lich",
+      "reason": "结界内大招连环霜冻弹射",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "storm-spirit",
+      "relation": "counter",
+      "target_id": "sniper",
+      "reason": "高机动切入秒脆皮站桩",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "storm-spirit",
+      "relation": "countered_by",
+      "target_id": "anti-mage",
+      "reason": "烧蓝+魔抗克制",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "storm-spirit",
+      "relation": "countered_by",
+      "target_id": "silencer",
+      "reason": "沉默断蓝耗链",
+      "basis": "control"
+    },
+    {
+      "hero_id": "storm-spirit",
+      "relation": "synergy",
+      "target_id": "io",
+      "reason": "连接回蓝支撑高频冲刺",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "templar-assassin",
+      "relation": "counter",
+      "target_id": "invoker",
+      "reason": "折光+隐匿克制依赖技能的法核",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "templar-assassin",
+      "relation": "countered_by",
+      "target_id": "zeus",
+      "reason": "真视+法系AOE破折光",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "templar-assassin",
+      "relation": "synergy",
+      "target_id": "dark-seer",
+      "reason": "加速+离子外壳助其滚雪球",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "slark",
+      "relation": "counter",
+      "target_id": "wraith-king",
+      "reason": "偷属性克制站桩肉核",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "slark",
+      "relation": "countered_by",
+      "target_id": "bloodseeker",
+      "reason": "血怒暴露低血隐身",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "slark",
+      "relation": "countered_by",
+      "target_id": "zeus",
+      "reason": "真视反隐克制暗影之舞",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "slark",
+      "relation": "synergy",
+      "target_id": "io",
+      "reason": "连接增益助其持续作战",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "axe",
+      "relation": "counter",
+      "target_id": "phantom-assassin",
+      "reason": "嘲讽+反击螺旋克制近战普攻/闪避",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "axe",
+      "relation": "countered_by",
+      "target_id": "dazzle",
+      "reason": "薄葬保队友反制斩首",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "axe",
+      "relation": "countered_by",
+      "target_id": "viper",
+      "reason": "远程风筝+持续伤害",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "axe",
+      "relation": "synergy",
+      "target_id": "lina",
+      "reason": "嘲讽聚怪配合AOE爆发",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "tidehunter",
+      "relation": "counter",
+      "target_id": "luna",
+      "reason": "海妖外壳免控+团控限制站桩",
+      "basis": "control"
+    },
+    {
+      "hero_id": "tidehunter",
+      "relation": "countered_by",
+      "target_id": "silencer",
+      "reason": "沉默打断大招先手",
+      "basis": "control"
+    },
+    {
+      "hero_id": "tidehunter",
+      "relation": "synergy",
+      "target_id": "faceless-void",
+      "reason": "双重团控链",
+      "basis": "control"
+    },
+    {
+      "hero_id": "legion-commander",
+      "relation": "counter",
+      "target_id": "tinker",
+      "reason": "决斗强制单挑克制机动",
+      "basis": "control"
+    },
+    {
+      "hero_id": "legion-commander",
+      "relation": "countered_by",
+      "target_id": "wraith-king",
+      "reason": "复活克制单挑斩杀",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "legion-commander",
+      "relation": "synergy",
+      "target_id": "skywrath-mage",
+      "reason": "沉默+爆发助其决斗取胜",
+      "basis": "control"
+    },
+    {
+      "hero_id": "pudge",
+      "relation": "counter",
+      "target_id": "sniper",
+      "reason": "钩子克制站桩脆皮",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "pudge",
+      "relation": "countered_by",
+      "target_id": "wraith-king",
+      "reason": "复活+肉克制滚雪球",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "pudge",
+      "relation": "synergy",
+      "target_id": "faceless-void",
+      "reason": "结界内钩人+控制链",
+      "basis": "control"
+    },
+    {
+      "hero_id": "dazzle",
+      "relation": "counter",
+      "target_id": "axe",
+      "reason": "薄葬保队友反制斩首",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "dazzle",
+      "relation": "countered_by",
+      "target_id": "bounty-hunter",
+      "reason": "隐身切入切后排",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "dazzle",
+      "relation": "synergy",
+      "target_id": "huskar",
+      "reason": "薄葬保低血输出",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "oracle",
+      "relation": "counter",
+      "target_id": "legion-commander",
+      "reason": "虚妄之诺保队友反制决斗",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "oracle",
+      "relation": "synergy",
+      "target_id": "huskar",
+      "reason": "治疗保低血爆发",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "oracle",
+      "relation": "countered_by",
+      "target_id": "bounty-hunter",
+      "reason": "隐身切入切脆皮辅助",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "disruptor",
+      "relation": "counter",
+      "target_id": "storm-spirit",
+      "reason": "静电场沉默+拉回克制机动",
+      "basis": "control"
+    },
+    {
+      "hero_id": "disruptor",
+      "relation": "counter",
+      "target_id": "ember-spirit",
+      "reason": "限制位移克制高机动",
+      "basis": "control"
+    },
+    {
+      "hero_id": "disruptor",
+      "relation": "countered_by",
+      "target_id": "spirit-breaker",
+      "reason": "冲锋先手克制脆皮辅助",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "disruptor",
+      "relation": "synergy",
+      "target_id": "faceless-void",
+      "reason": "结界内大招叠加",
+      "basis": "control"
+    },
+    {
+      "hero_id": "doom",
+      "relation": "counter",
+      "target_id": "invoker",
+      "reason": "末日沉默克制多技能法核",
+      "basis": "control"
+    },
+    {
+      "hero_id": "doom",
+      "relation": "synergy",
+      "target_id": "pudge",
+      "reason": "钩人+末日单体硬控链",
+      "basis": "control"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "counter",
+      "target_id": "tidehunter",
+      "reason": "沉默打断大招先手",
+      "basis": "control"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "counter",
+      "target_id": "storm-spirit",
+      "reason": "沉默断蓝耗链",
+      "basis": "control"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "countered_by",
+      "target_id": "slark",
+      "reason": "暗影之舞解控反打",
+      "basis": "control"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "synergy",
+      "target_id": "faceless-void",
+      "reason": "结界内大招沉默团控",
+      "basis": "control"
+    },
+    {
+      "hero_id": "lina",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "AOE爆发清分身",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "lina",
+      "relation": "countered_by",
+      "target_id": "spectre",
+      "reason": "全图切入+反伤克制脆皮",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "lina",
+      "relation": "synergy",
+      "target_id": "axe",
+      "reason": "嘲讽聚怪配合AOE爆发",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "medusa",
+      "relation": "countered_by",
+      "target_id": "anti-mage",
+      "reason": "烧蓝破护盾",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "medusa",
+      "relation": "countered_by",
+      "target_id": "phantom-lancer",
+      "reason": "分身克制分裂箭",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "medusa",
+      "relation": "synergy",
+      "target_id": "crystal-maiden",
+      "reason": "回蓝光环支撑法力护盾",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "huskar",
+      "relation": "counter",
+      "target_id": "wraith-king",
+      "reason": "低血爆发克制站桩",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "huskar",
+      "relation": "countered_by",
+      "target_id": "ancient-apparition",
+      "reason": "冰霜封杀治疗/回复",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "huskar",
+      "relation": "synergy",
+      "target_id": "dazzle",
+      "reason": "薄葬保低血输出",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "ursa",
+      "relation": "counter",
+      "target_id": "medusa",
+      "reason": "近战高爆发贴脸，克制低机动站桩",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "ursa",
+      "relation": "countered_by",
+      "target_id": "viper",
+      "reason": "毒减速风筝克制近战高爆发",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "ursa",
+      "relation": "countered_by",
+      "target_id": "drow-ranger",
+      "reason": "远程减速风筝克制近战",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "razor",
+      "relation": "counter",
+      "target_id": "ursa",
+      "reason": "静电连接偷攻击克制高攻物理",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "razor",
+      "relation": "counter",
+      "target_id": "sven",
+      "reason": "偷攻击+克制站桩物理核",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "razor",
+      "relation": "countered_by",
+      "target_id": "lina",
+      "reason": "法系爆发克制无魔抗的剃刀",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "earthshaker",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "回音击AOE克制多幻象",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "earthshaker",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "AOE清分身克制米波",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "earthshaker",
+      "relation": "counter",
+      "target_id": "broodmother",
+      "reason": "AOE清蜘蛛克制推进",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "lion",
+      "relation": "counter",
+      "target_id": "storm-spirit",
+      "reason": "抽蓝克制高蓝法核",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "lion",
+      "relation": "counter",
+      "target_id": "tinker",
+      "reason": "抽蓝+变羊克制依赖蓝量的法核",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "lion",
+      "relation": "countered_by",
+      "target_id": "phantom-assassin",
+      "reason": "切入秒脆皮硬辅",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "clockwerk",
+      "relation": "counter",
+      "target_id": "sniper",
+      "reason": "钩爪先手克制站桩脆皮",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "clockwerk",
+      "relation": "countered_by",
+      "target_id": "silencer",
+      "reason": "沉默废掉钩爪先手",
+      "basis": "control"
+    },
+    {
+      "hero_id": "magnus",
+      "relation": "synergy",
+      "target_id": "sven",
+      "reason": "buff增伤+反转聚怪配合物理核心",
+      "basis": "control"
+    },
+    {
+      "hero_id": "broodmother",
+      "relation": "countered_by",
+      "target_id": "lina",
+      "reason": "AOE清蜘蛛克制推进",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "phantom-lancer",
+      "relation": "countered_by",
+      "target_id": "lina",
+      "reason": "AOE清幻象",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "ancient-apparition",
+      "relation": "counter",
+      "target_id": "necrophos",
+      "reason": "封治疗克制回血法核",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "venomancer",
+      "relation": "countered_by",
+      "target_id": "lina",
+      "reason": "AOE清瘟疫守卫",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "counter",
+      "target_id": "tinker",
+      "reason": "沉默废掉刷新连招",
+      "basis": "control"
+    },
+    {
+      "hero_id": "doom",
+      "relation": "counter",
+      "target_id": "ursa",
+      "reason": "末日禁主动克贴脸战核",
+      "basis": "control"
+    },
+    {
+      "hero_id": "beastmaster",
+      "relation": "counter",
+      "target_id": "broodmother",
+      "reason": "战鹰视野反隐+召唤克制蜘蛛推",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "tinker",
+      "relation": "counter",
+      "target_id": "crystal-maiden",
+      "reason": "全图爆发克制脆皮法辅",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "earthshaker",
+      "relation": "counter",
+      "target_id": "naga-siren",
+      "reason": "镜像是多单位，回响震击按命中单位数放大伤害，一发可清幻象并波及本体",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "ursa",
+      "relation": "countered_by",
+      "target_id": "phantom-assassin",
+      "reason": "熊战士靠普攻贴脸输出，幻影刺客的高闪避直接吃掉其普攻收益",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "slark",
+      "relation": "counter",
+      "target_id": "drow-ranger",
+      "reason": "暗影突袭+能量点黏住无位移的远程核心，卓尔游侠被贴身后无法拉开距离",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "riki",
+      "relation": "countered_by",
+      "target_id": "slardar",
+      "reason": "鱼人碎击附带的真视+减甲让隐身刺客持续显形，且被减甲后更易被秒",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "omniknight",
+      "relation": "countered_by",
+      "target_id": "ancient-apparition",
+      "reason": "寒霜之足的禁疗克制全能骑士的治疗与守护，回复流被直接掐断",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "bristleback",
+      "relation": "countered_by",
+      "target_id": "zeus",
+      "reason": "刚背靠护甲吃物理，宙斯高频魔法爆发绕过护甲且远程消耗，使其难贴身叠刺",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "timbersaw",
+      "relation": "countered_by",
+      "target_id": "silencer",
+      "reason": "伐木机靠技能叠活性护甲，被沉默后无法叠甲与清线，护甲来源直接断掉",
+      "basis": "control"
+    },
+    {
+      "hero_id": "nyx-assassin",
+      "relation": "counter",
+      "target_id": "skywrath-mage",
+      "reason": "尖刺外壳反弹天怒的单体魔法爆发，低血法核被近身即遭反杀",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "bounty-hunter",
+      "relation": "counter",
+      "target_id": "clinkz",
+      "reason": "追踪为团队提供真视与标记，隐身系切入被持续暴露，还能抢先手开团",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "terrorblade",
+      "relation": "countered_by",
+      "target_id": "lion",
+      "reason": "恐怖利刃高护甲但基础血量低，莱恩双控+单体魔法爆发正好打在其护甲无效的伤害类型上",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "enigma",
+      "relation": "synergy",
+      "target_id": "faceless-void",
+      "reason": "黑洞与时间结界可提供两段连续团控，先手覆盖面足够打完一整轮爆发",
+      "basis": "control"
+    },
+    {
+      "hero_id": "magnus",
+      "relation": "synergy",
+      "target_id": "ursa",
+      "reason": "两极反转把目标聚拢并控住，熊战士贴脸爆发窗口最大化",
+      "basis": "control"
+    }
+  ]
+}

@@ -1,0 +1,599 @@
+{
+  "meta": {
+    "title": "装备与出装",
+    "description": "装备分类、用途、分位置核心出装思路。coach_note 供 LLM 消费：什么情况出、克制什么、给谁出。价格为版本变动数据，未填写。",
+    "source_note": "装备用途/克制关系为稳定常识(source=stable)；价格与具体数值未核对、不填写。"
+  },
+  "items": [
+    {
+      "id": "black-king-bar",
+      "name_zh": "黑皇杖",
+      "name_en": "Black King Bar",
+      "category": "defensive",
+      "purpose": "提供魔法免疫(随时间递减)",
+      "coach_note": "核心保命装，切入型/站桩型英雄在对面法系控制多时必出，保证输出环境。敌法、幻刺、斯温等物理核心关键装备。",
+      "core_for": [
+        1,
+        2,
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "blink-dagger",
+      "name_zh": "闪烁匕首",
+      "name_en": "Blink Dagger",
+      "category": "mobility",
+      "purpose": "瞬移切入/逃生",
+      "coach_note": "先手与切入核心装，斧王、潮汐、沙王等先手英雄必出。也用于切入型核心提高机动。",
+      "core_for": [
+        2,
+        3,
+        4
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "aghanims-scepter",
+      "name_zh": "阿哈利姆神杖",
+      "name_en": "Aghanim's Scepter",
+      "category": "utility",
+      "purpose": "强化大招/新增技能",
+      "coach_note": "提升英雄关键技能强度，很多英雄靠神杖质变。是否出取决于该英雄神杖收益，需按英雄判断。",
+      "core_for": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "monkey-king-bar",
+      "name_zh": "金箍棒",
+      "name_en": "Monkey King Bar",
+      "category": "offensive",
+      "purpose": "无视闪避、克制回避",
+      "coach_note": "克制闪避型英雄(幻刺、虚空、编织者)与蝴蝶，物理核心对阵高闪避阵容必出。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "sange-and-yasha",
+      "name_zh": "散夜对剑",
+      "name_en": "Sange and Yasha",
+      "category": "offensive",
+      "purpose": "移速/攻速/状态抗性综合",
+      "coach_note": "均衡属性装，提供移速攻速与状态抗性，适合需要抗控+追击的机动核心。",
+      "core_for": [
+        1
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "satanic",
+      "name_zh": "撒旦之邪力",
+      "name_en": "Satanic",
+      "category": "offensive",
+      "purpose": "高额吸血(主动)",
+      "coach_note": "后期站桩核心续航装，主动高吸血保证团战持续作战。斯温、露娜、小狗等站桩核心后期常用。",
+      "core_for": [
+        1
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "butterfly",
+      "name_zh": "蝴蝶",
+      "name_en": "Butterfly",
+      "category": "offensive",
+      "purpose": "攻速/闪避/敏捷",
+      "coach_note": "敏捷核心后期装，提供闪避与攻速，但会被金箍棒克制。远程敏捷核心(卓尔游侠、露娜)常用。",
+      "core_for": [
+        1
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "abyssal-blade",
+      "name_zh": "深渊之刃",
+      "name_en": "Abyssal Blade",
+      "category": "offensive",
+      "purpose": "强控+爆发",
+      "coach_note": "后期控制装，主动晕人+被动击晕，切入核心(幻刺、敌法)克制关键英雄用。",
+      "core_for": [
+        1
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "eye-of-skadi",
+      "name_zh": "斯嘉蒂之眼",
+      "name_en": "Eye of Skadi",
+      "category": "offensive",
+      "purpose": "减速+全属性",
+      "coach_note": "全属性+减速装，克制吸血/回复型英雄、粘人。核心后期压制续航型敌人用。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "daedalus",
+      "name_zh": "代达罗斯之殇",
+      "name_en": "Daedalus",
+      "category": "offensive",
+      "purpose": "高额暴击",
+      "coach_note": "物理核心爆发装，提升暴击率与暴伤。幻刺、火枪、小黑等物理核心后期输出装。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "battle-fury",
+      "name_zh": "狂战斧",
+      "name_en": "Battle Fury",
+      "category": "offensive",
+      "purpose": "溅射+回蓝清线",
+      "coach_note": "近战核心刷钱装，溅射提升清线刷野效率。敌法、主宰、斯温等近战核心发育常用。",
+      "core_for": [
+        1
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "manta-style",
+      "name_zh": "幻影斧",
+      "name_en": "Manta Style",
+      "category": "offensive",
+      "purpose": "分身解控",
+      "coach_note": "敏捷核心通用装，分身解控、推塔、迷惑敌人。露娜、恐怖利刃、敌法等核心常用，可驱散部分负面。",
+      "core_for": [
+        1
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "desolator",
+      "name_zh": "黯灭",
+      "name_en": "Desolator",
+      "category": "offensive",
+      "purpose": "减甲",
+      "coach_note": "减甲装，配合高物理输出快速拆塔/秒人。幻刺、主宰等物理核心前中期滚雪球用。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "hurricane-pike",
+      "name_zh": "飓风长戟",
+      "name_en": "Hurricane Pike",
+      "category": "utility",
+      "purpose": "射程+推离",
+      "coach_note": "远程核心保命+追击装，推离近身敌人、提升射程。小黑、火枪等脆皮远程核心关键装。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "heart-of-tarrasque",
+      "name_zh": "恐鳌之心",
+      "name_en": "Heart of Tarrasque",
+      "category": "defensive",
+      "purpose": "高额血量+回复",
+      "coach_note": "肉盾续航装，高血量+脱战回血。斧王、人马、钢背兽等肉盾后期扛伤装。",
+      "core_for": [
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "shivas-guard",
+      "name_zh": "希瓦的守护",
+      "name_en": "Shiva's Guard",
+      "category": "defensive",
+      "purpose": "护甲+AOE减速",
+      "coach_note": "法系肉盾装，高护甲+冰霜AOE减速，克制攻速/物理阵容。潮汐、人马等前排常用。",
+      "core_for": [
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "pipe-of-insight",
+      "name_zh": "洞察烟斗",
+      "name_en": "Pipe of Insight",
+      "category": "defensive",
+      "purpose": "魔法护盾(团队)",
+      "coach_note": "团队魔抗装，克制法系阵容。对面法核多时，前排/辅助出，保护全队。",
+      "core_for": [
+        3,
+        4
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "crimson-guard",
+      "name_zh": "赤红甲",
+      "name_en": "Crimson Guard",
+      "category": "defensive",
+      "purpose": "物理格挡(团队)",
+      "coach_note": "团队物理抗性装，克制物理AOE/普攻阵容。对面物理多时前排出。",
+      "core_for": [
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "guardian-greaves",
+      "name_zh": "卫士胫甲",
+      "name_en": "Guardian Greaves",
+      "category": "defensive",
+      "purpose": "团队治疗+净化",
+      "coach_note": "辅助/肉盾团队装，治疗+净化，克制控制与持续伤害。劣势局保团用。",
+      "core_for": [
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "force-staff",
+      "name_zh": "原力法杖",
+      "name_en": "Force Staff",
+      "category": "utility",
+      "purpose": "推离/位移(可推队友)",
+      "coach_note": "辅助保人装，推离敌人救队友、自身逃生。克制近身切入，辅助常用。",
+      "core_for": [
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "glimmer-cape",
+      "name_zh": "微光披风",
+      "name_en": "Glimmer Cape",
+      "category": "defensive",
+      "purpose": "隐身+魔抗(可给队友)",
+      "coach_note": "辅助保人装，隐身+魔抗保护队友逃生。克制法系爆发，辅助常用。",
+      "core_for": [
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "ghost-scepter",
+      "name_zh": "幽魂权杖",
+      "name_en": "Ghost Scepter",
+      "category": "defensive",
+      "purpose": "免疫物理(自身)",
+      "coach_note": "克制物理切入装，短时免疫物理，脆皮辅助/法核面对物理刺客保命用。",
+      "core_for": [
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "ethereal-blade",
+      "name_zh": "虚灵之刃",
+      "name_en": "Ethereal Blade",
+      "category": "offensive",
+      "purpose": "虚化+法伤增幅",
+      "coach_note": "法系爆发装，虚化使目标受法伤增加，配合法系爆发秒人。天怒、莉娜等法核用。",
+      "core_for": [
+        2,
+        4
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "scythe-of-vyse",
+      "name_zh": "邪恶镰刀",
+      "name_en": "Scythe of Vyse",
+      "category": "utility",
+      "purpose": "变羊控制",
+      "coach_note": "最强单体控制装，变羊使目标无法行动。克制关键核心/机动英雄，辅助与法核后期出。",
+      "core_for": [
+        2,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "orchid-malevolence",
+      "name_zh": "紫怨",
+      "name_en": "Orchid Malevolence",
+      "category": "offensive",
+      "purpose": "沉默+增伤",
+      "coach_note": "克制法系/依赖技能英雄，沉默+增伤。风暴之灵、女王等先手秒法核用。",
+      "core_for": [
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "linkens-sphere",
+      "name_zh": "林肯法球",
+      "name_en": "Linken's Sphere",
+      "category": "defensive",
+      "purpose": "抵挡一次指向性技能",
+      "coach_note": "克制指向性先手技能，抵挡关键单点控制。核心面对末日、屠夫钩等指向技能时出。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "eon-boots",
+      "name_zh": "永恒战靴",
+      "name_en": "Eon Boots",
+      "category": "mobility",
+      "purpose": "位移+续航",
+      "coach_note": "机动装，提供位移与续航，切入/逃生核心常用。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "magic-wand",
+      "name_zh": "魔棒",
+      "name_en": "Magic Wand",
+      "category": "consumable",
+      "purpose": "攒能量回血蓝",
+      "coach_note": "对线期性价比装，积累敌人技能使用次数回血蓝，前期续航与反杀关键。几乎所有位置前期可出。",
+      "core_for": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "boots-of-travel",
+      "name_zh": "远行鞋",
+      "name_en": "Boots of Travel",
+      "category": "mobility",
+      "purpose": "全图传送",
+      "coach_note": "后期机动装，全图带线支援、快速回线。带线型核心(敌法、编织者)与节奏型中单后期出。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "radiance",
+      "name_zh": "辉耀",
+      "name_en": "Radiance",
+      "category": "offensive",
+      "purpose": "灼烧AOE+闪避",
+      "coach_note": "灼烧光环持续伤害+闪避，后期刷钱与团战AOE装。适合站桩/肉核carry(幻影长矛手、幽鬼、恐怖利刃)。",
+      "core_for": [
+        1
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "assault-cuirass",
+      "name_zh": "强袭",
+      "name_en": "Assault Cuirass",
+      "category": "defensive",
+      "purpose": "攻速光环+减甲光环",
+      "coach_note": "攻速+减甲光环，团队物理增益+自身护甲。适合前排/物理核心(斯温、虚空、狼人)，减甲光环放大全队物理输出。",
+      "core_for": [
+        1,
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "bloodthorn",
+      "name_zh": "血棘",
+      "name_en": "Bloodthorn",
+      "category": "offensive",
+      "purpose": "沉默+暴击+必中",
+      "coach_note": "沉默+暴击+必中，克制法系与闪避(幻刺、虚空)。物理核心后期控场秒杀，对有闪避/法系核心价值极高。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "aether-lens",
+      "name_zh": "以太之镜",
+      "name_en": "Aether Lens",
+      "category": "magic",
+      "purpose": "施法距离+法伤",
+      "coach_note": "施法距离+法伤，法辅/法核提升poke与安全距离(莱恩、天怒、宙斯)。远程施法英雄的实用过渡装。",
+      "core_for": [
+        2,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "rod-of-atos",
+      "name_zh": "阿托斯之杖",
+      "name_en": "Rod of Atos",
+      "category": "utility",
+      "purpose": "远程减速控制",
+      "coach_note": "远程减速控制，先手/粘人。辅助与法核克制高机动英雄(风暴、女王、灰烬)，补足控制链。",
+      "core_for": [
+        2,
+        4
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "blade-mail",
+      "name_zh": "刃甲",
+      "name_en": "Blade Mail",
+      "category": "defensive",
+      "purpose": "反弹伤害",
+      "coach_note": "反弹伤害，肉盾克制物理爆发(幻刺、斯温)。前中期反打关键装，配合跳刀嘲讽等聚怪后开刃甲收益最大。",
+      "core_for": [
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "lotus-orb",
+      "name_zh": "莲花",
+      "name_en": "Lotus Orb",
+      "category": "defensive",
+      "purpose": "反弹指向技能+解控",
+      "coach_note": "反弹指向性技能+解控，保核心/克制单点控制(末日、莱恩变羊)。辅助/前排保人用。",
+      "core_for": [
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "refresher-orb",
+      "name_zh": "刷新球",
+      "name_en": "Refresher Orb",
+      "category": "utility",
+      "purpose": "刷新技能CD",
+      "coach_note": "刷新所有技能冷却，大招流后期装(谜团、巫医、潮汐、术士)。团战双大招往往决定胜负。",
+      "core_for": [
+        2,
+        3,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "power-treads",
+      "name_zh": "动力鞋",
+      "name_en": "Power Treads",
+      "category": "mobility",
+      "purpose": "攻速+属性切换",
+      "coach_note": "攻速与属性切换，物理核心/近战基础鞋。1-3号位前期几乎通用，属性切换影响补刀与生存。",
+      "core_for": [
+        1,
+        2,
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "euls-scepter",
+      "name_zh": "尤尔权杖",
+      "name_en": "Eul's Scepter",
+      "category": "utility",
+      "purpose": "吹风解控+位移",
+      "coach_note": "吹风解控+位移，辅助/法核解负面、躲技能、先手(吹起接控制)。克制持续伤害与追身英雄。",
+      "core_for": [
+        2,
+        4,
+        5
+      ],
+      "source": "stable"
+    }
+  ],
+  "builds": [
+    {
+      "position": 1,
+      "role_name": "核心(Carry)",
+      "core_items": [
+        "battle-fury",
+        "manta-style",
+        "black-king-bar",
+        "butterfly",
+        "satanic"
+      ],
+      "situational": [
+        "monkey-king-bar",
+        "abyssal-blade",
+        "eye-of-skadi",
+        "daedalus"
+      ],
+      "coach_note": "发育装→保命装(BKB)→输出装。核心思路：先保证刷钱速度，再补BKB保证团战输出，最后堆输出/克制装。对阵闪避出金箍棒、对阵回复出斯嘉蒂。"
+    },
+    {
+      "position": 2,
+      "role_name": "中单(Mid)",
+      "core_items": [
+        "bottle→(回蓝)",
+        "orchid-malevolence",
+        "black-king-bar",
+        "scythe-of-vyse"
+      ],
+      "situational": [
+        "ethereal-blade",
+        "linkens-sphere",
+        "blink-dagger"
+      ],
+      "coach_note": "前期节奏装→中期爆发/控制装。中单核心是带节奏游走，优先机动+爆发装，中期补控制(变羊/紫怨)克制关键英雄。"
+    },
+    {
+      "position": 3,
+      "role_name": "劣势路(Offlane)",
+      "core_items": [
+        "blink-dagger",
+        "heart-of-tarrasque",
+        "shivas-guard",
+        "pipe-of-insight"
+      ],
+      "situational": [
+        "crimson-guard",
+        "guardian-greaves"
+      ],
+      "coach_note": "先手/肉盾装。劣势路核心是团战前排与先手，优先跳刀开团，再补肉装/团队抗性(烟斗克法系、赤红甲克物理)。"
+    },
+    {
+      "position": 4,
+      "role_name": "软辅(Roam)",
+      "core_items": [
+        "blink-dagger",
+        "force-staff",
+        "glimmer-cape"
+      ],
+      "situational": [
+        "ghost-scepter",
+        "scythe-of-vyse"
+      ],
+      "coach_note": "游走先手装。软辅负责游走gank与视野，优先跳刀/机动装先手，再补保人装(推推/微光)。"
+    },
+    {
+      "position": 5,
+      "role_name": "硬辅(Support)",
+      "core_items": [
+        "magic-wand",
+        "force-staff",
+        "glimmer-cape",
+        "guardian-greaves"
+      ],
+      "situational": [
+        "ghost-scepter",
+        "scythe-of-vyse"
+      ],
+      "coach_note": "保人+视野装。硬辅核心是保护核心与团队装，优先推推/微光保人，再补卫士胫甲等团队装，经济用于眼/反隐。"
+    }
+  ]
+}

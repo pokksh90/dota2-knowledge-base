@@ -1,0 +1,3360 @@
+{
+  "meta": {
+    "title": "英雄与定位",
+    "description": "英雄主定位、分路、玩法要点。coach_note 为供 LLM 直接消费的自然语言要点。定位为稳定常识，具体数值类信息不在此处编造。",
+    "source_note": "position/lane/roles/coach_note 均为稳定领域常识(source=stable)；需版本核对的数值一律未填写。"
+  },
+  "heroes": [
+    {
+      "id": "anti-mage",
+      "name_zh": "敌法师",
+      "name_en": "Anti-Mage",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "后期",
+        "刷钱",
+        "机动",
+        "克法核",
+        "魔抗"
+      ],
+      "coach_note": "典型后期大核，靠高攻速与魔力燃烧打爆发，对法系阵容天然克制。前期弱、怕物理控制和爆发，需安全刷钱发育；成型后带线、切入秒脆皮。BKB/晕锤是关键装备。",
+      "strengths": [
+        "高机动刷钱快",
+        "法系克星",
+        "后期单挑强"
+      ],
+      "weaknesses": [
+        "前期极弱",
+        "怕物理硬控",
+        "发育周期长"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "phantom-assassin",
+      "name_zh": "幻影刺客",
+      "name_en": "Phantom Assassin",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "暴击",
+        "切入",
+        "物理爆发",
+        "闪避"
+      ],
+      "coach_note": "高暴击物理爆发核心，靠跳切入秒人。成型后一刀流威胁大，但脆、怕控制和金箍棒克制闪避。需要BKB保证输出环境。",
+      "strengths": [
+        "瞬间爆发高",
+        "切入强"
+      ],
+      "weaknesses": [
+        "脆",
+        "被金箍棒克制闪避",
+        "怕控制"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "juggernaut",
+      "name_zh": "主宰",
+      "name_en": "Juggernaut",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "剑刃风暴",
+        "无敌斩",
+        "续航",
+        "推进"
+      ],
+      "coach_note": "均衡型核心，剑刃风暴免控免魔、无敌斩爆发、自带治疗图腾续航，对线压制与推进都强。前期节奏点靠无敌斩，后期靠普攻。",
+      "strengths": [
+        "对线强",
+        "有续航",
+        "技能免疫"
+      ],
+      "weaknesses": [
+        "无敌斩可被躲/散",
+        "爆发依赖技能CD"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "faceless-void",
+      "name_zh": "虚空假面",
+      "name_en": "Faceless Void",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "团控",
+        "时间锁定",
+        "后期",
+        "闪避"
+      ],
+      "coach_note": "后期大核+团控，大招时间结界能定住敌方多人、创造团战窗口。自带闪避与时间锁定，成型后恐怖。怕被先手秒、依赖大招团战时机。",
+      "strengths": [
+        "团战控制顶级",
+        "后期极强",
+        "自带闪避"
+      ],
+      "weaknesses": [
+        "前期弱",
+        "大招放不好易坑队友",
+        "怕先手"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "spectre",
+      "name_zh": "幽鬼",
+      "name_en": "Spectre",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "全球支援",
+        "肉核",
+        "反伤",
+        "后期"
+      ],
+      "coach_note": "后期肉核，大招全图支援参团，被动反伤让切入者吃苦。前期刷得慢、需要发育，成型后极难处理。",
+      "strengths": [
+        "后期最肉之一",
+        "全图支援",
+        "反伤克制切入"
+      ],
+      "weaknesses": [
+        "前期刷得慢",
+        "怕沉默/控制",
+        "成型慢"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "medusa",
+      "name_zh": "美杜莎",
+      "name_en": "Medusa",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "站桩",
+        "分裂箭",
+        "护盾",
+        "团战"
+      ],
+      "coach_note": "站桩团战核心，法力护盾提供极高坦度、分裂箭打多目标。成型后团战输出爆炸，但腿短、怕被针对法力（如敌法、分身斧克制）。",
+      "strengths": [
+        "团战AOE强",
+        "坦度极高"
+      ],
+      "weaknesses": [
+        "机动差",
+        "怕耗蓝/法核",
+        "发育慢"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "wraith-king",
+      "name_zh": "冥魂大帝",
+      "name_en": "Wraith King",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "复活",
+        "吸血",
+        "站桩",
+        "肉核"
+      ],
+      "coach_note": "带复活的重击核心，自带吸血与骷髅兵推进，容错高。重生保证团战生存，站桩输出稳定，适合新手；怕被风筝、怕净化(克制复活)。",
+      "strengths": [
+        "容错高(复活)",
+        "自带吸血",
+        "推进"
+      ],
+      "weaknesses": [
+        "机动差",
+        "复活可被净化/克制",
+        "怕风筝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "lifestealer",
+      "name_zh": "噬魂鬼",
+      "name_en": "Lifestealer",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "吸血",
+        "魔免",
+        "切入",
+        "肉核"
+      ],
+      "coach_note": "肉核核心，自带吸血、狂暴魔免、可钻人/兵躲技能。克制肉盾(按百分比吸血)，但怕被风筝和物理高爆发。",
+      "strengths": [
+        "续航强",
+        "克制肉核",
+        "狂暴免控"
+      ],
+      "weaknesses": [
+        "手短",
+        "怕风筝",
+        "怕高爆发"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "terrorblade",
+      "name_zh": "恐怖利刃",
+      "name_en": "Terrorblade",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "幻象",
+        "变身",
+        "高攻",
+        "拆塔"
+      ],
+      "coach_note": "高攻速幻象核心，变身+幻象快速拆塔、团战爆发高。自带换血保命，但脆、怕AOE清幻象和法系爆发。",
+      "strengths": [
+        "推塔极快",
+        "变身爆发高"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕AOE",
+        "怕法系"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "luna",
+      "name_zh": "露娜",
+      "name_en": "Luna",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "月刃弹射",
+        "推进",
+        "AOE",
+        "光环"
+      ],
+      "coach_note": "推塔+团战AOE核心，月刃弹射打多目标、大招月蚀爆发。推进节奏快，但脆、机动差，依赖BKB站桩。",
+      "strengths": [
+        "推塔快",
+        "团战AOE",
+        "光环增益"
+      ],
+      "weaknesses": [
+        "脆",
+        "机动差",
+        "怕控制"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "slark",
+      "name_zh": "斯拉克",
+      "name_en": "Slark",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "切入",
+        "偷属性",
+        "解控",
+        "反打"
+      ],
+      "coach_note": "高机动切入核心，暗影之舞隐身解控、偷属性越打越强。擅长抓单、游走，成型快；怕硬控链和真视(眼/宝石)克制隐身。",
+      "strengths": [
+        "机动强",
+        "解控",
+        "持续成长"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕真视",
+        "怕硬控链"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "weaver",
+      "name_zh": "编织者",
+      "name_en": "Weaver",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "机动",
+        "闪避",
+        "穿越",
+        "骚扰"
+      ],
+      "coach_note": "高机动骚扰核心，缩地穿越、时间倒流保命、连击输出。难被击杀、带线灵活，但脆、怕硬控和真视。",
+      "strengths": [
+        "生存强",
+        "带线灵活"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕硬控",
+        "怕真视"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "drow-ranger",
+      "name_zh": "卓尔游侠",
+      "name_en": "Drow Ranger",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "远程",
+        "攻速光环",
+        "减速",
+        "拆塔"
+      ],
+      "coach_note": "远程物理核心，沉默+减速风筝、攻速光环增益全队远程。推塔快、后期输出高，但极脆、怕近身切入。",
+      "strengths": [
+        "射程远",
+        "光环增益",
+        "推塔"
+      ],
+      "weaknesses": [
+        "极脆",
+        "怕近身",
+        "机动差"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "sven",
+      "name_zh": "斯温",
+      "name_en": "Sven",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "高爆发",
+        "分裂",
+        "眩晕",
+        "肉核"
+      ],
+      "coach_note": "高爆发肉核，分裂攻击打多目标、战吼护甲、大招巨力挥舞团战清场。成型后一锤子团战爆炸，但怕被风筝和百分比伤。",
+      "strengths": [
+        "团战爆发高",
+        "肉",
+        "分裂清场"
+      ],
+      "weaknesses": [
+        "手短",
+        "怕风筝",
+        "怕百分比伤"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "naga-siren",
+      "name_zh": "娜迦海妖",
+      "name_en": "Naga Siren",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "幻象",
+        "睡眠",
+        "带线",
+        "拆塔"
+      ],
+      "coach_note": "幻象带线核心，多线刷钱、大招海妖之歌团控/撤退。经济压制力强，但怕AOE清幻象、输出依赖幻象成型。",
+      "strengths": [
+        "带线刷钱强",
+        "大招团控/撤退"
+      ],
+      "weaknesses": [
+        "怕AOE清幻象",
+        "前期弱"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "troll-warlord",
+      "name_zh": "巨魔战将",
+      "name_en": "Troll Warlord",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "攻速",
+        "双形态",
+        "控",
+        "单挑"
+      ],
+      "coach_note": "高攻速单挑核心，近/远程双形态切换、大招战吼免控爆发。单挑极强、拆塔快，但怕被风筝、依赖近身。",
+      "strengths": [
+        "单挑强",
+        "攻速高",
+        "免控大招"
+      ],
+      "weaknesses": [
+        "怕风筝",
+        "依赖近身"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "morphling",
+      "name_zh": "变体精灵",
+      "name_en": "Morphling",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "属性转换",
+        "复制",
+        "高爆发",
+        "难杀"
+      ],
+      "coach_note": "高操作核心，力量/敏捷转换、大招复制敌英雄。爆发高、难杀，但操作上限高、怕沉默和硬控打断属性转换。",
+      "strengths": [
+        "爆发高",
+        "生存强",
+        "复制灵活"
+      ],
+      "weaknesses": [
+        "操作难",
+        "怕沉默/硬控"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "storm-spirit",
+      "name_zh": "风暴之灵",
+      "name_en": "Storm Spirit",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "机动",
+        "爆发",
+        "切入",
+        "蓝耗"
+      ],
+      "coach_note": "高机动中单法核，大招闪电冲刺全图切入、靠蓝量续航爆发。抓单游走极强，但极度依赖蓝量，怕沉默和先手控制。",
+      "strengths": [
+        "机动顶级",
+        "爆发",
+        "游走强"
+      ],
+      "weaknesses": [
+        "吃蓝",
+        "怕沉默",
+        "怕先手"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "shadow-fiend",
+      "name_zh": "影魔",
+      "name_en": "Shadow Fiend",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "影压",
+        "AOE",
+        "攻速",
+        "脆"
+      ],
+      "coach_note": "高输出中单，影压三连爆发、魂收集增伤。刷钱快、后期输出高，但脆、怕gank和控制，前期补刀看手速。",
+      "strengths": [
+        "爆发高",
+        "刷钱快"
+      ],
+      "weaknesses": [
+        "极脆",
+        "怕gank",
+        "前期看手速"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "invoker",
+      "name_zh": "祈求者",
+      "name_en": "Invoker",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "多技能",
+        "控制",
+        "爆发",
+        "高操作"
+      ],
+      "coach_note": "高操作上限中单，三球组合出十多个技能，控制/爆发/支援全能。前期靠熟练度，后期团战控制链强，但操作难、怕沉默。",
+      "strengths": [
+        "技能池丰富",
+        "团战控制",
+        "高上限"
+      ],
+      "weaknesses": [
+        "操作极难",
+        "怕沉默",
+        "前期弱"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "templar-assassin",
+      "name_zh": "圣堂刺客",
+      "name_en": "Templar Assassin",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "折光",
+        "隐匿",
+        "物理爆发",
+        "陷阱"
+      ],
+      "coach_note": "物理爆发中单，折光护盾、隐匿暴击、陷阱视野控制。中期节奏点，靠游走秒人滚雪球；怕持续AOE破折光和真视。",
+      "strengths": [
+        "中期爆发",
+        "视野控制"
+      ],
+      "weaknesses": [
+        "怕持续AOE",
+        "怕真视",
+        "后期乏力"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "queen-of-pain",
+      "name_zh": "痛苦女王",
+      "name_en": "Queen of Pain",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "爆发",
+        "机动",
+        "AOE",
+        "游走"
+      ],
+      "coach_note": "高爆发机动中单，暗影突袭+闪烁切入、大招AOE。前期压制与游走极强，滚雪球型；后期输出递减，怕硬控。",
+      "strengths": [
+        "前期压制",
+        "爆发",
+        "游走"
+      ],
+      "weaknesses": [
+        "后期乏力",
+        "怕硬控"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "zeus",
+      "name_zh": "宙斯",
+      "name_en": "Zeus",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "法系爆发",
+        "真实视野",
+        "远程",
+        "脆"
+      ],
+      "coach_note": "法系爆发中单，雷电链远程poke、大招全图收割、技能暴露真视反隐。伤害稳定、克制隐身，但极脆、机动差。",
+      "strengths": [
+        "伤害稳定",
+        "反隐",
+        "全图大招"
+      ],
+      "weaknesses": [
+        "极脆",
+        "机动差"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "lina",
+      "name_zh": "莉娜",
+      "name_en": "Lina",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "法系爆发",
+        "攻速",
+        "眩晕",
+        "脆"
+      ],
+      "coach_note": "法系爆发中单，龙破斩+光击阵眩晕+大招单体爆发，后期可转物理攻速。节奏快、单杀强，但脆、怕切入。",
+      "strengths": [
+        "爆发高",
+        "单杀强",
+        "转物理灵活"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕切入"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "puck",
+      "name_zh": "帕克",
+      "name_en": "Puck",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "机动",
+        "控制",
+        "躲技能",
+        "高操作"
+      ],
+      "coach_note": "高机动控制中单，相位转移躲技能、幻象法球位移、大招梦境缠绕团控。风筝与开团能力顶级，但脆、操作要求高。",
+      "strengths": [
+        "机动躲技能",
+        "团控",
+        "开团"
+      ],
+      "weaknesses": [
+        "脆",
+        "操作难"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "ember-spirit",
+      "name_zh": "灰烬之灵",
+      "name_en": "Ember Spirit",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "机动",
+        "物理/法系双修",
+        "护盾",
+        "高操作"
+      ],
+      "coach_note": "高机动中单，火盾伤害、锁链控制、残影爆发，物理法系双修。带线骚扰与切入极强，高操作上限，怕沉默和硬控。",
+      "strengths": [
+        "机动",
+        "带线骚扰",
+        "双修灵活"
+      ],
+      "weaknesses": [
+        "怕沉默",
+        "操作难"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "void-spirit",
+      "name_zh": "虚无之灵",
+      "name_en": "Void Spirit",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "机动",
+        "法系爆发",
+        "控制",
+        "切入"
+      ],
+      "coach_note": "高机动法系中单，虚无步躲技能、共鸣脉冲+幻影一击爆发。切入秒脆皮强，但脆、吃蓝、怕沉默。",
+      "strengths": [
+        "机动",
+        "爆发",
+        "躲技能"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕沉默"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "sniper",
+      "name_zh": "狙击手",
+      "name_en": "Sniper",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "超远程",
+        "站桩",
+        "脆",
+        "消耗"
+      ],
+      "coach_note": "超远程站桩中单，靠射程风筝消耗、大招狙击收割。拆塔与守高强，但极脆、机动差，怕近身切入和gank。",
+      "strengths": [
+        "射程顶级",
+        "拆塔",
+        "消耗"
+      ],
+      "weaknesses": [
+        "极脆",
+        "怕近身"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "kunkka",
+      "name_zh": "昆卡",
+      "name_en": "Kunkka",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "团控",
+        "潮汐使者",
+        "船队",
+        "溅射"
+      ],
+      "coach_note": "团控+溅射中单，潮汐使者溅射、X标记控制、大招幽灵船团控+减伤。团战先手强、带线快，但怕机动和沉默。",
+      "strengths": [
+        "团控",
+        "溅射带线",
+        "减伤"
+      ],
+      "weaknesses": [
+        "怕机动",
+        "怕沉默"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "leshrac",
+      "name_zh": "拉席克",
+      "name_en": "Leshrac",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "法系AOE",
+        "推进",
+        "闪电风暴",
+        "肉法"
+      ],
+      "coach_note": "法系AOE推进中单，闪电风暴+撕裂大地清线推塔、大招脉冲新星持续AOE。推进压制强，但怕控制打断、怕法抗。",
+      "strengths": [
+        "推塔",
+        "团战AOE",
+        "清线"
+      ],
+      "weaknesses": [
+        "怕控制",
+        "怕法抗"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "pugna",
+      "name_zh": "帕格纳",
+      "name_en": "Pugna",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "法系",
+        "推进",
+        "克制施法",
+        "虚无"
+      ],
+      "coach_note": "法系推进中单，幽冥爆轰拆塔、虚无克制物理、衰老克制施法。推塔快、克制法系核心，但脆、怕魔抗和切入。",
+      "strengths": [
+        "推塔",
+        "克制施法/法核",
+        "虚无"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕切入"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "axe",
+      "name_zh": "斧王",
+      "name_en": "Axe",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "嘲讽",
+        "反击螺旋",
+        "斩首",
+        "肉"
+      ],
+      "coach_note": "劣势路肉盾，反击螺旋反伤清线、狂战士之吼嘲讽聚怪、大招斩首斩杀低血。克制近战普攻阵容，但怕远程风筝和百分比伤。",
+      "strengths": [
+        "肉",
+        "克制近战普攻",
+        "斩杀"
+      ],
+      "weaknesses": [
+        "怕远程风筝",
+        "怕百分比伤"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "centaur-warrunner",
+      "name_zh": "半人马战行者",
+      "name_en": "Centaur Warrunner",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "肉",
+        "群控",
+        "反伤",
+        "冲锋"
+      ],
+      "coach_note": "劣势路肉盾，马蹄践踏眩晕、双刃剑爆发、大招群体加速冲锋开团。团战前排+先手强，但机动一般、怕风筝。",
+      "strengths": [
+        "肉",
+        "群控",
+        "开团先手"
+      ],
+      "weaknesses": [
+        "机动一般",
+        "怕风筝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "tidehunter",
+      "name_zh": "潮汐猎人",
+      "name_en": "Tidehunter",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "团控",
+        "肉",
+        "海妖外壳",
+        "减伤"
+      ],
+      "coach_note": "团控肉盾，海妖外壳免控减伤、大招毁灭群体眩晕开团。团战决定性大招，前排扛伤强，但依赖大招时机、输出有限。",
+      "strengths": [
+        "团控大招",
+        "肉",
+        "免控"
+      ],
+      "weaknesses": [
+        "输出有限",
+        "依赖大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "slardar",
+      "name_zh": "斯拉达",
+      "name_en": "Slardar",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "眩晕",
+        "减甲",
+        "视野",
+        "肉"
+      ],
+      "coach_note": "劣势路控制+减甲，守卫冲刺提速、鱼人碎击眩晕、大招减甲+反隐。克制隐身与高甲英雄，但手短、怕风筝。",
+      "strengths": [
+        "减甲",
+        "反隐",
+        "控制"
+      ],
+      "weaknesses": [
+        "手短",
+        "怕风筝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "legion-commander",
+      "name_zh": "军团指挥官",
+      "name_en": "Legion Commander",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "单挑",
+        "决斗",
+        "滚雪球",
+        "吸血"
+      ],
+      "coach_note": "单挑滚雪球型，决斗强制单挑、胜利永久加攻，压制后越打越强。克制脆皮/依赖普攻的英雄，但怕被风筝和控制打断决斗。",
+      "strengths": [
+        "单挑强",
+        "滚雪球",
+        "压制"
+      ],
+      "weaknesses": [
+        "怕风筝",
+        "怕打断决斗"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "mars",
+      "name_zh": "玛尔斯",
+      "name_en": "Mars",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "肉",
+        "控制",
+        "格挡",
+        "团控"
+      ],
+      "coach_note": "劣势路肉盾控制，战神圣矛+战神之盾格挡、大招竞技场圈人团控。克制物理远程、开团强，但怕法系和控制。",
+      "strengths": [
+        "肉",
+        "团控",
+        "克制物理远程"
+      ],
+      "weaknesses": [
+        "怕法系",
+        "怕控制"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "bristleback",
+      "name_zh": "钢背兽",
+      "name_en": "Bristleback",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "肉",
+        "反伤",
+        "持续伤害",
+        "风筝"
+      ],
+      "coach_note": "极肉持续伤害型，背后减伤、刺针扫射叠加伤害、鼻涕减速。正面顶人越打越疼，但怕绕后打脸和百分比伤。",
+      "strengths": [
+        "极肉",
+        "持续伤害",
+        "减速"
+      ],
+      "weaknesses": [
+        "怕绕后",
+        "怕百分比伤"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "timbersaw",
+      "name_zh": "伐木机",
+      "name_en": "Timbersaw",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "肉",
+        "AOE",
+        "克制高甲",
+        "纯伤"
+      ],
+      "coach_note": "肉盾+克制高甲/肉核，锯齿飞轮、死亡旋风对高甲英雄打纯伤。团战搅局强、回复快，但怕法抗、怕控制、怕脆皮集火。",
+      "strengths": [
+        "克制高甲肉核",
+        "AOE",
+        "回复"
+      ],
+      "weaknesses": [
+        "怕法抗",
+        "怕控制"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "underlord",
+      "name_zh": "孽主",
+      "name_en": "Underlord",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "肉",
+        "团控",
+        "光环",
+        "传送"
+      ],
+      "coach_note": "肉盾+光环团控，火雨AOE、衰退光环减攻、大招深渊门全队传送。推线与团战增益强，但机动差、输出有限。",
+      "strengths": [
+        "肉",
+        "光环增益",
+        "团控",
+        "传送"
+      ],
+      "weaknesses": [
+        "机动差",
+        "输出有限"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "doom",
+      "name_zh": "末日使者",
+      "name_en": "Doom",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "末日",
+        "沉默",
+        "肉",
+        "克制核心"
+      ],
+      "coach_note": "克制型肉盾，大招末日使目标无法施法/用装备(单体硬克制)，吞噬野怪获得技能。克制依赖技能的核心，但吃大招、怕风筝。",
+      "strengths": [
+        "单体硬克制",
+        "沉默",
+        "肉"
+      ],
+      "weaknesses": [
+        "吃大招",
+        "怕风筝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "night-stalker",
+      "name_zh": "暗夜魔王",
+      "name_en": "Night Stalker",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "夜间",
+        "压制",
+        "视野",
+        "游走"
+      ],
+      "coach_note": "夜间强势型，夜晚移速/攻击大增、大招制造黑夜+飞行。夜晚抓人压制极强、视野控制，但白天弱势、依赖节奏。",
+      "strengths": [
+        "夜间压制",
+        "视野",
+        "游走"
+      ],
+      "weaknesses": [
+        "白天弱势",
+        "依赖节奏"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "beastmaster",
+      "name_zh": "兽王",
+      "name_en": "Beastmaster",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "召唤",
+        "光环",
+        "控制",
+        "视野"
+      ],
+      "coach_note": "召唤+光环型，野性之斧清线、野性召唤物+战鹰视野、大招原始咆哮单体控制。推塔与视野控制强，但依赖召唤物、怕AOE。",
+      "strengths": [
+        "推塔",
+        "视野",
+        "光环"
+      ],
+      "weaknesses": [
+        "依赖召唤物",
+        "怕AOE"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "dark-seer",
+      "name_zh": "黑暗贤者",
+      "name_en": "Dark Seer",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "加速",
+        "幻象",
+        "团控",
+        "真空"
+      ],
+      "coach_note": "团控+机动型，加速给队友、离子外壳清线、真空拉人+大招复制幻象。团战控制与拉扯强，但输出有限、依赖队友配合。",
+      "strengths": [
+        "团控",
+        "加速拉扯",
+        "幻象"
+      ],
+      "weaknesses": [
+        "输出有限",
+        "依赖配合"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "sand-king",
+      "name_zh": "沙王",
+      "name_en": "Sand King",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "团控",
+        "AOE",
+        "隐身",
+        "先手"
+      ],
+      "coach_note": "团控先手型，掘地穿刺眩晕+沙尘暴隐身+大招地震团控AOE。开团先手极强，但吃大招、怕真视和打断。",
+      "strengths": [
+        "团控先手",
+        "AOE",
+        "隐身"
+      ],
+      "weaknesses": [
+        "吃大招",
+        "怕真视"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "enigma",
+      "name_zh": "谜团",
+      "name_en": "Enigma",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "团控大招",
+        "召唤",
+        "黑洞",
+        "野区"
+      ],
+      "coach_note": "团控大招型，黑洞持续团控AOE、召唤小谜团清线推塔。黑洞放好决定团战，但吃大招、极怕被先手打断。",
+      "strengths": [
+        "团控大招顶级",
+        "推塔",
+        "野区发育"
+      ],
+      "weaknesses": [
+        "吃大招",
+        "怕先手打断"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "earth-spirit",
+      "name_zh": "大地之灵",
+      "name_en": "Earth Spirit",
+      "position": 4,
+      "lane": "roam",
+      "roles": [
+        "support",
+        "ganker"
+      ],
+      "tags": [
+        "控制",
+        "机动",
+        "位移",
+        "高操作"
+      ],
+      "coach_note": "高操作游走辅助，石像投掷+踢/拉石头提供多段控制与位移。游走gank能力顶级，但操作难、吃蓝、容错低。",
+      "strengths": [
+        "控制位移",
+        "游走强",
+        "先手"
+      ],
+      "weaknesses": [
+        "操作难",
+        "吃蓝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "tusk",
+      "name_zh": "巨牙海民",
+      "name_en": "Tusk",
+      "position": 4,
+      "lane": "roam",
+      "roles": [
+        "support",
+        "ganker"
+      ],
+      "tags": [
+        "控制",
+        "先手",
+        "护盾",
+        "滚雪球"
+      ],
+      "coach_note": "先手控制辅助，滚雪球带人切入、寒冰碎片封路、海象神拳眩晕爆发。前期gank与先手极强，但后期乏力、吃切入时机。",
+      "strengths": [
+        "先手控制",
+        "游走",
+        "封路"
+      ],
+      "weaknesses": [
+        "后期乏力",
+        "吃时机"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "mirana",
+      "name_zh": "米拉娜",
+      "name_en": "Mirana",
+      "position": 4,
+      "lane": "roam",
+      "roles": [
+        "support",
+        "ganker"
+      ],
+      "tags": [
+        "远程",
+        "眩晕",
+        "隐身",
+        "大招"
+      ],
+      "coach_note": "远程游走辅助，月神之箭远距离眩晕、大招月蚀群体隐身。先手箭与团队潜行强，但箭难命中、输出有限。",
+      "strengths": [
+        "先手眩晕",
+        "团队隐身",
+        "远程"
+      ],
+      "weaknesses": [
+        "技能难命中",
+        "输出有限"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "pudge",
+      "name_zh": "屠夫",
+      "name_en": "Pudge",
+      "position": 4,
+      "lane": "roam",
+      "roles": [
+        "support",
+        "ganker"
+      ],
+      "tags": [
+        "钩子",
+        "控制",
+        "肉",
+        "滚雪球"
+      ],
+      "coach_note": "钩子先手游走型，肉钩拉人、腐烂+腐肉堆积滚雪球、大招肢解控制。钩到关键人就能改变战局，但钩子难命中、依赖节奏。",
+      "strengths": [
+        "先手钩",
+        "滚雪球",
+        "肉"
+      ],
+      "weaknesses": [
+        "钩难命中",
+        "依赖节奏"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "rubick",
+      "name_zh": "拉比克",
+      "name_en": "Rubick",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "偷技能",
+        "控制",
+        "高上限",
+        "反制"
+      ],
+      "coach_note": "高上限辅助，隔空取物控制、大招窃取敌方技能反制。偷到关键大招能扭转团战，但脆、操作要求高、依赖对手技能池。",
+      "strengths": [
+        "偷技能反制",
+        "控制",
+        "高上限"
+      ],
+      "weaknesses": [
+        "脆",
+        "操作难"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "skywrath-mage",
+      "name_zh": "天怒法师",
+      "name_en": "Skywrath Mage",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "法系爆发",
+        "沉默",
+        "减速",
+        "脆"
+      ],
+      "coach_note": "法系爆发辅助，奥术闪电poke、沉默+减速、大招神秘闪光单体爆发。前期压制强、克制法核(沉默)，但极脆、怕切入。",
+      "strengths": [
+        "前期压制",
+        "沉默",
+        "爆发"
+      ],
+      "weaknesses": [
+        "极脆",
+        "怕切入"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "bounty-hunter",
+      "name_zh": "赏金猎人",
+      "name_en": "Bounty Hunter",
+      "position": 4,
+      "lane": "roam",
+      "roles": [
+        "support",
+        "ganker"
+      ],
+      "tags": [
+        "隐身",
+        "偷钱",
+        "视野",
+        "减速"
+      ],
+      "coach_note": "隐身游走型，暗影步隐身、投掷手里剑减速+偷钱、大招追踪提供额外金钱。前期骚扰压制与视野控制强，但脆、输出有限。",
+      "strengths": [
+        "隐身骚扰",
+        "视野",
+        "额外经济"
+      ],
+      "weaknesses": [
+        "脆",
+        "输出有限"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "spirit-breaker",
+      "name_zh": "裂魂人",
+      "name_en": "Spirit Breaker",
+      "position": 4,
+      "lane": "roam",
+      "roles": [
+        "support",
+        "ganker"
+      ],
+      "tags": [
+        "全图冲锋",
+        "控制",
+        "先手",
+        "肉"
+      ],
+      "coach_note": "全图先手游走型，大招全图冲锋撞晕、多段控制。前期抓人节奏极强，但冲锋可被预判/打断、依赖节奏。",
+      "strengths": [
+        "全图先手",
+        "控制",
+        "肉"
+      ],
+      "weaknesses": [
+        "冲锋可被断",
+        "依赖节奏"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "crystal-maiden",
+      "name_zh": "水晶室女",
+      "name_en": "Crystal Maiden",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "光环",
+        "控制",
+        "AOE",
+        "辅助"
+      ],
+      "coach_note": "经典硬辅，奥术光环全队回蓝、冰封禁制控制、大招冰冻AOE。前期压制与续航强，但脆、机动差、大招易被打断。",
+      "strengths": [
+        "全队回蓝",
+        "控制",
+        "前期压制"
+      ],
+      "weaknesses": [
+        "脆",
+        "机动差"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "dazzle",
+      "name_zh": "戴泽",
+      "name_en": "Dazzle",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "减甲",
+        "保人",
+        "薄葬"
+      ],
+      "coach_note": "治疗保人辅助，暗影波治疗、薄葬保队友不死、减甲增伤。保核心极强、克制物理，但输出有限、怕被切。",
+      "strengths": [
+        "治疗保人",
+        "薄葬免死",
+        "减甲"
+      ],
+      "weaknesses": [
+        "输出有限",
+        "怕被切"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "witch-doctor",
+      "name_zh": "巫医",
+      "name_en": "Witch Doctor",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "控制",
+        "爆发",
+        "大招"
+      ],
+      "coach_note": "治疗+控制辅助，麻痹药剂眩晕弹射、治疗图腾续航、大招死亡守卫爆发。前期压制与团战控制强，但大招需站桩易被打断。",
+      "strengths": [
+        "治疗",
+        "控制",
+        "大招爆发"
+      ],
+      "weaknesses": [
+        "大招站桩易断",
+        "脆"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "lich",
+      "name_zh": "巫妖",
+      "name_en": "Lich",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "护盾",
+        "AOE",
+        "克制近战",
+        "辅助"
+      ],
+      "coach_note": "保人辅助，冰霜护盾减伤、寒霜爆发AOE、大招连环霜冻弹射。克制近战/多目标阵容，保核心强，但脆、机动差。",
+      "strengths": [
+        "护盾减伤",
+        "AOE",
+        "克制近战"
+      ],
+      "weaknesses": [
+        "脆",
+        "机动差"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "disruptor",
+      "name_zh": "干扰者",
+      "name_en": "Disruptor",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "团控",
+        "限制位移",
+        "大招",
+        "辅助"
+      ],
+      "coach_note": "团控辅助，雷霆一击减速、恶念瞥视拉回敌人、大招静电场沉默+限制位移。克制机动/闪现英雄，但脆、吃大招。",
+      "strengths": [
+        "团控",
+        "克制机动",
+        "沉默"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "oracle",
+      "name_zh": "神谕者",
+      "name_en": "Oracle",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "净化",
+        "保人",
+        "高操作"
+      ],
+      "coach_note": "高操作保人辅助，命运赦免净化/免魔、虚妄之诺延迟治疗保命、净化驱散。保核心能力顶级，但操作难、脆。",
+      "strengths": [
+        "保人顶级",
+        "净化",
+        "治疗"
+      ],
+      "weaknesses": [
+        "操作难",
+        "脆"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "shadow-shaman",
+      "name_zh": "暗影萨满",
+      "name_en": "Shadow Shaman",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "控制",
+        "推塔",
+        "蛇棒",
+        "先手"
+      ],
+      "coach_note": "控制+推塔辅助，妖术变羊、枷锁控制、大招蛇棒拆塔。先手控制与推进极强，但脆、大招蛇棒易被清。",
+      "strengths": [
+        "控制",
+        "推塔",
+        "先手"
+      ],
+      "weaknesses": [
+        "脆",
+        "蛇棒易被清"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "io",
+      "name_zh": "艾欧",
+      "name_en": "Io",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "连接",
+        "传送",
+        "增益",
+        "保人"
+      ],
+      "coach_note": "连接增益辅助，羁绊连接队友回血回蓝、大招全图传送带人。与机动核心(如小鱼人/虚空)配合极强，但脆、吃配合。",
+      "strengths": [
+        "连接增益",
+        "全图传送",
+        "保核心"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃配合"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "treant-protector",
+      "name_zh": "树精卫士",
+      "name_en": "Treant Protector",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "护甲",
+        "隐身",
+        "团控"
+      ],
+      "coach_note": "保人辅助，活体护甲给建筑/队友回血加甲、自然之握团控、隐身视野。防守保核心强，但输出有限、怕AOE。",
+      "strengths": [
+        "治疗加甲",
+        "防守",
+        "视野"
+      ],
+      "weaknesses": [
+        "输出有限",
+        "怕AOE"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "vengeful-spirit",
+      "name_zh": "复仇之魂",
+      "name_en": "Vengeful Spirit",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "眩晕",
+        "换位",
+        "光环",
+        "辅助"
+      ],
+      "coach_note": "控制辅助，魔法箭眩晕、恐怖波动减甲、大招换位先手/保人。先手开团与保护核心都强，但脆、换位易送命。",
+      "strengths": [
+        "眩晕",
+        "换位先手",
+        "减甲"
+      ],
+      "weaknesses": [
+        "脆",
+        "换位风险"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "warlock",
+      "name_zh": "术士",
+      "name_en": "Warlock",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "团控",
+        "召唤",
+        "大招"
+      ],
+      "coach_note": "治疗+团控辅助，暗言术治疗、大招致命链接+混乱之祭群体眩晕+召唤地狱火。团战决定性强，但脆、吃大招。",
+      "strengths": [
+        "治疗",
+        "团控大招",
+        "召唤"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "bane",
+      "name_zh": "祸乱之源",
+      "name_en": "Bane",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "单体控制",
+        "克制核心",
+        "睡",
+        "大招"
+      ],
+      "coach_note": "单体控制辅助，噩梦睡眠、噬脑吸血、大招魔爪持续压制。克制单核、打断关键英雄，但脆、吃大招、怕被打断。",
+      "strengths": [
+        "单体控制",
+        "克制核心",
+        "睡"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "keeper-of-the-light",
+      "name_zh": "光之守卫",
+      "name_en": "Keeper of the Light",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "回蓝",
+        "清线",
+        "法系",
+        "大招"
+      ],
+      "coach_note": "回蓝清线辅助，查克拉回蓝、致盲之光推人+miss、大招灵魂形态提升法系。续航与防守强、克制物理，但脆、怕切入。",
+      "strengths": [
+        "回蓝",
+        "清线防守",
+        "克制物理"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕切入"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "grimstroke",
+      "name_zh": "墨客",
+      "name_en": "Grimstroke",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "团控",
+        "大招",
+        "沉默",
+        "辅助"
+      ],
+      "coach_note": "团控辅助，墨涌连接、沉默、大招灵魂绑定两人共享伤害。克制多核阵容，团战控制强，但脆、吃大招。",
+      "strengths": [
+        "团控",
+        "沉默",
+        "克制多核"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "phantom-lancer",
+      "name_zh": "幻影长矛手",
+      "name_en": "Phantom Lancer",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "幻象",
+        "消耗",
+        "机动",
+        "难杀"
+      ],
+      "coach_note": "幻象核心，靠大量幻象消耗与迷惑敌人、团战磨血。难被抓、带线灵活，但怕AOE清幻象和真视。",
+      "strengths": [
+        "幻象多难处理",
+        "带线灵活",
+        "磨血"
+      ],
+      "weaknesses": [
+        "怕AOE",
+        "怕真视",
+        "爆发低"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "chaos-knight",
+      "name_zh": "混沌骑士",
+      "name_en": "Chaos Knight",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "幻象",
+        "眩晕",
+        "肉",
+        "爆发"
+      ],
+      "coach_note": "肉核+幻象，混沌之箭眩晕、幻象爆发、被动吸血。单点爆发与抓人强，但幻象怕AOE、依赖大招。",
+      "strengths": [
+        "肉",
+        "眩晕",
+        "幻象爆发"
+      ],
+      "weaknesses": [
+        "幻象怕AOE",
+        "依赖大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "ursa",
+      "name_zh": "熊战士",
+      "name_en": "Ursa",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "高爆发",
+        "减速",
+        "肉山",
+        "站桩"
+      ],
+      "coach_note": "近战高爆发，叠加伤害+减速撕咬、大招减伤免控。克制肉核、刷肉山快，但手短、怕风筝。",
+      "strengths": [
+        "爆发极高",
+        "克制肉核",
+        "刷盾快"
+      ],
+      "weaknesses": [
+        "手短",
+        "怕风筝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "bloodseeker",
+      "name_zh": "血魔",
+      "name_en": "Bloodseeker",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "攻速",
+        "全球",
+        "反隐",
+        "沉默"
+      ],
+      "coach_note": "攻速型核心，血怒增伤、嗜血渴望感知低血敌人全图、血之祭祀沉默。克制低血/隐身，但脆、怕控制。",
+      "strengths": [
+        "攻速高",
+        "全图感知",
+        "反隐"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕控制"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "alchemist",
+      "name_zh": "炼金术士",
+      "name_en": "Alchemist",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "刷钱",
+        "大招",
+        "变身",
+        "不稳定化合物"
+      ],
+      "coach_note": "刷钱最快的核心，贪婪+大招炼金术变身高回血。经济压制力强、后期六神装快，但前期脆、怕被针对发育。",
+      "strengths": [
+        "刷钱极快",
+        "变身回血",
+        "经济压制"
+      ],
+      "weaknesses": [
+        "前期脆",
+        "怕被针对"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "gyrocopter",
+      "name_zh": "直升机",
+      "name_en": "Gyrocopter",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "AOE",
+        "火箭弹幕",
+        "导弹",
+        "团战"
+      ],
+      "coach_note": "AOE团战核心，火箭弹幕+追踪导弹+大招毁灭打击多目标输出。团战清场与清线强，但脆、依赖装备成型。",
+      "strengths": [
+        "团战AOE",
+        "清线快"
+      ],
+      "weaknesses": [
+        "脆",
+        "依赖成型"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "monkey-king",
+      "name_zh": "齐天大圣",
+      "name_en": "Monkey King",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "灵活",
+        "爆发",
+        "跳跃",
+        "隐身"
+      ],
+      "coach_note": "灵活型核心，棒击大地爆发、丛林之跃位移、分身迷惑、大招齐天大圣范围攻击。前期压制与机动强，但脆、怕硬控。",
+      "strengths": [
+        "机动",
+        "前期压制",
+        "爆发"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕硬控"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "riki",
+      "name_zh": "力丸",
+      "name_en": "Riki",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "隐身",
+        "背刺",
+        "沉默",
+        "切入"
+      ],
+      "coach_note": "隐身切入核心，背刺暴击、烟雾沉默、闪烁突袭。抓单与骚扰强，但怕真视、脆、输出依赖背刺。",
+      "strengths": [
+        "隐身骚扰",
+        "背刺爆发",
+        "沉默"
+      ],
+      "weaknesses": [
+        "怕真视",
+        "脆",
+        "依赖背刺"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "clinkz",
+      "name_zh": "克林克兹",
+      "name_en": "Clinkz",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "隐身",
+        "箭雨",
+        "推进",
+        "单点"
+      ],
+      "coach_note": "隐身远程核心，灼热之箭+扫射爆发、死亡契约推进。单点爆发与带线强，但脆、怕真视。",
+      "strengths": [
+        "单点爆发",
+        "隐身",
+        "推进"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕真视"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "arc-warden",
+      "name_zh": "天穹守望者",
+      "name_en": "Arc Warden",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "分身",
+        "磁场",
+        "全球",
+        "高操作"
+      ],
+      "coach_note": "分身型核心，大招创造完整分身、磁场保护、磁能闪光爆发。带线与多线压力强，但操作难、分身怕被秒。",
+      "strengths": [
+        "分身多线",
+        "带线",
+        "高上限"
+      ],
+      "weaknesses": [
+        "操作难",
+        "分身怕被秒"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "meepo",
+      "name_zh": "米波",
+      "name_en": "Meepo",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "多分身",
+        "网",
+        "掘地",
+        "高操作"
+      ],
+      "coach_note": "多分身核心，操控多个米波分线刷钱、网+掘地爆发。刷钱与爆发极强，但操作极难、怕AOE集火单只。",
+      "strengths": [
+        "刷钱爆发",
+        "多线",
+        "分推"
+      ],
+      "weaknesses": [
+        "操作极难",
+        "怕AOE集火"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "lone-druid",
+      "name_zh": "德鲁伊",
+      "name_en": "Lone Druid",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "召唤熊",
+        "推塔",
+        "肉",
+        "人熊双控"
+      ],
+      "coach_note": "召唤型核心，召唤熊灵+本体双控，熊抗塔推进。推塔与肉盾强，但怕爆发秒本体、操作复杂。",
+      "strengths": [
+        "推塔",
+        "肉",
+        "召唤"
+      ],
+      "weaknesses": [
+        "本体怕被秒",
+        "操作复杂"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "lycan",
+      "name_zh": "狼人",
+      "name_en": "Lycan",
+      "position": 1,
+      "lane": "safe",
+      "roles": [
+        "carry"
+      ],
+      "tags": [
+        "召唤",
+        "推进",
+        "变狼",
+        "光环"
+      ],
+      "coach_note": "召唤推进核心，召唤狼群+大招变狼加速爆发。推塔与分带极强，但依赖召唤物、怕AOE和真视。",
+      "strengths": [
+        "推塔",
+        "变狼爆发",
+        "召唤"
+      ],
+      "weaknesses": [
+        "依赖召唤物",
+        "怕AOE"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "viper",
+      "name_zh": "冥界亚龙",
+      "name_en": "Viper",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "毒",
+        "减速",
+        "反伤",
+        "持续伤害"
+      ],
+      "coach_note": "毒系持续伤害型，毒液减速、腐蚀皮肤反伤、大招毒龙强减速。克制近战/风筝，但机动差、输出慢热。",
+      "strengths": [
+        "持续伤害",
+        "减速",
+        "克制近战"
+      ],
+      "weaknesses": [
+        "机动差",
+        "输出慢热"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "batrider",
+      "name_zh": "蝙蝠骑士",
+      "name_en": "Batrider",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "拉人",
+        "先手",
+        "火焰",
+        "机动"
+      ],
+      "coach_note": "先手中单，火焰喷射+燃烧弹消耗、大招烈焰枷锁拉人先手。克制关键英雄，但脆、依赖先手时机。",
+      "strengths": [
+        "先手拉人",
+        "消耗",
+        "机动"
+      ],
+      "weaknesses": [
+        "脆",
+        "依赖先手"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "windranger",
+      "name_zh": "风行者",
+      "name_en": "Windranger",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "强力击",
+        "风步",
+        "束缚",
+        "大招"
+      ],
+      "coach_note": "灵活远程，强力击poke、风步闪避机动、束缚控制、大招连射爆发。可物理可法系、灵活，但脆、依赖操作。",
+      "strengths": [
+        "灵活",
+        "爆发",
+        "闪避"
+      ],
+      "weaknesses": [
+        "脆",
+        "依赖操作"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "outworld-destroyer",
+      "name_zh": "殁境神蚀者",
+      "name_en": "Outworld Destroyer",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "智力",
+        "法系爆发",
+        "囚禁",
+        "大招"
+      ],
+      "coach_note": "智力型法核，星体囚禁控人、奥术弹爆发、大招智力压制AOE。克制力量/低智英雄，但脆、怕沉默。",
+      "strengths": [
+        "法系爆发",
+        "克制低智",
+        "大招AOE"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕沉默"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "death-prophet",
+      "name_zh": "死亡先知",
+      "name_en": "Death Prophet",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "推进",
+        "灵魂",
+        "回血",
+        "沉默"
+      ],
+      "coach_note": "推进型法核，恶灵推进、沉默、灵魂虹吸回血。推塔与团战持续输出强，但脆、怕爆发。",
+      "strengths": [
+        "推塔",
+        "持续输出",
+        "回血"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕爆发"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "natures-prophet",
+      "name_zh": "先知",
+      "name_en": "Nature's Prophet",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid",
+        "roam"
+      ],
+      "tags": [
+        "全图",
+        "召唤",
+        "传送",
+        "推进"
+      ],
+      "coach_note": "全图支援型，传送全图带线、召唤树灵、自然之怒全图AOE。带线分推与支援极强，但脆、怕爆发。",
+      "strengths": [
+        "全图支援",
+        "带线分推",
+        "召唤"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕爆发"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "visage",
+      "name_zh": "维萨吉",
+      "name_en": "Visage",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "召唤",
+        "控制",
+        "爆发",
+        "推进"
+      ],
+      "coach_note": "召唤型法核，召唤魔宠、灵魂假设控制、大招召唤石像鬼。爆发与推进强，但操作复杂、召唤物怕AOE。",
+      "strengths": [
+        "爆发",
+        "推进",
+        "召唤"
+      ],
+      "weaknesses": [
+        "操作复杂",
+        "召唤物怕AOE"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "broodmother",
+      "name_zh": "育母蜘蛛",
+      "name_en": "Broodmother",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "推进",
+        "蜘蛛",
+        "隐身",
+        "压制"
+      ],
+      "coach_note": "推进压制型，召唤蜘蛛群推塔、蛛网隐身加速。单线压制与推塔极强，但怕AOE清蜘蛛、依赖单线。",
+      "strengths": [
+        "推塔",
+        "单线压制",
+        "隐身"
+      ],
+      "weaknesses": [
+        "怕AOE清蜘蛛",
+        "依赖单线"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "tinker",
+      "name_zh": "修补匠",
+      "name_en": "Tinker",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "全图",
+        "刷新",
+        "导弹",
+        "高操作"
+      ],
+      "coach_note": "全图支援法核，激光+导弹爆发、大招刷新技能无限释放。全图压制与带线强，但操作难、脆、怕沉默。",
+      "strengths": [
+        "全图压制",
+        "刷新爆发",
+        "带线"
+      ],
+      "weaknesses": [
+        "操作难",
+        "脆",
+        "怕沉默"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "huskar",
+      "name_zh": "哈斯卡",
+      "name_en": "Huskar",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "低血爆发",
+        "吸血",
+        "免控",
+        "克制法系"
+      ],
+      "coach_note": "低血爆发型，狂血低血加速、沸血之矛持续伤害、大招牺牲越打越强。克制法系与持续战，但怕纯粹伤害与治疗封杀。",
+      "strengths": [
+        "低血爆发",
+        "克制法系",
+        "免控"
+      ],
+      "weaknesses": [
+        "怕纯粹伤害",
+        "怕治疗封杀"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "necrophos",
+      "name_zh": "瘟疫法师",
+      "name_en": "Necrophos",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid"
+      ],
+      "tags": [
+        "治疗",
+        "百分比",
+        "斩杀",
+        "肉法"
+      ],
+      "coach_note": "治疗型法核，死亡脉冲治疗+AOE、被动回血、大招斩杀低血并加复活时间。克制肉核、持续作战强，但机动差、怕爆发。",
+      "strengths": [
+        "治疗",
+        "克制肉核",
+        "斩杀"
+      ],
+      "weaknesses": [
+        "机动差",
+        "怕爆发"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "magnus",
+      "name_zh": "马格纳斯",
+      "name_en": "Magnus",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "团控",
+        "buff",
+        "先手",
+        "反转"
+      ],
+      "coach_note": "团控+buff型，冲击波清线、反转极性聚怪、大招反转聚敌、buff增伤。开团与配合物理核心极强，但依赖先手时机。",
+      "strengths": [
+        "团控",
+        "buff增伤",
+        "开团"
+      ],
+      "weaknesses": [
+        "依赖先手",
+        "输出有限"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "tiny",
+      "name_zh": "小小",
+      "name_en": "Tiny",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid",
+        "offlane"
+      ],
+      "tags": [
+        "投掷",
+        "爆发",
+        "推塔",
+        "肉"
+      ],
+      "coach_note": "高爆发+推塔型，投掷+山崩连招、大招越变越大加攻减攻速。爆发与拆塔极强，但攻速慢、怕风筝。",
+      "strengths": [
+        "爆发",
+        "推塔",
+        "肉"
+      ],
+      "weaknesses": [
+        "攻速慢",
+        "怕风筝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "earthshaker",
+      "name_zh": "撼地者",
+      "name_en": "Earthshaker",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "团控",
+        "沟壑",
+        "大招",
+        "先手"
+      ],
+      "coach_note": "团控辅助，沟壑封路、余震眩晕、大招回音击团控爆发。开团与封路极强，但脆、吃大招、依赖跳刀。",
+      "strengths": [
+        "团控",
+        "封路",
+        "爆发"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "razor",
+      "name_zh": "剃刀",
+      "name_en": "Razor",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "偷攻击",
+        "减速",
+        "持续伤害",
+        "压制"
+      ],
+      "coach_note": "压制型，静电连接偷攻击、等离子场减速+AOE、大招风暴持续伤害。克制站桩物理核心，但脆、怕控制。",
+      "strengths": [
+        "偷攻击",
+        "克制物理",
+        "持续伤害"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕控制"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "venomancer",
+      "name_zh": "剧毒术士",
+      "name_en": "Venomancer",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane",
+        "support"
+      ],
+      "tags": [
+        "毒",
+        "持续伤害",
+        "减速",
+        "视野"
+      ],
+      "coach_note": "持续毒系，毒刺减速、瘟疫守卫视野+伤害、大招剧毒新星AOE。磨血与视野控制强，但脆、输出慢热。",
+      "strengths": [
+        "持续伤害",
+        "视野",
+        "减速"
+      ],
+      "weaknesses": [
+        "脆",
+        "输出慢热"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "abaddon",
+      "name_zh": "亚巴顿",
+      "name_en": "Abaddon",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane",
+        "support"
+      ],
+      "tags": [
+        "护盾",
+        "治疗",
+        "解控",
+        "容错"
+      ],
+      "coach_note": "护盾治疗型，无光之盾护盾+治疗、缠绕沉默、大招借魂自动触发回血。保人解控极强、容错高，但输出有限。",
+      "strengths": [
+        "护盾治疗",
+        "解控",
+        "容错高"
+      ],
+      "weaknesses": [
+        "输出有限",
+        "机动差"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "undying",
+      "name_zh": "不朽尸王",
+      "name_en": "Undying",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane",
+        "support"
+      ],
+      "tags": [
+        "回复",
+        "偷力",
+        "僵尸",
+        "肉"
+      ],
+      "coach_note": "回复搅局型，腐朽偷力、灵魂之墓治疗、大招变身。团战搅局与持续回复强，但输出有限、怕风筝。",
+      "strengths": [
+        "回复",
+        "偷力",
+        "搅局"
+      ],
+      "weaknesses": [
+        "输出有限",
+        "怕风筝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "pangolier",
+      "name_zh": "石鳞剑士",
+      "name_en": "Pangolier",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "机动",
+        "群控",
+        "护甲",
+        "大招"
+      ],
+      "coach_note": "高机动控制型，跃入敌阵、护盾减伤、大招滚球群控。切入搅局与团控强，但脆、依赖大招。",
+      "strengths": [
+        "机动",
+        "群控",
+        "切入"
+      ],
+      "weaknesses": [
+        "脆",
+        "依赖大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "snapfire",
+      "name_zh": "电炎绝手",
+      "name_en": "Snapfire",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane",
+        "support"
+      ],
+      "tags": [
+        "爆发",
+        "减速",
+        "大招",
+        "远程"
+      ],
+      "coach_note": "远程爆发型，爆裂射击爆发、糖豆减速、大招加农炮远程AOE。前期压制与团战输出强，但脆、技能吃命中。",
+      "strengths": [
+        "爆发",
+        "远程",
+        "减速"
+      ],
+      "weaknesses": [
+        "脆",
+        "技能吃命中"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "primal-beast",
+      "name_zh": "原始兽",
+      "name_en": "Primal Beast",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "冲锋",
+        "控制",
+        "肉",
+        "爆发"
+      ],
+      "coach_note": "冲锋控制型，冲刺撞人、抓取控制、大招群体震荡。先手开团与肉盾强，但吃大招、怕风筝。",
+      "strengths": [
+        "先手冲锋",
+        "控制",
+        "肉"
+      ],
+      "weaknesses": [
+        "吃大招",
+        "怕风筝"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "dawnbreaker",
+      "name_zh": "破晓晨星",
+      "name_en": "Dawnbreaker",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane",
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "全图",
+        "AOE",
+        "肉"
+      ],
+      "coach_note": "治疗+全图支援型，晨星锤AOE、治疗光环、大招全图坠落支援。团战治疗与支援强，但脆、依赖大招时机。",
+      "strengths": [
+        "治疗",
+        "全图支援",
+        "AOE"
+      ],
+      "weaknesses": [
+        "脆",
+        "依赖大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "dragon-knight",
+      "name_zh": "龙骑士",
+      "name_en": "Dragon Knight",
+      "position": 2,
+      "lane": "mid",
+      "roles": [
+        "mid",
+        "offlane"
+      ],
+      "tags": [
+        "变身",
+        "肉",
+        "推塔",
+        "火焰"
+      ],
+      "coach_note": "肉盾变身型，喷火+眩晕+大招变龙远程AOE。推塔与肉盾强、节奏稳，但机动差、爆发一般。",
+      "strengths": [
+        "肉",
+        "推塔",
+        "变身"
+      ],
+      "weaknesses": [
+        "机动差",
+        "爆发一般"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "ogre-magi",
+      "name_zh": "食人魔魔法师",
+      "name_en": "Ogre Magi",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "buff",
+        "眩晕",
+        "多重施法",
+        "肉辅"
+      ],
+      "coach_note": "肉辅，火焰爆轰眩晕、嗜血术buff攻速、大招多重施法。buff与骚扰强、脸好爆发高，但输出不稳定、怕沉默。",
+      "strengths": [
+        "肉",
+        "buff",
+        "眩晕"
+      ],
+      "weaknesses": [
+        "输出不稳定",
+        "怕沉默"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "ancient-apparition",
+      "name_zh": "远古冰魂",
+      "name_en": "Ancient Apparition",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "封治疗",
+        "减速",
+        "全球大招",
+        "辅助"
+      ],
+      "coach_note": "克制治疗辅助，冰霜封杀治疗/回复、大招全球冰爆。克制治疗阵容、大招收割，但脆、机动差。",
+      "strengths": [
+        "封治疗",
+        "全球大招",
+        "克制回复"
+      ],
+      "weaknesses": [
+        "脆",
+        "机动差"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "chen",
+      "name_zh": "陈",
+      "name_en": "Chen",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "召唤",
+        "治疗",
+        "全球",
+        "推进"
+      ],
+      "coach_note": "召唤治疗辅助，召唤野怪、神圣劝化、大招全球治疗。推进与治疗强，但操作复杂、召唤物怕AOE。",
+      "strengths": [
+        "召唤",
+        "全球治疗",
+        "推进"
+      ],
+      "weaknesses": [
+        "操作复杂",
+        "召唤物怕AOE"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "enchantress",
+      "name_zh": "魅惑魔女",
+      "name_en": "Enchantress",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "魅惑",
+        "治疗",
+        "减速",
+        "推进"
+      ],
+      "coach_note": "魅惑治疗辅助，魅惑控制、推进召唤、治疗。克制近战普攻、推进强，但脆、怕法系。",
+      "strengths": [
+        "魅惑",
+        "治疗",
+        "克制近战"
+      ],
+      "weaknesses": [
+        "脆",
+        "怕法系"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "omniknight",
+      "name_zh": "全能骑士",
+      "name_en": "Omniknight",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "护甲",
+        "免控",
+        "保人"
+      ],
+      "coach_note": "治疗保人辅助，净化治疗、守护天使免控+免物理、祝福护甲。保核心极强、克制物理，但机动差、输出有限。",
+      "strengths": [
+        "治疗",
+        "免控",
+        "克制物理"
+      ],
+      "weaknesses": [
+        "机动差",
+        "输出有限"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "jakiro",
+      "name_zh": "杰奇洛",
+      "name_en": "Jakiro",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "AOE",
+        "控制",
+        "减速",
+        "双头"
+      ],
+      "coach_note": "AOE控制辅助，冰霜+火焰双系、冰墙封路、大招冰火AOE。推塔与团战控制强，但脆、技能慢热。",
+      "strengths": [
+        "AOE",
+        "控制",
+        "推塔"
+      ],
+      "weaknesses": [
+        "脆",
+        "技能慢热"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "winter-wyvern",
+      "name_zh": "寒冬飞龙",
+      "name_en": "Winter Wyvern",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "控制",
+        "保人",
+        "大招"
+      ],
+      "coach_note": "保人辅助，寒冬拥抱治疗+免疫、极寒诅咒控制、大招寒冬诅咒团控。保人反打强，但脆、吃大招。",
+      "strengths": [
+        "保人",
+        "治疗",
+        "团控"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "phoenix",
+      "name_zh": "凤凰",
+      "name_en": "Phoenix",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "治疗",
+        "AOE",
+        "重生",
+        "大招"
+      ],
+      "coach_note": "治疗+团战型，火焰精灵治疗、烈火精灵减速、大招超新星重生+团控。团战搅局与治疗强，但脆、吃大招。",
+      "strengths": [
+        "治疗",
+        "团战",
+        "重生"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "marci",
+      "name_zh": "玛西",
+      "name_en": "Marci",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "机动",
+        "爆发",
+        "位移",
+        "辅助"
+      ],
+      "coach_note": "机动辅助，位移支援、抓取控制、爆发连招。游走gank与保核心强，但脆、吃操作。",
+      "strengths": [
+        "机动",
+        "爆发",
+        "游走"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃操作"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "lion",
+      "name_zh": "莱恩",
+      "name_en": "Lion",
+      "position": 5,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "控制",
+        "抽蓝",
+        "单体爆发",
+        "克法核"
+      ],
+      "coach_note": "控制+单体爆发硬辅，变羊+穿刺多段控制、抽蓝克制法核、大招死亡之指单体秒杀。克制依赖蓝量的法核，但脆、机动差。",
+      "strengths": [
+        "控制多",
+        "抽蓝克法核",
+        "单体爆发"
+      ],
+      "weaknesses": [
+        "脆",
+        "机动差"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "silencer",
+      "name_zh": "沉默术士",
+      "name_en": "Silencer",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "沉默",
+        "偷智力",
+        "全球大招",
+        "克法核"
+      ],
+      "coach_note": "沉默克法核辅助，全球大招沉默、被动偷智力、法球增伤。克制依赖技能的法系阵容，但脆、机动差。",
+      "strengths": [
+        "沉默",
+        "克法核",
+        "全球大招"
+      ],
+      "weaknesses": [
+        "脆",
+        "机动差"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "brewmaster",
+      "name_zh": "熊猫酒仙",
+      "name_en": "Brewmaster",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane"
+      ],
+      "tags": [
+        "分身",
+        "团控",
+        "酒",
+        "搅局"
+      ],
+      "coach_note": "团控搅局型，醉酒迷雾、雷击、大招分身三个熊猫各司其职。团战搅局与控制强，但脆、依赖大招。",
+      "strengths": [
+        "团控",
+        "分身搅局",
+        "先手"
+      ],
+      "weaknesses": [
+        "脆",
+        "依赖大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "clockwerk",
+      "name_zh": "发条技师",
+      "name_en": "Clockwerk",
+      "position": 3,
+      "lane": "off",
+      "roles": [
+        "offlane",
+        "support"
+      ],
+      "tags": [
+        "钩子",
+        "先手",
+        "导弹",
+        "齿轮"
+      ],
+      "coach_note": "先手钩子型，钩爪先手、导弹侦查+爆发、齿轮围人。单点先手与视野强，但脆、吃钩子命中。",
+      "strengths": [
+        "先手钩",
+        "视野",
+        "爆发"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃命中"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "shadow-demon",
+      "name_zh": "暗影恶魔",
+      "name_en": "Shadow Demon",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "干扰",
+        "净化",
+        "分身",
+        "辅助"
+      ],
+      "coach_note": "干扰辅助，干扰禁锢、暗影毒爆发、大招恶魔净化+制造分身。克制buff与依赖大招的英雄，但脆、吃操作。",
+      "strengths": [
+        "干扰",
+        "净化",
+        "分身"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃操作"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "elder-titan",
+      "name_zh": "远古泰坦",
+      "name_en": "Elder Titan",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "减甲",
+        "团控",
+        "光环",
+        "先手"
+      ],
+      "coach_note": "团控减甲辅助，自然秩序减甲光环、灵魂回复、大招裂地团控。减甲增益物理阵容、团控强，但脆、吃大招。",
+      "strengths": [
+        "减甲",
+        "团控",
+        "增益物理"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃大招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "dark-willow",
+      "name_zh": "邪影芳灵",
+      "name_en": "Dark Willow",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "控制",
+        "爆发",
+        "无敌",
+        "辅助"
+      ],
+      "coach_note": "控制爆发辅助，花环控制、荆棘缠绕、大招爆发+短暂无敌。单点控制与爆发强，但脆、吃技能连招。",
+      "strengths": [
+        "控制",
+        "爆发",
+        "无敌"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃连招"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "hoodwink",
+      "name_zh": "兜帽客",
+      "name_en": "Hoodwink",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "远程",
+        "眩晕",
+        "机动",
+        "辅助"
+      ],
+      "coach_note": "远程控制辅助，橡果弹射、荆棘眩晕、隐身机动、大招远程狙击。远程消耗与眩晕强，但脆、吃命中。",
+      "strengths": [
+        "远程眩晕",
+        "机动",
+        "消耗"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃命中"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "techies",
+      "name_zh": "工程师",
+      "name_en": "Techies",
+      "position": 4,
+      "lane": "support",
+      "roles": [
+        "support"
+      ],
+      "tags": [
+        "地雷",
+        "远程",
+        "爆发",
+        "守高"
+      ],
+      "coach_note": "地雷爆发型，埋雷、远程爆破、大招远程高爆发。守高与阵地战强，但脆、吃预判。",
+      "strengths": [
+        "地雷爆发",
+        "守高",
+        "远程"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃预判"
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "nyx-assassin",
+      "name_zh": "夜魔刺客",
+      "name_en": "Nyx Assassin",
+      "position": 4,
+      "lane": "roam",
+      "roles": [
+        "support",
+        "ganker"
+      ],
+      "tags": [
+        "隐身",
+        "反刺",
+        "克制法核",
+        "爆发"
+      ],
+      "coach_note": "隐身反刺游走型，隐身切入、尖刺外壳反弹控制、大招隐身爆发。克制法核与依赖技能英雄，但脆、吃切入。",
+      "strengths": [
+        "反刺",
+        "克制法核",
+        "隐身切入"
+      ],
+      "weaknesses": [
+        "脆",
+        "吃切入"
+      ],
+      "source": "stable"
+    }
+  ]
+}
