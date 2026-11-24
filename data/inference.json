@@ -8,7 +8,10 @@
     {
       "id": "armor-linear-not-diminishing",
       "title": "护甲收益是线性的，不存在「堆高了递减」",
-      "premises": ["armor-formula", "effective-hp"],
+      "premises": [
+        "armor-formula",
+        "effective-hp"
+      ],
       "derivation": "DR=0.06A/(1+0.06A) 代入 EHP=HP/(1-DR)，化简得 EHP=HP×(1+0.06A)。对 A 求导，d(EHP)/dA = 0.06·HP 为常数。",
       "conclusion": "每点护甲恒等于增加 6% 基础生命的有效物理生命，收益线性、不递减；所谓「递减」是错觉——因为减伤率的绝对值增长放缓，但换算成有效生命后是恒定线性。",
       "application": "肉盾堆护甲到后期依然划算；不要被「护甲递减」的说法误导而放弃堆甲。这是典型的「网上常见但可被数学证伪」的误区。",
@@ -17,7 +20,9 @@
     {
       "id": "minus-armor-linear-scaling",
       "title": "减甲装的收益随目标护甲线性增长",
-      "premises": ["armor-formula"],
+      "premises": [
+        "armor-formula"
+      ],
       "derivation": "由 EHP=HP×(1+0.06A)，减甲 ΔA 造成的有效生命损失为 0.06·ΔA·HP，与目标当前护甲无关、与目标血量成正比。",
       "conclusion": "减甲（如黯灭）对高血量目标的收益更大，与目标护甲高低无关；「减甲克高甲」是误解，真正正确的是「减甲克高血」。",
       "application": "对阵高血量肉核（而非单纯高甲）时，减甲/纯粹伤害收益最高。这是对「减甲克护甲」这一常见说法的修正。",
@@ -26,7 +31,9 @@
     {
       "id": "magic-resist-multiplicative",
       "title": "魔抗叠加递减，堆魔抗不如堆血量划算",
-      "premises": ["magic-resistance"],
+      "premises": [
+        "magic-resistance"
+      ],
       "derivation": "魔抗乘法叠加：多件魔抗装后，每件带来的有效魔法生命增量递减（因为基数被前面的减免乘掉了）。",
       "conclusion": "魔抗装堆得越多，单件收益越低；面对法系爆发，堆血量（提升所有类型EHP）往往比单堆魔抗更划算。",
       "application": "法核输出高时，优先堆血量/出团队魔抗（烟斗给全队一次覆盖）而非单人叠魔抗。",
@@ -35,7 +42,11 @@
     {
       "id": "counter-essence-damage-type",
       "title": "克制关系的本质是「伤害类型错配」而非玄学",
-      "premises": ["damage-types", "armor-formula", "magic-resistance"],
+      "premises": [
+        "damage-types",
+        "armor-formula",
+        "magic-resistance"
+      ],
       "derivation": "若我方的输出类型恰好绕过对方的主要防御（对方堆护甲→我用魔法/纯粹；对方堆魔抗→我用物理），则同等资源投入下我方输出效率更高。",
       "conclusion": "绝大多数「谁克谁」都能归结为伤害类型与防御类型的错配，是可解释、可预测的机制，而非经验玄学。",
       "application": "判断克制时，先问「对方防御是什么类型（甲/魔抗/闪避），我用什么输出能绕过它」，比背攻略表更可靠、更可迁移。",
@@ -44,7 +55,9 @@
     {
       "id": "attack-speed-attack-damage-balance",
       "title": "输出应平衡攻力与攻速，而非单堆一项",
-      "premises": ["attack-speed"],
+      "premises": [
+        "attack-speed"
+      ],
       "derivation": "DPS = 攻力 × (1+IAS)/BAT。攻力与攻速对 DPS 是乘积关系，同资源下两者越接近、乘积越大（给定和时）。",
       "conclusion": "单堆攻力或单堆攻速都会浪费资源，最优是让「攻力」与「攻速乘数」保持平衡；但暴击/特效（如重击、减速）会使攻速边际收益更高。",
       "application": "带重击/特效的核心（虚空、巨魔）优先攻速；纯面板核心（斯温）需平衡，或靠暴击放大攻力。",
@@ -53,7 +66,10 @@
     {
       "id": "ehp-balance-hp-armor",
       "title": "「堆肉」应优化 EHP，血量与护甲存在配比",
-      "premises": ["effective-hp", "armor-formula"],
+      "premises": [
+        "effective-hp",
+        "armor-formula"
+      ],
       "derivation": "EHP=HP×(1+0.06A)。HP 与 (1+0.06A) 是乘积关系，同经济下二者平衡时 EHP 最大（类同「矩形面积最大时边长相等」）。",
       "conclusion": "纯堆血或纯堆甲都非最优，肉盾应让血量与护甲「乘积最大化」，即血量较高时补甲、护甲较高时补血。",
       "application": "肉盾出装时，先判断当前是「血多甲少」还是「甲多血少」再决定补甲装（希瓦/赤红甲）还是补血装（恐鳌之心）。",
@@ -62,7 +78,10 @@
     {
       "id": "snowball-expand-vs-interrupt",
       "title": "优势方应主动扩张，劣势方必须打断循环",
-      "premises": ["snowball-feedback", "map-control"],
+      "premises": [
+        "snowball-feedback",
+        "map-control"
+      ],
       "derivation": "滚雪球是正反馈循环，优势方每拖一分钟循环就多转一圈、差距拉大；劣势方若不主动打断（抓单/偷盾/守高），差距只会随时间扩大。",
       "conclusion": "优势方的正确策略是「主动扩大地图控制加速循环」，劣势方是「制造变数打断循环」，被动发育对劣势方是慢性死亡。",
       "application": "顺风别龟缩刷钱，应推塔控图；逆风别无脑刷，应找抓单/偷盾/拖后期翻盘点。",
@@ -71,7 +90,10 @@
     {
       "id": "deny-hidden-exp-value",
       "title": "反补的隐性价值 = 剥夺对手经验，不亚于自己补刀",
-      "premises": ["experience-level", "economy-sources"],
+      "premises": [
+        "experience-level",
+        "economy-sources"
+      ],
       "derivation": "反补让对方少经验（等级落后→技能弱→战力差），自己补刀得金钱；两者都是「拉大差距」的杠杆，只是作用维度不同（经验 vs 金钱）。",
       "conclusion": "对线期反补与正补同等重要，反补的经济学价值体现在「压制对手等级」这一隐性收益上。",
       "application": "辅助帮核心反补、核心自己反补，都是低成本高收益的压制手段，尤其在经验敏感的中路。",
@@ -80,7 +102,10 @@
     {
       "id": "aegis-risk-cost-reducer",
       "title": "不朽盾的本质是「降低团战风险成本」，持盾应更激进",
-      "premises": ["roshan-value", "positioning-economy"],
+      "premises": [
+        "roshan-value",
+        "positioning-economy"
+      ],
       "derivation": "盾提供一次复活，等价于「一次失误不致命」。风险成本降低后，理性策略应是提高冒险程度（更激进的先手/越塔/逼团）以兑现风险收益。",
       "conclusion": "持盾方「敢打」才是对盾的最优利用；拿了盾还龟缩等于浪费这一容错资源。",
       "application": "拿到不朽盾后应主动逼团/推塔，用容错换地图控制；这是持盾却保守队伍常犯的错误。",
@@ -89,7 +114,9 @@
     {
       "id": "vision-information-leverage",
       "title": "视野是「信息杠杆」，投入产出比极高",
-      "premises": ["vision-information"],
+      "premises": [
+        "vision-information"
+      ],
       "derivation": "一个眼（几十金币）带来的信息可能避免一次被gank（损失可能是几百金币+等级+节奏），甚至换来一次成功的反打。信息价值远高于其直接成本。",
       "conclusion": "视野投入的期望收益远高于账面成本，视野是「最便宜的战略资源」。",
       "application": "无论顺逆风，辅助都应保持视野压制；被gank后优先想「是不是视野没做好」而非「运气差」。",
@@ -98,7 +125,9 @@
     {
       "id": "first-move-damage-window",
       "title": "先手控制的价值 ≈ 对手无法反应期间我方造成的伤害",
-      "premises": ["first-move-value"],
+      "premises": [
+        "first-move-value"
+      ],
       "derivation": "先手控制使对手在控制持续时间内无法反应/输出，这段「时间窗口」内我方输出是「零风险纯收益」，其价值等于窗口内造成的伤害/击杀。",
       "conclusion": "先手英雄的价值与「控制时长 × 我方后续爆发」成正比，控制越长、队友爆发越高，先手越值钱。",
       "application": "阵容搭配时，先手控制要与爆发英雄配合（控制链+集火）；有先手英雄却没爆发，先手价值会打折扣。",
@@ -107,7 +136,11 @@
     {
       "id": "bkb-window-game",
       "title": "法系 vs 物理的强势期错位，源于 BKB 窗口",
-      "premises": ["damage-types", "magic-resistance", "first-move-value"],
+      "premises": [
+        "damage-types",
+        "magic-resistance",
+        "first-move-value"
+      ],
       "derivation": "BKB 提供限时魔法免疫且时长随使用递减。法系输出在 BKB 开启时被完全封锁，物理输出不受影响反而更安全。故法系强势期在 BKB 空窗（前中期），物理强势期在 BKB 递减后的后期。",
       "conclusion": "法系阵容应抢前中期 BKB 未成型/空窗期；物理阵容应拖后期 BKB 递减、物理核成型。",
       "application": "BP 阶段即可判断阵容曲线：法系多→前期猛、后期疲软，需抢节奏；物理多→后期稳，需拖发育。",
@@ -116,7 +149,10 @@
     {
       "id": "pure-damage-counter-armor",
       "title": "纯伤英雄天然克制护甲流/肉核",
-      "premises": ["damage-types", "armor-formula"],
+      "premises": [
+        "damage-types",
+        "armor-formula"
+      ],
       "derivation": "纯粹伤害无视护甲与魔抗，直接扣血。对方无论堆多少护甲/魔抗，纯伤英雄的输出都完全不受影响。",
       "conclusion": "纯伤（伐木机、末日、幽鬼反伤等）是「防御无用化」的输出，天然克制堆 EHP 的肉核。",
       "application": "面对高甲/高魔抗的肉核阵容，优先选纯伤英雄或出纯粹伤害装备，比堆减甲更有效。",
@@ -125,10 +161,138 @@
     {
       "id": "kill-then-push-consolidation",
       "title": "击杀后必推塔：把「风险收入」固化为「地图控制」",
-      "premises": ["economy-sources", "map-control", "snowball-feedback"],
+      "premises": [
+        "economy-sources",
+        "map-control",
+        "snowball-feedback"
+      ],
       "derivation": "击杀是风险收入（可能失败、可能被反打），若击杀后不推塔，对手复活后经济差会随时间被抹平；只有推塔才能把「人头优势」固化为「地图/资源垄断」这一可持续优势。",
       "conclusion": "「杀完人不推塔」等于把到手的优势还给对手；优势的正确兑现方式是「击杀→推塔→控图」链条。",
       "application": "团战获胜后第一优先级是推塔/拿盾，而非追残血刷人头；这是多数低分段浪费优势的核心原因。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "defense-specialization-vs-damage-mix",
+      "title": "防御装没有绝对强弱，只有「对方伤害构成」下的强弱",
+      "premises": [
+        "damage-types",
+        "armor-formula",
+        "magic-resistance"
+      ],
+      "derivation": "护甲只减免物理伤害，魔抗只减免魔法伤害（damage-types）。固定预算下若对方输出 100% 物理，则魔抗投入对有效生命的增益恒为 0；混合伤害阵容中，某类防御的实际增益按对方该类伤害占比加权。",
+      "conclusion": "单一防御属性的价值等于「对方该类型伤害占比 × 其边际减免」，因此没有任何一件防御装是绝对优解，只有相对当前伤害构成的最优解。",
+      "application": "开局先读对方主要伤害类型（物理/魔法/纯粹占比），再把预算押在占比最高的一类；不要按位置机械照抄固定防御装。",
+      "confidence": "verified"
+    },
+    {
+      "id": "high-bat-prefers-damage",
+      "title": "基础攻击间隔大的英雄，攻速装的边际收益更低",
+      "premises": [
+        "attack-speed"
+      ],
+      "derivation": "每秒攻击次数 = (1+IAS)/BAT，对 IAS 求偏导得每次攻速增量的 DPS 增益 = 攻击力/BAT，与 BAT 成反比。故同样一件攻速装，BAT 越大获得的攻击次数增量越少。",
+      "conclusion": "BAT 越大的英雄，纯攻速装的性价比越低，攻击力/暴击/纯粹伤害类道具的相对收益更高。",
+      "application": "给高 BAT 英雄配装时优先攻击力与暴击；攻速装更适合 BAT 小或自带攻速机制的英雄；改变 BAT 的技能/道具属于高价值增益。",
+      "confidence": "verified"
+    },
+    {
+      "id": "magic-ehp-scales-with-hp",
+      "title": "魔抗的有效生命增益与血量成正比，脆皮裸堆魔抗收益有限",
+      "premises": [
+        "magic-resistance",
+        "effective-hp"
+      ],
+      "derivation": "有效魔法生命 = HP/(1−MR)，对 MR 的偏导为 HP/(1−MR)² > 0，且与 HP 成正比。故相同魔抗增量，血量越高获得的绝对魔法有效生命越多。",
+      "conclusion": "魔抗装的绝对收益随血量放大：高血前排堆魔抗获得大量有效生命，低血脆皮堆魔抗的绝对增益小（相对生存率仍提升，但绝对容错有限）。",
+      "application": "肉盾/高血前排优先魔抗装；脆皮核心面对魔法爆发更依赖 BKB、位移、薄葬等「直接免伤/免控」手段，而非裸堆魔抗。",
+      "confidence": "verified"
+    },
+    {
+      "id": "informed-first-move-positive-expectation",
+      "title": "先手不是无条件优势：缺信息的先手期望可能为负",
+      "premises": [
+        "first-move-value",
+        "vision-information"
+      ],
+      "derivation": "先手期望 = 命中概率 × 命中收益 − 落空成本。视野把命中概率从估值提升到接近确定（vision-information），而缺乏信息时先手近似赌博；对方关键技能已就绪时，落空成本（被反打）显著上升。",
+      "conclusion": "先手价值 = 信息 × 控制 × 输出窗口的乘积，而非独立成立的「先手必胜」；信息缺失或对方反手就绪时，先手期望可为负。",
+      "application": "开团前先确认敌方站位与关键技能状态（视野、扫描、开雾、看 CD），否则宁可放弃这波先手等下一个窗口。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "silence-as-one-sided-first-move",
+      "title": "沉默是对「技能依赖型英雄」的单向先手",
+      "premises": [
+        "first-move-value",
+        "damage-types"
+      ],
+      "derivation": "先手价值的本质是压缩对手的反应与决策时间。沉默直接剥夺对手在窗口内的技能反制手段，等价于只对技能生效的「单向先手」，其收益与对手的技能依赖度成正比。",
+      "conclusion": "沉默的价值不是固定的：对依赖技能逃生/叠甲/清线的英雄收益极高，对以普攻为主的英雄收益很低。",
+      "application": "看到对手核心靠技能生存（如靠位移逃生、靠技能叠护甲清线），沉默/禁魔优先级上升；反之对纯普攻核心，把预算放到减速、破甲或直接爆发更有效。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "losing-side-variance-up",
+      "title": "劣势方的最优策略是「提高方差」，优势方相反",
+      "premises": [
+        "snowball-feedback",
+        "roshan-value",
+        "map-control"
+      ],
+      "derivation": "劣势方正面对拼的期望收益为负（战力差源于 snowball-feedback 的正反馈）。期望为负时，提高结果方差可抬高「翻盘概率」而不改变期望——偷盾、抓单、开雾强开、偷家等低概率高收益行动，把结局从「必输」变为「可能赢」。",
+      "conclusion": "劣势方的最优解不是求稳，而是主动制造高方差事件；优势方的最优解是降低方差（抱团、控盾、稳步推进），压缩对手制造方差的空间。",
+      "application": "落后时避免被动对刷与正面接团，主动制造高方差事件；领先时不要分散带线或冒险抢节奏，用控盾与抱团把胜率锁死。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "early-gold-time-value",
+      "title": "早期金钱的时间价值高于后期同等金额",
+      "premises": [
+        "economy-sources",
+        "snowball-feedback"
+      ],
+      "derivation": "金钱通过 snowball-feedback 参与后续循环。同一笔金额越早到手，可参与的「经济→装备→战力→击杀/推塔」循环次数越多，累计收益越高。",
+      "conclusion": "金钱的价值随时间递减：前期一次击杀、一次高效补刀的价值被复利放大；后期同等金额对局势的边际影响更小。",
+      "application": "前期优先保证稳定收入与小额优势积累（补刀、拉野、线权压制），不要为了高风险击杀放弃整条线的稳定收入；后期则更应关注「这一笔钱能否直接换来一个决定性目标」。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "key-level-tempo-window",
+      "title": "节奏点本质是「关键等级的时间差」",
+      "premises": [
+        "experience-level",
+        "first-move-value"
+      ],
+      "derivation": "等级决定技能强度，关键等级（大招首级与 12/18 级阶跃）是战斗力离散跳跃点（experience-level）。在对手关键等级就绪前形成等级差，即获得一个「对手缺一环」的战力窗口。",
+      "conclusion": "所谓节奏点，是先到关键等级的一方获得的短暂但确定的战力优势窗口；窗口内强开的期望收益显著高于窗口外。",
+      "application": "先算双方关键等级时间：抢在对手大招就绪前打一波；自己关键等级未到前避免接团，用换线、拉野、控符稳住等级差。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "tower-triple-compounding",
+      "title": "推塔是三重复利资产，不是「一份钱」",
+      "premises": [
+        "map-control",
+        "economy-sources",
+        "vision-information",
+        "snowball-feedback"
+      ],
+      "derivation": "拆塔一次同时产生三份收益：直接金钱（economy-sources）、该区域视野与野区刷野安全（vision-information）、兵线推进权与地图控制（map-control）；三者又在 snowball-feedback 中互相放大。",
+      "conclusion": "塔的价值 = 金钱 + 信息 + 地图控制，属三重复利资产；越早拆，复利持续时间越长，其战略价值高于账面金钱。",
+      "application": "优势期把击杀转化为拆塔（先杀人再推塔），而不是继续找架；劣势期优先守塔，因为守住一塔等于同时剥夺对手三份收益。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "error-tolerance-scales-with-burst",
+      "title": "容错装的价值与「对手爆发」成正比，不是核心必备的固定结论",
+      "premises": [
+        "positioning-economy",
+        "effective-hp",
+        "first-move-value"
+      ],
+      "derivation": "容错装的作用是降低「一次站位失误」的损失（positioning-economy）。对手爆发越高，一次失误造成的死亡与节奏损失越大，容错的边际价值随对手爆发单调上升；对手为持续输出/消耗阵容时，单次失误损失较小，EHP 与续航的边际价值相对更高。",
+      "conclusion": "容错装并非无条件的「核心必备」，其性价比由对手爆发强度决定：高爆发阵容下容错价值极高，持续输出阵容下应转向 EHP/续航。",
+      "application": "对面高爆发连招（如双单体爆发+控制）时优先 BKB/盾/薄葬/位移；对面持续输出消耗时优先护甲、吸血、回复与血量。",
       "confidence": "reasoned"
     }
   ]

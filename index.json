@@ -23,7 +23,7 @@
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 14,
+      "count": 24,
       "status": "stable",
       "note": "14条逻辑推导洞察，每条含前提→推导→结论→应用，可回溯验证；含多条对网上常见误解的数学证伪。"
     },
