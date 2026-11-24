@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-24 23:23",
+    "updated_at": "2026-11-24 23:34",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -62,7 +62,7 @@
       "id": "rules-deepen",
       "name": "底层机制细化",
       "status": "pending",
-      "current": 35,
+      "current": 50,
       "target": 50,
       "note": "第二轮细化：技能免疫与驱散交互、伤害反弹、召唤物/幻象数值、地形与视野数值、赏金符与肉山时间窗口"
     }
@@ -123,6 +123,12 @@
       "result": "①heroes.json 全部 123 位英雄补 aliases（中文绰号+英文缩写，如 敌法/AM/火枪/虚空）；②rules.json 13→35（+22 条底层机制：伤害结算链、格挡按段、减甲叠加、闪避致盲、攻速上限+700、移速100~550边界、状态抗性、驱散三档、吸血类型、抽蓝伤害、击杀金钱构成、可靠/不可靠金钱、买活、复活时间、经验等级差、反补、兵线平衡、野堆叠、塔仇恨递增、小兵仇恨、幻象规则、视野遮挡）；③新增基础数据层 hero_base.json(123)/ability_base.json(759)/item_base.json(303)，数据源 dotaconstants 公开常量库，脚本 scripts/build_base_data.py 可重复运行",
       "note": "网络：云主机直连 GitHub 可用，家庭局域网代理 192.168.31.155:4096 在云端不可达，本环境无需代理",
       "next": "按 backlog 继续：matchups 127/140、items 39/60、tactics 1/4、rules-deepen 35/50、quality-audit"
+    },
+    {
+      "time": "2026-11-24 23:34",
+      "task": "用户定向：绰号扩充 + 对局结构规则",
+      "result": "heroes aliases 349→558（平均4.5个/英雄，含官方中文名、英文缩写、旧译名，零冲突）；rules 35→49（+14条对局结构：5v5与胜利条件、地图三线、建筑拆除顺序、兵营超级兵窗口、成长体系、物品栏6+3、信使、神符、肉山奖励、死亡结算、收支来源、泉水、BP与位置、阶段划分、双方非对称）",
+      "next": "matchups 127/140、items 39/60、tactics 1/4、rules-deepen 49/50、quality-audit 若剩余则可收口"
     }
   ]
 }

@@ -34,9 +34,11 @@
       ],
       "source": "stable",
       "aliases": [
+        "魔抗刺客",
+        "敌法师",
         "阿敌",
-        "敌法",
-        "AM"
+        "AM",
+        "敌法"
       ],
       "base_stats": {
         "id": 1,
@@ -93,8 +95,10 @@
       ],
       "source": "stable",
       "aliases": [
-        "幻刺",
-        "PA"
+        "幻影刺客",
+        "大幻刺",
+        "PA",
+        "幻刺"
       ],
       "base_stats": {
         "id": 44,
@@ -152,7 +156,9 @@
       "source": "stable",
       "aliases": [
         "Yurnero",
+        "剑刃风暴",
         "Jugg",
+        "主宰",
         "剑圣"
       ],
       "base_stats": {
@@ -211,6 +217,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "虚空假面",
+        "虚空大",
         "虚空",
         "FV"
       ],
@@ -272,6 +280,8 @@
       "aliases": [
         "Mercurial",
         "Spec",
+        "幽鬼大",
+        "鬼影",
         "幽鬼"
       ],
       "base_stats": {
@@ -329,8 +339,10 @@
       ],
       "source": "stable",
       "aliases": [
-        "美杜莎",
+        "Medu",
+        "梅杜莎",
         "大娜迦",
+        "美杜莎",
         "蛇女"
       ],
       "base_stats": {
@@ -390,8 +402,10 @@
       "source": "stable",
       "aliases": [
         "Ostarion",
+        "冥魂大帝",
         "骷髅王",
-        "WK"
+        "WK",
+        "骷髅"
       ],
       "base_stats": {
         "id": 42,
@@ -451,6 +465,8 @@
       "aliases": [
         "Naix",
         "食尸鬼",
+        "噬魂鬼",
+        "小狗人",
         "小狗",
         "LS"
       ],
@@ -510,6 +526,7 @@
       "source": "stable",
       "aliases": [
         "灵魂守卫",
+        "恐怖利刃",
         "TB",
         "恐怖"
       ],
@@ -570,8 +587,10 @@
       "source": "stable",
       "aliases": [
         "Moon Rider",
-        "月骑",
-        "月光"
+        "Luna",
+        "露娜",
+        "月光",
+        "月骑"
       ],
       "base_stats": {
         "id": 48,
@@ -629,7 +648,10 @@
       ],
       "source": "stable",
       "aliases": [
+        "Slark",
+        "斯拉克",
         "小鱼人",
+        "夜叉鱼",
         "小鱼"
       ],
       "base_stats": {
@@ -688,6 +710,8 @@
       "source": "stable",
       "aliases": [
         "Skitskurr",
+        "Weaver",
+        "编织者",
         "甲虫",
         "蚂蚁"
       ],
@@ -748,8 +772,11 @@
       "source": "stable",
       "aliases": [
         "Traxex",
+        "黑暗游侠",
         "Drow",
+        "卓尔游侠",
         "弓箭手",
+        "卓尔",
         "小黑"
       ],
       "base_stats": {
@@ -809,7 +836,9 @@
       "source": "stable",
       "aliases": [
         "Rogue Knight",
+        "SVEN",
         "流浪剑客",
+        "斯温",
         "流浪"
       ],
       "base_stats": {
@@ -867,7 +896,10 @@
       "source": "stable",
       "aliases": [
         "Slithice",
+        "Naga",
+        "娜迦海妖",
         "小娜迦",
+        "海妖",
         "娜迦"
       ],
       "base_stats": {
@@ -925,6 +957,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "巨魔战将",
         "巨魔",
         "TW"
       ],
@@ -984,6 +1017,7 @@
       "source": "stable",
       "aliases": [
         "Morph",
+        "变体精灵",
         "水人"
       ],
       "base_stats": {
@@ -1042,8 +1076,10 @@
       ],
       "source": "stable",
       "aliases": [
+        "风暴之灵",
         "ST",
-        "蓝猫"
+        "蓝猫",
+        "风暴"
       ],
       "base_stats": {
         "id": 17,
@@ -1100,9 +1136,10 @@
       ],
       "source": "stable",
       "aliases": [
+        "影魔大",
         "影魔",
-        "影子",
-        "SF"
+        "SF",
+        "影子"
       ],
       "base_stats": {
         "id": 11,
@@ -1160,6 +1197,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "Invoker",
+        "祈求者",
         "召唤师",
         "卡尔"
       ],
@@ -1219,8 +1258,10 @@
       "source": "stable",
       "aliases": [
         "Lanaya",
-        "TA",
-        "圣堂"
+        "圣堂刺客",
+        "隐匿",
+        "圣堂",
+        "TA"
       ],
       "base_stats": {
         "id": 46,
@@ -1280,7 +1321,8 @@
         "Akasha",
         "痛苦女王",
         "QoP",
-        "女王"
+        "女王",
+        "痛苦"
       ],
       "base_stats": {
         "id": 39,
@@ -1338,8 +1380,10 @@
       "source": "stable",
       "aliases": [
         "Lord of Heaven",
-        "天神",
-        "宙斯"
+        "Zeus",
+        "雷神",
+        "宙斯",
+        "天神"
       ],
       "base_stats": {
         "id": 22,
@@ -1396,8 +1440,10 @@
       ],
       "source": "stable",
       "aliases": [
-        "火女",
-        "秀逗"
+        "Lina",
+        "莉娜",
+        "秀逗",
+        "火女"
       ],
       "base_stats": {
         "id": 25,
@@ -1455,6 +1501,7 @@
       "source": "stable",
       "aliases": [
         "Faerie Dragon",
+        "Puck",
         "精灵龙",
         "帕克"
       ],
@@ -1514,6 +1561,7 @@
       "source": "stable",
       "aliases": [
         "Ember",
+        "灰烬之灵",
         "Xin",
         "火猫"
       ],
@@ -1572,6 +1620,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "虚无之灵",
         "Inai",
         "Void",
         "紫猫"
@@ -1632,9 +1681,11 @@
       "source": "stable",
       "aliases": [
         "Kardel Sharpeye",
+        "Sniper",
+        "矮人狙击手",
         "狙击手",
-        "矮子",
-        "火枪"
+        "火枪",
+        "矮子"
       ],
       "base_stats": {
         "id": 35,
@@ -1692,6 +1743,7 @@
       "source": "stable",
       "aliases": [
         "Admiral",
+        "Kunkka",
         "船长",
         "昆卡"
       ],
@@ -1750,9 +1802,10 @@
       ],
       "source": "stable",
       "aliases": [
+        "受折磨的灵魂",
         "拉席克",
-        "灵魂",
-        "TS"
+        "TS",
+        "灵魂"
       ],
       "base_stats": {
         "id": 52,
@@ -1809,7 +1862,9 @@
       ],
       "source": "stable",
       "aliases": [
-        "骨弓法",
+        "Pugna",
+        "骨法男",
+        "帕格纳",
         "骨法"
       ],
       "base_stats": {
@@ -1867,8 +1922,10 @@
       ],
       "source": "stable",
       "aliases": [
+        "Axe",
         "斧王",
-        "老斧"
+        "老斧",
+        "斧头"
       ],
       "base_stats": {
         "id": 2,
@@ -1925,8 +1982,10 @@
       ],
       "source": "stable",
       "aliases": [
+        "半人马战行者",
         "半人马",
-        "CW"
+        "CW",
+        "人马"
       ],
       "base_stats": {
         "id": 96,
@@ -1984,8 +2043,10 @@
       "source": "stable",
       "aliases": [
         "Leviathan",
-        "TH",
-        "潮汐"
+        "潮汐猎人",
+        "大潮汐",
+        "潮汐",
+        "TH"
       ],
       "base_stats": {
         "id": 29,
@@ -2043,7 +2104,10 @@
       "source": "stable",
       "aliases": [
         "Slithereen Guard",
+        "Slardar",
+        "鱼人守卫",
         "大鱼人",
+        "斯拉达",
         "大鱼"
       ],
       "base_stats": {
@@ -2103,8 +2167,10 @@
       "aliases": [
         "Tresdin",
         "Legion",
-        "LC",
-        "军团"
+        "军团指挥官",
+        "军团令",
+        "军团",
+        "LC"
       ],
       "base_stats": {
         "id": 104,
@@ -2161,7 +2227,9 @@
       ],
       "source": "stable",
       "aliases": [
+        "Mars",
         "玛尔斯",
+        "马尔斯",
         "战神"
       ],
       "base_stats": {
@@ -2220,8 +2288,10 @@
       "source": "stable",
       "aliases": [
         "Rigwarl",
-        "BB",
+        "钢背猪",
+        "钢背兽",
         "钢背",
+        "BB",
         "猪"
       ],
       "base_stats": {
@@ -2282,7 +2352,8 @@
         "Shredder",
         "Rizzrack",
         "Timber",
-        "伐木机"
+        "伐木机",
+        "伐木"
       ],
       "base_stats": {
         "id": 98,
@@ -2340,10 +2411,12 @@
       ],
       "source": "stable",
       "aliases": [
-        "Azgalor",
         "PitLord",
+        "Azgalor",
         "深渊领主",
+        "大屁股男",
         "大屁股",
+        "孽主",
         "UL"
       ],
       "base_stats": {
@@ -2402,6 +2475,7 @@
       "source": "stable",
       "aliases": [
         "末日使者",
+        "Doom",
         "末日"
       ],
       "base_stats": {
@@ -2460,8 +2534,10 @@
       "source": "stable",
       "aliases": [
         "Balanar",
+        "暗夜魔王",
         "NS",
-        "夜魔"
+        "夜魔",
+        "暗夜"
       ],
       "base_stats": {
         "id": 60,
@@ -2518,8 +2594,9 @@
       ],
       "source": "stable",
       "aliases": [
-        "兽王",
-        "BM"
+        "野性之心",
+        "BM",
+        "兽王"
       ],
       "base_stats": {
         "id": 38,
@@ -2577,8 +2654,9 @@
       "source": "stable",
       "aliases": [
         "Ishkafel",
-        "DS",
-        "黑贤"
+        "黑暗贤者",
+        "黑贤",
+        "DS"
       ],
       "base_stats": {
         "id": 55,
@@ -2636,8 +2714,9 @@
       "source": "stable",
       "aliases": [
         "Crixalis",
-        "沙王",
-        "SK"
+        "沙王王",
+        "SK",
+        "沙王"
       ],
       "base_stats": {
         "id": 16,
@@ -2694,6 +2773,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "Enigma",
+        "大谜团",
         "谜团",
         "黑洞"
       ],
@@ -2755,6 +2836,7 @@
       "aliases": [
         "Kaolin",
         "Earth",
+        "大地之灵",
         "土灵",
         "土猫"
       ],
@@ -2815,9 +2897,11 @@
       "source": "stable",
       "aliases": [
         "Tuskarr",
+        "Tusk",
         "Ymir",
-        "海象",
-        "海民"
+        "巨牙海民",
+        "海民",
+        "海象"
       ],
       "base_stats": {
         "id": 100,
@@ -2876,7 +2960,9 @@
       "source": "stable",
       "aliases": [
         "Princess",
+        "Mirana",
         "Moon",
+        "米拉娜",
         "白虎",
         "月女"
       ],
@@ -2937,7 +3023,9 @@
       "source": "stable",
       "aliases": [
         "Toy Butcher",
+        "Pudge",
         "胖子",
+        "帕吉",
         "屠夫"
       ],
       "base_stats": {
@@ -2995,7 +3083,9 @@
       ],
       "source": "stable",
       "aliases": [
+        "Rubick",
         "大魔导师",
+        "偷技能",
         "拉比克"
       ],
       "base_stats": {
@@ -3054,8 +3144,10 @@
       "source": "stable",
       "aliases": [
         "Dragonus",
-        "天怒",
-        "SM"
+        "天怒法师",
+        "天怒女",
+        "SM",
+        "天怒"
       ],
       "base_stats": {
         "id": 101,
@@ -3113,8 +3205,9 @@
       ],
       "source": "stable",
       "aliases": [
-        "BH",
-        "赏金"
+        "赏金猎人",
+        "赏金",
+        "BH"
       ],
       "base_stats": {
         "id": 62,
@@ -3173,6 +3266,7 @@
       "source": "stable",
       "aliases": [
         "Barathrum",
+        "裂魂人",
         "白牛",
         "SB"
       ],
@@ -3231,8 +3325,10 @@
       ],
       "source": "stable",
       "aliases": [
-        "CM",
-        "冰女"
+        "水晶室女",
+        "冰妹",
+        "冰女",
+        "CM"
       ],
       "base_stats": {
         "id": 5,
@@ -3289,6 +3385,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "Dazzle",
+        "暗影牧师",
         "戴泽",
         "暗牧"
       ],
@@ -3348,8 +3446,9 @@
       "source": "stable",
       "aliases": [
         "Zharvakko",
-        "WD",
-        "巫医"
+        "巫医男",
+        "巫医",
+        "WD"
       ],
       "base_stats": {
         "id": 30,
@@ -3408,6 +3507,7 @@
       "aliases": [
         "Ethreain",
         "Lich",
+        "老巫妖",
         "巫妖"
       ],
       "base_stats": {
@@ -3465,6 +3565,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "Disruptor",
         "干扰者",
         "干扰"
       ],
@@ -3523,6 +3624,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "Oracle",
         "Nerif",
         "神谕者",
         "神谕"
@@ -3584,6 +3686,7 @@
       "aliases": [
         "Rhasta",
         "暗影萨满",
+        "萨满",
         "小Y",
         "SS"
       ],
@@ -3643,7 +3746,9 @@
       "source": "stable",
       "aliases": [
         "小精灵",
-        "精灵"
+        "IO",
+        "精灵",
+        "艾欧"
       ],
       "base_stats": {
         "id": 91,
@@ -3700,8 +3805,10 @@
       ],
       "source": "stable",
       "aliases": [
-        "树精",
-        "大树"
+        "Treant",
+        "树精卫士",
+        "大树",
+        "树精"
       ],
       "base_stats": {
         "id": 83,
@@ -3759,8 +3866,9 @@
       "source": "stable",
       "aliases": [
         "Shendelzare",
-        "VS",
+        "复仇之魂",
         "魂女",
+        "VS",
         "复仇"
       ],
       "base_stats": {
@@ -3819,6 +3927,7 @@
       "source": "stable",
       "aliases": [
         "Demnok Lannik",
+        "大术士",
         "术士",
         "WL"
       ],
@@ -3877,6 +3986,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "Bane",
         "祸乱之源",
         "祸乱"
       ],
@@ -3935,9 +4045,10 @@
       ],
       "source": "stable",
       "aliases": [
+        "光之守卫",
         "KOTL",
-        "光守",
-        "光法"
+        "光法",
+        "光守"
       ],
       "base_stats": {
         "id": 90,
@@ -3994,6 +4105,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "天涯墨客",
+        "Grim",
         "画师",
         "墨客"
       ],
@@ -4054,6 +4167,7 @@
       "source": "stable",
       "aliases": [
         "Azwraith",
+        "幻影长矛手",
         "长矛手",
         "PL",
         "长矛"
@@ -4113,6 +4227,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "混沌骑士",
         "混沌",
         "CK"
       ],
@@ -4172,8 +4287,10 @@
       "source": "stable",
       "aliases": [
         "Ulfsaar",
-        "熊战",
-        "大熊"
+        "Ursa",
+        "熊战士",
+        "大熊",
+        "熊战"
       ],
       "base_stats": {
         "id": 70,
@@ -4230,6 +4347,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "嗜血狂魔",
         "BS",
         "血魔"
       ],
@@ -4289,6 +4407,7 @@
       "source": "stable",
       "aliases": [
         "Razzil",
+        "炼金术士",
         "Alch",
         "炼金"
       ],
@@ -4347,6 +4466,8 @@
       "source": "stable",
       "aliases": [
         "Aurel",
+        "矮人直升机",
+        "Gyro",
         "直升机",
         "飞机"
       ],
@@ -4406,9 +4527,11 @@
       "source": "stable",
       "aliases": [
         "Sun Wukong",
+        "齐天大圣",
+        "大圣",
         "猴子",
-        "MK",
-        "大圣"
+        "悟空",
+        "MK"
       ],
       "base_stats": {
         "id": 114,
@@ -4467,6 +4590,8 @@
       "source": "stable",
       "aliases": [
         "Stealth Assassin",
+        "Riki",
+        "隐形刺客",
         "力丸",
         "隐刺"
       ],
@@ -4525,7 +4650,9 @@
       ],
       "source": "stable",
       "aliases": [
+        "Clinkz",
         "骷髅弓手",
+        "克林克兹",
         "小骷髅",
         "骨弓"
       ],
@@ -4584,6 +4711,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "天穹守望者",
+        "天穹守卫",
         "AW",
         "天穹"
       ],
@@ -4642,7 +4771,9 @@
       ],
       "source": "stable",
       "aliases": [
+        "Meepo",
         "地卜师",
+        "地卜",
         "米波"
       ],
       "base_stats": {
@@ -4701,9 +4832,10 @@
       "source": "stable",
       "aliases": [
         "Sylla",
+        "德鲁伊大师",
         "德鲁伊",
-        "熊德",
-        "LD"
+        "LD",
+        "熊德"
       ],
       "base_stats": {
         "id": 80,
@@ -4762,7 +4894,8 @@
       "aliases": [
         "Banehallow",
         "Lycan",
-        "狼人"
+        "狼人",
+        "狼王"
       ],
       "base_stats": {
         "id": 77,
@@ -4820,8 +4953,10 @@
       "source": "stable",
       "aliases": [
         "Netherdrake",
-        "毒龙",
-        "亚龙"
+        "Viper",
+        "冥界亚龙",
+        "亚龙",
+        "毒龙"
       ],
       "base_stats": {
         "id": 47,
@@ -4878,6 +5013,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "蝙蝠骑士",
         "Bat",
         "蝙蝠"
       ],
@@ -4937,9 +5073,10 @@
       "source": "stable",
       "aliases": [
         "Lyralei",
-        "风女",
+        "风行者",
         "WR",
-        "风行"
+        "风行",
+        "风女"
       ],
       "base_stats": {
         "id": 21,
@@ -4997,6 +5134,8 @@
       "source": "stable",
       "aliases": [
         "Harbinger",
+        "殁境神蚀者",
+        "毁灭者",
         "OD",
         "神蚀",
         "黑鸟"
@@ -5058,6 +5197,7 @@
       "aliases": [
         "Krobelus",
         "死亡先知",
+        "死先知",
         "DP"
       ],
       "base_stats": {
@@ -5116,8 +5256,10 @@
       ],
       "source": "stable",
       "aliases": [
-        "NP",
-        "先知"
+        "自然先知",
+        "预言者",
+        "先知",
+        "NP"
       ],
       "base_stats": {
         "id": 53,
@@ -5175,7 +5317,9 @@
       "source": "stable",
       "aliases": [
         "Necrolic",
+        "Visage",
         "维萨吉",
+        "鸟人",
         "佣兽"
       ],
       "base_stats": {
@@ -5234,7 +5378,10 @@
       "source": "stable",
       "aliases": [
         "Arachnia",
+        "Brood",
+        "育母蜘蛛",
         "育母",
+        "蛛母",
         "蜘蛛"
       ],
       "base_stats": {
@@ -5296,7 +5443,8 @@
         "Tinker",
         "Boush",
         "修补匠",
-        "修补"
+        "修补",
+        "补匠"
       ],
       "base_stats": {
         "id": 34,
@@ -5353,6 +5501,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "Huskar",
+        "神灵武士",
         "哈斯卡",
         "神灵"
       ],
@@ -5413,6 +5563,8 @@
       "aliases": [
         "Rotundjere",
         "Necro",
+        "瘟疫法师",
+        "死灵法师",
         "死灵法"
       ],
       "base_stats": {
@@ -5471,6 +5623,7 @@
       "source": "stable",
       "aliases": [
         "Magnus",
+        "马格纳斯",
         "猛犸"
       ],
       "base_stats": {
@@ -5530,6 +5683,8 @@
       "source": "stable",
       "aliases": [
         "Stone Giant",
+        "山岭巨人",
+        "Tiny",
         "小小",
         "山岭"
       ],
@@ -5589,9 +5744,12 @@
       "source": "stable",
       "aliases": [
         "Raigor",
+        "撼地神牛",
+        "撼地者",
+        "ES",
+        "撼地",
         "牛头",
-        "神牛",
-        "ES"
+        "神牛"
       ],
       "base_stats": {
         "id": 7,
@@ -5649,6 +5807,8 @@
       "source": "stable",
       "aliases": [
         "Lightning Revenant",
+        "Razor",
+        "闪电男",
         "剃刀",
         "电棍"
       ],
@@ -5709,6 +5869,7 @@
       "source": "stable",
       "aliases": [
         "Lesale",
+        "剧毒术士",
         "Veno",
         "剧毒"
       ],
@@ -5768,6 +5929,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "Abaddon",
+        "地狱领主",
         "亚巴顿",
         "死骑"
       ],
@@ -5827,7 +5990,9 @@
       ],
       "source": "stable",
       "aliases": [
+        "Undying",
         "Dirge",
+        "不朽尸王",
         "不朽",
         "尸王"
       ],
@@ -5887,6 +6052,8 @@
       "source": "stable",
       "aliases": [
         "石鳞剑士",
+        "穿山甲",
+        "Pan",
         "滚滚"
       ],
       "base_stats": {
@@ -5945,6 +6112,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "电炎绝手",
+        "Snap",
         "老奶奶",
         "电炎"
       ],
@@ -6003,8 +6172,10 @@
       ],
       "source": "stable",
       "aliases": [
+        "原始野兽",
         "原始兽",
-        "PB"
+        "PB",
+        "野兽"
       ],
       "base_stats": {
         "id": 137,
@@ -6063,7 +6234,10 @@
       "source": "stable",
       "aliases": [
         "Valora",
+        "破晓辰星",
+        "破晓晨星",
         "破晓",
+        "晨曦",
         "DB"
       ],
       "base_stats": {
@@ -6122,6 +6296,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "龙骑士",
         "龙骑",
         "DK"
       ],
@@ -6180,6 +6355,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "食人魔魔法师",
+        "Ogre",
         "食人魔",
         "蓝胖"
       ],
@@ -6238,8 +6415,11 @@
       ],
       "source": "stable",
       "aliases": [
-        "AA",
-        "冰魄"
+        "远古冰魄",
+        "远古冰魂",
+        "冰魄",
+        "远古",
+        "AA"
       ],
       "base_stats": {
         "id": 68,
@@ -6297,6 +6477,7 @@
       "source": "stable",
       "aliases": [
         "Holy Knight",
+        "Chen",
         "圣骑士",
         "陈"
       ],
@@ -6357,7 +6538,9 @@
       "aliases": [
         "Aiushtha",
         "Ench",
-        "小鹿"
+        "魅惑魔女",
+        "小鹿",
+        "魅惑"
       ],
       "base_stats": {
         "id": 58,
@@ -6416,6 +6599,7 @@
       "aliases": [
         "Purist Thunderwrath",
         "Omni",
+        "全能骑士",
         "全能"
       ],
       "base_stats": {
@@ -6473,7 +6657,9 @@
       ],
       "source": "stable",
       "aliases": [
+        "Jakiro",
         "双头龙",
+        "杰奇洛",
         "冰火"
       ],
       "base_stats": {
@@ -6532,7 +6718,9 @@
       "source": "stable",
       "aliases": [
         "Auroth",
+        "寒冬飞龙",
         "冰龙",
+        "寒冬",
         "WW"
       ],
       "base_stats": {
@@ -6590,8 +6778,10 @@
       ],
       "source": "stable",
       "aliases": [
-        "凤凰",
-        "火鸟"
+        "Phoenix",
+        "火凤凰",
+        "火鸟",
+        "凤凰"
       ],
       "base_stats": {
         "id": 110,
@@ -6707,8 +6897,10 @@
       "source": "stable",
       "aliases": [
         "Demon Witch",
+        "Lion",
         "恶魔巫师",
-        "莱恩"
+        "莱恩",
+        "狮王"
       ],
       "base_stats": {
         "id": 26,
@@ -6765,6 +6957,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "Silencer",
         "Nortrom",
         "沉默术士",
         "沉默"
@@ -6825,6 +7018,8 @@
       "source": "stable",
       "aliases": [
         "Mangix",
+        "Panda",
+        "熊猫酒仙",
         "熊猫",
         "酒仙"
       ],
@@ -6886,6 +7081,8 @@
       "aliases": [
         "Rattletrap",
         "Clock",
+        "发条技师",
+        "发条男",
         "发条"
       ],
       "base_stats": {
@@ -6943,6 +7140,7 @@
       ],
       "source": "stable",
       "aliases": [
+        "暗影恶魔",
         "暗影魔",
         "SD"
       ],
@@ -7003,8 +7201,10 @@
       "aliases": [
         "Cairne",
         "上古巨神",
-        "巨神",
-        "ET"
+        "远古泰坦",
+        "上古",
+        "ET",
+        "巨神"
       ],
       "base_stats": {
         "id": 103,
@@ -7062,7 +7262,9 @@
       "source": "stable",
       "aliases": [
         "Mireska",
+        "邪影芳灵",
         "花仙子",
+        "花仙",
         "DW"
       ],
       "base_stats": {
@@ -7120,8 +7322,11 @@
       ],
       "source": "stable",
       "aliases": [
-        "松鼠",
-        "森海"
+        "Hood",
+        "森海飞霞",
+        "兜帽客",
+        "森海",
+        "松鼠"
       ],
       "base_stats": {
         "id": 123,
@@ -7178,9 +7383,11 @@
       ],
       "source": "stable",
       "aliases": [
+        "Techies",
         "Spleen",
         "Spoon",
         "Squee",
+        "工程师",
         "炸弹人",
         "地雷"
       ],
@@ -7240,6 +7447,8 @@
       ],
       "source": "stable",
       "aliases": [
+        "夜神刺客",
+        "夜魔刺客",
         "司夜刺客",
         "Nyx",
         "夜刺客"
