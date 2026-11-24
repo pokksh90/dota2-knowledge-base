@@ -2,7 +2,8 @@
   "meta": {
     "title": "装备与出装",
     "description": "装备分类、用途、分位置核心出装思路。coach_note 供 LLM 消费：什么情况出、克制什么、给谁出。价格为版本变动数据，未填写。",
-    "source_note": "装备用途/克制关系为稳定常识(source=stable)；价格与具体数值未核对、不填写。"
+    "source_note": "装备用途/克制关系为稳定常识(source=stable)；价格与具体数值未核对、不填写。",
+    "last_updated": "2026-11-25 00:18"
   },
   "items": [
     {
@@ -510,6 +511,140 @@
       "coach_note": "吹风解控+位移，辅助/法核解负面、躲技能、先手(吹起接控制)。克制持续伤害与追身英雄。",
       "core_for": [
         2,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "aeon-disk",
+      "name_zh": "永恒之盘",
+      "name_en": "Aeon Disk",
+      "category": "defensive",
+      "purpose": "血量低于阈值时触发，短暂免疫所有伤害并解除负面效果",
+      "coach_note": "价格 3000（见 item_base）。针对「爆发一波带走」的阵容：斧王跳刀狂战士之吼、莱恩穿刺+死亡之指、莉娜神灭斩等单点强控+爆发的组合。适合被针对的辅助或需要站住第二时间输出的人；但它触发一次有较长冷却，不能替代主动走位。",
+      "core_for": [
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "nullifier",
+      "name_zh": "否决坠饰",
+      "name_en": "Nullifier",
+      "category": "offensive",
+      "purpose": "主动施加减益，使目标无法被友军驱散并持续减速，同时驱散目标增益",
+      "coach_note": "价格 4350。克制依赖保命增益的目标：幽鬼/幻影刺客吃神符与披风、军团指挥官的强攻、戴泽的薄葬、帕吉的肉钩接治疗等。物理核心在对面「靠buff扛住一波」时出，配合高攻速收益最大。",
+      "core_for": [
+        1,
+        2
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "mage-slayer",
+      "name_zh": "法师克星",
+      "name_en": "Mage Slayer",
+      "category": "offensive",
+      "purpose": "攻击使目标施法伤害降低，削弱法核持续输出",
+      "coach_note": "价格 3100。对线期与中前期针对法核：风暴之灵、灰烬之灵、帕克、痛苦女王这类靠技能连打伤害的英雄。适合本身有攻速/普攻频率的近战核心（斯拉克、军团、巨魔），越早出越能压住对面中单的爆发窗口。",
+      "core_for": [
+        1,
+        2,
+        4
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "heavens-halberd",
+      "name_zh": "天堂之戟",
+      "name_en": "Heaven's Halberd",
+      "category": "defensive",
+      "purpose": "主动使目标无法进行普通攻击，同时提供闪避与力量",
+      "coach_note": "价格 2400。针对纯靠普攻的物理核心（幻影刺客、巨魔、露娜、狙击手）——一个主动就能废掉对面 3~5 秒输出，是「便宜的硬控」。对技能型输出无效，别对法核用。",
+      "core_for": [
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "spirit-vessel",
+      "name_zh": "灵魂之瓮",
+      "name_en": "Spirit Vessel",
+      "category": "support",
+      "purpose": "对敌施加减治疗与持续伤害，对友军提供治疗",
+      "coach_note": "价格 2725。核心价值是「减治疗」：克制治疗效果显著的英雄（戴泽薄葬+治疗、神谕者、树精卫士、哈斯卡、冥界亚龙）与肉山回血、护盾类续航。辅助在前中期就该升级到它，越早压治疗越值钱。",
+      "core_for": [
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "solar-crest",
+      "name_zh": "炎阳纹章",
+      "name_en": "Solar Crest",
+      "category": "utility",
+      "purpose": "主动给友军加攻速与护甲、降低敌人护甲与移速",
+      "coach_note": "价格 2575。物理阵容的团队增幅器：配合幻影刺客/巨魔/斯拉达这类靠护甲穿透输出的核心，或用来削弱对面高护甲前排。也能给队友加护甲扛塔、扛肉山。辅助在物理核成型前出，收益最大。",
+      "core_for": [
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "echo-sabre",
+      "name_zh": "回音战刃",
+      "name_en": "Echo Sabre",
+      "category": "offensive",
+      "purpose": "攻击后短时间内下一次攻击触发双次攻击并减速",
+      "coach_note": "价格 2700。给「单次普攻价值高」的力量近战（斯温、军团、斧王、大鱼人）提供爆发与小控制；不适合靠持续攻速的核心（它占一个装备位但收益低于狂战/蝴蝶）。",
+      "core_for": [
+        1,
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "harpoon",
+      "name_zh": "鱼叉",
+      "name_en": "Harpoon",
+      "category": "mobility",
+      "purpose": "主动把敌人拉向自己，兼具力量与攻击力",
+      "coach_note": "价格 4700。解决「够不到人」的问题：给斯温、军团、斧王、斯拉达这类需要贴身的力量核心一个便宜的强制位移，配合跳刀可做双段先手。克制靠站位风筝的近战对位，但对有位移/闪烁的目标命中率下降。",
+      "core_for": [
+        1,
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "witch-blade",
+      "name_zh": "巫术之刃",
+      "name_en": "Witch Blade",
+      "category": "offensive",
+      "purpose": "攻击附带基于智力的持续伤害，并提升智力与攻速",
+      "coach_note": "价格 2775。智力型核心的对线/中期过渡装：风暴之灵、灰烬之灵、帕克、痛苦女王这类靠普攻+技能混伤的英雄，前期压制力强、后期可转血棘或羊刀。不适合纯物理核心。",
+      "core_for": [
+        2,
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "pavise",
+      "name_zh": "铁盾",
+      "name_en": "Pavise",
+      "category": "defensive",
+      "purpose": "主动给友军套一层物理伤害护盾",
+      "coach_note": "价格 1250。便宜的「救人装」：给被物理核心集火的队友套盾，专治幻影刺客、巨魔、斯拉克的跳脸第一波。辅助在对面物理爆发成型前出，比堆属性更直接。",
+      "core_for": [
         4,
         5
       ],

@@ -4,7 +4,7 @@
     "version": "0.6.0",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
-    "last_updated": "2026-11-24",
+    "last_updated": "2026-11-25",
     "schema": "schema/knowledge-schema.json",
     "architecture": {
       "layer1": "rules.json —— 底层规则/公理：伤害公式、护甲魔抗、攻速、经济、经验、地图资源、先手博弈",
@@ -37,9 +37,9 @@
     {
       "file": "data/items.json",
       "title": "装备与出装",
-      "count": 39,
+      "count": 49,
       "status": "stable",
-      "note": "39件核心装备 + 5位置出装框架；基础价格/属性见 item_base.json。"
+      "note": "49件核心装备 + 5位置出装框架；本轮新增永恒之盘/否决/法师克星/天堂之戟/灵魂之瓮/炎阳纹章/回音战刃/鱼叉/巫术之刃/铁盾，价格以 item_base.json 为准。"
     },
     {
       "file": "data/matchups.json",

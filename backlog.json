@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 00:06",
+    "updated_at": "2026-11-25 00:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -27,7 +27,7 @@
       "id": "items-expand",
       "title": "扩充装备库",
       "file": "data/items.json",
-      "current": 39,
+      "current": 49,
       "target": 60,
       "status": "pending",
       "desc": "补充核心装备(coach_note+category+core_for)。候选：散失/紫苑各类、以太之镜、飓风长戟、赤红甲、强袭、天鹰戒、圣洁吊坠、魔龙枪、死灵书(如版本在)、各类鞋、血棘、否决、紫怨、大炮、慧光等。数值(价格)留空或pending，不编造。"
@@ -87,6 +87,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 00:18",
+      "task": "items-expand",
+      "added": 10,
+      "result": "items 39→49：新增永恒之盘/否决坠饰/法师克星/天堂之戟/灵魂之瓮/炎阳纹章/回音战刃/鱼叉/巫术之刃/铁盾，价格全部取自 item_base.json（3000/4350/3100/2400/2725/2575/2700/4700/2775/1250）",
+      "next": "继续 items-expand 至 60（候选：黑黄升级外的抗性道具、团队增幅与反治疗类），随后 matchups-expand 127→140"
+    },
     {
       "time": "2026-11-25 00:06",
       "task": "rules-deepen+新数据层",
