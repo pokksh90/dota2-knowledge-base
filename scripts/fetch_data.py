@@ -9,7 +9,7 @@ fetch_data.py —— 从 OpenDota 公开 API 拉取英雄基础属性与装备�
     data/stats.json —— 版本数值（英雄基础属性 + 装备价格），source=official，通过 id 与 heroes.json / items.json 关联。
 
 说明：
-    - 只拉公开静态数据，不涉及对局/玩家隐私。
+    - 只拉公开静态数据，不涉及玩家个人隐私。
     - 数值会随版本变动，每次版本更新后重跑本脚本即可刷新。
     - 依赖 Python 标准库，无需第三方包；需能访问 api.opendota.com（国内可能需要代理）。
 """
