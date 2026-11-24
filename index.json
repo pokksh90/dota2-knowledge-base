@@ -10,7 +10,9 @@
       "layer1": "rules.json —— 底层规则/公理：伤害公式、护甲魔抗、攻速、经济、经验、地图资源、先手博弈",
       "layer2": "inference.json —— 逻辑推理/定理：由公理纯逻辑推导，含 前提→推导→结论→应用 链条与 confidence 标记",
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
-    }
+    },
+    "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
+    "updated_at": "2026-11-25 04:22"
   },
   "modules": [
     {
@@ -44,7 +46,7 @@
     {
       "file": "data/matchups.json",
       "title": "克制与搭配",
-      "count": 137,
+      "count": 140,
       "status": "stable",
       "note": "137条克制/配合关系，每条带 basis 机制依据(8类)，映射到 rules/inference 层，可回溯验证。本轮补 10 条（幻象清场、减治疗、真视反隐、护甲抗爆发等）。"
     },
@@ -86,9 +88,9 @@
     {
       "file": "data/talents.json",
       "title": "英雄天赋树",
-      "count": 123,
+      "count": 984,
       "status": "verified-partial",
-      "note": "123英雄 × 4层(10/15/20/25级) × 2选项；special_bonus_value 为游戏脚本中的实际数值(660/907 已取到)，其余为机制型天赋或待核对。"
+      "note": "123 英雄 × 4 层 × 2 选项 = 984 条；826 条解析出 special_bonus_value，158 条为机制型/无统一数值（value_pending），仅 17 条文案占位未解"
     },
     {
       "file": "data/neutral_items.json",

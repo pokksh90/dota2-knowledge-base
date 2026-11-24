@@ -1,0 +1,24 @@
+{
+  "generated_by": "scripts/quality_audit.py",
+  "error_count": 0,
+  "warning_count": 0,
+  "info_count": 9,
+  "errors": [],
+  "warnings": [],
+  "infos": [
+    "matchups.json: 双向成对记录 storm-spirit<->anti-mage（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
+    "matchups.json: 双向成对记录 axe<->phantom-assassin（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
+    "matchups.json: 双向成对记录 dazzle<->axe（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
+    "matchups.json: 双向成对记录 disruptor<->faceless-void（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
+    "matchups.json: 双向成对记录 silencer<->tidehunter（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
+    "matchups.json: 双向成对记录 silencer<->storm-spirit（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
+    "matchups.json: 双向成对记录 lina<->axe（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
+    "matchups.json: 双向成对记录 medusa<->anti-mage（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
+    "matchups.json: 双向成对记录 huskar<->dazzle（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）"
+  ],
+  "counts": {
+    "heroes": 123,
+    "rules": 61,
+    "inference": 26
+  }
+}

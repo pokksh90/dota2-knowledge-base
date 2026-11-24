@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 03:18",
+    "updated_at": "2026-11-25 04:22",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -38,19 +38,21 @@
       "id": "matchups-expand",
       "title": "继续扩充克制关系",
       "file": "data/matchups.json",
-      "current": 137,
+      "current": 140,
       "target": 140,
-      "status": "pending",
-      "desc": "覆盖尚未有克制的英雄。每条带 basis(8类机制依据)，并保证机制可回溯到 rules/inference。优先补高频英雄的经典克制对。"
+      "status": "done",
+      "desc": "覆盖尚未有克制的英雄。每条带 basis(8类机制依据)，并保证机制可回溯到 rules/inference。优先补高频英雄的经典克制对。",
+      "note": "已完成 140 对：本轮新增 zeus→riki(视野点名)、silencer→puck(沉默封逃生)、sand-king→phantom-lancer(AOE清幻象)；9 对为双向成对表述，已记为 info 而非重复"
     },
     {
       "id": "quality-audit",
       "title": "质量审查",
       "file": "全部",
-      "current": 0,
+      "current": 1,
       "target": 1,
-      "status": "pending",
-      "desc": "校验一致性：hero id 在各文件引用是否都存在、basis 是否对应合法机制、JSON是否合法、字段是否完整、有无重复/矛盾。发现问题做修正。长期可持续。"
+      "status": "done",
+      "desc": "校验一致性：hero id 在各文件引用是否都存在、basis 是否对应合法机制、JSON是否合法、字段是否完整、有无重复/矛盾。发现问题做修正。长期可持续。",
+      "note": "首轮全库审查：0 error；checker 覆盖 JSON 合法性、hero id 引用、relation/basis 合法性、pair 去重、inference premises 引用、talents 层数与选项数、neutral 组数、index count 同步；报告见 data/quality_report.json"
     },
     {
       "id": "base-data",
@@ -72,10 +74,10 @@
       "id": "talent-values",
       "title": "补齐天赋剩余数值",
       "file": "data/talents.json",
-      "current": 660,
-      "target": 907,
+      "current": 826,
+      "target": 984,
       "status": "pending",
-      "note": "907 个天赋中 660 已有脚本数值；剩余多为机制型(改目标/改穿透/改状态)，需逐条按游戏内文本核对，禁止推测"
+      "note": "984 条天赋中 826 条已解析 special_bonus_value；158 条为机制型（改目标/改穿透/改状态）或无统一数值，标 value_pending；17 条文案占位待补"
     },
     {
       "id": "neutral-items-audit",
@@ -89,6 +91,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 04:22",
+      "task": "matchups+quality-audit+talent-repair",
+      "added": 3,
+      "result": "matchups 137→140（zeus→riki、silencer→puck、sand-king→phantom-lancer）；新增 scripts/quality_audit.py 并跑首轮审查：发现 11 个英雄天赋层缺失（1/0 选项）、index 路径错误、rules certainty=stable 误判；新增 scripts/enrich_talents.py 用 dotaconstants hero_abilities + SteamDB 本地化/英雄脚本修复，天赋 907→984 条、有值 660→826 条，17 条占位残留；审查终态 0 error / 0 warning / 9 info",
+      "next": "talent-values 剩 158 条机制型天赋（需逐条人工/游戏内核对）；可补 2023-2024 新英雄（Kez/Ringmaster/Muerta）"
+    },
     {
       "time": "2026-11-25 03:18",
       "task": "items-expand",

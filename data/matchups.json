@@ -973,6 +973,27 @@
       "target_id": "medusa",
       "reason": "末日使目标无法施法，美杜莎的法力护盾与分裂箭同时失效，只能以裸身承受物理输出",
       "basis": "resource"
+    },
+    {
+      "hero_id": "zeus",
+      "relation": "counter",
+      "target_id": "riki",
+      "reason": "雷神之怒(Thundergod's Wrath)对全场敌方英雄造成伤害并提供视野，隐身中的力丸会被直接点名，隐身优势失效",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "counter",
+      "target_id": "puck",
+      "reason": "全局沉默与遗言封锁施法，帕克被沉默期间无法开启相位转移或幻影球逃生，切入后难以脱离",
+      "basis": "control"
+    },
+    {
+      "hero_id": "sand-king",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "掘地穿刺与沙尘暴的范围伤害/致盲能同时命中和压制多只幻象，幻影长矛手的分身难以靠数量堆死沙王",
+      "basis": "aoe"
     }
   ]
 }
