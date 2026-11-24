@@ -833,6 +833,76 @@
       "target_id": "meepo",
       "reason": "地震的范围伤害按多单位结算，米波的分身会同时吃到成片AOE伤害",
       "basis": "aoe"
+    },
+    {
+      "hero_id": "anti-mage",
+      "relation": "counter",
+      "target_id": "zeus",
+      "reason": "宙斯智力池大且依赖技能循环，法术护盾削减其魔法爆发，法力虚空按缺失蓝量放大伤害",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "nyx-assassin",
+      "relation": "countered_by",
+      "target_id": "bounty-hunter",
+      "reason": "追踪提供真视并标记，暗夜刺客的隐身突袭路线被全程暴露，先手优势消失",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "templar-assassin",
+      "relation": "countered_by",
+      "target_id": "slardar",
+      "reason": "鱼人碎击的真视让圣堂的隐匿失效，减甲还让其低血身材更易被集火秒杀",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "troll-warlord",
+      "relation": "countered_by",
+      "target_id": "phantom-assassin",
+      "reason": "巨魔战将的输出来自持续普攻，幻影刺客的高闪避按比例吃掉其有效伤害",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "sven",
+      "relation": "countered_by",
+      "target_id": "outworld-destroyer",
+      "reason": "奥术球的纯伤害完全无视斯温的战吼护甲，吸智力同时削弱其续航与技能循环",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "terrorblade",
+      "relation": "countered_by",
+      "target_id": "lina",
+      "reason": "恐怖利刃高护甲但基础血量低，莱娜的魔法爆发正打在其护甲无效的伤害类型上",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "leshrac",
+      "relation": "counter",
+      "target_id": "naga-siren",
+      "reason": "娜迦的镜像是多单位，拉席克的多段范围伤害成片清掉幻象并波及本体",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "broodmother",
+      "relation": "countered_by",
+      "target_id": "leshrac",
+      "reason": "蜘蛛群与蛛网是多单位铺场，拉席克的范围清线可成片压低其推进效率",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "sniper",
+      "relation": "countered_by",
+      "target_id": "tusk",
+      "reason": "雪球冲刺+海象神拳可跨距离贴身，矮人狙击手无位移，被拽入近身后射程优势归零",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "crystal-maiden",
+      "relation": "countered_by",
+      "target_id": "slark",
+      "reason": "暗影突袭越过前排直取无位移的脆皮辅助，水晶室女被贴身后无法施法脱身",
+      "basis": "mobility"
     }
   ]
 }

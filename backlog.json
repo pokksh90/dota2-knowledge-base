@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-24 23:02",
+    "updated_at": "2026-11-24 23:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -36,7 +36,7 @@
       "id": "matchups-expand",
       "title": "继续扩充克制关系",
       "file": "data/matchups.json",
-      "current": 117,
+      "current": 127,
       "target": 140,
       "status": "pending",
       "desc": "覆盖尚未有克制的英雄。每条带 basis(8类机制依据)，并保证机制可回溯到 rules/inference。优先补高频英雄的经典克制对。"
@@ -92,6 +92,14 @@
       "result": "matchups 107→117（resource+1、vision+1、mobility+3、physical+1、sustain+1、damage-type+1、aoe+2）；inference 24→26 达标(status=done)：新增「安全区决定GPM」「买活边际效用」",
       "note": "basis：control 26 最多，vision 10/resource 9/physical 9/damage-type 9 仍偏少；counter 55 略多于 countered_by 39",
       "next": "matchups 117/140 仍最弱 → 继续；或开始 tactics-expand(1/4)"
+    },
+    {
+      "time": "2026-11-24 23:18",
+      "task": "matchups-expand（定时轮）",
+      "added": 10,
+      "result": "matchups 117→127：resource+1(敌法克宙斯)、vision+2(赏金克夜魔/鱼人克圣堂)、physical+1(幻刺克巨魔)、damage-type+2(黑鸟克斯温/莱娜克TB)、aoe+2(拉席克克娜迦/克蜘蛛)、mobility+2(海民克矮人/小鱼克水晶)",
+      "note": "basis 更均衡：control 26/26 占比最高，其余 10~23；counter 57 vs countered_by 47",
+      "next": "matchups 127/140 仍最弱，继续补；之后转 items-expand(39/60) 或 tactics(1/4)"
     }
   ]
 }
