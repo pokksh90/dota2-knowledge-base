@@ -18,19 +18,24 @@ BASE = "https://raw.githubusercontent.com/odota/dotaconstants/master/build"
 FEED = "https://www.dota2.com/datafeed/herodata?language=english&hero_id={}"
 TIER_LEVELS = {1: 10, 2: 15, 3: 20, 4: 25}
 
-# Liquipedia Neutral Items（7.42）分档清单
+# 7.42 中立装备重构：4 个等级（原第 5 档废除），每级 4 组 × 3 件，开局即定
 NEUTRAL = {
-    1: ["Ash Legion Shield", "Chipped Vest", "Dagger of Ristul", "Dormant Curio", "Duelist Gloves",
-        "Forager's Kit", "Kobold Cup", "Occult Bracelet", "Pollywog Charm", "Possessed Mask",
-        "Stonefeather Satchel", "Weighted Dice"],
-    2: ["Crippling Crossbow", "Defiant Shell", "Essence Ring", "Mana Draught", "Medallion of Courage",
-        "Poor Man's Shield", "Searing Signet", "Seeds of Serenity", "Tumbler's Toy"],
-    3: ["Cloak of Flames", "Gunpowder Gauntlet", "Jidi Pollen Bag", "Partisan's Brand", "Psychic Headband",
-        "Serrated Shiv", "Spellslinger", "Stormcrafter", "Unrelenting Eye"],
-    4: ["Conjurer's Catalyst", "Dandelion Amulet", "Enchanter's Bauble", "Flayer's Bota", "Giant's Maul",
-        "Idol of Scree'Auk", "Rattlecage", "Metamorphic Mandible"],
-    5: ["Book of the Dead", "Dezun Bloodrite", "Divine Regalia", "Fallen Sky", "Harmonizer", "Minotaur Horn",
-        "Riftshadow Prism", "Spider Legs", "Stygian Desolator", "Witchbane"],
+    1: [["Chipped Vest", "Ash Legion Shield", "Possessed Mask"],
+        ["Dormant Curio", "Red Ledger", "Weighted Dice"],
+        ["Pollywog Charm", "Seeds of Serenity", "Forager's Kit"],
+        ["Kobold Cup", "Stonefeather Satchel", "Tumbler's Toy"]],
+    2: [["Psychic Headband", "Safety Bubble", "Metamorphic Mandible"],
+        ["Jidi Pollen Bag", "Brick", "Crippling Crossbow"],
+        ["Imp Claw", "Gunpowder Gauntlet", "Defiant Shell"],
+        ["Partisan's Brand", "Spellslinger", "Mana Draught"]],
+    3: [["Prophet's Pendulum", "Dandelion Amulet", "Idol of Scree'Auk"],
+        ["Balmhook", "Rattlecage", "Stormcrafter"],
+        ["Enchanter's Bauble", "Ceremonial Robe", "Harmonizer"],
+        ["Vile Phial", "Serrated Shiv", "Revenant's Brooch"]],
+    4: [["Fallen Sky", "Flicker", "Minotaur Horn"],
+        ["Mind Breaker", "Divine Regalia", "Witchbane"],
+        ["Helm of the Hivemind", "Dezun Bloodrite", "Conjurer's Catalyst"],
+        ["Giant's Ring", "Book of the Dead", "Riftshadow Prism"]],
 }
 
 
@@ -135,42 +140,53 @@ def main():
     }
     (DATA / "talents.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    # ---------- 中立装备 ----------
-    byname = {norm(v.get("dname", "")): (k, v) for k, v in items_dc.items()}
-    neu, missing = {}, []
-    for tier, names in NEUTRAL.items():
-        lst = []
-        for n in names:
-            hit = byname.get(norm(n))
-            if not hit:
-                missing.append(n)
-                continue
-            k, v = hit
-            lst.append({
-                "id": k,
-                "name_en": v.get("dname", n),
-                "tier": tier,
-                "behavior": v.get("behavior"),
-                "attrib": [{"key": x["key"], "value": x["value"]} for x in v.get("attrib", []) if not x.get("generated")][:10],
-                "abilities": [{"title": a.get("title"), "type": a.get("type"),
-                               "description": re.sub(r"\s+", " ", a.get("description", "")).strip()}
-                              for a in v.get("abilities", []) if a.get("description")],
-            })
-        neu[tier] = lst
+    # 中立装备（7.42 四级制）
+    all_items = items_dc.get("items", items_dc) if isinstance(items_dc, dict) else items_dc
+    byname = {norm(v.get("dname") or ""): (k, v) for k, v in all_items.items() if isinstance(v, dict)}
+    classes, missing = {}, []
+    for klass, groups in NEUTRAL.items():
+        gs = []
+        for g in groups:
+            opts = []
+            for n in g:
+                hit = byname.get(norm(n))
+                if not hit:
+                    missing.append(n)
+                    continue
+                k, v = hit
+                opts.append({
+                    "id": k,
+                    "name_en": v.get("dname", n),
+                    "attrib": [{"key": x["key"], "value": str(x["value"])} for x in v.get("attrib", []) if not x.get("generated")][:8],
+                    "abilities": [{"title": a.get("title"), "type": a.get("type"),
+                                   "description": re.sub(r"\s+", " ", a.get("description", "")).strip()}
+                                  for a in v.get("abilities", []) if a.get("description")],
+                })
+            if opts:
+                gs.append({"group": len(gs) + 1, "options": opts})
+        classes[str(klass)] = gs
     (DATA / "neutral_items.json").write_text(json.dumps({
         "meta": {
-            "source": "Liquipedia Neutral Items (7.42) + dotaconstants",
-            "craft": {"resource": "Madstone", "unlock_time": {"1": "05:00", "2": "15:00", "3": "25:00", "4": "35:00", "5": "60:00"},
-                      "madstone_cap": {"5:00": 5, "15:00": 15, "25:00": 25, "35:00": 35, "60:00": 45, "70:00": "unlimited"},
-                      "cost": {"1": 6, "2": 10, "3": 10, "4": 10, "5": 10},
-                      "note": "必须先做低一档；每人同时只有 1 件，不可掉落/出售/进背包，重铸会替换"},
-            "note": "中立装备每档为随机候选（4~5 选 1，可保留上一档），本文件为候选池清单",
+            "source": "Valve 7.42 官方更新说明 + dotaconstants 数值",
+            "system": {"classes": 4,
+                       "unlock": {"1": "0:00", "2": "15:00", "3": "30:00", "4": "50:00"},
+                       "madstone_unlimited_after": "65:00",
+                       "craft_cost": {"1": 5, "2": 10, "3": 10, "4": 14},
+                       "reforge_escalation_class4": 6,
+                       "options_per_class": 4,
+                       "option_rule": "每级 4 组 × 3 件，开局即定；每级从每组各给 1 个选项（共 4 个）；可保留当前档，附魔不可沿用"},
+            "enchantments": {"rule": "附魔为纯被动属性，每级 4 个随机选项，不能沿用上一级",
+                             "class1": ["Mystical", "Brawny", "Alert", "Tough", "Quickened"],
+                             "class2": ["Mystical", "Brawny", "Alert", "Tough", "Quickened", "Greedy", "Vampiric"],
+                             "class3": ["Mystical", "Brawny", "Tough", "Quickened", "Keen-Eyed", "Vast", "Greedy", "Vampiric"],
+                             "class4": ["Mystical", "Brawny", "Alert", "Tough", "Quickened", "Vampiric", "Timeless", "Titanic", "Crude", "Evolved", "Audacious", "Feverish", "Fleetfooted", "Boundless", "Wise"]},
+            "note": "7.42 取消第 5 档；原 T5 物品下放到第 4 档，第 4 档打造费 10→14 疯狂石",
         },
-        "tiers": neu,
+        "classes": classes,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print("talents heroes:", len(talents_out), "unresolved placeholders:", unresolved)
-    print("neutral items:", {t: len(v) for t, v in neu.items()}, "missing:", missing)
+    print("neutral classes:", {k: sum(len(g["options"]) for g in v) for k, v in classes.items()}, "missing:", missing)
 
 
 if __name__ == "__main__":

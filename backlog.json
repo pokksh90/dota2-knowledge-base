@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 01:19",
+    "updated_at": "2026-11-25 01:28",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -27,7 +27,7 @@
       "id": "items-expand",
       "title": "扩充装备库",
       "file": "data/items.json",
-      "current": 49,
+      "current": 55,
       "target": 60,
       "status": "pending",
       "desc": "补充核心装备(coach_note+category+core_for)。候选：散失/紫苑各类、以太之镜、飓风长戟、赤红甲、强袭、天鹰戒、圣洁吊坠、魔龙枪、死灵书(如版本在)、各类鞋、血棘、否决、紫怨、大炮、慧光等。数值(价格)留空或pending，不编造。"
@@ -82,11 +82,17 @@
       "current": 48,
       "target": 48,
       "status": "done",
-      "note": "48 件候选已入池；待核对各档候选数量(页面文字与列表存在差异)与附魔(Enchantment)层清单"
+      "note": "按 7.42 重建为四级制：4×4组×3件=48 件；分档/费用/选项规则全部替换为官方口径"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 01:28",
+      "task": "7.42 数据补齐",
+      "result": "neutral_items.json 重建为四级制（0:00/15:00/30:00/50:00、成本 5/10/10/14、65:00 解限、每级 4 选项、附魔清单）；修正 rules:neutral-item-crafting；items 49→55 新增血鞭/双蛇杖/瑞斯托的虔诚/莫迪吉安战靴/破天/铸星（价格取自 dotaconstants）",
+      "next": "tactics-expand（BP/分路/局势决策三板块）；items 55→60"
+    },
     {
       "time": "2026-11-25 01:19",
       "task": "7.42 版本纠偏",

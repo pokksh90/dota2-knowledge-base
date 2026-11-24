@@ -649,6 +649,89 @@
         5
       ],
       "source": "stable"
+    },
+    {
+      "id": "bloodslinger",
+      "name_zh": "血鞭",
+      "name_en": "Bloodslinger",
+      "category": "utility",
+      "purpose": "主动投掷手雷，造成伤害、减速与持续伤害",
+      "coach_note": "925 金（合成：魂之戒+2×披风+血榴弹）。前期游走/辅助的小爆发+减速，能打断走位并补伤害；后期属性价值低，属于早期过渡件。",
+      "core_for": [
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "caduceus",
+      "name_zh": "双蛇杖",
+      "name_en": "Caduceus",
+      "category": "utility",
+      "purpose": "在推人（Force）的同时给目标附加一次「强化法术」",
+      "coach_note": "5400 金（合成：原力法杖+护符）。给救人装加了进攻属性：推队友=位移+强化其下一次单体指向法术（额外 175 伤害并减速 40%）。适合辅助/法系阵容，用在有强力单体技能的队友身上收益最大。",
+      "core_for": [
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "ristuls-devotion",
+      "name_zh": "瑞斯托的虔诚",
+      "name_en": "Ristul's Devotion",
+      "category": "support",
+      "purpose": "光环：附近友军获得吸血、法术吸血、伤害加成、回蓝与护甲",
+      "coach_note": "3800 金（合成：弗拉迪米尔的祭品+板甲+巫毒面具）。团队型物理/混合阵容的增幅器，1200 半径内全体受益；适合多核心阵容，单核时不如直接给核心买输出装。",
+      "core_for": [
+        3,
+        4,
+        5
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "sabatons-of-mordiggian",
+      "name_zh": "莫迪吉安战靴",
+      "name_en": "Sabatons of Mordiggian",
+      "category": "offensive",
+      "purpose": "主动：+40 伤害、+30 力量、+5 护甲，近战获得相位移动与 +20% 移速",
+      "coach_note": "5950 金（合成：相位鞋+臂章）。给力量近战核心的「开团后爆发窗口」装备：开主动=臂章的力量与伤害叠加相位穿行，适合斧王、斯温、军团这类需要强行贴脸的英雄。",
+      "core_for": [
+        1,
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "skypiercer",
+      "name_zh": "破天",
+      "name_en": "Skypiercer",
+      "category": "offensive",
+      "purpose": "主动缴械 3 秒；500 范围内有敌方英雄时冷却加速 125%",
+      "coach_note": "6000 金（合成：天堂之戟+散华+闪避护符）。天堂之戟的升级版，把「废掉物理核心 3 秒」做成可高频使用的技能；己方前排贴身作战时冷却近乎砍半，适合对抗幻影刺客、巨魔这类纯普攻核心。",
+      "core_for": [
+        1,
+        2,
+        3
+      ],
+      "source": "stable"
+    },
+    {
+      "id": "starforge",
+      "name_zh": "铸星",
+      "name_en": "Starforge",
+      "category": "magic",
+      "purpose": "保留陨星锤的引导眩晕，并在任何控制结束后追加持续灼烧与减速",
+      "coach_note": "6000 金（合成：陨星锤+极限法球）。控制链延伸装：任意控制结束都会触发 3 秒灼烧（60/秒）与 15% 减速，适合有多个小控制的英雄（如莱恩、暗影萨满、马格纳斯）把控制转化为额外伤害。",
+      "core_for": [
+        2,
+        3,
+        4
+      ],
+      "source": "stable"
     }
   ],
   "builds": [
