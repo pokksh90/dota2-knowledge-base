@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 02:20",
+    "updated_at": "2026-11-25 03:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -28,10 +28,11 @@
       "id": "items-expand",
       "title": "扩充装备库",
       "file": "data/items.json",
-      "current": 55,
+      "current": 60,
       "target": 60,
-      "status": "pending",
-      "desc": "补充核心装备(coach_note+category+core_for)。候选：散失/紫苑各类、以太之镜、飓风长戟、赤红甲、强袭、天鹰戒、圣洁吊坠、魔龙枪、死灵书(如版本在)、各类鞋、血棘、否决、紫怨、大炮、慧光等。数值(价格)留空或pending，不编造。"
+      "status": "done",
+      "desc": "补充核心装备(coach_note+category+core_for)。候选：散失/紫苑各类、以太之镜、飓风长戟、赤红甲、强袭、天鹰戒、圣洁吊坠、魔龙枪、死灵书(如版本在)、各类鞋、血棘、否决、紫怨、大炮、慧光等。数值(价格)留空或pending，不编造。",
+      "note": "已完成 60 件：新增雷神之锤、散失之刃、银影之刃、玲珑心、压倒性闪烁"
     },
     {
       "id": "matchups-expand",
@@ -88,6 +89,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 03:18",
+      "task": "items-expand",
+      "added": 5,
+      "result": "items 55→60：mjollnir(链式闪电/静电护盾)、diffusal-blade(烧蓝+净化)、silver-edge(破坏禁用被动)、octarine-core(20%冷却缩减)、overwhelming-blink(跳刀升级+落地减速)；数值取自 dotaconstants items.json",
+      "next": "matchups 137→140，然后 quality-audit 全库一致性审查"
+    },
     {
       "time": "2026-11-25 02:20",
       "task": "tactics-expand",

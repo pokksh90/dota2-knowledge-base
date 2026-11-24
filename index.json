@@ -37,7 +37,7 @@
     {
       "file": "data/items.json",
       "title": "装备与出装",
-      "count": 55,
+      "count": 60,
       "status": "stable",
       "note": "55件核心装备（含 7.42 新增血鞭/双蛇杖/瑞斯托的虔诚/莫迪吉安战靴/破天/铸星）+ 5位置出装框架；价格以 item_base.json 为准。"
     },
