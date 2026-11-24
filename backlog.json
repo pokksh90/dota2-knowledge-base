@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-24 22:51",
+    "updated_at": "2026-11-24 23:02",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -9,9 +9,9 @@
       "id": "inference-expand",
       "title": "扩充推理洞察(定理层)",
       "file": "data/inference.json",
-      "current": 24,
+      "current": 26,
       "target": 26,
-      "status": "pending",
+      "status": "done",
       "desc": "新增可证正确的推导，参照现有结构(premises/derivation/conclusion/application/confidence)。候选主题：控制链时长数学、暴击期望值、吸血vs反伤博弈、买活的经济时机、推塔vs拿盾抉择、分线线权的价值、魔抗/护甲配比、先手vs反手阈值、多目标英雄(米波/幻影长矛手)的AOE克制数学。每条须能由 rules 层推导。"
     },
     {
@@ -36,7 +36,7 @@
       "id": "matchups-expand",
       "title": "继续扩充克制关系",
       "file": "data/matchups.json",
-      "current": 107,
+      "current": 117,
       "target": 140,
       "status": "pending",
       "desc": "覆盖尚未有克制的英雄。每条带 basis(8类机制依据)，并保证机制可回溯到 rules/inference。优先补高频英雄的经典克制对。"
@@ -84,6 +84,14 @@
       "result": "inference 14→24：新增防御构成论/高BAT攻速收益/魔抗EHP随血量/无信息先手为负/沉默单向先手/劣势提方差/早期金钱时间价值/关键等级窗口/推塔三重复利/容错随爆发。verified+2",
       "note": "余 2 条到 target；premises 全部可回溯到 rules",
       "next": "补满 inference-expand(24/26) 后转 tactics-expand(1/4) 或 quality-audit"
+    },
+    {
+      "time": "2026-11-24 23:02",
+      "task": "matchups +10 / inference +2",
+      "added": 12,
+      "result": "matchups 107→117（resource+1、vision+1、mobility+3、physical+1、sustain+1、damage-type+1、aoe+2）；inference 24→26 达标(status=done)：新增「安全区决定GPM」「买活边际效用」",
+      "note": "basis：control 26 最多，vision 10/resource 9/physical 9/damage-type 9 仍偏少；counter 55 略多于 countered_by 39",
+      "next": "matchups 117/140 仍最弱 → 继续；或开始 tactics-expand(1/4)"
     }
   ]
 }

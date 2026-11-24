@@ -294,6 +294,31 @@
       "conclusion": "容错装并非无条件的「核心必备」，其性价比由对手爆发强度决定：高爆发阵容下容错价值极高，持续输出阵容下应转向 EHP/续航。",
       "application": "对面高爆发连招（如双单体爆发+控制）时优先 BKB/盾/薄葬/位移；对面持续输出消耗时优先护甲、吸血、回复与血量。",
       "confidence": "reasoned"
+    },
+    {
+      "id": "safe-farm-area-sets-gpm",
+      "title": "核心的刷钱速度上限由「可安全刷的区域面积」决定，不由补刀手法决定",
+      "premises": [
+        "map-control",
+        "vision-information",
+        "economy-sources"
+      ],
+      "derivation": "稳定收入来自补刀与野区（economy-sources），而能否持续刷野取决于该区域是否安全（vision-information）；安全区域的大小又由塔与视野构成的地图控制决定（map-control）。故单位时间可安全获取的资源量 ≈ 安全区域内的资源密度，与补刀技巧无关。",
+      "conclusion": "发育速度的天花板是「地图控制半径」的函数：控图扩一寸，刷钱上限就抬一寸；反之被压回高地，再好的补刀手法也无处可刷。",
+      "application": "想让核心更快成型，先扩安全区（推塔、布视野、清掉对方游走），而不是催核心练补刀；反之压制对方核心，优先压缩其可安全刷的区域。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "buyback-marginal-utility",
+      "title": "买活的金钱价值取决于「此刻是否为不可替代的防守点」",
+      "premises": [
+        "positioning-economy",
+        "economy-sources"
+      ],
+      "derivation": "买活是用金钱购买一次容错（positioning-economy 中的「失误不致命」保险）。其边际效用取决于若不复活的损失：若此刻是唯一能守住关键目标（高地/肉山）的时间点，不复活的损失远大于买活成本；若局势已被动且复活也守不住，则金钱的边际效用接近 0。",
+      "conclusion": "买活不是「有钱就买」，而是一个条件决策：只有在「复活后能改变结果」的时间窗内，买活才是正收益；否则把钱留给下一轮装备更划算。",
+      "application": "高地/决胜肉山团前预留买活钱；在必输的残局里不要为面子买活，把钱转化为下一波战力。",
+      "confidence": "reasoned"
     }
   ]
 }

@@ -763,6 +763,76 @@
       "target_id": "enigma",
       "reason": "黑洞固定住多人后，裂地脉冲与闪电风暴可在静止目标上打满多段范围伤害",
       "basis": "aoe"
+    },
+    {
+      "hero_id": "anti-mage",
+      "relation": "counter",
+      "target_id": "wraith-king",
+      "reason": "骷髅王的复活需要消耗蓝量，法力燃烧抽空其法力后复活链被直接掐断；同时法术护盾削减其魔法伤害",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "bounty-hunter",
+      "relation": "countered_by",
+      "target_id": "slardar",
+      "reason": "鱼人碎击提供真视并减甲，赏金的隐身先手被破且减甲后极易被集火秒杀",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "spirit-breaker",
+      "relation": "counter",
+      "target_id": "crystal-maiden",
+      "reason": "冲撞可跨距离直取无位移的脆皮辅助，水晶室女一旦被贴身即被连环控住",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "sven",
+      "relation": "countered_by",
+      "target_id": "phantom-assassin",
+      "reason": "斯温的输出高度依赖普攻，幻影刺客的高闪避吃掉了其大部分有效伤害，且PA爆发窗口快于其成型",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "abaddon",
+      "relation": "countered_by",
+      "target_id": "ancient-apparition",
+      "reason": "寒霜的禁疗直接掐断深渊领主的治疗与护盾回复，其坦度来源于回复，回复被禁则坦度归零",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "outworld-destroyer",
+      "relation": "counter",
+      "target_id": "dragon-knight",
+      "reason": "奥术球的纯伤害无视龙骑变身后的高护甲，且吸智力削弱其持续输出",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "leshrac",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "分裂箭幻象会被范围魔法成片清掉，拉席克的多段AOE对幻象海收益极高",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "slark",
+      "relation": "counter",
+      "target_id": "shadow-shaman",
+      "reason": "暗影突袭越过前排直取无位移的脆皮控制辅助，暗影萨满被贴身后无法施法",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "earth-spirit",
+      "relation": "counter",
+      "target_id": "sniper",
+      "reason": "残岩冲刺+拉人可把无位移的矮人狙击手从射程外拽进贴身，射程优势被抹掉",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "sand-king",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "地震的范围伤害按多单位结算，米波的分身会同时吃到成片AOE伤害",
+      "basis": "aoe"
     }
   ]
 }

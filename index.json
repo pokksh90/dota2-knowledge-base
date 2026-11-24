@@ -23,7 +23,7 @@
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 24,
+      "count": 26,
       "status": "stable",
       "note": "14条逻辑推导洞察，每条含前提→推导→结论→应用，可回溯验证；含多条对网上常见误解的数学证伪。"
     },
@@ -44,7 +44,7 @@
     {
       "file": "data/matchups.json",
       "title": "克制与搭配",
-      "count": 107,
+      "count": 117,
       "status": "stable",
       "note": "85条克制/配合关系，每条带 basis 机制依据(8类)，映射到 rules/inference 层，可回溯验证。"
     },
