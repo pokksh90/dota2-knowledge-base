@@ -2,7 +2,36 @@
   "meta": {
     "title": "底层规则（公理层）",
     "description": "Dota2 最基础的机制与公式，作为逻辑推理的公理前提。每条的 certainty 标记：verified=机制确定；stable=通用稳定；versioned=数值随版本变动(仅作定性)。",
-    "note": "只收录可查证的基础机制，不收录攻略结论。攻略结论应在 inference.json 中由本层推导得出。"
+    "note": "只收录可查证的基础机制，不收录攻略结论。攻略结论应在 inference.json 中由本层推导得出。",
+    "patch": "7.42",
+    "sources": [
+      {
+        "name": "Liquipedia Dota 2 Wiki",
+        "patch": "7.42",
+        "pages": [
+          "Roshan",
+          "Runes",
+          "Buildings",
+          "Creeps",
+          "Lane_Creeps",
+          "Neutral_Creeps",
+          "Gold",
+          "Experience",
+          "Denying",
+          "Death",
+          "Vision",
+          "Time_of_Day",
+          "Level",
+          "Attack_Speed",
+          "Move_Speed",
+          "Status_Resistance"
+        ],
+        "url_template": "https://liquipedia.net/dota2/<page>",
+        "verified_at": "2026-11-24",
+        "note": "每条带 values 的规则均可回溯到上述页面之一；补丁更新后需重核"
+      }
+    ],
+    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。"
   },
   "principles": [
     {
@@ -147,28 +176,60 @@
     {
       "id": "attack-speed-cap",
       "category": "攻击与动作",
-      "title": "攻速上限与间隔换算",
+      "title": "攻速上限与间隔公式",
       "certainty": "verified",
-      "statement": "额外攻速（IAS）上限为 +700；实际攻击间隔 = 基础攻击间隔 BAT / (1 + IAS/100)。",
-      "detail": "BAT 因英雄而异（常见 1.7，部分英雄 1.4~1.5），BAT 越低同样 IAS 得到的攻击次数越多。",
-      "key_implication": "攻速收益对低 BAT 英雄更高；IAS 接近上限后再堆攻速几乎无效，应改堆攻击力/暴击/穿甲。"
+      "statement": "总攻速（含基础 100）取值范围 20–700，上限对所有英雄统一为 700；攻击频率 r = 总攻速 /(100×BAT)，单次间隔 T = 1/r。多数英雄基础攻速 100、BAT 1.7。",
+      "detail": "基础攻速因英雄而异（如小小 85、斯温 110），英雄的最低攻速也随基础攻速平移；BAT 越低，同样的攻速得到的攻击次数越多。",
+      "key_implication": "「+攻速」是加在 20–700 这个总攻速区间里，越接近 700 收益越趋零；低 BAT 英雄（剑圣、龙骑）堆攻速的性价比天然更高。",
+      "values": {
+        "total_as_range": [
+          20,
+          700
+        ],
+        "rate": "AS/(100*BAT)",
+        "default_base_as": 100,
+        "default_bat": 1.7,
+        "bat_examples": {
+          "juggernaut": 1.4,
+          "dragon-knight": 1.6
+        }
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "move-speed-bounds",
       "category": "攻击与动作",
-      "title": "移速上下限",
+      "title": "移速边界与计算顺序",
       "certainty": "verified",
-      "statement": "移速结算后被夹在 100（下限）与 550（上限）之间，百分比加速与减速都在此区间内生效。",
-      "detail": "少数技能（如位移加速类）可临时突破上限；减速叠到下限后继续减速不再增加控制效果。",
-      "key_implication": "追不上/跑不掉时先看双方移速差是否已被夹到边界，单纯堆移速可能无效，需要位移或控制。"
+      "statement": "移速默认下限 100、上限 550，且限制在「所有加成算完之后」才生效：总移速 =（基础移速 + 固定加成）×（1 + 百分比加成之和）。",
+      "detail": "固定加成先算、百分比后算；极少数技能可突破上下限；减速把移速压到 100 后再减速只延长时间、不再变慢。",
+      "key_implication": "追不上人先算对方是否已被 550 夹顶：若已封顶，再加移速无效，只能靠位移/控制解决。",
+      "values": {
+        "min": 100,
+        "max": 550,
+        "formula": "(base + flat) * (1 + sum(pct))"
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "status-resistance",
       "category": "控制与状态",
-      "title": "状态抗性",
+      "title": "状态抗性叠加与效果范围",
       "certainty": "verified",
-      "statement": "状态抗性按乘法叠加，按比例缩短眩晕/沉默/缠绕等控制时长，但不减少其伤害，也不影响标记为不可抗的控制。",
-      "key_implication": "抗性堆到 30~50% 时控制链会显著变短，可用来打断对方的连招节奏；但对「无视抗性」的大招无效。"
+      "statement": "状态抗性按乘法叠加：总抗性 = 1 - ∏(1 - 各来源)，基础为 0，因此永远到不了 100%；实际控制时长 = 原时长 × 剩余系数。",
+      "key_implication": "抗性 50% 等于把 3 秒控变 1.5 秒，配合解控装可以把「连招」拆成「两次独立控制」，是反先手阵容的底层解。",
+      "detail": "它缩短眩晕/沉默/缠绕等 debuff 时长，但持续伤害的总伤害不变（只是把跳伤间隔按比例压缩）；对「无时长」的永久效果与队友施加的效果无效。",
+      "values": {
+        "formula": "1 - prod(1 - sr_i)",
+        "base": 0
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "dispel-tiers",
@@ -182,11 +243,18 @@
     {
       "id": "lifesteal-types",
       "category": "伤害与防御",
-      "title": "吸血类型区分",
+      "title": "吸血类型与对野怪惩罚",
       "certainty": "verified",
-      "statement": "普通吸血只对普攻物理伤害生效，法术吸血只对技能伤害生效，两者系数独立结算。",
+      "statement": "普通吸血只对普攻物理伤害生效，法术吸血只对技能伤害生效；对非英雄单位（小兵/野怪）普通吸血效率 -40%，法术吸血 -80%。",
       "detail": "对非英雄单位（小兵/野怪）的吸血通常按较低比例结算，因此「打小兵回血」效率远低于打英雄。",
-      "key_implication": "技能型核心靠法术吸血续航，普攻型核心靠普通吸血，买错类型等于白买。"
+      "key_implication": "打野回血效率被系统性削弱，所以「吸血续航」不能当打野的主要回复手段，需要靠装备/技能回复。",
+      "values": {
+        "lifesteal_vs_creep_penalty": -0.4,
+        "spell_lifesteal_vs_creep_penalty": -0.8
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "mana-break-damage",
@@ -199,77 +267,186 @@
     {
       "id": "kill-gold-formula",
       "category": "经济机制",
-      "title": "击杀金钱构成",
+      "title": "击杀金钱与连杀赏金公式",
       "certainty": "verified",
-      "statement": "击杀英雄的金钱 = 基础赏金（随等级）+ 连杀奖励 + 净值系数项；连杀越高，被击杀时给对方的赏金越高（有封顶）。",
-      "detail": "助攻者按参与人数与贡献分配金钱；单杀与多人击杀的总赏金接近。",
-      "key_implication": "领先方被终结一次会同时送出「连杀赏金 + 净值赏金」，这是劣势方最现实的翻盘点。"
+      "statement": "击杀金钱 = 125 + 死者等级×8 + 连杀赏金 + 首杀加成(135，仅本局第一次击杀)。连杀赏金按 3/4/5/6/7/8/9/10+ 连杀依次为 60/100/150/210/280/360/450/550。",
+      "detail": "助攻金：1500 半径内的队友共享，f = 15 + (50 + 受害者净值×0.037)/人数，A = (受害队净值/击杀队净值) × f。塔的团队赏金由全队平分，补刀者另有奖励。",
+      "key_implication": "终结一个高连杀+高净值的核心，收益是「连杀赏金+净值比例+团队翻盘窗口」的三重叠加，这是劣势方最现实的翻盘点。",
+      "values": {
+        "kill": "125 + lvl*8 + streak + fb135",
+        "streak": {
+          "3": 60,
+          "4": 100,
+          "5": 150,
+          "6": 210,
+          "7": 280,
+          "8": 360,
+          "9": 450,
+          "10+": 550
+        },
+        "assist_radius": 1500,
+        "assist_formula": "15 + (50 + victim_nw*0.037)/n"
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "gold-reliable-vs-unreliable",
       "category": "经济机制",
-      "title": "可靠与不可靠金钱",
+      "title": "可靠/不可靠金钱与被动工资",
       "certainty": "verified",
-      "statement": "金钱分为可靠（击杀/助攻/建筑/目标奖励）与不可靠（补刀、打野、被动收入）两部分；死亡只损失不可靠金钱，可靠金钱不掉。",
-      "key_implication": "劣势期应优先吃「可靠来源」的收入；手里攒着大量不可靠金钱时死亡等于送钱，先花掉再冒险。"
+      "statement": "被动工资从 0:00 起约 1 金/0.67 秒（即 90 金/分钟），每分钟再 +2 金；被动工资与赏金符属可靠金钱，补刀/击杀/拆塔属不可靠金钱。死亡只扣不可靠金钱。",
+      "key_implication": "攒着一大笔不可靠金钱去冒险=把可损失的钱暴露在风险里；先花掉再打，等于把风险清零。",
+      "detail": "买装备先扣不可靠金钱，买活先扣可靠金钱。",
+      "values": {
+        "passive_gold_per_min_start": 90,
+        "passive_gold_growth_per_min": 2
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "buyback-rules",
       "category": "经济机制",
-      "title": "买活规则",
+      "title": "买活成本、冷却与代价",
       "certainty": "verified",
-      "statement": "买活消耗金钱（随等级与净值上升），买活后进入冷却期，并在冷却期内降低金钱收益；买活不消耗可靠金钱之外的惩罚性资源，但会延后关键装备节奏。",
-      "key_implication": "买活是「用金钱换时间」的期权：关键团（肉山/高地）前留够买活钱，比多买一件小件更值。"
+      "statement": "买活费用 = ⌊200 + 净值/13⌋（净值 10k 约 969，20k 约 1738），先扣可靠金钱；买活冷却 480 秒，且买活后下一次死亡复活时间额外 +25 秒。",
+      "key_implication": "买活是「用钱买时间」的期权：高价买活会把下次死亡的惩罚一起买下来，因此只该为「关键团/守家/最后一波」付这笔钱。",
+      "values": {
+        "cost_formula": "floor(200 + net_worth/13)",
+        "cooldown_s": 480,
+        "next_respawn_penalty_s": 25
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "respawn-timer",
       "category": "经济机制",
-      "title": "复活时间与死亡代价",
+      "title": "复活时间表与死亡代价",
       "certainty": "verified",
-      "statement": "复活时间随英雄等级增长，死亡代价 = 复活时间（失去地图存在感）+ 不可靠金钱损失 + 可能连杀赏金。",
-      "key_implication": "高等级核心死亡代价远大于辅助；保护核心一次的价值 ≈ 两条命的时间差。"
+      "statement": "复活时间随等级增长，1–25 级依次为 12/15/18/21/24/26/28/30/32/34/36/44/46/48/50/52/54/65/70/75/80/85/90/95/100 秒，25 级封顶 100 秒。",
+      "key_implication": "高级核心死一次的代价是「100 秒 + 净值 2.5% 的钱 + 对方赏金」；保护核心一次≈两条命的时间差。",
+      "detail": "死于中立单位时复活时间最低 26 秒；买活额外 +25 秒；死亡损失金钱 = 净值/40（只扣不可靠部分）。",
+      "values": {
+        "seconds_by_level": [
+          12,
+          15,
+          18,
+          21,
+          24,
+          26,
+          28,
+          30,
+          32,
+          34,
+          36,
+          44,
+          46,
+          48,
+          50,
+          52,
+          54,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100
+        ],
+        "neutral_death_floor_s": 26,
+        "buyback_penalty_s": 25,
+        "gold_loss": "net_worth/40"
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "xp-level-scaling",
       "category": "经济机制",
-      "title": "经验分配与等级差",
+      "title": "经验公式与分配",
       "certainty": "verified",
-      "statement": "击杀经验由目标等级与双方等级差决定，等级低的一方击杀高等级目标获得更高经验；附近队友按范围共享经验。",
-      "key_implication": "落后方主动找架打是补等级的最快方式；领先方被反杀时给的经验与金钱同样被放大。"
+      "statement": "经验在 1500 半径内共享并按在场英雄平均分配（截断取整）；30 级英雄仍占份额，因此高位英雄在团战中会「吃掉」队友经验。",
+      "key_implication": "带一个 30 级英雄去陪练等于浪费经验；落后方要主动制造「以低打高」的击杀，等级差本身就是收益放大系数。",
+      "detail": "英雄击杀经验 = (100 + 0.13×死者累计经验)/人数 + 连杀经验；击杀者即使在范围外也必定获得经验。",
+      "values": {
+        "share_radius": 1500,
+        "hero_kill_xp": "(100 + 0.13*dead_total_xp)/n + streak_xp",
+        "max_level": 30
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "deny-rules",
       "category": "兵线与对线",
-      "title": "反补规则",
+      "title": "反补阈值与收益",
       "certainty": "verified",
-      "statement": "小兵生命低于 50% 时可被己方反补；反补使对方少获得金钱与部分经验，同时推进兵线向己方移动。",
-      "key_implication": "劣势对线的正确动作是反补+控线，把等级差换成装备差之前先别让线推出去。"
+      "statement": "非英雄单位（小兵、召唤物、兵营等）血量低于 50% 可被反补；英雄需带特定 debuff（如戴泽毒触、痛苦女王暗影突袭）且低于 25%；塔低于 10% 可被反补。",
+      "key_implication": "反补的本质是拿「对方的经验/金钱」换己方控线，而不是自己赚钱；对线期优先正补，反补是顺手的第二优先级。",
+      "detail": "反补小兵：对方只得 50% 经验、0 金钱；反补玩家控制单位：双方都 0 经验。反补塔：双方各得一半团队赏金，且取消对方的补刀奖励（约 110–130 金）。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "lane-equilibrium",
       "category": "兵线与对线",
-      "title": "兵线平衡",
+      "title": "兵线与小兵刷新时间表",
       "certainty": "verified",
-      "statement": "交战线位置由双方推线速度差决定：一方推得更快，线就朝对方塔移动；刻意少补最后一刀/拉野可把线拉回己方塔前。",
-      "detail": "安全区 = 己方塔与交战线之间的距离；线越靠近己方塔，被打野抓死所需的逃跑距离越短。",
-      "key_implication": "控线的本质是扩大自己的安全区、压缩对方的补刀空间，而不是单纯「少推线」。"
+      "statement": "第一波小兵 0:00 出，之后每 30 秒一波。旗手兵从第 5 波（2:00）起、每两波出现一只；攻城车从第 11 波（5:00）起、每 10 波一辆。",
+      "detail": "兵种数量成长：15:00 +1 近战；30:00 再 +1 近战 +1 攻城；40:00 +1 远程；45:00 +1 近战；60:00 +1 攻城。所有兵种每 7:30 升级一次（生命/攻击/赏金），最多 30 次（225:00 满级）。5:00 前的小兵不能被拉仇恨。",
+      "key_implication": "推线/控线要按 30 秒一波的节奏算：想稳线就卡在「下一波到之前」把线处理干净，想推就攒两波一起进塔。",
+      "values": {
+        "first_wave": "0:00",
+        "wave_interval_s": 30,
+        "flagbearer": "wave5=2:00, every 2 waves",
+        "siege": "wave11=5:00, every 10 waves",
+        "upgrade_interval": "7:30",
+        "max_upgrades": 30,
+        "aggro_lock_until": "5:00"
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "camp-stacking",
       "category": "地图机制",
-      "title": "野区堆叠",
-      "certainty": "reasoned",
-      "statement": "在整点前数秒把野怪拉出营地，使营地在本轮刷新判定为空，从而生成第二波野怪；堆叠层数受营地类型与上限限制。",
-      "detail": "堆叠需要「拉出营地范围」且在刷新判定时营地内无单位与尸体；具体秒数随补丁微调，实操按整点前 3~7 秒。",
-      "key_implication": "堆叠是打野核心的时间复利：每多一层等于多一条野区经济线，辅助拉野等于给核心加班。"
+      "title": "野区刷怪与堆叠机制",
+      "certainty": "verified",
+      "statement": "野怪首次在 1:00 生成，之后每整分钟刷新，刷新判定与清野时间无关；营地内存在任何单位（含守卫、信使、幻象）即不刷新，这就是堆叠原理。堆叠不限层数。",
+      "detail": "被堆叠刷出的野怪金钱/经验 -20%，堆叠者额外获得盟友所得收益的 30%。野怪被拉出营地 400 距离、脱战 5 秒后回位。同一营地不会连续刷出同一套野怪。",
+      "key_implication": "堆叠是纯粹的时间复利，且收益归「拉仇恨的玩家」：辅助拉野不是帮忙，是在给自己和 1 号位同时加钱。",
+      "values": {
+        "first_spawn": "1:00",
+        "respawn_interval_min": 1,
+        "stacked_bounty_penalty": -0.2,
+        "stacker_share_of_ally": 0.3,
+        "guard_distance": 400
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "tower-aggro-and-damage",
       "category": "地图机制",
-      "title": "塔的仇恨与递增伤害",
+      "title": "塔的属性、仇恨与保护机制",
       "certainty": "verified",
-      "statement": "塔在无小兵时优先攻击范围内的敌方英雄；同一目标被塔连续命中时伤害逐次递增，切换目标后重置。",
-      "key_implication": "越塔必须带小兵或先控住塔，并计算「第 3~4 下」的递增伤害，硬吃四下基本必死。"
+      "statement": "每方 11 座塔（三线各 3 层 + 遗迹前 2 座四级塔）；一塔 1800 血/12 甲，二塔 2500 血/16 甲，塔血量降到 10% 可被反补。塔在同路无小兵时优先攻击英雄，攻击伤害本身固定，不随连击递增。",
+      "key_implication": "越塔的算法是「塔伤 × 攻击次数 + 英雄集火」，不是「越打越痛」；带小兵或先控住塔比硬扛更划算。",
+      "detail": "塔会给附近己方英雄「塔保护」光环（+3/5 护甲与少量回血）。两座四级塔都被拆掉后，遗迹才解除无敌。真正会「越打越痛」的是泉水，不是塔。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "creep-aggro",
@@ -291,11 +468,22 @@
     {
       "id": "vision-blocking",
       "category": "视野机制",
-      "title": "视野与遮挡",
+      "title": "视野数值与暴露机制",
       "certainty": "verified",
-      "statement": "可见性由战争迷雾、树林遮挡与地形高低共同决定；白天与夜晚视野半径不同（夜晚通常更小）。",
-      "detail": "站在高坡可看到低坡更大范围，反之处于视野劣势；破坏树木可以临时开辟视线与路径。",
-      "key_implication": "夜间的视野差是抓人窗口：进攻方在夜间更容易接近，防守方需要提前布眼或收线。"
+      "statement": "英雄白天视野 1800、夜晚 800；小兵昼夜均为 750；普通中立野怪 800；肉山 1400；单位视野上限 4000。",
+      "detail": "对敌人施放单体指向技能或攻击敌人，会让对方获得 150 半径的短暂视野（约 2 秒），这就是「在雾里点人会被反定位」的原因。地面视野会被树林、高地和视野阻挡物切断；飞行视野不受阻挡。",
+      "key_implication": "夜晚是天然的抓人窗口（视野直接砍半）；要「安全消耗」就尽量用非指向技能或从视野外出手。",
+      "values": {
+        "hero_day": 1800,
+        "hero_night": 800,
+        "lane_creep": 750,
+        "neutral": 800,
+        "roshan": 1400,
+        "vision_cap": 4000
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "game-objective",
@@ -327,29 +515,52 @@
     {
       "id": "barracks-effect",
       "category": "对局结构",
-      "title": "兵营与超级兵",
+      "title": "兵营与超级兵（不可逆）",
       "certainty": "reasoned",
-      "statement": "拆掉某线兵营后，对方该线小兵升级为更强的单位（超级兵），兵线会自然向对方基地推进；兵营被拆一段时间后会重生。",
-      "detail": "重生机制给了防守方「撑过窗口」的希望，也给了进攻方「必须趁窗口扩大战果」的压力。",
-      "key_implication": "破一路兵营不是终点，而是「压力窗口」的开始：要么趁超级兵推进拿下遗迹，要么被对方拖到兵营重生白拆。"
+      "statement": "每线各有近战/远程两座兵营（每方共 6 座）。拆掉某线的任意一座兵营，该线立刻改为生成超级兵；六座全拆后全线生成超级兵/超级兵强化；被拆的兵营不会重生。",
+      "detail": "兵营在三塔被拆前不可被攻击；近战兵营 2200 血（10% 血量可反补）、护甲 15，远程兵营 1300 血（可反补）、护甲 9。超级兵给对方的金钱与经验比普通兵低。",
+      "key_implication": "破一路兵营是永久收益且不可逆：压力窗口一直存在到本局结束，所以优势方拆兵营的优先级高于无意义追杀。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "hero-progression",
       "category": "对局结构",
-      "title": "英雄成长体系",
+      "title": "英雄成长体系（等级/天赋/神杖）",
       "certainty": "verified",
-      "statement": "英雄最高 30 级；每级提升三围与属性；10/15/20/25 级各可选一个天赋；常规为 3 个小技能 + 1 个大招，部分英雄技能数量不同。",
-      "detail": "阿哈利姆神杖（Aghanim's Scepter）与魔晶（Aghanim's Shard）可升级大招或额外技能，是「同英雄不同打法」的主要来源。",
-      "key_implication": "关键天赋等级（10/15/20/25）本身就是开团窗口；卡在天赋前的等级差，比同经济的装备差更致命。"
+      "statement": "英雄最高 30 级（共 29 次升级）；10/15/20/25 级各解锁一层天赋；常规为 3 个小技能 + 1 个大招，大招在 6/12/18 级各升一级。",
+      "detail": "阿哈利姆神杖（Aghanim's Scepter）与魔晶（Aghanim's Shard）可升级大招或额外技能。技能点可以保存，不必立刻分配。",
+      "key_implication": "6/12/18 级是三个稳定的战力跃迁点，天赋层（10/15/20/25）则是「提前到达=多一件装备」的窗口。",
+      "values": {
+        "max_level": 30,
+        "talent_levels": [
+          10,
+          15,
+          20,
+          25
+        ],
+        "ultimate_levels": [
+          6,
+          12,
+          18
+        ]
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "item-slots",
       "category": "对局结构",
-      "title": "物品栏与背包",
+      "title": "物品栏、背包与中立物品",
       "certainty": "verified",
-      "statement": "英雄有 6 格主物品栏、3 格背包、1 格中立物品栏，另有泉水储物箱；背包中的物品只能冷却恢复，不能主动使用且不提供部分属性加成。",
+      "statement": "英雄有 6 格主物品栏、3 格背包、1 格中立物品栏，另有泉水储物箱；背包物品只冷却恢复、不能被主动使用。",
       "detail": "信使可代为运送与存放；消耗品（回城卷轴、药品）占主栏格子，是「六格上限」的核心约束。",
-      "key_implication": "六格是硬约束：出装不是「买什么」，而是「用哪一格换掉什么」；后期常靠卖小件/升级合成件腾格。"
+      "key_implication": "六格是硬约束：出装问题本质是「用哪一格换掉什么」，后期靠卖小件与合成升级腾格。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "courier-system",
@@ -362,20 +573,62 @@
     {
       "id": "rune-system",
       "category": "对局结构",
-      "title": "河道神符",
-      "certainty": "reasoned",
-      "statement": "河道周期性生成强化符（提供短时增益，如双倍伤害、极速、幻象、恢复等）与赏金符（提供全队金钱）。",
-      "detail": "具体刷新间隔随补丁调整，实操以当前版本为准；神符是「免费的中立资源」，抢符等于零成本经济与节奏。",
-      "key_implication": "中单与辅助的抢符时机直接决定对线强度；双倍伤害符常常等于一次单杀窗口。"
+      "title": "神符刷新规则",
+      "certainty": "verified",
+      "statement": "强化符首次在 6:00 生成，之后每 2:00 一次，未拾取则在下一次刷新时消失；共 7 种（双倍伤害、奥术、极速、幻象、隐身、恢复、护盾）。赏金符每 4:00 生成，基础给全队 40 金，每 5 分钟 +6。",
+      "detail": "7.38 起智慧符被移除，改为「智慧神龛」。神符在阵营视野内才可见。",
+      "key_implication": "神符是「零成本经济 + 节奏」：抢符时间点固定可预判，双倍伤害符常直接等于一次单杀或一次推塔。",
+      "values": {
+        "power_rune_first": "6:00",
+        "power_rune_interval_min": 2,
+        "bounty_rune_interval_min": 4,
+        "bounty_base_team_gold": 40,
+        "bounty_growth_per_5min": 6
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "roshan-rewards",
       "category": "对局结构",
-      "title": "肉山奖励",
-      "certainty": "reasoned",
-      "statement": "击杀肉山必掉不朽之守护（死亡后原地复活一次，有持有时间限制）；后续击杀还会追加奶酪等额外奖励。",
-      "detail": "肉山每次被击杀后会在随机位置重生，重生时间窗随版本变动；不朽盾不能与其它复活类效果叠加使用。",
-      "key_implication": "有盾的一方可以把「关键团」打成五五开：先死一次不算输，因此盾期最适合强开高地或强抢目标。"
+      "title": "肉山：时间窗、掉落与奖励",
+      "certainty": "verified",
+      "statement": "肉山 0:00 即在场（初始在天辉侧坑），15:00 前不移动；之后每次自然昼夜切换时在两坑间移动（白天在夜魇坑、夜晚在天辉坑）。单位必须站在坑内才能攻击它。",
+      "detail": "复活时间窗（击杀后）：第1次 8:00–11:00、第2次 7:00–10:00、第3次 6:00–9:00、第4次 5:00–8:00，下限 5:00；对玩家不可预测（界面只显示最小时间）。掉落：每次必掉不朽之守护（拾取后 5 分钟失效）；第2次起加掉 Roshan's Banner；第3次起再加奶酪与刷新碎片。奖励：击杀者 200–290 不可靠金钱 + 全队 125，经验 400 + 20/分钟（仅击杀方）。",
+      "key_implication": "肉山是一个「2~3 分钟窗口」的目标，不是随时能打的中立怪；要按复活下限倒推集结时间，而不是等它出现。",
+      "values": {
+        "respawn_windows": [
+          [
+            8,
+            11
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            5,
+            8
+          ]
+        ],
+        "respawn_floor_min": 5,
+        "aegis_duration_min": 5,
+        "bounty_killer": [
+          200,
+          290
+        ],
+        "bounty_team": 125,
+        "xp_base": 400,
+        "xp_per_min": 20
+      },
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     },
     {
       "id": "death-rules",
@@ -425,6 +678,87 @@
       "certainty": "reasoned",
       "statement": "天辉与夜魇地图结构近似镜像，但野区入口、肉山坑位置、河道方向导致双方优势路/劣势路的资源与安全性并不完全对等。",
       "key_implication": "同一套阵容在两边打出的节奏不同；分路与打野路线要按实际阵营与地形来定，而不是照抄攻略。"
+    },
+    {
+      "id": "building-permanence",
+      "category": "对局结构",
+      "title": "建筑数量与被拆不可逆",
+      "certainty": "verified",
+      "statement": "每方共有 26 座建筑、其中 11 座塔；建筑被摧毁后永久消失，不会重生。",
+      "detail": "兵营、塔、遗迹都属于永久性目标，因此「拆掉」本身就是不可逆的战果，而不是临时的兵线优势。",
+      "key_implication": "所有推进决策的终局都是「拆建筑」，越早拆掉对方的关键建筑，对方的防守面积就越小。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "glyph-of-fortification",
+      "category": "对局结构",
+      "title": "塔防（Glyph）生效规则",
+      "certainty": "verified",
+      "statement": "塔防使己方建筑 7 秒内免疫伤害、己方小兵 3 秒免疫伤害；效果期间二塔及以上的塔获得「一次攻击打 5 个目标」的多重攻击。",
+      "detail": "塔防是全队共享冷却，首座一塔、首座二塔、首个近战兵营被拆时会重置冷却；开局存在初始冷却。它只提供 100% 伤害减免，不阻止「斩杀类」秒杀效果。",
+      "values": {
+        "building_duration_s": 7,
+        "creep_duration_s": 3,
+        "multishot_targets": 5
+      },
+      "key_implication": "塔防是用来「拖时间等队友」的，不是用来硬守的：7 秒结束后该丢的塔还是会丢，正确用法是卡在对方进场/推塔节奏上。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "backdoor-protection",
+      "category": "对局结构",
+      "title": "背门保护",
+      "certainty": "verified",
+      "statement": "当建筑附近没有敌方小兵时，该建筑获得 75% 通用减伤，并每 0.1 秒自愈 18 点生命；敌方小兵进入判定范围后保护关闭，重新激活的延迟约 15.5 秒。",
+      "values": {
+        "damage_reduction": 0.75,
+        "self_heal_per_0.1s": 18,
+        "reactivation_s": 15.5
+      },
+      "key_implication": "「偷塔」在无兵线时几乎无效：想拆建筑必须先把兵线带进去，这也是分推必须先推线的根本原因。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "day-night-cycle",
+      "category": "对局结构",
+      "title": "昼夜循环",
+      "certainty": "verified",
+      "statement": "一「天」为 10 分钟，白天 5 分钟、夜晚 5 分钟；0:00 日出，5:00 进入首个夜晚，10:00 第二个白天，以此类推；准备阶段是夜晚。",
+      "detail": "夜间所有普通中立野怪「休眠」：仇恨半径降为 0，除非被攻击否则不还手；同时多数单位夜晚视野更小（英雄 800 vs 白天 1800）。",
+      "values": {
+        "cycle_min": 10,
+        "day_min": 5,
+        "night_min": 5,
+        "first_night": "5:00"
+      },
+      "key_implication": "夜晚同时给「抓人方」与「打野方」优势：视野变小利于接近，野怪不还手利于清野，因此夜间的正确动作是抓人+刷野，而不是硬推塔。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
+    },
+    {
+      "id": "camp-spawn-engine",
+      "category": "地图机制",
+      "title": "野区刷新引擎",
+      "certainty": "verified",
+      "statement": "野怪首次在 1:00 生成，之后每整分钟刷新一次，与营地被清空的时间无关；营地内只要有任何单位（含守卫、信使、幻象、被拉的野怪）就跳过本次刷新。",
+      "detail": "野怪的属性每 7:30 升级一次（最多 30 次），技能等级在 15:00、30:00 提升；河道「两栖营地」每 5 分钟进化一次，30:00 完成两级进化。",
+      "values": {
+        "first_spawn": "1:00",
+        "respawn_interval_min": 1,
+        "stat_upgrade_interval": "7:30",
+        "max_upgrades": 30
+      },
+      "key_implication": "「卡整分钟」是野区节奏的核心：清野要赶在整分钟前完成，堆叠要赶在整分钟前拉出，两者都是同一套时钟。",
+      "source": "Liquipedia Dota 2 Wiki",
+      "patch": "7.42",
+      "verified_at": "2026-11-24"
     }
   ]
 }
