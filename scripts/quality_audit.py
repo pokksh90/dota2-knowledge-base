@@ -135,6 +135,17 @@ def main():
             if rev in seen:
                 INFO.append(f"matchups.json: 双向成对记录 {h}<->{t}（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）")
 
+        if hero_ids:  # 覆盖度：每英雄至少一条克制/配合记录
+            cov = {h: 0 for h in hero_ids}
+            for m in matchups.get("matchups", []):
+                for k in (m.get("hero_id"), m.get("target_id")):
+                    if k in cov:
+                        cov[k] += 1
+            zero = [h for h, c in cov.items() if c == 0]
+            if zero:
+                INFO.append(f"matchups.json: 覆盖度 {len(cov) - len(zero)}/{len(cov)} 英雄至少有 1 条记录；"
+                            f"尚无覆盖({len(zero)}): {', '.join(sorted(zero))}")
+
     # ---- 装备层 ----
     if items:
         cats = set()

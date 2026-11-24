@@ -994,6 +994,69 @@
       "target_id": "phantom-lancer",
       "reason": "掘地穿刺与沙尘暴的范围伤害/致盲能同时命中和压制多只幻象，幻影长矛手的分身难以靠数量堆死沙王",
       "basis": "aoe"
+    },
+    {
+      "hero_id": "ringmaster",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "聚光灯(Spotlight)对被照到的幻象按每秒百分比最大生命持续烧血，幻影长矛手靠分身数量堆输出的思路被直接瓦解；灯下隐身也会显形",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "ringmaster",
+      "relation": "counter",
+      "target_id": "clinkz",
+      "reason": "聚光灯让灯下隐身单位显形，克林克兹的骨隐步(Skeleton Walk)绕后与逃生路线被打亮，队友可提前卡位",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "ringmaster",
+      "relation": "countered_by",
+      "target_id": "silencer",
+      "reason": "百戏大王的驯兽术需持续施法蓄力才有满额伤害与恐惧，被沉默/硬控打断即收益归零；沉默术士的全局沉默正好掐掉这个窗口",
+      "basis": "control"
+    },
+    {
+      "hero_id": "muerta",
+      "relation": "counter",
+      "target_id": "phantom-assassin",
+      "reason": "琼英碧灵技能组围绕虚无：幽魂子弹把目标打成虚无（物理免疫、不能攻击、受魔法伤害增加），越界让她自己也能攻击虚无目标，专门拆解依赖物理爆发的幻影刺客",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "muerta",
+      "relation": "countered_by",
+      "target_id": "storm-spirit",
+      "reason": "琼英碧灵是无位移的远程智力核心，身板脆；风暴之灵靠球状闪电的高机动直接贴脸爆发，她来不及拉开距离或打完幽魂子弹的控制",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "kez",
+      "relation": "counter",
+      "target_id": "crystal-maiden",
+      "reason": "凯的天隼冲击(Falcon Rush)提供相位移动式突进并重复一次攻击，利爪飞掷带沉默；水晶室女无逃生且依赖施法，被贴上后沉默窗口内很难活",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "kez",
+      "relation": "countered_by",
+      "target_id": "axe",
+      "reason": "凯是近战、靠连续攻击与多段斩击输出，正好撞在斧王的反击螺旋(触发于被攻击)与刃甲反伤上；贴身时间越长越吃亏",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "largo",
+      "relation": "countered_by",
+      "target_id": "ancient-apparition",
+      "reason": "朗戈的价值很大一部分来自大招里的治疗乐曲，远古冰魄的冰霜之触降低治疗与生命恢复，直接压低他的续航收益",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "largo",
+      "relation": "synergy",
+      "target_id": "zeus",
+      "reason": "灵呱一闪(Croak of Genius)给友方英雄降蓝耗并让造成的伤害在之后一段时间回响，配宙斯这类高频法系输出核心，等于放大其持续魔法伤害并缓解蓝量压力",
+      "basis": "resource"
     }
   ]
 }
