@@ -32,7 +32,39 @@
         "怕物理硬控",
         "发育周期长"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "阿敌",
+        "敌法",
+        "AM"
+      ],
+      "base_stats": {
+        "id": 1,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 33,
+        "base_str": 21,
+        "base_agi": 25,
+        "base_int": 12,
+        "str_gain": 1.6,
+        "agi_gain": 2.8,
+        "int_gain": 1.8,
+        "attack_range": 150,
+        "attack_rate": 1.4,
+        "base_attack_time": 100,
+        "move_speed": 315,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "phantom-assassin",
@@ -59,7 +91,38 @@
         "被金箍棒克制闪避",
         "怕控制"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "幻刺",
+        "PA"
+      ],
+      "base_stats": {
+        "id": 44,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 35,
+        "base_attack_max": 37,
+        "base_str": 19,
+        "base_agi": 22,
+        "base_int": 15,
+        "str_gain": 2.2,
+        "agi_gain": 3.4,
+        "int_gain": 1.7,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 310,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "juggernaut",
@@ -86,7 +149,39 @@
         "无敌斩可被躲/散",
         "爆发依赖技能CD"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Yurnero",
+        "Jugg",
+        "剑圣"
+      ],
+      "base_stats": {
+        "id": 8,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 24,
+        "base_str": 20,
+        "base_agi": 32,
+        "base_int": 14,
+        "str_gain": 2,
+        "agi_gain": 2.8,
+        "int_gain": 1.4,
+        "attack_range": 150,
+        "attack_rate": 1.4,
+        "base_attack_time": 110,
+        "move_speed": 305,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "faceless-void",
@@ -114,7 +209,38 @@
         "大招放不好易坑队友",
         "怕先手"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "虚空",
+        "FV"
+      ],
+      "base_stats": {
+        "id": 41,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 34,
+        "base_attack_max": 40,
+        "base_str": 20,
+        "base_agi": 24,
+        "base_int": 15,
+        "str_gain": 2.6,
+        "agi_gain": 3.3,
+        "int_gain": 1.5,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "spectre",
@@ -142,7 +268,39 @@
         "怕沉默/控制",
         "成型慢"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Mercurial",
+        "Spec",
+        "幽鬼"
+      ],
+      "base_stats": {
+        "id": 67,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 27,
+        "base_str": 22,
+        "base_agi": 29,
+        "base_int": 16,
+        "str_gain": 2.3,
+        "agi_gain": 2.3,
+        "int_gain": 1.7,
+        "attack_range": 150,
+        "attack_rate": 1.8,
+        "base_attack_time": 110,
+        "move_speed": 295,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "medusa",
@@ -169,7 +327,39 @@
         "怕耗蓝/法核",
         "发育慢"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "美杜莎",
+        "大娜迦",
+        "蛇女"
+      ],
+      "base_stats": {
+        "id": 94,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 32,
+        "base_str": 0,
+        "base_agi": 22,
+        "base_int": 26,
+        "str_gain": 0,
+        "agi_gain": 3.6,
+        "int_gain": 3.6,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 275,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "wraith-king",
@@ -197,7 +387,39 @@
         "复活可被净化/克制",
         "怕风筝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Ostarion",
+        "骷髅王",
+        "WK"
+      ],
+      "base_stats": {
+        "id": 42,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 40,
+        "base_attack_max": 42,
+        "base_str": 22,
+        "base_agi": 16,
+        "base_int": 16,
+        "str_gain": 2.8,
+        "agi_gain": 1.7,
+        "int_gain": 1.4,
+        "attack_range": 150,
+        "attack_rate": 1.8,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "lifestealer",
@@ -225,7 +447,40 @@
         "怕风筝",
         "怕高爆发"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Naix",
+        "食尸鬼",
+        "小狗",
+        "LS"
+      ],
+      "base_stats": {
+        "id": 54,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 29,
+        "base_str": 23,
+        "base_agi": 15,
+        "base_int": 15,
+        "str_gain": 2.4,
+        "agi_gain": 1.9,
+        "int_gain": 1.8,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 120,
+        "move_speed": 320,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "terrorblade",
@@ -252,7 +507,39 @@
         "怕AOE",
         "怕法系"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "灵魂守卫",
+        "TB",
+        "恐怖"
+      ],
+      "base_stats": {
+        "id": 109,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 6,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 32,
+        "base_str": 18,
+        "base_agi": 23,
+        "base_int": 19,
+        "str_gain": 2,
+        "agi_gain": 4,
+        "int_gain": 1.6,
+        "attack_range": 150,
+        "attack_rate": 1.5,
+        "base_attack_time": 110,
+        "move_speed": 315,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "luna",
@@ -280,7 +567,39 @@
         "机动差",
         "怕控制"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Moon Rider",
+        "月骑",
+        "月光"
+      ],
+      "base_stats": {
+        "id": 48,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 32,
+        "base_str": 21,
+        "base_agi": 24,
+        "base_int": 23,
+        "str_gain": 2.2,
+        "agi_gain": 3.2,
+        "int_gain": 1.9,
+        "attack_range": 330,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 325,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "slark",
@@ -308,7 +627,38 @@
         "怕真视",
         "怕硬控链"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "小鱼人",
+        "小鱼"
+      ],
+      "base_stats": {
+        "id": 93,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 35,
+        "base_attack_max": 41,
+        "base_str": 20,
+        "base_agi": 21,
+        "base_int": 16,
+        "str_gain": 2.1,
+        "agi_gain": 1.5,
+        "int_gain": 1.9,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 120,
+        "move_speed": 300,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 1800,
+        "legs": 2
+      }
     },
     {
       "id": "weaver",
@@ -335,7 +685,39 @@
         "怕硬控",
         "怕真视"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Skitskurr",
+        "甲虫",
+        "蚂蚁"
+      ],
+      "base_stats": {
+        "id": 63,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 1.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 37,
+        "base_attack_max": 43,
+        "base_str": 16,
+        "base_agi": 17,
+        "base_int": 20,
+        "str_gain": 2.1,
+        "agi_gain": 3.3,
+        "int_gain": 2,
+        "attack_range": 425,
+        "attack_rate": 1.8,
+        "base_attack_time": 120,
+        "move_speed": 275,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 4
+      }
     },
     {
       "id": "drow-ranger",
@@ -363,7 +745,40 @@
         "怕近身",
         "机动差"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Traxex",
+        "Drow",
+        "弓箭手",
+        "小黑"
+      ],
+      "base_stats": {
+        "id": 6,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 34,
+        "base_str": 16,
+        "base_agi": 24,
+        "base_int": 15,
+        "str_gain": 1.9,
+        "agi_gain": 2.8,
+        "int_gain": 1.7,
+        "attack_range": 625,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "sven",
@@ -391,7 +806,39 @@
         "怕风筝",
         "怕百分比伤"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Rogue Knight",
+        "流浪剑客",
+        "流浪"
+      ],
+      "base_stats": {
+        "id": 18,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.75,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 37,
+        "base_attack_max": 39,
+        "base_str": 24,
+        "base_agi": 18,
+        "base_int": 16,
+        "str_gain": 3.5,
+        "agi_gain": 2.2,
+        "int_gain": 1.5,
+        "attack_range": 150,
+        "attack_rate": 1.9,
+        "base_attack_time": 110,
+        "move_speed": 325,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "naga-siren",
@@ -417,7 +864,39 @@
         "怕AOE清幻象",
         "前期弱"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Slithice",
+        "小娜迦",
+        "娜迦"
+      ],
+      "base_stats": {
+        "id": 89,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 25,
+        "base_str": 21,
+        "base_agi": 22,
+        "base_int": 19,
+        "str_gain": 2.4,
+        "agi_gain": 3.4,
+        "int_gain": 2,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 330,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "troll-warlord",
@@ -444,7 +923,38 @@
         "怕风筝",
         "依赖近身"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "巨魔",
+        "TW"
+      ],
+      "base_stats": {
+        "id": 95,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 1.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 35,
+        "base_str": 21,
+        "base_agi": 24,
+        "base_int": 13,
+        "str_gain": 2.5,
+        "agi_gain": 3.3,
+        "int_gain": 1,
+        "attack_range": 500,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "morphling",
@@ -471,7 +981,38 @@
         "操作难",
         "怕沉默/硬控"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Morph",
+        "水人"
+      ],
+      "base_stats": {
+        "id": 10,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 12,
+        "base_attack_max": 21,
+        "base_str": 16,
+        "base_agi": 33,
+        "base_int": 19,
+        "str_gain": 2.8,
+        "agi_gain": 4.2,
+        "int_gain": 2,
+        "attack_range": 350,
+        "attack_rate": 1.5,
+        "base_attack_time": 100,
+        "move_speed": 285,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "storm-spirit",
@@ -499,7 +1040,38 @@
         "怕沉默",
         "怕先手"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "ST",
+        "蓝猫"
+      ],
+      "base_stats": {
+        "id": 17,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 36,
+        "base_str": 21,
+        "base_agi": 22,
+        "base_int": 24,
+        "str_gain": 2,
+        "agi_gain": 2.6,
+        "int_gain": 3.7,
+        "attack_range": 480,
+        "attack_rate": 1.6,
+        "base_attack_time": 110,
+        "move_speed": 285,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "shadow-fiend",
@@ -526,7 +1098,39 @@
         "怕gank",
         "前期看手速"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "影魔",
+        "影子",
+        "SF"
+      ],
+      "base_stats": {
+        "id": 11,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.3,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 16,
+        "base_attack_max": 22,
+        "base_str": 19,
+        "base_agi": 25,
+        "base_int": 16,
+        "str_gain": 2.7,
+        "agi_gain": 3.6,
+        "int_gain": 2.2,
+        "attack_range": 525,
+        "attack_rate": 1.6,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "invoker",
@@ -554,7 +1158,38 @@
         "怕沉默",
         "前期弱"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "召唤师",
+        "卡尔"
+      ],
+      "base_stats": {
+        "id": 74,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 19,
+        "base_attack_max": 25,
+        "base_str": 19,
+        "base_agi": 14,
+        "base_int": 22,
+        "str_gain": 2.5,
+        "agi_gain": 2,
+        "int_gain": 4,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 280,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "templar-assassin",
@@ -581,7 +1216,39 @@
         "怕真视",
         "后期乏力"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Lanaya",
+        "TA",
+        "圣堂"
+      ],
+      "base_stats": {
+        "id": 46,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 28,
+        "base_attack_max": 33,
+        "base_str": 21,
+        "base_agi": 23,
+        "base_int": 20,
+        "str_gain": 2.4,
+        "agi_gain": 3.4,
+        "int_gain": 2.2,
+        "attack_range": 250,
+        "attack_rate": 1.6,
+        "base_attack_time": 100,
+        "move_speed": 315,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "queen-of-pain",
@@ -608,7 +1275,40 @@
         "后期乏力",
         "怕硬控"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Akasha",
+        "痛苦女王",
+        "QoP",
+        "女王"
+      ],
+      "base_stats": {
+        "id": 39,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 32,
+        "base_str": 20,
+        "base_agi": 20,
+        "base_int": 25,
+        "str_gain": 2.4,
+        "agi_gain": 2.5,
+        "int_gain": 3.7,
+        "attack_range": 550,
+        "attack_rate": 1.5,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "zeus",
@@ -635,7 +1335,39 @@
         "极脆",
         "机动差"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Lord of Heaven",
+        "天神",
+        "宙斯"
+      ],
+      "base_stats": {
+        "id": 22,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 45,
+        "base_str": 21,
+        "base_agi": 11,
+        "base_int": 23,
+        "str_gain": 2.1,
+        "agi_gain": 1.2,
+        "int_gain": 3.3,
+        "attack_range": 365,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "lina",
@@ -662,7 +1394,38 @@
         "脆",
         "怕切入"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "火女",
+        "秀逗"
+      ],
+      "base_stats": {
+        "id": 25,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 21,
+        "base_attack_max": 29,
+        "base_str": 20,
+        "base_agi": 21,
+        "base_int": 28,
+        "str_gain": 2.4,
+        "agi_gain": 2.4,
+        "int_gain": 4,
+        "attack_range": 670,
+        "attack_rate": 1.6,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "puck",
@@ -689,7 +1452,39 @@
         "脆",
         "操作难"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Faerie Dragon",
+        "精灵龙",
+        "帕克"
+      ],
+      "base_stats": {
+        "id": 13,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 30,
+        "base_str": 17,
+        "base_agi": 16,
+        "base_int": 23,
+        "str_gain": 2.4,
+        "agi_gain": 2.1,
+        "int_gain": 3.8,
+        "attack_range": 550,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "ember-spirit",
@@ -716,7 +1511,39 @@
         "怕沉默",
         "操作难"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Ember",
+        "Xin",
+        "火猫"
+      ],
+      "base_stats": {
+        "id": 106,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 30,
+        "base_attack_max": 34,
+        "base_str": 21,
+        "base_agi": 21,
+        "base_int": 20,
+        "str_gain": 2.5,
+        "agi_gain": 3.2,
+        "int_gain": 2.2,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "void-spirit",
@@ -743,7 +1570,39 @@
         "脆",
         "怕沉默"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Inai",
+        "Void",
+        "紫猫"
+      ],
+      "base_stats": {
+        "id": 126,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 18,
+        "base_attack_max": 22,
+        "base_str": 22,
+        "base_agi": 22,
+        "base_int": 24,
+        "str_gain": 2.6,
+        "agi_gain": 2.2,
+        "int_gain": 3.1,
+        "attack_range": 200,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "sniper",
@@ -770,7 +1629,40 @@
         "极脆",
         "怕近身"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Kardel Sharpeye",
+        "狙击手",
+        "矮子",
+        "火枪"
+      ],
+      "base_stats": {
+        "id": 35,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 13,
+        "base_attack_max": 19,
+        "base_str": 19,
+        "base_agi": 27,
+        "base_int": 15,
+        "str_gain": 2,
+        "agi_gain": 3.2,
+        "int_gain": 2.6,
+        "attack_range": 550,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 285,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 1400,
+        "legs": 2
+      }
     },
     {
       "id": "kunkka",
@@ -797,7 +1689,39 @@
         "怕机动",
         "怕沉默"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Admiral",
+        "船长",
+        "昆卡"
+      ],
+      "base_stats": {
+        "id": 23,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.75,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 30,
+        "base_attack_max": 36,
+        "base_str": 24,
+        "base_agi": 14,
+        "base_int": 18,
+        "str_gain": 3.6,
+        "agi_gain": 1.6,
+        "int_gain": 1.8,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 315,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "leshrac",
@@ -824,7 +1748,39 @@
         "怕控制",
         "怕法抗"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "拉席克",
+        "灵魂",
+        "TS"
+      ],
+      "base_stats": {
+        "id": 52,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 33,
+        "base_str": 20,
+        "base_agi": 17,
+        "base_int": 22,
+        "str_gain": 2.5,
+        "agi_gain": 2.5,
+        "int_gain": 3.5,
+        "attack_range": 575,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 325,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 4
+      }
     },
     {
       "id": "pugna",
@@ -851,7 +1807,38 @@
         "脆",
         "怕切入"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "骨弓法",
+        "骨法"
+      ],
+      "base_stats": {
+        "id": 45,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.75,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 21,
+        "base_attack_max": 28,
+        "base_str": 19,
+        "base_agi": 16,
+        "base_int": 29,
+        "str_gain": 2,
+        "agi_gain": 1.5,
+        "int_gain": 4.5,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 325,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "axe",
@@ -878,7 +1865,38 @@
         "怕远程风筝",
         "怕百分比伤"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "斧王",
+        "老斧"
+      ],
+      "base_stats": {
+        "id": 2,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 2,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 31,
+        "base_attack_max": 35,
+        "base_str": 25,
+        "base_agi": 18,
+        "base_int": 18,
+        "str_gain": 2.7,
+        "agi_gain": 1.5,
+        "int_gain": 1.6,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 315,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "centaur-warrunner",
@@ -905,7 +1923,38 @@
         "机动一般",
         "怕风筝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "半人马",
+        "CW"
+      ],
+      "base_stats": {
+        "id": 96,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 3,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -2,
+        "base_mr": 25,
+        "base_attack_min": 34,
+        "base_attack_max": 36,
+        "base_str": 28,
+        "base_agi": 15,
+        "base_int": 15,
+        "str_gain": 4.3,
+        "agi_gain": 1,
+        "int_gain": 1.6,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 90,
+        "move_speed": 295,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 4
+      }
     },
     {
       "id": "tidehunter",
@@ -932,7 +1981,39 @@
         "输出有限",
         "依赖大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Leviathan",
+        "TH",
+        "潮汐"
+      ],
+      "base_stats": {
+        "id": 29,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 25,
+        "base_attack_max": 31,
+        "base_str": 25,
+        "base_agi": 15,
+        "base_int": 20,
+        "str_gain": 3.7,
+        "agi_gain": 1.5,
+        "int_gain": 1.7,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "slardar",
@@ -959,7 +2040,39 @@
         "手短",
         "怕风筝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Slithereen Guard",
+        "大鱼人",
+        "大鱼"
+      ],
+      "base_stats": {
+        "id": 28,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 30,
+        "base_attack_max": 38,
+        "base_str": 21,
+        "base_agi": 17,
+        "base_int": 15,
+        "str_gain": 3.4,
+        "agi_gain": 2.1,
+        "int_gain": 1.5,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "legion-commander",
@@ -986,7 +2099,40 @@
         "怕风筝",
         "怕打断决斗"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Tresdin",
+        "Legion",
+        "LC",
+        "军团"
+      ],
+      "base_stats": {
+        "id": 104,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 33,
+        "base_attack_max": 37,
+        "base_str": 25,
+        "base_agi": 18,
+        "base_int": 20,
+        "str_gain": 2.8,
+        "agi_gain": 1.7,
+        "int_gain": 2.2,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 105,
+        "move_speed": 325,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "mars",
@@ -1013,7 +2159,38 @@
         "怕法系",
         "怕控制"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "玛尔斯",
+        "战神"
+      ],
+      "base_stats": {
+        "id": 129,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 34,
+        "base_str": 23,
+        "base_agi": 18,
+        "base_int": 21,
+        "str_gain": 3.7,
+        "agi_gain": 1.7,
+        "int_gain": 2.4,
+        "attack_range": 250,
+        "attack_rate": 1.8,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "bristleback",
@@ -1040,7 +2217,40 @@
         "怕绕后",
         "怕百分比伤"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Rigwarl",
+        "BB",
+        "钢背",
+        "猪"
+      ],
+      "base_stats": {
+        "id": 99,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0.4,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 34,
+        "base_attack_max": 40,
+        "base_str": 22,
+        "base_agi": 17,
+        "base_int": 14,
+        "str_gain": 2.8,
+        "agi_gain": 1.8,
+        "int_gain": 2.8,
+        "attack_range": 150,
+        "attack_rate": 1.8,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "timbersaw",
@@ -1067,7 +2277,40 @@
         "怕法抗",
         "怕控制"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Shredder",
+        "Rizzrack",
+        "Timber",
+        "伐木机"
+      ],
+      "base_stats": {
+        "id": 98,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 25,
+        "base_attack_max": 29,
+        "base_str": 23,
+        "base_agi": 13,
+        "base_int": 24,
+        "str_gain": 3.6,
+        "agi_gain": 1.8,
+        "int_gain": 2.7,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 90,
+        "move_speed": 280,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "underlord",
@@ -1095,7 +2338,41 @@
         "机动差",
         "输出有限"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Azgalor",
+        "PitLord",
+        "深渊领主",
+        "大屁股",
+        "UL"
+      ],
+      "base_stats": {
+        "id": 108,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 3,
+        "base_mr": 25,
+        "base_attack_min": 37,
+        "base_attack_max": 43,
+        "base_str": 25,
+        "base_agi": 12,
+        "base_int": 18,
+        "str_gain": 3.2,
+        "agi_gain": 1.6,
+        "int_gain": 2.3,
+        "attack_range": 200,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "doom",
@@ -1122,7 +2399,38 @@
         "吃大招",
         "怕风筝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "末日使者",
+        "末日"
+      ],
+      "base_stats": {
+        "id": 69,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.66,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 32,
+        "base_attack_max": 42,
+        "base_str": 24,
+        "base_agi": 15,
+        "base_int": 15,
+        "str_gain": 3.6,
+        "agi_gain": 1.5,
+        "int_gain": 2.1,
+        "attack_range": 175,
+        "attack_rate": 1.9,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "night-stalker",
@@ -1149,7 +2457,39 @@
         "白天弱势",
         "依赖节奏"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Balanar",
+        "NS",
+        "夜魔"
+      ],
+      "base_stats": {
+        "id": 60,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.25,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 40,
+        "base_attack_max": 44,
+        "base_str": 23,
+        "base_agi": 18,
+        "base_int": 15,
+        "str_gain": 3,
+        "agi_gain": 2.2,
+        "int_gain": 1.6,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": null,
+        "day_vision": 800,
+        "night_vision": 1800,
+        "legs": 2
+      }
     },
     {
       "id": "beastmaster",
@@ -1176,7 +2516,38 @@
         "依赖召唤物",
         "怕AOE"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "兽王",
+        "BM"
+      ],
+      "base_stats": {
+        "id": 38,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 27,
+        "base_str": 24,
+        "base_agi": 19,
+        "base_int": 16,
+        "str_gain": 2.9,
+        "agi_gain": 2.3,
+        "int_gain": 1.9,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 90,
+        "move_speed": 305,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "dark-seer",
@@ -1203,7 +2574,39 @@
         "输出有限",
         "依赖配合"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Ishkafel",
+        "DS",
+        "黑贤"
+      ],
+      "base_stats": {
+        "id": 55,
+        "primary_attr": "int",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 31,
+        "base_attack_max": 37,
+        "base_str": 20,
+        "base_agi": 19,
+        "base_int": 23,
+        "str_gain": 2.6,
+        "agi_gain": 1.5,
+        "int_gain": 2.7,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "sand-king",
@@ -1230,7 +2633,39 @@
         "吃大招",
         "怕真视"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Crixalis",
+        "沙王",
+        "SK"
+      ],
+      "base_stats": {
+        "id": 16,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 19,
+        "base_attack_max": 29,
+        "base_str": 23,
+        "base_agi": 19,
+        "base_int": 17,
+        "str_gain": 2.5,
+        "agi_gain": 2,
+        "int_gain": 2,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 6
+      }
     },
     {
       "id": "enigma",
@@ -1257,7 +2692,38 @@
         "吃大招",
         "怕先手打断"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "谜团",
+        "黑洞"
+      ],
+      "base_stats": {
+        "id": 33,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 19,
+        "base_attack_max": 25,
+        "base_str": 21,
+        "base_agi": 14,
+        "base_int": 20,
+        "str_gain": 2.5,
+        "agi_gain": 1,
+        "int_gain": 3.5,
+        "attack_range": 500,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 280,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "earth-spirit",
@@ -1285,7 +2751,40 @@
         "操作难",
         "吃蓝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Kaolin",
+        "Earth",
+        "土灵",
+        "土猫"
+      ],
+      "base_stats": {
+        "id": 107,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 25,
+        "base_attack_max": 29,
+        "base_str": 23,
+        "base_agi": 17,
+        "base_int": 17,
+        "str_gain": 3.8,
+        "agi_gain": 2.4,
+        "int_gain": 2.1,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 95,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "tusk",
@@ -1313,7 +2812,40 @@
         "后期乏力",
         "吃时机"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Tuskarr",
+        "Ymir",
+        "海象",
+        "海民"
+      ],
+      "base_stats": {
+        "id": 100,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 33,
+        "base_str": 23,
+        "base_agi": 23,
+        "base_int": 18,
+        "str_gain": 3.9,
+        "agi_gain": 1.9,
+        "int_gain": 1.8,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "mirana",
@@ -1341,7 +2873,40 @@
         "技能难命中",
         "输出有限"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Princess",
+        "Moon",
+        "白虎",
+        "月女"
+      ],
+      "base_stats": {
+        "id": 9,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.4,
+        "base_armor": -2,
+        "base_mr": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 28,
+        "base_str": 20,
+        "base_agi": 26,
+        "base_int": 22,
+        "str_gain": 2.2,
+        "agi_gain": 3.1,
+        "int_gain": 1.9,
+        "attack_range": 630,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 285,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "pudge",
@@ -1369,7 +2934,39 @@
         "钩难命中",
         "依赖节奏"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Toy Butcher",
+        "胖子",
+        "屠夫"
+      ],
+      "base_stats": {
+        "id": 14,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 2.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 45,
+        "base_attack_max": 51,
+        "base_str": 25,
+        "base_agi": 13,
+        "base_int": 16,
+        "str_gain": 3,
+        "agi_gain": 1.4,
+        "int_gain": 1.8,
+        "attack_range": 175,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 280,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "rubick",
@@ -1396,7 +2993,38 @@
         "脆",
         "操作难"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "大魔导师",
+        "拉比克"
+      ],
+      "base_stats": {
+        "id": 86,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 25,
+        "base_attack_max": 31,
+        "base_str": 21,
+        "base_agi": 23,
+        "base_int": 24,
+        "str_gain": 2,
+        "agi_gain": 2.2,
+        "int_gain": 3.7,
+        "attack_range": 550,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "skywrath-mage",
@@ -1423,7 +3051,39 @@
         "极脆",
         "怕切入"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Dragonus",
+        "天怒",
+        "SM"
+      ],
+      "base_stats": {
+        "id": 101,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": -2,
+        "base_mr": 25,
+        "base_attack_min": 16,
+        "base_attack_max": 26,
+        "base_str": 22,
+        "base_agi": 13,
+        "base_int": 25,
+        "str_gain": 2,
+        "agi_gain": 0.8,
+        "int_gain": 4.1,
+        "attack_range": 625,
+        "attack_rate": 1.7,
+        "base_attack_time": 90,
+        "move_speed": 325,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "bounty-hunter",
@@ -1451,7 +3111,38 @@
         "脆",
         "输出有限"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "BH",
+        "赏金"
+      ],
+      "base_stats": {
+        "id": 62,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.75,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 5,
+        "base_mr": 25,
+        "base_attack_min": 33,
+        "base_attack_max": 41,
+        "base_str": 19,
+        "base_agi": 21,
+        "base_int": 20,
+        "str_gain": 2.5,
+        "agi_gain": 2.6,
+        "int_gain": 1.9,
+        "attack_range": 150,
+        "attack_rate": 1.5,
+        "base_attack_time": 100,
+        "move_speed": 325,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 1000,
+        "legs": 2
+      }
     },
     {
       "id": "spirit-breaker",
@@ -1479,7 +3170,39 @@
         "冲锋可被断",
         "依赖节奏"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Barathrum",
+        "白牛",
+        "SB"
+      ],
+      "base_stats": {
+        "id": 71,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 34,
+        "base_attack_max": 44,
+        "base_str": 28,
+        "base_agi": 17,
+        "base_int": 14,
+        "str_gain": 3.3,
+        "agi_gain": 1.7,
+        "int_gain": 1.8,
+        "attack_range": 170,
+        "attack_rate": 1.9,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "crystal-maiden",
@@ -1506,7 +3229,38 @@
         "脆",
         "机动差"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "CM",
+        "冰女"
+      ],
+      "base_stats": {
+        "id": 5,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 28,
+        "base_attack_max": 34,
+        "base_str": 17,
+        "base_agi": 16,
+        "base_int": 20,
+        "str_gain": 2.2,
+        "agi_gain": 1.8,
+        "int_gain": 3.3,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 280,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "dazzle",
@@ -1533,7 +3287,38 @@
         "输出有限",
         "怕被切"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "戴泽",
+        "暗牧"
+      ],
+      "base_stats": {
+        "id": 50,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.3,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 19,
+        "base_attack_max": 25,
+        "base_str": 19,
+        "base_agi": 20,
+        "base_int": 25,
+        "str_gain": 2.3,
+        "agi_gain": 1.7,
+        "int_gain": 3.5,
+        "attack_range": 575,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "witch-doctor",
@@ -1560,7 +3345,39 @@
         "大招站桩易断",
         "脆"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Zharvakko",
+        "WD",
+        "巫医"
+      ],
+      "base_stats": {
+        "id": 30,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 36,
+        "base_str": 20,
+        "base_agi": 13,
+        "base_int": 22,
+        "str_gain": 2.1,
+        "agi_gain": 1.4,
+        "int_gain": 3.1,
+        "attack_range": 550,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "lich",
@@ -1587,7 +3404,39 @@
         "脆",
         "机动差"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Ethreain",
+        "Lich",
+        "巫妖"
+      ],
+      "base_stats": {
+        "id": 31,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": -1,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 24,
+        "base_attack_max": 33,
+        "base_str": 20,
+        "base_agi": 17,
+        "base_int": 28,
+        "str_gain": 2.1,
+        "agi_gain": 1.7,
+        "int_gain": 3.4,
+        "attack_range": 550,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "disruptor",
@@ -1614,7 +3463,38 @@
         "脆",
         "吃大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "干扰者",
+        "干扰"
+      ],
+      "base_stats": {
+        "id": 87,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 36,
+        "base_str": 21,
+        "base_agi": 15,
+        "base_int": 21,
+        "str_gain": 2.4,
+        "agi_gain": 1.4,
+        "int_gain": 2.9,
+        "attack_range": 625,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "oracle",
@@ -1641,7 +3521,39 @@
         "操作难",
         "脆"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Nerif",
+        "神谕者",
+        "神谕"
+      ],
+      "base_stats": {
+        "id": 111,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 13,
+        "base_attack_max": 19,
+        "base_str": 20,
+        "base_agi": 15,
+        "base_int": 26,
+        "str_gain": 2.2,
+        "agi_gain": 1.7,
+        "int_gain": 3.6,
+        "attack_range": 625,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "shadow-shaman",
@@ -1668,7 +3580,40 @@
         "脆",
         "蛇棒易被清"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Rhasta",
+        "暗影萨满",
+        "小Y",
+        "SS"
+      ],
+      "base_stats": {
+        "id": 27,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 40,
+        "base_attack_max": 47,
+        "base_str": 20,
+        "base_agi": 16,
+        "base_int": 23,
+        "str_gain": 2.3,
+        "agi_gain": 1.6,
+        "int_gain": 3.3,
+        "attack_range": 400,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 285,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "io",
@@ -1695,7 +3640,38 @@
         "脆",
         "吃配合"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "小精灵",
+        "精灵"
+      ],
+      "base_stats": {
+        "id": 91,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 21,
+        "base_attack_max": 27,
+        "base_str": 19,
+        "base_agi": 14,
+        "base_int": 21,
+        "str_gain": 3,
+        "agi_gain": 1.6,
+        "int_gain": 1.7,
+        "attack_range": 500,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 320,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "treant-protector",
@@ -1722,7 +3698,38 @@
         "输出有限",
         "怕AOE"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "树精",
+        "大树"
+      ],
+      "base_stats": {
+        "id": 83,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.25,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 60,
+        "base_attack_max": 68,
+        "base_str": 25,
+        "base_agi": 15,
+        "base_int": 17,
+        "str_gain": 3.4,
+        "agi_gain": 1.8,
+        "int_gain": 1.8,
+        "attack_range": 150,
+        "attack_rate": 1.9,
+        "base_attack_time": 90,
+        "move_speed": 280,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "vengeful-spirit",
@@ -1749,7 +3756,40 @@
         "脆",
         "换位风险"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Shendelzare",
+        "VS",
+        "魂女",
+        "复仇"
+      ],
+      "base_stats": {
+        "id": 20,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.75,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 28,
+        "base_attack_max": 34,
+        "base_str": 21,
+        "base_agi": 23,
+        "base_int": 19,
+        "str_gain": 2.6,
+        "agi_gain": 2.8,
+        "int_gain": 1.5,
+        "attack_range": 400,
+        "attack_rate": 1.5,
+        "base_attack_time": 110,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "warlock",
@@ -1776,7 +3816,39 @@
         "脆",
         "吃大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Demnok Lannik",
+        "术士",
+        "WL"
+      ],
+      "base_stats": {
+        "id": 37,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 37,
+        "base_str": 22,
+        "base_agi": 10,
+        "base_int": 25,
+        "str_gain": 2.4,
+        "agi_gain": 1,
+        "int_gain": 3.1,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 95,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "bane",
@@ -1803,7 +3875,38 @@
         "脆",
         "吃大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "祸乱之源",
+        "祸乱"
+      ],
+      "base_stats": {
+        "id": 3,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 24,
+        "base_attack_max": 30,
+        "base_str": 23,
+        "base_agi": 23,
+        "base_int": 23,
+        "str_gain": 2.5,
+        "agi_gain": 2.5,
+        "int_gain": 2.5,
+        "attack_range": 425,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 1200,
+        "legs": 4
+      }
     },
     {
       "id": "keeper-of-the-light",
@@ -1830,7 +3933,39 @@
         "脆",
         "怕切入"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "KOTL",
+        "光守",
+        "光法"
+      ],
+      "base_stats": {
+        "id": 90,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 20,
+        "base_attack_max": 27,
+        "base_str": 18,
+        "base_agi": 15,
+        "base_int": 24,
+        "str_gain": 2.3,
+        "agi_gain": 1.6,
+        "int_gain": 3.3,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 90,
+        "move_speed": 310,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "grimstroke",
@@ -1857,7 +3992,38 @@
         "脆",
         "吃大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "画师",
+        "墨客"
+      ],
+      "base_stats": {
+        "id": 121,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 24,
+        "base_attack_max": 28,
+        "base_str": 21,
+        "base_agi": 18,
+        "base_int": 25,
+        "str_gain": 2.4,
+        "agi_gain": 1.9,
+        "int_gain": 3.8,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "phantom-lancer",
@@ -1885,7 +4051,40 @@
         "怕真视",
         "爆发低"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Azwraith",
+        "长矛手",
+        "PL",
+        "长矛"
+      ],
+      "base_stats": {
+        "id": 12,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 2,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 36,
+        "base_str": 21,
+        "base_agi": 26,
+        "base_int": 21,
+        "str_gain": 2.2,
+        "agi_gain": 3.2,
+        "int_gain": 1.8,
+        "attack_range": 225,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 285,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "chaos-knight",
@@ -1912,7 +4111,38 @@
         "幻象怕AOE",
         "依赖大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "混沌",
+        "CK"
+      ],
+      "base_stats": {
+        "id": 81,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 37,
+        "base_attack_max": 47,
+        "base_str": 24,
+        "base_agi": 18,
+        "base_int": 18,
+        "str_gain": 3.1,
+        "agi_gain": 1.8,
+        "int_gain": 1.2,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 325,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "ursa",
@@ -1939,7 +4169,39 @@
         "手短",
         "怕风筝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Ulfsaar",
+        "熊战",
+        "大熊"
+      ],
+      "base_stats": {
+        "id": 70,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 24,
+        "base_attack_max": 28,
+        "base_str": 25,
+        "base_agi": 18,
+        "base_int": 16,
+        "str_gain": 2.4,
+        "agi_gain": 2.8,
+        "int_gain": 1.5,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "bloodseeker",
@@ -1966,7 +4228,38 @@
         "脆",
         "怕控制"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "BS",
+        "血魔"
+      ],
+      "base_stats": {
+        "id": 4,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 35,
+        "base_attack_max": 41,
+        "base_str": 24,
+        "base_agi": 24,
+        "base_int": 17,
+        "str_gain": 2.7,
+        "agi_gain": 3.1,
+        "int_gain": 2,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "alchemist",
@@ -1993,7 +4286,39 @@
         "前期脆",
         "怕被针对"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Razzil",
+        "Alch",
+        "炼金"
+      ],
+      "base_stats": {
+        "id": 73,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 33,
+        "base_str": 23,
+        "base_agi": 19,
+        "base_int": 25,
+        "str_gain": 2.7,
+        "agi_gain": 1.5,
+        "int_gain": 1.8,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "gyrocopter",
@@ -2019,7 +4344,39 @@
         "脆",
         "依赖成型"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Aurel",
+        "直升机",
+        "飞机"
+      ],
+      "base_stats": {
+        "id": 72,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 18,
+        "base_attack_max": 24,
+        "base_str": 22,
+        "base_agi": 25,
+        "base_int": 21,
+        "str_gain": 2.5,
+        "agi_gain": 3.4,
+        "int_gain": 2.4,
+        "attack_range": 365,
+        "attack_rate": 1.7,
+        "base_attack_time": 115,
+        "move_speed": 315,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 1000,
+        "legs": 2
+      }
     },
     {
       "id": "monkey-king",
@@ -2046,7 +4403,40 @@
         "脆",
         "怕硬控"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Sun Wukong",
+        "猴子",
+        "MK",
+        "大圣"
+      ],
+      "base_stats": {
+        "id": 114,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 33,
+        "base_str": 19,
+        "base_agi": 23,
+        "base_int": 20,
+        "str_gain": 2.8,
+        "agi_gain": 3.7,
+        "int_gain": 1.8,
+        "attack_range": 300,
+        "attack_rate": 1.6,
+        "base_attack_time": 95,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "riki",
@@ -2074,7 +4464,39 @@
         "脆",
         "依赖背刺"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Stealth Assassin",
+        "力丸",
+        "隐刺"
+      ],
+      "base_stats": {
+        "id": 32,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 3,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 26,
+        "base_str": 18,
+        "base_agi": 30,
+        "base_int": 14,
+        "str_gain": 2,
+        "agi_gain": 2.4,
+        "int_gain": 1.3,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 90,
+        "move_speed": 315,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "clinkz",
@@ -2101,7 +4523,39 @@
         "脆",
         "怕真视"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "骷髅弓手",
+        "小骷髅",
+        "骨弓"
+      ],
+      "base_stats": {
+        "id": 56,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 19,
+        "base_attack_max": 25,
+        "base_str": 18,
+        "base_agi": 25,
+        "base_int": 21,
+        "str_gain": 2,
+        "agi_gain": 2.7,
+        "int_gain": 2.2,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 285,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "arc-warden",
@@ -2128,7 +4582,38 @@
         "操作难",
         "分身怕被秒"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "AW",
+        "天穹"
+      ],
+      "base_stats": {
+        "id": 113,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 29,
+        "base_str": 20,
+        "base_agi": 22,
+        "base_int": 24,
+        "str_gain": 2.2,
+        "agi_gain": 2.7,
+        "int_gain": 2.6,
+        "attack_range": 625,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 300,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "meepo",
@@ -2155,7 +4640,38 @@
         "操作极难",
         "怕AOE集火"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "地卜师",
+        "米波"
+      ],
+      "base_stats": {
+        "id": 82,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.25,
+        "base_armor": 3,
+        "base_mr": 25,
+        "base_attack_min": 20,
+        "base_attack_max": 26,
+        "base_str": 23,
+        "base_agi": 17,
+        "base_int": 18,
+        "str_gain": 2,
+        "agi_gain": 2.1,
+        "int_gain": 1.9,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "lone-druid",
@@ -2182,7 +4698,40 @@
         "本体怕被秒",
         "操作复杂"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Sylla",
+        "德鲁伊",
+        "熊德",
+        "LD"
+      ],
+      "base_stats": {
+        "id": 80,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 26,
+        "base_str": 20,
+        "base_agi": 22,
+        "base_int": 13,
+        "str_gain": 2.7,
+        "agi_gain": 2.8,
+        "int_gain": 1.4,
+        "attack_range": 550,
+        "attack_rate": 1.6,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "lycan",
@@ -2209,7 +4758,39 @@
         "依赖召唤物",
         "怕AOE"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Banehallow",
+        "Lycan",
+        "狼人"
+      ],
+      "base_stats": {
+        "id": 77,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 24,
+        "base_attack_max": 29,
+        "base_str": 28,
+        "base_agi": 18,
+        "base_int": 23,
+        "str_gain": 3.4,
+        "agi_gain": 1.7,
+        "int_gain": 1.7,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 305,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "viper",
@@ -2236,7 +4817,39 @@
         "机动差",
         "输出慢热"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Netherdrake",
+        "毒龙",
+        "亚龙"
+      ],
+      "base_stats": {
+        "id": 47,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -2,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 29,
+        "base_str": 21,
+        "base_agi": 21,
+        "base_int": 17,
+        "str_gain": 2.4,
+        "agi_gain": 2.9,
+        "int_gain": 2,
+        "attack_range": 575,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 275,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "batrider",
@@ -2263,7 +4876,38 @@
         "脆",
         "依赖先手"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Bat",
+        "蝙蝠"
+      ],
+      "base_stats": {
+        "id": 65,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 1.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 12,
+        "base_attack_max": 16,
+        "base_str": 23,
+        "base_agi": 13,
+        "base_int": 23,
+        "str_gain": 2.9,
+        "agi_gain": 2,
+        "int_gain": 3.2,
+        "attack_range": 400,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "windranger",
@@ -2290,7 +4934,40 @@
         "脆",
         "依赖操作"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Lyralei",
+        "风女",
+        "WR",
+        "风行"
+      ],
+      "base_stats": {
+        "id": 21,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.75,
+        "base_mana": 75,
+        "base_mana_regen": 0.25,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 24,
+        "base_attack_max": 36,
+        "base_str": 18,
+        "base_agi": 20,
+        "base_int": 18,
+        "str_gain": 2.6,
+        "agi_gain": 2.1,
+        "int_gain": 3.2,
+        "attack_range": 600,
+        "attack_rate": 1.5,
+        "base_attack_time": 90,
+        "move_speed": 285,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "outworld-destroyer",
@@ -2317,7 +4994,40 @@
         "脆",
         "怕沉默"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Harbinger",
+        "OD",
+        "神蚀",
+        "黑鸟"
+      ],
+      "base_stats": {
+        "id": 76,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 32,
+        "base_str": 21,
+        "base_agi": 17,
+        "base_int": 30,
+        "str_gain": 2.7,
+        "agi_gain": 1.6,
+        "int_gain": 4.2,
+        "attack_range": 450,
+        "attack_rate": 1.9,
+        "base_attack_time": 100,
+        "move_speed": 315,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 4
+      }
     },
     {
       "id": "death-prophet",
@@ -2344,7 +5054,39 @@
         "脆",
         "怕爆发"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Krobelus",
+        "死亡先知",
+        "DP"
+      ],
+      "base_stats": {
+        "id": 43,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 18,
+        "base_attack_max": 28,
+        "base_str": 21,
+        "base_agi": 17,
+        "base_int": 24,
+        "str_gain": 2.9,
+        "agi_gain": 2.3,
+        "int_gain": 3,
+        "attack_range": 500,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "natures-prophet",
@@ -2372,7 +5114,38 @@
         "脆",
         "怕爆发"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "NP",
+        "先知"
+      ],
+      "base_stats": {
+        "id": 53,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 20,
+        "base_attack_max": 26,
+        "base_str": 19,
+        "base_agi": 14,
+        "base_int": 22,
+        "str_gain": 2.6,
+        "agi_gain": 2.6,
+        "int_gain": 3.5,
+        "attack_range": 600,
+        "attack_rate": 1.5,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "visage",
@@ -2399,7 +5172,39 @@
         "操作复杂",
         "召唤物怕AOE"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Necrolic",
+        "维萨吉",
+        "佣兽"
+      ],
+      "base_stats": {
+        "id": 92,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 21,
+        "base_attack_max": 31,
+        "base_str": 22,
+        "base_agi": 12,
+        "base_int": 22,
+        "str_gain": 2.8,
+        "agi_gain": 1.3,
+        "int_gain": 2.9,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 285,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "broodmother",
@@ -2426,7 +5231,39 @@
         "怕AOE清蜘蛛",
         "依赖单线"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Arachnia",
+        "育母",
+        "蜘蛛"
+      ],
+      "base_stats": {
+        "id": 61,
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 33,
+        "base_str": 18,
+        "base_agi": 20,
+        "base_int": 18,
+        "str_gain": 2.9,
+        "agi_gain": 3.4,
+        "int_gain": 2,
+        "attack_range": 175,
+        "attack_rate": 1.7,
+        "base_attack_time": 125,
+        "move_speed": 285,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 8
+      }
     },
     {
       "id": "tinker",
@@ -2454,7 +5291,40 @@
         "脆",
         "怕沉默"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Tinker",
+        "Boush",
+        "修补匠",
+        "修补"
+      ],
+      "base_stats": {
+        "id": 34,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 28,
+        "base_str": 20,
+        "base_agi": 17,
+        "base_int": 30,
+        "str_gain": 2.3,
+        "agi_gain": 1.4,
+        "int_gain": 3.3,
+        "attack_range": 500,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "huskar",
@@ -2481,7 +5351,38 @@
         "怕纯粹伤害",
         "怕治疗封杀"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "哈斯卡",
+        "神灵"
+      ],
+      "base_stats": {
+        "id": 59,
+        "primary_attr": "str",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0,
+        "base_mana": 0,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 21,
+        "base_attack_max": 26,
+        "base_str": 22,
+        "base_agi": 10,
+        "base_int": 18,
+        "str_gain": 3.4,
+        "agi_gain": 1.8,
+        "int_gain": 0,
+        "attack_range": 400,
+        "attack_rate": 1.6,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "necrophos",
@@ -2508,7 +5409,39 @@
         "机动差",
         "怕爆发"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Rotundjere",
+        "Necro",
+        "死灵法"
+      ],
+      "base_stats": {
+        "id": 36,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 30,
+        "base_str": 18,
+        "base_agi": 12,
+        "base_int": 23,
+        "str_gain": 2.3,
+        "agi_gain": 1.3,
+        "int_gain": 2.7,
+        "attack_range": 500,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 280,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "magnus",
@@ -2535,7 +5468,38 @@
         "依赖先手",
         "输出有限"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Magnus",
+        "猛犸"
+      ],
+      "base_stats": {
+        "id": 97,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 31,
+        "base_attack_max": 39,
+        "base_str": 24,
+        "base_agi": 14,
+        "base_int": 20,
+        "str_gain": 3.1,
+        "agi_gain": 2.2,
+        "int_gain": 2.1,
+        "attack_range": 200,
+        "attack_rate": 1.8,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 4
+      }
     },
     {
       "id": "tiny",
@@ -2563,7 +5527,39 @@
         "攻速慢",
         "怕风筝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Stone Giant",
+        "小小",
+        "山岭"
+      ],
+      "base_stats": {
+        "id": 19,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 31,
+        "base_attack_max": 37,
+        "base_str": 30,
+        "base_agi": 0,
+        "base_int": 19,
+        "str_gain": 4.2,
+        "agi_gain": 0,
+        "int_gain": 2.4,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 85,
+        "move_speed": 275,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "earthshaker",
@@ -2590,7 +5586,40 @@
         "脆",
         "吃大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Raigor",
+        "牛头",
+        "神牛",
+        "ES"
+      ],
+      "base_stats": {
+        "id": 7,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0.25,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 39,
+        "base_str": 22,
+        "base_agi": 12,
+        "base_int": 18,
+        "str_gain": 3.7,
+        "agi_gain": 1.4,
+        "int_gain": 2.1,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 315,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "razor",
@@ -2617,7 +5646,39 @@
         "脆",
         "怕控制"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Lightning Revenant",
+        "剃刀",
+        "电棍"
+      ],
+      "base_stats": {
+        "id": 15,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 20,
+        "base_attack_max": 32,
+        "base_str": 22,
+        "base_agi": 24,
+        "base_int": 21,
+        "str_gain": 2.8,
+        "agi_gain": 2.8,
+        "int_gain": 2.2,
+        "attack_range": 475,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 280,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "venomancer",
@@ -2645,7 +5706,39 @@
         "脆",
         "输出慢热"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Lesale",
+        "Veno",
+        "剧毒"
+      ],
+      "base_stats": {
+        "id": 40,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 18,
+        "base_attack_max": 21,
+        "base_str": 19,
+        "base_agi": 25,
+        "base_int": 19,
+        "str_gain": 2.1,
+        "agi_gain": 2.8,
+        "int_gain": 1.9,
+        "attack_range": 450,
+        "attack_rate": 1.7,
+        "base_attack_time": 115,
+        "move_speed": 280,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "abaddon",
@@ -2673,7 +5766,38 @@
         "输出有限",
         "机动差"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "亚巴顿",
+        "死骑"
+      ],
+      "base_stats": {
+        "id": 102,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "base_str": 21,
+        "base_agi": 22,
+        "base_int": 19,
+        "str_gain": 2.6,
+        "agi_gain": 1.5,
+        "int_gain": 2,
+        "attack_range": 150,
+        "attack_rate": 1.5,
+        "base_attack_time": 100,
+        "move_speed": 325,
+        "turn_rate": 0.6,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "undying",
@@ -2701,7 +5825,39 @@
         "输出有限",
         "怕风筝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Dirge",
+        "不朽",
+        "尸王"
+      ],
+      "base_stats": {
+        "id": 85,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": -0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 33,
+        "base_attack_max": 41,
+        "base_str": 22,
+        "base_agi": 13,
+        "base_int": 27,
+        "str_gain": 2.4,
+        "agi_gain": 1.2,
+        "int_gain": 2.8,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "pangolier",
@@ -2728,7 +5884,38 @@
         "脆",
         "依赖大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "石鳞剑士",
+        "滚滚"
+      ],
+      "base_stats": {
+        "id": 120,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 32,
+        "base_str": 20,
+        "base_agi": 17,
+        "base_int": 16,
+        "str_gain": 2.7,
+        "agi_gain": 3.2,
+        "int_gain": 2.5,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "snapfire",
@@ -2756,7 +5943,38 @@
         "脆",
         "技能吃命中"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "老奶奶",
+        "电炎"
+      ],
+      "base_stats": {
+        "id": 128,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.75,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 33,
+        "base_str": 21,
+        "base_agi": 16,
+        "base_int": 21,
+        "str_gain": 3.5,
+        "agi_gain": 1.9,
+        "int_gain": 2.2,
+        "attack_range": 400,
+        "attack_rate": 1.8,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "primal-beast",
@@ -2783,7 +6001,38 @@
         "吃大招",
         "怕风筝"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "原始兽",
+        "PB"
+      ],
+      "base_stats": {
+        "id": 137,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 36,
+        "base_attack_max": 48,
+        "base_str": 26,
+        "base_agi": 15,
+        "base_int": 16,
+        "str_gain": 4.3,
+        "agi_gain": 1,
+        "int_gain": 1.7,
+        "attack_range": 150,
+        "attack_rate": 1.9,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": 0.6,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "dawnbreaker",
@@ -2811,7 +6060,39 @@
         "脆",
         "依赖大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Valora",
+        "破晓",
+        "DB"
+      ],
+      "base_stats": {
+        "id": 135,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 30,
+        "base_attack_max": 34,
+        "base_str": 25,
+        "base_agi": 14,
+        "base_int": 20,
+        "str_gain": 3.4,
+        "agi_gain": 1.7,
+        "int_gain": 2,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 300,
+        "turn_rate": 0.6,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "dragon-knight",
@@ -2839,7 +6120,38 @@
         "机动差",
         "爆发一般"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "龙骑",
+        "DK"
+      ],
+      "base_stats": {
+        "id": 49,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 34,
+        "base_attack_max": 40,
+        "base_str": 21,
+        "base_agi": 14,
+        "base_int": 18,
+        "str_gain": 3.2,
+        "agi_gain": 2,
+        "int_gain": 1.7,
+        "attack_range": 150,
+        "attack_rate": 1.6,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "ogre-magi",
@@ -2866,7 +6178,38 @@
         "输出不稳定",
         "怕沉默"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "食人魔",
+        "蓝胖"
+      ],
+      "base_stats": {
+        "id": 84,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1.5,
+        "base_mana": 120,
+        "base_mana_regen": 0,
+        "base_armor": 4,
+        "base_mr": 25,
+        "base_attack_min": 45,
+        "base_attack_max": 51,
+        "base_str": 26,
+        "base_agi": 14,
+        "base_int": 0,
+        "str_gain": 4,
+        "agi_gain": 1.5,
+        "int_gain": 0,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 295,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "ancient-apparition",
@@ -2893,7 +6236,38 @@
         "脆",
         "机动差"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "AA",
+        "冰魄"
+      ],
+      "base_stats": {
+        "id": 68,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 21,
+        "base_attack_max": 31,
+        "base_str": 20,
+        "base_agi": 20,
+        "base_int": 23,
+        "str_gain": 1.9,
+        "agi_gain": 2,
+        "int_gain": 3.1,
+        "attack_range": 675,
+        "attack_rate": 1.7,
+        "base_attack_time": 110,
+        "move_speed": 285,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 0
+      }
     },
     {
       "id": "chen",
@@ -2920,7 +6294,39 @@
         "操作复杂",
         "召唤物怕AOE"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Holy Knight",
+        "圣骑士",
+        "陈"
+      ],
+      "base_stats": {
+        "id": 66,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 39,
+        "base_str": 23,
+        "base_agi": 15,
+        "base_int": 19,
+        "str_gain": 2.2,
+        "agi_gain": 2.1,
+        "int_gain": 3.2,
+        "attack_range": 650,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "enchantress",
@@ -2947,7 +6353,39 @@
         "脆",
         "怕法系"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Aiushtha",
+        "Ench",
+        "小鹿"
+      ],
+      "base_stats": {
+        "id": 58,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 21,
+        "base_attack_max": 31,
+        "base_str": 17,
+        "base_agi": 19,
+        "base_int": 22,
+        "str_gain": 2,
+        "agi_gain": 2.1,
+        "int_gain": 4,
+        "attack_range": 575,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 320,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 4
+      }
     },
     {
       "id": "omniknight",
@@ -2974,7 +6412,39 @@
         "机动差",
         "输出有限"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Purist Thunderwrath",
+        "Omni",
+        "全能"
+      ],
+      "base_stats": {
+        "id": 57,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 31,
+        "base_attack_max": 41,
+        "base_str": 22,
+        "base_agi": 15,
+        "base_int": 18,
+        "str_gain": 3.1,
+        "agi_gain": 1.7,
+        "int_gain": 2.1,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "jakiro",
@@ -3001,7 +6471,38 @@
         "脆",
         "技能慢热"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "双头龙",
+        "冰火"
+      ],
+      "base_stats": {
+        "id": 64,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.25,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 35,
+        "base_str": 25,
+        "base_agi": 15,
+        "base_int": 26,
+        "str_gain": 2.8,
+        "agi_gain": 1.2,
+        "int_gain": 3.3,
+        "attack_range": 400,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": 0.8,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "winter-wyvern",
@@ -3028,7 +6529,39 @@
         "脆",
         "吃大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Auroth",
+        "冰龙",
+        "WW"
+      ],
+      "base_stats": {
+        "id": 112,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 16,
+        "base_attack_max": 23,
+        "base_str": 22,
+        "base_agi": 16,
+        "base_int": 26,
+        "str_gain": 2.5,
+        "agi_gain": 1.7,
+        "int_gain": 3.6,
+        "attack_range": 450,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 285,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 1200,
+        "legs": 2
+      }
     },
     {
       "id": "phoenix",
@@ -3055,7 +6588,38 @@
         "脆",
         "吃大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "凤凰",
+        "火鸟"
+      ],
+      "base_stats": {
+        "id": 110,
+        "primary_attr": "str",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 2,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": -1,
+        "base_mr": 25,
+        "base_attack_min": 21,
+        "base_attack_max": 31,
+        "base_str": 23,
+        "base_agi": 12,
+        "base_int": 16,
+        "str_gain": 3.3,
+        "agi_gain": 1.5,
+        "int_gain": 1.8,
+        "attack_range": 500,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 280,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "marci",
@@ -3082,7 +6646,38 @@
         "脆",
         "吃操作"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Marci",
+        "玛西"
+      ],
+      "base_stats": {
+        "id": 136,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 33,
+        "base_str": 23,
+        "base_agi": 22,
+        "base_int": 19,
+        "str_gain": 3.2,
+        "agi_gain": 2.2,
+        "int_gain": 1.9,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 315,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "lion",
@@ -3109,7 +6704,39 @@
         "脆",
         "机动差"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Demon Witch",
+        "恶魔巫师",
+        "莱恩"
+      ],
+      "base_stats": {
+        "id": 26,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 35,
+        "base_str": 18,
+        "base_agi": 18,
+        "base_int": 19,
+        "str_gain": 2.4,
+        "agi_gain": 1.7,
+        "int_gain": 3.5,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 115,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "silencer",
@@ -3136,7 +6763,39 @@
         "脆",
         "机动差"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Nortrom",
+        "沉默术士",
+        "沉默"
+      ],
+      "base_stats": {
+        "id": 75,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 30,
+        "base_str": 19,
+        "base_agi": 22,
+        "base_int": 25,
+        "str_gain": 2.2,
+        "agi_gain": 2.2,
+        "int_gain": 2.9,
+        "attack_range": 600,
+        "attack_rate": 1.6,
+        "base_attack_time": 110,
+        "move_speed": 300,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "brewmaster",
@@ -3163,7 +6822,39 @@
         "脆",
         "依赖大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Mangix",
+        "熊猫",
+        "酒仙"
+      ],
+      "base_stats": {
+        "id": 78,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 33,
+        "base_str": 24,
+        "base_agi": 19,
+        "base_int": 17,
+        "str_gain": 3.2,
+        "agi_gain": 2,
+        "int_gain": 1.9,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "clockwerk",
@@ -3191,7 +6882,39 @@
         "脆",
         "吃命中"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Rattletrap",
+        "Clock",
+        "发条"
+      ],
+      "base_stats": {
+        "id": 51,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.5,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 24,
+        "base_attack_max": 26,
+        "base_str": 26,
+        "base_agi": 13,
+        "base_int": 18,
+        "str_gain": 3.2,
+        "agi_gain": 2.3,
+        "int_gain": 1.7,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "shadow-demon",
@@ -3218,7 +6941,38 @@
         "脆",
         "吃操作"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "暗影魔",
+        "SD"
+      ],
+      "base_stats": {
+        "id": 79,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 29,
+        "base_attack_max": 33,
+        "base_str": 23,
+        "base_agi": 18,
+        "base_int": 22,
+        "str_gain": 2.6,
+        "agi_gain": 2.2,
+        "int_gain": 3.6,
+        "attack_range": 500,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 290,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "elder-titan",
@@ -3245,7 +6999,40 @@
         "脆",
         "吃大招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Cairne",
+        "上古巨神",
+        "巨神",
+        "ET"
+      ],
+      "base_stats": {
+        "id": 103,
+        "primary_attr": "str",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 0.75,
+        "base_mana": 75,
+        "base_mana_regen": 0.25,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "base_str": 26,
+        "base_agi": 16,
+        "base_int": 23,
+        "str_gain": 3,
+        "agi_gain": 1.8,
+        "int_gain": 1.6,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 305,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "dark-willow",
@@ -3272,7 +7059,39 @@
         "脆",
         "吃连招"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Mireska",
+        "花仙子",
+        "DW"
+      ],
+      "base_stats": {
+        "id": 119,
+        "primary_attr": "int",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 35,
+        "base_str": 19,
+        "base_agi": 18,
+        "base_int": 22,
+        "str_gain": 2,
+        "agi_gain": 1.6,
+        "int_gain": 3.5,
+        "attack_range": 475,
+        "attack_rate": 1.5,
+        "base_attack_time": 115,
+        "move_speed": 290,
+        "turn_rate": 0.7,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 2
+      }
     },
     {
       "id": "hoodwink",
@@ -3299,7 +7118,38 @@
         "脆",
         "吃命中"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "松鼠",
+        "森海"
+      ],
+      "base_stats": {
+        "id": 123,
+        "primary_attr": "agi",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 0.25,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 0,
+        "base_mr": 25,
+        "base_attack_min": 25,
+        "base_attack_max": 32,
+        "base_str": 16,
+        "base_agi": 22,
+        "base_int": 21,
+        "str_gain": 2,
+        "agi_gain": 3.6,
+        "int_gain": 2.9,
+        "attack_range": 575,
+        "attack_rate": 2,
+        "base_attack_time": 100,
+        "move_speed": 315,
+        "turn_rate": 0.9,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 4
+      }
     },
     {
       "id": "techies",
@@ -3326,7 +7176,41 @@
         "脆",
         "吃预判"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "Spleen",
+        "Spoon",
+        "Squee",
+        "炸弹人",
+        "地雷"
+      ],
+      "base_stats": {
+        "id": 105,
+        "primary_attr": "all",
+        "attack_type": "Ranged",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0.5,
+        "base_armor": 2,
+        "base_mr": 25,
+        "base_attack_min": 20,
+        "base_attack_max": 22,
+        "base_str": 19,
+        "base_agi": 16,
+        "base_int": 25,
+        "str_gain": 2.6,
+        "agi_gain": 1.8,
+        "int_gain": 2.7,
+        "attack_range": 600,
+        "attack_rate": 1.7,
+        "base_attack_time": 90,
+        "move_speed": 310,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 6
+      }
     },
     {
       "id": "nyx-assassin",
@@ -3354,7 +7238,39 @@
         "脆",
         "吃切入"
       ],
-      "source": "stable"
+      "source": "stable",
+      "aliases": [
+        "司夜刺客",
+        "Nyx",
+        "夜刺客"
+      ],
+      "base_stats": {
+        "id": 88,
+        "primary_attr": "all",
+        "attack_type": "Melee",
+        "base_health": 200,
+        "base_health_regen": 1,
+        "base_mana": 75,
+        "base_mana_regen": 0,
+        "base_armor": 1,
+        "base_mr": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 30,
+        "base_str": 17,
+        "base_agi": 18,
+        "base_int": 21,
+        "str_gain": 2.7,
+        "agi_gain": 2.9,
+        "int_gain": 2.6,
+        "attack_range": 150,
+        "attack_rate": 1.7,
+        "base_attack_time": 100,
+        "move_speed": 310,
+        "turn_rate": null,
+        "day_vision": 1800,
+        "night_vision": 800,
+        "legs": 6
+      }
     }
   ]
 }

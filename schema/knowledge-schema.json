@@ -5,60 +5,229 @@
   "definitions": {
     "source": {
       "type": "string",
-      "enum": ["official", "stable", "pending"],
-      "description": "official=已核对权威源; stable=稳定领域常识; pending=待按版本核对（数值类默认）"
+      "enum": [
+        "official",
+        "stable",
+        "pending",
+        "verified",
+        "reasoned",
+        "assumption"
+      ],
+      "description": "official=公开数据源核对; stable=稳定领域常识; pending=待核对; verified/reasoned/assumption 为规则与推理层的确定性分级"
     }
   },
   "hero": {
     "type": "object",
-    "required": ["id", "name_zh", "name_en", "position"],
+    "required": [
+      "id",
+      "name_zh",
+      "name_en",
+      "position"
+    ],
     "properties": {
-      "id": { "type": "string", "description": "稳定英文小写标识，如 anti-mage" },
-      "name_zh": { "type": "string" },
-      "name_en": { "type": "string" },
-      "position": { "type": "integer", "minimum": 1, "maximum": 5, "description": "分路位置 1=核心carry 2=中单 3=劣势路 4=软辅 5=硬辅" },
-      "lane": { "type": "string", "enum": ["safe", "mid", "off", "support", "roam"], "description": "默认分路" },
-      "roles": { "type": "array", "items": { "type": "string" }, "description": "定位标签如 carry/mid/offlane/support/ganker/tank/pusher" },
-      "tags": { "type": "array", "items": { "type": "string" }, "description": "玩法关键词，供检索" },
-      "coach_note": { "type": "string", "description": "供 LLM 直接消费的自然语言要点：怎么玩/核心思路/何时发力/怕什么" },
-      "strengths": { "type": "array", "items": { "type": "string" } },
-      "weaknesses": { "type": "array", "items": { "type": "string" } },
-      "source": { "$ref": "#/definitions/source" }
+      "id": {
+        "type": "string",
+        "description": "稳定英文小写标识，如 anti-mage"
+      },
+      "name_zh": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "position": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5,
+        "description": "分路位置 1=核心carry 2=中单 3=劣势路 4=软辅 5=硬辅"
+      },
+      "lane": {
+        "type": "string",
+        "enum": [
+          "safe",
+          "mid",
+          "off",
+          "support",
+          "roam"
+        ],
+        "description": "默认分路"
+      },
+      "roles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "定位标签如 carry/mid/offlane/support/ganker/tank/pusher"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "玩法关键词，供检索"
+      },
+      "coach_note": {
+        "type": "string",
+        "description": "供 LLM 直接消费的自然语言要点：怎么玩/核心思路/何时发力/怕什么"
+      },
+      "strengths": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "weaknesses": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "source": {
+        "$ref": "#/definitions/source"
+      },
+      "aliases": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "常见中文绰号与英文缩写，用于把玩家口语解析为英雄 id"
+      },
+      "base_stats": {
+        "type": "object",
+        "description": "英雄基础属性快照，字段同 data/hero_base.json",
+        "properties": {
+          "primary_attr": {
+            "type": "string"
+          },
+          "attack_type": {
+            "type": "string"
+          },
+          "base_health": {
+            "type": "number"
+          },
+          "base_mana": {
+            "type": "number"
+          },
+          "base_armor": {
+            "type": "number"
+          },
+          "base_attack_min": {
+            "type": "number"
+          },
+          "base_attack_max": {
+            "type": "number"
+          },
+          "attack_range": {
+            "type": "number"
+          },
+          "move_speed": {
+            "type": "number"
+          },
+          "day_vision": {
+            "type": "number"
+          },
+          "night_vision": {
+            "type": "number"
+          }
+        }
+      }
     }
   },
   "item": {
     "type": "object",
-    "required": ["id", "name_zh", "name_en", "category"],
+    "required": [
+      "id",
+      "name_zh",
+      "name_en",
+      "category"
+    ],
     "properties": {
-      "id": { "type": "string" },
-      "name_zh": { "type": "string" },
-      "name_en": { "type": "string" },
-      "category": { "type": "string", "description": "分类：offensive/defensive/utility/mobility/magic/support/consumable" },
-      "purpose": { "type": "string", "description": "一句话用途" },
-      "coach_note": { "type": "string", "description": "供 LLM 消费：什么情况出、克制什么、给谁出" },
-      "core_for": { "type": "array", "items": { "type": "integer" }, "description": "哪些位置(1-5)常见核心出" },
-      "source": { "$ref": "#/definitions/source" }
+      "id": {
+        "type": "string"
+      },
+      "name_zh": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string",
+        "description": "分类：offensive/defensive/utility/mobility/magic/support/consumable"
+      },
+      "purpose": {
+        "type": "string",
+        "description": "一句话用途"
+      },
+      "coach_note": {
+        "type": "string",
+        "description": "供 LLM 消费：什么情况出、克制什么、给谁出"
+      },
+      "core_for": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "description": "哪些位置(1-5)常见核心出"
+      },
+      "source": {
+        "$ref": "#/definitions/source"
+      }
     }
   },
   "matchup": {
     "type": "object",
-    "required": ["hero_id", "relation", "target_id"],
+    "required": [
+      "hero_id",
+      "relation",
+      "target_id"
+    ],
     "properties": {
-      "hero_id": { "type": "string" },
-      "target_id": { "type": "string" },
-      "relation": { "type": "string", "enum": ["counter", "countered_by", "synergy"] },
-      "reason": { "type": "string", "description": "克制/配合的机制原因，供 LLM 解释" },
-      "source": { "$ref": "#/definitions/source" }
+      "hero_id": {
+        "type": "string"
+      },
+      "target_id": {
+        "type": "string"
+      },
+      "relation": {
+        "type": "string",
+        "enum": [
+          "counter",
+          "countered_by",
+          "synergy"
+        ]
+      },
+      "reason": {
+        "type": "string",
+        "description": "克制/配合的机制原因，供 LLM 解释"
+      },
+      "source": {
+        "$ref": "#/definitions/source"
+      }
     }
   },
   "tactic_timing": {
     "type": "object",
-    "required": ["phase", "note"],
+    "required": [
+      "phase",
+      "note"
+    ],
     "properties": {
-      "phase": { "type": "string", "description": "阶段标识如 laning/early/mid/late" },
-      "time_range": { "type": "string", "description": "大致时间窗，如 0-10min" },
-      "note": { "type": "string", "description": "供 LLM 消费的该阶段要点" },
-      "source": { "$ref": "#/definitions/source" }
+      "phase": {
+        "type": "string",
+        "description": "阶段标识如 laning/early/mid/late"
+      },
+      "time_range": {
+        "type": "string",
+        "description": "大致时间窗，如 0-10min"
+      },
+      "note": {
+        "type": "string",
+        "description": "供 LLM 消费的该阶段要点"
+      },
+      "source": {
+        "$ref": "#/definitions/source"
+      }
     }
   }
 }

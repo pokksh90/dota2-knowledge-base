@@ -108,6 +108,194 @@
       "statement": "站位决定被先手/被集火的风险，容错（复活/薄葬/BKB/位移）决定失误成本。",
       "certainty": "stable",
       "key_implication": "核心的「输出环境」与「容错装」的投入，本质是买「失误不致命」的保险。"
+    },
+    {
+      "id": "damage-pipeline",
+      "category": "伤害与防御",
+      "title": "伤害结算链",
+      "certainty": "verified",
+      "statement": "一次伤害依次经过：技能增幅（仅技能伤害）→ 按伤害类型走对应减免（物理走护甲、魔法走魔抗、纯粹不减免）→ 格挡/屏障吸收 → 扣血。",
+      "detail": "标记为「生命移除」的效果不经过任何减免，也不触发受伤反击类被动。",
+      "key_implication": "判断一轮爆发能否打死人，要先分清对方的主要伤害类型，再决定堆护甲还是堆魔抗/血量。"
+    },
+    {
+      "id": "damage-block-per-instance",
+      "category": "伤害与防御",
+      "title": "格挡按段结算",
+      "certainty": "verified",
+      "statement": "伤害格挡对每一段伤害独立生效，而不是对一次攻击的总伤害生效一次。",
+      "detail": "例如 50 点格挡面对 5 段各 20 点的小伤害，实际被吃掉 250 点中的大部分；面对单段 200 点只吃掉 50 点。",
+      "key_implication": "多段/高频伤害（连击、分裂箭、召唤物海）天然被格挡类道具压制；单发大伤害则受影响小。"
+    },
+    {
+      "id": "armor-reduction-stacking",
+      "category": "伤害与防御",
+      "title": "减甲叠加规则",
+      "certainty": "verified",
+      "statement": "固定减甲先结算，百分比减甲按乘法叠加，最终护甲可被压到负值，负护甲继续放大物理伤害。",
+      "detail": "负护甲时的增伤倍率为 1 - 0.94^|A|，绝对值越大边际收益越低。",
+      "key_implication": "多来源减甲是「先固定后百分比」的乘法链，堆到负甲后继续减甲的收益递减，应改堆攻速/暴击。"
+    },
+    {
+      "id": "evasion-blind-stacking",
+      "category": "伤害与防御",
+      "title": "闪避与致盲",
+      "certainty": "verified",
+      "statement": "多个闪避来源与致盲按乘法叠加（1 - ∏(1-各源))；「必中」类效果直接无视闪避判定。",
+      "key_implication": "闪避堆到 50%+ 后继续叠加收益有限；对面有必中/金箍棒时闪避型英雄的核心防御直接失效。"
+    },
+    {
+      "id": "attack-speed-cap",
+      "category": "攻击与动作",
+      "title": "攻速上限与间隔换算",
+      "certainty": "verified",
+      "statement": "额外攻速（IAS）上限为 +700；实际攻击间隔 = 基础攻击间隔 BAT / (1 + IAS/100)。",
+      "detail": "BAT 因英雄而异（常见 1.7，部分英雄 1.4~1.5），BAT 越低同样 IAS 得到的攻击次数越多。",
+      "key_implication": "攻速收益对低 BAT 英雄更高；IAS 接近上限后再堆攻速几乎无效，应改堆攻击力/暴击/穿甲。"
+    },
+    {
+      "id": "move-speed-bounds",
+      "category": "攻击与动作",
+      "title": "移速上下限",
+      "certainty": "verified",
+      "statement": "移速结算后被夹在 100（下限）与 550（上限）之间，百分比加速与减速都在此区间内生效。",
+      "detail": "少数技能（如位移加速类）可临时突破上限；减速叠到下限后继续减速不再增加控制效果。",
+      "key_implication": "追不上/跑不掉时先看双方移速差是否已被夹到边界，单纯堆移速可能无效，需要位移或控制。"
+    },
+    {
+      "id": "status-resistance",
+      "category": "控制与状态",
+      "title": "状态抗性",
+      "certainty": "verified",
+      "statement": "状态抗性按乘法叠加，按比例缩短眩晕/沉默/缠绕等控制时长，但不减少其伤害，也不影响标记为不可抗的控制。",
+      "key_implication": "抗性堆到 30~50% 时控制链会显著变短，可用来打断对方的连招节奏；但对「无视抗性」的大招无效。"
+    },
+    {
+      "id": "dispel-tiers",
+      "category": "控制与状态",
+      "title": "驱散等级",
+      "certainty": "verified",
+      "statement": "驱散分基础驱散、强驱散、死亡驱散三档；低档驱散无法移除高档负面效果。",
+      "detail": "大部分「解除负面」效果是基础驱散，能清减速/持续伤害，但清不掉眩晕、缠绕、末日类强负面。",
+      "key_implication": "选解控装前先确认目标负面属于哪一档，否则买了也解不掉。"
+    },
+    {
+      "id": "lifesteal-types",
+      "category": "伤害与防御",
+      "title": "吸血类型区分",
+      "certainty": "verified",
+      "statement": "普通吸血只对普攻物理伤害生效，法术吸血只对技能伤害生效，两者系数独立结算。",
+      "detail": "对非英雄单位（小兵/野怪）的吸血通常按较低比例结算，因此「打小兵回血」效率远低于打英雄。",
+      "key_implication": "技能型核心靠法术吸血续航，普攻型核心靠普通吸血，买错类型等于白买。"
+    },
+    {
+      "id": "mana-break-damage",
+      "category": "资源机制",
+      "title": "抽蓝与抽蓝伤害",
+      "certainty": "verified",
+      "statement": "「抽掉蓝量」与「按抽掉蓝量造成伤害」是两个独立效果，后者伤害类型由技能定义（物理或纯粹），抽蓝本身不直接扣血。",
+      "key_implication": "高智力池英雄被抽蓝压制更狠（抽得多、伤害高）；低蓝池或不吃蓝的英雄几乎不受影响。"
+    },
+    {
+      "id": "kill-gold-formula",
+      "category": "经济机制",
+      "title": "击杀金钱构成",
+      "certainty": "verified",
+      "statement": "击杀英雄的金钱 = 基础赏金（随等级）+ 连杀奖励 + 净值系数项；连杀越高，被击杀时给对方的赏金越高（有封顶）。",
+      "detail": "助攻者按参与人数与贡献分配金钱；单杀与多人击杀的总赏金接近。",
+      "key_implication": "领先方被终结一次会同时送出「连杀赏金 + 净值赏金」，这是劣势方最现实的翻盘点。"
+    },
+    {
+      "id": "gold-reliable-vs-unreliable",
+      "category": "经济机制",
+      "title": "可靠与不可靠金钱",
+      "certainty": "verified",
+      "statement": "金钱分为可靠（击杀/助攻/建筑/目标奖励）与不可靠（补刀、打野、被动收入）两部分；死亡只损失不可靠金钱，可靠金钱不掉。",
+      "key_implication": "劣势期应优先吃「可靠来源」的收入；手里攒着大量不可靠金钱时死亡等于送钱，先花掉再冒险。"
+    },
+    {
+      "id": "buyback-rules",
+      "category": "经济机制",
+      "title": "买活规则",
+      "certainty": "verified",
+      "statement": "买活消耗金钱（随等级与净值上升），买活后进入冷却期，并在冷却期内降低金钱收益；买活不消耗可靠金钱之外的惩罚性资源，但会延后关键装备节奏。",
+      "key_implication": "买活是「用金钱换时间」的期权：关键团（肉山/高地）前留够买活钱，比多买一件小件更值。"
+    },
+    {
+      "id": "respawn-timer",
+      "category": "经济机制",
+      "title": "复活时间与死亡代价",
+      "certainty": "verified",
+      "statement": "复活时间随英雄等级增长，死亡代价 = 复活时间（失去地图存在感）+ 不可靠金钱损失 + 可能连杀赏金。",
+      "key_implication": "高等级核心死亡代价远大于辅助；保护核心一次的价值 ≈ 两条命的时间差。"
+    },
+    {
+      "id": "xp-level-scaling",
+      "category": "经济机制",
+      "title": "经验分配与等级差",
+      "certainty": "verified",
+      "statement": "击杀经验由目标等级与双方等级差决定，等级低的一方击杀高等级目标获得更高经验；附近队友按范围共享经验。",
+      "key_implication": "落后方主动找架打是补等级的最快方式；领先方被反杀时给的经验与金钱同样被放大。"
+    },
+    {
+      "id": "deny-rules",
+      "category": "兵线与对线",
+      "title": "反补规则",
+      "certainty": "verified",
+      "statement": "小兵生命低于 50% 时可被己方反补；反补使对方少获得金钱与部分经验，同时推进兵线向己方移动。",
+      "key_implication": "劣势对线的正确动作是反补+控线，把等级差换成装备差之前先别让线推出去。"
+    },
+    {
+      "id": "lane-equilibrium",
+      "category": "兵线与对线",
+      "title": "兵线平衡",
+      "certainty": "verified",
+      "statement": "交战线位置由双方推线速度差决定：一方推得更快，线就朝对方塔移动；刻意少补最后一刀/拉野可把线拉回己方塔前。",
+      "detail": "安全区 = 己方塔与交战线之间的距离；线越靠近己方塔，被打野抓死所需的逃跑距离越短。",
+      "key_implication": "控线的本质是扩大自己的安全区、压缩对方的补刀空间，而不是单纯「少推线」。"
+    },
+    {
+      "id": "camp-stacking",
+      "category": "地图机制",
+      "title": "野区堆叠",
+      "certainty": "reasoned",
+      "statement": "在整点前数秒把野怪拉出营地，使营地在本轮刷新判定为空，从而生成第二波野怪；堆叠层数受营地类型与上限限制。",
+      "detail": "堆叠需要「拉出营地范围」且在刷新判定时营地内无单位与尸体；具体秒数随补丁微调，实操按整点前 3~7 秒。",
+      "key_implication": "堆叠是打野核心的时间复利：每多一层等于多一条野区经济线，辅助拉野等于给核心加班。"
+    },
+    {
+      "id": "tower-aggro-and-damage",
+      "category": "地图机制",
+      "title": "塔的仇恨与递增伤害",
+      "certainty": "verified",
+      "statement": "塔在无小兵时优先攻击范围内的敌方英雄；同一目标被塔连续命中时伤害逐次递增，切换目标后重置。",
+      "key_implication": "越塔必须带小兵或先控住塔，并计算「第 3~4 下」的递增伤害，硬吃四下基本必死。"
+    },
+    {
+      "id": "creep-aggro",
+      "category": "兵线与对线",
+      "title": "小兵仇恨",
+      "certainty": "verified",
+      "statement": "在敌方小兵仇恨范围内攻击敌方英雄，会把小兵仇恨转移到自己；利用仇恨可以把兵线拉向自己想要的方向。",
+      "key_implication": "对线换血要在「仇恨重置」的间隙做，或用仇恨把线拉到己方塔前，减少被 gank 的暴露时间。"
+    },
+    {
+      "id": "illusion-rules",
+      "category": "机制细节",
+      "title": "幻象规则",
+      "certainty": "verified",
+      "statement": "幻象继承部分攻击力与部分属性，受到来自英雄与塔的伤害被放大；幻象不能使用绝大多数主动技能与物品。",
+      "detail": "幻象可用于带线、探视野、骗技能；范围伤害对幻象的清理效率与「单位数量×单段伤害」成正比。",
+      "key_implication": "范围伤害是多幻象阵容的天然解；而单体高爆发对幻象几乎无效，会浪费输出。"
+    },
+    {
+      "id": "vision-blocking",
+      "category": "视野机制",
+      "title": "视野与遮挡",
+      "certainty": "verified",
+      "statement": "可见性由战争迷雾、树林遮挡与地形高低共同决定；白天与夜晚视野半径不同（夜晚通常更小）。",
+      "detail": "站在高坡可看到低坡更大范围，反之处于视野劣势；破坏树木可以临时开辟视线与路径。",
+      "key_implication": "夜间的视野差是抓人窗口：进攻方在夜间更容易接近，防守方需要提前布眼或收线。"
     }
   ]
 }

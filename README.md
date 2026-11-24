@@ -28,14 +28,18 @@
 ├── schema/
 │   └── knowledge-schema.json # 各数据文件的字段契约（JSON Schema）
 ├── data/
-│   ├── rules.json            # ① 公理层
-│   ├── inference.json        # ② 定理层
-│   ├── heroes.json           # ③ 英雄与定位
+│   ├── rules.json            # ① 公理层：35 条底层机制
+│   ├── inference.json        # ② 定理层：26 条可回溯推导
+│   ├── heroes.json           # ③ 英雄与定位（含 aliases 绰号）
 │   ├── items.json            # ③ 装备与出装
 │   ├── matchups.json         # ③ 克制与搭配
-│   └── tactics.json          # ③ 战术与节奏
+│   ├── tactics.json          # ③ 战术与节奏
+│   ├── hero_base.json        # 基础数据层：英雄属性 + 技能索引
+│   ├── ability_base.json     # 基础数据层：759 条技能明细
+│   └── item_base.json        # 基础数据层：303 件道具价格与属性
 └── scripts/
     ├── fetch_data.py         # 从公开 API 拉取数值并回填
+    ├── build_base_data.py     # 从公开常量库重建基础数据层（可重复运行）
     └── push_to_github.sh     # 一键建仓/推送
 ```
 
@@ -49,7 +53,9 @@
 | `items.json` | 装备分类、用途、分位置核心出装与情境选择 | 出装建议 |
 | `matchups.json` | 英雄 counter / synergy，每条带机制依据 `basis` | 对位与 BP 分析 |
 | `tactics.json` | 分线职责、关键时间点、地图目标、团战决策 | 战术节奏建议 |
-| `stats.json` | 英雄基础属性、装备价格（脚本生成） | 数值查询，未核对留空 |
+| `hero_base.json` | 英雄基础属性（三围/血量/护甲/移速/视野）+ 技能 key 索引 | 数值查询、对线强度估算 |
+| `ability_base.json` | 每个技能的伤害类型、蓝耗、冷却、是否穿透 BKB、关键数值 | 「这招能不能被 BKB/驱散挡」 |
+| `item_base.json` | 道具价格、合成件、属性、主动效果 | 出装成本与属性对比 |
 
 ## 字段契约（摘要）
 
@@ -57,8 +63,10 @@
 
 - **`id`**：稳定英文小写标识（如 `anti-mage`），供程序索引，**不可随意更改**。
 - **`name_zh` / `name_en`**：中文名 / 英文名。
+- **`aliases`**：常见中文绰号与英文缩写（如 `敌法`、`AM`、`火枪`），用于把玩家口语对上具体英雄 id。
+- **`base_stats`**：基础属性快照，字段含义与 `hero_base.json` 一致。
 - **`source`**：`official`（已核对权威源）、`stable`（稳定领域常识）、`pending`（待按当前版本核对）。
-- **数值类字段**：未核对的属性成长、装备价格等**留空或省略**，不填猜测值。
+- **数值类字段**：来自公开常量库的数值标 `official`；动态统计（胜率、热度）核对前留空或省略，不填猜测值。
 
 ## 如何加载与使用
 
@@ -72,26 +80,30 @@
 const base = 'https://raw.githubusercontent.com/pokksh90/dota2-knowledge-base/main';
 const heroes = await (await fetch(`${base}/data/heroes.json`)).json();
 const heroById = Object.fromEntries(heroes.heroes.map(h => [h.id, h]));
+const heroByAlias = {};  // 口语 → 英雄 id
+heroes.heroes.forEach(h => h.aliases.forEach(a => (heroByAlias[a.toLowerCase()] = h.id)));
 
-// 例：取某英雄的克制关系与要点
+// 例：玩家说「虚空这把怎么打」，先解析成英雄 id，再取上下文
+const hid = heroByAlias['虚空'];
 const ctx = {
-  hero: heroById['anti-mage']?.coach_note,
-  counters: matchups.matchups.filter(m => m.hero_id === 'anti-mage').slice(0, 4),
+  hero: heroById[hid]?.coach_note,
+  counters: matchups.matchups.filter(m => m.hero_id === hid).slice(0, 4),
 };
 ```
 
 ## 数据来源与核对原则
 
-定位与机制类知识属稳定常识；数值类建议从公开源核对后回填，并把 `source` 从 `pending` 改为 `official`：
+定位与机制类知识属稳定常识；权威数值取自公开常量库，可重复刷新：
 
-- OpenDota API：`https://api.opendota.com/api/heroes`、`/constants`
-- Stratz GraphQL API：`https://api.stratz.com`
+- **dotaconstants**（公开的英雄/技能/道具常量库，由 Valve 官方本地化数据构建）：`hero_base.json`、`ability_base.json`、`item_base.json`
+- OpenDota API / Stratz GraphQL：动态统计（胜率、出场率）需要时另行核对
 
 ```bash
-python3 scripts/fetch_data.py   # 需能访问 api.opendota.com
+python3 scripts/build_base_data.py    # 重建基础数据层（需访问公开常量库）
+python3 scripts/fetch_data.py         # 回填动态统计
 ```
 
-脚本只拉公开静态数据；数值随版本变动，重新运行即可刷新。
+版本更新后重新运行即可刷新；基础数据不带任何统计口径，纯为「这个技能/道具本身是什么」。
 
 ## GitHub 托管与在线读取
 
@@ -106,6 +118,7 @@ https://raw.githubusercontent.com/pokksh90/dota2-knowledge-base/main
 - `.../main/index.json`
 - `.../main/data/heroes.json`、`data/items.json`、`data/matchups.json`
 - `.../main/data/rules.json`、`data/inference.json`、`data/tactics.json`
+- `.../main/data/hero_base.json`、`data/ability_base.json`、`data/item_base.json`
 
 **更新流程**：
 

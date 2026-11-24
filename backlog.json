@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-24 23:18",
+    "updated_at": "2026-11-24 23:23",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -49,6 +49,22 @@
       "target": 1,
       "status": "pending",
       "desc": "校验一致性：hero id 在各文件引用是否都存在、basis 是否对应合法机制、JSON是否合法、字段是否完整、有无重复/矛盾。发现问题做修正。长期可持续。"
+    },
+    {
+      "id": "base-data",
+      "name": "基础数据层(hero_base/ability_base/item_base)",
+      "status": "done",
+      "current": 3,
+      "target": 3,
+      "note": "英雄属性123/技能759/道具303，由 scripts/build_base_data.py 生成"
+    },
+    {
+      "id": "rules-deepen",
+      "name": "底层机制细化",
+      "status": "pending",
+      "current": 35,
+      "target": 50,
+      "note": "第二轮细化：技能免疫与驱散交互、伤害反弹、召唤物/幻象数值、地形与视野数值、赏金符与肉山时间窗口"
     }
   ],
   "completed": [],
@@ -100,6 +116,13 @@
       "result": "matchups 117→127：resource+1(敌法克宙斯)、vision+2(赏金克夜魔/鱼人克圣堂)、physical+1(幻刺克巨魔)、damage-type+2(黑鸟克斯温/莱娜克TB)、aoe+2(拉席克克娜迦/克蜘蛛)、mobility+2(海民克矮人/小鱼克水晶)",
       "note": "basis 更均衡：control 26/26 占比最高，其余 10~23；counter 57 vs countered_by 47",
       "next": "matchups 127/140 仍最弱，继续补；之后转 items-expand(39/60) 或 tactics(1/4)"
+    },
+    {
+      "time": "2026-11-24 23:23",
+      "task": "用户定向需求：别名+机制细化+基础数据",
+      "result": "①heroes.json 全部 123 位英雄补 aliases（中文绰号+英文缩写，如 敌法/AM/火枪/虚空）；②rules.json 13→35（+22 条底层机制：伤害结算链、格挡按段、减甲叠加、闪避致盲、攻速上限+700、移速100~550边界、状态抗性、驱散三档、吸血类型、抽蓝伤害、击杀金钱构成、可靠/不可靠金钱、买活、复活时间、经验等级差、反补、兵线平衡、野堆叠、塔仇恨递增、小兵仇恨、幻象规则、视野遮挡）；③新增基础数据层 hero_base.json(123)/ability_base.json(759)/item_base.json(303)，数据源 dotaconstants 公开常量库，脚本 scripts/build_base_data.py 可重复运行",
+      "note": "网络：云主机直连 GitHub 可用，家庭局域网代理 192.168.31.155:4096 在云端不可达，本环境无需代理",
+      "next": "按 backlog 继续：matchups 127/140、items 39/60、tactics 1/4、rules-deepen 35/50、quality-audit"
     }
   ]
 }
