@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 01:28",
+    "updated_at": "2026-11-25 02:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -18,10 +18,11 @@
       "id": "tactics-expand",
       "title": "细化战术层",
       "file": "data/tactics.json",
-      "current": 1,
+      "current": 4,
       "target": 4,
-      "status": "pending",
-      "desc": "补充板块：①BP策略(选人顺序/阵容搭配/克制链)；②分路对线细节(拉野/控线/换线/线权)；③局势决策树(顺风/均势/逆风的关键决策)。保持与 rules/inference 一致。"
+      "status": "done",
+      "desc": "补充板块：①BP策略(选人顺序/阵容搭配/克制链)；②分路对线细节(拉野/控线/换线/线权)；③局势决策树(顺风/均势/逆风的关键决策)。保持与 rules/inference 一致。",
+      "note": "已完成：分线/时间轴/目标/团战 + 新增 BP 策略(7条) 与 局势决策树(6分支)；时间轴按 7.42 修正"
     },
     {
       "id": "items-expand",
@@ -87,6 +88,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 02:20",
+      "task": "tactics-expand",
+      "added": 2,
+      "result": "tactics 新增 draft（BP 7 条原则：赢法先行/先辅助后核/克制链/阵容完整度/伤害类型配比/时间窗匹配/摇摆位）与 decisions（6 分支决策树：顺风/均势/逆风/对方有盾/己方魔方/超级兵）；时间轴按 7.42 修正（15:00 魔方、50:00 四级中立、65:00 疯狂石解限）",
+      "next": "items 55→60 收尾；然后 matchups 137→140 与 quality-audit"
+    },
     {
       "time": "2026-11-25 01:28",
       "task": "7.42 数据补齐",
