@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-25",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
-    "updated_at": "2026-11-25 22:18"
+    "updated_at": "2026-11-25 23:06"
   },
   "modules": [
     {
@@ -98,6 +98,13 @@
       "count": 48,
       "status": "verified-partial",
       "note": "7.42 四级制（4×4组×3件=48件）：0:00/15:00/30:00/50:00 解锁，65:00 疯狂石无上限；打造费 5/10/10/14；每级 4 个选项。"
+    },
+    {
+      "file": "data/matchup_stats.json",
+      "title": "英雄对位胜率(外部统计层)",
+      "count": 127,
+      "status": "verified-partial",
+      "note": "127 英雄 × 对手的样本量/胜率/相对自身基线 delta；来源 OpenDota 公开聚合接口，样本常 50~150 局，delta 仅作弱证据；含与 232 条人工克制的符号一致性校验（supported 6 / weak 58 / contradicted 1，阈 50 局）。"
     }
   ],
   "data_source": {

@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 22:18",
+    "updated_at": "2026-11-25 23:06",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -216,10 +216,37 @@
       "status": "pending",
       "desc": "给仍只有 1 条记录的英雄继续补，优先机制能从 rules/inference 回溯的。",
       "note": "hero_id 优先选低覆盖英雄；basis 必须落在图例 8 类；同一 pair 任一方向已存在即跳过"
+    },
+    {
+      "id": "matchup-stats-layer",
+      "title": "接入外部对位胜率统计层",
+      "file": "data/matchup_stats.json",
+      "current": 127,
+      "target": 127,
+      "status": "done",
+      "desc": "抓取公开聚合的对位胜率，作为克制结论的外部校验层，并与现有 232 条人工克制做符号一致性核对。",
+      "note": "OpenDota 公开接口（Stratz 因共享出口限流+字段名不符未接入，已在 meta.caveats 记明）；127/127 英雄；50 局门槛下 65 条可判：supported 6 / weak 58 / contradicted 1（silencer→puck，77 局 33.8% vs 基线 47.3%，z=-2.38）"
+    },
+    {
+      "id": "matchup-stat-review",
+      "title": "统计冲突条目复核",
+      "file": "data/matchups.json",
+      "current": 1,
+      "target": 1,
+      "status": "pending",
+      "desc": "复核被统计明显否定的克制条目（首例 silencer→puck），确认机制前提是否成立，必要时改写 reason 或调整 relation。",
+      "note": "需要更大样本或形态变化数据；当前只记录冲突，不改动原结论以免误删正确机制"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 23:06",
+      "task": "接入外部对位胜率统计层 + 与人工克制对齐",
+      "added": "data/matchup_stats.json（127 英雄全量对位）+ scripts/fetch_matchup_stats.py",
+      "result": "127/127 抓到；65 条达 50 局门槛：6 条统计支持、58 条中性、1 条冲突(silencer→puck)；审查 0 error/0 warning",
+      "next": "matchups-fourth-pass(232→248) 继续；matchup-stat-review 复核冲突项"
+    },
     {
       "time": "2026-11-25 22:18",
       "task": "克制层第三轮收口：222→232",
