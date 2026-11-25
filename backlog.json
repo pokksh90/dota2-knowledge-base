@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 05:19",
+    "updated_at": "2026-11-26 06:17",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -278,10 +278,24 @@
       "current": 10,
       "target": 10,
       "note": "续写 10 条 ≤9 字的短 reason（莱恩被幻刺、发条被沉默、胡斯卡打冥魂、军团被冥魂、莉娜打米波、莱恩打风暴、沉默打修补匠、AA 打死灵法、斧王被戴泽/毒龙），每条对 abilities.json 原文；短 reason(<20 字) 70→60 条，全库平均 38.4→42.7 字。剩余 60 条待续"
+    },
+    {
+      "id": "matchup-reason-quality-3",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "第三批 10 条 ≤10 字短 reason 重写（屠夫打狙击/被冥魂、沉默被斯莱克、剧毒被莉娜、敌法被斯拉达、干扰者打余烬、哈斯卡被 AA、神谕被赏金、斯莱克打冥魂、蜘蛛被莉娜），全部引 abilities.json 原文；短 reason 60→50 条，平均 42.7→46.2 字"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 06:17",
+      "task": "克制短 reason 续写（第三批 10 条）",
+      "added": "10 条 reason 重写（机制原文逐条核对）",
+      "result": "matchups 240 条不变、唯一 pair 保持（含 disruptor↔void 双向特例）；审查 0 error/0 warning",
+      "next": "剩余 50 条短 reason 继续分批重写"
+    },
     {
       "time": "2026-11-26 05:19",
       "task": "克制短 reason 续写（第二批 10 条）",
