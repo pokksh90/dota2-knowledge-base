@@ -5,7 +5,13 @@
     "source_note": "用途/克制为稳定常识(source=stable)；cost 取自 dotaconstants build/items.json 的 cost 字段(总价)，并用 7.42 新道具(bloodslinger 925 / caduceus 5400 / ristuls_devotion 3800 / sabatons 5950 / skypiercer 6000 / starforge 6000)对齐验证，确认该数据集已更新到 7.42。",
     "last_updated": "2026-11-25 14:18",
     "corrections": [
-      "删除误录的「永恒战靴 Eon Boots」：7.42 道具全表(dotaconstants items.json 已含 7.42 全部新道具)无此条目，替换为实际存在的「永世之蔽 Eternal Shroud」。"
+      "删除误录的「永恒战靴 Eon Boots」：7.42 道具全表(dotaconstants items.json 已含 7.42 全部新道具)无此条目，替换为实际存在的「永世之蔽 Eternal Shroud」。",
+      {
+        "time": "2026-11-26 03:18",
+        "item": "eternal-shroud",
+        "finding": "7.42 环境下的官方 items.txt 标记 ItemPurchasable=0 / IsObsolete=1，Liquipedia 条目标 Removed → 该装备已移除，不可购买",
+        "action": "status=removed、coach_note 改为「勿推荐」、给出替代（pipe-of-insight / black-king-bar）；历史价 3800 保留，与 items.txt 的 3900 差异不作为当前价格"
+      }
     ]
   },
   "items": [
@@ -402,15 +408,21 @@
       "name_en": "Eternal Shroud",
       "category": "defensive",
       "purpose": "魔抗型肉装：基础 +20% 魔法抗性，被动「Eternal Endurance」按累计承伤叠加额外魔抗（每累计 300 点魔法伤害叠一层，最多 6 层，每层 +3.5%，每层独立 5 秒），并给 +10 力量、+250 生命",
-      "coach_note": "对面法术爆发/持续法伤多、己方是前排肉核(马格纳斯、斧王、半人马、军团、帕吉)时优先；与笛子/赤红甲相比更适合「自己吃法伤」而不是「护队友」，吃到的法伤越多越硬，因此适合顶线开团的前排。对纯物理阵容价值低。",
+      "coach_note": "已从游戏移除，不可购买，出装与推荐中不要出现。历史定位是抗魔续航装（+魔抗+力量+受魔伤回蓝），现版本抗魔需求改走洞察烟斗(团队光环)或黑皇杖(主动免控)。移除所在补丁未核实，标 pending。",
       "core_for": [
         3,
         4
       ],
       "source": "stable",
       "verified_note": "机制与数值取自 Liquipedia Eternal Shroud（被动阈值 300 / 6 层 / 3.5% 每层 / 5 秒 / +20% 魔抗 / +10 力量 / +250 生命）；总价两处来源冲突（Liquipedia 记 3800、dotaconstants 记 3900=组件 3000+配方 900），按不编造原则价格标 pending。",
-      "cost": null,
-      "cost_source": "pending：Liquipedia 3800 与 dotaconstants 3900 冲突，未定论"
+      "cost": 3800,
+      "cost_source": "Valve 官方 items.txt：item_eternal_shroud 条目 ItemPurchasable=0 / IsObsolete=1（不可购买），ItemCost 仍写 3900；历史总价以 Liquipedia 3800 记录",
+      "status": "removed",
+      "patch_removed": "pending",
+      "replaced_by_hint": [
+        "pipe-of-insight",
+        "black-king-bar"
+      ]
     },
     {
       "id": "magic-wand",

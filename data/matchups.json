@@ -13,9 +13,10 @@
       "sustain": "续航/复活/保命(治疗/薄葬) → rules.positioning-economy(容错)",
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
-    "last_updated": "2026-11-26 00:18",
+    "last_updated": "2026-11-26 03:18",
     "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。 本轮 8 条同样逐条核对原文：守护天使 \"immunity from physical damage\"；竞技场 \"block enemy attacks and movement\"；冰晶爆轰 \"prevented from regenerating or healing\"；致盲 \"causing them to miss some attacks\"；超新星 \"The sun has pip health\"；残焰 \"Activate Fire Remnant\" 需主动施放；恶魔掌握 \"stealing mana ... based on the unit's maximum mana\"；疯狂生长 \"prevent them from moving, blinking, going invisible, or attacking\"。 第三轮 8 条依据（dotaconstants abilities.json 原文）：Amplify Damage \"provides True Sight and vision ... revealing invisibility\"；Paralyzing Cask \"ricochets between enemy units ... Damage increases each bounce\"；Midnight Pulse \"dealing 5 + a percentage of the enemies current HP\"；Natural Order \"removing base armor and magic damage resistance\"；Decay \"steals strength from all enemy heroes in an area\"；Flaming Lasso bkbpierce=Yes,\"cannot move, attack, or use abilities\"；Soul Chain \"Any unit-targeted ability that either bound hero receives also gets cast on the other hero\"；Gravekeeper's Cloak \"If he receives damage from a player, one layer is removed\"。 第三轮第二批 10 条依据：Thundergod's Wrath \"Provides True Sight around each hero before they are struck\"；Bloodlust \"increasing its movement speed and attack speed\"；Fatal Bonds \"causing a percentage of the damage dealt to one of them to be felt by the others\"；Atrophy Aura \"losing a portion of their base damage\"；Aphotic Shield \"Strong Dispel ... all damage barrier\"；Flak Cannon \"attacks hit all enemy units in an area\"；Silence \"prevents enemy units in a target area from casting spells\"；Avalanche \"continously doing small intervals of damage and stun\"；Sacred Arrow \"stun duration ranges from 0.01 to 2.3 seconds\"；Acid Spray \"have their armor reduced\"。 第四轮 8 条依据：Atrophy Aura \"losing a portion of their base damage\" + Fury Swipes \"bonus damage\"（附加值不吃削攻）；Chronosphere bkbpierce=Yes,\"trapping all units … Invisible enemies … revealed\"；Demonic Purge \"removing positive buffs, and slowing\"；Sonic Wave Pure；Overgrowth bkbpierce=Yes,\"prevent them from moving, blinking, going invisible, or attacking\"；Frostbite \"prohibiting movement and attack\"；Omni Slash \"continues to jump slash … Jump rate is dependent on Juggernaut's attack speed\"。这 8 对在 matchup_stats 中 delta 与机制同向（如 windranger→treant -0.192/108 局、queen-of-pain→timbersaw +0.163/104 局）。 第五轮 8 条依据：Overgrowth(bkbpierce=Yes,禁止移动/闪烁/攻击)；Frost Nova\"slowing movement and attack rates\"+Fury Swipes\"If the same target is not attacked after 8 seconds, the bonus damage is lost\"；Gyroshell\"debuff immune ball with 80% magic resistance\"；Crippling Fear\"silenced … longer at night\"；Geomagnetic Grip\"Enemies struck … will be silenced\"；Feast\"damage and provide heal for a percentage of his target's max health\"；Walrus Punch\"bkbpierce=Yes…launches its victim into the air\"。delta 同向：treant→tusk -0.172/176 局、lich→ursa +0.139/103、pangolier→lion +0.143/125、night-stalker→puck +0.127/96、earth-spirit→rubick +0.097/150、lifestealer→dragon-knight +0.102/120、tusk→ancient-apparition +0.108/82、pangolier→jakiro +0.129/147。",
-    "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）"
+    "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）",
+    "mirror_dedup_note": "早期批次曾以反方向重复书写同一条克制（如 medusa countered_by anti-mage 与 anti-mage counter medusa），已按「同关系互为镜像即合并、保留描述更完整的一条」清理 8 组；disruptor↔faceless-void 保留双向，因 countered_by 与 synergy 是两条不同结论。"
   },
   "matchups": [
     {
@@ -62,13 +63,6 @@
     },
     {
       "hero_id": "phantom-assassin",
-      "relation": "countered_by",
-      "target_id": "axe",
-      "reason": "嘲讽破切入+反伤",
-      "basis": "physical"
-    },
-    {
-      "hero_id": "phantom-assassin",
       "relation": "synergy",
       "target_id": "magnus",
       "reason": "buff增伤+团控聚怪放大暴击",
@@ -101,13 +95,6 @@
       "target_id": "sniper",
       "reason": "高机动切入秒脆皮站桩",
       "basis": "mobility"
-    },
-    {
-      "hero_id": "storm-spirit",
-      "relation": "countered_by",
-      "target_id": "anti-mage",
-      "reason": "烧蓝+魔抗克制",
-      "basis": "resource"
     },
     {
       "hero_id": "storm-spirit",
@@ -265,13 +252,6 @@
     },
     {
       "hero_id": "dazzle",
-      "relation": "counter",
-      "target_id": "axe",
-      "reason": "薄葬保队友反制斩首",
-      "basis": "sustain"
-    },
-    {
-      "hero_id": "dazzle",
       "relation": "countered_by",
       "target_id": "bounty-hunter",
       "reason": "隐身切入切后排",
@@ -349,20 +329,6 @@
     },
     {
       "hero_id": "silencer",
-      "relation": "counter",
-      "target_id": "tidehunter",
-      "reason": "沉默打断大招先手",
-      "basis": "control"
-    },
-    {
-      "hero_id": "silencer",
-      "relation": "counter",
-      "target_id": "storm-spirit",
-      "reason": "沉默断蓝耗链",
-      "basis": "control"
-    },
-    {
-      "hero_id": "silencer",
       "relation": "countered_by",
       "target_id": "slark",
       "reason": "暗影之舞解控反打",
@@ -390,20 +356,6 @@
       "basis": "mobility"
     },
     {
-      "hero_id": "lina",
-      "relation": "synergy",
-      "target_id": "axe",
-      "reason": "嘲讽聚怪配合AOE爆发",
-      "basis": "aoe"
-    },
-    {
-      "hero_id": "medusa",
-      "relation": "countered_by",
-      "target_id": "anti-mage",
-      "reason": "烧蓝破护盾",
-      "basis": "resource"
-    },
-    {
       "hero_id": "medusa",
       "relation": "countered_by",
       "target_id": "phantom-lancer",
@@ -429,13 +381,6 @@
       "relation": "countered_by",
       "target_id": "ancient-apparition",
       "reason": "冰霜封杀治疗/回复",
-      "basis": "sustain"
-    },
-    {
-      "hero_id": "huskar",
-      "relation": "synergy",
-      "target_id": "dazzle",
-      "reason": "薄葬保低血输出",
       "basis": "sustain"
     },
     {

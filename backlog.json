@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 02:17",
+    "updated_at": "2026-11-26 03:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -211,7 +211,7 @@
       "id": "matchups-fourth-pass",
       "title": "克制层第四轮：剩余低覆盖英雄",
       "file": "data/matchups.json",
-      "current": 248,
+      "current": 240,
       "target": 248,
       "status": "done",
       "desc": "给仍只有 1 条记录的英雄继续补，优先机制能从 rules/inference 回溯的。",
@@ -250,10 +250,31 @@
       "current": 8,
       "target": 8,
       "note": "把上一轮 8 条推理落成决策卡：法系核空蓝、清线慢硬推、辅助经济垫底、中立装备临近解锁、天赋与装备撞车、对线被压改兵线、后期越塔/开雾前算死亡成本、对方等级领先；decisions 分支 6→14"
+    },
+    {
+      "id": "item-removal-audit",
+      "status": "done",
+      "current": 60,
+      "target": 60,
+      "note": "用官方 items.txt（SteamDB GameTracking 7.42）逐件核对 60 件装备的 ItemPurchasable/IsObsolete：仅永世之蔽被标为不可购买+Obsolete，Liquipedia 同条目标 Removed → 已改 status=removed 并给替代（pipe-of-insight / black-king-bar）；其余 59 件均可购买"
+    },
+    {
+      "id": "matchups-mirror-dedup",
+      "status": "done",
+      "current": 8,
+      "target": 8,
+      "note": "早期批次的反方向同义重复 8 组已合并（保留描述更完整的一条），248→240 条，去重后 240 条对应 240 个唯一 pair；disruptor↔faceless-void 属不同结论，保留"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 03:19",
+      "task": "质量修正：装备可购性核对 + 克制镜像去重",
+      "added": "1 条装备状态修正（永世之蔽 removed）+ 8 组镜像克制合并（248→240）",
+      "result": "官方 items.txt 逐件核对 60 件，仅 1 件不可购买；pair 唯一性恢复 100%；审查 0 error/0 warning",
+      "next": "清除早期批次遗留的短 reason（质量偏弱条目），并补 7.42 技能数值逐条核对"
+    },
     {
       "time": "2026-11-26 02:17",
       "task": "推理落战术：决策树分支扩充",
