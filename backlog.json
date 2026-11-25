@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 16:18",
+    "updated_at": "2026-11-25 17:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -146,10 +146,37 @@
       "status": "done",
       "desc": "48 件按 id 与 dotaconstants 比对存在性、name_en 与技能文本。",
       "note": "48/48 命中，41 件文本完全一致，7 件仅换行差异，无数值/机制差异；dotaconstants 无 tier 字段，档位不做二次推断（已写入 meta.verification）"
+    },
+    {
+      "id": "hero-base-audit",
+      "title": "英雄基础属性逐字段核对",
+      "file": "data/hero_base.json",
+      "current": 22,
+      "target": 22,
+      "status": "done",
+      "desc": "127 英雄 × 22 数值字段与 dotaconstants 比对（本轮与道具价格、中立装备审计同一套方法）。",
+      "note": "127/127 命中、0 字段差异；turn_rate 为 null 与本源一致，已写入 meta.audit"
+    },
+    {
+      "id": "matchups-mechanism-verified",
+      "title": "机制已核对的克制补充",
+      "file": "data/matchups.json",
+      "current": 206,
+      "target": 206,
+      "status": "done",
+      "desc": "每条新增都先用 dotaconstants abilities.json 原文核对机制关键词，再落笔。",
+      "note": "本轮 +8 对（AA→神谕、末日→哈斯卡、帕格纳→天怒、沉默→蝙蝠、潮汐/斧王/干扰者/寒冬飞龙→米波），198→206，pair 全部去重；机制原文已写入 meta.mechanism_note"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 17:19",
+      "task": "质量审查：英雄基础属性逐字段核对 + 机制核对后补 8 条克制",
+      "added": "127×22 字段核对 + 8 条 matchups",
+      "result": "hero_base 0 差异；matchups 198→206，全部 pair 去重、reason 依据 abilities.json 原文；审查 0 error/0 warning",
+      "next": "可继续按 abilities.json 原文核 hero 定位/技能层（ability_base 仅存字段，未做文案核对）"
+    },
     {
       "time": "2026-11-25 16:18",
       "task": "质量审查：中立装备逐件核对 + 推理补 3 条",

@@ -12,7 +12,9 @@
       "aoe": "AOE(清幻象/召唤/聚怪) → 多目标克制",
       "sustain": "续航/复活/保命(治疗/薄葬) → rules.positioning-economy(容错)",
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
-    }
+    },
+    "last_updated": "2026-11-25 17:18",
+    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。"
   },
   "matchups": [
     {
@@ -1400,6 +1402,62 @@
       "target_id": "beastmaster",
       "reason": "小鹿的魅惑可以控制敌方或中立野怪、自然之助提供群体治疗，配合兽王的召唤推进能把野区资源直接转成塔压力",
       "basis": "sustain"
+    },
+    {
+      "hero_id": "ancient-apparition",
+      "relation": "counter",
+      "target_id": "oracle",
+      "reason": "冰晶爆轰使目标无法回复与治疗，废掉治疗型救人",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "doom",
+      "relation": "counter",
+      "target_id": "huskar",
+      "reason": "末日禁疗+禁施法，断掉低血量百分比回血",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "pugna",
+      "relation": "counter",
+      "target_id": "skywrath-mage",
+      "reason": "幽冥守卫按施法耗蓝反伤，惩罚高耗蓝法核",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "counter",
+      "target_id": "batrider",
+      "reason": "全图沉默禁施法，跳刀+拉索连招无法启动",
+      "basis": "control"
+    },
+    {
+      "hero_id": "tidehunter",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "范围群晕一次罩住多只米波，控制收益倍增",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "axe",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "反击螺旋纯伤AOE，被多单位围攻触发更频繁",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "disruptor",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "区域沉默断 Poof 逃生，并叠加递增群伤",
+      "basis": "control"
+    },
+    {
+      "hero_id": "winter-wyvern",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "寒冬诅咒让周围多只米波反打被冻目标",
+      "basis": "control"
     }
   ]
 }

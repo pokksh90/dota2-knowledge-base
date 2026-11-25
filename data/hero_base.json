@@ -2,7 +2,13 @@
   "meta": {
     "source": "dotaconstants",
     "note": "数值为当前公开版本基础值，版本更新后需重新生成",
-    "built_by": "scripts/build_base_data.py"
+    "built_by": "scripts/build_base_data.py",
+    "audit": {
+      "checked_at": "2026-11-25",
+      "method": "127 英雄 × 22 个数值字段（生命/法力/护甲/魔抗/三属性与成长/攻击/射程/攻速/移速/转身/视野/腿数）与 dotaconstants build/heroes.json 逐字段比对",
+      "result": "127/127 命中，22 个字段 0 差异",
+      "note": "turn_rate 部分英雄在 dotaconstants 中为 null，与本库一致，非缺失"
+    }
   },
   "heroes": {
     "anti-mage": {
