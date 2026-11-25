@@ -1,7 +1,13 @@
 {
   "meta": {
     "source": "dotaconstants",
-    "count": 790
+    "count": 790,
+    "audit": {
+      "checked_at": "2026-11-25",
+      "method": "790 条技能与 dotaconstants build/abilities.json 比对 desc/behavior/dmg_type/bkbpierce 文本，以及 attrib 中同名 key 的数值",
+      "result": "desc 真实文本差异 0（139 条仅换行/标签格式差异）；behavior/dmg_type/bkbpierce 全部一致；attrib 交集键数值 0 差异",
+      "note": "本库 attrib 为精简子集（只存与等级/数值相关的键），dotaconstants 每技能还含更多调试键，属预期差异而非缺失；未做补全，避免与 talent 层重复"
+    }
   },
   "abilities": {
     "antimage_mana_break": {

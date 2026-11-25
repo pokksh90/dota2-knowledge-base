@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 17:19",
+    "updated_at": "2026-11-25 18:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -166,10 +166,37 @@
       "status": "done",
       "desc": "每条新增都先用 dotaconstants abilities.json 原文核对机制关键词，再落笔。",
       "note": "本轮 +8 对（AA→神谕、末日→哈斯卡、帕格纳→天怒、沉默→蝙蝠、潮汐/斧王/干扰者/寒冬飞龙→米波），198→206，pair 全部去重；机制原文已写入 meta.mechanism_note"
+    },
+    {
+      "id": "ability-base-audit",
+      "title": "技能基础层文本与数值核对",
+      "file": "data/ability_base.json",
+      "current": 790,
+      "target": 790,
+      "status": "done",
+      "desc": "790 条技能与 dotaconstants 比对 desc/behavior/dmg_type/bkbpierce 与 attrib 同名键数值。",
+      "note": "desc 真实差异 0（139 条仅格式差）；三类枚举字段全一致；attrib 交集数值 0 差异；attrib 为精简子集属预期，未补全"
+    },
+    {
+      "id": "matchups-weak-heroes",
+      "title": "低覆盖英雄的克制补充",
+      "file": "data/matchups.json",
+      "current": 214,
+      "target": 214,
+      "status": "done",
+      "desc": "按覆盖度找到只有 1 条记录的英雄（51 个），优先为其补机制清晰的克制对。",
+      "note": "本轮 +8 对：全能→斯温、马尔斯→卓尔游侠、AA→大树、光法→幻刺、巨魔→凤凰、沉默→灰烬、祸乱→美杜莎、大树→力丸；206→214，机制原文已核对"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 18:19",
+      "task": "质量审查：技能基础层核对 + 低覆盖英雄补 8 对克制",
+      "added": "790 条技能核对 + 8 条 matchups",
+      "result": "ability_base 文本/枚举/同名数值 0 差异；matchups 206→214，pair 去重、机制依据原文；审查 0 error/0 warning",
+      "next": "仍有 51 个英雄仅 1 条记录，继续按覆盖度补；另可开始 ability_base 的 attrib 精简子集是否该补全的取舍评估"
+    },
     {
       "time": "2026-11-25 17:19",
       "task": "质量审查：英雄基础属性逐字段核对 + 机制核对后补 8 条克制",

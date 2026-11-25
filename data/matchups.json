@@ -13,8 +13,8 @@
       "sustain": "续航/复活/保命(治疗/薄葬) → rules.positioning-economy(容错)",
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
-    "last_updated": "2026-11-25 17:18",
-    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。"
+    "last_updated": "2026-11-25 18:19",
+    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。 本轮 8 条同样逐条核对原文：守护天使 \"immunity from physical damage\"；竞技场 \"block enemy attacks and movement\"；冰晶爆轰 \"prevented from regenerating or healing\"；致盲 \"causing them to miss some attacks\"；超新星 \"The sun has pip health\"；残焰 \"Activate Fire Remnant\" 需主动施放；恶魔掌握 \"stealing mana ... based on the unit's maximum mana\"；疯狂生长 \"prevent them from moving, blinking, going invisible, or attacking\"。"
   },
   "matchups": [
     {
@@ -1457,6 +1457,62 @@
       "relation": "counter",
       "target_id": "meepo",
       "reason": "寒冬诅咒让周围多只米波反打被冻目标",
+      "basis": "control"
+    },
+    {
+      "hero_id": "omniknight",
+      "relation": "counter",
+      "target_id": "sven",
+      "reason": "守护天使使范围内友军免疫物理伤害，正面吃下物理爆发",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "mars",
+      "relation": "counter",
+      "target_id": "drow-ranger",
+      "reason": "竞技场用亡灵战士挡住敌方攻击与位移，罩住远程核心",
+      "basis": "control"
+    },
+    {
+      "hero_id": "ancient-apparition",
+      "relation": "counter",
+      "target_id": "treant-protector",
+      "reason": "冰晶爆轰禁止回复与治疗，废掉活体护甲的治疗价值",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "keeper-of-the-light",
+      "relation": "counter",
+      "target_id": "phantom-assassin",
+      "reason": "致盲使攻击落空，与闪避乘法叠加让普攻核心双重失效",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "troll-warlord",
+      "relation": "counter",
+      "target_id": "phoenix",
+      "reason": "超新星是一条需打掉的血条，高攻速多段能在 6 秒内破蛋",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "silencer",
+      "relation": "counter",
+      "target_id": "ember-spirit",
+      "reason": "沉默禁施法，残焰逃生必须主动施放，被沉默即断逃生",
+      "basis": "control"
+    },
+    {
+      "hero_id": "bane",
+      "relation": "counter",
+      "target_id": "medusa",
+      "reason": "恶魔掌握按目标最大法力持续偷蓝，蓝量越高损失越重",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "treant-protector",
+      "relation": "counter",
+      "target_id": "riki",
+      "reason": "疯狂生长禁止移动、闪烁、隐身与攻击，隐身核无法贴脸",
       "basis": "control"
     }
   ]
