@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 13:18",
+    "updated_at": "2026-11-25 14:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -9,10 +9,11 @@
       "id": "inference-expand",
       "title": "扩充推理洞察(定理层)",
       "file": "data/inference.json",
-      "current": 26,
-      "target": 26,
+      "current": 40,
+      "target": 40,
       "status": "done",
-      "desc": "新增可证正确的推导，参照现有结构(premises/derivation/conclusion/application/confidence)。候选主题：控制链时长数学、暴击期望值、吸血vs反伤博弈、买活的经济时机、推塔vs拿盾抉择、分线线权的价值、魔抗/护甲配比、先手vs反手阈值、多目标英雄(米波/幻影长矛手)的AOE克制数学。每条须能由 rules 层推导。"
+      "desc": "新增可证正确的推导，参照现有结构(premises/derivation/conclusion/application/confidence)。候选主题：控制链时长数学、暴击期望值、吸血vs反伤博弈、买活的经济时机、推塔vs拿盾抉择、分线线权的价值、魔抗/护甲配比、先手vs反手阈值、多目标英雄(米波/幻影长矛手)的AOE克制数学。每条须能由 rules 层推导。",
+      "note": "原有 26 条后继续扩充：7.42 中立打造预算、魔方 15:00、神符时钟、眼权配额、六格硬约束、昼夜动作图、装备价格版本变量、买活成本 vs 一件装备；共 40 条，全 premises 指向 rules 现存 id"
     },
     {
       "id": "tactics-expand",
@@ -68,7 +69,7 @@
       "status": "done",
       "current": 60,
       "target": 60,
-      "note": "第二轮细化完成：新增天赋树/中立装备打造制/守卫数值/拉野/封野 5 条，共 60 条"
+      "note": "已完成：天赋树/中立装备打造/守卫数值/拉野/封野等机制细化；rules 实为 61 条（原 note 写 60，已更正）"
     },
     {
       "id": "talent-values",
@@ -114,10 +115,46 @@
       "target": 127,
       "status": "done",
       "note": "127/127 全覆盖（本轮补最后 7 位：batrider/dark-willow/enchantress/lone-druid/lycan/ogre-magi/visage）"
+    },
+    {
+      "id": "items-cost-verify",
+      "title": "装备价格逐件核对",
+      "file": "data/items.json",
+      "current": 59,
+      "target": 60,
+      "status": "done",
+      "desc": "用 dotaconstants build/items.json 的 cost 字段填总价，并用 7.42 新道具价格反向验证数据集是否更新到 7.42。",
+      "note": "59/60 已填并验证（7.42 新道具 bloodslinger 925 / caduceus 5400 / ristuls 3800 / sabatons 5950 / skypiercer 6000 / starforge 6000 全部吻合）；永世之蔽因 Liquipedia 3800 与 dotaconstants 3900 冲突，价格保持 pending"
+    },
+    {
+      "id": "item-existence-audit",
+      "title": "道具存在性审计",
+      "file": "data/items.json",
+      "current": 1,
+      "target": 1,
+      "status": "done",
+      "desc": "把 items.json 的 name_en 与 dotaconstants 全量 dname 归一化比对，抓出不存在/写错的条目。",
+      "note": "抓出 1 条误录：Eon Boots（永恒战靴）在已含 7.42 全部新道具的 dotaconstants 全表中不存在，已修正为永世之蔽 Eternal Shroud（机制取值 Liquipedia）；其余 59 条全部命中"
+    },
+    {
+      "id": "tactics-timings-deepen",
+      "title": "战术层时间轴与目标板块加深",
+      "file": "data/tactics.json",
+      "current": 2,
+      "target": 4,
+      "status": "pending",
+      "desc": "timings / objectives 两板块目前体量偏浅：补 15/30/50 分钟节点与 7.42 新目标（魔方、中立第四档、神符节奏）的可执行决策，字段与现有板块一致。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 14:19",
+      "task": "质量审查 + 装备价格核对 + 存在性审计",
+      "added": "59 条价格 + 2 条推理 + 1 处错误修正",
+      "result": "装备 60 件中 59 件补入 dotaconstants 总价并交叉验证 7.42；审计抓出并修正 1 条不存在的道具(Eon Boots→Eternal Shroud)；inference 38→40；审查 0 error/0 warning，仅 9 条双向成对 info",
+      "next": "tactics 的 timings/objectives 两板块加深（已登记 pending）"
+    },
     {
       "time": "2026-11-25 13:18",
       "task": "quality-audit + inference 扩充",

@@ -1,9 +1,12 @@
 {
   "meta": {
     "title": "装备与出装",
-    "description": "装备分类、用途、分位置核心出装思路。coach_note 供 LLM 消费：什么情况出、克制什么、给谁出。价格为版本变动数据，未填写。",
-    "source_note": "装备用途/克制关系为稳定常识(source=stable)；价格与具体数值未核对、不填写。",
-    "last_updated": "2026-11-25 00:18"
+    "description": "装备分类、用途、分位置核心出装思路。coach_note 供 LLM 消费：什么情况出、克制什么、给谁出。cost 为 dotaconstants 总价，已与 7.42 新道具价格交叉核对。",
+    "source_note": "用途/克制为稳定常识(source=stable)；cost 取自 dotaconstants build/items.json 的 cost 字段(总价)，并用 7.42 新道具(bloodslinger 925 / caduceus 5400 / ristuls_devotion 3800 / sabatons 5950 / skypiercer 6000 / starforge 6000)对齐验证，确认该数据集已更新到 7.42。",
+    "last_updated": "2026-11-25 14:18",
+    "corrections": [
+      "删除误录的「永恒战靴 Eon Boots」：7.42 道具全表(dotaconstants items.json 已含 7.42 全部新道具)无此条目，替换为实际存在的「永世之蔽 Eternal Shroud」。"
+    ]
   },
   "items": [
     {
@@ -18,7 +21,9 @@
         2,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4050,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "blink-dagger",
@@ -32,7 +37,9 @@
         3,
         4
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2250,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "aghanims-scepter",
@@ -48,7 +55,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4200,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "monkey-king-bar",
@@ -61,7 +70,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5000,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "sange-and-yasha",
@@ -73,7 +84,9 @@
       "core_for": [
         1
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4000,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "satanic",
@@ -85,7 +98,9 @@
       "core_for": [
         1
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5050,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "butterfly",
@@ -97,7 +112,9 @@
       "core_for": [
         1
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5000,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "abyssal-blade",
@@ -109,7 +126,9 @@
       "core_for": [
         1
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 6150,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "eye-of-skadi",
@@ -122,7 +141,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5900,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "daedalus",
@@ -135,7 +156,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5200,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "battle-fury",
@@ -147,7 +170,9 @@
       "core_for": [
         1
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3900,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "manta-style",
@@ -159,7 +184,9 @@
       "core_for": [
         1
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4550,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "desolator",
@@ -172,7 +199,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3500,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "hurricane-pike",
@@ -185,7 +214,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4550,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "heart-of-tarrasque",
@@ -197,7 +228,9 @@
       "core_for": [
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5300,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "shivas-guard",
@@ -209,7 +242,9 @@
       "core_for": [
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4500,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "pipe-of-insight",
@@ -222,7 +257,9 @@
         3,
         4
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3725,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "crimson-guard",
@@ -234,7 +271,9 @@
       "core_for": [
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3725,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "guardian-greaves",
@@ -248,7 +287,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4350,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "force-staff",
@@ -261,7 +302,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2200,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "glimmer-cape",
@@ -274,7 +317,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2150,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "ghost-scepter",
@@ -287,7 +332,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 1500,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "ethereal-blade",
@@ -300,7 +347,9 @@
         2,
         4
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5200,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "scythe-of-vyse",
@@ -314,7 +363,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5200,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "orchid-malevolence",
@@ -326,7 +377,9 @@
       "core_for": [
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3275,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "linkens-sphere",
@@ -339,20 +392,25 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4800,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
-      "id": "eon-boots",
-      "name_zh": "永恒战靴",
-      "name_en": "Eon Boots",
-      "category": "mobility",
-      "purpose": "位移+续航",
-      "coach_note": "机动装，提供位移与续航，切入/逃生核心常用。",
+      "id": "eternal-shroud",
+      "name_zh": "永世之蔽",
+      "name_en": "Eternal Shroud",
+      "category": "defensive",
+      "purpose": "魔抗型肉装：基础 +20% 魔法抗性，被动「Eternal Endurance」按累计承伤叠加额外魔抗（每累计 300 点魔法伤害叠一层，最多 6 层，每层 +3.5%，每层独立 5 秒），并给 +10 力量、+250 生命",
+      "coach_note": "对面法术爆发/持续法伤多、己方是前排肉核(马格纳斯、斧王、半人马、军团、帕吉)时优先；与笛子/赤红甲相比更适合「自己吃法伤」而不是「护队友」，吃到的法伤越多越硬，因此适合顶线开团的前排。对纯物理阵容价值低。",
       "core_for": [
-        1,
-        2
+        3,
+        4
       ],
-      "source": "stable"
+      "source": "stable",
+      "verified_note": "机制与数值取自 Liquipedia Eternal Shroud（被动阈值 300 / 6 层 / 3.5% 每层 / 5 秒 / +20% 魔抗 / +10 力量 / +250 生命）；总价两处来源冲突（Liquipedia 记 3800、dotaconstants 记 3900=组件 3000+配方 900），按不编造原则价格标 pending。",
+      "cost": null,
+      "cost_source": "pending：Liquipedia 3800 与 dotaconstants 3900 冲突，未定论"
     },
     {
       "id": "magic-wand",
@@ -368,7 +426,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 460,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "boots-of-travel",
@@ -381,7 +441,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2500,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "radiance",
@@ -393,7 +455,9 @@
       "core_for": [
         1
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4700,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "assault-cuirass",
@@ -406,7 +470,9 @@
         1,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5125,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "bloodthorn",
@@ -419,7 +485,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 6250,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "aether-lens",
@@ -433,7 +501,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2100,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "rod-of-atos",
@@ -446,7 +516,9 @@
         2,
         4
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2250,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "blade-mail",
@@ -458,7 +530,9 @@
       "core_for": [
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2350,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "lotus-orb",
@@ -472,7 +546,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3850,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "refresher-orb",
@@ -486,7 +562,9 @@
         3,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5000,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "power-treads",
@@ -500,7 +578,9 @@
         2,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 1400,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "euls-scepter",
@@ -514,7 +594,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2600,
+      "cost_source": "dotaconstants build/items.json（条目 cyclone，dname \"Eul's Scepter of Divinity\" 总价）"
     },
     {
       "id": "aeon-disk",
@@ -528,7 +610,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3000,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "nullifier",
@@ -541,7 +625,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4350,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "mage-slayer",
@@ -555,7 +641,9 @@
         2,
         4
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3100,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "heavens-halberd",
@@ -569,7 +657,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2400,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "spirit-vessel",
@@ -582,7 +672,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2725,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "solar-crest",
@@ -596,7 +688,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2575,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "echo-sabre",
@@ -609,7 +703,9 @@
         1,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2700,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "harpoon",
@@ -622,7 +718,9 @@
         1,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 4700,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "witch-blade",
@@ -635,7 +733,9 @@
         2,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2775,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "pavise",
@@ -648,7 +748,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 1250,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "bloodslinger",
@@ -662,7 +764,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 925,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "caduceus",
@@ -676,7 +780,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5400,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "ristuls-devotion",
@@ -690,7 +796,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 3800,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "sabatons-of-mordiggian",
@@ -703,7 +811,9 @@
         1,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5950,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "skypiercer",
@@ -717,7 +827,9 @@
         2,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 6000,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "starforge",
@@ -731,7 +843,9 @@
         3,
         4
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 6000,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "mjollnir",
@@ -744,7 +858,9 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5500,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "diffusal-blade",
@@ -757,7 +873,10 @@
         1,
         2
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 2500,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)",
+      "cost_note": "此价为一阶散失之刃总价；dotaconstants 另有 diffusal_blade_2 记 3850 的升级条目，语义未核实，故不写入"
     },
     {
       "id": "silver-edge",
@@ -771,7 +890,9 @@
         2,
         3
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5700,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "octarine-core",
@@ -785,7 +906,9 @@
         4,
         5
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 5100,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     },
     {
       "id": "overwhelming-blink",
@@ -798,7 +921,9 @@
         3,
         4
       ],
-      "source": "stable"
+      "source": "stable",
+      "cost": 6800,
+      "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
     }
   ],
   "builds": [
