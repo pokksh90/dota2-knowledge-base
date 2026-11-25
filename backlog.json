@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 01:18",
+    "updated_at": "2026-11-26 02:17",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -243,10 +243,24 @@
       "current": 8,
       "target": 8,
       "note": "质量审查轮转出的推理补强：辅助收入由事件驱动、中立装备=第七格、天赋与装备节奏撞档、等级差=技能结构、拉野改地图、清线速率定推进上限、蓝量=施法次数预算、后期死亡成本=复活×资源速率；premises 全部指向已有 rules id"
+    },
+    {
+      "id": "tactics-decision-cards",
+      "status": "done",
+      "current": 8,
+      "target": 8,
+      "note": "把上一轮 8 条推理落成决策卡：法系核空蓝、清线慢硬推、辅助经济垫底、中立装备临近解锁、天赋与装备撞车、对线被压改兵线、后期越塔/开雾前算死亡成本、对方等级领先；decisions 分支 6→14"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 02:17",
+      "task": "推理落战术：决策树分支扩充",
+      "added": "8 个 decisions 分支（6→14），premises 追加 item-slots/talent-system/pulling-mechanics/mana-break-damage/respawn-timer",
+      "result": "全部为已有规则推导，无新数值；审查 0 error/0 warning",
+      "next": "决策树已覆盖通用局面，下一轮补 tactics 的英雄定位细分或 7.42 数值核对"
+    },
     {
       "time": "2026-11-26 01:18",
       "task": "质量审查轮：queue 全 done，转推理层补强",
