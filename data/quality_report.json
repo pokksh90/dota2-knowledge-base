@@ -15,7 +15,7 @@
     "matchups.json: 双向成对记录 lina<->axe（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
     "matchups.json: 双向成对记录 medusa<->anti-mage（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
     "matchups.json: 双向成对记录 huskar<->dazzle（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
-    "matchups.json: 覆盖度 77/127 英雄至少有 1 条记录；尚无覆盖(50): alchemist, arc-warden, bane, batrider, brewmaster, centaur-warrunner, chaos-knight, chen, dark-willow, dawnbreaker, death-prophet, elder-titan, enchantress, grimstroke, gyrocopter, hoodwink, juggernaut, keeper-of-the-light, kunkka, lifestealer, lone-druid, lycan, marci, mars, mirana, monkey-king, morphling, natures-prophet, night-stalker, ogre-magi, pangolier, phoenix, primal-beast, pugna, queen-of-pain, rubick, shadow-demon, snapfire, techies, tiny, treant-protector, underlord, undying, vengeful-spirit, visage, void-spirit, warlock, weaver, windranger, witch-doctor"
+    "matchups.json: 覆盖度 88/127 英雄至少有 1 条记录；尚无覆盖(39): arc-warden, bane, batrider, chen, dark-willow, dawnbreaker, death-prophet, enchantress, grimstroke, gyrocopter, hoodwink, juggernaut, keeper-of-the-light, lone-druid, lycan, marci, mirana, monkey-king, morphling, natures-prophet, night-stalker, ogre-magi, pangolier, phoenix, primal-beast, pugna, queen-of-pain, rubick, shadow-demon, snapfire, techies, tiny, underlord, undying, visage, warlock, weaver, windranger, witch-doctor"
   ],
   "counts": {
     "heroes": 127,

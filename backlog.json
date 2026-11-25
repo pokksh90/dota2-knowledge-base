@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 07:17",
+    "updated_at": "2026-11-25 08:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -110,14 +110,21 @@
       "id": "matchups-coverage",
       "title": "克制覆盖度补齐",
       "file": "data/matchups.json",
-      "current": 77,
+      "current": 88,
       "target": 127,
       "status": "pending",
-      "note": "quality_audit 新增覆盖度指标：当前 77/127 英雄至少有 1 条克制/配合记录，50 位尚无覆盖（炼金/天穹/祸乱/蝙蝠/酒仙/人马/陈…）；每轮按最缺的补 5~10 条"
+      "note": "本轮 77→88；剩余 39 位无覆盖：arc-warden/bane/batrider/chen/dark-willow/dawnbreaker/death-prophet/enchantress/grimstroke/gyrocopter/hoodwink/juggernaut/keeper-of-the-light/lone-druid/lycan/marci/mirana/monkey-king/morphling/natures-prophet/night-stalker/ogre-magi/pangolier/phoenix/primal-beast/pugna/queen-of-pain/rubick/shadow-demon/snapfire/techies/tiny/underlord/undying/visage/warlock/weaver/windranger/witch-doctor"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 08:18",
+      "task": "matchups-coverage",
+      "added": 10,
+      "result": "matchups 149→159，为原先零覆盖英雄补 10 条（炼金/混沌/酒仙/上古巨神/复仇/玛尔斯/船长/人马/树精/紫猫），覆盖度 77→88；所有机制逐条对照 dotaconstants 技能原文核对（如自然秩序剥离基础护甲、盛宴按最大生命百分比、死亡旋风摧毁树木），弃用了无法核实的「光法改昼夜」假设",
+      "next": "继续补剩余 39 位无覆盖英雄；night-stalker 的昼夜克制尚无可靠机制来源，暂不写"
+    },
     {
       "time": "2026-11-25 07:17",
       "task": "matchups-new-heroes",

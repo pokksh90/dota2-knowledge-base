@@ -1057,6 +1057,76 @@
       "target_id": "zeus",
       "reason": "灵呱一闪(Croak of Genius)给友方英雄降蓝耗并让造成的伤害在之后一段时间回响，配宙斯这类高频法系输出核心，等于放大其持续魔法伤害并缓解蓝量压力",
       "basis": "resource"
+    },
+    {
+      "hero_id": "alchemist",
+      "relation": "countered_by",
+      "target_id": "ancient-apparition",
+      "reason": "炼金术士靠化学狂暴(Chemical Rage)的持续回血站桩刷钱与打架，远古冰魄的冰封路径(Ice Blast)让被命中者无法回血与治疗，直接抹掉他的续航来源，也让团队对他的集火更有效",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "chaos-knight",
+      "relation": "countered_by",
+      "target_id": "luna",
+      "reason": "混沌骑士的爆发与控制大量依赖大招拉出的幻象，月骑的月刃(Moon Glaives)在多个目标间弹射，幻象越多弹射收益越高，分身很快被清空",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "brewmaster",
+      "relation": "countered_by",
+      "target_id": "sand-king",
+      "reason": "酒仙大招把本体拆成三只熊猫单位，沙王的地震(Epicenter)是持续范围脉冲伤害，三只熊猫同时吃满伤害；掘地穿刺还能一次控住多只",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "elder-titan",
+      "relation": "counter",
+      "target_id": "terrorblade",
+      "reason": "上古巨神的自然秩序(Natural Order)剥离周围敌人的基础护甲与魔抗，恐怖利刃靠高护甲幻象抗物理的体系被直接打穿，幻象与本体都变得更容易被物理清掉",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "vengeful-spirit",
+      "relation": "synergy",
+      "target_id": "axe",
+      "reason": "复仇之魂的移形换位(Nether Swap)是瞬发位移，可把敌方核心直接换进斧王吼叫(Berserker's Call)的范围，也能把被吼住的队友换出来",
+      "basis": "control"
+    },
+    {
+      "hero_id": "mars",
+      "relation": "counter",
+      "target_id": "sniper",
+      "reason": "玛尔斯的竞技场(Arena of Blood)边缘由战士阻挡敌方攻击与移动，火枪这类靠射程站桩输出的远程核心无法隔墙打人，被圈住后只能贴着边缘挨矛",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "kunkka",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "船长的潮汐使者(Tidebringer)是一次大范围横扫顺劈，幻影长矛手的分身越密集收益越高，一波顺劈能连本带幻象一起削",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "centaur-warrunner",
+      "relation": "countered_by",
+      "target_id": "lifestealer",
+      "reason": "半人马战行者靠超高血量与反伤硬吃伤害，噬魂鬼的盛宴(Feast)按目标最大生命百分比造成伤害并吸血，血量越高越吃亏，等于把半人马的优势变成负担",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "treant-protector",
+      "relation": "countered_by",
+      "target_id": "timbersaw",
+      "reason": "树精卫士的隐身靠自然掩护(Nature's Guise)在树木附近生效，伐木机的死亡旋风(Whirling Death)会摧毁周围树木，树没了掩护也就没了",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "void-spirit",
+      "relation": "countered_by",
+      "target_id": "silencer",
+      "reason": "虚无之灵靠残影与异化(Dissimilate)的多段位移进出战场，沉默术士的全局沉默与遗言让他在关键窗口内无法施法，位移链一断就只能硬吃伤害",
+      "basis": "control"
     }
   ]
 }
