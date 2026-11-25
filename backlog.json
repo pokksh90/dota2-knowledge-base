@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 18:19",
+    "updated_at": "2026-11-25 19:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -186,10 +186,27 @@
       "status": "done",
       "desc": "按覆盖度找到只有 1 条记录的英雄（51 个），优先为其补机制清晰的克制对。",
       "note": "本轮 +8 对：全能→斯温、马尔斯→卓尔游侠、AA→大树、光法→幻刺、巨魔→凤凰、沉默→灰烬、祸乱→美杜莎、大树→力丸；206→214，机制原文已核对"
+    },
+    {
+      "id": "inference-expand-2",
+      "title": "推理层第二轮扩充",
+      "file": "data/inference.json",
+      "current": 49,
+      "target": 55,
+      "status": "pending",
+      "desc": "在 43 条基础上继续由 rules 纯逻辑推导新定理，要求 premises 全部引用现存规则 id。",
+      "note": "本轮 +6（野区刷新框攻防同源、真视半径小于观察半径、天赋台阶、法力池第二血条、兵营永久产出、游走分摊经验），43→49；下一轮可补至 55 或按需扩展装备/克制层"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 19:18",
+      "task": "queue 全部 done 后转质量审查 + 推理层扩充",
+      "added": "6 条 inference",
+      "result": "inference 43→49，全部 premises 命中现存 rules id；审查 0 error / 0 warning（info 9）",
+      "next": "推理层目标 55，继续推导；低覆盖英雄仍有 51 个仅 1 条记录，可按需穿插补克制"
+    },
     {
       "time": "2026-11-25 18:19",
       "task": "质量审查：技能基础层核对 + 低覆盖英雄补 8 对克制",
