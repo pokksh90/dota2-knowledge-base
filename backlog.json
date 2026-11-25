@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 23:18",
+    "updated_at": "2026-11-26 00:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -211,11 +211,11 @@
       "id": "matchups-fourth-pass",
       "title": "克制层第四轮：剩余低覆盖英雄",
       "file": "data/matchups.json",
-      "current": 240,
+      "current": 248,
       "target": 248,
-      "status": "pending",
+      "status": "done",
       "desc": "给仍只有 1 条记录的英雄继续补，优先机制能从 rules/inference 回溯的。",
-      "note": "本轮 +8（232→240），全部按 matchup_stats 的 delta 同向挑选：怨灵被熊战士、虚空→龙骑、暗影恶魔→编织者、痛苦女王→伐木机、风行者被大树、冰女→斯拉达、松鼠被大树、主宰→凤凰"
+      "note": "第四轮收口 240→248（+8）：大树→巨魔、冰女→熊战士、滚滚→莱恩/双头龙、夜魔→帕克、土猫→拉比克、小狗→龙骑、大雪球→寒冬飞龙；机制原文逐条核对且 delta 同向"
     },
     {
       "id": "matchup-stats-layer",
@@ -240,6 +240,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 00:19",
+      "task": "克制层第四轮收口",
+      "added": "8 条 matchups（240→248，第四轮 done）",
+      "result": "8 对全部机制原文核对 + 统计 delta 同向；审查 0 error/0 warning",
+      "next": "克制层已达 248/248；下一轮转向未覆盖薄弱项：quality-audit 复核 + 补 7.42 技能/物品数值核对"
+    },
     {
       "time": "2026-11-25 23:18",
       "task": "克制层第四轮 + 统计冲突条目处理",
