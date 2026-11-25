@@ -66,7 +66,13 @@
         "Wise"
       ]
     },
-    "note": "7.42 取消第 5 档；原 T5 物品下放到第 4 档，第 4 档打造费 10→14 疯狂石"
+    "note": "7.42 取消第 5 档；原 T5 物品下放到第 4 档，第 4 档打造费 10→14 疯狂石",
+    "verification": {
+      "checked_at": "2026-11-25",
+      "method": "48 件逐件按 id 与 dotaconstants build/items.json 比对：存在性 + name_en + 技能标题/描述文本",
+      "result": "48/48 全部命中；41 件文本完全一致，7 件仅换行被压平（stonefeather_satchel / mana_draught / ceremonial_robe / fallen_sky / flicker / minotaur_horn / heavy_blade），无任何数值或机制差异",
+      "note": "dotaconstants 未提供 neutral 的 tier 字段，档位归属仍以 Valve 7.42 说明为准，未做二次臆测"
+    }
   },
   "classes": {
     "1": [

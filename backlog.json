@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 15:19",
+    "updated_at": "2026-11-25 16:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -81,15 +81,6 @@
       "note": "939/1016 带单一数值；77 条 pending 已逐条复核（54 条无数字、23 条双值），无单一数字可填属正常，非未完成"
     },
     {
-      "id": "neutral-items-audit",
-      "title": "中立装备逐件核对",
-      "file": "data/neutral_items.json",
-      "current": 48,
-      "target": 48,
-      "status": "done",
-      "note": "按 7.42 重建为四级制：4×4组×3件=48 件；分档/费用/选项规则全部替换为官方口径"
-    },
-    {
       "id": "new-heroes",
       "title": "补齐新英雄（2023–2026）",
       "file": "data/heroes.json / hero_base / ability_base / talents",
@@ -145,10 +136,27 @@
       "status": "done",
       "desc": "timings / objectives 两板块目前体量偏浅：补 15/30/50 分钟节点与 7.42 新目标（魔方、中立第四档、神符节奏）的可执行决策，字段与现有板块一致。",
       "note": "timings 4→9 条（0:00-1:00 开局、4:00-6:00 入夜+符文窗口、15:00 三事件重合、30:00 换格转折、50:00-65:00 第四档）；objectives 3→8 条（新增魔方、中立档位/疯狂石、塔防能量、兵营+背门、野区时钟）。新条目均带 premises 指向 rules 现存 id"
+    },
+    {
+      "id": "neutral-items-audit",
+      "title": "中立装备逐件核对",
+      "file": "data/neutral_items.json",
+      "current": 48,
+      "target": 48,
+      "status": "done",
+      "desc": "48 件按 id 与 dotaconstants 比对存在性、name_en 与技能文本。",
+      "note": "48/48 命中，41 件文本完全一致，7 件仅换行差异，无数值/机制差异；dotaconstants 无 tier 字段，档位不做二次推断（已写入 meta.verification）"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 16:18",
+      "task": "质量审查：中立装备逐件核对 + 推理补 3 条",
+      "added": "48 件核对 + 3 条推理",
+      "result": "neutral_items 48/48 命中 dotaconstants，7 件仅换行差异；inference 40→43（无兵线偷塔数学、塔防 14 秒预算、消耗品占战斗格）；审查 0 error/0 warning",
+      "next": "继续交叉校验 inference 前提数值与 rules 一致性；可考虑用 Liquipedia 补 neutral 档位归属的多来源佐证"
+    },
     {
       "time": "2026-11-25 15:19",
       "task": "战术层 timings/objectives 加深",
