@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 03:19",
+    "updated_at": "2026-11-26 04:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -264,10 +264,24 @@
       "current": 8,
       "target": 8,
       "note": "早期批次的反方向同义重复 8 组已合并（保留描述更完整的一条），248→240 条，去重后 240 条对应 240 个唯一 pair；disruptor↔faceless-void 属不同结论，保留"
+    },
+    {
+      "id": "matchup-reason-quality",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "把 10 条早期 5~8 字的短 reason 重写为可执行描述（含机制原文依据与实战处置），平均 reason 长度 34.9→38.4；覆盖潮汐↔虚空、风暴←沉默、幻影长矛手←莉娜、戴泽←赏金、戴泽/神谕+胡斯卡、干扰者+虚空、美杜莎←幻影长矛手、潮汐←沉默、斯莱克←血魔"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 04:18",
+      "task": "克制条目质量重写：短 reason 补全机制依据",
+      "added": "10 条 reason 重写（全部引 abilities.json 原文，未加数值臆测）",
+      "result": "字段结构回归单一 schema(5 字段)；审查 0 error/0 warning",
+      "next": "剩余短 reason 继续重写；随后补 7.42 技能数值逐条核对"
+    },
     {
       "time": "2026-11-26 03:19",
       "task": "质量修正：装备可购性核对 + 克制镜像去重",

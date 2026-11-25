@@ -13,8 +13,8 @@
       "sustain": "续航/复活/保命(治疗/薄葬) → rules.positioning-economy(容错)",
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
-    "last_updated": "2026-11-26 03:18",
-    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。 本轮 8 条同样逐条核对原文：守护天使 \"immunity from physical damage\"；竞技场 \"block enemy attacks and movement\"；冰晶爆轰 \"prevented from regenerating or healing\"；致盲 \"causing them to miss some attacks\"；超新星 \"The sun has pip health\"；残焰 \"Activate Fire Remnant\" 需主动施放；恶魔掌握 \"stealing mana ... based on the unit's maximum mana\"；疯狂生长 \"prevent them from moving, blinking, going invisible, or attacking\"。 第三轮 8 条依据（dotaconstants abilities.json 原文）：Amplify Damage \"provides True Sight and vision ... revealing invisibility\"；Paralyzing Cask \"ricochets between enemy units ... Damage increases each bounce\"；Midnight Pulse \"dealing 5 + a percentage of the enemies current HP\"；Natural Order \"removing base armor and magic damage resistance\"；Decay \"steals strength from all enemy heroes in an area\"；Flaming Lasso bkbpierce=Yes,\"cannot move, attack, or use abilities\"；Soul Chain \"Any unit-targeted ability that either bound hero receives also gets cast on the other hero\"；Gravekeeper's Cloak \"If he receives damage from a player, one layer is removed\"。 第三轮第二批 10 条依据：Thundergod's Wrath \"Provides True Sight around each hero before they are struck\"；Bloodlust \"increasing its movement speed and attack speed\"；Fatal Bonds \"causing a percentage of the damage dealt to one of them to be felt by the others\"；Atrophy Aura \"losing a portion of their base damage\"；Aphotic Shield \"Strong Dispel ... all damage barrier\"；Flak Cannon \"attacks hit all enemy units in an area\"；Silence \"prevents enemy units in a target area from casting spells\"；Avalanche \"continously doing small intervals of damage and stun\"；Sacred Arrow \"stun duration ranges from 0.01 to 2.3 seconds\"；Acid Spray \"have their armor reduced\"。 第四轮 8 条依据：Atrophy Aura \"losing a portion of their base damage\" + Fury Swipes \"bonus damage\"（附加值不吃削攻）；Chronosphere bkbpierce=Yes,\"trapping all units … Invisible enemies … revealed\"；Demonic Purge \"removing positive buffs, and slowing\"；Sonic Wave Pure；Overgrowth bkbpierce=Yes,\"prevent them from moving, blinking, going invisible, or attacking\"；Frostbite \"prohibiting movement and attack\"；Omni Slash \"continues to jump slash … Jump rate is dependent on Juggernaut's attack speed\"。这 8 对在 matchup_stats 中 delta 与机制同向（如 windranger→treant -0.192/108 局、queen-of-pain→timbersaw +0.163/104 局）。 第五轮 8 条依据：Overgrowth(bkbpierce=Yes,禁止移动/闪烁/攻击)；Frost Nova\"slowing movement and attack rates\"+Fury Swipes\"If the same target is not attacked after 8 seconds, the bonus damage is lost\"；Gyroshell\"debuff immune ball with 80% magic resistance\"；Crippling Fear\"silenced … longer at night\"；Geomagnetic Grip\"Enemies struck … will be silenced\"；Feast\"damage and provide heal for a percentage of his target's max health\"；Walrus Punch\"bkbpierce=Yes…launches its victim into the air\"。delta 同向：treant→tusk -0.172/176 局、lich→ursa +0.139/103、pangolier→lion +0.143/125、night-stalker→puck +0.127/96、earth-spirit→rubick +0.097/150、lifestealer→dragon-knight +0.102/120、tusk→ancient-apparition +0.108/82、pangolier→jakiro +0.129/147。",
+    "last_updated": "2026-11-26 04:18",
+    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。 本轮 8 条同样逐条核对原文：守护天使 \"immunity from physical damage\"；竞技场 \"block enemy attacks and movement\"；冰晶爆轰 \"prevented from regenerating or healing\"；致盲 \"causing them to miss some attacks\"；超新星 \"The sun has pip health\"；残焰 \"Activate Fire Remnant\" 需主动施放；恶魔掌握 \"stealing mana ... based on the unit's maximum mana\"；疯狂生长 \"prevent them from moving, blinking, going invisible, or attacking\"。 第三轮 8 条依据（dotaconstants abilities.json 原文）：Amplify Damage \"provides True Sight and vision ... revealing invisibility\"；Paralyzing Cask \"ricochets between enemy units ... Damage increases each bounce\"；Midnight Pulse \"dealing 5 + a percentage of the enemies current HP\"；Natural Order \"removing base armor and magic damage resistance\"；Decay \"steals strength from all enemy heroes in an area\"；Flaming Lasso bkbpierce=Yes,\"cannot move, attack, or use abilities\"；Soul Chain \"Any unit-targeted ability that either bound hero receives also gets cast on the other hero\"；Gravekeeper's Cloak \"If he receives damage from a player, one layer is removed\"。 第三轮第二批 10 条依据：Thundergod's Wrath \"Provides True Sight around each hero before they are struck\"；Bloodlust \"increasing its movement speed and attack speed\"；Fatal Bonds \"causing a percentage of the damage dealt to one of them to be felt by the others\"；Atrophy Aura \"losing a portion of their base damage\"；Aphotic Shield \"Strong Dispel ... all damage barrier\"；Flak Cannon \"attacks hit all enemy units in an area\"；Silence \"prevents enemy units in a target area from casting spells\"；Avalanche \"continously doing small intervals of damage and stun\"；Sacred Arrow \"stun duration ranges from 0.01 to 2.3 seconds\"；Acid Spray \"have their armor reduced\"。 第四轮 8 条依据：Atrophy Aura \"losing a portion of their base damage\" + Fury Swipes \"bonus damage\"（附加值不吃削攻）；Chronosphere bkbpierce=Yes,\"trapping all units … Invisible enemies … revealed\"；Demonic Purge \"removing positive buffs, and slowing\"；Sonic Wave Pure；Overgrowth bkbpierce=Yes,\"prevent them from moving, blinking, going invisible, or attacking\"；Frostbite \"prohibiting movement and attack\"；Omni Slash \"continues to jump slash … Jump rate is dependent on Juggernaut's attack speed\"。这 8 对在 matchup_stats 中 delta 与机制同向（如 windranger→treant -0.192/108 局、queen-of-pain→timbersaw +0.163/104 局）。 第五轮 8 条依据：Overgrowth(bkbpierce=Yes,禁止移动/闪烁/攻击)；Frost Nova\"slowing movement and attack rates\"+Fury Swipes\"If the same target is not attacked after 8 seconds, the bonus damage is lost\"；Gyroshell\"debuff immune ball with 80% magic resistance\"；Crippling Fear\"silenced … longer at night\"；Geomagnetic Grip\"Enemies struck … will be silenced\"；Feast\"damage and provide heal for a percentage of his target's max health\"；Walrus Punch\"bkbpierce=Yes…launches its victim into the air\"。delta 同向：treant→tusk -0.172/176 局、lich→ursa +0.139/103、pangolier→lion +0.143/125、night-stalker→puck +0.127/96、earth-spirit→rubick +0.097/150、lifestealer→dragon-knight +0.102/120、tusk→ancient-apparition +0.108/82、pangolier→jakiro +0.129/147。 第六轮：把 10 条早期短 reason（平均 6~8 字）重写为可执行描述，逐条引 desc 原文：Ravage『damaging and stunning all nearby enemy units』、Chronosphere『trapping all units』、Ball Lightning『activation mana cost is 25+7.5% … 10+0.65% per 100 units』、Global Silence『preventing … from casting spells』(bkbpierce=Yes)、Shallow Grave『cannot die … Healing … amplified』、Berserker's Blood『attack speed, magic resistance and health regen based on missing health』、False Promise『delaying any healing or damage … amplified … Strong Dispel』、Static Storm『silences … damage … increases over the duration』、Mana Shield『98% … Illusions absorb 60% less』、Thirst『below 25% … vision and True Sight』。",
     "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）",
     "mirror_dedup_note": "早期批次曾以反方向重复书写同一条克制（如 medusa countered_by anti-mage 与 anti-mage counter medusa），已按「同关系互为镜像即合并、保留描述更完整的一条」清理 8 组；disruptor↔faceless-void 保留双向，因 countered_by 与 synergy 是两条不同结论。"
   },
@@ -100,7 +100,7 @@
       "hero_id": "storm-spirit",
       "relation": "countered_by",
       "target_id": "silencer",
-      "reason": "沉默断蓝耗链",
+      "reason": "遗言在目标施法或计到点后触发伤害与沉默，全局沉默则全场禁咒并穿透技能免疫；风暴之灵靠连续施法维持球状闪电（激活要 25+7.5% 最大蓝量，每移动 100 距离还要 10+0.65% 蓝量），被沉默既进不去也续不上。",
       "basis": "control"
     },
     {
@@ -142,7 +142,7 @@
       "hero_id": "slark",
       "relation": "countered_by",
       "target_id": "bloodseeker",
-      "reason": "血怒暴露低血隐身",
+      "reason": "热血按敌人已失血量给移速，并在目标低于 25% 时提供视野与真视：暗影之舞的「免疫侦测」在真视面前失效，斯莱克越残越跑不掉；团战里把血线压在 25% 以上是硬要求，不是可选项。",
       "basis": "vision"
     },
     {
@@ -198,14 +198,14 @@
       "hero_id": "tidehunter",
       "relation": "countered_by",
       "target_id": "silencer",
-      "reason": "沉默打断大招先手",
+      "reason": "全局沉默覆盖全场并穿透技能免疫，潮汐的先手大招在沉默里根本放不出来；遗言还会在施法后补一层沉默，让「先小技能再大招」的连招断在中间，先手节奏直接失能。",
       "basis": "control"
     },
     {
       "hero_id": "tidehunter",
       "relation": "synergy",
       "target_id": "faceless-void",
-      "reason": "双重团控链",
+      "reason": "毁灭是半径眩晕、时空结界把范围内单位全部锁住：先毁灭聚人再补结界，或先结界锁定再进毁灭，两招大控让对手躲不掉「两波都吃」；代价是两者冷却都长，同时交完必有空窗，别在同一波里浪费掉。",
       "basis": "control"
     },
     {
@@ -254,14 +254,14 @@
       "hero_id": "dazzle",
       "relation": "countered_by",
       "target_id": "bounty-hunter",
-      "reason": "隐身切入切后排",
+      "reason": "标记提供真视并放大目标受到的伤害，隐身切入后可以一路跟住薄葬目标：薄葬只保证不死，不解追踪也不解伤害放大，跟到保护时间结束就能收；对后排薄血辅助，标记比一轮爆发更难防。",
       "basis": "mobility"
     },
     {
       "hero_id": "dazzle",
       "relation": "synergy",
       "target_id": "huskar",
-      "reason": "薄葬保低血输出",
+      "reason": "薄葬让目标在持续时间内不会死，而狂战士之血按已失血量给攻速、魔抗与按力量百分比回血：血量被压到极低时正是胡斯卡最强的区间，薄葬把这段「最强但不能死」的时间买下来；薄葬期间治疗还被放大，续命收益翻倍。",
       "basis": "sustain"
     },
     {
@@ -275,7 +275,7 @@
       "hero_id": "oracle",
       "relation": "synergy",
       "target_id": "huskar",
-      "reason": "治疗保低血爆发",
+      "reason": "虚妄之诺把受到的伤害与治疗延后结算、结束时放大治疗，开场还带强力驱散：等于给胡斯卡一个「伤害不立即生效」的窗口，让他能安全停在残血高攻速区间；注意延后不是免伤，窗口结束时若治疗没跟上仍会一次性结算。",
       "basis": "sustain"
     },
     {
@@ -310,7 +310,7 @@
       "hero_id": "disruptor",
       "relation": "synergy",
       "target_id": "faceless-void",
-      "reason": "结界内大招叠加",
+      "reason": "静态风暴在范围内持续沉默且伤害随时间递增，时空结界把人锁在原地：两者叠起来就是「不能走 + 不能施法」，只有 BKB 能破，位移与闪烁都被结界吃掉；所以这组配合的关键是先结界再风暴，而不是反过来。",
       "basis": "control"
     },
     {
@@ -359,7 +359,7 @@
       "hero_id": "medusa",
       "relation": "countered_by",
       "target_id": "phantom-lancer",
-      "reason": "分身克制分裂箭",
+      "reason": "法力护盾按蓝量吸收 98% 伤害，幻象每点蓝吸收虽少 60%，但数量多、攻击频次高，持续磨蓝：美杜莎真正的血条是蓝量，被大量低伤害攻击磨蓝比被一发爆发更难受，对线期别把蓝当成纯输出资源。",
       "basis": "aoe"
     },
     {
@@ -499,7 +499,7 @@
       "hero_id": "phantom-lancer",
       "relation": "countered_by",
       "target_id": "lina",
-      "reason": "AOE清幻象",
+      "reason": "幻象单位血量极低，龙破斩是穿透直线 AOE，一波就能清掉一片幻象、剥掉真身的掩护；反过来幻影长矛手分身时不要排成一条直线，AOE 的收益随命中数上升。",
       "basis": "aoe"
     },
     {
