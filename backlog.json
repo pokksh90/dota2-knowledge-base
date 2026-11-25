@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 14:19",
+    "updated_at": "2026-11-25 15:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -140,14 +140,22 @@
       "id": "tactics-timings-deepen",
       "title": "战术层时间轴与目标板块加深",
       "file": "data/tactics.json",
-      "current": 2,
+      "current": 4,
       "target": 4,
-      "status": "pending",
-      "desc": "timings / objectives 两板块目前体量偏浅：补 15/30/50 分钟节点与 7.42 新目标（魔方、中立第四档、神符节奏）的可执行决策，字段与现有板块一致。"
+      "status": "done",
+      "desc": "timings / objectives 两板块目前体量偏浅：补 15/30/50 分钟节点与 7.42 新目标（魔方、中立第四档、神符节奏）的可执行决策，字段与现有板块一致。",
+      "note": "timings 4→9 条（0:00-1:00 开局、4:00-6:00 入夜+符文窗口、15:00 三事件重合、30:00 换格转折、50:00-65:00 第四档）；objectives 3→8 条（新增魔方、中立档位/疯狂石、塔防能量、兵营+背门、野区时钟）。新条目均带 premises 指向 rules 现存 id"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 15:19",
+      "task": "战术层 timings/objectives 加深",
+      "added": "timings +5、objectives +5",
+      "result": "按 7.42 时间表把时间轴补成 9 条、目标物补成 8 条，全部带 premises 回溯 rules；审查 0 error/0 warning",
+      "next": "queue 再次全 done，下轮转质量审查：重点核 inference 前提与 rules 数值一致、neutral_items 与 7.42 逐件比对"
+    },
     {
       "time": "2026-11-25 14:19",
       "task": "质量审查 + 装备价格核对 + 存在性审计",
