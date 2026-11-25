@@ -1,11 +1,9 @@
 {
   "generated_by": "scripts/quality_audit.py",
-  "error_count": 1,
+  "error_count": 0,
   "warning_count": 0,
   "info_count": 9,
-  "errors": [
-    "index.json: data/inference.json count=43 实际 49"
-  ],
+  "errors": [],
   "warnings": [],
   "infos": [
     "matchups.json: 双向成对记录 storm-spirit<->anti-mage（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
