@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 09:18",
+    "updated_at": "2026-11-25 10:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -110,14 +110,21 @@
       "id": "matchups-coverage",
       "title": "克制覆盖度补齐",
       "file": "data/matchups.json",
-      "current": 99,
+      "current": 110,
       "target": 127,
       "status": "pending",
-      "note": "本轮 88→99；剩余 28 位无覆盖：arc-warden/batrider/chen/dark-willow/dawnbreaker/death-prophet/enchantress/grimstroke/gyrocopter/keeper-of-the-light/lone-druid/lycan/marci/mirana/night-stalker/ogre-magi/pangolier/primal-beast/pugna/queen-of-pain/rubick/shadow-demon/snapfire/techies/undying/visage/windranger/witch-doctor"
+      "note": "110/127；剩余 17 位无覆盖：arc-warden/batrider/dark-willow/death-prophet/enchantress/gyrocopter/lone-druid/lycan/marci/night-stalker/ogre-magi/pangolier/rubick/shadow-demon/techies/visage/windranger"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 10:19",
+      "task": "matchups-coverage",
+      "added": 10,
+      "result": "matchups 169→179，覆盖度 99→110/127；新增光法→狙击手、邪影芳灵↔火女、帕格纳→斯温、痛苦女王→龙骑、巫医→陈、破晓→先知、米拉娜↔船长、尸王→米波、上古巨兽→巫医、电炎绝手↔斯温，均按技能原文核对机制",
+      "next": "剩余 17 位无覆盖英雄继续补"
+    },
     {
       "time": "2026-11-25 09:18",
       "task": "matchups-coverage",

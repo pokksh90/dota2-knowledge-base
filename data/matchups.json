@@ -1197,6 +1197,76 @@
       "target_id": "bloodseeker",
       "reason": "割裂(Rupture)按移动距离结算伤害，森海飞霞依赖穿树位移(Scurry)拉开距离，越跑越疼，位移优势反成负担",
       "basis": "mobility"
+    },
+    {
+      "hero_id": "keeper-of-the-light",
+      "relation": "counter",
+      "target_id": "sniper",
+      "reason": "光法的致盲之光(Blinding Light)会击退并让范围内单位攻击落空；狙击手是纯站桩远程物理核心，被致盲后主要输出手段直接打空，还被迫离开原站位",
+      "basis": "control"
+    },
+    {
+      "hero_id": "grimstroke",
+      "relation": "synergy",
+      "target_id": "lina",
+      "reason": "邪影芳灵的魂链(Soul Chain)把目标敌人与最近的敌方英雄绑在一起，并且任一被绑单位吃到的单体指向技能也会施加到另一个身上，等于把火女的单体爆发直接翻倍",
+      "basis": "control"
+    },
+    {
+      "hero_id": "pugna",
+      "relation": "counter",
+      "target_id": "sven",
+      "reason": "帕格纳的虚无(Decrepify)让目标无法攻击、同时也吃额外的魔法伤害；斯温的伤害几乎全压在攻击上，被虚无期间既打不出输出又更脆",
+      "basis": "control"
+    },
+    {
+      "hero_id": "queen-of-pain",
+      "relation": "counter",
+      "target_id": "dragon-knight",
+      "reason": "痛苦女王的超声波(Sonic Wave)是纯粹伤害且无视技能免疫，还能把目标推回；龙骑士靠高护甲与变身站前排，纯粹伤害绕开护甲，推回又打断他的贴身节奏",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "witch-doctor",
+      "relation": "counter",
+      "target_id": "chen",
+      "reason": "巫医的麻痹药剂(Paralyzing Cask)会在敌方单位之间反复弹跳、每次弹跳递增伤害与眩晕时间；陈的神圣劝化会带一群野怪进场，反而给药剂提供了更多弹跳目标",
+      "basis": "control"
+    },
+    {
+      "hero_id": "dawnbreaker",
+      "relation": "counter",
+      "target_id": "natures-prophet",
+      "reason": "破晓辰星的日出(Solar Guardian)可以对着地图上任意位置的友方英雄施放，脉冲治疗并伤害周围敌人；先知靠全球支援抓单，被标记的队友能立刻获得全球救援",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "mirana",
+      "relation": "synergy",
+      "target_id": "kunkka",
+      "reason": "米拉娜的月神之箭是超远距离先手，命中即产生最长约 2.3 秒的眩晕，正好给船长的洪流与幽灵船留出完整落点时间",
+      "basis": "control"
+    },
+    {
+      "hero_id": "undying",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "不朽尸王的墓碑会在范围内每一个敌方单位旁边不断生成僵尸；米波的分身越多，僵尸生成点与攻击目标就越多，多单位优势被反向放大",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "primal-beast",
+      "relation": "counter",
+      "target_id": "witch-doctor",
+      "reason": "上古巨兽的粉碎(Pulverize)无视技能免疫，抓起目标反复砸地并对范围内敌人持续小眩晕；巫医的死亡守卫是持续施法，会被连续小眩晕打断",
+      "basis": "control"
+    },
+    {
+      "hero_id": "snapfire",
+      "relation": "synergy",
+      "target_id": "sven",
+      "reason": "电炎绝手的饼干(Firesnap Cookie)可以让友方单位跳跃一段距离并在落点眩晕敌人；斯温不必依赖跳刀即可被送进人群开大",
+      "basis": "mobility"
     }
   ]
 }

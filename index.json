@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
-    "updated_at": "2026-11-25 09:18"
+    "updated_at": "2026-11-25 10:19"
   },
   "modules": [
     {
@@ -46,9 +46,9 @@
     {
       "file": "data/matchups.json",
       "title": "克制与搭配",
-      "count": 169,
+      "count": 179,
       "status": "stable",
-      "note": "169 条克制/配合关系，basis 8 类可回溯 rules/inference；已覆盖 99/127 英雄。"
+      "note": "179 条克制/配合关系，basis 8 类可回溯 rules/inference；已覆盖 110/127 英雄。"
     },
     {
       "file": "scripts/fetch_data.py",
