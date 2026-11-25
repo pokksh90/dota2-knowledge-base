@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "Valve datafeed + dotaconstants",
-    "note": "每级天赋二选一；special_bonus_value 为英雄脚本中解析到的天赋数值，text 中残留 <...> 占位表示该天赋为机制型（改目标/改穿透等）或无统一数值，value_pending=true",
+    "note": "每级天赋二选一；special_bonus_value 为英雄脚本中解析到的天赋数值，text 中残留 <...> 占位表示该天赋为机制型（改目标/改穿透等）或无统一数值。pending 项已逐条复核：54 条文案不含任何数字（纯机制型），23 条含两个数值（如 +9%/18%、+20/50），均无单一数字可填，留 null 属正常。",
     "tier_levels": [
       10,
       15,
@@ -9879,7 +9879,7 @@
           ]
         },
         {
-          "level": 20,
+          "level": 15,
           "options": [
             {
               "name": "special_bonus_unique_ringmaster_dagger_penetrates",
@@ -9898,7 +9898,7 @@
           ]
         },
         {
-          "level": 30,
+          "level": 20,
           "options": [
             {
               "name": "special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration",
@@ -9917,7 +9917,7 @@
           ]
         },
         {
-          "level": 40,
+          "level": 25,
           "options": [
             {
               "name": "special_bonus_unique_ringmaster_wheel_radius",
@@ -9959,7 +9959,7 @@
           ]
         },
         {
-          "level": 20,
+          "level": 15,
           "options": [
             {
               "name": "special_bonus_unique_muerta_the_calling_num_revenants",
@@ -9978,7 +9978,7 @@
           ]
         },
         {
-          "level": 30,
+          "level": 20,
           "options": [
             {
               "name": "special_bonus_unique_muerta_pierce_the_veil_duration",
@@ -9997,7 +9997,7 @@
           ]
         },
         {
-          "level": 40,
+          "level": 25,
           "options": [
             {
               "name": "special_bonus_unique_muerta_gunslinger_double_shot_chance",
@@ -10039,7 +10039,7 @@
           ]
         },
         {
-          "level": 20,
+          "level": 15,
           "options": [
             {
               "name": "special_bonus_unique_kez_falcon_rush_duration",
@@ -10058,7 +10058,7 @@
           ]
         },
         {
-          "level": 30,
+          "level": 20,
           "options": [
             {
               "name": "special_bonus_unique_kez_kazura_katana_bleed_damage",
@@ -10077,7 +10077,7 @@
           ]
         },
         {
-          "level": 40,
+          "level": 25,
           "options": [
             {
               "name": "special_bonus_unique_kez_mark_damage",
@@ -10119,7 +10119,7 @@
           ]
         },
         {
-          "level": 20,
+          "level": 15,
           "options": [
             {
               "name": "special_bonus_unique_largo_3",
@@ -10138,7 +10138,7 @@
           ]
         },
         {
-          "level": 30,
+          "level": 20,
           "options": [
             {
               "name": "special_bonus_unique_largo_8",
@@ -10157,7 +10157,7 @@
           ]
         },
         {
-          "level": 40,
+          "level": 25,
           "options": [
             {
               "name": "special_bonus_unique_largo_7",

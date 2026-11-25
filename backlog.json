@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 12:18",
+    "updated_at": "2026-11-25 13:02",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -76,8 +76,8 @@
       "file": "data/talents.json",
       "current": 939,
       "target": 1016,
-      "status": "pending",
-      "note": "1016 条文案已全部去占位（官方 dname）；939 条带单一数值；77 条为多值（如 +9%/18%、+75/+300）或纯机制型，保持 null 属正常。"
+      "status": "done",
+      "note": "939/1016 带单一数值；77 条 pending 已逐条复核（54 条无数字、23 条双值），无单一数字可填属正常，非未完成"
     },
     {
       "id": "neutral-items-audit",
@@ -118,6 +118,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 13:02",
+      "task": "talent-values 复核 + inference 扩充",
+      "added": 6,
+      "result": "① 修正 4 位新英雄(ringmaster/muerta/kez/largo)天赋层级错标 10/20/30/40 → 10/15/20/25（依据 hero_abilities.json level 1-4，共 12 处）；② 逐条复核 77 条 pending（54 条无数字/23 条双值，确认无单值可填），talent-values 标 done；③ inference 26→32 新增 6 条（格挡按次结算、状态抗性乘算平台、后期阵亡窗口成本、塔防能量定义推塔窗口、不可靠金先花、整分钟堆叠节奏）",
+      "next": "inference 增至 32 条；下一轮可补 tactics 深度板块或继续 inference 与 rules 的交叉校验"
+    },
     {
       "time": "2026-11-25 12:18",
       "task": "matchups-coverage",
