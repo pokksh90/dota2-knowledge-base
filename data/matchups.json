@@ -13,8 +13,8 @@
       "sustain": "续航/复活/保命(治疗/薄葬) → rules.positioning-economy(容错)",
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
-    "last_updated": "2026-11-25 21:18",
-    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。 本轮 8 条同样逐条核对原文：守护天使 \"immunity from physical damage\"；竞技场 \"block enemy attacks and movement\"；冰晶爆轰 \"prevented from regenerating or healing\"；致盲 \"causing them to miss some attacks\"；超新星 \"The sun has pip health\"；残焰 \"Activate Fire Remnant\" 需主动施放；恶魔掌握 \"stealing mana ... based on the unit's maximum mana\"；疯狂生长 \"prevent them from moving, blinking, going invisible, or attacking\"。 第三轮 8 条依据（dotaconstants abilities.json 原文）：Amplify Damage \"provides True Sight and vision ... revealing invisibility\"；Paralyzing Cask \"ricochets between enemy units ... Damage increases each bounce\"；Midnight Pulse \"dealing 5 + a percentage of the enemies current HP\"；Natural Order \"removing base armor and magic damage resistance\"；Decay \"steals strength from all enemy heroes in an area\"；Flaming Lasso bkbpierce=Yes,\"cannot move, attack, or use abilities\"；Soul Chain \"Any unit-targeted ability that either bound hero receives also gets cast on the other hero\"；Gravekeeper's Cloak \"If he receives damage from a player, one layer is removed\"。"
+    "last_updated": "2026-11-25 22:18",
+    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。 本轮 8 条同样逐条核对原文：守护天使 \"immunity from physical damage\"；竞技场 \"block enemy attacks and movement\"；冰晶爆轰 \"prevented from regenerating or healing\"；致盲 \"causing them to miss some attacks\"；超新星 \"The sun has pip health\"；残焰 \"Activate Fire Remnant\" 需主动施放；恶魔掌握 \"stealing mana ... based on the unit's maximum mana\"；疯狂生长 \"prevent them from moving, blinking, going invisible, or attacking\"。 第三轮 8 条依据（dotaconstants abilities.json 原文）：Amplify Damage \"provides True Sight and vision ... revealing invisibility\"；Paralyzing Cask \"ricochets between enemy units ... Damage increases each bounce\"；Midnight Pulse \"dealing 5 + a percentage of the enemies current HP\"；Natural Order \"removing base armor and magic damage resistance\"；Decay \"steals strength from all enemy heroes in an area\"；Flaming Lasso bkbpierce=Yes,\"cannot move, attack, or use abilities\"；Soul Chain \"Any unit-targeted ability that either bound hero receives also gets cast on the other hero\"；Gravekeeper's Cloak \"If he receives damage from a player, one layer is removed\"。 第三轮第二批 10 条依据：Thundergod's Wrath \"Provides True Sight around each hero before they are struck\"；Bloodlust \"increasing its movement speed and attack speed\"；Fatal Bonds \"causing a percentage of the damage dealt to one of them to be felt by the others\"；Atrophy Aura \"losing a portion of their base damage\"；Aphotic Shield \"Strong Dispel ... all damage barrier\"；Flak Cannon \"attacks hit all enemy units in an area\"；Silence \"prevents enemy units in a target area from casting spells\"；Avalanche \"continously doing small intervals of damage and stun\"；Sacred Arrow \"stun duration ranges from 0.01 to 2.3 seconds\"；Acid Spray \"have their armor reduced\"。"
   },
   "matchups": [
     {
@@ -1570,6 +1570,76 @@
       "target_id": "troll-warlord",
       "reason": "守墓者斗篷按「受到伤害的次数」掉层，高频普攻能在数秒内撕光护盾",
       "basis": "physical"
+    },
+    {
+      "hero_id": "zeus",
+      "relation": "counter",
+      "target_id": "weaver",
+      "reason": "雷霆之怒全图命中并在命中前给每个敌方英雄周围真视，缩地隐身无所遁形",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "ogre-magi",
+      "relation": "synergy",
+      "target_id": "juggernaut",
+      "reason": "嗜血给友军同时加移速与攻速，低 BAT 物理核的直接输出提升最大",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "warlock",
+      "relation": "synergy",
+      "target_id": "queen-of-pain",
+      "reason": "致命链接把伤害按比例分摊给被连的其他单位，配纯伤大范围推墙可一次打多人",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "chaos-knight",
+      "relation": "countered_by",
+      "target_id": "underlord",
+      "reason": "萎缩光环按比例削掉附近敌方的基础攻击力，靠分身（60% 伤害、350% 受伤）输出的混沌骑士被打回原形",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "abaddon",
+      "relation": "counter",
+      "target_id": "lina",
+      "reason": "无光之盾强驱散并吸收全类型伤害，正好抵掉单体法系爆发与后续控制",
+      "basis": "sustain"
+    },
+    {
+      "hero_id": "gyrocopter",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "高射火炮让每一下普攻命中周围所有单位，分身越多清理越快",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "death-prophet",
+      "relation": "counter",
+      "target_id": "storm-spirit",
+      "reason": "沉默是区域禁施法，风暴之灵依赖施法位移与逃生，被沉默即失去机动",
+      "basis": "control"
+    },
+    {
+      "hero_id": "tiny",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "山崩按小间隔连续造成伤害与眩晕，对分则能众的多单位阵列是天然压制",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "mirana",
+      "relation": "synergy",
+      "target_id": "juggernaut",
+      "reason": "月神之箭最长 2.3 秒远程眩晕，给无敌斩这类近身爆发提供开团窗口",
+      "basis": "control"
+    },
+    {
+      "hero_id": "alchemist",
+      "relation": "counter",
+      "target_id": "dragon-knight",
+      "reason": "酸雾持续削甲，靠护甲站桩的龙族形态被打穿物理减伤",
+      "basis": "damage-type"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 21:18",
+    "updated_at": "2026-11-25 22:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -201,15 +201,32 @@
       "id": "matchups-third-pass",
       "title": "克制层第三轮：低覆盖英雄继续补",
       "file": "data/matchups.json",
-      "current": 222,
+      "current": 232,
       "target": 232,
-      "status": "pending",
+      "status": "done",
       "desc": "仍有 51 个英雄只有 1 条 record，按机制清晰度继续补，pair 任一方向已存在则跳过。",
-      "note": "本轮 +8（214→222）：斯拉达→编织者、巫医→幻影长矛手、谜团→钢背兽、上古巨神→龙骑士、不朽尸王→半人马、蝙蝠骑士→水晶室女、画花（缚魂）与末日协同、维萨吉被巨魔克制。机制均取 dotaconstants 原文"
+      "note": "两批共 +18（214→232）：斯拉达/巫医/谜团/上古巨神/尸王/蝙蝠/缚魂/维萨吉 + 宙斯→编织者、食人魔法师→主宰、术士→痛苦女王、混沌骑士被怨灵、亚巴顿→莉娜、直升机→幻影长矛手、死亡先知→风暴之灵、小小→米波、米拉娜→主宰、炼金→龙骑士；机制均取 dotaconstants 原文"
+    },
+    {
+      "id": "matchups-fourth-pass",
+      "title": "克制层第四轮：剩余低覆盖英雄",
+      "file": "data/matchups.json",
+      "current": 232,
+      "target": 248,
+      "status": "pending",
+      "desc": "给仍只有 1 条记录的英雄继续补，优先机制能从 rules/inference 回溯的。",
+      "note": "hero_id 优先选低覆盖英雄；basis 必须落在图例 8 类；同一 pair 任一方向已存在即跳过"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 22:18",
+      "task": "克制层第三轮收口：222→232",
+      "added": "10 条 matchups",
+      "result": "pair 去重通过、basis 全合法、10 条机制原文逐条核对；审查 0 error/0 warning",
+      "next": "开 matchups-fourth-pass(232→248)，继续覆盖剩余仅 1 条记录的英雄"
+    },
     {
       "time": "2026-11-25 21:18",
       "task": "克制层第三轮：低覆盖英雄补 8 对",
