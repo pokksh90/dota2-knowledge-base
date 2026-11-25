@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 00:19",
+    "updated_at": "2026-11-26 01:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -236,10 +236,24 @@
       "status": "done",
       "desc": "复核被统计明显否定的克制条目（首例 silencer→puck），确认机制前提是否成立，必要时改写 reason 或调整 relation。",
       "note": "silencer→puck：77 局 33.8% vs 基线 47.3%(z=-2.38)。机制（沉默断逃生）保留但已在 reason 内加注「整体对位实际偏劣势、仅在先手命中时成立」，不把机制优势当稳胜结论"
+    },
+    {
+      "id": "inference-coach-utility",
+      "status": "done",
+      "current": 8,
+      "target": 8,
+      "note": "质量审查轮转出的推理补强：辅助收入由事件驱动、中立装备=第七格、天赋与装备节奏撞档、等级差=技能结构、拉野改地图、清线速率定推进上限、蓝量=施法次数预算、后期死亡成本=复活×资源速率；premises 全部指向已有 rules id"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 01:18",
+      "task": "质量审查轮：queue 全 done，转推理层补强",
+      "added": "8 条 inference（55→63），premises 全部为现有 rules id",
+      "result": "审查 0 error/0 warning；无新增捏造数值（全部 reasoned 级推导）",
+      "next": "继续审 7.42 数值核对；可补 tactics 分支（清线速率/蓝量预算落地为决策卡）"
+    },
     {
       "time": "2026-11-26 00:19",
       "task": "克制层第四轮收口",

@@ -3,7 +3,7 @@
     "title": "逻辑推理洞察（定理层）",
     "description": "由 rules.json 底层规则纯逻辑推导出的洞察，非网上直接抄录。每条含 前提→推导→结论→应用 完整链条，可回溯验证。",
     "confidence_legend": "verified=公式确定且推导严谨；reasoned=逻辑成立但含定性假设；assumption=含较强假设需实测验证。",
-    "last_updated": "2026-11-25 20:18"
+    "last_updated": "2026-11-26 01:18"
   },
   "inferences": [
     {
@@ -698,6 +698,110 @@
       "derivation": "幻象继承部分攻击力与属性、不能用绝大多数主动技能与物品，且受到来自英雄与塔的伤害被放大；范围伤害的清理效率与「单位数量 × 单段伤害」成正比。单体高爆发一次只能作用一个单位，其有效输出被「多个高受伤倍率单位」摊薄，而 AOE 的收益随幻象数量线性增长。",
       "conclusion": "面对幻象/召唤物阵容，输出价值应按「单位数 × 单段伤害 × 受伤放大系数」计算，而不是按面板爆发；因此 AOE 是结构性解，单体核需要额外补一件 AOE 或让队友承担清场职责。",
       "application": "教练端在选人与出装阶段遇到幻象/召唤流时，先建议补一段稳定的 AOE（含道具），再谈单体爆发；团战中提示「先清场再打本体」，避免把技能浪费在幻象上。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "support-income-is-event-driven",
+      "title": "辅助经济由「事件」而非补刀决定",
+      "premises": [
+        "economy-sources",
+        "income-sources",
+        "kill-gold-formula"
+      ],
+      "derivation": "金钱来源里补刀与野区是主要被动流，助攻/击杀/赏金符/推塔属于事件流。辅助把线让给核，等于放弃被动流，只剩事件流。事件流不能靠等，只能靠主动制造（拉野、堆野、跟团、抢符）。",
+      "conclusion": "辅助的经济天花板不取决于「省」，而取决于单位时间内发生了几次可分享的金钱事件。",
+      "application": "教练提示辅助时，不给「少死」这种空话，而给动作：每 2 分钟必须有一次拉野或堆野、赏金符刷新前 30 秒做成位、团战前保证在经验/金钱半径内。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "neutral-item-is-seventh-slot",
+      "title": "中立装备等于第七个装备格",
+      "premises": [
+        "item-slots",
+        "neutral-item-crafting",
+        "hero-progression"
+      ],
+      "derivation": "六格是硬上限，而中立装备单独占槽位、不占六格，所以它就是免费多出来的一件。它的解锁时间（0/15/30/50 分钟）与每级四选一、开局定死，意味着这条曲线是「免费但不自由」。",
+      "conclusion": "中期强度不是靠买，而是靠 15/30/50 分钟三个免费台阶；选错的代价要背到下一个解锁点，不能换。",
+      "application": "BP 后先定终局需求（要输出/要抗控/要续航），再倒推每档选哪件；不要在 15 分钟临时挑「看起来强」的那件。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "talent-item-tempo-collision",
+      "title": "天赋台阶与关键装备会撞在同一时间窗",
+      "premises": [
+        "talent-system",
+        "hero-progression",
+        "economy-sources"
+      ],
+      "derivation": "天赋固定在 10/15/20/25 级，装备节奏由金钱曲线决定，两者都集中在中后期同一批分钟点上，而团队的资源（野区、兵线、团战机会）是共享的。",
+      "conclusion": "同一个人同一分钟既要升天赋又要买关键装，是节奏冲突而不是巧合，必须提前排优先级。",
+      "application": "把「天赋到点」与「关键装到手」列进同一张时间表；若冲突，保能立刻兑现战斗力的那一项，另一项延后一两分钟再说。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "level-lead-is-skill-structure",
+      "title": "等级差的真实价值是技能结构而非属性",
+      "premises": [
+        "experience-level",
+        "xp-level-scaling",
+        "hero-progression"
+      ],
+      "derivation": "每级给属性，但真正改变战斗力的是技能点投放与大招等级；经验又按 1500 半径在多人间平均分配，所以等级差是「技能结构差」，且会被分摊稀释。",
+      "conclusion": "压等级等于压对方技能结构（少数一个技能点/一级大招），比压属性更值；多人同框吃经验则把这份优势摊薄。",
+      "application": "游走时算清有几个人在分这份经验；要拿等级优势就单独吃线，要抢节奏就接受分摊。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "pull-moves-the-map-not-just-gold",
+      "title": "拉野改的是地图位置，不只是金钱",
+      "premises": [
+        "pulling-mechanics",
+        "lane-equilibrium",
+        "creep-aggro"
+      ],
+      "derivation": "拉野把己方小兵引到野区，等于同时改两件事：兵线交汇点向己方塔靠、己方安全补刀区扩大。而小兵仇恨可被主动牵引，进一步微调交汇点。",
+      "conclusion": "拉野是一次「位置交易」：用一次野区收益换一段安全对线期，顺带把敌方兵线推到更靠己方塔的位置。",
+      "application": "劣势对线先拉野再谈补刀；优势对线少拉，因为拉野会把兵线拉回自己塔下，反而放掉压制。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "clear-speed-sets-push-ceiling",
+      "title": "清线速度决定推进节奏的上限",
+      "premises": [
+        "map-control",
+        "building-gating",
+        "tower-aggro-and-damage"
+      ],
+      "derivation": "推塔必须带兵，兵线要靠清掉对方小兵才能形成；建筑又有护甲与塔伤规则，无兵硬拆成本极高。所以「多久清掉一波」直接等于「多久能摸一次塔」。",
+      "conclusion": "推进速度不由单次爆发决定，而由清线速率决定；缺乏 AOE 清线的阵容，推进只能靠时间换，不能靠一波流。",
+      "application": "要打推进，先算阵容清线时间；清线慢就改打「拉长战线 + 分推牵制」，别硬排一波拆塔。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "mana-is-cast-budget",
+      "title": "蓝量是施法次数预算，不是伤害数值",
+      "premises": [
+        "mana-break-damage",
+        "magic-resistance",
+        "effective-hp"
+      ],
+      "derivation": "技能伤害由伤害类型与魔抗决定，蓝量只决定能放几次；法力燃烧/削蓝类效果直接减少可释放次数，等价于减少整场输出总量。",
+      "conclusion": "对法系核，削蓝与延长冷却都是「削 DPS」，效果不比减魔抗差；反过来，堆蓝量装对法系核等于堆 DPS 装。",
+      "application": "对面法系核多时，把削蓝/沉默类道具当成输出装来评估价值；己方法系核缺蓝就优先解决蓝量，而不是先买伤害。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "late-death-cost-is-resource-rate",
+      "title": "后期死亡成本 = 复活时间 × 地图资源速率",
+      "premises": [
+        "respawn-timer",
+        "buyback-rules",
+        "map-control"
+      ],
+      "derivation": "复活时间随等级上升，而后期单位时间可获得的资源（兵线、野区、建筑、肉山）也最多。两者相乘，才是「死一次到底亏多少」。",
+      "conclusion": "同样的死亡，发生在 40 分钟后比 15 分钟前贵一个量级；买活的实际作用是把这段成本买回来。",
+      "application": "后期任何一次越塔/开雾都要先问「死了多久、这段时间对面能拿什么」；买活要按资源速率算，不是按钱算。",
       "confidence": "reasoned"
     }
   ]
