@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 08:18",
+    "updated_at": "2026-11-25 09:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -110,14 +110,21 @@
       "id": "matchups-coverage",
       "title": "克制覆盖度补齐",
       "file": "data/matchups.json",
-      "current": 88,
+      "current": 99,
       "target": 127,
       "status": "pending",
-      "note": "本轮 77→88；剩余 39 位无覆盖：arc-warden/bane/batrider/chen/dark-willow/dawnbreaker/death-prophet/enchantress/grimstroke/gyrocopter/hoodwink/juggernaut/keeper-of-the-light/lone-druid/lycan/marci/mirana/monkey-king/morphling/natures-prophet/night-stalker/ogre-magi/pangolier/phoenix/primal-beast/pugna/queen-of-pain/rubick/shadow-demon/snapfire/techies/tiny/underlord/undying/visage/warlock/weaver/windranger/witch-doctor"
+      "note": "本轮 88→99；剩余 28 位无覆盖：arc-warden/batrider/chen/dark-willow/dawnbreaker/death-prophet/enchantress/grimstroke/gyrocopter/keeper-of-the-light/lone-druid/lycan/marci/mirana/night-stalker/ogre-magi/pangolier/pugna/rubick/shadow-demon/snapfire/techies/tiny?/undying/visage/windranger/witch-doctor"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 09:18",
+      "task": "matchups-coverage",
+      "added": 10,
+      "result": "matchups 159→169，补 10 条（剑圣/齐天大圣/变体精灵/小小/深渊领主/术士/凤凰/祸乱之源/编织者/森海飞霞），覆盖度 88→99；全部逐条核对技能原文（斧王吼叫 bkbpierce=Yes、末日禁疗禁技能、致命链接分摊、超新星层数、割裂按距离结算）",
+      "next": "剩余 28 位无覆盖英雄继续补；夜魔昼夜类克制仍缺可靠机制来源，暂不写"
+    },
     {
       "time": "2026-11-25 08:18",
       "task": "matchups-coverage",

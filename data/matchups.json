@@ -1127,6 +1127,76 @@
       "target_id": "silencer",
       "reason": "虚无之灵靠残影与异化(Dissimilate)的多段位移进出战场，沉默术士的全局沉默与遗言让他在关键窗口内无法施法，位移链一断就只能硬吃伤害",
       "basis": "control"
+    },
+    {
+      "hero_id": "juggernaut",
+      "relation": "countered_by",
+      "target_id": "axe",
+      "reason": "剑刃风暴(Blade Fury)给的是减益免疫+80%魔法抗性，并非完全无敌；斧王的吼叫(Berserker's Call)无视减益免疫，能把他拉住原地，旋转期间打不出有效输出还白白吃物理",
+      "basis": "control"
+    },
+    {
+      "hero_id": "monkey-king",
+      "relation": "countered_by",
+      "target_id": "timbersaw",
+      "reason": "齐天大圣的树上跳跃(Tree Dance)必须依附树木，死亡旋风的摧毁树木效果会让他直接从树上摔下来并被眩晕，机动与逃生同时失效",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "morphling",
+      "relation": "countered_by",
+      "target_id": "doom",
+      "reason": "变体精灵靠属性转换(Attribute Shift)把敏捷转成力量来硬吃伤害，末日(Doom)禁用技能与道具并禁止治疗，转换链被切断后只剩脆弱本体",
+      "basis": "control"
+    },
+    {
+      "hero_id": "tiny",
+      "relation": "synergy",
+      "target_id": "enigma",
+      "reason": "小小可以把身边的单位(含敌方)扔到指定位置，配合谜团黑洞的范围吸附，能把敌人直接送进黑洞中心，省去靠走位进入的窗口",
+      "basis": "control"
+    },
+    {
+      "hero_id": "underlord",
+      "relation": "counter",
+      "target_id": "natures-prophet",
+      "reason": "深渊领主的衰减光环(Atrophy Aura)削减周围敌方单位的基础攻击力，先知靠树人与小兵数量推进的打法伤害骤降；召唤物阵亡还会给深渊领主叠攻击力",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "warlock",
+      "relation": "counter",
+      "target_id": "meepo",
+      "reason": "术士的致命链接(Fatal Bonds)把多个敌方单位绑在一起、任一目标受伤其余分摊，米波的分身越多被链接的目标越多，等于把「多单位」优势变成集体掉血",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "phoenix",
+      "relation": "countered_by",
+      "target_id": "ursa",
+      "reason": "凤凰的超新星需要打掉蛋的层数才能阻止重生，熊战士靠怒意狂击(Overpower)提供的高攻速能在极短时间内打爆蛋",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "bane",
+      "relation": "synergy",
+      "target_id": "lina",
+      "reason": "祸乱之源的噩梦缠绕(Fiend's Grip)是长时单体持续控制并持续抽蓝，被抓住的目标无法行动，正好给火女这类高爆发法系创造稳定输出窗口",
+      "basis": "control"
+    },
+    {
+      "hero_id": "weaver",
+      "relation": "countered_by",
+      "target_id": "bounty-hunter",
+      "reason": "赏金的追踪(Track)提供真视与目标视野，编织者靠缩地(Shukuchi)隐身绕后与逃生会被全程标亮，队友可直接跟上",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "hoodwink",
+      "relation": "countered_by",
+      "target_id": "bloodseeker",
+      "reason": "割裂(Rupture)按移动距离结算伤害，森海飞霞依赖穿树位移(Scurry)拉开距离，越跑越疼，位移优势反成负担",
+      "basis": "mobility"
     }
   ]
 }
