@@ -1267,6 +1267,76 @@
       "target_id": "sven",
       "reason": "电炎绝手的饼干(Firesnap Cookie)可以让友方单位跳跃一段距离并在落点眩晕敌人；斯温不必依赖跳刀即可被送进人群开大",
       "basis": "mobility"
+    },
+    {
+      "hero_id": "night-stalker",
+      "relation": "counter",
+      "target_id": "enigma",
+      "reason": "夜魔在夜晚的虚空(Void)会附带小眩晕并能打断持续施法，谜团的黑洞正是持续施法，入场时被虚空点到就会被直接断档",
+      "basis": "control"
+    },
+    {
+      "hero_id": "pangolier",
+      "relation": "countered_by",
+      "target_id": "axe",
+      "reason": "滚滚的陀螺炮(Gyroshell)给的是减益免疫+80%魔法抗性，斧王的吼叫无视减益免疫，能在滚球状态把他钉住并让队友集火",
+      "basis": "control"
+    },
+    {
+      "hero_id": "arc-warden",
+      "relation": "countered_by",
+      "target_id": "natures-prophet",
+      "reason": "天穹守望者的磁流(Flux)只在目标周围没有其它敌方单位时才施加伤害，先知带一堆树人在场会让 Flux 直接失效，爆发链断掉",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "windranger",
+      "relation": "countered_by",
+      "target_id": "zeus",
+      "reason": "风行者的风步(Windrun)只提供对物理攻击的闪避与移速，宙斯的法术伤害完全不吃闪避，开风步也躲不开爆发",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "death-prophet",
+      "relation": "counter",
+      "target_id": "invoker",
+      "reason": "死亡先知的沉默(Silence)是范围禁施法，祈求者整条输出链都建立在连续切技能上，被范围沉默后只能空转",
+      "basis": "control"
+    },
+    {
+      "hero_id": "rubick",
+      "relation": "synergy",
+      "target_id": "enigma",
+      "reason": "拉比克的隔空取物(Telekinesis)把目标抬起再摔下、落地眩晕周围敌人，等于给谜团黑洞提供无需贴脸的定位与停顿",
+      "basis": "control"
+    },
+    {
+      "hero_id": "techies",
+      "relation": "counter",
+      "target_id": "bounty-hunter",
+      "reason": "工兵的地雷(Land Mines)连真视都无法侦测，只有敌人走进 500 范围才显现并延时引爆；赏金靠真视+提前侦查排雷的节奏被直接废掉",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "shadow-demon",
+      "relation": "counter",
+      "target_id": "terrorblade",
+      "reason": "暗影恶魔的崩裂禁锢(Disruption)先把目标放逐，回来后按目标自身基础攻击力生成两个受控幻象；恐怖利刃基础攻击越高，被复制出来的幻象越强，反被拿来推塔与打输出",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "gyrocopter",
+      "relation": "counter",
+      "target_id": "templar-assassin",
+      "reason": "直升机的火箭弹幕(Rocket Barrage)是短时间内多段魔法伤害，圣堂的折光(Refraction)只抵挡有限次数的伤害实例，多段小伤害会迅速把层数打空",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "marci",
+      "relation": "counter",
+      "target_id": "sniper",
+      "reason": "玛西以队友为锚点突进(Companion Run)、落地眩晕相邻敌人，配合释放(Unleash)的快速连击减速移速与攻速，贴身高频输出专治没有位移的远程核心",
+      "basis": "mobility"
     }
   ]
 }

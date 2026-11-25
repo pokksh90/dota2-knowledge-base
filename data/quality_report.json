@@ -15,7 +15,7 @@
     "matchups.json: 双向成对记录 lina<->axe（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
     "matchups.json: 双向成对记录 medusa<->anti-mage（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
     "matchups.json: 双向成对记录 huskar<->dazzle（counter/countered_by 或 synergy 双写，属同一对关系的两种表述）",
-    "matchups.json: 覆盖度 110/127 英雄至少有 1 条记录；尚无覆盖(17): arc-warden, batrider, dark-willow, death-prophet, enchantress, gyrocopter, lone-druid, lycan, marci, night-stalker, ogre-magi, pangolier, rubick, shadow-demon, techies, visage, windranger"
+    "matchups.json: 覆盖度 120/127 英雄至少有 1 条记录；尚无覆盖(7): batrider, dark-willow, enchantress, lone-druid, lycan, ogre-magi, visage"
   ],
   "counts": {
     "heroes": 127,

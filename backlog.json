@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 10:19",
+    "updated_at": "2026-11-25 11:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -110,14 +110,21 @@
       "id": "matchups-coverage",
       "title": "克制覆盖度补齐",
       "file": "data/matchups.json",
-      "current": 110,
+      "current": 120,
       "target": 127,
       "status": "pending",
-      "note": "110/127；剩余 17 位无覆盖：arc-warden/batrider/dark-willow/death-prophet/enchantress/gyrocopter/lone-druid/lycan/marci/night-stalker/ogre-magi/pangolier/rubick/shadow-demon/techies/visage/windranger"
+      "note": "120/127；剩余 7 位无覆盖：batrider/dark-willow/enchantress/lone-druid/lycan/ogre-magi/visage"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 11:18",
+      "task": "matchups-coverage",
+      "added": 10,
+      "result": "matchups 179→189，覆盖度 110→120/127；新增夜魔→谜团、滚滚←斧王、天穹←先知、风行←宙斯、死亡先知→祈求者、拉比克↔谜团、工兵→赏金、暗影恶魔→恐怖利刃、直升机→圣堂、玛西→狙击手",
+      "next": "剩余 7 位无覆盖：batrider/dark-willow/enchantress/lone-druid/lycan/ogre-magi/visage"
+    },
     {
       "time": "2026-11-25 10:19",
       "task": "matchups-coverage",
