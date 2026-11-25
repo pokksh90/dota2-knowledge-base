@@ -13,8 +13,8 @@
       "sustain": "续航/复活/保命(治疗/薄葬) → rules.positioning-economy(容错)",
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
-    "last_updated": "2026-11-25 18:19",
-    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。 本轮 8 条同样逐条核对原文：守护天使 \"immunity from physical damage\"；竞技场 \"block enemy attacks and movement\"；冰晶爆轰 \"prevented from regenerating or healing\"；致盲 \"causing them to miss some attacks\"；超新星 \"The sun has pip health\"；残焰 \"Activate Fire Remnant\" 需主动施放；恶魔掌握 \"stealing mana ... based on the unit's maximum mana\"；疯狂生长 \"prevent them from moving, blinking, going invisible, or attacking\"。"
+    "last_updated": "2026-11-25 21:18",
+    "mechanism_note": "本轮 8 条的 reason 均逐条对照 dotaconstants abilities.json 原文核对：冰晶爆轰 \"prevented from regenerating or healing\"；末日 \"prevents them from casting spells or healing in any way\"；幽冥守卫 \"damage based on mana spent\"；全图沉默 \"preventing enemy heroes ... from casting spells\"；拉索 \"Teleporting or blinking will break the lasso\"；反击螺旋 \"pure damage to all nearby enemies\"；静态风暴 \"silences all enemy units in the area\"；寒冬诅咒 \"causes them to attack their frozen ally\"。 本轮 8 条同样逐条核对原文：守护天使 \"immunity from physical damage\"；竞技场 \"block enemy attacks and movement\"；冰晶爆轰 \"prevented from regenerating or healing\"；致盲 \"causing them to miss some attacks\"；超新星 \"The sun has pip health\"；残焰 \"Activate Fire Remnant\" 需主动施放；恶魔掌握 \"stealing mana ... based on the unit's maximum mana\"；疯狂生长 \"prevent them from moving, blinking, going invisible, or attacking\"。 第三轮 8 条依据（dotaconstants abilities.json 原文）：Amplify Damage \"provides True Sight and vision ... revealing invisibility\"；Paralyzing Cask \"ricochets between enemy units ... Damage increases each bounce\"；Midnight Pulse \"dealing 5 + a percentage of the enemies current HP\"；Natural Order \"removing base armor and magic damage resistance\"；Decay \"steals strength from all enemy heroes in an area\"；Flaming Lasso bkbpierce=Yes,\"cannot move, attack, or use abilities\"；Soul Chain \"Any unit-targeted ability that either bound hero receives also gets cast on the other hero\"；Gravekeeper's Cloak \"If he receives damage from a player, one layer is removed\"。"
   },
   "matchups": [
     {
@@ -1514,6 +1514,62 @@
       "target_id": "riki",
       "reason": "疯狂生长禁止移动、闪烁、隐身与攻击，隐身核无法贴脸",
       "basis": "control"
+    },
+    {
+      "hero_id": "slardar",
+      "relation": "counter",
+      "target_id": "weaver",
+      "reason": "大招真视揭穿缩地隐身并削甲，敏捷低甲核直接失去机动与生存",
+      "basis": "vision"
+    },
+    {
+      "hero_id": "witch-doctor",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "麻痹药剂在多个单位间弹跳、每跳伤害递增，分身越多眩晕与伤害越划算",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "enigma",
+      "relation": "counter",
+      "target_id": "bristleback",
+      "reason": "午夜凋零按目标当前生命百分比持续掉血，血量堆得越厚掉得越多",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "elder-titan",
+      "relation": "counter",
+      "target_id": "dragon-knight",
+      "reason": "自然秩序直接剥离基础护甲与魔抗，靠双抗站桩的肉核被打回原型",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "undying",
+      "relation": "counter",
+      "target_id": "centaur-warrunner",
+      "reason": "腐朽按范围偷取力量，力量核越打越虚而自身越打越厚",
+      "basis": "resource"
+    },
+    {
+      "hero_id": "batrider",
+      "relation": "counter",
+      "target_id": "crystal-maiden",
+      "reason": "燃烧枷锁穿透技能免疫，命中后不能移动、攻击或施法，无位移的脆皮辅助被拖走即死",
+      "basis": "control"
+    },
+    {
+      "hero_id": "grimstroke",
+      "relation": "synergy",
+      "target_id": "doom",
+      "reason": "缚魂把指定性技能复制到被绑的另一名英雄，单体大招可以一次命中两人",
+      "basis": "control"
+    },
+    {
+      "hero_id": "visage",
+      "relation": "countered_by",
+      "target_id": "troll-warlord",
+      "reason": "守墓者斗篷按「受到伤害的次数」掉层，高频普攻能在数秒内撕光护盾",
+      "basis": "physical"
     }
   ]
 }

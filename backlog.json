@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 20:18",
+    "updated_at": "2026-11-25 21:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -201,15 +201,22 @@
       "id": "matchups-third-pass",
       "title": "克制层第三轮：低覆盖英雄继续补",
       "file": "data/matchups.json",
-      "current": 214,
+      "current": 222,
       "target": 232,
       "status": "pending",
       "desc": "仍有 51 个英雄只有 1 条 record，按机制清晰度继续补，pair 任一方向已存在则跳过。",
-      "note": "机制必须能回溯到 rules/inference（如驱散档位、移速封顶、幻象规则、反补阈值等新增定理可直接支撑克制结论）"
+      "note": "本轮 +8（214→222）：斯拉达→编织者、巫医→幻影长矛手、谜团→钢背兽、上古巨神→龙骑士、不朽尸王→半人马、蝙蝠骑士→水晶室女、画花（缚魂）与末日协同、维萨吉被巨魔克制。机制均取 dotaconstants 原文"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 21:18",
+      "task": "克制层第三轮：低覆盖英雄补 8 对",
+      "added": "8 条 matchups（214→222）",
+      "result": "pair 去重通过、basis 全在图例 8 类内、机制原文已核对；审查 0 error/0 warning",
+      "next": "matchups 目标 232（还需 +10）；可继续用新增定理（封顶/吸血/幻象AOE/驱散档位）支撑克制结论"
+    },
     {
       "time": "2026-11-25 20:18",
       "task": "推理层第二轮收口：49→55",
