@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 11:18",
+    "updated_at": "2026-11-25 12:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -110,14 +110,21 @@
       "id": "matchups-coverage",
       "title": "克制覆盖度补齐",
       "file": "data/matchups.json",
-      "current": 120,
+      "current": 127,
       "target": 127,
-      "status": "pending",
-      "note": "120/127；剩余 7 位无覆盖：batrider/dark-willow/enchantress/lone-druid/lycan/ogre-magi/visage"
+      "status": "done",
+      "note": "127/127 全覆盖（本轮补最后 7 位：batrider/dark-willow/enchantress/lone-druid/lycan/ogre-magi/visage）"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 12:18",
+      "task": "matchups-coverage",
+      "added": 9,
+      "result": "matchups 189→198，覆盖度 120→127/127 达成全覆盖；新增蝙蝠→齐天大圣、邪影芳灵→幻影刺客、小鹿→幻影长矛手、德鲁伊←蝙蝠、狼人→冰女、食人魔↔巨魔、死灵龙←直升机、邪影芳灵↔谜团、小鹿↔兽王",
+      "next": "matchups-coverage 已 done；下一轮转 talent-values 复核或 quality-audit 深度审查"
+    },
     {
       "time": "2026-11-25 11:18",
       "task": "matchups-coverage",

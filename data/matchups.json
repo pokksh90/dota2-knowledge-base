@@ -1337,6 +1337,69 @@
       "target_id": "sniper",
       "reason": "玛西以队友为锚点突进(Companion Run)、落地眩晕相邻敌人，配合释放(Unleash)的快速连击减速移速与攻速，贴身高频输出专治没有位移的远程核心",
       "basis": "mobility"
+    },
+    {
+      "hero_id": "batrider",
+      "relation": "counter",
+      "target_id": "monkey-king",
+      "reason": "蝙蝠骑士的火焰飞行(Firefly)一路飞一路烧掉下方树木，齐天大圣的树上跳跃没有树可依，机动与逃生同时被抽掉",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "dark-willow",
+      "relation": "counter",
+      "target_id": "phantom-assassin",
+      "reason": "邪影芳灵的荆棘迷宫(Bramble Maze)在目标区生成 8 根荆棘，踩进去即被缠绕并持续掉血，专门惩罚需要贴脸切入的近战刺客",
+      "basis": "control"
+    },
+    {
+      "hero_id": "enchantress",
+      "relation": "counter",
+      "target_id": "phantom-lancer",
+      "reason": "小鹿的推进(Impetus)对幻象造成双倍伤害，幻影长矛手的战力几乎全在幻象上，越多的分身只是越多的双倍伤害靶子",
+      "basis": "aoe"
+    },
+    {
+      "hero_id": "lone-druid",
+      "relation": "countered_by",
+      "target_id": "batrider",
+      "reason": "熊灵离德鲁伊过远就无法攻击，且德鲁伊在熊灵死亡时还会吃最大生命百分比的反噬；蝙蝠的枷锁能把其中一方直接拖走，拆散这对组合",
+      "basis": "control"
+    },
+    {
+      "hero_id": "lycan",
+      "relation": "counter",
+      "target_id": "crystal-maiden",
+      "reason": "狼人变身(Shapeshift)期间不能被减速，冰女的冰封禁制与减速类控制对开大的狼人失效，抓不住也拉不开距离",
+      "basis": "mobility"
+    },
+    {
+      "hero_id": "ogre-magi",
+      "relation": "synergy",
+      "target_id": "troll-warlord",
+      "reason": "食人魔的血之狂暴(Bloodlust)给友军加移速与攻速、还能施放在建筑上，巨魔战将本身就是高攻速物理核心，吃到这份加成收益最大",
+      "basis": "physical"
+    },
+    {
+      "hero_id": "visage",
+      "relation": "countered_by",
+      "target_id": "gyrocopter",
+      "reason": "死灵龙的守墓人斗篷是分层护盾，每受到一次玩家伤害就掉一层；直升机的火箭弹幕是短时间内多段小伤害，会把层数瞬间打光",
+      "basis": "damage-type"
+    },
+    {
+      "hero_id": "dark-willow",
+      "relation": "synergy",
+      "target_id": "enigma",
+      "reason": "荆棘迷宫的缠绕能把敌人钉在原地数秒，给谜团黑洞提供稳定的落点与聚怪窗口",
+      "basis": "control"
+    },
+    {
+      "hero_id": "enchantress",
+      "relation": "synergy",
+      "target_id": "beastmaster",
+      "reason": "小鹿的魅惑可以控制敌方或中立野怪、自然之助提供群体治疗，配合兽王的召唤推进能把野区资源直接转成塔压力",
+      "basis": "sustain"
     }
   ]
 }
