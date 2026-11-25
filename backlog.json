@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-25 13:02",
+    "updated_at": "2026-11-25 13:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -118,6 +118,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-25 13:18",
+      "task": "quality-audit + inference 扩充",
+      "added": 6,
+      "result": "queue 全部 done，转质量审查：审查 0 error/0 warning，仅 9 条双向成对 info；inference 32→38，新增 6 条（疯狂石时间预算、魔方15分钟优先级、神符确定性收益、眼权是配额问题、六格硬约束、夜晚动作图）",
+      "next": "继续交叉校验：inference 前提与 rules 数值一致性、items 价格与 7.42 对照、tactics 板块补深"
+    },
     {
       "time": "2026-11-25 13:02",
       "task": "talent-values 复核 + inference 扩充",
