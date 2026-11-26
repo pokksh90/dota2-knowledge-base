@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 05:19",
+    "updated_at": "2026-11-27 06:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -415,6 +415,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 06:20",
+      "task": "quality-audit 第四轮：BKB 语义核实 + 幻影刺客闪避归属修正 + decisions 复核",
+      "added": "① items：black-king-bar 的 `spell_reduce 60` 三源核实（官方 items.txt AbilityValues=60、dotaconstants Avatar 描述「Grants 60% magic resistance and immunity to reflected and pure damage」、Liquipedia「Magic Resist Bonus 60% / 开盾总魔抗 70% / debuff immunity + pure damage immunity」），改写 purpose/coach_note：60% 额外魔抗乘算→常规 25% 魔抗英雄 70%、魔法伤害实收 30%，同时给减益免疫与纯粹伤害免疫，7.41b 起时长固定 9/8/7；② 7.42 幻影刺客技能拆分核实：闪避已从「模糊」拆成独立被动 phantom_assassin_immaterial「飘忽不定」（20/30/40/50%，非线性叠加），phantom_assassin_blur「魅影无形」为 innate（隐身 600 半径显形、+12% 移速、规避弹道）；据此修 matchups 7 处归因（axe→PA、ursa←PA、sven←PA、troll←PA、kotl→PA、lion←PA、PA→drow）与 heroes.json 的 PA 要点；③ rules.damage-types 补「BKB 纯粹伤害免疫是装备侧例外」，消除与「纯伤只吃通用减伤」的矛盾；④ 复核 tactics.decisions 16 分支：背门 50%/180 HP/s、盾 300s、Glyph 2 点/6 分钟、魔方 15:00 均与修正后数值一致，无需改动；⑤ inference 73→74 新增 bkb-buys-tempo-not-immunity",
+      "result": "items 70（BKB 1 条重写 + meta.corrections 追加）；matchups 270（7 处归因修正）；heroes 127（PA 1 条）；rules 61（1 条 detail 补例外）；inference 73→74（verified 23 / reasoned 51）；JSON 全部通过；decisions 16 分支复核 0 改动",
+      "next": "继续 quality-audit：按 7.42 技能拆分/重做清单扫其余英雄（本轮只发现并修了 PA 的「模糊→飘忽不定」），优先用 schinese datafeed 的 name_loc 与 dotaconstants is_innate 标记找「被动被拆成独立技能」或「innate 化」的英雄；再抽查 basis=physical 剩余条目"
+    },
     {
       "time": "2026-11-27 05:19",
       "task": "quality-audit 第三轮：AOE 抽查 + 英雄要点旧机制清理",

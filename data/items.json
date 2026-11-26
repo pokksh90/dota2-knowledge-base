@@ -3,7 +3,7 @@
     "title": "装备与出装",
     "description": "装备分类、用途、分位置核心出装思路。coach_note 供 LLM 消费：什么情况出、克制什么、给谁出。cost 为 dotaconstants 总价，已与 7.42 新道具价格交叉核对。",
     "source_note": "用途/克制为稳定常识(source=stable)；cost 取自 dotaconstants build/items.json 的 cost 字段(总价)，并用 7.42 新道具(bloodslinger 925 / caduceus 5400 / ristuls_devotion 3800 / sabatons 5950 / skypiercer 6000 / starforge 6000)对齐验证，确认该数据集已更新到 7.42。",
-    "last_updated": "2026-11-26 22:20",
+    "last_updated": "2026-11-27 06:20",
     "corrections": [
       "删除误录的「永恒战靴 Eon Boots」：7.42 道具全表(dotaconstants items.json 已含 7.42 全部新道具)无此条目，替换为实际存在的「永世之蔽 Eternal Shroud」。",
       {
@@ -35,6 +35,12 @@
         "item": "ghost-scepter / arcane-boots / veil-of-discord / bloodstone / helm-of-the-dominator / eternal-shroud / gleipnir",
         "finding": "回归审查 7 处：①幽魂权杖 -30 的语义查明为「魔法抗性降低 30%（受技能伤害+30%）+物理免疫+不可被攻击+自身缴械」，不再是 pending；②秘法鞋此前写「不再是一次性主动补蓝」是**错的**——官方 items.txt 的 AbilityBehavior 含 NO_TARGET，Replenish 是主动：CD 50、1200 半径友军各 +150 蓝；③纷争面纱 7.41 重做后不再是「降魔抗」，而是通用技能伤害易伤 spell_amp 8% / 半径 900 / 持续 16s / CD16 / 耗蓝 25，且改为合成血精石；④血精石主动 CD 30（不是 30→35 的 Liquipedia 记法）与光环 8%；⑤统御头盔的野怪技能表改为「明确不维护」而非 pending；⑥永世之蔽移除补丁锁定 7.41；⑦gleipnir 此前因 dotaconstants 无条目未入库，实为存在且 7.42 在售（4650，官方 7.42 改动：智力 12→15、范围加成 75→60、Eternal Chains 半径 325→340、CD 18→17）",
         "action": "items 69→70（新增 gleipnir）；幽魂/秘法/面纱/血精石四条改写为官方 items.txt 数值口径并写明与 Liquipedia 冲突项；Liquipedia 与官方文件冲突处一律以官方 items.txt 为准（秘法鞋 50/150/CD50、血精石 70%/8%/CD30、面纱 8%）"
+      },
+      {
+        "time": "2026-11-27 06:20",
+        "item": "black-king-bar",
+        "finding": "`spell_reduce 60` 语义核实：官方 items.txt 只给数值 60；dotaconstants 的 Avatar 描述为 Grants 60% magic resistance and immunity to reflected and pure damage；Liquipedia 记 Magic Resist Bonus 60%、开盾时总魔抗 70%（与基础乘算）、并给 debuff immunity 与 pure damage immunity",
+        "action": "purpose/coach_note 由「魔法伤害削减口径」改为「60% 额外魔抗（乘算→常规 70%）+ 减益免疫 + 纯粹伤害免疫」，并补 7.41b 固定时长"
       }
     ]
   },
@@ -44,8 +50,8 @@
       "name_zh": "黑皇杖",
       "name_en": "Black King Bar",
       "category": "defensive",
-      "purpose": "提供力量与攻击力，主动获得减益免疫（官方 attrib：+10 力量 / +24 攻击 / 持续 9→8→7 秒，随使用次数递减 / spell_reduce 60）",
-      "coach_note": "核心保命装，切入型/站桩型英雄在对面法系控制多时必出，保证输出环境。三个可执行要点：(1) 持续时间是 9→8→7 秒递减，**反复买新的不会重置递减**（官方 notes 明写），所以一件 BKB 的窗口只会越来越短，别指望靠它一路开到后期；(2) attrib 里的 spell_reduce 60 是魔法伤害削减口径，但**不要向用户承诺「完全免疫魔法伤害」**；(3) 开 BKB 前先想清楚这 7~9 秒要拿到什么（塔、人、肉山），窗口用空等于白花 4050。",
+      "purpose": "提供力量与攻击力；主动 Avatar：基础驱散 + 减益免疫 + 60% 额外魔抗（与其它魔抗源乘算，常规 25% 魔抗英雄开盾后总魔抗 70%）+ 纯粹伤害免疫（含刃甲等伤害反弹），固定 9→8→7 秒、CD 95、耗蓝 50。",
+      "coach_note": "核心保命装，切入型/站桩型英雄在对面法系控制多时必出，保证输出环境。四个可执行要点：(1) `spell_reduce 60` 已三源核实（官方 items.txt AbilityValues、dotaconstants Avatar 描述、Liquipedia）为「开盾期间额外 +60% 魔抗」，与基础及其它魔抗源乘算——常规 25% 魔抗英雄开 BKB 后是 70% 总魔抗，100 点魔法伤害实收 30，所以**它不是法术免疫，魔法伤害照打，只是被打三折**；(2) 它真正给的是「减益免疫 + 纯粹伤害免疫」：敌方技能的负面效果不生效，纯粹伤害（含刃甲反弹）整段免疫，这才是它值 4050 的地方；(3) 时长 9→8→7 秒递减且固定（7.41b 起不受增益时长延长影响），反复买新的不会重置递减（官方 notes 明写），窗口只会越来越短，别指望一路开到后期；(4) 开 BKB 前先想清楚这 7~9 秒要拿到什么（塔、人、肉山），窗口用空等于白花；对面物理爆发高时 BKB 不保命，仍需护甲与位移。",
       "core_for": [
         1,
         2,
@@ -920,7 +926,7 @@
       "name_en": "Silver Edge",
       "category": "utility",
       "purpose": "提供隐身（17 秒、+18% 移速、渐隐 0.3 秒），破隐一击额外 300 伤害并使目标「破坏」5 秒（禁用被动技能）。+70 伤害、+35 攻速。",
-      "coach_note": "「破坏」是专杀被动型英雄的机制：刚背兽的背刺减伤、幻影刺客的模糊闪避、幽鬼的折射、伐木机的活性护甲在破坏期间全部失效。适合有切入能力的核心（小强、赏金、幻刺、斯拉克）在对面依赖被动时作为关键装备；也能当侦察/绕后工具。",
+      "coach_note": "「破坏」是专杀被动型英雄的机制：刚背兽的背刺减伤、幻影刺客的飘忽不定（闪避被动）、幽鬼的折射、伐木机的活性护甲在破坏期间全部失效。适合有切入能力的核心（小强、赏金、幻刺、斯拉克）在对面依赖被动时作为关键装备；也能当侦察/绕后工具。",
       "core_for": [
         1,
         2,

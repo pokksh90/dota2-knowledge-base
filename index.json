@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.29",
+    "version": "0.6.30",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-26",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
-    "updated_at": "2026-11-27 05:19"
+    "updated_at": "2026-11-27 06:20"
   },
   "modules": [
     {
@@ -20,35 +20,35 @@
       "title": "底层规则(公理层)",
       "count": 61,
       "status": "verified-partial",
-      "note": "61 条，61/61 带 source。vision-information 补「免疫侦测类技能不吃真视」例外；背门保护 50%/180 口径保留"
+      "note": "61 条；damage-types 补「BKB 纯粹伤害免疫」例外说明，避免与纯伤默认规则冲突"
     },
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 73,
+      "count": 74,
       "status": "stable",
-      "note": "73 条（verified 22 / reasoned 51）；新增「隐身分三层」「破树=局部真视」两条，均 0 dangling premises"
+      "note": "74 条（verified 23 / reasoned 51）；新增 bkb-buys-tempo-not-immunity（BKB=减益免疫+魔法伤害×0.3+纯伤免疫，非法术免疫）"
     },
     {
       "file": "data/heroes.json",
       "title": "英雄与定位",
       "count": 127,
       "status": "stable",
-      "note": "127 个英雄；本轮清理 4 条旧机制要点：斯拉克（影舞免疫侦测、解控是黑暗契约）、育母蜘蛛（蛛网不再隐身）、兜帽客（Scurry 非隐身）、幻影长矛手（Doppelwalk 非隐身）"
+      "note": "127 个英雄；phantom-assassin 要点补机制口径（闪避=飘忽不定，魅影无形=隐身+移速+规避弹道）"
     },
     {
       "file": "data/items.json",
       "title": "装备与出装",
       "count": 70,
       "status": "stable",
-      "note": "70 件（1 件 eternal-shroud 为 7.41 移除的历史条目，可推荐 69 件）；7 件带官方 attrib 数值（黑皇杖/烟斗/跳刀/紫怨/斯嘉蒂/刷新/羊刀/幻影斧/远行鞋同批）；幽魂权杖、秘法鞋、纷争面纱、血精石四件已按官方 items.txt 重写口径（Liquipedia 与官方文件冲突处以官方为准）；gleipnir 补入（4650）；血精石与统御头盔仍有野怪技能等非关键项不维护"
+      "note": "70 件（1 条 removed → 可推荐 69）；black-king-bar 的 spell_reduce 60 三源核实为「额外 60% 魔抗（乘算→常规 70%）+ 减益免疫 + 纯粹伤害免疫」，7.41b 起时长为固定 9/8/7"
     },
     {
       "file": "data/matchups.json",
       "title": "克制与搭配",
       "count": 270,
       "status": "stable",
-      "note": "270 条；本轮 aoe 类抽查修正 tiny→meepo 的「分则能成」错字并补 0.3s×5 段机制"
+      "note": "270 条；PA 闪避归属修正 7 处：闪避由「飘忽不定 Immaterial（20/30/40/50%）」提供，魅影无形（Blur）是 innate 隐身/移速/规避弹道"
     },
     {
       "file": "scripts/fetch_data.py",
