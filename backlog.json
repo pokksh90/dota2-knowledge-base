@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 17:19",
+    "updated_at": "2026-11-26 18:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -383,10 +383,31 @@
       "current": 10,
       "target": 10,
       "note": "BKB/烟斗/跳刀/紫怨/斯嘉蒂/刷新/羊刀/幻影斧/幽魂/远行鞋 十件换为 attrib 实值；幽魂权杖原来的「免疫物理」降级为 pending"
+    },
+    {
+      "id": "hero-base-recheck",
+      "status": "done",
+      "current": 127,
+      "target": 127,
+      "note": "127 英雄 × 14 字段（三围/成长/血量蓝量/护甲/攻距/攻速/移速/攻击力）与当前 dotaconstants 逐项比对，0 差异"
+    },
+    {
+      "id": "inference-expand-3",
+      "status": "done",
+      "current": 6,
+      "target": 6,
+      "note": "新增 6 条：smoke-is-a-path-not-a-buff / high-ground-value-is-vision-not-terrain / solo-kill-check-is-mitigation-math(verified) / trigger-items-must-be-precommitted / cooldown-is-the-real-permission / roshan-timing-locks-to-item-spike"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 18:18",
+      "task": "质量审查轮：hero_base 全字段复核 + 推理层扩 6 条",
+      "added": "hero_base 127×(14 字段) 与 dotaconstants 0 差异（无改动，仅记录）；inference 63→69，新增 6 条教练可执行的机制推理，premises 全部指已有 rules id",
+      "result": "0 error / 0 warning；inference 69（verified 22 / reasoned 47）",
+      "next": "推理层补「出装换格顺序」与「辅助视野预算」两条，再回克制层的单条英雄"
+    },
     {
       "time": "2026-11-26 17:19",
       "task": "质量审查轮：全表装备价格复核 + 10 件老装数值口径",
