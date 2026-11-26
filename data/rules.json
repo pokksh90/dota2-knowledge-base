@@ -33,15 +33,19 @@
           "Armor",
           "Magic_Resistance",
           "Evasion",
-          "Dispel"
+          "Dispel",
+          "Damage",
+          "Illusions",
+          "Courier",
+          "Fountain"
         ],
         "url_template": "https://liquipedia.net/dota2/<page>",
         "verified_at": "2026-11-24",
         "note": "每条带 values 的规则均可回溯到上述页面之一；补丁更新后需重核"
       }
     ],
-    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。",
-    "last_updated": "2026-11-26 23:10"
+    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。",
+    "last_updated": "2026-11-27 00:20"
   },
   "principles": [
     {
@@ -93,7 +97,19 @@
       "title": "伤害三分类",
       "statement": "物理伤害受护甲减免；魔法伤害受魔抗减免；纯粹伤害无视护甲与魔抗，直接扣血。",
       "certainty": "verified",
-      "key_implication": "克制关系的本质往往是伤害类型错配：高甲怕纯粹/魔法，高魔抗怕物理。"
+      "key_implication": "克制关系的本质往往是伤害类型错配：高甲怕纯粹/魔法，高魔抗怕物理。",
+      "detail": "三分类的边界：物理走护甲与格挡（含 Damage Block 与物理屏障）；魔法走魔抗与魔法屏障；纯粹只被「通用减伤」削减（如狂暴、背刺类），不吃护甲/魔抗。标记为「生命移除」的效果三者皆绕开。",
+      "values": {
+        "types": [
+          "physical",
+          "magical",
+          "pure"
+        ],
+        "pure_reduced_by": "generic damage reduction only"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Damage",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "attack-speed",
@@ -532,9 +548,19 @@
       "category": "机制细节",
       "title": "幻象规则",
       "certainty": "verified",
-      "statement": "幻象继承部分攻击力与部分属性，受到来自英雄与塔的伤害被放大；幻象不能使用绝大多数主动技能与物品。",
-      "detail": "幻象可用于带线、探视野、骗技能；范围伤害对幻象的清理效率与「单位数量×单段伤害」成正比。",
-      "key_implication": "范围伤害是多幻象阵容的天然解；而单体高爆发对幻象几乎无效，会浪费输出。"
+      "statement": "幻象继承攻击力与属性但按各技能指定的倍率打折（外出与承受伤害倍率由创建技能决定），不能使用绝大多数主动技能与主动道具；对建筑只造成 40% 伤害（-60%）；bonus 护甲与 bonus 魔抗被 100% 否定，只吃基础值。",
+      "detail": "幻象击杀奖励 = 2×幻象等级（金币给击杀者，经验只在被玩家击杀时给，自然消失或死于小兵/塔不给）；出生有 0.1 秒无敌；不能拾取/掉落物品、不能升级；对受保护建筑只造成 25% 伤害（普通单位是 75% 折扣）。因此「幻象拆塔」效率远低于看数值的直觉。",
+      "key_implication": "范围伤害是多幻象阵容的天然解（清幻象同时对本体无效则浪费）；幻象的价值在带线、探视野、骗技能与磨塔，而不是当第二个核心打人。",
+      "values": {
+        "building_damage_mult": 0.4,
+        "bounty": "2*level",
+        "spawn_invuln_s": 0.1,
+        "bonus_armor_negation": 1.0,
+        "bonus_mr_negation": 1.0
+      },
+      "source": "Liquipedia Dota 2 Wiki: Illusions",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "vision-blocking",
@@ -579,9 +605,21 @@
       "category": "对局结构",
       "title": "建筑拆除顺序限制",
       "certainty": "verified",
-      "statement": "同一路上，外层塔未拆前无法攻击更内层建筑；兵营受三层塔保护，塔未全拆前不能被攻击。",
-      "detail": "拆塔会给全队金钱并打开该区域的推进路线；守塔方可以只守当前被攻击的那一层。",
-      "key_implication": "推进必须按「塔→塔→塔→兵营」的顺序走，绕后偷内塔不成立；分推的价值在于同时威胁两条线，让对方无法兼顾。"
+      "statement": "塔按层级按序解锁：同一路上 T1 未拆则 T2 无敌、T2 未拆则 T3 无敌；兵营只有在其对应 T3 被拆后才可攻击；T4（遗迹双塔）在 T3 全拆后即可打，不需要先破兵营。",
+      "detail": "受保护建筑带「背门保护」（Backdoor Protection）：无敌方小兵在探测半径内时，受伤减免 50% 且每秒自愈 180（被敌方线上小兵靠近即解除，解除后 15.5s 才重新生效），幻象在受保护状态下只造成 25% 伤害。T4 塔每座尚存兵营 +4 护甲（6 座全在时 +24）。",
+      "key_implication": "推进只能按「T1→T2→T3→兵营/T4」顺序走，绕后偷内塔不成立；分推的价值在于同时威胁两条线，逼对方在「守塔」与「守兵营」之间分兵。",
+      "values": {
+        "tiers": 4,
+        "barracks_armor_per_standing": 4,
+        "max_barracks_armor": 24,
+        "backdoor_damage_reduction": 0.5,
+        "backdoor_heal_per_s": 180,
+        "backdoor_reactivate_s": 15.5,
+        "illusion_mult_vs_protected": 0.25
+      },
+      "source": "Liquipedia Dota 2 Wiki: Buildings",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "barracks-effect",
@@ -638,8 +676,19 @@
       "category": "对局结构",
       "title": "信使机制",
       "certainty": "verified",
-      "statement": "每队一只信使，可为英雄运送物品、递送消耗品；信使可升级获得加速与护盾，被击杀后会在基地重生。",
-      "key_implication": "信使死亡会延迟关键装备到位时间，抓信使是辅助的低成本收益；反之核心应避免让信使深入危险区域。"
+      "statement": "每名玩家各有一只自己的信使（不是每队共用一只），随主人等级同步升级，4 级获得飞行；可为英雄运送物品与消耗品；被击杀后按 45+5×等级 秒（如 1 级 50s）在己方泉水重生。",
+      "key_implication": "信使死亡是一次「隐形的时间税」：对方抓信使几乎零成本，而核心的下一件装备会晚 1 分钟以上。反过来辅助可以用信使的高机动做安全的运瓶/运眼。",
+      "detail": "信使不耗蓝，逐级获得移速（290+5/等级，随主人等级同步升级），4 级起获得飞行与飞行视野。死亡后在己方泉水重生，期间无法运送；具体掉落/归还细节本轮未逐条核实，不写入结论。",
+      "values": {
+        "per_player": 1,
+        "levels_with_owner": true,
+        "flying_level": 4,
+        "respawn": "45+5*level (lvl1=50s)",
+        "ms": "290+5*level"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Courier",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "rune-system",
@@ -706,8 +755,20 @@
       "category": "对局结构",
       "title": "死亡结算规则",
       "certainty": "verified",
-      "statement": "英雄死亡不掉落装备；损失不可靠金钱，复活时间随等级增长；击杀者与附近的助攻者按贡献分配金钱与经验。",
-      "key_implication": "「死一次」的真实成本 = 时间 + 不可靠金钱 + 让对方拿到的赏金；所以优势方更该避免无意义单死。"
+      "statement": "英雄死亡不掉落装备；按净资产 1/40 扣不可靠金钱（可靠金钱不动）；复活时间随等级从 12s 线性增长到 25 级的 100s；击杀者与附近助攻者按贡献分钱与经验。",
+      "key_implication": "「死一次」的真实成本 = 时间 + 不可靠金钱 + 让对方拿到的赏金 + 地图控制丢失；优势方更该避免无意义单死，因为死亡同时把你买活的容错打掉。",
+      "detail": "复活细节：回到泉水并补满血蓝，但冷却不重置、buff/debuff 不清除；刚复活处于无敌+不可选中，直到下达任何指令（含买/卖物品）才解除。死于中立野怪时复活时间有 26s 下限（低级别死亡会被直接拉到 26s）。买活花 200 + 净资产/13，且此后下次复活 +25s。",
+      "values": {
+        "gold_loss": "networth/40 (unreliable only)",
+        "respawn_l1": 12,
+        "respawn_l25": 100,
+        "neutral_death_min_respawn": 26,
+        "buyback_cost": "200 + networth/13",
+        "buyback_respawn_penalty": 25
+      },
+      "source": "Liquipedia Dota 2 Wiki: Death",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "income-sources",
@@ -723,8 +784,21 @@
       "category": "对局结构",
       "title": "泉水与基地安全区",
       "certainty": "verified",
-      "statement": "泉水会快速回复己方英雄并对其敌人造成高额伤害；基地范围内有塔与泉水双重保护，是最强的防守地形。",
-      "key_implication": "进攻方深入基地必须算清「塔+泉水+买活」三重成本；这也是为什么「破一路不等于赢」。"
+      "statement": "泉水为范围内友军按最大血/蓝量持续回复，并对敌人用物理攻击反击：每次命中叠一层 +3 攻击力（12s 衰减，攻击频率 6.67 次/秒，约等于每秒 +20 伤害），且附带 250 半径 25% 溅射。",
+      "key_implication": "进攻方深入基地必须算清「塔+泉水+买活」三重成本；这也是「破一路不等于赢」的原因——只要遗迹还在、买活还在，翻盘窗口就存在。",
+      "detail": "泉水攻击为物理伤害，可被护甲削减，但伤害会随连续命中滚起来——站在泉水里硬抗的英雄通常在 2~3 秒内被打死。基地范围内还有塔与守卫塔，构成「塔+泉水+买活」三层防御。",
+      "values": {
+        "damage_type": "physical",
+        "damage_per_stack": 3,
+        "debuff_duration_s": 12,
+        "attack_rate": 6.67,
+        "dps_ramp_per_s": 20,
+        "splash_radius": 250,
+        "splash_pct": 0.25
+      },
+      "source": "Liquipedia Dota 2 Wiki: Fountain",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "drafting-modes",

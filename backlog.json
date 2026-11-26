@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 23:19",
+    "updated_at": "2026-11-27 00:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -408,13 +408,20 @@
     {
       "id": "rules-source-fill",
       "status": "in_progress",
-      "current": 7,
+      "current": 13,
       "target": 31,
-      "note": "为 rules 中无 source 的 31 条补可回溯来源并顺带核数值；本轮已完成 7 条（armor-formula/armor-reduction-stacking/magic-resistance/attack-speed/evasion-blind-stacking/dispel-tiers/effective-hp），并修正两处公式错误"
+      "note": "为 rules 中无 source 的 31 条补可回溯来源并顺带核数值；已补 13 条：首轮 armor-formula/armor-reduction-stacking/magic-resistance/attack-speed/evasion-blind-stacking/dispel-tiers/effective-hp；本轮 damage-types/illusion-rules/death-rules/courier-system/fountain-safety/building-gating（含信使「每队一只」纠正）。余 18 条多为纯结构/概念条"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 00:18",
+      "task": "rules-source-fill 续轮：补 6 条来源 + 修正信使机制",
+      "added": "damage-types（三类型边界 + 纯粹只吃通用减伤）、illusion-rules（对建筑 40%、bonus 护甲/魔抗 100% 否定、赏金 2×等级、出生 0.1s 无敌）、death-rules（金损=净资产/40 只扣不可靠金、复活 12→100s、中立死亡 26s 下限、买活 200+净资/13 且下次复活 +25s、复活不重置 CD 不清 debuff）、courier-system（**修正**：每队一只 → 每人一只，随主人等级升级、4 级飞行、重生 45+5×等级）、fountain-safety（物理攻击 +3/层、6.67 次/秒 ≈ +20dps/s、250 半径 25% 溅射）、building-gating（T1→T2→T3 顺序解锁、T4 在 T3 全拆后可打不需先破兵营、背门保护 50% 减伤 + 180/s 自愈、T4 每座兵营 +4 甲）",
+      "result": "rules 61 条不变，带 source 37→43；JSON 全部校验通过；0 error / 0 warning",
+      "next": "余 18 条无 source（economy-sources/snowball-feedback/experience-level/map-control/roshan-value/vision-information/first-move-value/positioning-economy/damage-pipeline/damage-block-per-instance/mana-break-damage/creep-aggro/game-objective/map-structure/income-sources/drafting-modes/match-phases/map-symmetry），下轮优先 damage-pipeline / damage-block-per-instance / creep-aggro / income-sources 这类有具体页可查的"
+    },
     {
       "time": "2026-11-26 23:19",
       "task": "质量审查轮：rules 层补 source + 修正两处公式",
