@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 20:20",
+    "updated_at": "2026-11-26 21:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -400,14 +400,21 @@
     },
     {
       "id": "matchup-orphan-heroes",
-      "status": "open",
-      "current": 123,
+      "status": "done",
+      "current": 127,
       "target": 127,
-      "note": "把「只作为被克制方出现、自己从未当过主语」的英雄补上自身视角记录；已补 18 个（上轮 9 + 本轮 9：naga-siren/viper/luna/natures-prophet/wraith-king/spectre/invoker/chen/io），剩余 4 个：clinkz, dark-seer, necrophos, shadow-shaman"
+      "note": "全部 127 个英雄均已作为 hero_id 主语出现过；末轮补齐 clinkz→skywrath-mage、dark-seer→phantom-lancer、necrophos→axe、shadow-shaman→natures-prophet"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 21:20",
+      "task": "克制层收口 + 推理层补两条计划内主题",
+      "added": "matchups 266→270：clinkz→skywrath-mage（physical）、dark-seer→phantom-lancer（aoe）、necrophos→axe（sustain）、shadow-shaman→natures-prophet（control），四条均为这两轮缺席英雄的自身视角；inference 69→71：slot-swap-order-follows-coverage、vision-budget-is-two-accounts（premises 均能在 rules 找到，0 悬空）",
+      "result": "matchups 主语覆盖 127/127；inference 71（verified 22 / reasoned 49）；0 error / 0 warning",
+      "next": "queue 已全 done；下轮转 quality-audit：重点核查 items 仍 pending 的 5 处（秘法鞋回蓝触发时机、幽魂权杖 -30 系数语义、纷争面纱降魔抗百分比、统御头盔野怪技能表、血精石主动细节）与 rules 31 条无 source 的条目"
+    },
     {
       "time": "2026-11-26 20:20",
       "task": "克制层第二轮：再补 9 条缺席英雄自身视角记录",
