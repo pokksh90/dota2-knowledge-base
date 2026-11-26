@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 21:20",
+    "updated_at": "2026-11-26 22:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -408,6 +408,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 22:20",
+      "task": "质量审查轮：清 items 层 7 处存疑/错误项",
+      "added": "items 69→70：新增 gleipnir 4650（官方 items.txt 7.42 在售，此前因 dotaconstants 缺条目未入库）；改写 ghost-scepter（-30 = 魔抗降低 30% + 物理免疫 + 自身缴械，不再 pending）、arcane-boots（Replenish 确为主动：CD50/1200 半径/各 150 蓝，推翻上轮「不是主动」的错误结论）、veil-of-discord（7.41 后为 spell_amp 8% 技能易伤，非降魔抗，改为合成血精石）、bloodstone（CD30/70%/光环 8%）、helm-of-the-dominator（野怪技能表由 pending 改为「明确不维护」）、eternal-shroud（patch_removed=7.41）",
+      "result": "items 70（可推荐 69）；meta.corrections 追加本轮 7 项；0 error / 0 warning",
+      "next": "下轮续审查：rules 31 条无 source 的条目逐条补来源（优先 armor-formula / magic-resistance 等基础条），以及 tactics decisions 14 分支的可执行性复核"
+    },
     {
       "time": "2026-11-26 21:20",
       "task": "克制层收口 + 推理层补两条计划内主题",

@@ -3,7 +3,7 @@
     "title": "装备与出装",
     "description": "装备分类、用途、分位置核心出装思路。coach_note 供 LLM 消费：什么情况出、克制什么、给谁出。cost 为 dotaconstants 总价，已与 7.42 新道具价格交叉核对。",
     "source_note": "用途/克制为稳定常识(source=stable)；cost 取自 dotaconstants build/items.json 的 cost 字段(总价)，并用 7.42 新道具(bloodslinger 925 / caduceus 5400 / ristuls_devotion 3800 / sabatons 5950 / skypiercer 6000 / starforge 6000)对齐验证，确认该数据集已更新到 7.42。",
-    "last_updated": "2026-11-26 17:19",
+    "last_updated": "2026-11-26 22:20",
     "corrections": [
       "删除误录的「永恒战靴 Eon Boots」：7.42 道具全表(dotaconstants items.json 已含 7.42 全部新道具)无此条目，替换为实际存在的「永世之蔽 Eternal Shroud」。",
       {
@@ -29,6 +29,12 @@
         "item": "*",
         "finding": "全表 69 条逐件核价（官方 items.txt 块解析 + dotaconstants）：68 条在售条目两源价格全部一致；仅 eternal-shroud 为历史价 3800（items.txt 现价 3900、IsObsolete=1），已在条目内说明。另把 10 条高频老条目的 purpose/coach_note 换为 attrib 实值：BKB(9/8/7 递减+spell_reduce 60，重复购买不重置)、烟斗(425 屏障/8 秒/光环 8%)、跳刀(1200→受伤 960/3 秒)、紫怨(5 秒沉默+30% 易伤)、斯嘉蒂(减速 20/40%+治疗削减 50%)、刷新(180 秒 CD)、羊刀(2.8 秒/移速 140)、幻影斧(33%/25% 输出、200% 承伤、18 秒)、远行鞋(90 移速/40 秒 TP)、幽魂权杖(仅 4 秒与 -30 系数，语义标 pending，删掉原先「免疫物理」的确定性表述)",
         "action": "items 仍 69 条，仅文本口径升级；幽魂权杖由「免疫物理(自身)」降级为 pending，避免编造"
+      },
+      {
+        "time": "2026-11-26 22:20",
+        "item": "ghost-scepter / arcane-boots / veil-of-discord / bloodstone / helm-of-the-dominator / eternal-shroud / gleipnir",
+        "finding": "回归审查 7 处：①幽魂权杖 -30 的语义查明为「魔法抗性降低 30%（受技能伤害+30%）+物理免疫+不可被攻击+自身缴械」，不再是 pending；②秘法鞋此前写「不再是一次性主动补蓝」是**错的**——官方 items.txt 的 AbilityBehavior 含 NO_TARGET，Replenish 是主动：CD 50、1200 半径友军各 +150 蓝；③纷争面纱 7.41 重做后不再是「降魔抗」，而是通用技能伤害易伤 spell_amp 8% / 半径 900 / 持续 16s / CD16 / 耗蓝 25，且改为合成血精石；④血精石主动 CD 30（不是 30→35 的 Liquipedia 记法）与光环 8%；⑤统御头盔的野怪技能表改为「明确不维护」而非 pending；⑥永世之蔽移除补丁锁定 7.41；⑦gleipnir 此前因 dotaconstants 无条目未入库，实为存在且 7.42 在售（4650，官方 7.42 改动：智力 12→15、范围加成 75→60、Eternal Chains 半径 325→340、CD 18→17）",
+        "action": "items 69→70（新增 gleipnir）；幽魂/秘法/面纱/血精石四条改写为官方 items.txt 数值口径并写明与 Liquipedia 冲突项；Liquipedia 与官方文件冲突处一律以官方 items.txt 为准（秘法鞋 50/150/CD50、血精石 70%/8%/CD30、面纱 8%）"
       }
     ]
   },
@@ -350,8 +356,8 @@
       "name_zh": "幽魂权杖",
       "name_en": "Ghost Scepter",
       "category": "defensive",
-      "purpose": "幽魂形态（官方 attrib：持续 4 秒，extra_spell_damage_percent -30；+5 全属性）。**具体语义未核实**：早期版本是「免疫物理、但受额外法术伤害」，现版本 attrib 只给一个 -30 的系数，方向（减伤还是增伤）与是否仍为物理免疫均标 pending",
-      "coach_note": "用途仍是「短时躲物理爆发」：面对幻影刺客、巨魔、斯拉克这类贴脸物理核时给辅助/法核一个 4 秒窗口。但它与减益免疫状态互相排斥（官方 notes：进入减益免疫即结束、已是减益免疫则无效），所以别在 BKB 窗口里浪费它；具体减伤/增伤方向本库未核实，不要向用户报具体百分比。",
+      "purpose": "幽魂形态（官方 items.txt：item_ghost cost 1500、AbilityCooldown 22、duration 4.0、extra_spell_damage_percent -30；+5 全属性）。语义按 Liquipedia Ghost Form 说明：进入虚无（ethereal）——**免疫物理伤害且不可被攻击**，同时**自身被缴械不能普攻**；代价是**魔法抗性降低 30%（即承受的技能伤害约 +30%）**。处于减益免疫（debuff immune）时该效果直接失效，并与幽魂之刃等同类道具共享冷却。",
+      "coach_note": "「短时躲物理爆发」的窗口装：面对幻影刺客、巨魔、斯拉克这类贴脸物理核，给辅助/法核一个 4 秒物理免疫窗口；代价是这 4 秒承受技能伤害更高、且自己缴械不能普攻——它躲的是普攻与物理爆发，不是法术爆发。使用时点：对方物理核心已经贴上、而我方还有技能能反打的瞬间；不要拿去和敌方魔法爆发对拼。BKB/减益免疫状态下无效，别在免疫窗口里浪费。",
       "core_for": [
         4,
         5
@@ -426,17 +432,17 @@
       "name_en": "Eternal Shroud",
       "category": "defensive",
       "purpose": "魔抗型肉装：基础 +20% 魔法抗性，被动「Eternal Endurance」按累计承伤叠加额外魔抗（每累计 300 点魔法伤害叠一层，最多 6 层，每层 +3.5%，每层独立 5 秒），并给 +10 力量、+250 生命",
-      "coach_note": "已从游戏移除，不可购买，出装与推荐中不要出现。历史定位是抗魔续航装（+魔抗+力量+受魔伤回蓝），现版本抗魔需求改走洞察烟斗(团队光环)或黑皇杖(主动免控)。移除所在补丁未核实，标 pending。",
+      "coach_note": "已从游戏移除（Liquipedia 条目在 7.41 版本标注 REMOVED；官方 items.txt 里 ItemPurchasable=0 / IsObsolete=1），不可购买，出装与推荐中不要再出现。历史定位是抗魔续航装（+20% 魔抗、+10 力量、+250 生命，受技能伤害按 0.25 折算回蓝 / 每累计 300 点魔法伤害叠一层 +3.5% 魔抗、最多 6 层），现行抗魔需求改走洞察烟斗（团队光环）或黑皇杖（主动免控）。",
       "core_for": [
         3,
         4
       ],
       "source": "stable",
-      "verified_note": "机制与数值取自 Liquipedia Eternal Shroud（被动阈值 300 / 6 层 / 3.5% 每层 / 5 秒 / +20% 魔抗 / +10 力量 / +250 生命）；总价两处来源冲突（Liquipedia 记 3800、dotaconstants 记 3900=组件 3000+配方 900），按不编造原则价格标 pending。",
+      "verified_note": "机制与数值取自 Liquipedia Eternal Shroud：被动 Eternal Endurance 阈值 300 / 最多 6 层 / 每层 +3.5% / 每层独立 5 秒；Shroud 把受到的技能伤害按 0.25 折算为回蓝；属性 +10 力量 / +250 生命 / +20% 魔抗。总价两处来源冲突（Liquipedia 3800、dotaconstants 3900=组件 3000+配方 900），历史上架价以 3800 记，不对外报当前价。",
       "cost": 3800,
       "cost_source": "Valve 官方 items.txt：item_eternal_shroud 条目 ItemPurchasable=0 / IsObsolete=1（不可购买），ItemCost 仍写 3900；历史总价以 Liquipedia 3800 记录",
       "status": "removed",
-      "patch_removed": "pending",
+      "patch_removed": "7.41",
       "replaced_by_hint": [
         "pipe-of-insight",
         "black-king-bar"
@@ -974,8 +980,8 @@
       "name_zh": "秘法鞋",
       "name_en": "Arcane Boots",
       "category": "support",
-      "purpose": "提供移动速度、蓝量与回蓝光环（官方 attrib：+50 移速 / +150 蓝量 / 自身 +0.25 回蓝 / 1200 范围内友军 +1 回蓝）",
-      "coach_note": "连招耗蓝超过自身蓝池的中单与辅助首选：它把 1200 范围内友军的回蓝各抬 1 点，等于把「蓝量预算」摊给全队。**注意：现版本按官方数据是回蓝光环，不再是一次性主动补蓝**（attrib 中另有 replenish 150 的条目，触发时机未核实，教练不要向用户描述成「按一下给全队补 150 蓝」）。后期蓝量够用后可换成其他鞋。",
+      "purpose": "官方 items.txt（7.42）：+50 移速 / +150 蓝量 / 自身 +0.25 回蓝（bonus_movement 50、bonus_mana 150、mana_regen 0.25）；被动 Basilius 光环给 1200 半径友军 +1 回蓝（多件同名光环不叠加）；主动 Replenish：无目标、CD 50 秒、1200 半径内所有友军单位各恢复 150 蓝（replenish_amount 150）",
+      "coach_note": "两件事都有：被动把 1200 内友军回蓝各抬 1 点（摊全队蓝量预算），主动按一下给 1200 内所有友军各补 150 蓝——这是开团/连招前那一口集体蓝，不是线上换血的小药。要点：①主动是即时无目标技能、CD 50 秒，按「下一次要打之前」用，而不是「现在缺蓝」用；②只作用于友军单位，守卫与建筑不吃（Liquipedia 明细）；③Meepo 分身不能施放（官方 notes）；④多双鞋的移速加成不叠加。口径说明：Liquipedia 的 7.41 重做条目记 +45 移速/+125 蓝/CD 55，与官方 items.txt 的 50/150/50 冲突，本库以官方文件为准。",
       "core_for": [
         2,
         4,
@@ -1020,8 +1026,8 @@
       "name_zh": "血精石",
       "name_en": "Bloodstone",
       "category": "magic",
-      "purpose": "提供生命、蓝量、智力与法术吸血（官方 attrib：+625 生命 / +450 蓝量 / +15 智力 / 20% 法术吸血；主动 5 秒内法术吸血提到 70%；1200 范围 8% 法术易伤光环）",
-      "coach_note": "法核的「续航 + 输出放大器」：被动 20% 法术吸血让高爆发法核在团战里靠伤害回血，主动把法术吸血抬到 70% 用于一两轮对拼窗口；8% 法术易伤光环与纷争面纱的易伤**不叠加**（官方 notes 明确写），所以队伍里已有人出纷争面纱时，这一件的价值只剩吸血与蓝量。别把它当纯补蓝装推荐。",
+      "purpose": "官方 items.txt（7.42）：cost 4700、+625 生命 / +450 蓝量 / +15 智力 / 20% 法术吸血；主动 Bloodpact：CD 30 秒、持续 5 秒把法术吸血抬到 70%（spell_lifesteal_while_active 70）；被动 Spell Weakness Aura：1200 半径内敌人受到的技能伤害 +8%",
+      "coach_note": "法核的「续航 + 输出放大器」：被动 20% 法术吸血让高爆发法核在团里靠伤害回血，主动 5 秒把吸血抬到 70%，专门用于「站在团中央连打一轮」的窗口；被动光环 1200 半径给敌人 +8% 技能伤害，等于给全队法伤加成。三条纪律：①主动只为「这一轮要打满」付，CD 30 秒，别当常规消耗；②它与纷争面纱的 Spell Weakness 不叠加（官方 notes），两人都出只取一份，此时它的价值剩吸血与蓝量；③它本身是纷争面纱的合成上位（1700 面纱 + 3000 魂之灵瓮），有了它别再把面纱单卖。口径说明：Liquipedia 的 7.41c 条目记 60%/10%/CD35，与官方 items.txt 的 70%/8%/CD30 冲突，本库以官方文件为准。",
       "core_for": [
         2,
         3
@@ -1035,8 +1041,8 @@
       "name_zh": "纷争面纱",
       "name_en": "Veil of Discord",
       "category": "magic",
-      "purpose": "提供法伤与法术吸血，主动在 900 半径内降低敌方魔法抗性（降幅在 dotaconstants attrib 中未给出，标 pending）",
-      "coach_note": "魔法爆发队伍的放大器：队伍里法伤来源越多（天怒、莉娜、帕克、术士），一次覆盖到的收益越大；覆盖半径 900，配合先手控制一起放最有效。具体降魔抗百分比本库未核实，不要对外报数字。注意它的易伤效果与血精石的 8% 法术易伤光环不叠加。对纯物理阵容几乎无价值。",
+      "purpose": "官方 items.txt（7.42，7.41 重做后）：cost 1700、+10 智力 / +175 生命 / +18% 法术吸血（creep 3.6%）；主动 Spell Weakness：CD 16、耗蓝 25、施法距离 900、半径 900、持续 16 秒，对范围内敌人施加**技能伤害易伤**（spell_amp 8 → +8%），只放大技能伤害、不放大攻击伤害，对无敌单位同样生效，不影响 HP removal",
+      "coach_note": "定位已从「降魔抗」变成「技能伤害放大器」：7.41 重做后它的 debuff 是通用「受到的技能伤害 +8%」，对普攻无效——所以只有「队里技能伤害来源多」的阵容值得出（天怒、莉娜、帕克、术士这类），纯普攻阵容收益接近零。用法：CD 16 秒、耗蓝 25，可以跟着每一波技能爆发走；半径 900，配合先手控制一次覆盖多人收益最大。与血精石的 Spell Weakness Aura 不叠加（官方 notes），但与其它通用易伤来源相加。7.41 起不再合成希瓦的守护，改为合成血精石。",
       "core_for": [
         2,
         4
@@ -1065,7 +1071,7 @@
       "name_en": "Helm of the Dominator",
       "category": "utility",
       "purpose": "提供全属性、护甲与回血，主动支配一个单位为己作战（官方 attrib：+6 全属性 / +6 护甲 / +6 回血；被支配单位下限 1000 生命、移速 370，获得 +25 伤害 / +12 回血 / +4 回蓝 / +4 护甲；同时只能 1 个，卖出即死）",
-      "coach_note": "用来「借单位」：可支配非远古中立野怪，也可支配敌方线上小兵与召唤物，常给 3 号位与打野节奏核做额外控制/推线/视野。同一个时间只能有 1 个被支配单位，换目标时旧的会死；具体野怪技能随版本调整，本库不给逐只技能表（pending），只按「多一个可控单位」的口径使用。",
+      "coach_note": "用来「借单位」：可支配非远古中立野怪，也可支配敌方线上小兵与召唤物（官方 notes），被支配单位获得 +25 伤害 / +12 回血 / +4 回蓝 / +4 护甲，生命下限 1000、移速下限 370（官方 items.txt）；同时只能有 1 个，换目标时旧的会死，卖掉头盔被支配单位也会死。**野怪逐只技能表本库不维护**：这不是遗漏，而是这些技能随版本改动频繁，写死会变成过期数据误导教练；口径统一按「多一个可控单位（可带控制/推线/视野）」使用，要具体技能请在游戏内或官网核对当期数据。",
       "core_for": [
         3
       ],
@@ -1086,6 +1092,21 @@
       "source": "stable",
       "cost": 675,
       "cost_source": "官方 items.txt ItemCost=675，与 dotaconstants build/items.json cost 一致"
+    },
+    {
+      "id": "gleipnir",
+      "name_zh": "永恒之链",
+      "name_en": "Gleipnir",
+      "category": "magic",
+      "purpose": "官方 items.txt（7.42，item_gungir）：cost 4650、+20 智力 / +450 生命 / +200 蓝 / +60 范围加成（bonus_aoe 60，对该道具自身也生效）；主动 Eternal Chains：CD 17、耗蓝 150、施法距离 1100、半径 340（叠加自身 +60 范围加成后提示值 400）、持续 2 秒，向范围内敌人投出锁链——定身（不能移动，并封掉部分位移技能）+ 提供真视",
+      "coach_note": "「远程群体定身 + 反隐」的抓人装：可作用于隐身单位与雾中的单位（不能作用于无敌/隐藏单位），等于给队伍一个「没视野也能抓」的开团键；真视部分穿透减益免疫，定身部分不穿透。三点：①与阿托斯之棍共享冷却（官方 AbilitySharedCooldown=atos），出了它就别指望阿托斯单独转好；②定身不是晕，被定身者仍能普攻与施法（除位移类），所以必须跟队友的伤害/控制接上；③它能覆盖隐身与雾中单位，这正是它比阿托斯强的地方，抓单与反打优先考虑。",
+      "core_for": [
+        2,
+        4
+      ],
+      "source": "stable",
+      "cost": 4650,
+      "cost_source": "官方 items.txt ItemCost=4650（7.41e 记录总价未变），与 Liquipedia Gleipnir 4650 一致"
     }
   ],
   "builds": [
