@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 01:00",
+    "updated_at": "2026-11-27 01:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -408,13 +408,20 @@
     {
       "id": "rules-source-fill",
       "status": "in_progress",
-      "current": 19,
+      "current": 25,
       "target": 31,
-      "note": "为 rules 中无 source 的 31 条补可回溯来源并顺带核数值；已补 19 条：首轮 7（护甲/魔抗/攻速/闪避/驱散/有效生命）、第二轮 6（伤害类型/幻象/死亡/信使/泉水/建筑门禁）、本轮 6（伤害链/格挡/小兵仇恨/金钱来源/烧蓝/经验）。余 12 条多为纯结构/概念条"
+      "note": "为 rules 中无 source 的 31 条补可回溯来源并顺带核数值；已补 25 条，余 6 条为纯推导/结构概念（economy-sources/snowball-feedback/first-move-value/positioning-economy/match-phases/map-symmetry）"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 01:20",
+      "task": "rules-source-fill 四续：补 6 条来源（肉山/视野/控图/地图/目标/选人）",
+      "added": "roshan-value（8–11 分钟重生窗、HUD 480+180、盾 5 分钟过期、按死亡次数掉落盾/旗/奶酪/刷新碎片、击杀 200–290+全队 135、经验 400+20/分钟、本体 +130HP/+0.4甲/+7攻每分钟、幻象 -80%、15 秒格挡一次指定法术、双坑与坑内才能攻击）、vision-information（1800/800、观察 360、岗哨 0、施法反视野 150/2s、上限 4000）、map-control（视野/线权/目标三件套）、map-structure（6 高度层、上坡 miss、双肉山坑）、game-objective（拆遗迹、T4 需 T3 全拆）、drafting-modes（All Pick 2/2/1、RD 33 池 20s、CM 7 ban/130s）",
+      "result": "rules 61 条不变，带 source 49→55；JSON 校验通过；audit 0 error / 0 warning",
+      "next": "余 6 条纯概念条（economy-sources/snowball-feedback/first-move-value/positioning-economy/match-phases/map-symmetry），下轮用 Gold/Experience/Map/Vision 做交叉来源后收口 rules-source-fill"
+    },
     {
       "time": "2026-11-27 01:00",
       "task": "rules-source-fill 三续：补 6 条来源 + 修正伤害链顺序",

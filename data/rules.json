@@ -41,14 +41,17 @@
           "Damage_Block",
           "Damage_Manipulation",
           "Mana",
-          "Mana_Break"
+          "Mana_Break",
+          "Map",
+          "Game_Modes",
+          "Ancient"
         ],
         "url_template": "https://liquipedia.net/dota2/<page>",
         "verified_at": "2026-11-24",
         "note": "每条带 values 的规则均可回溯到上述页面之一；补丁更新后需重核"
       }
     ],
-    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。 续轮补 6 条来源（Damage/Damage Block/Damage Manipulation/Gold/Lane_Creeps/Mana/Mana Break/Experience），并修正伤害链顺序（固定格挡在百分比减免之前）与生命移除口径（仍按伤害类型减免）。",
+    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。 续轮补 6 条来源（Damage/Damage Block/Damage Manipulation/Gold/Lane_Creeps/Mana/Mana Break/Experience），并修正伤害链顺序（固定格挡在百分比减免之前）与生命移除口径（仍按伤害类型减免）。 再补 6 条来源（Roshan/Vision/Map/Game Modes/Buildings），肉山条改写为 8–11 分钟重生窗、盾 5 分钟、按死亡次数掉落的具体口径。",
     "last_updated": "2026-11-27 00:20"
   },
   "principles": [
@@ -194,23 +197,104 @@
       "title": "地图控制 = 资源控制",
       "statement": "控制三路线权与野区，即控制兵线与野区资源的获取权，进而控制经济与经验差。",
       "certainty": "stable",
-      "key_implication": "推进的本质是把「地图控制」转化为「资源垄断」，塔是地图控制的关键节点。"
+      "key_implication": "推进的本质是把「地图控制」转化为「资源垄断」，塔是地图控制的关键节点。",
+      "detail": "地图控制拆成三件事：视野覆盖（眼位与塔后视野）、线权（兵线推到哪、能否安全拉野/堆野）、目标压力（塔、肉山、神符）。三者互相喂养：有线权才能插深眼，有视野才敢推线，有目标压力才能逼对方走进你的视野。",
+      "values": {
+        "components": [
+          "vision coverage",
+          "lane control",
+          "objective pressure"
+        ],
+        "lane_wave_interval": 30,
+        "note": "具体神符/野怪刷新数值见 rune-system / camp-spawn-engine"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Vision / Map / Lane_Creeps",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "roshan-value",
       "category": "地图与资源",
       "title": "肉山（不朽盾）价值",
-      "statement": "不朽盾提供一次复活（容错），后期刷新碎片等强化。复活 = 一次「失误不致命」的容错。",
+      "statement": "肉山提供不朽盾（一次复活容错）与随死亡次数递增的掉落：第 1 次只有盾，第 2 次加旗帜，第 3 次起加奶酪与刷新碎片。盾拾取后 5 分钟过期（到期全额回血），不可掉落/出售/共享。击杀奖励为击杀者 200–290 不可靠金 + 全队 135，经验 400 + 20/分钟（只给击杀队附近英雄）。",
       "certainty": "stable",
-      "key_implication": "盾的本质是「降低团战风险成本」，使持盾方可以打得更激进，是中期关键战略资源。"
+      "key_implication": "盾的本质是「降低团战风险成本」，使持盾方可以打得更激进，是中期关键战略资源。",
+      "detail": "重生窗口 8–11 分钟且对玩家不公开：HUD 先显示 480 秒「确定死亡」，结束后转 180 秒黄色窗口（期间可能已复活）。肉山本体随时间成长：+130 生命/分钟、+0.4 护甲/分钟、+7 攻击/分钟，幻象对它伤害 -80%，每 15 秒格挡一次指定法术。巢穴有两个（河道东南 Radiant 侧、西北 Dire 侧），坑口有视野遮挡物、地面与飞行视野都被挡；不在坑内不能攻击它（技能不受限）。15:00 前不换坑，之后随自然昼夜在两坑间移动（白天 Dire、夜晚 Radiant）。",
+      "values": {
+        "respawn": "8-11 min (random)",
+        "hud_red_window": 480,
+        "hud_yellow_window": 180,
+        "aegis_duration": 300,
+        "aegis_on_expire": "full regen",
+        "drops_by_death": {
+          "1": [
+            "aegis"
+          ],
+          "2": [
+            "aegis",
+            "banner"
+          ],
+          "3+": [
+            "aegis",
+            "banner",
+            "cheese",
+            "refresher_shard"
+          ]
+        },
+        "gold": {
+          "killer": [
+            200,
+            290
+          ],
+          "team": 135,
+          "killer_total": [
+            335,
+            425
+          ]
+        },
+        "xp": "400 + 20/min (killing team only)",
+        "growth": {
+          "hp_per_min": 130,
+          "armor_per_min": 0.4,
+          "damage_per_min": 7
+        },
+        "illusion_damage_reduction": 0.8,
+        "spell_block_interval": 15,
+        "pit_rule": "15:00 前不换坑；之后白天 Dire 坑 / 夜晚 Radiant 坑",
+        "pit_initial": "pending（Liquipedia 同页两处表述冲突：一处 Radiant 坑、一处 Dire 坑，未判定）",
+        "pit": {
+          "count": 2,
+          "attack_requires_inside_pit": true,
+          "vision_blocker": "blocks ground and flying vision at pit entrances"
+        }
+      },
+      "source": "Liquipedia Dota 2 Wiki: Roshan / Map",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "vision-information",
       "category": "核心博弈",
       "title": "视野 = 信息 = 决策质量",
-      "statement": "视野提供敌方位置与动向信息，信息决定决策质量；缺乏信息导致被gank/被先手。",
+      "statement": "视野提供敌方位置与动向信息，信息决定决策质量；缺乏信息导致被 gank/被先手。英雄基础视野白天 1800、夜晚 800（少数英雄例外），全队视野共享；战争迷雾内的敌人不能被指定为目标，但仍会被非指向技能命中。",
       "certainty": "stable",
-      "key_implication": "眼/反隐的「信息价值」远高于其金钱成本，视野投入产出比极高。"
+      "key_implication": "眼/反隐的「信息价值」远高于其金钱成本，视野投入产出比极高。",
+      "detail": "地面视野会被树木、高地和视野遮挡物挡住，飞行视野不受限；单位对 1800 内的敌人施放指向技能或攻击时，会给对方 150 半径、2 秒的地面视野（防止从雾里无代价消耗）。观察者守卫视野 360，岗哨守卫不提供视野（只给真视）。视野上限 4000。",
+      "values": {
+        "hero_day": 1800,
+        "hero_night": 800,
+        "observer_ward": 360,
+        "sentry_ward": 0,
+        "caster_vision": {
+          "radius": 150,
+          "duration": 2,
+          "trigger_range": 1800
+        },
+        "max_vision": 4000
+      },
+      "source": "Liquipedia Dota 2 Wiki: Vision / Observer_Ward / Sentry_Ward",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "first-move-value",
@@ -702,16 +786,42 @@
       "certainty": "verified",
       "statement": "标准对局是 5v5 两队（天辉 Radiant / 夜魇 Dire）对抗，胜利条件只有一个：摧毁对方的遗迹（Ancient）。",
       "detail": "击杀数、经济领先、控图都不是胜利条件，只是通向「拆掉遗迹」的手段；因此「能赢团但拆不动塔」的阵容并不占优。",
-      "key_implication": "所有决策最终要落到「能不能推进/守塔」上：拿了优势不转推进，等于把优势换成对方的发育时间。"
+      "key_implication": "所有决策最终要落到「能不能推进/守塔」上：拿了优势不转推进，等于把优势换成对方的发育时间。",
+      "values": {
+        "teams": 2,
+        "players_per_team": 5,
+        "win_condition": "destroy enemy Ancient",
+        "towers_per_side": 11,
+        "t4_requirement": "all T3 down",
+        "backdoor_protection": "50% damage reduction + 180/s regen when no enemy lane creeps"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Buildings / Ancient / Map",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "map-structure",
       "category": "对局结构",
       "title": "地图与三线结构",
       "certainty": "verified",
-      "statement": "地图由上、中、下三条兵线、两侧野区、河道与两座基地组成；每条线每方各有三层塔，基地前另有高地塔与遗迹，每线有两座兵营（近战/远程）。",
-      "detail": "三条线的距离与地形不同：中路最短、支援最快；优势路/劣势路因野区与树林结构导致对线难度不同。",
-      "key_implication": "中塔的战略价值最高（控制河道与两侧野区入口）；掉哪条线的塔，就决定了哪片野区变成对方的安全区。"
+      "statement": "地图由上、中、下三条兵线、两侧野区、河道与两座基地组成；每条线每方各有三层塔，基地前另有高地塔（T4）与遗迹，每线有两座兵营（近战/远程）。",
+      "detail": "地图有 6 个有玩法意义的高度层（河道、低地、高地、基座、悬崖、山谷），层间靠斜坡或不可通行的崖壁连接；远程攻击打高处目标会按「上坡 miss」判定。天辉安全线是下路、夜魇安全线是上路，因为兵线交会点更靠近己方塔。肉山有两个巢穴（上/下各一），河道被高地夹住、天然挡地面视野。",
+      "key_implication": "中塔的战略价值最高（控制河道与两侧野区入口）；掉哪条线的塔，就决定了哪片野区变成对方的安全区。",
+      "values": {
+        "lanes": 3,
+        "towers_per_side": 11,
+        "barracks_per_lane": 2,
+        "height_levels": 6,
+        "safe_lanes": {
+          "radiant": "bottom",
+          "dire": "top"
+        },
+        "roshan_pits": 2,
+        "uphill_miss": "applies to ranged attacks vs high ground"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Map / Lane / Roshan",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "building-gating",
@@ -948,7 +1058,27 @@
       "title": "选人模式与位置分工",
       "certainty": "verified",
       "statement": "常见模式有全英雄选择（含 ban 阶段）、队长模式（双方队长 BP）、单选/随机等；标准阵容按 1-5 号位分工：安全线核心、中单、劣势线、游走、纯辅助。",
-      "key_implication": "BP 决定一半胜负：先手/反手、伤害类型、推进与防守的搭配必须在选人阶段闭合，进入对局后只能靠出装微调。"
+      "key_implication": "BP 决定一半胜负：先手/反手、伤害类型、推进与防守的搭配必须在选人阶段闭合，进入对局后只能靠出装微调。",
+      "detail": "全英雄选择：分 3 轮、2/2/1 人依次盲选，重复选同一英雄会重开该轮（最多两次）；随机选择会排除自己最少玩的 25 个英雄。随机征召：33 个英雄池轮流选，每次 20 秒。队长模式：每队队长最多 ban 7 个、选 5 个，另有 130 秒机动时间；比赛用标准模式。",
+      "values": {
+        "all_pick": {
+          "rounds": "2/2/1",
+          "random_excludes": "25 least played"
+        },
+        "random_draft": {
+          "pool": 33,
+          "pick_time": 20
+        },
+        "captains_mode": {
+          "bans_per_team": 7,
+          "picks_per_team": 5,
+          "bonus_time": 130
+        },
+        "positions": "1-5"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Game_Modes",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "match-phases",
