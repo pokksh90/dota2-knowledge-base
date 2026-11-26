@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 08:18",
+    "updated_at": "2026-11-26 09:17",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -299,10 +299,24 @@
       "current": 10,
       "target": 10,
       "note": "第五批 10 条 ≤11 字短 reason（末日配屠夫、幻刺打卓尔、斯莱克/风暴配艾欧、风暴打狙击、修补匠打冰女、熊战士被卓尔、斧王配莉娜、末日打卡尔、撼地打幻影长矛手）；短 reason 40→30 条，平均 49.6→53.3 字"
+    },
+    {
+      "id": "matchup-reason-quality-6",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "第六批 10 条 11~12 字短 reason（虚空打修补匠/配巫妖、军团配天怒、莉娜被幽鬼、神谕反决斗、剃刀打斯文、圣堂被宙斯、敌法打风暴、干扰者打风暴、熊战士被毒龙）；短 reason 30→20 条，平均 53.3→56.9 字"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 09:17",
+      "task": "克制短 reason 续写（第六批 10 条）",
+      "added": "10 条 reason 重写，引 abilities.json 原文（含 Mystic Flare 均分机制、Refraction 按次数抵免、Chain Frost 弹射递增）",
+      "result": "240 条不变；审查 0 error / 0 warning",
+      "next": "剩余 20 条短 reason 收口"
+    },
     {
       "time": "2026-11-26 08:18",
       "task": "克制短 reason 续写（第五批 10 条）",
