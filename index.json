@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.27",
+    "version": "0.6.28",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-26",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
-    "updated_at": "2026-11-27 03:19"
+    "updated_at": "2026-11-27 04:20"
   },
   "modules": [
     {
@@ -20,7 +20,7 @@
       "title": "底层规则(公理层)",
       "count": 61,
       "status": "verified-partial",
-      "note": "61 条，61/61 带 source。含背门保护修正：50% 减伤 + 180/s 自愈、判定 4000/900、幻象攻击 10%/召唤 2.5%"
+      "note": "61 条，61/61 带 source。vision-information 补「免疫侦测类技能不吃真视」例外；背门保护 50%/180 口径保留"
     },
     {
       "file": "data/inference.json",
@@ -48,7 +48,7 @@
       "title": "克制与搭配",
       "count": 270,
       "status": "stable",
-      "note": "270 条：counter 146 / countered_by 88 / synergy 36；basis 8 类（control 71/aoe 43/mobility 42/physical 29/damage-type 24/sustain 27/vision 19/resource 15）；pair 唯一（仅 disruptor↔void 因两种不同结论有意双向）；reason 机制级（逐条对 abilities.json 原文）；127 个英雄全部已作为主语出现过"
+      "note": "270 条（counter 146 / countered_by 88 / synergy 36）；本轮审 vision 类 19 条：斯拉达 4 条改「伤害加深」、斯莱克 2 条按「影舞免疫侦测」重写、兽王条改野性之斧放大 + Rugged"
     },
     {
       "file": "scripts/fetch_data.py",
@@ -62,7 +62,7 @@
       "title": "战术与节奏",
       "count": 6,
       "status": "stable",
-      "note": "6 板块：timings 9 / objectives 8 / decisions 16 分支；已清理「肉山每次死亡 -1 分钟」旧机制，补无兵线拆塔与塔防换目标两个分支"
+      "note": "6 板块：timings 9 / objectives 8 / decisions 16；BKB 时长由 10 秒更正为 9→8→7 秒（CD 95）"
     },
     {
       "file": "data/hero_base.json",

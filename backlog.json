@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 03:19",
+    "updated_at": "2026-11-27 04:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -415,6 +415,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 04:20",
+      "task": "quality-audit 第二轮：视野类克制逐条复核",
+      "added": "按 run_log 的 next 抽查 basis=vision 的 19 条，纠正 8 处：① 斯拉达 4 条把反隐来源由「鱼人碎击」改为大招「伤害加深」（18s 真视 + 削 8/14/20 甲）；② 斯莱克←嗜血/宙斯 2 条按 Shadow Dance 原文「becoming immune to detection」重写，明确真视在影舞 4~4.5s 内无效；③ 兽王→蜘蛛 1 条：蛛网现行只给自由穿行/移速/转身、不提供隐身，改按野性之斧伤害放大 4~7% 与 Rugged 对非英雄单位 100% 格挡（basis vision→aoe）；④ rules.vision-information 补「免疫侦测类技能不吃真视」例外；⑤ tactics.draft 的 BKB 时长由「首次 10 秒」更正为官方 9→8→7 秒、CD 95",
+      "result": "matchups 270 条（8 条重写/改字段）；rules 61 条（1 条 detail 补例外）；tactics 1 处数值修正；JSON 全部通过；audit 0 error / 0 warning / 1 info",
+      "next": "继续 quality-audit：核对 tactics.draft 其余数值（BKB 已改）与 laning 的 7.42 口径，再抽查 basis=aoe 的 43 条召唤/幻象类克制是否有「已移除机制」残留"
+    },
     {
       "time": "2026-11-27 03:19",
       "task": "quality-audit 第一轮：背门数值修正 + 战术旧机制清理",
