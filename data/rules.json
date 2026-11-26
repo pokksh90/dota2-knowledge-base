@@ -37,14 +37,18 @@
           "Damage",
           "Illusions",
           "Courier",
-          "Fountain"
+          "Fountain",
+          "Damage_Block",
+          "Damage_Manipulation",
+          "Mana",
+          "Mana_Break"
         ],
         "url_template": "https://liquipedia.net/dota2/<page>",
         "verified_at": "2026-11-24",
         "note": "每条带 values 的规则均可回溯到上述页面之一；补丁更新后需重核"
       }
     ],
-    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。",
+    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。 续轮补 6 条来源（Damage/Damage Block/Damage Manipulation/Gold/Lane_Creeps/Mana/Mana Break/Experience），并修正伤害链顺序（固定格挡在百分比减免之前）与生命移除口径（仍按伤害类型减免）。",
     "last_updated": "2026-11-27 00:20"
   },
   "principles": [
@@ -165,9 +169,24 @@
       "id": "experience-level",
       "category": "经验与等级",
       "title": "经验与等级",
-      "statement": "经验来自击杀、助攻、补刀（含反补减少对方经验）、野区；等级决定技能强度，关键大招等级是节奏转折点。",
+      "statement": "经验来自击杀、助攻、补刀（含反补减少对方经验）、野区；等级决定技能强度，关键大招等级是节奏转折点。经验在 1500 半径内平均共享，等级上限 30（共 29 次升级）；升级需求是逐级定值表而非公式（1→2 需 240，29→30 需 8000，30 级累计 64400）。",
       "certainty": "stable",
-      "key_implication": "反补的隐性价值是「让对方少经验」，与「自己多金钱」同样重要。"
+      "key_implication": "反补的隐性价值是「让对方少经验」，与「自己多金钱」同样重要。",
+      "detail": "30 级英雄仍会在 1500 范围内占一份经验，等于浪费；英雄击杀无视距离必给击杀者一份，公式为 (100 + 0.13×死者总经验)/n + 连杀奖励；反补英雄给敌方 0 经验，反补兵线敌方仍得 50%；被堆叠过的野怪经验 -15%。",
+      "values": {
+        "shared_radius": 1500,
+        "max_level": 30,
+        "xp_1_to_2": 240,
+        "xp_29_to_30": 8000,
+        "xp_total_30": 64400,
+        "hero_kill_formula": "(100 + 0.13 * dead_hero_xp)/n + streak_bonus",
+        "deny_hero": 0,
+        "deny_lane_creep": 0.5,
+        "stacked_neutral_xp_penalty": 0.15
+      },
+      "source": "Liquipedia Dota 2 Wiki: Experience",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "map-control",
@@ -214,9 +233,25 @@
       "category": "伤害与防御",
       "title": "伤害结算链",
       "certainty": "verified",
-      "statement": "一次伤害依次经过：技能增幅（仅技能伤害）→ 按伤害类型走对应减免（物理走护甲、魔法走魔抗、纯粹不减免）→ 格挡/屏障吸收 → 扣血。",
-      "detail": "标记为「生命移除」的效果不经过任何减免，也不触发受伤反击类被动。",
-      "key_implication": "判断一轮爆发能否打死人，要先分清对方的主要伤害类型，再决定堆护甲还是堆魔抗/血量。"
+      "statement": "一次伤害的实际结算顺序：① 前置总格挡（如美杜莎法力护盾，挡所有类型）→ ② 物理/魔法固定格挡（先锋盾、雨滴等，在百分比减免之前）→ ③ 出向伤害操作（技能伤害增幅）→ ④ 入向百分比增减伤（同类加法、异类乘法）→ ⑤ 护甲/魔抗百分比减免 → ⑥ 通用格挡（如回光护盾）→ 扣血，随后才触发受伤类被动。",
+      "detail": "固定格挡排在百分比减免之前，所以护甲/魔抗越高，同样数值的格挡实际少掉的伤害越少。标记为「生命移除」的效果不吃通用伤害操作、不触发受伤反击，但仍按自身伤害类型吃护甲/魔抗（魔法属性的生命移除照样被魔抗削减）。屏障类（魔法屏障/护盾）的具体插入位置本轮未逐条核实，不写进顺序。",
+      "key_implication": "判断一轮爆发能否打死人，要先分清对方的主要伤害类型，再决定堆护甲还是堆魔抗/血量。",
+      "values": {
+        "order": [
+          "pre_armor_total_block",
+          "physical/magical_flat_block",
+          "outgoing_manipulation",
+          "incoming_manipulation",
+          "armor/magic_resistance",
+          "universal_block"
+        ],
+        "stacking": "同类加法、异类乘法，护甲与魔抗单独再乘一次",
+        "hp_removal": "绕开通用伤害操作与受伤触发，但仍按伤害类型减免",
+        "barrier_order": "本轮未核实，不写入"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Damage / Damage Block / Damage Manipulation",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "damage-block-per-instance",
@@ -224,8 +259,44 @@
       "title": "格挡按段结算",
       "certainty": "verified",
       "statement": "伤害格挡对每一段伤害独立生效，而不是对一次攻击的总伤害生效一次。",
-      "detail": "例如 50 点格挡面对 5 段各 20 点的小伤害，实际被吃掉 250 点中的大部分；面对单段 200 点只吃掉 50 点。",
-      "key_implication": "多段/高频伤害（连击、分裂箭、召唤物海）天然被格挡类道具压制；单发大伤害则受影响小。"
+      "detail": "四类格挡按顺序结算：法力护盾（前置，全类型）→ 物理格挡 → 魔法格挡 → 通用格挡（几乎最后，随后立刻触发受伤类被动）。同类别多来源只取最高格挡值生效、不再叠加，但各自的副作用（进冷却、掉层数）仍会全部触发；不同类别则依次叠加。概率型格挡各自独立判定，多来源合计概率 = 1 - ∏(1-qi)（两面先锋盾 60% → 84%）。物理格挡在护甲之前结算，所以护甲越高，固定格挡的实际减伤越低。格挡还能挡带「生命移除」标记的伤害，这一点与伤害操作不同。",
+      "key_implication": "多段/高频伤害（连击、分裂箭、召唤物海）天然被格挡类道具压制；单发大伤害则受影响小。",
+      "values": {
+        "categories": 4,
+        "order": [
+          "mana_shield",
+          "physical",
+          "magical",
+          "universal"
+        ],
+        "same_category": "只取最高值",
+        "prob_stack": "1 - prod(1-q)",
+        "vanguard": {
+          "chance": 0.6,
+          "block_melee": 50,
+          "block_ranged": 25
+        },
+        "crimson_guard_guard": {
+          "chance": 1.0,
+          "block": 70
+        },
+        "kraken_shell": {
+          "chance": 1.0,
+          "block": [
+            15,
+            35,
+            55,
+            75
+          ]
+        },
+        "melee_innate": {
+          "chance": 0.5,
+          "block": 16
+        }
+      },
+      "source": "Liquipedia Dota 2 Wiki: Damage Block / Damage",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "armor-reduction-stacking",
@@ -348,8 +419,38 @@
       "category": "资源机制",
       "title": "抽蓝与抽蓝伤害",
       "certainty": "verified",
-      "statement": "「抽掉蓝量」与「按抽掉蓝量造成伤害」是两个独立效果，后者伤害类型由技能定义（物理或纯粹），抽蓝本身不直接扣血。",
-      "key_implication": "高智力池英雄被抽蓝压制更狠（抽得多、伤害高）；低蓝池或不吃蓝的英雄几乎不受影响。"
+      "statement": "Mana Break 是一类攻击特效：每次攻击先烧掉目标一定蓝量，再把烧掉的蓝按比例折成物理伤害，与本次攻击伤害合并成同一个伤害实例结算。它只被固定减伤（格挡）削减，不吃百分比攻击加成；计入吸血，不计入暴击与分裂。多个 Mana Break 来源加法叠加。法力损失减免会减少实际烧蓝量，但伤害仍按全额算。",
+      "key_implication": "高智力池英雄被抽蓝压制更狠（抽得多、伤害高）；低蓝池或不吃蓝的英雄几乎不受影响。",
+      "detail": "别把「抽蓝」和「按蓝量造成伤害」混成一条：Mana Break 的折算伤害固定是物理；而法力虚空这类「按缺失蓝量造成伤害」的技能，伤害类型由技能自身定义，不套 Mana Break 的规则。基础蓝池 75，每点智力 +12 蓝，所以高智力核心被烧蓝压制更狠。",
+      "values": {
+        "damage_type": "physical",
+        "instance": "与攻击伤害同一实例",
+        "reduced_by": "flat block only",
+        "counted_by": [
+          "lifesteal"
+        ],
+        "not_counted_by": [
+          "critical strike",
+          "cleave"
+        ],
+        "stacking": "additive",
+        "talent_example": {
+          "burn": [
+            15,
+            20,
+            25,
+            35,
+            40
+          ],
+          "ratio": 0.8
+        },
+        "mana_loss_reduction": "reduces burn, not damage",
+        "base_mana": 75,
+        "mana_per_int": 12
+      },
+      "source": "Liquipedia Dota 2 Wiki: Mana_Break / Mana",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "kill-gold-formula",
@@ -540,8 +641,20 @@
       "category": "兵线与对线",
       "title": "小兵仇恨",
       "certainty": "verified",
-      "statement": "在敌方小兵仇恨范围内攻击敌方英雄，会把小兵仇恨转移到自己；利用仇恨可以把兵线拉向自己想要的方向。",
-      "key_implication": "对线换血要在「仇恨重置」的间隙做，或用仇恨把线拉到己方塔前，减少被 gank 的暴露时间。"
+      "statement": "在 500 半径内对敌方英雄下达攻击指令（右键或 A，不必真的打出去）就会把敌方小兵仇恨吸到自己身上，被吸的小兵强制追击 2.3 秒；这种「攻击指令仇恨」有 3 秒冷却，且每次下令都进冷却（哪怕附近没有小兵）。技能施法与手动施放法球不算攻击、不吸仇恨；自动施法则按攻击处理、会吸。",
+      "key_implication": "对线换血要在「仇恨重置」的间隙做，或用仇恨把线拉到己方塔前，减少被 gank 的暴露时间。",
+      "detail": "第二条路径是「已经开始的攻击」：攻击进入动画阶段时吸 500 半径内小兵，对友方英雄攻击也会触发，但不强制追击、不触发 3 秒冷却，优先级低于攻击指令仇恨。新生成的小兵在 5:00 前不能被吸仇恨，直到进入己方一塔 1500 范围才解除。小兵被吸后会记住离开兵线的位置、追完回原位；离兵线超过限定区域会逐步累积 25% 移速惩罚（约 10 秒到满）。",
+      "values": {
+        "aggro_radius": 500,
+        "chase_duration": 2.3,
+        "order_cooldown": 3,
+        "spawn_lock_until": "5:00",
+        "tower_unlock_radius": 1500,
+        "out_of_lane_slow": "25% over 10s"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Lane_Creeps / Creeps",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "illusion-rules",
@@ -775,9 +888,38 @@
       "category": "对局结构",
       "title": "金钱与经验来源",
       "certainty": "verified",
-      "statement": "金钱来源：补刀、野怪、击杀/助攻、拆建筑、目标奖励、被动工资；经验来源：附近单位死亡与击杀，附近队友共享经验。",
-      "detail": "补刀金钱稳定但上限低，击杀与目标奖励是爆发式收入；因此「打钱效率」与「参团收益」需要按阵容权衡。",
-      "key_implication": "辅助靠助攻与目标金钱吃饭，所以辅助参团不是「帮核心」，而是自己的主要收入来源。"
+      "statement": "金钱来源：起始 600；被动金为可靠金，0:00 约 90/分钟（每 0.67 秒 1 点），之后缓慢上浮（12:00 约 94.8、30:00 约 99.8，具体递增公式本轮未核实）；其余来自补刀、野怪、击杀/助攻、拆建筑、目标奖励。可靠金只来自被动金与赏金符，其他全算不可靠金。死亡只扣不可靠金，买活先扣可靠金，买装备先扣不可靠金。经验来源：1500 半径内敌方单位死亡共享，英雄击杀必给击杀者一份。",
+      "detail": "拆塔给全队不可靠金、最后一击者另有额外；兵线小兵赏金每 7 分 30 秒 +1（超级兵 +1.5）；堆野者获得清理者所得金币的 30%。所以辅助的收入结构与核心不同：被动金与助攻/目标金占比更高，「参团」本身就是辅助的主要收入。",
+      "key_implication": "辅助靠助攻与目标金钱吃饭，所以辅助参团不是「帮核心」，而是自己的主要收入来源。",
+      "values": {
+        "starting_gold": 600,
+        "passive_gpm": 90,
+        "passive_tick": "1 reliable gold per 0.67s",
+        "reliable": [
+          "passive gold",
+          "bounty rune"
+        ],
+        "unreliable": [
+          "hero kills",
+          "creep kills",
+          "buildings",
+          "Hand of Midas",
+          "Track"
+        ],
+        "death_loss": "unreliable only",
+        "buyback": "reliable first",
+        "creep_bounty_step": "+1 every 7:30 (super +1.5)",
+        "stack_share": "30% of farmer's gold",
+        "passive_gpm_points": {
+          "0:00": 90,
+          "12:00": 94.8,
+          "30:00": 99.8
+        },
+        "passive_growth_formula": "pending（只核到三个时间点，未写公式）"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Gold",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "fountain-safety",

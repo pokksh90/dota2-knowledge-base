@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 00:18",
+    "updated_at": "2026-11-27 01:00",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -408,13 +408,20 @@
     {
       "id": "rules-source-fill",
       "status": "in_progress",
-      "current": 13,
+      "current": 19,
       "target": 31,
-      "note": "为 rules 中无 source 的 31 条补可回溯来源并顺带核数值；已补 13 条：首轮 armor-formula/armor-reduction-stacking/magic-resistance/attack-speed/evasion-blind-stacking/dispel-tiers/effective-hp；本轮 damage-types/illusion-rules/death-rules/courier-system/fountain-safety/building-gating（含信使「每队一只」纠正）。余 18 条多为纯结构/概念条"
+      "note": "为 rules 中无 source 的 31 条补可回溯来源并顺带核数值；已补 19 条：首轮 7（护甲/魔抗/攻速/闪避/驱散/有效生命）、第二轮 6（伤害类型/幻象/死亡/信使/泉水/建筑门禁）、本轮 6（伤害链/格挡/小兵仇恨/金钱来源/烧蓝/经验）。余 12 条多为纯结构/概念条"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 01:00",
+      "task": "rules-source-fill 三续：补 6 条来源 + 修正伤害链顺序",
+      "added": "damage-pipeline（结算顺序改为 前置总格挡→物理/魔法固定格挡→百分比增减伤→护甲/魔抗→通用格挡；HP Removal 改为『仍按伤害类型减免』）、damage-block-per-instance（四类顺序/同类只取最高/概率 1-∏(1-q)/先锋盾 60%·50·25）、creep-aggro（500 半径攻击指令吸仇恨、3s 冷却、2.3s 追击、5:00 前免疫、手动法球不吸）、income-sources（起始 600、被动金 0:00 90/分钟→12:00 94.8→30:00 99.8、可靠/不可靠划分、堆野 30%）、mana-break-damage（烧蓝折物理、只吃固定减伤、不吃暴击分裂、加法叠加）、experience-level（1500 共享、30 级、1→2 240 / 29→30 8000、击杀公式、反补 50%、堆野 -15%）",
+      "result": "rules 61 条不变，带 source 43→49；每个文件 JSON 校验通过；audit 0 error / 0 warning",
+      "next": "余 12 条无 source（economy-sources/snowball-feedback/map-control/roshan-value/vision-information/first-move-value/positioning-economy/game-objective/map-structure/drafting-modes/match-phases/map-symmetry），下轮优先 roshan-value / map-control / vision-information / economy-sources 这类有 Roshan/Vision 页可查的"
+    },
     {
       "time": "2026-11-27 00:18",
       "task": "rules-source-fill 续轮：补 6 条来源 + 修正信使机制",
