@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 13:18",
+    "updated_at": "2026-11-26 14:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -327,10 +327,24 @@
       "current": 10,
       "target": 10,
       "note": "补强最短 10 条（21~24 字）：斧王/干扰者打米波、AA 打神谕与大树、马尔斯打卓尔、光法打幻刺、沉默打灰烬、祸乱打美杜莎、尸王打半人马、炼金打龙骑；<30 字 21→11，平均 67.7→71.4 字"
+    },
+    {
+      "id": "matchup-reason-quality-10",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "补强 25~29 字的 10 条，并修正 omni←AA「寒霜之足禁疗」的机制误写（禁疗为 Ice Blast、Cold Feet 为定身）；<30 字 11→1（仅剩 elder-titan→dragon-knight），平均 71.4→74.7 字"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 14:18",
+      "task": "克制 reason 补强第十批（10 条）+ 一处机制修正",
+      "added": "10 条扩写：Guardian Angel 物理免疫、Overgrowth 四禁、Spiked Carapace 每来源一次反弹+反晕、Supernova 分段血格 6 秒、Flak Cannon 全单位、Ice Blast 禁疗、Amplify Damage 真视、Midnight Pulse 按当前生命百分比",
+      "result": "248 条不变；<30 字仅剩 1 条；审查 0 error / 0 warning",
+      "next": "收最后 1 条（elder-titan→dragon-knight），随后转 7.42 技能/物品数值逐条核对"
+    },
     {
       "time": "2026-11-26 13:18",
       "task": "克制 reason 中长句补强（第九批 10 条）",
