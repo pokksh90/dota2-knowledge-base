@@ -51,7 +51,7 @@
         "note": "每条带 values 的规则均可回溯到上述页面之一；补丁更新后需重核"
       }
     ],
-    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。 续轮补 6 条来源（Damage/Damage Block/Damage Manipulation/Gold/Lane_Creeps/Mana/Mana Break/Experience），并修正伤害链顺序（固定格挡在百分比减免之前）与生命移除口径（仍按伤害类型减免）。 再补 6 条来源（Roshan/Vision/Map/Game Modes/Buildings），肉山条改写为 8–11 分钟重生窗、盾 5 分钟、按死亡次数掉落的具体口径。",
+    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。 续轮补 6 条来源（Damage/Damage Block/Damage Manipulation/Gold/Lane_Creeps/Mana/Mana Break/Experience），并修正伤害链顺序（固定格挡在百分比减免之前）与生命移除口径（仍按伤害类型减免）。 再补 6 条来源（Roshan/Vision/Map/Game Modes/Buildings），肉山条改写为 8–11 分钟重生窗、盾 5 分钟、按死亡次数掉落的具体口径。 末轮补最后 6 条来源（经济/滚雪球/先手/站位/阶段/地图），rules-source-fill 收口：61/61 带 source。",
     "last_updated": "2026-11-27 00:20"
   },
   "principles": [
@@ -158,7 +158,28 @@
       "title": "金钱来源",
       "statement": "金钱来自补刀、击杀、助攻、推塔、野区资源、神符等；其中补刀与野区是可稳定获取的「被动收入」，击杀是「风险收入」。",
       "certainty": "stable",
-      "key_implication": "稳定收入决定下限，风险收入决定上限，滚雪球靠把风险收入转化为稳定收入（推塔/控图）。"
+      "key_implication": "稳定收入决定下限，风险收入决定上限，滚雪球靠把风险收入转化为稳定收入（推塔/控图）。",
+      "detail": "公开 wiki 把金钱分成可靠金（被动 + 赏金符）与不可靠金（补刀、野怪、击杀、推塔、点金手等）：死亡只扣不可靠金（净值/40），买装先花不可靠金，买活先花可靠金。团队金主要来自推塔（T1 每人 90、补刀者再 +110–130，全队合计 560–580）、肉山（击杀者 200–290 + 全队 135）、赏金符（首对团队 40，后续每 240 秒一枚、每实例 +6 金 / 5 分钟）；个人稳定金来自兵线（每 7:30 +1，超级兵 +1.5）与野区（堆野者拿该野点 30%）。",
+      "values": {
+        "starting_gold": 600,
+        "passive_gold": "90/min at 0:00，随钟 +2/min（12:00 94.8、30:00 99.8、45:00 105.5）",
+        "reliable": "被动 + 赏金符",
+        "unreliable": "补刀/野怪/击杀/推塔/点金",
+        "lane_bounty_growth": "+1 每 7:30（超级兵 +1.5）",
+        "stack_share": "30%",
+        "tower_t1": {
+          "team_per_player": 90,
+          "last_hit_bonus": "110–130",
+          "team_total": "560–580",
+          "denied_team_total": 225
+        },
+        "hero_kill": "125 + 死者等级×8 + 连杀金 + 一血 135（不可靠金）",
+        "assist": "f = 15 + (50 + 死者净值×0.037)/n，再按两队净值比缩放（缩放方向 pending）",
+        "death_loss": "NetWorth/40（只扣不可靠金）",
+        "bounty_rune": "首对团队 40；之后每 240s，每实例 +6 金/5min"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Gold / Experience",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "snowball-feedback",
@@ -166,7 +187,20 @@
       "title": "滚雪球正反馈",
       "statement": "经济差 → 装备差 → 战力差 → 更易击杀/推塔 → 更大经济差，构成正反馈循环。",
       "certainty": "stable",
-      "key_implication": "优势方应主动扩大地图控制加速循环，劣势方必须打断循环（抓单/偷盾/守高翻盘）。"
+      "key_implication": "优势方应主动扩大地图控制加速循环，劣势方必须打断循环（抓单/偷盾/守高翻盘）。",
+      "detail": "正反馈的实体来源是团队金与地图资源：推掉 T1 全队每人 90（补刀者再 +110–130）、肉山全队 135、赏金符与堆野（30%）都会随控图扩大而线性增加。负反馈藏在击杀/助攻公式里：击杀金 =125 + 死者等级×8 + 连杀金 + 一血 135，被杀者等级越高给得越多；助攻金 f = 15 + (50 + 死者净值×0.037)/n 再按两队净值比缩放，落后方赢得团战回报更高；死亡另扣净值/40（只扣不可靠金），连续送人等于同时削弱自己、养肥对手。",
+      "values": {
+        "kill_base": 125,
+        "kill_level_bonus": 8,
+        "first_blood": 135,
+        "streak_formula": "5k² + 5x（k=连杀数，最多计 10）",
+        "assist_formula": "f = 15 + (50 + victimNetWorth*0.037)/n，再按两队净值比缩放（方向 pending）",
+        "death_loss": "NetWorth/40",
+        "tower_t1_team_per_player": 90,
+        "roshan_team": 135
+      },
+      "source": "Liquipedia Dota 2 Wiki: Gold / Roshan",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "experience-level",
@@ -302,7 +336,21 @@
       "title": "先手价值",
       "statement": "Dota2 是不完全信息下的实时博弈，先手控制能压缩对手「反应与决策时间」，使先手方先输出一轮。",
       "certainty": "stable",
-      "key_implication": "先手控制的价值 = 对手无法反应期间我方造成的伤害/击杀，故先手英雄价值极高。"
+      "key_implication": "先手控制的价值 = 对手无法反应期间我方造成的伤害/击杀，故先手英雄价值极高。",
+      "detail": "信息差有实体边界：英雄白天视野 1800、夜间 800；指向技能或攻击会在 1800 范围内暴露 150 半径、持续 2 秒；雾内单位不可被指定，但仍会吃非指向技能。所以先手方通常从对手视野外发起，把「发现→反应」的窗口压到接近 0，先手价值 ≈ 控制/减速时长 × 我方每秒有效输出 − 对手在反应窗口内可规避的伤害。",
+      "values": {
+        "hero_vision": {
+          "day": 1800,
+          "night": 800
+        },
+        "cast_reveal": {
+          "radius": 150,
+          "duration_s": 2
+        },
+        "model": "控制时长 × 我方每秒输出 − 反应窗口内可规避伤害"
+      },
+      "source": "本库推理（无单一 wiki 页；信息差锚点见 Liquipedia Dota 2 Wiki: Vision）",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "positioning-economy",
@@ -310,7 +358,15 @@
       "title": "站位与容错",
       "statement": "站位决定被先手/被集火的风险，容错（复活/薄葬/BKB/位移）决定失误成本。",
       "certainty": "stable",
-      "key_implication": "核心的「输出环境」与「容错装」的投入，本质是买「失误不致命」的保险。"
+      "key_implication": "核心的「输出环境」与「容错装」的投入，本质是买「失误不致命」的保险。",
+      "detail": "站位风险 ≈ 被先手概率 × 被集火期间每秒伤害 × 队友可救援时间；容错装（BKB、薄葬、复活、位移）本质是用固定金币买断这笔期望损失。地形直接改这个概率：高地、树木与坑口遮挡物挡地面视野；上坡攻击按落点判定 miss；河道被高地夹住。因此「站哪里」和「买什么」是同一笔风险预算的两个账户。",
+      "values": {
+        "risk_model": "被先手概率 × 集火DPS × 救援时间",
+        "mitigation": "固定金币买断期望损失",
+        "terrain_anchors": "地面视野被高地/树木/遮挡物阻；上坡 miss；河道被高地夹住"
+      },
+      "source": "本库推理（无单一 wiki 页；地形与视野锚点见 Liquipedia Dota 2 Wiki: Vision / Map）",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "damage-pipeline",
@@ -1086,7 +1142,22 @@
       "title": "对局阶段划分",
       "certainty": "reasoned",
       "statement": "一局通常分对线期、中期（小规模团与目标争夺）、后期（高地与遗迹攻防）；阶段切换由「塔、肉山、神符、关键装备」这些节点驱动。",
-      "key_implication": "每个阶段有不同的最优动作：对线期抢等级与补刀，中期待目标与买活，后期一次团灭就决定胜负。"
+      "key_implication": "每个阶段有不同的最优动作：对线期抢等级与补刀，中期待目标与买活，后期一次团灭就决定胜负。",
+      "detail": "阶段切换有可观测节点：0:00 起始 600 金；7:30 兵线赏金开始每档 +1；8–11 分钟是肉山重生窗（首盾 5 分钟过期）；15:00/30:00/50:00 中立装备二/三/四级解锁；买活 200 + 净值/13 且下次复活 +25 秒。塔的存续决定安全线与野区归属（T1 每人 90 + 补刀者 110–130），所以「塔—肉山—中立档位」是阶段时钟的三根指针。",
+      "values": {
+        "anchors": {
+          "start_gold": 600,
+          "lane_bounty_step": "7:30",
+          "roshan_respawn": "8–11 min",
+          "neutral_t2": "15:00",
+          "neutral_t3": "30:00",
+          "neutral_t4": "50:00",
+          "aegis_expire_s": 300,
+          "buyback": "200 + NetWorth/13（下次复活 +25s）"
+        }
+      },
+      "source": "Liquipedia Dota 2 Wiki: Gold / Roshan / Neutral_Items / Death",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "map-symmetry",
@@ -1094,7 +1165,23 @@
       "title": "双方非对称性",
       "certainty": "reasoned",
       "statement": "天辉与夜魇地图结构近似镜像，但野区入口、肉山坑位置、河道方向导致双方优势路/劣势路的资源与安全性并不完全对等。",
-      "key_implication": "同一套阵容在两边打出的节奏不同；分路与打野路线要按实际阵营与地形来定，而不是照抄攻略。"
+      "key_implication": "同一套阵容在两边打出的节奏不同；分路与打野路线要按实际阵营与地形来定，而不是照抄攻略。",
+      "detail": "天辉基地在左下、夜魇在右上，双方各占被河道分开的对角半区；天辉安全线是下路、夜魇是上路（小兵在己方塔前交汇）。肉山在河道西端，两个坑：上坑更靠夜魇野区入口、下坑更靠天辉出生点；15:00 前不换坑，之后白天在夜魇坑、夜晚在天辉坑。双生门在地图西北与东南角、紧邻两个肉山坑，共 2 座且不归属任何阵营；莲花池上下路各一。悬崖只能靠飞行或无视地形移动跨越，树木决定线的轮廓与 juke 路径。",
+      "values": {
+        "radiant_base": "lower-left",
+        "dire_base": "upper-right",
+        "safe_lane": {
+          "radiant": "bottom",
+          "dire": "top"
+        },
+        "roshan_pits": 2,
+        "roshan_pit_note": "上坑靠夜魇野区入口，下坑靠天辉出生点；15:00 后白天夜魇/夜晚天辉",
+        "twin_gates": 2,
+        "lotus_pools": 2,
+        "cliffs": "仅飞行或无阻移动可越"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Map / Roshan",
+      "verified_at": "2026-11-27"
     },
     {
       "id": "building-permanence",

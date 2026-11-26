@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 01:20",
+    "updated_at": "2026-11-27 02:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -407,14 +407,21 @@
     },
     {
       "id": "rules-source-fill",
-      "status": "in_progress",
-      "current": 25,
+      "status": "done",
+      "current": 31,
       "target": 31,
-      "note": "为 rules 中无 source 的 31 条补可回溯来源并顺带核数值；已补 25 条，余 6 条为纯推导/结构概念（economy-sources/snowball-feedback/first-move-value/positioning-economy/match-phases/map-symmetry）"
+      "note": "61/61 条 rules 均带可回溯 source（最后 6 条为经济/滚雪球/先手/站位/阶段/地图，纯推导条以「本库推理 + 锚点页」标注）"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 02:19",
+      "task": "rules-source-fill 收口：补最后 6 条来源（经济/滚雪球/先手/站位/阶段/地图）",
+      "added": "economy-sources（可靠/不可靠金、塔金 T1 90+110~130、击杀 125+等级×8+一血 135、助攻公式、死亡扣净值/40）、snowball-feedback（正反馈来自塔/肉山/赏金，负反馈来自击杀与助攻公式）、first-move-value（视野 1800/800 + 施法反视野 150/2s 作信息差锚点）、positioning-economy（站位风险模型与容错装预算）、match-phases（0:00/7:30/8–11/15:00/30:00/50:00 锚点）、map-symmetry（天辉左下/夜魇右上、上坑靠夜魇、双生门 2、莲花池 2）",
+      "result": "rules 61 条不变，带 source 55→61（61/61）；JSON 通过；audit 0 error / 0 warning / 1 info",
+      "next": "queue 全部 done，下轮转 quality-audit：优先复核 tactics.decisions 14 分支与 items 中 pending 项（统御头盔野怪表/幽魂叠加/面纱相加口径）"
+    },
     {
       "time": "2026-11-27 01:20",
       "task": "rules-source-fill 四续：补 6 条来源（肉山/视野/控图/地图/目标/选人）",
