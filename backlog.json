@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 06:20",
+    "updated_at": "2026-11-27 07:50",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -415,6 +415,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 07:50",
+      "task": "quality-audit 第五轮：按官方 7.42 校准经济/属性公式 + 补 innate 规则 + physical 命名修正",
+      "added": "① 官方 7.42 更新日志核实并修正 10 条 rules 的过期数值：被动金固定 90/min（原「+2/min 上浮」）、击杀金 100+10×等级（原 125+8×）、T1 塔每人 75/补刀 100/全队 475、肉山团队 125、总经验 64400→66600（补全 29 级逐级表，合计校验=66600）且开场后全员 +50 XP/min（阵亡也拿）、每点智力魔抗 0.1%→0.125%、基础生命 120→200/每点力量 22→20；同步改 economy-sources / snowball-feedback / income-sources / gold-reliable / experience-level / deny-rules / match-phases / roshan-value / magic-resistance / effective-hp；② 新增 rules.innate-abilities（7.36 引入、7.41 不再随技能等级、部分可 Break；注明 dotaconstants is_innate=191 不是英雄数）；③ 新增 3 条推理：flat-gold-makes-map-income-king、kill-gold-crossover-level-13（12.5 级分界，逐级验算）、passive-xp-floor-limits-level-snowball；④ physical 批审修 8 处：超强力量(Overpower)、怒意狂击、陵卫斗篷、嗜血术、衰退光环×2 的旧译名/错名，及 sven←PA、troll←PA 两条短 reason 扩写",
+      "result": "rules 61→62；inference 74→77（verified 23 / reasoned 54）；matchups 270（8 处修正）；heroes/items 未动；JSON 全部通过；旧值 64400/125+8×/94.8/110–130/每人90 已清零（仅 experience-level 保留「64400→66600」历史注）",
+      "next": "继续 quality-audit：复核 basis=mobility 剩余 42 条；用 schinese datafeed 批量核对技能/装备中文名（本轮已发现 4 处旧译名）；补齐 7.42 建筑赏金 T2/T3/T4 与兵营的完整表"
+    },
     {
       "time": "2026-11-27 06:20",
       "task": "quality-audit 第四轮：BKB 语义核实 + 幻影刺客闪避归属修正 + decisions 复核",

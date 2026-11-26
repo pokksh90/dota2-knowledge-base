@@ -737,7 +737,7 @@
       "hero_id": "sven",
       "relation": "countered_by",
       "target_id": "phantom-assassin",
-      "reason": "斯温的输出高度依赖普攻，幻影刺客的飘忽不定（满级 50% 闪避）吃掉了其大部分有效伤害，且PA爆发窗口快于其成型",
+      "reason": "斯温的输出几乎全在普攻：风暴之锤与巨力挥舞都是为贴身普攻服务，而幻影刺客的飘忽不定（满级 50% 闪避）按比例吃掉每一击的有效伤害；魅影无形（Blur）让她在距敌英雄/塔 600 外保持隐身，斯温必须先手到人才能开打，一旦被她用幻影突袭拉开，输出窗口就断了。她的爆发是短窗口高倍率，斯温没有稳定命中手段，换血期望被闪避直接削半。",
       "basis": "physical"
     },
     {
@@ -807,7 +807,7 @@
       "hero_id": "troll-warlord",
       "relation": "countered_by",
       "target_id": "phantom-assassin",
-      "reason": "巨魔战将的输出来自持续普攻，幻影刺客的飘忽不定（满级 50% 闪避）按比例吃掉其有效伤害",
+      "reason": "巨魔战将的伤害建立在持续普攻上：狂战士之怒切近战后的高攻速需要每一次命中来维持压制，而幻影刺客的飘忽不定（满级 50% 闪避）直接按比例砍掉有效命中，未命中的攻击既不掉血也不帮他结束战斗。PA 还能用幻影突袭贴脸或拉开，巨魔没有可靠的必中手段，只能被拖进她选择的节奏。",
       "basis": "physical"
     },
     {
@@ -1122,7 +1122,7 @@
       "hero_id": "phoenix",
       "relation": "countered_by",
       "target_id": "ursa",
-      "reason": "凤凰的超新星需要打掉蛋的层数才能阻止重生，熊战士靠怒意狂击(Overpower)提供的高攻速能在极短时间内打爆蛋",
+      "reason": "凤凰的超新星需要打掉蛋的层数才能阻止重生，熊战士靠超强力量(Overpower)提供的高攻速能在极短时间内打爆蛋",
       "basis": "physical"
     },
     {
@@ -1325,7 +1325,7 @@
       "hero_id": "ogre-magi",
       "relation": "synergy",
       "target_id": "troll-warlord",
-      "reason": "食人魔的血之狂暴(Bloodlust)给友军加移速与攻速、还能施放在建筑上，巨魔战将本身就是高攻速物理核心，吃到这份加成收益最大",
+      "reason": "食人魔的嗜血术(Bloodlust)给友军加移速与攻速、还能施放在建筑上，巨魔战将本身就是高攻速物理核心，吃到这份加成收益最大",
       "basis": "physical"
     },
     {
@@ -1514,7 +1514,7 @@
       "hero_id": "visage",
       "relation": "countered_by",
       "target_id": "troll-warlord",
-      "reason": "守墓者斗篷按「受到伤害的次数」掉层，高频普攻能在数秒内撕光护盾",
+      "reason": "陵卫斗篷按「受到伤害的次数」掉层，高频普攻能在数秒内撕光护盾",
       "basis": "physical"
     },
     {
@@ -1528,7 +1528,7 @@
       "hero_id": "ogre-magi",
       "relation": "synergy",
       "target_id": "juggernaut",
-      "reason": "嗜血给友军同时加移速与攻速，低 BAT 物理核的直接输出提升最大",
+      "reason": "嗜血术给友军同时加移速与攻速，低 BAT 物理核的直接输出提升最大",
       "basis": "physical"
     },
     {
@@ -1542,7 +1542,7 @@
       "hero_id": "chaos-knight",
       "relation": "countered_by",
       "target_id": "underlord",
-      "reason": "萎缩光环按比例削掉附近敌方的基础攻击力，靠分身（60% 伤害、350% 受伤）输出的混沌骑士被打回原形",
+      "reason": "衰退光环按比例削掉附近敌方的基础攻击力，靠分身（60% 伤害、350% 受伤）输出的混沌骑士被打回原形",
       "basis": "physical"
     },
     {
@@ -1591,7 +1591,7 @@
       "hero_id": "underlord",
       "relation": "countered_by",
       "target_id": "ursa",
-      "reason": "萎缩光环只削基础攻击力，怒火狂击的叠加伤害是附加值、不归零，硬拼时反而越打越痛",
+      "reason": "衰退光环只削基础攻击力，怒意狂击的叠加伤害是附加值、不归零，硬拼时反而越打越痛",
       "basis": "physical"
     },
     {

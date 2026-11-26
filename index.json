@@ -1,10 +1,10 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.30",
+    "version": "0.6.31",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
-    "last_updated": "2026-11-26",
+    "last_updated": "2026-11-27",
     "schema": "schema/knowledge-schema.json",
     "architecture": {
       "layer1": "rules.json —— 底层规则/公理：伤害公式、护甲魔抗、攻速、经济、经验、地图资源、先手博弈",
@@ -18,16 +18,16 @@
     {
       "file": "data/rules.json",
       "title": "底层规则(公理层)",
-      "count": 61,
+      "count": 62,
       "status": "verified-partial",
-      "note": "61 条；damage-types 补「BKB 纯粹伤害免疫」例外说明，避免与纯伤默认规则冲突"
+      "note": "62 条；新增 innate-abilities（先天技能：7.36 引入、7.41 重做、部分可 Break，191 条 is_innate 不等于英雄数）；按官方 7.42 更新日志校准：被动金固定 90/min、击杀金 100+10×等级、T1 塔 75/100（全队 475）、肉山团队 125、总经验 66600、每智力 0.125% 魔抗、基础生命 200/每力量 20"
     },
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 74,
+      "count": 77,
       "status": "stable",
-      "note": "74 条（verified 23 / reasoned 51）；新增 bkb-buys-tempo-not-immunity（BKB=减益免疫+魔法伤害×0.3+纯伤免疫，非法术免疫）"
+      "note": "77 条（verified 23 / reasoned 54）；新增 flat-gold-makes-map-income-king、kill-gold-crossover-level-13、passive-xp-floor-limits-level-snowball"
     },
     {
       "file": "data/heroes.json",
@@ -48,7 +48,7 @@
       "title": "克制与搭配",
       "count": 270,
       "status": "stable",
-      "note": "270 条；PA 闪避归属修正 7 处：闪避由「飘忽不定 Immaterial（20/30/40/50%）」提供，魅影无形（Blur）是 innate 隐身/移速/规避弹道"
+      "note": "270 条；physical 批审修 8 处：超强力量/怒意狂击/陵卫斗篷/嗜血术/衰退光环等中文名与 2 条 PA 短 reason 扩写"
     },
     {
       "file": "scripts/fetch_data.py",
