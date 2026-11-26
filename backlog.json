@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 19:21",
+    "updated_at": "2026-11-26 20:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -401,13 +401,20 @@
     {
       "id": "matchup-orphan-heroes",
       "status": "open",
-      "current": 114,
+      "current": 123,
       "target": 127,
-      "note": "把「只作为被克制方出现、自己从未当过主语」的英雄补上自身视角的记录；本轮补 9 个（bloodseeker/meepo/puck/drow-ranger/dragon-knight/skywrath-mage/lich/ember-spirit/shadow-fiend），只剩 13 个：chen, clinkz, dark-seer, invoker, io, luna, naga-siren, natures-prophet, necrophos, shadow-shaman, spectre, viper, wraith-king"
+      "note": "把「只作为被克制方出现、自己从未当过主语」的英雄补上自身视角记录；已补 18 个（上轮 9 + 本轮 9：naga-siren/viper/luna/natures-prophet/wraith-king/spectre/invoker/chen/io），剩余 4 个：clinkz, dark-seer, necrophos, shadow-shaman"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 20:20",
+      "task": "克制层第二轮：再补 9 条缺席英雄自身视角记录",
+      "added": "matchups 257→266：naga-siren→anti-mage、viper←spectre、luna←nyx-assassin、natures-prophet←broodmother、wraith-king←ancient-apparition、spectre→sniper、invoker→ursa、chen←axe、io←ancient-apparition；reason 全部 ≥30 字并逐条对 abilities.json 原文（缠绕『preventing movement or blinking』、冰晶爆轰『prevented from regenerating or healing』、狂暴之吼『forcing them to attack him』等）",
+      "result": "0 error / 0 warning；matchups 266（counter 142/countered_by 88/synergy 36），英雄侧主语覆盖 123/127",
+      "next": "剩 4 个（clinkz, dark-seer, necrophos, shadow-shaman）；之后回推理层补「出装换格顺序」与「辅助视野预算」"
+    },
     {
       "time": "2026-11-26 19:21",
       "task": "克制层补 9 条「缺席英雄」自身视角记录",
