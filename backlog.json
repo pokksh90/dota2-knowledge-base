@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 16:20",
+    "updated_at": "2026-11-26 17:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -369,10 +369,31 @@
       "current": 1,
       "target": 1,
       "note": "builds[中单] 的 \"bottle→(回蓝)\" 不是合法 item id，已补魔瓶条目并改为 bottle；全库 builds 引用 0 悬空"
+    },
+    {
+      "id": "items-full-price-audit",
+      "status": "done",
+      "current": 68,
+      "target": 68,
+      "note": "69 条逐件核价：68 条在售条目 items.txt 与 dotaconstants 两源一致；eternal-shroud 为历史价并已标 removed。无任何条目被误标 obsolete"
+    },
+    {
+      "id": "items-old-numeric-verify",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "BKB/烟斗/跳刀/紫怨/斯嘉蒂/刷新/羊刀/幻影斧/幽魂/远行鞋 十件换为 attrib 实值；幽魂权杖原来的「免疫物理」降级为 pending"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 17:19",
+      "task": "质量审查轮：全表装备价格复核 + 10 件老装数值口径",
+      "added": "69 条逐件核价（items.txt 块解析 + dotaconstants），68 条在售两源一致，0 条误标 obsolete；10 件高频装写成可执行数值（BKB 9/8/7 秒递减且重买不重置、烟斗 425 屏障、跳刀受伤后 960、紫怨 5 秒沉默+30%、斯嘉蒂治疗削减 50%、刷新 180 秒、羊刀 2.8 秒、幻影斧 33%/200%、远行鞋 40 秒 TP）；幽魂权杖改 pending",
+      "result": "0 error / 0 warning；items 69 不变，仅口径升级",
+      "next": "继续按同一口径复核英雄侧基础数据（hero_base 的属性/成长与 7.42 改动）"
+    },
     {
       "time": "2026-11-26 16:20",
       "task": "质量审查轮：装备数值口径复核 + 出装引用完整性",

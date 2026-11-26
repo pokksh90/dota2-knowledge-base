@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.15",
+    "version": "0.6.16",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-26",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
-    "updated_at": "2026-11-26 16:20"
+    "updated_at": "2026-11-26 17:19"
   },
   "modules": [
     {
@@ -41,7 +41,7 @@
       "title": "装备与出装",
       "count": 69,
       "status": "stable",
-      "note": "69 条中 1 条(永世之蔽)标 status=removed，可推荐 68；本轮补魔瓶 675，并把 8 件新装的 purpose/coach_note 升级为带官方 attrib 数值的口径（秘法鞋回蓝光环、静谧之靴受击破损、疯狂面具 -7 护甲、陨星锤 400 半径/0.75 秒晕、血精石 20%→70% 法术吸血与 8% 易伤光环不叠纷争、统御单位下限 1000 血、圣剑 350 攻击+25% 法伤）"
+      "note": "69 条（1 条 eternal-shroud 已移除，可推荐 68）；本轮全表逐件核价：68 条在售条目 items.txt 与 dotaconstants 两源价格全部一致；10 条高频装(BKB/烟斗/跳刀/紫怨/斯嘉蒂/刷新/羊刀/幻影斧/幽魂/远行鞋)已换为官方 attrib 数值口径，幽魂权杖的「免疫物理」与 -30 系数语义标 pending"
     },
     {
       "file": "data/matchups.json",
