@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 09:17",
+    "updated_at": "2026-11-26 10:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -306,10 +306,24 @@
       "current": 10,
       "target": 10,
       "note": "第六批 10 条 11~12 字短 reason（虚空打修补匠/配巫妖、军团配天怒、莉娜被幽鬼、神谕反决斗、剃刀打斯文、圣堂被宙斯、敌法打风暴、干扰者打风暴、熊战士被毒龙）；短 reason 30→20 条，平均 53.3→56.9 字"
+    },
+    {
+      "id": "matchup-reason-quality-7",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "第七批 10 条 12~14 字短 reason（虚空被干扰者、剃刀被莉娜、圣堂配暗影恶魔、敌法被斧王、剃刀打熊战士、潮汐打露娜、敌法打美杜莎、兽王打蜘蛛、莱恩打修补匠、圣堂打卡尔）；短 reason 20→10 条，平均 56.9→60.3 字"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 10:18",
+      "task": "克制短 reason 续写（第七批 10 条）",
+      "added": "10 条 reason 重写（Mana Break 按最大蓝量百分比烧蓝、Kraken Shell 阈值清负面、Refraction shield_per_instance 等原文核对）",
+      "result": "240 条不变；审查 0 error / 0 warning",
+      "next": "仅剩 10 条短 reason，下轮收口"
+    },
     {
       "time": "2026-11-26 09:17",
       "task": "克制短 reason 续写（第六批 10 条）",
