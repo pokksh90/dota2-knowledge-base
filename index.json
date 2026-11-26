@@ -27,7 +27,7 @@
       "title": "逻辑推理(定理层)",
       "count": 71,
       "status": "stable",
-      "note": "71 条（verified 23 / reasoned 48）；backdoor-math-no-creeps 按 50% 减伤重算（净进度需原始输出 >360/s）"
+      "note": "71 条（verified 22 / reasoned 49）；backdoor-math-no-creeps 按 50% 减伤重算（净进度需原始输出 >360/s）"
     },
     {
       "file": "data/heroes.json",
