@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 11:19",
+    "updated_at": "2026-11-26 12:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -313,10 +313,24 @@
       "current": 10,
       "target": 10,
       "note": "第七批 10 条 12~14 字短 reason（虚空被干扰者、剃刀被莉娜、圣堂配暗影恶魔、敌法被斧王、剃刀打熊战士、潮汐打露娜、敌法打美杜莎、兽王打蜘蛛、莱恩打修补匠、圣堂打卡尔）；短 reason 20→10 条，平均 56.9→60.3 字"
+    },
+    {
+      "id": "matchup-reason-quality-8",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "收口最后 10 条 15~19 字短 reason（艾欧配敌法、大牛配斯温/幻刺、斧王打幻刺、熊战士打美杜莎、末日打哈斯卡、帕格纳打天怒、沉默打蝙蝠、潮汐/寒冬飞龙打米波）；<20 字条目清零，平均 63.0→67.7 字"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 12:20",
+      "task": "克制短 reason 收口（第八批 10 条）+ 质量审查",
+      "added": "10 条 reason 重写（Tether 分摊恢复、Empower bon use+cleave 与暴击乘算、Counter Helix 纯伤按次数、Mana Shield 98% 折蓝、Doom 禁疗且穿透减益免疫、Nether Ward 按耗蓝反伤、Global Silence 全图、Winter's Curse 内耗等原文核对）",
+      "result": "248 条不变；<20 字清零，<30 字剩 21 条；审查 0 error / 0 warning",
+      "next": "下一轮针对 <30 字的 21 条做第二批中长句补强"
+    },
     {
       "time": "2026-11-26 11:19",
       "task": "克制第四遍收口（240→248）",
