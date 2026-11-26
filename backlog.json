@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 10:18",
+    "updated_at": "2026-11-26 11:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -211,11 +211,11 @@
       "id": "matchups-fourth-pass",
       "title": "克制层第四轮：剩余低覆盖英雄",
       "file": "data/matchups.json",
-      "current": 240,
+      "current": 248,
       "target": 248,
       "status": "done",
       "desc": "给仍只有 1 条记录的英雄继续补，优先机制能从 rules/inference 回溯的。",
-      "note": "第四轮收口 240→248（+8）：大树→巨魔、冰女→熊战士、滚滚→莱恩/双头龙、夜魔→帕克、土猫→拉比克、小狗→龙骑、大雪球→寒冬飞龙；机制原文逐条核对且 delta 同向"
+      "note": "248/248 达成；第八批新增 8 对（冰霜护盾口径改写前先剔除已存在的 lich↔ursa、weaver↔shadow-demon 重复对，改补 sniper←warlock、weaver←tiny）"
     },
     {
       "id": "matchup-stats-layer",
@@ -317,6 +317,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 11:19",
+      "task": "克制第四遍收口（240→248）",
+      "added": "8 条新增：lich→ursa(已存在，改写时剔除)→sniper←warlock、sniper→ursa、bristleback→razor、beastmaster←batrider、dawnbreaker←faceless-void、marci←phoenix、weaver←shadow-demon(已存在→weaver←tiny)、lifestealer←slardar、phoenix→razor",
+      "result": "248 条、247 唯一 pair（disruptor↔void 有意双向）；短 reason 仍 10 条；平均 63.0 字",
+      "next": "收口最后 10 条短 reason，然后 7.42 技能数值逐条核对"
+    },
     {
       "time": "2026-11-26 10:18",
       "task": "克制短 reason 续写（第七批 10 条）",
