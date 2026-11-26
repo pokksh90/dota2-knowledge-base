@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 07:18",
+    "updated_at": "2026-11-26 08:18",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -292,10 +292,24 @@
       "current": 10,
       "target": 10,
       "note": "第四批 10 条 ≤10 字短 reason（屠夫/沉默配虚空、发条打狙击、干扰者被裂魂人、末日打熊战士、撼地打米波/蜘蛛、军团打修补匠、美杜莎配冰女、斯莱克被宙斯）；短 reason 50→40 条，平均 46.2→49.6 字"
+    },
+    {
+      "id": "matchup-reason-quality-5",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "第五批 10 条 ≤11 字短 reason（末日配屠夫、幻刺打卓尔、斯莱克/风暴配艾欧、风暴打狙击、修补匠打冰女、熊战士被卓尔、斧王配莉娜、末日打卡尔、撼地打幻影长矛手）；短 reason 40→30 条，平均 49.6→53.3 字"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 08:18",
+      "task": "克制短 reason 续写（第五批 10 条）",
+      "added": "10 条 reason 重写，逐条引 abilities.json 原文",
+      "result": "240 条不变；审查 0 error / 0 warning",
+      "next": "剩余 30 条短 reason 继续收口"
+    },
     {
       "time": "2026-11-26 07:18",
       "task": "克制短 reason 续写（第四批 10 条）",
