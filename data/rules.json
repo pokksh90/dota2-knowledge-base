@@ -51,7 +51,7 @@
         "note": "每条带 values 的规则均可回溯到上述页面之一；补丁更新后需重核"
       }
     ],
-    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。 续轮补 6 条来源（Damage/Damage Block/Damage Manipulation/Gold/Lane_Creeps/Mana/Mana Break/Experience），并修正伤害链顺序（固定格挡在百分比减免之前）与生命移除口径（仍按伤害类型减免）。 再补 6 条来源（Roshan/Vision/Map/Game Modes/Buildings），肉山条改写为 8–11 分钟重生窗、盾 5 分钟、按死亡次数掉落的具体口径。 末轮补最后 6 条来源（经济/滚雪球/先手/站位/阶段/地图），rules-source-fill 收口：61/61 带 source。",
+    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。 续轮补 6 条来源（Damage/Illusions/Death/Courier/Fountain/Buildings），并修正信使条「每队一只」为「每人一只」；幻象条补对建筑 40% 与 bonus 护甲/魔抗归零。 续轮补 6 条来源（Damage/Damage Block/Damage Manipulation/Gold/Lane_Creeps/Mana/Mana Break/Experience），并修正伤害链顺序（固定格挡在百分比减免之前）与生命移除口径（仍按伤害类型减免）。 再补 6 条来源（Roshan/Vision/Map/Game Modes/Buildings），肉山条改写为 8–11 分钟重生窗、盾 5 分钟、按死亡次数掉落的具体口径。 末轮补最后 6 条来源（经济/滚雪球/先手/站位/阶段/地图），rules-source-fill 收口：61/61 带 source。 质量审查轮修正背门保护：减伤由 75% 更正为 50%（自愈 180/s 不变），补判定半径 4000/900 与幻象 10%/召唤 2.5% 倍率。",
     "last_updated": "2026-11-27 00:20"
   },
   "principles": [
@@ -885,7 +885,7 @@
       "title": "建筑拆除顺序限制",
       "certainty": "verified",
       "statement": "塔按层级按序解锁：同一路上 T1 未拆则 T2 无敌、T2 未拆则 T3 无敌；兵营只有在其对应 T3 被拆后才可攻击；T4（遗迹双塔）在 T3 全拆后即可打，不需要先破兵营。",
-      "detail": "受保护建筑带「背门保护」（Backdoor Protection）：无敌方小兵在探测半径内时，受伤减免 50% 且每秒自愈 180（被敌方线上小兵靠近即解除，解除后 15.5s 才重新生效），幻象在受保护状态下只造成 25% 伤害。T4 塔每座尚存兵营 +4 护甲（6 座全在时 +24）。",
+      "detail": "受保护建筑带「背门保护」（Backdoor Protection）：无敌方线上小兵在探测半径内时，受伤减免 50% 且每秒自愈 180（被敌方线上小兵靠近即解除，解除后 15.5s 才重新生效）；幻象在受保护状态下攻击只造成 10%、幻象技能伤害 25%，召唤物与被支配单位攻击仅 2.5%。判定分区：基地建筑由遗迹统一控制（半径 4000，同生同灭），每座 T2 独立判定（半径 900），T1 永久无保护。T4 塔每座尚存兵营 +4 护甲（6 座全在时 +24）。",
       "key_implication": "推进只能按「T1→T2→T3→兵营/T4」顺序走，绕后偷内塔不成立；分推的价值在于同时威胁两条线，逼对方在「守塔」与「守兵营」之间分兵。",
       "values": {
         "tiers": 4,
@@ -894,7 +894,13 @@
         "backdoor_damage_reduction": 0.5,
         "backdoor_heal_per_s": 180,
         "backdoor_reactivate_s": 15.5,
-        "illusion_mult_vs_protected": 0.25
+        "illusion_attack_mult": 0.1,
+        "illusion_spell_mult": 0.25,
+        "summon_attack_mult": 0.025,
+        "backdoor_detection": {
+          "base": 4000,
+          "t2_each": 900
+        }
       },
       "source": "Liquipedia Dota 2 Wiki: Buildings",
       "patch": "7.42",
@@ -1221,16 +1227,27 @@
       "category": "对局结构",
       "title": "背门保护",
       "certainty": "verified",
-      "statement": "当建筑附近没有敌方小兵时，该建筑获得 75% 通用减伤，并每 0.1 秒自愈 18 点生命；敌方小兵进入判定范围后保护关闭，重新激活的延迟约 15.5 秒。",
+      "statement": "当建筑附近没有敌方小兵时，该建筑获得 50% 通用减伤，并每 0.1 秒自愈 18 点生命（折算 180/秒）；敌方线上小兵进入判定范围后保护关闭，重新激活延迟约 15.5 秒（15 秒 + 0.5 秒光环残留）。",
       "values": {
-        "damage_reduction": 0.75,
+        "damage_reduction": 0.5,
         "self_heal_per_0.1s": 18,
-        "reactivation_s": 15.5
+        "heal_per_s": 180,
+        "reactivation_s": 15.5,
+        "aura_linger_s": 0.5,
+        "detection": {
+          "base": 4000,
+          "t2_each": 900,
+          "t1": "unprotected"
+        },
+        "illusion_attack_mult": 0.1,
+        "illusion_spell_mult": 0.25,
+        "summon_attack_mult": 0.025
       },
       "key_implication": "「偷塔」在无兵线时几乎无效：想拆建筑必须先把兵线带进去，这也是分推必须先推线的根本原因。",
-      "source": "Liquipedia Dota 2 Wiki",
+      "source": "Liquipedia Dota 2 Wiki: Buildings (Backdoor Protection)",
       "patch": "7.42",
-      "verified_at": "2026-11-24"
+      "verified_at": "2026-11-27",
+      "detail": "判定分区：基地内所有建筑由遗迹统一控制，探测半径 4000、同生同灭；每座 T2 塔各有独立判定、半径 900；T1 塔永久无保护。幻象与召唤物受额外压制：幻象攻击只造成 10%、幻象技能伤害 25%，召唤物与被支配单位攻击 2.5%。该减伤是通用受伤减免（对所有非 HP Removal 伤害生效），与其它通用增减伤加算、与建筑「Reinforced」减伤乘算。"
     },
     {
       "id": "day-night-cycle",

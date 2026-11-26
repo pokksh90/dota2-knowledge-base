@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 02:19",
+    "updated_at": "2026-11-27 03:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -415,6 +415,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 03:19",
+      "task": "quality-audit 第一轮：背门数值修正 + 战术旧机制清理",
+      "added": "① rules.backdoor-protection 从 75% 改 50%（自愈 180/s 不变），补判定半径 4000/900、T1 无保护、幻象攻击 10%/幻象技能 25%/召唤 2.5%；② building-gating 的幻象 25% 口径同步拆清；③ inference.backdoor-math-no-creeps 按 50% 重算（净进度需原始输出 >360/s）；④ tactics.late 删除「肉山每次死亡 -1 分钟、下限 5 分钟」旧机制，改为 8–11 分钟随机 + HUD 480/180；⑤ tactics 目标条 75%→50%；⑥ 新增决策分支「无兵线想拆塔」「对方交塔防」→ 16 分支",
+      "result": "rules 61 条（数值修正 1 条 + 1 条同步）；inference 71 条（1 条重写）；tactics 分支 14→16；JSON 全部通过；audit 0 error / 0 warning / 1 info",
+      "next": "继续 quality-audit：核对 tactics.draft 与 laning 板块的 7.42 口径，并抽查 matchups 中 basis=vision 的 19 条是否机制可回溯"
+    },
     {
       "time": "2026-11-27 02:19",
       "task": "rules-source-fill 收口：补最后 6 条来源（经济/滚雪球/先手/站位/阶段/地图）",
