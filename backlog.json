@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 22:20",
+    "updated_at": "2026-11-26 23:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -404,10 +404,24 @@
       "current": 127,
       "target": 127,
       "note": "全部 127 个英雄均已作为 hero_id 主语出现过；末轮补齐 clinkz→skywrath-mage、dark-seer→phantom-lancer、necrophos→axe、shadow-shaman→natures-prophet"
+    },
+    {
+      "id": "rules-source-fill",
+      "status": "in_progress",
+      "current": 7,
+      "target": 31,
+      "note": "为 rules 中无 source 的 31 条补可回溯来源并顺带核数值；本轮已完成 7 条（armor-formula/armor-reduction-stacking/magic-resistance/attack-speed/evasion-blind-stacking/dispel-tiers/effective-hp），并修正两处公式错误"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 23:19",
+      "task": "质量审查轮：rules 层补 source + 修正两处公式",
+      "added": "7 条补 source 并核对数值（armor-formula、armor-reduction-stacking、magic-resistance、attack-speed、evasion-blind-stacking、dispel-tiers、effective-hp）；其中 3 处实质修正：①负护甲增伤由「1-0.94^|A|」改为现行公式 1+0.06|A|/(1+0.06|A|)（-10 甲 37.5%，旧写法给出 46%，与 Liquipedia 表格 138% 倍率不符）；②闪避条「必中直接无视闪避」改为按准确率概率判定（MKB 80%，打 50% 闪避幻刺命中 90%）与「致盲之间加法叠加」；③魔抗由「多数英雄 25%」补全为「全部英雄 25% + 每点智力 +0.1%」，并记 Natural Order 只削基础魔抗。数值佐证：dotaconstants heroes.json 127/127 base_mr=25、BAT 1.7 占 92 位",
+      "result": "rules 61 条不变，带 source 30→37；0 error / 0 warning",
+      "next": "下轮续补 rules source（余 24 条），优先 damage-types / illusion-rules / building-gating / creep-aggro / map-structure 等可查到具体页的机制条"
+    },
     {
       "time": "2026-11-26 22:20",
       "task": "质量审查轮：清 items 层 7 处存疑/错误项",

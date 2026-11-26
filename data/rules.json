@@ -29,31 +29,63 @@
           "Neutral_Items",
           "Observer_Ward",
           "Sentry_Ward",
-          "Stacking"
+          "Stacking",
+          "Armor",
+          "Magic_Resistance",
+          "Evasion",
+          "Dispel"
         ],
         "url_template": "https://liquipedia.net/dota2/<page>",
         "verified_at": "2026-11-24",
         "note": "每条带 values 的规则均可回溯到上述页面之一；补丁更新后需重核"
       }
     ],
-    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。"
+    "precision_note": "标 verified 且带 values 的条目为「已按公开 wiki 数值核对」的精确规则；不带 values 的为逻辑规则。 本轮（2026-11-26）修正两处公式：负护甲增伤由「0.94 指数近似」改为现行绝对值公式的对称延伸；闪避条把「必中直接无视闪避」改为按准确率概率判定命中。",
+    "last_updated": "2026-11-26 23:10"
   },
   "principles": [
     {
       "id": "armor-formula",
       "category": "伤害与防御",
       "title": "护甲减伤公式",
-      "statement": "正护甲 A 时，物理伤害减免率 DR = 0.06·A / (1 + 0.06·A)；负护甲时伤害加成 1 - 0.94^(-|A|) 方向。",
+      "statement": "正护甲 A 时，物理伤害减免率 DR = 0.06·A / (1 + 0.06·A)；负护甲代入同一公式并取绝对值，伤害倍率 = 1 + 0.06·|A| / (1 + 0.06·|A|)（即 -10 甲约 +37.5%、-20 甲约 +54.5% 增伤，不是 0.94 指数近似）。",
       "certainty": "verified",
-      "key_implication": "换算为有效生命后，每点护甲恒等于增加 6% 基础有效物理生命。"
+      "key_implication": "换算为有效生命后，每点护甲恒等于增加 6% 基础有效物理生命。",
+      "detail": "现行公式（7.27 起）：Physical Damage Factor = 1 - (0.06 × ΣArmor) / (1 + 0.06 × |ΣArmor|)，对所有单位（含建筑）统一适用；分母用绝对值，所以负甲段与正甲段是同一条曲线在 0 两侧的对称延伸。",
+      "values": {
+        "factor": 0.06,
+        "formula": "1 - (0.06*armor)/(1 + 0.06*abs(armor))",
+        "ehp_per_armor": "6% of max HP",
+        "factor_table": {
+          "10": 0.63,
+          "20": 0.45,
+          "30": 0.36,
+          "-10": 1.38,
+          "-20": 1.55,
+          "-30": 1.64
+        },
+        "note": "伤害倍率上下界为 0 与 2（渐近值，负甲越深越接近 2 但不等于）；-10 甲 138%、-20 甲 155%、-30 甲 164%"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Armor",
+      "patch": "7.42",
+      "verified_at": "2026-11-26"
     },
     {
       "id": "magic-resistance",
       "category": "伤害与防御",
       "title": "魔抗",
-      "statement": "多数英雄基础魔抗 25%；多源魔抗按乘法叠加（1 - ∏(1-各源魔抗)），不简单相加。",
+      "statement": "所有英雄基础魔抗统一 25%，且每点智力额外 +0.1% 基础魔抗（10 点智力 = +1%，随等级与智力装自然增长）；多源魔抗按乘法叠加，最终受伤倍率 = ∏(1 - 各源)，不简单相加。",
       "certainty": "verified",
-      "key_implication": "魔抗叠加存在边际递减（乘法叠加），堆得越多单件收益越低。"
+      "key_implication": "魔抗叠加存在边际递减（乘法叠加），堆得越多单件收益越低。",
+      "detail": "乘法叠加的等价说法：+30% 与 +40% 两源 = 0.7×0.6 = 0.42 倍受伤（总魔抗 58%）。特殊项：Natural Order / Astral Spirit 的削减只作用于基础魔抗（作为 negation multiplier），不动装备与天赋的 bonus 魔抗；Fate's Edict 的 100% 魔抗会把最终倍率乘成 0。",
+      "values": {
+        "base_hero_mr": 0.25,
+        "per_int": 0.001,
+        "stack": "1 - prod(1 - ri)"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Magic Resistance",
+      "patch": "7.42",
+      "verified_at": "2026-11-26"
     },
     {
       "id": "damage-types",
@@ -69,7 +101,16 @@
       "title": "攻速与 DPS",
       "statement": "攻击间隔 = BAT / (1 + IAS)，其中 IAS 为攻速加成。DPS = 攻击力 × (1 + IAS) / BAT。",
       "certainty": "verified",
-      "key_implication": "攻击力与攻速对 DPS 的贡献均为线性，两者乘积决定输出，故「攻力×攻速」需平衡投入。"
+      "key_implication": "攻击力与攻速对 DPS 的贡献均为线性，两者乘积决定输出，故「攻力×攻速」需平衡投入。",
+      "detail": "口径：总攻速 = 100 + 攻速加成（+20 攻速即 IAS=0.20），攻击间隔 T = 100×BAT / 总攻速 = BAT / (1 + IAS)；区间 20~700 由 attack-speed-cap 覆盖。dotaconstants build/heroes.json 的 attack_rate 即 BAT，127 位中 1.7 占 92 位，其余 1.4(2)/1.5(9)/1.6(9)/1.8(7)/1.9(7)/2.0(1)。",
+      "values": {
+        "default_base_as": 100,
+        "default_bat": 1.7,
+        "interval": "BAT/(1+IAS)"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Attack Speed + dotaconstants build/heroes.json",
+      "patch": "7.42",
+      "verified_at": "2026-11-26"
     },
     {
       "id": "effective-hp",
@@ -77,7 +118,16 @@
       "title": "有效生命（EHP）",
       "statement": "有效物理生命 EHP = HP × (1 + 0.06·A)（正护甲）；有效魔法生命 = HP / (1 - 魔抗)。",
       "certainty": "verified",
-      "key_implication": "「堆肉」应看 EHP 而非单看 HP 或护甲，护甲与血量存在最优配比。"
+      "key_implication": "「堆肉」应看 EHP 而非单看 HP 或护甲，护甲与血量存在最优配比。",
+      "values": {
+        "ehp_physical": "HP*(1+0.06*armor)",
+        "ehp_magic": "HP/(1-MR)",
+        "ehp_per_armor": "6% of max HP",
+        "base_mr_ehp_mult": "1/0.75 = 1.333"
+      },
+      "source": "Liquipedia Dota 2 Wiki: Armor / Magic Resistance",
+      "patch": "7.42",
+      "verified_at": "2026-11-26"
     },
     {
       "id": "economy-sources",
@@ -167,16 +217,29 @@
       "title": "减甲叠加规则",
       "certainty": "verified",
       "statement": "固定减甲先结算，百分比减甲按乘法叠加，最终护甲可被压到负值，负护甲继续放大物理伤害。",
-      "detail": "负护甲时的增伤倍率为 1 - 0.94^|A|，绝对值越大边际收益越低。",
-      "key_implication": "多来源减甲是「先固定后百分比」的乘法链，堆到负甲后继续减甲的收益递减，应改堆攻速/暴击。"
+      "detail": "负护甲时的增伤倍率为 1 + 0.06·|A| / (1 + 0.06·|A|)（与正甲同一公式取绝对值），绝对值越大边际收益越低；倍率上界为 2.0。",
+      "key_implication": "多来源减甲是「先固定后百分比」的乘法链，堆到负甲后继续减甲的收益递减，应改堆攻速/暴击。",
+      "source": "Liquipedia Dota 2 Wiki: Armor",
+      "patch": "7.42",
+      "verified_at": "2026-11-26"
     },
     {
       "id": "evasion-blind-stacking",
       "category": "伤害与防御",
       "title": "闪避与致盲",
       "certainty": "verified",
-      "statement": "多个闪避来源与致盲按乘法叠加（1 - ∏(1-各源))；「必中」类效果直接无视闪避判定。",
-      "key_implication": "闪避堆到 50%+ 后继续叠加收益有限；对面有必中/金箍棒时闪避型英雄的核心防御直接失效。"
+      "statement": "多个闪避来源彼此乘法叠加（总闪避 = 1 - ∏(1-各源)）；致盲之间是加法叠加，再与闪避乘法相乘；准确率（如金箍棒 80%）不是「无条件无视闪避」，而是按概率直接判定命中，只有剩下 (1-准确率) 的出手仍要过闪避判定。",
+      "key_implication": "闪避堆到 50%+ 后继续叠加收益递减（乘法），但对金箍棒仍保留 (1-准确率) 的生效空间；反过来，致盲是加法，多个小致盲叠起来能压过闪避。",
+      "detail": "最终命中率 = 1 - 实际闪避率 × (1 - 总准确率)，其中实际闪避率 = 1 - (1 - 总闪避)×(1 - 总致盲)。故 MKB 打 50% 闪避的幻刺，命中率 = 1 - 0.5×0.2 = 90%，而非 100%；7.07 起准确率来源改为「触发即必中（True Strike）」的逐次判定。",
+      "values": {
+        "evasion_stack": "1 - prod(1 - ei)",
+        "blind_stack": "sum",
+        "final_hit": "1 - evade*(1-accuracy)",
+        "mkb_accuracy": 0.8
+      },
+      "source": "Liquipedia Dota 2 Wiki: Evasion",
+      "patch": "7.42",
+      "verified_at": "2026-11-26"
     },
     {
       "id": "attack-speed-cap",
@@ -242,8 +305,11 @@
       "title": "驱散等级",
       "certainty": "verified",
       "statement": "驱散分基础驱散、强驱散、死亡驱散三档；低档驱散无法移除高档负面效果。",
-      "detail": "大部分「解除负面」效果是基础驱散，能清减速/持续伤害，但清不掉眩晕、缠绕、末日类强负面。",
-      "key_implication": "选解控装前先确认目标负面属于哪一档，否则买了也解不掉。"
+      "detail": "三档强度 Basic < Strong < Death：基础驱散清减速/沉默/持续伤害等，清不掉眩晕与强制位移；强驱散清所有可驱散负面（如无光之盾、剑刃风暴、气运之末）；死亡驱散最强但仍有少数效果写明「死后仍存」。方向性：对友军施放只清负面、不清增益，对敌人施放只清增益。",
+      "key_implication": "选解控装前先确认目标负面属于哪一档，否则买了也解不掉。",
+      "source": "Liquipedia Dota 2 Wiki: Dispel",
+      "patch": "7.42",
+      "verified_at": "2026-11-26"
     },
     {
       "id": "lifesteal-types",
