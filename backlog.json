@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 04:20",
+    "updated_at": "2026-11-27 05:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -415,6 +415,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 05:19",
+      "task": "quality-audit 第三轮：AOE 抽查 + 英雄要点旧机制清理",
+      "added": "① 抽查 basis=aoe 的 44 条，核对 Atrophy Aura（小兵阵亡确实叠 +2/4/6/8）、Impetus 对幻象双倍、Flak Cannon 12 秒/4~7 次、Juxtapose 上限与 Illusory Armaments 17% 下限——均与 abilities.json 原文一致，仅修 tiny→meepo 的错字并补「0.3s×5 段」；② heroes.json 清 4 条旧机制：斯拉克「影舞隐身解控+怕真视」→ 影舞免疫侦测、解控是黑暗契约；育母蜘蛛「蛛网隐身」→ 蛛网只给移速/转身/自由穿行；兜帽客「隐身机动」→ Scurry 是加速+相位+树间行走；幻影长矛手「怕真视」→ Doppelwalk 不是隐身，怕 AOE 与硬控；③ inference 71→73：新增 stealth-type-decides-counter-tool（三层隐身对应三种反制）与 tree-removal-is-a-vision-tool（破树=局部真视）",
+      "result": "heroes 127（4 条要点修正）；matchups 270（1 条重写）；inference 71→73（verified 22 / reasoned 51，0 dangling）；JSON 全部通过；audit 0 error / 0 warning / 1 info",
+      "next": "继续 quality-audit：核对 items.json 里 BKB「spell_reduce 60」的语义口径，并抽查 tactics.decisions 16 分支的前置条件是否引用了已修正数值（背门 50%、BKB 9/8/7、肉山 8–11）"
+    },
     {
       "time": "2026-11-27 04:20",
       "task": "quality-audit 第二轮：视野类克制逐条复核",
