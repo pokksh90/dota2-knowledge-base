@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 15:19",
+    "updated_at": "2026-11-26 16:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -355,10 +355,31 @@
       "current": 3,
       "target": 3,
       "note": "修正 index.json 中三处过期 note：inference 26条/verified10变成 63条/verified21，matchups 198条变成 248 条并补 relation 分布，items 60→68"
+    },
+    {
+      "id": "item-numeric-verify",
+      "status": "done",
+      "current": 9,
+      "target": 9,
+      "note": "8 件新装 + 魔瓶，purpose/coach_note 全部换为 dotaconstants attrib 实值；纠 3 处实质错误（秘法鞋非主动补蓝、静谧无护甲/回蓝、疯狂面具 -7 护甲）"
+    },
+    {
+      "id": "builds-ref-integrity",
+      "status": "done",
+      "current": 1,
+      "target": 1,
+      "note": "builds[中单] 的 \"bottle→(回蓝)\" 不是合法 item id，已补魔瓶条目并改为 bottle；全库 builds 引用 0 悬空"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 16:20",
+      "task": "质量审查轮：装备数值口径复核 + 出装引用完整性",
+      "added": "items 68→69（补魔瓶 675）；8 件新装的 purpose/coach_note 重写为官方 attrib 数值；修正秘法鞋「主动补蓝」、静谧「护甲/回蓝」、疯狂面具「更脆」三处错误；血精石/统御头盔从 pending 升级为实值；修掉 \"bottle→(回蓝)\" 悬空引用",
+      "result": "builds 引用 0 悬空；审查 0 error / 0 warning",
+      "next": "继续把在用装备（blink/bkb/pipe 等老条目）的机制数值按同一口径复核一遍"
+    },
     {
       "time": "2026-11-26 15:19",
       "task": "质量审查轮：收尾短 reason + items 扩 8 件 + 修 index 过期 note",
