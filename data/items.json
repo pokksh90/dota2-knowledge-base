@@ -3,7 +3,7 @@
     "title": "装备与出装",
     "description": "装备分类、用途、分位置核心出装思路。coach_note 供 LLM 消费：什么情况出、克制什么、给谁出。cost 为 dotaconstants 总价，已与 7.42 新道具价格交叉核对。",
     "source_note": "用途/克制为稳定常识(source=stable)；cost 取自 dotaconstants build/items.json 的 cost 字段(总价)，并用 7.42 新道具(bloodslinger 925 / caduceus 5400 / ristuls_devotion 3800 / sabatons 5950 / skypiercer 6000 / starforge 6000)对齐验证，确认该数据集已更新到 7.42。",
-    "last_updated": "2026-11-25 14:18",
+    "last_updated": "2026-11-26 15:18",
     "corrections": [
       "删除误录的「永恒战靴 Eon Boots」：7.42 道具全表(dotaconstants items.json 已含 7.42 全部新道具)无此条目，替换为实际存在的「永世之蔽 Eternal Shroud」。",
       {
@@ -11,6 +11,12 @@
         "item": "eternal-shroud",
         "finding": "7.42 环境下的官方 items.txt 标记 ItemPurchasable=0 / IsObsolete=1，Liquipedia 条目标 Removed → 该装备已移除，不可购买",
         "action": "status=removed、coach_note 改为「勿推荐」、给出替代（pipe-of-insight / black-king-bar）；历史价 3800 保留，与 items.txt 的 3900 差异不作为当前价格"
+      },
+      {
+        "time": "2026-11-26 15:18",
+        "item": "*",
+        "finding": "本轮新增 8 件（圣剑/秘法鞋/静谧之靴/陨星锤/血精石/纷争面纱/疯狂面具/统御头盔），cost 均取官方 items.txt ItemCost 并与 dotaconstants 交叉一致；gleipnir 在 dotaconstants 中无条目，故未入库（不确定是否仍存在）",
+        "action": "60→68；血精石/统御头盔的附加机制标 pending，未写具体数值"
       }
     ]
   },
@@ -936,6 +942,124 @@
       "source": "stable",
       "cost": 6800,
       "cost_source": "dotaconstants build/items.json (total cost, 与 7.42 新道具价格一致)"
+    },
+    {
+      "id": "divine-rapier",
+      "name_zh": "圣剑",
+      "name_en": "Divine Rapier",
+      "category": "offensive",
+      "purpose": "提供最高量级的攻击力加成，死亡后会掉落在原地",
+      "coach_note": "只在「已经领先、需要把优势兑现」或「必须一波翻盘」时出：它给的是攻击力，但死亡时掉落、可被对手捡走，容错为零。逆风不要靠它赌团；要出就必须先解决「不会先死」的问题（BKB 时机、队友先手、站位在后排）。",
+      "core_for": [
+        1
+      ],
+      "source": "stable",
+      "cost": 5600,
+      "cost_source": "官方 items.txt ItemCost=5600，与 dotaconstants build/items.json cost 一致"
+    },
+    {
+      "id": "arcane-boots",
+      "name_zh": "秘法鞋",
+      "name_en": "Arcane Boots",
+      "category": "support",
+      "purpose": "提供移动速度与团队回蓝（主动使用按范围内友军蓝量恢复）",
+      "coach_note": "连招耗蓝超过自身蓝池的中单与辅助首选：一次主动能同时给附近友军补蓝，等于把「蓝量预算」摊给全队。对抗沉默/耗蓝压制阵容时价值更高；后期蓝量够用后可换成其他鞋。",
+      "core_for": [
+        2,
+        4,
+        5
+      ],
+      "source": "stable",
+      "cost": 1500,
+      "cost_source": "官方 items.txt ItemCost=1500，与 dotaconstants cost 一致"
+    },
+    {
+      "id": "tranquil-boots",
+      "name_zh": "静谧之靴",
+      "name_en": "Tranquil Boots",
+      "category": "mobility",
+      "purpose": "提供移动速度、护甲与脱离战斗后的回血回蓝",
+      "coach_note": "辅助游走与换血的续航装：只要一段时间不攻击、不受击就会持续回血，适合频繁进出战斗的 4/5 号位。被远程持续消耗、或需要长时间站桩对拼时，回血窗口被打断，价值下降。",
+      "core_for": [
+        4,
+        5
+      ],
+      "source": "stable",
+      "cost": 900,
+      "cost_source": "官方 items.txt ItemCost=900，与 dotaconstants cost 一致"
+    },
+    {
+      "id": "meteor-hammer",
+      "name_zh": "陨星锤",
+      "name_en": "Meteor Hammer",
+      "category": "utility",
+      "purpose": "主动引导后对范围造成伤害与晕眩，对建筑同样生效",
+      "coach_note": "给需要「拆塔 + 团战控制」的劣单/中单：引导期间会被任何控制或位移打断，所以要么在对面没有打断手段时出，要么等队友先手控住再放。对面上有沉默/眩晕/强减速时，这一件的收益会大幅缩水。",
+      "core_for": [
+        2,
+        3
+      ],
+      "source": "stable",
+      "cost": 2750,
+      "cost_source": "官方 items.txt ItemCost=2750，与 dotaconstants cost 一致"
+    },
+    {
+      "id": "bloodstone",
+      "name_zh": "血精石",
+      "name_en": "Bloodstone",
+      "category": "magic",
+      "purpose": "提供大量蓝量与回蓝，供高耗蓝法核持续施法",
+      "coach_note": "法核「一轮连招打完就没蓝」时的补蓝装。它的附加机制随版本改动较大，具体数值未入库（pending），教练只按「补蓝量与回蓝」这一稳定口径使用，不要向用户承诺具体被动数值。",
+      "core_for": [
+        2,
+        3
+      ],
+      "source": "stable",
+      "cost": 4700,
+      "cost_source": "官方 items.txt ItemCost=4700，与 dotaconstants cost 一致"
+    },
+    {
+      "id": "veil-of-discord",
+      "name_zh": "纷争面纱",
+      "name_en": "Veil of Discord",
+      "category": "magic",
+      "purpose": "主动在范围内降低敌方魔法抗性",
+      "coach_note": "魔法爆发队伍的放大器：队伍里法伤来源越多（天怒、莉娜、帕克、术士），一次覆盖到的收益越大；配合先手控制一起放最有效。对纯物理阵容几乎无价值，别在物理核为主的阵容里买。",
+      "core_for": [
+        2,
+        4
+      ],
+      "source": "stable",
+      "cost": 1700,
+      "cost_source": "官方 items.txt ItemCost=1700，与 dotaconstants cost 一致"
+    },
+    {
+      "id": "mask-of-madness",
+      "name_zh": "疯狂面具",
+      "name_en": "Mask of Madness",
+      "category": "offensive",
+      "purpose": "主动「狂暴」提升攻速与移速，代价是开启期间自身更脆",
+      "coach_note": "适合需要在几秒内把攻速拉满、并且能用站位或控制规避风险的核（如需要快速清线/打野的敏捷核）。它的代价是「开了就更怕被控住秒掉」，对面有稳定控制链时不要开，宁可不出。",
+      "core_for": [
+        1
+      ],
+      "source": "stable",
+      "cost": 1800,
+      "cost_source": "官方 items.txt ItemCost=1800，与 dotaconstants cost 一致"
+    },
+    {
+      "id": "helm-of-the-dominator",
+      "name_zh": "统御头盔",
+      "name_en": "Helm of the Dominator",
+      "category": "utility",
+      "purpose": "主动支配一个非远古中立单位或敌方小兵，获得其能力并跟随作战",
+      "coach_note": "用来「借野怪技能」：支配到的单位能提供额外控制、推线或视野，常给 3 号位与打野节奏核。中立单位的具体技能随版本调整，本库不给逐只技能表（pending），只按「多一个可控单位」的口径使用。",
+      "core_for": [
+        3
+      ],
+      "source": "stable",
+      "cost": 2550,
+      "cost_source": "官方 items.txt ItemCost=2550，与 dotaconstants cost 一致"
     }
   ],
   "builds": [

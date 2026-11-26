@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 14:18",
+    "updated_at": "2026-11-26 15:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -334,10 +334,38 @@
       "current": 10,
       "target": 10,
       "note": "补强 25~29 字的 10 条，并修正 omni←AA「寒霜之足禁疗」的机制误写（禁疗为 Ice Blast、Cold Feet 为定身）；<30 字 11→1（仅剩 elder-titan→dragon-knight），平均 71.4→74.7 字"
+    },
+    {
+      "id": "items-expand-2",
+      "status": "done",
+      "current": 68,
+      "target": 68,
+      "note": "新增 8 件实战高频装（cost 全部来自官方 items.txt 并与 dotaconstants 交叉一致）；gleipnir 因 dotaconstants 无条目未入库"
+    },
+    {
+      "id": "matchup-reason-quality-11",
+      "status": "done",
+      "current": 1,
+      "target": 1,
+      "note": "最后 1 条（elder-titan→dragon-knight）补强；全库 reason 均 ≥30 字"
+    },
+    {
+      "id": "index-note-refresh",
+      "status": "done",
+      "current": 3,
+      "target": 3,
+      "note": "修正 index.json 中三处过期 note：inference 26条/verified10变成 63条/verified21，matchups 198条变成 248 条并补 relation 分布，items 60→68"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 15:19",
+      "task": "质量审查轮：收尾短 reason + items 扩 8 件 + 修 index 过期 note",
+      "added": "items 60→68（圣剑5600/秘法鞋1500/静谧之靴900/陨星锤2750/血精石4700/纷争面纱1700/疯狂面具1800/统御头盔2550，逐件核 items.txt ItemCost）；最后 1 条短 reason 补强；index 三处过期计数修正",
+      "result": "<30 字 reason 归零；审查 0 error / 0 warning",
+      "next": "7.42 技能与物品数值逐条核对（先从中单/核心常用的 10 件起）"
+    },
     {
       "time": "2026-11-26 14:18",
       "task": "克制 reason 补强第十批（10 条）+ 一处机制修正",
