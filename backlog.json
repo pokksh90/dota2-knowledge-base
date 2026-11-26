@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-26 18:18",
+    "updated_at": "2026-11-26 19:21",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -397,10 +397,24 @@
       "current": 6,
       "target": 6,
       "note": "新增 6 条：smoke-is-a-path-not-a-buff / high-ground-value-is-vision-not-terrain / solo-kill-check-is-mitigation-math(verified) / trigger-items-must-be-precommitted / cooldown-is-the-real-permission / roshan-timing-locks-to-item-spike"
+    },
+    {
+      "id": "matchup-orphan-heroes",
+      "status": "open",
+      "current": 114,
+      "target": 127,
+      "note": "把「只作为被克制方出现、自己从未当过主语」的英雄补上自身视角的记录；本轮补 9 个（bloodseeker/meepo/puck/drow-ranger/dragon-knight/skywrath-mage/lich/ember-spirit/shadow-fiend），只剩 13 个：chen, clinkz, dark-seer, invoker, io, luna, naga-siren, natures-prophet, necrophos, shadow-shaman, spectre, viper, wraith-king"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-26 19:21",
+      "task": "克制层补 9 条「缺席英雄」自身视角记录",
+      "added": "matchups 248→257：bloodseeker→anti-mage(mobility)、meepo←sven(aoe)、puck→lycan(mobility)、drow-ranger→batrider(control)、dragon-knight←disruptor(control)、skywrath-mage←invoker(resource)、lich←spirit-breaker(mobility)、ember-spirit←doom(control)、shadow-fiend←night-stalker(control)；全部 reason 逐条对 dotaconstants abilities.json 原文核机制，pair 全量去重（meepo←earthshaker 因已有反向记录跳过，改用 sven）",
+      "result": "0 error / 0 warning；matchups 257（counter 139/countered_by 82/synergy 36），reason 最短 30 字",
+      "next": "继续补剩余 13 个缺席英雄（chen, clinkz, dark-seer, invoker, io, luna），之后回推理层补「出装换格顺序」与「辅助视野预算」"
+    },
     {
       "time": "2026-11-26 18:18",
       "task": "质量审查轮：hero_base 全字段复核 + 推理层扩 6 条",
