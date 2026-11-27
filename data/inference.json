@@ -3,7 +3,7 @@
     "title": "逻辑推理洞察（定理层）",
     "description": "由 rules.json 底层规则纯逻辑推导出的洞察，非网上直接抄录。每条含 前提→推导→结论→应用 完整链条，可回溯验证。",
     "confidence_legend": "verified=公式确定且推导严谨；reasoned=逻辑成立但含定性假设；assumption=含较强假设需实测验证。",
-    "last_updated": "2026-11-27 07:45"
+    "last_updated": "2026-11-27"
   },
   "inferences": [
     {
@@ -991,6 +991,33 @@
       "derivation": "7.42 起全员在开场号角后获得 50 XP/min，且阵亡也照拿。一个 20 分钟没有击杀的辅助也有 1000 点保底经验，因此「连续阵亡→等级无限掉队」的下限被托住；但经验上限仍由补刀、击杀与助攻决定，且 30 级封顶、击杀经验仍按死者总经验比例计算。保底只保证不掉队，不提供反超。",
       "conclusion": "7.42 的被动经验缩小了被滚雪球的等级差，但不会让落后方自动追上；等级反超仍要靠击杀与补刀。",
       "application": "教练端在劣势时把目标具体化为「守到 15/20 级天赋窗口」，而不是笼统的「拖后期」；优势时报点除经济差外必须同时报等级差与对方关键大招等级。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "slow-immunity-is-not-root-immunity",
+      "title": "「不能被减速」不等于「免疫定身」",
+      "premises": [
+        "move-speed-bounds",
+        "status-resistance",
+        "dispel-tiers"
+      ],
+      "derivation": "move-speed-bounds 把减速归入移速百分比修正：总移速在各类加成算完之后才夹到 100–550。「不能被减速」只表示这一类负修正不生效，并不会改变「定身/缠绕」这种独立控制状态——后者的效果是禁止移动（或禁止移动与攻击），不经过移速公式。status-resistance 只缩短控制时长，dispel-tiers 只按驱散档位移除负面效果，两者都不能把定身当成减速来免疫。以 7.42 文本为例：狼人变身写明「不能被减速」，冰女冰封禁制写明「禁止移动与攻击」，两者不是同一类效果，因此变身不能吃掉冰封禁制。",
+      "conclusion": "评估「免疫减速」时要把减速、定身/缠绕、眩晕分开；对开大的狼人，减速无效，但定身与硬控仍有效。",
+      "application": "教练端对狼人不要排减速风筝，改排定身/眩晕/拴链；对面上有「不能被减速」时，先问「我们有没有 root/leash/stun」，没有就不要把减速当答案。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "gap-closer-taxonomy-displacement-vs-speed",
+      "title": "位移与加速是两种机动，counter 工具不同",
+      "premises": [
+        "move-speed-bounds",
+        "first-move-value",
+        "positioning-economy",
+        "vision-information"
+      ],
+      "derivation": "位移（闪烁/冲锋/传送）是在极短时间内改变坐标，能越过地形与视野边界，减速无法缩短已经发生的位移；加速（haste/相位）只是把移速乘数拉高，仍要沿路径走完，能被减速、墙体、定身与提前站位限制。move-speed-bounds 只约束后者；first-move-value 说明先手压缩反应窗口，位移型先手把窗口压到接近零；vision-information 说明位移可以绕过视野预警，而加速型接近会在视野里暴露更久。两者对 counter 的要求因此不同：位移要地面/定身/提前站位，加速要减速/墙/风筝。",
+      "conclusion": "判断一个英雄的「机动」时，先问「他是改坐标还是只改速度」；位移型需要地面/定身/预判，速度型需要减速/墙体/拉扯。",
+      "application": "教练端报点用固定句式：「他能闪过来（位移）」或「他只能跑过来（加速）」，据此分配控制与站位；不要把「不能被减速」误当成「不能被留住」。",
       "confidence": "reasoned"
     }
   ]

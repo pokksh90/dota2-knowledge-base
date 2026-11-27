@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 07:50",
+    "updated_at": "2026-11-27 08:22",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -415,6 +415,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 08:22",
+      "task": "quality-audit 第六轮：mobility 42 条逐条机制复核 + 17 处命名/机制修正 + 2 条机动推理",
+      "added": "① 逐条核对 basis=mobility 的 42 条（abilities.json + schinese herodata），修正 17 处：机制类——圣堂并非「进出全靠走路」（灵能投射/7.42 Hidden Gates）、毒龙「腐蚀皮肤」只削攻速不减速移动、暗影萨满被突袭后仍可妖术/枷锁反手、狼人「不能被减速」不等于免疫冰女定身、编织者「缩地」没有免疫、干扰者「恶念瞥视」只能对敌不能自救；命名类——寒冬飞龙→远古冰魄、剧毒新星→恶性瘟疫、剧毒新星(破坏)→蝮蛇突袭、毒刺→毒性攻击、破裂/渴血→割裂/焦渴、Companion Run→回身踢(Rebound)、Unleash→怒拳破、地震/狂暴→震撼大地/激怒、散弹片→榴霰弹、暗影突袭/能量点→突袭/能量转移、钩爪→发射钩爪；② 新增 2 条推理：slow-immunity-is-not-root-immunity、gap-closer-taxonomy-displacement-vs-speed（均 reasoned，premises 引用 move-speed-bounds/status-resistance/dispel-tiers/first-move-value/positioning-economy/vision-information）",
+      "result": "matchups 270 条不变（17 处修正，mobility 42/42 已复核）；inference 77→79；heroes/items/rules 未动；JSON 全部通过；audit 待跑",
+      "next": "继续 quality-audit：复核 basis=sustain 27 条；用 schinese datafeed 批量核对技能/装备中文名；补齐 7.42 建筑赏金 T2/T3/T4 与兵营完整表"
+    },
     {
       "time": "2026-11-27 07:50",
       "task": "quality-audit 第五轮：按官方 7.42 校准经济/属性公式 + 补 innate 规则 + physical 命名修正",
