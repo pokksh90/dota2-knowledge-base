@@ -14,7 +14,7 @@
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
     "last_updated": "2026-11-27",
-    "mechanism_note": "第十二轮审查 basis=aoe 的 44 条（逐条对照 dotaconstants abilities + 官方 schinese herodata）：① 方向反转 2 条：axe←meepo 改为斧王被米波克制（米波忽悠爆发绕开反击螺旋，OpenDota 82 局斧王 25.0%）；undying←meepo 改为尸王被米波克制（墓碑 5/6/7/8 次攻击可被 5 分身快速拆掉，OpenDota 82 局尸王 28.6%）。② 机制修正：回音击/裂地/脉冲新星/冰火交加/烈焰焚身等译名统一；沙尘暴是持续伤害+隐身、不提供致盲；狂战士之吼是嘲讽不是聚拢；分则能成的装备加成按克隆体数量均分、任一分身死亡全灭，不是「同一个血条」；崩裂禁锢幻象是 20%~50% 出伤+20~65 基础攻击加成。③ 统计冲突：leshrac→meepo（OpenDota 82 局 25.0%，高分局公开统计反向，保留机制并标注）、earthshaker→broodmother（61 局 38.9%，高分局反向，保留并标注）、brewmaster←sand-king（16 局样本，改写为软克制）。④ 新增 2 条推理：shared-death-turns-aoe-into-execute、aoe-clump-value-is-setup-dependent。",
+    "mechanism_note": "第十三轮审查 basis=mobility 的 42 条：逐条对照 ability_base/官方技能描述，重点修正 7.42 技能/innate 带来的「无位移」误判。① 明确有自移动/短位移：水晶室女 Crystal Clone（滑步+disjoint）、莉娜 Flame Cloak（无碰撞移动）+Fiery Soul（移速）、熊战士 Earthshock（250 码小跳）、狙击手 Concussive Grenade（自推）+Headshot 击退、修补匠 Keen Conveyance（引导传送建筑/友军）。② 修正机制错误：大地之灵 Geomagnetic Grip 只拉残岩/友军、不拉敌人；真正贴脸靠 Boulder Smash 踢残岩 + Rolling Boulder；裂魂人冲锋是锁定单位、Crystal Clone 不能取消锁定。③ 改写 13 条过短/失准理由，保留原 pair 与 basis；未改动其他正确条目。",
     "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）",
     "mirror_dedup_note": "早期批次曾以反方向重复书写同一条克制（如 medusa countered_by anti-mage 与 anti-mage counter medusa），已按「同关系互为镜像即合并、保留描述更完整的一条」清理 8 组；disruptor↔faceless-void 保留双向，因 countered_by 与 synergy 是两条不同结论。"
   },
@@ -93,7 +93,7 @@
       "hero_id": "storm-spirit",
       "relation": "counter",
       "target_id": "sniper",
-      "reason": "狙击手的威胁全在射程之外，而风暴之灵可以用球状闪电直接跨过这段距离贴到他身上；狙击手只有减速与击退、没有硬控，被贴身后没有手段把球状闪电打断，射程优势在没有位移的前提下变成「只能站着挨打」。",
+      "reason": "狙击手的位移只有震荡手雷（Concussive Grenade）把自己和敌人一起向后推、以及爆头近身击退，二者都不是主动突进；风暴之灵可以用球状闪电从侧翼或视野外跨过射程贴脸，贴住后狙击手只能靠手雷后坐力、爆头击退和队友控制重新拉开。教练端：风暴不要从正面直线进，先逼手雷再跳；狙击手不要把自推当位移，站桩时留手雷作最后一段距离。",
       "basis": "mobility"
     },
     {
@@ -352,7 +352,7 @@
       "hero_id": "lina",
       "relation": "countered_by",
       "target_id": "spectre",
-      "reason": "幽鬼的折射把受到的伤害按距离分摊反射给周围敌人，莉娜这种一套打完就站桩的脆皮法核，爆发下去先被反射一轮；大招鬼影重重对全场英雄降下幻象并可传送贴脸，莉娜没有位移也没有自救手段，被贴住就只能交全部技能换命。",
+      "reason": "幽鬼的折射把受到的伤害按距离分摊反射给周围敌人，莉娜这种一套打完就站桩的脆皮法核，爆发下去先被反射一轮；鬼影重重对全场英雄降下幻象并可传送到幻象位置贴脸。莉娜没有瞬移，但有炎袍（Flame Cloak）的无碰撞移动和炽魂（Fiery Soul）的移速，可以用移速差绕地形拖过第一波；不能站桩把一套打完，否则被贴住后只能交全部技能换命。",
       "basis": "mobility"
     },
     {
@@ -394,14 +394,14 @@
       "hero_id": "ursa",
       "relation": "countered_by",
       "target_id": "viper",
-      "reason": "熊战士只有贴身才能输出，冥界亚龙的毒性攻击是逐层叠加的移速减速（可叠到 6 层），腐蚀皮肤只削攻速、不减速移动；减速叠起来后，他能贴着打的时间被一段段削掉，没有位移，追不上就只能吃满持续伤害。",
+      "reason": "熊战士只有 250 码的震撼大地（Earthshock）小跳和对同一目标叠加的怒意狂击，本质仍是贴身输出；冥界亚龙的毒性攻击逐层叠加移速减速（最多 6 层），腐蚀皮肤只削攻速、不减速移动。减速叠起来后，他每跳一次只前进 250 码，仍要重新走完剩余距离，贴身窗口被一段段削掉；没有跳刀时追不上就只能吃满持续伤害。",
       "basis": "mobility"
     },
     {
       "hero_id": "ursa",
       "relation": "countered_by",
       "target_id": "drow-ranger",
-      "reason": "熊战士必须贴身才能把怒意狂击叠起来，卓尔的冰箭减速加击退正好把距离一直维持在射程内：每被推开一次，他都要重新走完整个射程，叠加层数被反复清零；没有位移的他只能靠跳刀硬追，成本极高。",
+      "reason": "熊战士必须贴身才能把怒意狂击叠起来，他的接近手段只有 250 码的震撼大地（Earthshock）小跳和跳刀；卓尔的冰箭减速、狂风击退和冰川（Glacier）一起把距离维持在射程内：每被推开一次，他都要重新走完整个射程，叠加层数被反复清零。没有跳刀时只能被隔着射程磨；跳刀进场也要先算卓尔还有没有狂风。",
       "basis": "mobility"
     },
     {
@@ -667,7 +667,7 @@
       "hero_id": "slark",
       "relation": "counter",
       "target_id": "sniper",
-      "reason": "突袭越过前排直取狙击手，拴绳把人钉住，能量转移持续偷敏捷，远程射程优势被贴身作废",
+      "reason": "斯莱克的突袭是跳跃后拴绳，狙击手没有主动突进，只有震荡手雷的自推和爆头击退；被突袭命中后拴绳限制移动，能量转移每次攻击偷敏捷，暗影之舞还能解减速、回血。狙击手要留手雷把双方推开、站塔后，不要站在突袭的落点边缘。",
       "basis": "mobility"
     },
     {
@@ -730,7 +730,7 @@
       "hero_id": "spirit-breaker",
       "relation": "counter",
       "target_id": "crystal-maiden",
-      "reason": "冲撞可跨距离直取无位移的脆皮辅助，水晶室女一旦被贴身即被连环控住",
+      "reason": "水晶室女不是完全没有机动：晶体克隆（Crystal Clone）能短距离滑步并 disjoint 弹道，冰封禁制还能定身。但裂魂人的暗影冲刺是锁定单位的冲锋、穿越地形并在命中时重击，克隆滑步不能取消锁定；幽冥一击可穿透技能免疫并再次重击。冰女要用克隆躲第一段弹道、用定身争取队友反手，不能把克隆当完整逃生。",
       "basis": "mobility"
     },
     {
@@ -772,7 +772,7 @@
       "hero_id": "earth-spirit",
       "relation": "counter",
       "target_id": "sniper",
-      "reason": "残岩冲刺+拉人可把无位移的矮人狙击手从射程外拽进贴身，射程优势被抹掉",
+      "reason": "大地之灵不是「拉人」：地磁之握（Geomagnetic Grip）只拉残岩或友军，对敌人不成立；真正贴脸的是巨石翻滚（Rolling Boulder）和巨石冲击（Boulder Smash）踢残岩——残岩被踢中会造成伤害并减速，射程外的狙击手会被这段击退直接推进近身。狙击手只有震荡手雷的后坐力能拉开一点，挡不住残岩的连续击退；教练端别把拉人当成先手，先用残岩封路再滚进去。",
       "basis": "mobility"
     },
     {
@@ -842,14 +842,14 @@
       "hero_id": "sniper",
       "relation": "countered_by",
       "target_id": "tusk",
-      "reason": "雪球冲刺+海象神拳可跨距离贴身，矮人狙击手无位移，被拽入近身后射程优势归零",
+      "reason": "雪球（Snowball）可以滚向目标并沿途眩晕，海象神拳再把目标击飞；狙击手没有主动突进，只有震荡手雷的自推和爆头击退。被雪球滚中后射程优势归零；狙击手要用手雷后坐力在雪球滚动途中自推，或者提前站塔后。",
       "basis": "mobility"
     },
     {
       "hero_id": "crystal-maiden",
       "relation": "countered_by",
       "target_id": "slark",
-      "reason": "突袭越过前排直取无位移的脆皮辅助；水晶室女虽能反手冰封禁制，但没有位移，被贴身后仍难以脱身。",
+      "reason": "水晶室女有晶体克隆（Crystal Clone）的短滑步和弹道 disjoint，也有冰封禁制定身，但突袭（Pounce）是跳跃后拴绳：滑步只改变身位，不会解除拴绳；被拴住后她仍难以走出范围。斯莱克的暗影之舞还能在未显形时回血、加速，冰女要用定身和克隆拖到队友反手，不能把克隆当逃生。",
       "basis": "mobility"
     },
     {
@@ -870,7 +870,7 @@
       "hero_id": "storm-spirit",
       "relation": "counter",
       "target_id": "tinker",
-      "reason": "球状闪电可跨越修补匠的激光/机器人群距离直接贴身，修补匠本体极脆且没有位移，被近身后几乎只能等死",
+      "reason": "修补匠没有战斗突进，但不是完全没有位移：Keen Conveyance 可引导传送到建筑或友军，前提是引导不被打断；风暴之灵用球状闪电跨过激光、机器人群的距离直接贴脸，贴住后修补匠的传送引导很容易被打断，只能靠跳刀、吹风或队友。教练端：修补匠要先把传送通道藏好，风暴别在他有队友护的时候直跳。",
       "basis": "mobility"
     },
     {
@@ -982,7 +982,7 @@
       "hero_id": "kez",
       "relation": "counter",
       "target_id": "crystal-maiden",
-      "reason": "凯的天隼冲击(Falcon Rush)提供相位移动式突进并重复一次攻击，利爪飞掷带沉默；水晶室女无逃生且依赖施法，被贴上后沉默窗口内很难活",
+      "reason": "凯的 Falcon Rush 提供相位碰撞和突进、Talon Toss 带沉默；水晶室女有晶体克隆（Crystal Clone）的短滑步和冰封禁制定身，但克隆只躲弹道、不解除沉默，被贴上后仍难活。冰女要先用定身卡住第一段突进、克隆躲飞掷，不能把克隆当完整逃生。",
       "basis": "mobility"
     },
     {
@@ -1283,7 +1283,7 @@
       "hero_id": "marci",
       "relation": "counter",
       "target_id": "sniper",
-      "reason": "玛西以队友为锚点用回身踢(Rebound)突进、落地眩晕敌人，配合怒拳破(Unleash)的快速连击减速移速与攻速，贴身高频输出专治没有位移的远程核心",
+      "reason": "玛西以队友为锚点用回身踢（Rebound）突进、落地眩晕，Unleash 的高频连击带减速；狙击手没有主动突进，只有震荡手雷的自推和爆头击退，挡不住玛西借队友反复进场。狙击手要用手雷在玛西落地前自推、站塔后；不要站在玛西队友能当锚点的范围里。",
       "basis": "mobility"
     },
     {
@@ -1858,7 +1858,7 @@
       "relation": "counter",
       "target_id": "sniper",
       "basis": "mobility",
-      "reason": "矮人狙击手的赢法是把距离拉开、站着不动持续输出，他没有位移，也没有任何自救技能。幽鬼的两件工具正好拆这个站桩：鬼影重重对每个敌方英雄都降下一只幻象，幻象无视地形，还能用子技能传送到幻象位置直接贴脸；折射会把她受到的伤害按比例摊给周围敌人——狙击手每一下高额点击中她时，有一部分会被摊回给他身边的人，而他自己必须站在射程内不能走。教练端：幽鬼把传送留给狙击手交完主要技能之后的空窗；狙击手一方要么提前买防护位道具，要么接受「不单走」的站位纪律。"
+      "reason": "狙击手没有主动突进，只有震荡手雷的自推和爆头近身击退；鬼影重重对每个敌方英雄降下幻象，幻象无视地形并可传送到幻象位置贴脸，狙击手被贴住后射程优势归零。狙击手要留手雷在幽鬼传送落地前自推，或者站塔后；不要单走。"
     },
     {
       "hero_id": "invoker",

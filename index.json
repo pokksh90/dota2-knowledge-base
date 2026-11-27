@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.39",
+    "version": "0.6.40",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-27",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics/patch_stats —— 应用/结论：具体英雄/装备/克制/战术/当前版本公开胜率，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-27 15:10",
+    "updated_at": "2026-11-27 15:25",
     "version_scope": {
       "mechanism": "7.42",
       "stats": "7.42a（最近 7 天滚动，7.42/7.42a 混合）",
@@ -30,9 +30,9 @@
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 86,
+      "count": 87,
       "status": "stable",
-      "note": "86 条（verified 26 / reasoned 60）；新增 shared-death-turns-aoe-into-execute（米波克隆体共享死亡时，AOE 击杀阈值是「最薄一条血条」而不是总血量）与 aoe-clump-value-is-setup-dependent（裸 AOE 的命中数由聚怪决定）"
+      "note": "87 条；新增 mobility-value-is-distance-plus-vision（位移克制=缩短进入时间+绕地形，视野为前提）"
     },
     {
       "file": "data/heroes.json",

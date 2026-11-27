@@ -29,7 +29,7 @@
 │   └── knowledge-schema.json # 各数据文件的字段契约（JSON Schema）
 ├── data/
 │   ├── rules.json            # ① 公理层：63 条底层机制（对局结构+机制细节）
-│   ├── inference.json        # ② 定理层：86 条可回溯推导
+│   ├── inference.json        # ② 定理层：87 条可回溯推导
 │   ├── heroes.json           # ③ 英雄与定位（含 aliases 绰号）
 │   ├── items.json            # ③ 装备与出装
 │   ├── matchups.json         # ③ 克制与搭配
