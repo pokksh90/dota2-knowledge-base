@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 19:24",
+    "updated_at": "2026-11-27 19:27",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -479,6 +479,12 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 19:27",
+      "task": "quality-audit 第十七轮：control 10 条最短理由改写（0.6.43）",
+      "added": "backlog 已全 done，按规则转质量审查。对 basis=control 的 72 条按理由长度排序，取最短 10 条（31~50 字）逐条对照 ability_base 与 7.42 文本改写：enigma↔faceless-void、death-prophet→storm-spirit、grimstroke↔doom、mirana↔juggernaut、hoodwink←treant-protector、dark-willow↔enigma、silencer→enigma、faceless-void→dragon-knight、crystal-maiden→slardar、night-stalker→puck。补齐半径/持续时间/施放方式与反制窗口；control 最短理由 52 字；pair/relation/basis 均不变。",
+      "result": "10 条改写（124~155 字，原 31~50 字）；matchups 271、control 72 不变；index 0.6.43、updated_at 19:24；quality_audit 0 error / 0 warning / 1 info；GitHub 内容提交 460c40f；桌面 .cache/kb 0.6.43（fetchBase 460c40f，14 模块 / 1 跳过，271 对位 / 89 推理），src/data/kb-snapshot 与 dist/win-unpacked/resources/kb-snapshot 均 0.6.43；kb-embeddings 770 条 / 6.77MB（重嵌 10 / 复用 760）；verify-kb 与 verify-kb-semantic 通过。"
+    },
     {
       "time": "2026-11-27 18:21",
       "task": "quality-audit 第十六轮：全库一致性终审",
