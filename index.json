@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.32",
+    "version": "0.6.33",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-27",
@@ -25,9 +25,9 @@
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 79,
+      "count": 80,
       "status": "stable",
-      "note": "79 条（verified 23 / reasoned 56）；新增 slow-immunity-is-not-root-immunity、gap-closer-taxonomy-displacement-vs-speed；mobility 批审同步修正 17 处命名/机制"
+      "note": "80 条（verified 23 / reasoned 57）；新增 anti-heal-targets-recovery-not-hp；sustain 批审同步修正 11 处"
     },
     {
       "file": "data/heroes.json",
@@ -48,7 +48,7 @@
       "title": "克制与搭配",
       "count": 270,
       "status": "stable",
-      "note": "270 条；mobility 42 条全量复核，修 17 处：寒冬飞龙→远古冰魄、剧毒新星→恶性瘟疫、蝮蛇突袭、毒性攻击/腐蚀皮肤、割裂/焦渴、回身踢/怒拳破、突袭/能量转移等，并纠正「不能被减速=免疫定身」「缩地=免疫」等机制误读"
+      "note": "270 条；sustain 27 条全量复核，修 12 处：亚巴顿误写深渊领主已重写、寒冬飞龙极寒之拥非禁疗、viper 条目实为剧毒术士已改 hero_id、冰晶爆轰与天光现世等技能名统一"
     },
     {
       "file": "scripts/fetch_data.py",

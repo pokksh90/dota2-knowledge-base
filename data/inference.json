@@ -1019,6 +1019,20 @@
       "conclusion": "判断一个英雄的「机动」时，先问「他是改坐标还是只改速度」；位移型需要地面/定身/预判，速度型需要减速/墙体/拉扯。",
       "application": "教练端报点用固定句式：「他能闪过来（位移）」或「他只能跑过来（加速）」，据此分配控制与站位；不要把「不能被减速」误当成「不能被留住」。",
       "confidence": "reasoned"
+    },
+    {
+      "id": "anti-heal-targets-recovery-not-hp",
+      "title": "持续型肉核的 EHP 含「回复项」，禁疗打的是这一项",
+      "premises": [
+        "effective-hp",
+        "lifesteal-types",
+        "damage-pipeline",
+        "positioning-economy"
+      ],
+      "derivation": "effective-hp 常被算成「血量×减伤」，但那只描述一次性爆发窗口。对哈斯卡、炼金术士、冥魂大帝、亚巴顿这类靠回血/吸血/重生拖时间的单位，实战 EHP = 基础生命池 + 回复速率 × 存活时间。lifesteal-types 说明吸血把输出转成血量；damage-pipeline 说明治疗发生在伤害结算之后，禁疗不增加伤害，只是把回复项归零。因此同样的爆发打在「有回复」目标上可能不够，打在「被禁疗」目标上才等于打裸池。",
+      "conclusion": "对持续回复型目标，禁疗/减疗的价值等于删掉其 EHP 的回复项；对没有回复的目标，禁疗不产生额外收益。",
+      "application": "教练端先问「他靠什么回血」：靠吸血→禁疗或拉开距离；靠技能治疗→禁疗/沉默；靠重生→先打掉重生或直接控到死。别把禁疗当通用增伤。",
+      "confidence": "reasoned"
     }
   ]
 }

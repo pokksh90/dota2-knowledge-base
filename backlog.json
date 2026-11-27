@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 08:22",
+    "updated_at": "2026-11-27 09:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -415,6 +415,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 09:20",
+      "task": "quality-audit 第七轮：sustain 27 条逐条机制复核 + 12 处修正 + 1 条禁疗 EHP 推理",
+      "added": "① 逐条核对 basis=sustain 的 27 条（abilities.json + schinese herodata），修正 12 处：亚巴顿条目误写「深渊领主」，按迷雾缠绕/回光返照/无光之盾重写；寒冬飞龙「极寒之拥减治疗」误读，改为物理免疫窗口+寒冬诅咒的软克制；远古冰魄「极寒冰封/极寒之冰/冰霜之触/冰封路径」统一为冰晶爆轰；朗戈治疗乐曲改为大屿灵药；炼金/破晓技能名修正；viper 条目 reason 实际写剧毒术士，已改 hero_id=venomancer；「超载」→「过载」、「狂暴之血/燃烧长矛」→「狂战士之血/沸血之矛」；② 新增 anti-heal-targets-recovery-not-hp（reasoned，premises 引用 effective-hp/lifesteal-types/damage-pipeline/positioning-economy）",
+      "result": "matchups 270 条不变（12 处修正，sustain 27/27 已复核）；inference 79→80；heroes/items/rules 未动；JSON 全部通过；audit 待跑",
+      "next": "继续 quality-audit：复核 basis=control 71 条；补齐 7.42 建筑赏金 T2/T3/T4/兵营完整表；用 schinese datafeed 批量核对技能中文名"
+    },
     {
       "time": "2026-11-27 08:22",
       "task": "quality-audit 第六轮：mobility 42 条逐条机制复核 + 17 处命名/机制修正 + 2 条机动推理",
