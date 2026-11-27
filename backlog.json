@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 12:29",
+    "updated_at": "2026-11-27 12:33",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -419,8 +419,8 @@
       "time": "2026-11-27 12:29",
       "task": "quality-audit 第十轮：resource 15 条全量复核 + 15 处改写（2 处方向反转）+ 1 条魔法盾推理",
       "added": "① 逐条核对 basis=resource 的 15 条（dotaconstants abilities + 官方 schinese herodata）。译名/机制修正：美杜莎官方技能名是「魔法盾」而非「法力护盾」，98% 吸收、每 1 蓝挡 2 伤害；敌法师「法力损毁」是固定 25/30/35/40 + 最大蓝 1.8/2.7/3.6/4.5%，按烧掉蓝的 65% 追加物理；「法力虚空」按缺失蓝 1:1 结算；修补匠「再装填」、祸乱之源「魔爪」、天怒「奥法鹰隼」、冥魂大帝「绝冥再生」等译名统一。② 方向修正：anti-mage→wraith-king 改为 countered_by（绝冥再生 1/2 级耗 220/110 蓝、3 级 0，AM 只在 18 级前能断复活，且 WK 蓝池小使法力虚空伤害低）；legion-commander→medusa 改为 countered_by（决斗只禁目标主动技能与双方物品，魔法盾被动仍吸收 98%，军团打不空蓝池会被反杀）。③ 删除「末日让魔法盾失效」「天怒连续施法自己触发急速冷却」「莱恩抽蓝一键清零」等过度表述。④ 新增 inference.mana-shield-is-a-pre-layer-not-magic-resistance（premises: damage-pipeline/damage-types/mana-break-damage，confidence verified）。 ⑤ 另统一 heroes/rules/matchups 中 5 处「法力护盾」为「魔法盾」、3 处修补匠「重装」为「再装填」（rules.damage-pipeline / damage-block-per-instance 同步）。",
-      "result": "matchups 271 条不变（resource 15/15 已复核；counter 145 / countered_by 90 / synergy 36；主语覆盖 127/127）；inference 82→83（verified 25 / reasoned 58）；rules 63 / heroes 127 / items 70 未动；JSON 全部通过；audit 0 error / 0 warning / 1 info（disruptor↔faceless-void 有意双向）",
-      "next": "同步桌面端 .cache/kb 到 0.6.36 并重建 kb-embeddings.json；补齐 7.42 建筑赏金 T3/兵营/反补取整；继续审计 heroes.json 其余 coach_note 旧机制"
+      "result": "matchups 271 条不变（resource 15/15 已复核；counter 145 / countered_by 90 / synergy 36；主语覆盖 127/127）；inference 82→83（verified 25 / reasoned 58）；rules 63 / heroes 127 / items 70 未动；JSON 全部通过；audit 0 error / 0 warning / 1 info（disruptor↔faceless-void 有意双向）；桌面 .cache/kb 已刷新到 0.6.36，kb-embeddings 重建 636 条（23 条新嵌入 / 613 复用），verify 通过",
+      "next": "补齐 7.42 建筑赏金 T3/兵营/反补取整；继续审计 heroes.json 其余 coach_note 旧机制"
     },
     {
       "time": "2026-11-27 11:21",
