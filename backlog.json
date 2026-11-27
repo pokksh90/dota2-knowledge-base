@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 04:25",
+    "updated_at": "2026-11-28 05:17",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -565,10 +565,27 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 98~102 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第二十六轮：disruptor+faceless-void、treant-protector→riki、oracle+huskar、earthshaker→phantom-lancer、earth-spirit→rubick、sniper←tusk、pudge+faceless-void、disruptor→storm-spirit、disruptor←spirit-breaker、silencer←slark；10/10；改写后 242~280 字；全库最短 reason 102（broodmother←lina）；pair/relation/basis 不变；修正时间结界冻结施法/道具、疯狂生长不作用于已隐身单位、帕吉不能在结界内施法、球状闪电飞行中可施法、全球沉默穿 BKB 五处失准。"
+    },
+    {
+      "id": "quality-audit-global-shortest-10",
+      "title": "质量审查：第十批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 102~106 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第二十七轮：broodmother←lina、faceless-void→tinker、witch-doctor→chen、queen-of-pain→timbersaw、spectre→sniper、slark→sniper、faceless-void+lich、clockwerk←silencer、silencer→tinker、magnus+ursa；10/10；改写后 209~287 字；全库最短 reason 106（slardar→clinkz）；pair/relation/basis 不变；修正修补匠没有自带闪烁、时间结界冻结行动、巫医对陈不是硬克制、马格纳斯聚团不增加 Fury Swipes 层数等表述。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 05:17",
+      "task": "quality-audit 第二十七轮：第十批最短 10 条理由改写（0.6.53）",
+      "added": "queue 全 done，继续按 reason 长度取 102~106 字 10 条：broodmother←lina、faceless-void→tinker、witch-doctor→chen、queen-of-pain→timbersaw、spectre→sniper、slark→sniper、faceless-void+lich、clockwerk←silencer、silencer→tinker、magnus+ursa。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足小蜘蛛 325 血、光击阵 250/0.5 秒/1.2~2.4 秒，时间结界 500/3.75~4.75 秒，基恩传送 3 秒/再装填 1.25~2.75 秒，麻痹药剂 3~6 跳/0.8 秒/55~100+20，上帝之手 200~400+20~40/秒，音波 325~585/450/350，鬼影 6 秒/200%/35~65%，突袭 700/400/2.5~3.25，连环霜冻 10 跳/550/2 秒，钩爪 1.2~1.6/175、齿轮 5~8/215，两极反转 430/2.5~3.5 穿 BKB、Fury Swipes 12~36/8~20、Enrage 80%/50%。",
+      "result": "10 条改写（209~287 字，原 102~106 字）；matchups 271、relation 不变（counter 143 / countered_by 92 / synergy 36），basis 不变（control 73 / aoe 43 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15）；全库最短 reason 106（slardar→clinkz）；index 0.6.53、updated_at 2026-11-28 05:17；quality_audit 0 error / 0 warning / 1 info。GitHub 内容提交待推送；本轮环境列表仅云主机，桌面未在线，.cache/kb、两处 kb-snapshot 与 src/data/kb-embeddings.json 未同步，待桌面恢复后补。",
+      "note": "保留原 pair/relation/basis；修正：① 修补匠没有自带闪烁，逃生是 3 秒引导基恩传送/跳刀；② 巫医药剂对陈是 0.8 秒×多目标软控制，不是硬 counter；③ 痛苦女王纯粹伤害绕护甲，但活性护甲回血仍有效；④ 明确时间结界除虚空及其控制单位外全冻结，不能简化为只有 BKB 能破；⑤ 马格纳斯聚团不增加 Fury Swipes 单体层数，价值在控制与 Empower 溅射。统计：broodmother←lina n9 育母 55.56% 对 53.68%（反向，样本极小）；faceless-void→tinker n19 修补匠 52.63% 对 43.34%（反向，样本小）；witch-doctor→chen n14 陈 64.29% 对 57.12%（反向，样本小）；queen-of-pain→timbersaw n104 64.42% 对 48.10%（支持）；spectre→sniper n16 56.25% 对 42.96%（支持，样本小）；slark→sniper n33 66.67% 对 51.02%（支持）；faceless-void+lich 同队组合不在统计内，作为对手 n40 巫妖 47.50%、虚空 52.50% 接近基线；clockwerk←silencer n54 发条 61.11% 对 51.29%（反向，软克制）；silencer→tinker n16 修补匠 62.50% 对 43.34%（反向，样本小）；magnus+ursa 同队组合不在统计内，作为对手 n35 马格纳斯 54.29%、熊战士 45.71% 接近基线。"
+    },
     {
       "time": "2026-11-28 04:25",
       "task": "quality-audit 第二十六轮：第九批最短 10 条理由改写（0.6.52）",

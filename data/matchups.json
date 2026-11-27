@@ -14,7 +14,7 @@
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
     "last_updated": "2026-11-28",
-    "mechanism_note": "第十五轮审查 basis=vision 的 18 条：逐条对照 ability_base 与 7.42 官方技能文本，改写 10 条过短/失准理由。重点修正：① 斯拉达「腐蚀之雾」CD 仅 5 秒、持续 18 秒，旧条目让力丸「等大招 CD」不成立；② 树精的自然掩护不是无条件隐身，需要 2.75 秒不受伤进入 Tree Walking 再在树旁主动开，伐木机的死亡旋风是 325 半径清树、CD 6~7.5 秒；③ 宙斯/雷神之怒的真视是每个英雄周围 600、3 秒，CD 130 秒，不是常驻全图反隐；④ 追踪/腐蚀之雾是单体真视+视野，不是全图；⑤ 工兵的感应地雷不能被真视侦测，赏金的真视只能点英雄、不能排雷，但公开统计 27 局工兵反而 37.04% 落后，只算排雷层软优势；⑥ 赏金 vs 斯拉达的公开统计（34 局赏金 67.65%）与机制方向相反，降为软克制。保留原 pair、relation、basis 不变；另修正树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点。 第十七轮审查 basis=control：对 10 条最短理由逐条对照 ability_base 与 7.42 文本改写，补足持续时间/半径/施法方式与反制窗口；保留原 pair、relation、basis。 第十八轮审查全库最短对位理由：按 reason 长度对 271 条排序，取最短 10 条（32~50 字，横跨 aoe/mobility/damage-type/vision/sustain）逐条对照 ability_base 与 7.42 文本改写，补足跳弹次数/眩晕时长/施法窗口与反制条件；修正「莉娜双控」「钢背高护甲」两处失准表述，保留原 pair/relation/basis。 第十九轮继续审查全库最短对位理由：对剩余 52~57 字的 10 条（death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman）逐条对照 ability_base 改写，补足半径/持续时间/蓄力窗口/位移判定；修正月神之箭「最长 2.3 秒」为满级 5 秒、斯拉克「能量转移黏住」为突袭锁链，并给统计反向的条目加上样本与基线说明。保留原 pair/relation/basis。 第二十轮继续按最短优先审查全库最短 10 条（57~62 字）：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet。补足投掷最近单位/落点、割裂距离伤害、球状闪电半径、隔空取物抬升/落点、Enrage 强驱散、追踪真视时长、雷神之怒 600 真视、潮汐使者锥形顺劈、熊灵反噬 20%、磁流 225 孤立阈值；修正 Tiny+Enigma 投掷方向、宙斯全图真视误述、潮汐使者全屏 AOE 误述。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。 第二十一轮继续按最短优先审查全库最短 10 条（63~73 字）：snapfire+sven、monkey-king←timbersaw、dark-willow→phantom-assassin、pugna→sven、ringmaster→phantom-lancer、bane+lina、primal-beast→witch-doctor、shadow-demon→weaver、void-spirit←silencer、muerta→phantom-assassin。补足饼干 425 跳距/300 落点眩晕、树舞坠落 3 秒、荆棘迷宫定身、衰老 3.5 秒、聚光灯 30% 幻象掉血、魔爪引导、Pulverize 575 半径/0.75 秒、Disruption 2.75 秒、Global Silence 4.5~6 秒、Spectral Slug 2.25 秒；修正暗影恶魔「Demonic Purge 可驱散缩地」误述（Shukuchi 不可驱散）与虚无之灵把 Aether Remnant 当自身位移的误述；对统计反向/样本过小条目均标注 caveat。保留原 pair/relation/basis。 第二十二轮继续按最短优先审查全库最短 10 条（73~79 字）：pangolier←axe、slark→drow-ranger、underlord→natures-prophet、phantom-lancer←lina、queen-of-pain→dragon-knight、tidehunter←silencer、warlock→meepo、grimstroke+lina、gyrocopter→templar-assassin、vengeful-spirit+axe。补足地雷滚滚 550 移速/1.2 秒眩晕、狂战士之吼 315/2.1~3 秒、突袭 700/拴绳 400/2.5~3.25 秒、衰退光环 900/8%~32%、自然召唤 2~5 树人、并列幻象 600% 承伤/15% 输出、龙破斩与光击阵 CD、超声冲击波 450/350、遗言与奥术诅咒、致命连接 700/6 目标/18 秒、缚魂 600/6~8 秒、火箭弹幕 30 实例、折光 3~6 层/30 屏障、换位 150~450/CD 46~30 秒；修正孽主旧称「深渊领主」、缚魂绑「最近友方英雄」而非敌方、致命连接是额外伤害放大而非分摊、潮汐海妖外壳可强驱散沉默（需算 450~600 阈值）、卓尔并非无位移（狂风/冰川可击退）、BKB 当前额外免疫纯粹伤害（超声冲击波可被 BKB 硬吃）。保留原 pair/relation/basis。 第二十三轮继续按最短优先审查全库最短 10 条（81~90 字）：dawnbreaker→natures-prophet、dazzle←bounty-hunter、tidehunter→luna、huskar←ancient-apparition、silencer+faceless-void、legion-commander+skywrath-mage、oracle←bounty-hunter、tinker→crystal-maiden、razor←lina、clockwerk→sniper。补足天光现世 350 锚点/6 秒脉冲/0.8 秒落地、追踪 25 秒/6~14% 易伤、毁灭 1250/2~2.4 秒、冰晶爆轰 10~12 秒/12~14% 碎裂、时间结界 500/3.75~4.75、神秘之耀 170/800~1450、虚妄之诺 7~10 秒、激光 75~300/3~4.5 秒致盲、静电连接 10 秒/6~24、钩爪 175/1.2~1.6；修正全球沉默不锁道具、决斗不会自动把神秘之耀变成单体（需先卡住 170 圈外围）、冰女物理身板挡不住纯粹激光三处失准，并对统计反向/样本过小条目补样本与基线。保留原 pair/relation/basis。 第二十四轮继续按最短优先审查全库最短 10 条（90~92 字）：tidehunter+faceless-void、templar-assassin←slardar、visage←gyrocopter、disruptor→ember-spirit、axe+lina、pudge→sniper、oracle→legion-commander、doom→invoker、doom+pudge、earthshaker→meepo。补足毁灭 1250/2~2.4 秒、时间结界 500/3.75~4.75 且锁队友、腐蚀之雾 18 秒/8~20 减甲、折光 3~6 层/30 屏障、守墓人斗篷 40 阈值/4 层、静态风暴 550/6 秒/20 段、光击阵 250/0.5 秒、肉钩/肢解、虚妄之诺 7~10 秒、末日 12~16 秒、回音击 700/真英雄双回响；修正「火箭弹幕可剥守墓人斗篷层数」（每发 8~26 低于 40 阈值，实际靠 Flak Cannon/Call Down）、「减甲加速折光掉层」、「肢解魔法伤害穿透 BKB」三处失准，并对同队组合/小样本补 caveat。保留原 pair/relation/basis。 第二十五轮继续按最短优先审查全库最短 10 条（93~97 字）：venomancer←lina、alchemist←ancient-apparition、slark+io、legion-commander→tinker、lycan→crystal-maiden、templar-assassin→invoker、largo←ancient-apparition、keeper-of-the-light→sniper、juggernaut←axe、slardar→weaver。补足光击阵 250/0.5 秒、化学狂暴 30 秒/50~120 回复、联结 55~115% 传递/过载 0.5~0.8%、决斗 4~5 秒/锁道具、变形 25 秒/550 移速、折光「整段吸收」、大屿灵药 30~80、致盲 425~500/45%/4 秒、剑刃风暴 7.42 缴械、腐蚀之雾 18 秒/8~20 减甲。修正「折光只挡固定量」；明确 7.42 剑刃风暴缴械、神杖才可攻击；明确大屿灵药是即时治疗、安可只延长增益不延长该次治疗；venomancer←lina 的 basis 由 aoe 改为 control（AoE 对魔法免疫守卫无效，真正克制点是光击阵晕+爆发）。保留原 pair/relation，其余 basis 不变；对统计反向/样本过小条目均标注 caveat。 第二十六轮继续按最短优先审查全库最短 10 条（98~102 字）：disruptor+faceless-void、treant-protector→riki、oracle+huskar、earthshaker→phantom-lancer、earth-spirit→rubick、sniper←tusk、pudge+faceless-void、disruptor→storm-spirit、disruptor←spirit-breaker、silencer←slark。补足时间结界 500/3.75~4.75 秒冻结行动并穿 BKB、静态风暴 550/6 秒/20 段/200~350 DPS、疯狂生长 800/3~5 秒/95 DPS 且不作用于已隐身单位、虚妄之诺 7~10 秒/治疗翻倍、回音击 700/真英雄双回响、地磁之握 2.3~3.5 秒沉默+磁化共享、雪球 3 秒引导/575~650 速度、肉钩 1300/腐烂在结界内继续、球状闪电飞行中可施法/用道具、冲锋 275~425/1.3~2.2 秒、全球沉默 4.5~6 秒穿 BKB。修正：① 时间结界本身就冻结施法/道具，旧「只有 BKB 能破」不成立；② 疯狂生长不作用于已隐身单位，树精必须先撒粉/真眼或在力丸渐隐窗口开大；③ 帕吉在时间结界内不能施法，旧「在结界里把挪出去的人钩回」不成立，正确用法是先钩后罩并用已开的腐烂蹭伤害；④ 球状闪电飞行中可施法/用道具，旧「必须落地才能再起手」不成立；⑤ 全球沉默穿 BKB，斯拉克未提前开黑暗契约时不能靠它解。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。",
+    "mechanism_note": "第十五轮审查 basis=vision 的 18 条：逐条对照 ability_base 与 7.42 官方技能文本，改写 10 条过短/失准理由。重点修正：① 斯拉达「腐蚀之雾」CD 仅 5 秒、持续 18 秒，旧条目让力丸「等大招 CD」不成立；② 树精的自然掩护不是无条件隐身，需要 2.75 秒不受伤进入 Tree Walking 再在树旁主动开，伐木机的死亡旋风是 325 半径清树、CD 6~7.5 秒；③ 宙斯/雷神之怒的真视是每个英雄周围 600、3 秒，CD 130 秒，不是常驻全图反隐；④ 追踪/腐蚀之雾是单体真视+视野，不是全图；⑤ 工兵的感应地雷不能被真视侦测，赏金的真视只能点英雄、不能排雷，但公开统计 27 局工兵反而 37.04% 落后，只算排雷层软优势；⑥ 赏金 vs 斯拉达的公开统计（34 局赏金 67.65%）与机制方向相反，降为软克制。保留原 pair、relation、basis 不变；另修正树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点。 第十七轮审查 basis=control：对 10 条最短理由逐条对照 ability_base 与 7.42 文本改写，补足持续时间/半径/施法方式与反制窗口；保留原 pair、relation、basis。 第十八轮审查全库最短对位理由：按 reason 长度对 271 条排序，取最短 10 条（32~50 字，横跨 aoe/mobility/damage-type/vision/sustain）逐条对照 ability_base 与 7.42 文本改写，补足跳弹次数/眩晕时长/施法窗口与反制条件；修正「莉娜双控」「钢背高护甲」两处失准表述，保留原 pair/relation/basis。 第十九轮继续审查全库最短对位理由：对剩余 52~57 字的 10 条（death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman）逐条对照 ability_base 改写，补足半径/持续时间/蓄力窗口/位移判定；修正月神之箭「最长 2.3 秒」为满级 5 秒、斯拉克「能量转移黏住」为突袭锁链，并给统计反向的条目加上样本与基线说明。保留原 pair/relation/basis。 第二十轮继续按最短优先审查全库最短 10 条（57~62 字）：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet。补足投掷最近单位/落点、割裂距离伤害、球状闪电半径、隔空取物抬升/落点、Enrage 强驱散、追踪真视时长、雷神之怒 600 真视、潮汐使者锥形顺劈、熊灵反噬 20%、磁流 225 孤立阈值；修正 Tiny+Enigma 投掷方向、宙斯全图真视误述、潮汐使者全屏 AOE 误述。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。 第二十一轮继续按最短优先审查全库最短 10 条（63~73 字）：snapfire+sven、monkey-king←timbersaw、dark-willow→phantom-assassin、pugna→sven、ringmaster→phantom-lancer、bane+lina、primal-beast→witch-doctor、shadow-demon→weaver、void-spirit←silencer、muerta→phantom-assassin。补足饼干 425 跳距/300 落点眩晕、树舞坠落 3 秒、荆棘迷宫定身、衰老 3.5 秒、聚光灯 30% 幻象掉血、魔爪引导、Pulverize 575 半径/0.75 秒、Disruption 2.75 秒、Global Silence 4.5~6 秒、Spectral Slug 2.25 秒；修正暗影恶魔「Demonic Purge 可驱散缩地」误述（Shukuchi 不可驱散）与虚无之灵把 Aether Remnant 当自身位移的误述；对统计反向/样本过小条目均标注 caveat。保留原 pair/relation/basis。 第二十二轮继续按最短优先审查全库最短 10 条（73~79 字）：pangolier←axe、slark→drow-ranger、underlord→natures-prophet、phantom-lancer←lina、queen-of-pain→dragon-knight、tidehunter←silencer、warlock→meepo、grimstroke+lina、gyrocopter→templar-assassin、vengeful-spirit+axe。补足地雷滚滚 550 移速/1.2 秒眩晕、狂战士之吼 315/2.1~3 秒、突袭 700/拴绳 400/2.5~3.25 秒、衰退光环 900/8%~32%、自然召唤 2~5 树人、并列幻象 600% 承伤/15% 输出、龙破斩与光击阵 CD、超声冲击波 450/350、遗言与奥术诅咒、致命连接 700/6 目标/18 秒、缚魂 600/6~8 秒、火箭弹幕 30 实例、折光 3~6 层/30 屏障、换位 150~450/CD 46~30 秒；修正孽主旧称「深渊领主」、缚魂绑「最近友方英雄」而非敌方、致命连接是额外伤害放大而非分摊、潮汐海妖外壳可强驱散沉默（需算 450~600 阈值）、卓尔并非无位移（狂风/冰川可击退）、BKB 当前额外免疫纯粹伤害（超声冲击波可被 BKB 硬吃）。保留原 pair/relation/basis。 第二十三轮继续按最短优先审查全库最短 10 条（81~90 字）：dawnbreaker→natures-prophet、dazzle←bounty-hunter、tidehunter→luna、huskar←ancient-apparition、silencer+faceless-void、legion-commander+skywrath-mage、oracle←bounty-hunter、tinker→crystal-maiden、razor←lina、clockwerk→sniper。补足天光现世 350 锚点/6 秒脉冲/0.8 秒落地、追踪 25 秒/6~14% 易伤、毁灭 1250/2~2.4 秒、冰晶爆轰 10~12 秒/12~14% 碎裂、时间结界 500/3.75~4.75、神秘之耀 170/800~1450、虚妄之诺 7~10 秒、激光 75~300/3~4.5 秒致盲、静电连接 10 秒/6~24、钩爪 175/1.2~1.6；修正全球沉默不锁道具、决斗不会自动把神秘之耀变成单体（需先卡住 170 圈外围）、冰女物理身板挡不住纯粹激光三处失准，并对统计反向/样本过小条目补样本与基线。保留原 pair/relation/basis。 第二十四轮继续按最短优先审查全库最短 10 条（90~92 字）：tidehunter+faceless-void、templar-assassin←slardar、visage←gyrocopter、disruptor→ember-spirit、axe+lina、pudge→sniper、oracle→legion-commander、doom→invoker、doom+pudge、earthshaker→meepo。补足毁灭 1250/2~2.4 秒、时间结界 500/3.75~4.75 且锁队友、腐蚀之雾 18 秒/8~20 减甲、折光 3~6 层/30 屏障、守墓人斗篷 40 阈值/4 层、静态风暴 550/6 秒/20 段、光击阵 250/0.5 秒、肉钩/肢解、虚妄之诺 7~10 秒、末日 12~16 秒、回音击 700/真英雄双回响；修正「火箭弹幕可剥守墓人斗篷层数」（每发 8~26 低于 40 阈值，实际靠 Flak Cannon/Call Down）、「减甲加速折光掉层」、「肢解魔法伤害穿透 BKB」三处失准，并对同队组合/小样本补 caveat。保留原 pair/relation/basis。 第二十五轮继续按最短优先审查全库最短 10 条（93~97 字）：venomancer←lina、alchemist←ancient-apparition、slark+io、legion-commander→tinker、lycan→crystal-maiden、templar-assassin→invoker、largo←ancient-apparition、keeper-of-the-light→sniper、juggernaut←axe、slardar→weaver。补足光击阵 250/0.5 秒、化学狂暴 30 秒/50~120 回复、联结 55~115% 传递/过载 0.5~0.8%、决斗 4~5 秒/锁道具、变形 25 秒/550 移速、折光「整段吸收」、大屿灵药 30~80、致盲 425~500/45%/4 秒、剑刃风暴 7.42 缴械、腐蚀之雾 18 秒/8~20 减甲。修正「折光只挡固定量」；明确 7.42 剑刃风暴缴械、神杖才可攻击；明确大屿灵药是即时治疗、安可只延长增益不延长该次治疗；venomancer←lina 的 basis 由 aoe 改为 control（AoE 对魔法免疫守卫无效，真正克制点是光击阵晕+爆发）。保留原 pair/relation，其余 basis 不变；对统计反向/样本过小条目均标注 caveat。 第二十六轮继续按最短优先审查全库最短 10 条（98~102 字）：disruptor+faceless-void、treant-protector→riki、oracle+huskar、earthshaker→phantom-lancer、earth-spirit→rubick、sniper←tusk、pudge+faceless-void、disruptor→storm-spirit、disruptor←spirit-breaker、silencer←slark。补足时间结界 500/3.75~4.75 秒冻结行动并穿 BKB、静态风暴 550/6 秒/20 段/200~350 DPS、疯狂生长 800/3~5 秒/95 DPS 且不作用于已隐身单位、虚妄之诺 7~10 秒/治疗翻倍、回音击 700/真英雄双回响、地磁之握 2.3~3.5 秒沉默+磁化共享、雪球 3 秒引导/575~650 速度、肉钩 1300/腐烂在结界内继续、球状闪电飞行中可施法/用道具、冲锋 275~425/1.3~2.2 秒、全球沉默 4.5~6 秒穿 BKB。修正：① 时间结界本身就冻结施法/道具，旧「只有 BKB 能破」不成立；② 疯狂生长不作用于已隐身单位，树精必须先撒粉/真眼或在力丸渐隐窗口开大；③ 帕吉在时间结界内不能施法，旧「在结界里把挪出去的人钩回」不成立，正确用法是先钩后罩并用已开的腐烂蹭伤害；④ 球状闪电飞行中可施法/用道具，旧「必须落地才能再起手」不成立；⑤ 全球沉默穿 BKB，斯拉克未提前开黑暗契约时不能靠它解。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。 第二十七轮继续按最短优先审查全库最短 10 条（102~106 字）：broodmother←lina、faceless-void→tinker、witch-doctor→chen、queen-of-pain→timbersaw、spectre→sniper、slark→sniper、faceless-void+lich、clockwerk←silencer、silencer→tinker、magnus+ursa。补足：小蜘蛛 325 血、光击阵 250 半径/0.5 秒延迟/1.2~2.4 秒眩晕；时间结界 500/3.75~4.75 秒冻结行动并显形、基恩传送 3 秒引导、再装填 1.25~2.75 秒；麻痹药剂 3~6 跳/0.8 秒/55~100+20、上帝之手 200~400+20~40/秒；音波 325~585 纯粹/450/350 击退；鬼影 6 秒/200% 受伤/35~65% 输出；突袭 700/拴绳 400/2.5~3.25 秒；连环霜冻 10 跳/550/2 秒停留；钩爪 1.2~1.6 秒/175、齿轮 5~8 秒/215；两极反转 430/2.5~3.5 秒穿 BKB、Fury Swipes 12~36/8~20 秒、Enrage 80%/50%。修正：① 修补匠没有自带闪烁，逃生是 3 秒引导基恩传送/跳刀；② 巫医药剂对陈是 0.8 秒×多目标软控制，不是硬 counter；③ 痛苦女王纯粹伤害绕护甲，但活性护甲回血仍有效；④ 明确时间结界除虚空及其控制单位外全冻结，不能简化为只有 BKB 能破；⑤ 马格纳斯聚团不增加 Fury Swipes 单体层数，价值在控制与 Empower 溅射。统计：broodmother←lina n9 育母 55.56% 对基线 53.68%（反向，样本极小）；faceless-void→tinker n19 修补匠 52.63% 对 43.34%（反向，样本小）；witch-doctor→chen n14 陈 64.29% 对 57.12%（反向，样本小）；queen-of-pain→timbersaw n104 64.42% 对 48.10%（支持）；spectre→sniper n16 56.25% 对 42.96%（支持，样本小）；slark→sniper n33 66.67% 对 51.02%（支持）；faceless-void+lich 同队组合不在统计内，作为对手 n40 巫妖 47.50%、虚空 52.50% 接近基线；clockwerk←silencer n54 发条 61.11% 对 51.29%（反向，软克制）；silencer→tinker n16 修补匠 62.50% 对 43.34%（反向，样本小）；magnus+ursa 同队组合不在统计内，作为对手 n35 马格纳斯 54.29%、熊战士 45.71% 接近基线。保留原 pair/relation/basis。",
     "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）",
     "mirror_dedup_note": "早期批次曾以反方向重复书写同一条克制（如 medusa countered_by anti-mage 与 anti-mage counter medusa），已按「同关系互为镜像即合并、保留描述更完整的一条」清理 8 组；disruptor↔faceless-void 保留双向，因 countered_by 与 synergy 是两条不同结论。"
   },
@@ -72,7 +72,7 @@
       "hero_id": "faceless-void",
       "relation": "counter",
       "target_id": "tinker",
-      "reason": "时间结界把圈内单位全部锁住：修补匠赖以生存的三件事——闪烁的位移、再装填的引导、远程站桩的距离——在同一秒里全部失效，被罩住就只能站着挨揍；结界是范围锁，比单点控制更难靠反应躲掉，进场前先看清他的闪烁冷却。",
+      "reason": "时间结界 500 半径、持续 3.75/4.25/4.75 秒，冻结圈内除虚空及其控制单位外所有单位的移动、攻击、施法与道具；修补匠的逃生是 3 秒引导的基恩传送（或跳刀），输出循环依赖 1.25~2.75 秒引导的再装填，这两条引导在结界里都读不出来，远程站桩的距离也被虚空 650~800 码的时间漫游贴近后抹平。结界还会显形隐身单位，修补匠无法靠隐身斗篷拖时间。公开 n19 反而修补匠 52.63% 对自身 43.34%，说明他可用炮台/机械行军在圈外消耗，虚空必须先用时间漫游或跳大先手，不能把这组当稳定克制。",
       "basis": "control"
     },
     {
@@ -86,7 +86,7 @@
       "hero_id": "faceless-void",
       "relation": "synergy",
       "target_id": "lich",
-      "reason": "连环霜冻在敌人之间弹射最多 10 次、每次弹射伤害递增，落空的最后一跳还会停在目标身上等新目标；结界把所有人锁在一个小圈里，弹射次数与小圈密度成正比，等于把「弹射增益」拉满；注意结界锁队友，别把自己人当弹射跳板。",
+      "reason": "连环霜冻最多弹 10 次、每跳 250/375/500 伤害并每次加 20、弹射半径 550，最后一跳落空还会在目标身上停留 2 秒等新目标；时间结界 500 半径把圈内敌人锁在一起，等于把弹射密度和停留时间都放大。但结界同样锁队友，巫妖要站在圈外或确认自己不被罩；圈内小兵/召唤物会分摊弹跳，开团前先清兵。同队组合不在公开统计内，作为对手 n40 巫妖 47.50%、虚空 52.50%，都接近各自基线，不能把双人组合当成稳定胜率优势。",
       "basis": "aoe"
     },
     {
@@ -478,7 +478,7 @@
       "hero_id": "clockwerk",
       "relation": "countered_by",
       "target_id": "silencer",
-      "reason": "发条的进场链条是钩爪冲进去、落地立刻开能量齿轮把人圈住；全局沉默在原图上禁掉所有施法并穿透技能免疫，落地那一下只够普攻，齿轮开不出来就等于把自己送进对方阵地；遗言再补一层「施法即伤害+沉默」，连补救的第二手也断。",
+      "reason": "发条的进场是钩爪 1.2~1.6 秒眩晕、175 半径，落地立刻开能量齿轮 5~8 秒、215 半径把人圈住；全局沉默 4.5/5.25/6 秒、120 秒冷却且穿透技能免疫，确实能让落地后的齿轮与弹幕冲击读不出来，遗言再补 3~6 秒沉默与 120~240 基础伤害。问题是沉默冷却远长于齿轮 15~21 秒，发条可先用照明火箭/钩爪先手，或等沉默交完再进；公开 n54 反而发条 61.11% 对自身 51.29%，说明这组更像软克制而非稳定 counter。",
       "basis": "control"
     },
     {
@@ -492,7 +492,7 @@
       "hero_id": "broodmother",
       "relation": "countered_by",
       "target_id": "lina",
-      "reason": "蜘蛛的推进是「大量低血量小蜘蛛 + 蛛网机动」，龙破斩是穿透直线、光击阵是半径命中，一次施法能清掉一片小蜘蛛，而蛛网给的移速优势在范围伤害面前反而变成「聚在一起更好打」；对线期别把小蜘蛛叠在同一片蛛网里。",
+      "reason": "育母蜘蛛的推进核心是 325 生命的小蜘蛛与蛛网机动：龙破斩是穿透直线、光击阵是 250 半径范围伤害并带 0.5 秒延迟、1.2~2.4 秒眩晕，两段叠加配合普攻能清掉成组小蜘蛛的大半血量，眩晕还让小蜘蛛与蜘蛛本体少输出一轮；蜘蛛在蛛网里叠得越密，越容易被一发技能同时覆盖。对线期应把蜘蛛分组、不要在同一片蛛网叠满，并利用蛛网移速在莉娜技能冷却期拉扯。公开统计 n9 反而育母 55.56% 对自身 53.68%，样本过小不支持硬克制，只能当机制上的软 counter。",
       "basis": "aoe"
     },
     {
@@ -520,7 +520,7 @@
       "hero_id": "silencer",
       "relation": "counter",
       "target_id": "tinker",
-      "reason": "修补匠的全部循环靠「再装填」反复刷新技能，而再装填是引导型施法；全局沉默在整张图上禁掉施法并穿透技能免疫，一次就能掐断整套连招，遗言还会在他试图施法时补伤害与沉默；没有技能循环的修补匠只剩普攻，正面对拼并不占优。",
+      "reason": "修补匠的技能循环靠再装填 1.25~2.75 秒引导刷新，逃生靠基恩传送 3 秒引导；全局沉默 4.5~6 秒、120 秒冷却且穿透技能免疫，一次就能让这两条引导都读不出来，遗言再在他尝试施法时补 3~6 秒沉默与 120~240 基础伤害，没有技能的修补匠只剩普攻与道具。问题是对面可先远程秒沉默术士，或等他交完大再进场；公开 n16 反而修补匠 62.50% 对自身 43.34%，样本小且与机制相反，不能当稳定克制。",
       "basis": "control"
     },
     {
@@ -625,7 +625,7 @@
       "hero_id": "magnus",
       "relation": "synergy",
       "target_id": "ursa",
-      "reason": "两极反转把范围内的敌人拉到同一个点上并晕眩，而熊战士的整套输出要求「目标不能跑、而且必须贴身」：被聚过来又晕住的这几秒正好是他叠满怒意狂击、开怒意硬吃的窗口；被拉到一起的敌人往往还贴着地形边缘，连走位空间都没有。",
+      "reason": "两极反转把 430 半径内敌人拉到马格纳斯身边并晕 2.5~3.5 秒、穿 BKB，熊战士不用追人就能贴脸打满 Fury Swipes 叠层；满级每层 +36 伤害、8~20 秒不攻击才重置，配合 3~6 次 400 攻速的 Overpower 与 80% 减伤/50% 状态抗性的 Enrage，短时间内能把单体爆发打满。但 Fury Swipes 是单体叠层，聚团本身不增加主目标层数；价值在控制窗口与 Empower 的 16~40% 溅射，别把「拉一起」误当成伤害乘区。同队组合不在统计内，作为对手 n35 马格纳斯 54.29%、熊战士 45.71%，都接近基线。",
       "basis": "control"
     },
     {
@@ -667,7 +667,7 @@
       "hero_id": "slark",
       "relation": "counter",
       "target_id": "sniper",
-      "reason": "斯莱克的突袭是跳跃后拴绳，狙击手没有主动突进，只有震荡手雷的自推和爆头击退；被突袭命中后拴绳限制移动，能量转移每次攻击偷敏捷，暗影之舞还能解减速、回血。狙击手要留手雷把双方推开、站塔后，不要站在突袭的落点边缘。",
+      "reason": "突袭是 700 码跳跃，命中第一个英雄后拴绳 2.5~3.25 秒、半径 400，并把 1~4 层能量转移直接挂上；狙击手被拴住后只能在这个圈内挪动，震荡手雷虽能把双方推开 475 码，但推离超过 400 的拴绳半径才会断，交晚了仍会被贴脸。斯拉克还有暗影之舞 4~4.5 秒不可侦测、60~120 每秒回血，以及黑暗契约的强驱散，能在 1.5 秒延迟后解掉手雷减速等负面状态。公开 n33 斯拉克 66.67% 对自身 51.02%，样本中等且支持。",
       "basis": "mobility"
     },
     {
@@ -1178,7 +1178,7 @@
       "hero_id": "witch-doctor",
       "relation": "counter",
       "target_id": "chen",
-      "reason": "巫医的麻痹药剂(Paralyzing Cask)会在敌方单位之间反复弹跳，每次弹跳伤害递增，但眩晕时长固定为 0.8 秒；陈的神圣劝化会带一群野怪进场，反而给药剂提供更多弹跳目标，把单体控制变成群体连环控。",
+      "reason": "麻痹药剂会在敌方单位间弹跳 3~6 次，每次 0.8 秒眩晕、基础 55~100 伤害并每次弹跳加 20；陈的神圣劝化最多带 1~4 只野怪，野怪越多，药剂越容易把控制链拉长，陈的上帝之手 200~400 瞬回 + 20~40/秒 10 秒治疗也会被这段时间拖住。问题是每次只有 0.8 秒，陈把野怪分散站位、别让它们挤成一团，或让队友先手控住巫医，弹跳价值就会大幅缩水；公开 n14 反而陈 64.29% 对自身 57.12%，样本小且与机制相反，不能当稳定克制，只能算对抱团野怪的软惩罚。",
       "basis": "control"
     },
     {
@@ -1612,7 +1612,7 @@
       "hero_id": "queen-of-pain",
       "relation": "counter",
       "target_id": "timbersaw",
-      "reason": "超声冲击波(Sonic Wave)是纯粹伤害，不经过护甲也不经过魔抗，靠活性护甲叠减伤的伐木机直接失去主要物理减伤；但它仍是直线范围技能，伐木机可以用伐木锯链/锯齿飞轮调整站位，不能只靠一个大招就判定稳杀。",
+      "reason": "超声冲击波是 325/455/585 的纯粹伤害、450 最大半径并附带 350 击退，纯粹伤害既不经过护甲也不经过魔抗，伐木机靠活性护甲叠出的护甲对这道波无效，只剩回血部分还在起作用；痛苦女王还能用闪烁拉开，避开锯链与锯齿飞轮的近身纯伤。但冲击波是朝前方推进的波，伐木机可用锯链换位、用锯齿飞轮减速反打，不能只凭一个大招就判定稳杀；公开 n104 痛苦女王 64.42% 对自身 48.10%，样本中等且支持该机制。",
       "basis": "damage-type"
     },
     {
@@ -1858,7 +1858,7 @@
       "relation": "counter",
       "target_id": "sniper",
       "basis": "mobility",
-      "reason": "狙击手没有主动突进，只有震荡手雷的自推和爆头近身击退；鬼影重重对每个敌方英雄降下幻象，幻象无视地形并可传送到幻象位置贴脸，狙击手被贴住后射程优势归零。狙击手要留手雷在幽鬼传送落地前自推，或者站塔后；不要单走。"
+      "reason": "鬼影重重在 6 秒内给每个敌方英雄各降一个幻象，幻象无视地形、承受 200% 伤害、打出 35/50/65% 攻击，幽鬼可用 Reality 直接传送到狙击手面前的幻象；狙击手没有自带位移，只有震荡手雷 475 击退、50% 减速 3 秒与爆头 40% 概率的 50 码击退，被贴身后射程优势归零。狙击手要留手雷在幻象落地前自推、站塔后，并让队友点掉落地幻象；公开 n16 幽鬼 56.25% 对自身 42.96%，样本小但方向支持。"
     },
     {
       "hero_id": "invoker",
