@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 21:21",
+    "updated_at": "2026-11-27 21:23",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -503,7 +503,7 @@
       "time": "2026-11-27 21:21",
       "task": "quality-audit 第十九轮：全库最短 10 条理由改写（0.6.45）",
       "added": "backlog 全 done，继续质量审查。按 reason 长度对 271 条排序，取剩余最短 10 条（52~57 字）逐条对照 ability_base：death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman。补足沉默半径/持续、风步闪避边界、聚光灯 275 半径/45% 落空、月神之箭满级 5 秒、疯狂生长 800 半径/穿 BKB、火焰飞行 15 秒/250 半径、驯兽术蓄力 1 秒、虚空夜间打断、推进单体非 AOE、突袭锁链与 Fowl Play。",
-      "result": "10 条改写（164~207 字，原 52~57 字）；matchups 271、basis 分布不变；index 0.6.45、updated_at 2026-11-27 21:21；quality_audit 0 error / 0 warning / 1 info；统计反向/持平条目已标样本与基线（择要：风行 vs 宙斯 87 局 64.37% 对 50.68%、百戏 vs 沉默 53 局 50.94% 对 48.33%、死亡先知 vs 卡尔 41 局 46.34% 对 46.43%、斯拉克 vs 萨满 57 局 49.12% 对 51.02%）。"
+      "result": "10 条改写（164~207 字，原 52~57 字）；matchups 271、basis 分布不变；index 0.6.45、updated_at 2026-11-27 21:21；quality_audit 0 error / 0 warning / 1 info；GitHub 内容提交 1ea9a6c；桌面 .cache/kb 0.6.45（fetchBase 1ea9a6c，15 个 JSON，14 模块 / 1 跳过，271 对位 / 89 推理）；src/data/kb-snapshot 与 dist/win-unpacked/resources/kb-snapshot 均 0.6.45 / 21:21 / 271；kb-embeddings 770 条 / 6.78MB（kbVersion 0.6.45、重嵌 10 / 复用 760、createdAt 2026-11-27T13:23:05.634Z）；verify-kb OK；verify-kb-semantic 真实索引 0.6.45 / 770 条 / doubao-embedding-vision-251215 并 OK（“问题向量失败”为模拟分支）。"
     },
     {
       "time": "2026-11-27 20:21",
