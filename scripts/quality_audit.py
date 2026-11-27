@@ -249,6 +249,22 @@ def main():
             if f in actual and mod.get("count") != actual[f]:
                 err(f"index.json: {f} count={mod.get('count')} 实际 {actual[f]}")
 
+        # ---- README 与版本/计数同步 ----
+        readme_path = os.path.join(ROOT, "README.md")
+        if os.path.exists(readme_path):
+            readme = Path(readme_path).read_text(encoding="utf-8")
+            version = idx.get("meta", {}).get("version")
+            if version and f"`{version}`" not in readme:
+                warn(f"README.md: 未出现 index.json 当前版本 {version}")
+            for label in (f"{len(rules.get('principles', []))} 条" if rules else None,
+                          f"{len(inference.get('inferences', []))} 条" if inference else None):
+                if label and label not in readme:
+                    err(f"README.md: 缺少计数「{label}」")
+            if "T1–T5" in readme or "T1-T5" in readme:
+                err("README.md: 仍写中立装备 T1–T5，7.42 已取消第 5 档（应为 T1–T4）")
+            if "neutral_items.json" in readme and "T1–T4" not in readme:
+                warn("README.md: neutral_items 说明未标注 7.42 的 T1–T4 四级制")
+
     report = {
         "generated_by": "scripts/quality_audit.py",
         "error_count": len(ERRORS),

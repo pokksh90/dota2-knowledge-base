@@ -33,11 +33,14 @@
 │   ├── heroes.json           # ③ 英雄与定位（含 aliases 绰号）
 │   ├── items.json            # ③ 装备与出装
 │   ├── matchups.json         # ③ 克制与搭配
+│   ├── matchup_stats.json    # ③ 对位公开统计（校验克制结论的弱证据，patch pending）
 │   ├── patch_stats.json      # ③ 当前版本公开胜率/强度分档（127 英雄）
 │   ├── tactics.json          # ③ 战术与节奏
 │   ├── hero_base.json        # 基础数据层：英雄属性 + 技能索引
 │   ├── ability_base.json     # 基础数据层：790 条技能明细
-│   └── item_base.json        # 基础数据层：303 件道具价格与属性
+│   ├── item_base.json        # 基础数据层：303 件道具价格与属性
+│   ├── talents.json          # 基础数据层：127 英雄 × 4 层 × 2 天赋
+│   └── neutral_items.json    # 基础数据层：7.42 四级制中立装备 48 件
 └── scripts/
     ├── fetch_data.py         # 从公开 API 拉取数值并回填
     ├── build_base_data.py     # 从公开常量库重建基础数据层（可重复运行）
@@ -54,13 +57,14 @@
 | `heroes.json` | 英雄定位 1-5、主/副定位、玩法要点 | 选人、阵容分析 |
 | `items.json` | 装备分类、用途、分位置核心出装与情境选择 | 出装建议 |
 | `matchups.json` | 英雄 counter / synergy，每条带机制依据 `basis` | 对位与 BP 分析 |
+| `matchup_stats.json` | 127 英雄对各对手的公开样本量/胜率/相对自身基线 delta；`patch=pending`，仅作弱证据 | 校验机制克制结论 |
 | `patch_stats.json` | 当前版本公开对局胜率/选取率与 S/A/B/C/D 分档；标注样本、窗口与补丁纯度 | 「这版本强不强 / 胜率多少」的统计参考 |
 | `tactics.json` | 分线职责、关键时间点、地图目标、团战决策 | 战术节奏建议 |
 | `hero_base.json` | 英雄基础属性（三围/血量/护甲/移速/视野）+ 技能 key 索引 | 数值查询、对线强度估算 |
 | `ability_base.json` | 每个技能的伤害类型、蓝耗、冷却、是否穿透 BKB、关键数值 | 「这招能不能被 BKB/驱散挡」 |
 | `item_base.json` | 道具价格、合成件、属性、主动效果 | 出装成本与属性对比 |
 | `talents.json` | 每英雄 4 层 × 2 天赋，含脚本数值 `special_bonus_value` | 10/15/20/25 级加点与强度判断 |
-| `neutral_items.json` | 中立装备 T1–T5 候选池（48 件）与打造规则（疯狂石） | 中立装备选择与时间点 |
+| `neutral_items.json` | 7.42 四级制中立装备 T1–T4 候选池（4×4组×3件=48 件）与打造规则（疯狂石） | 中立装备选择与时间点 |
 
 ## 字段契约（摘要）
 
@@ -174,4 +178,4 @@ GITHUB_TOKEN=ghp_xxx bash scripts/push_to_github.sh   # 或直接 git push origi
 
 ## 版本与状态
 
-见 `index.json` 的 `meta` 与各条目的 `source` 标记。当前为持续增量完善的框架版：结构完整、稳定知识已填，数值字段留待核对；完善进度见 `backlog.json`。
+当前版本 **`0.6.42`**（见 `index.json` 的 `meta`）。机制层按 **7.42**；统计层 `patch_stats.json` 为最近 7 天滚动窗口，覆盖 **7.42 / 7.42a 混合样本**（`patch_purity=mixed`），因此只能回答公开对局胜率与分档，不能当作纯 7.42a 排名。结构完整，基础数值已按公开常量库重建；逐项机制数值待 7.42a 改动回填，对位统计 `matchup_stats.json` 的补丁标记仍为 `pending`。完善进度见 `backlog.json`。

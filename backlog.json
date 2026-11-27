@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 17:24",
+    "updated_at": "2026-11-27 18:21",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -463,15 +463,21 @@
       "id": "quality-audit-final",
       "title": "全库一致性终审",
       "file": "index.json",
-      "current": 0,
+      "current": 1,
       "target": 1,
-      "status": "pending",
+      "status": "done",
       "desc": "所有 basis 已分批判完，做一次跨层终审：检查 rules→inference→matchups 的引用、版本口径、index/backlog/README 计数与 quality_report 是否一致。",
-      "note": "vision 审查后 queue 已清空；下一轮做终审"
+      "note": "第十六轮终审完成：schema 127/70/271/9/127 全通过，rules→inference→matchups/basis 映射与 tactics premises 全通过，index 计数一致，README 版本/计数/T1–T4 已对齐；quality_audit.py 增加 README 校验。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 18:21",
+      "task": "quality-audit 第十六轮：全库一致性终审",
+      "added": "复核三层引用与版本口径：inference premises 89 条全部可回溯，无环；matchups 271 条英雄 id/basis 全合法，basis_legend 映射全部命中；tactics 38 处 premises 全存在；heroes/items/matchups/timings/patch_stats 逐条通过 schema；index 12 个 JSON 模块计数一致。发现并修正 README 仍写中立装备 T1–T5（7.42 已取消第 5 档），补齐 matchup_stats/talents/neutral_items 模块说明与版本状态；quality_audit.py 新增 README 版本、规则/推理计数、T1–T4 档位校验。",
+      "result": "error 0 / warning 0 / info 1（disruptor↔faceless-void 双向成对）；README 0.6.42 / 63 条 / 89 条 / T1–T4 对齐；index.updated_at 18:21；GitHub 待推送。"
+    },
     {
       "time": "2026-11-27 17:21",
       "task": "quality-audit 第十五轮：vision 18 条全量复核 + 10 处改写 + 1 条检测层推理",
