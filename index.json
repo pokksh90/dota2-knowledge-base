@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.37",
+    "version": "0.6.38",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-27",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-27 13:26"
+    "updated_at": "2026-11-27 14:40"
   },
   "modules": [
     {
@@ -25,9 +25,9 @@
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 84,
+      "count": 86,
       "status": "stable",
-      "note": "84 条（verified 25 / reasoned 59）；新增 attack-event-passives-reward-attack-frequency（按「被攻击」触发的被动吃攻击频率、不吃命中；按「受伤」触发的才吃命中）"
+      "note": "86 条（verified 26 / reasoned 60）；新增 shared-death-turns-aoe-into-execute（米波克隆体共享死亡时，AOE 击杀阈值是「最薄一条血条」而不是总血量）与 aoe-clump-value-is-setup-dependent（裸 AOE 的命中数由聚怪决定）"
     },
     {
       "file": "data/heroes.json",
@@ -48,7 +48,7 @@
       "title": "克制与搭配",
       "count": 271,
       "status": "stable",
-      "note": "271 条；physical 29 条全量复核、29 处改写（2 处方向反转：巨魔克幻影刺客、凤凰克巨魔；斧王反击螺旋改为按 7/6/5/4 次攻击触发、斯拉达固定减甲、玛尔斯竞技场双向挡弹道等；译名统一）"
+      "note": "271 条；aoe 44 条全量复核、21 处改写（2 处方向反转：斧王被米波、尸王被米波；回音击/裂地/脉冲新星等译名与机制修正；3 处统计冲突标注）"
     },
     {
       "file": "scripts/fetch_data.py",
