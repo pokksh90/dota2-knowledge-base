@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 00:27",
+    "updated_at": "2026-11-28 01:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -525,10 +525,27 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 73~79 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足反制窗口，并标注统计反向/样本过小。",
       "note": "第二十二轮：pangolier←axe、slark→drow-ranger、underlord→natures-prophet、phantom-lancer←lina、queen-of-pain→dragon-knight、tidehunter←silencer、warlock→meepo、grimstroke+lina、gyrocopter→templar-assassin、vengeful-spirit+axe；10/10；全库最短 reason 81（dawnbreaker→natures-prophet）；pair/relation/basis 不变；修正孽主旧称、缚魂绑友方、致命连接非分摊、海妖外壳可强驱散沉默、卓尔并非无位移、BKB 纯粹免疫等表述。"
+    },
+    {
+      "id": "quality-audit-global-shortest-6",
+      "title": "质量审查：第六批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 81~90 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足反制窗口，并标注统计反向/样本过小。",
+      "note": "第二十三轮：dawnbreaker→natures-prophet、dazzle←bounty-hunter、tidehunter→luna、huskar←ancient-apparition、silencer+faceless-void、legion-commander+skywrath-mage、oracle←bounty-hunter、tinker→crystal-maiden、razor←lina、clockwerk→sniper；10/10；全库最短 reason 90；pair/relation/basis 不变；修正全球沉默不锁道具、决斗不自动单体、冰女身板挡不住纯粹激光。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 01:19",
+      "task": "quality-audit 第二十三轮：第六批最短 10 条理由改写（0.6.49）",
+      "added": "queue 全 done，继续按 reason 长度取 81~90 字 10 条：dawnbreaker→natures-prophet、dazzle←bounty-hunter、tidehunter→luna、huskar←ancient-apparition、silencer+faceless-void、legion-commander+skywrath-mage、oracle←bounty-hunter、tinker→crystal-maiden、razor←lina、clockwerk→sniper。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足天光现世 350 锚点/6 秒脉冲/0.8 秒飞行、追踪 25 秒/6~14% 易伤、毁灭 1250/2~2.4 秒、冰晶爆轰 10~12 秒/12~14% 碎裂、时间结界 500/3.75~4.75、神秘之耀 170/800~1450、虚妄之诺 7~10 秒、激光 75~300/3~4.5 秒致盲、静电连接 10 秒/6~24、钩爪 175/1.2~1.6。修正全球沉默不锁道具、决斗不会自动把神秘之耀变成单体（需先卡住 170 圈外围）、冰女身板挡不住纯粹激光三处失准；对统计反向/样本过小条目补样本与基线。",
+      "result": "10 条改写（213~285 字，原 81~90 字）；matchups 271、basis 分布不变（control 72 / aoe 44 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15），relation 不变（counter 143 / countered_by 92 / synergy 36）；全库最短 reason 90（templar-assassin←slardar、tidehunter+faceless-void、visage←gyrocopter）；index 0.6.49、updated_at 2026-11-28 01:19；quality_audit 0 error / 0 warning / 1 info。GitHub 内容提交待推送；本轮环境列表仅云主机，桌面未在线，.cache/kb、两处 kb-snapshot 与 src/data/kb-embeddings.json 未同步，待桌面恢复后补。",
+      "note": "保留原 pair/relation/basis；统计：dawnbreaker→natures-prophet 53 局 46.94%（基线 48.70%，方向略反）；dazzle←bounty-hunter 62 局 48.15%（49.64%，弱支持）；tidehunter→luna 48 局 52.47%（48.13%，+4.34pp）；huskar←ancient-apparition 68 局 36.67%（53.62%，-16.95pp）；silencer+faceless-void 41 局 38.46%（47.34%，同队组合不在统计内）；legion-commander+skywrath-mage 101 局 55.32%（49.31%，+6.01pp，同队组合不在统计内）；oracle←bounty-hunter 62 局 25.00%（50.37%，-25.37pp）；tinker→crystal-maiden 5 局 44.44%（43.34%，样本不足）；razor←lina 25 局 45.90%（49.17%，-3.27pp）；clockwerk→sniper 35 局 57.89%（51.29%，+6.60pp）。"
+    },
     {
       "time": "2026-11-28 00:20",
       "task": "quality-audit 第二十二轮：第五批最短 10 条理由改写（0.6.48）",
