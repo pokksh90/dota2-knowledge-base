@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 01:19",
+    "updated_at": "2026-11-28 02:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -535,10 +535,27 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 81~90 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足反制窗口，并标注统计反向/样本过小。",
       "note": "第二十三轮：dawnbreaker→natures-prophet、dazzle←bounty-hunter、tidehunter→luna、huskar←ancient-apparition、silencer+faceless-void、legion-commander+skywrath-mage、oracle←bounty-hunter、tinker→crystal-maiden、razor←lina、clockwerk→sniper；10/10；全库最短 reason 90；pair/relation/basis 不变；修正全球沉默不锁道具、决斗不自动单体、冰女身板挡不住纯粹激光。"
+    },
+    {
+      "id": "quality-audit-global-shortest-7",
+      "title": "质量审查：第七批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 90~92 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足反制窗口，并标注同队组合/样本过小。",
+      "note": "第二十四轮：tidehunter+faceless-void、templar-assassin←slardar、visage←gyrocopter、disruptor→ember-spirit、axe+lina、pudge→sniper、oracle→legion-commander、doom→invoker、doom+pudge、earthshaker→meepo；10/10；改写后 239~356 字；全库最短 reason 93；pair/relation/basis 不变；修正火箭弹幕不能剥守墓人斗篷、减甲不加速折光掉层、肢解魔法伤害穿透 BKB 三处失准。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 02:20",
+      "task": "quality-audit 第二十四轮：第七批最短 10 条理由改写（0.6.50）",
+      "added": "queue 全 done，继续按 reason 长度取 90~92 字 10 条：tidehunter+faceless-void、templar-assassin←slardar、visage←gyrocopter、disruptor→ember-spirit、axe+lina、pudge→sniper、oracle→legion-commander、doom→invoker、doom+pudge、earthshaker→meepo。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足毁灭 1250/2~2.4 秒、时间结界 500/3.75~4.75 且锁队友、腐蚀之雾 18 秒/8~20 减甲、折光 3~6 层/30 屏障、守墓人斗篷 40 阈值/4 层、静态风暴 550/6 秒/20 段、光击阵 250/0.5 秒、肉钩/肢解、虚妄之诺 7~10 秒、末日 12~16 秒、回音击 700/真英雄双回响。修正火箭弹幕可剥守墓人斗篷层数（每发 8~26 低于 40 阈值，实际靠 Flak Cannon/Call Down）、减甲加速折光掉层、肢解魔法伤害穿透 BKB 三处失准；对同队组合/小样本补 caveat。",
+      "result": "10 条改写（239~356 字，原 90~92 字）；matchups 271、basis 分布不变（control 72 / aoe 44 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15），relation 不变（counter 143 / countered_by 92 / synergy 36）；全库最短 reason 93（venomancer←lina、alchemist←ancient-apparition）；index 0.6.50、updated_at 2026-11-28 02:20；quality_audit 0 error / 0 warning / 1 info。GitHub 内容提交待推送；本轮环境列表仅云主机，桌面未在线，.cache/kb、两处 kb-snapshot 与 src/data/kb-embeddings.json 未同步，待桌面恢复后补。",
+      "note": "保留原 pair/relation/basis；统计：tidehunter+faceless-void 同队组合不在统计内（潮汐对虚空 47 局 63.83%，基线 48.13%，仅对手数据）；templar-assassin←slardar 100 局 47.00%（基线 49.26%，弱支持）；visage←gyrocopter 6 局 16.67%（47.22%，样本不足）；disruptor→ember-spirit 237 局 44.73%（47.40%，弱支持）；axe+lina 130 局 50.00%（49.98%，中性，同队不在统计内）；pudge→sniper 116 局 46.55%（50.10%，方向略反）；oracle→legion-commander 9 局 55.56%（50.37%，样本不足）；doom→invoker 110 局 49.09%（52.58%，方向略反）；doom+pudge 89 局 61.80%（52.58%，仅对手数据，同队不在统计内）；earthshaker→meepo 5 局 80.00%（46.49%，样本不足）。"
+    },
     {
       "time": "2026-11-28 01:19",
       "task": "quality-audit 第二十三轮：第六批最短 10 条理由改写（0.6.49）",
