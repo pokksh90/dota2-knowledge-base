@@ -14,7 +14,7 @@
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
     "last_updated": "2026-11-27",
-    "mechanism_note": "第十五轮审查 basis=vision 的 18 条：逐条对照 ability_base 与 7.42 官方技能文本，改写 10 条过短/失准理由。重点修正：① 斯拉达「腐蚀之雾」CD 仅 5 秒、持续 18 秒，旧条目让力丸「等大招 CD」不成立；② 树精的自然掩护不是无条件隐身，需要 2.75 秒不受伤进入 Tree Walking 再在树旁主动开，伐木机的死亡旋风是 325 半径清树、CD 6~7.5 秒；③ 宙斯/雷神之怒的真视是每个英雄周围 600、3 秒，CD 130 秒，不是常驻全图反隐；④ 追踪/腐蚀之雾是单体真视+视野，不是全图；⑤ 工兵的感应地雷不能被真视侦测，赏金的真视只能点英雄、不能排雷，但公开统计 27 局工兵反而 37.04% 落后，只算排雷层软优势；⑥ 赏金 vs 斯拉达的公开统计（34 局赏金 67.65%）与机制方向相反，降为软克制。保留原 pair、relation、basis 不变；另修正树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点。 第十七轮审查 basis=control：对 10 条最短理由逐条对照 ability_base 与 7.42 文本改写，补足持续时间/半径/施法方式与反制窗口；保留原 pair、relation、basis。 第十八轮审查全库最短对位理由：按 reason 长度对 271 条排序，取最短 10 条（32~50 字，横跨 aoe/mobility/damage-type/vision/sustain）逐条对照 ability_base 与 7.42 文本改写，补足跳弹次数/眩晕时长/施法窗口与反制条件；修正「莉娜双控」「钢背高护甲」两处失准表述，保留原 pair/relation/basis。 第十九轮继续审查全库最短对位理由：对剩余 52~57 字的 10 条（death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman）逐条对照 ability_base 改写，补足半径/持续时间/蓄力窗口/位移判定；修正月神之箭「最长 2.3 秒」为满级 5 秒、斯拉克「能量转移黏住」为突袭锁链，并给统计反向的条目加上样本与基线说明。保留原 pair/relation/basis。",
+    "mechanism_note": "第十五轮审查 basis=vision 的 18 条：逐条对照 ability_base 与 7.42 官方技能文本，改写 10 条过短/失准理由。重点修正：① 斯拉达「腐蚀之雾」CD 仅 5 秒、持续 18 秒，旧条目让力丸「等大招 CD」不成立；② 树精的自然掩护不是无条件隐身，需要 2.75 秒不受伤进入 Tree Walking 再在树旁主动开，伐木机的死亡旋风是 325 半径清树、CD 6~7.5 秒；③ 宙斯/雷神之怒的真视是每个英雄周围 600、3 秒，CD 130 秒，不是常驻全图反隐；④ 追踪/腐蚀之雾是单体真视+视野，不是全图；⑤ 工兵的感应地雷不能被真视侦测，赏金的真视只能点英雄、不能排雷，但公开统计 27 局工兵反而 37.04% 落后，只算排雷层软优势；⑥ 赏金 vs 斯拉达的公开统计（34 局赏金 67.65%）与机制方向相反，降为软克制。保留原 pair、relation、basis 不变；另修正树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点。 第十七轮审查 basis=control：对 10 条最短理由逐条对照 ability_base 与 7.42 文本改写，补足持续时间/半径/施法方式与反制窗口；保留原 pair、relation、basis。 第十八轮审查全库最短对位理由：按 reason 长度对 271 条排序，取最短 10 条（32~50 字，横跨 aoe/mobility/damage-type/vision/sustain）逐条对照 ability_base 与 7.42 文本改写，补足跳弹次数/眩晕时长/施法窗口与反制条件；修正「莉娜双控」「钢背高护甲」两处失准表述，保留原 pair/relation/basis。 第十九轮继续审查全库最短对位理由：对剩余 52~57 字的 10 条（death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman）逐条对照 ability_base 改写，补足半径/持续时间/蓄力窗口/位移判定；修正月神之箭「最长 2.3 秒」为满级 5 秒、斯拉克「能量转移黏住」为突袭锁链，并给统计反向的条目加上样本与基线说明。保留原 pair/relation/basis。 第二十轮继续按最短优先审查全库最短 10 条（57~62 字）：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet。补足投掷最近单位/落点、割裂距离伤害、球状闪电半径、隔空取物抬升/落点、Enrage 强驱散、追踪真视时长、雷神之怒 600 真视、潮汐使者锥形顺劈、熊灵反噬 20%、磁流 225 孤立阈值；修正 Tiny+Enigma 投掷方向、宙斯全图真视误述、潮汐使者全屏 AOE 误述。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。",
     "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）",
     "mirror_dedup_note": "早期批次曾以反方向重复书写同一条克制（如 medusa countered_by anti-mage 与 anti-mage counter medusa），已按「同关系互为镜像即合并、保留描述更完整的一条」清理 8 组；disruptor↔faceless-void 保留双向，因 countered_by 与 synergy 是两条不同结论。"
   },
@@ -863,7 +863,7 @@
       "hero_id": "venomancer",
       "relation": "counter",
       "target_id": "ursa",
-      "reason": "恶性瘟疫(Noxious Plague)+毒刺的持续减速让熊战士贴身窗口被极大压缩，同时瘟疫守卫阵地让近战难以安全靠近",
+      "reason": "毒系的减速/持续伤害能拖慢熊战士，但不是硬克制：恶性瘟疫（Noxious Plague，4 秒、50% 减速、每秒 2/3/4% 最大生命）和毒刺会被 Enrage 的强驱散一次清掉，Enrage 还给 80% 减伤、50% 状态抗性、4~5 秒持续时间；熊战士的 400 攻速 Overpower 也能快速点掉 150~450 血的瘟疫守卫。毒系阵地适合拉扯，但熊战士贴脸后仍能靠怒意反打；公开统计 43 局剧毒术士 44.19% 对自身 51.58%，方向反而偏向熊战士，只能算对线消耗层软克制。",
       "basis": "mobility"
     },
     {
@@ -926,7 +926,7 @@
       "hero_id": "zeus",
       "relation": "counter",
       "target_id": "riki",
-      "reason": "雷神之怒(Thundergod's Wrath)对全场敌方英雄造成伤害并提供视野，隐身中的力丸会被直接点名，隐身优势失效",
+      "reason": "雷神之怒（Thundergod's Wrath）命中每个敌方英雄时，会在其周围 600 半径提供 3 秒真视，并造成 275/425/575 魔法伤害；闪电击还能在 600 半径提供 5 秒真视、0.35 秒小眩晕。力丸的隐身会被这两下短时照出，但真视只有 3~5 秒，宙斯仍怕烟幕（400 半径、55~70% 落空、12~15 秒 CD）封技能和闪烁突袭贴脸。公开统计只有 7 局宙斯 57.14%（自身 47.75%），样本太小，不能当稳定压制。",
       "basis": "vision"
     },
     {
@@ -975,7 +975,7 @@
       "hero_id": "muerta",
       "relation": "countered_by",
       "target_id": "storm-spirit",
-      "reason": "琼英碧灵是无位移的远程智力核心，身板脆；风暴之灵靠球状闪电的高机动直接贴脸爆发，她来不及拉开距离或打完幽魂子弹的控制",
+      "reason": "琼英碧灵是没有硬位移逃生的远程智力核心，身板脆、怕高爆发法系；风暴之灵的球状闪电（1400/1850/2300 速度、200 半径）可以绕过前排直接贴脸，电涡（拉 180~300）接残影/超负荷（300 半径、0.8 秒 -80% 移速/-90 攻速）完成第一轮爆发。她的越界虚无挡物理不挡风暴的魔法，幽魂子弹/唤魂虽能反手，但都要先命中；公开统计 96 局 50.00% 对自身 50.03%，几乎持平，只能算条件性克制。",
       "basis": "mobility"
     },
     {
@@ -1052,7 +1052,7 @@
       "hero_id": "kunkka",
       "relation": "counter",
       "target_id": "phantom-lancer",
-      "reason": "船长的潮汐使者(Tidebringer)是一次大范围横扫顺劈，幻影长矛手的分身越密集收益越高，一波顺劈能连本带幻象一起削",
+      "reason": "潮汐使者是正面锥形顺劈，1 级 650、满级 1025 距离、150% 顺劈伤害，能沿一条扇面同时削到成排幻象；但它是攻击修饰，不是全屏 AOE，也不是必中。幻影长矛手可用幻影冲锋的 20~50% 闪避、Doppelganger 的 325 范围分散与 1 秒消失躲掉第一刀，再用 Juxtapose（最多 6/8/10 个、本体 40~50% 触发）重新铺开。船长要先用 X 标记/洪流固定阵型，潮汐使者才容易一波清；公开统计 17 局船长 58.82%，样本小。",
       "basis": "aoe"
     },
     {
@@ -1101,7 +1101,7 @@
       "hero_id": "tiny",
       "relation": "synergy",
       "target_id": "enigma",
-      "reason": "小小可以把身边的单位(含敌方)扔到指定位置，配合谜团黑洞的范围吸附，能把敌人直接送进黑洞中心，省去靠走位进入的窗口",
+      "reason": "投掷不是点地放置：小小抓起自身 300 半径内最近的单位（可能是小兵/召唤物），再朝目标单位或神符抛出，落点由目标决定；因此经典配合是让谜团站成最近单位，把谜团投到敌方目标身上，谜团落地直接开黑洞（420 半径、4 秒引导、90/135/180 每秒纯粹伤害，穿 BKB）。但投掷 11~20 秒 CD、黑洞 160~180 秒，且小兵会抢投掷；统计层只测对位不测同队，不能证明组合强度。",
       "basis": "control"
     },
     {
@@ -1136,14 +1136,14 @@
       "hero_id": "weaver",
       "relation": "countered_by",
       "target_id": "bounty-hunter",
-      "reason": "赏金的追踪(Track)提供真视与目标视野，编织者靠缩地(Shukuchi)隐身绕后与逃生会被全程标亮，队友可直接跟上",
+      "reason": "追踪（Track）持续 25 秒、提供单体真视和 6/10/14% 易伤，CD 仅 4~6 秒；编织者靠缩地（Shukuchi，4 秒隐身、550 移速、6~15 秒 CD）绕后/逃生，会被这盏单体真视灯持续照出，赏金队友可跟进。编织者的时间倒流是强驱散+回到 5 秒前位置，但 CD 40~70 秒，追踪可以反复补；赏金的隐身破隐一击还带 0.9~1.5 秒眩晕。公开统计 17 局编织者 35.29% 对自身 44.40%，方向支持但样本小。",
       "basis": "vision"
     },
     {
       "hero_id": "hoodwink",
       "relation": "countered_by",
       "target_id": "bloodseeker",
-      "reason": "割裂(Rupture)按移动距离结算伤害，森海飞霞依赖穿树位移(Scurry)拉开距离，越跑越疼，位移优势反成负担",
+      "reason": "割裂（7/9/11 秒）按移动距离的 45/50/55% 结算纯粹伤害，且穿 BKB；森海飞霞的 Scurry（3.5~5 秒、20~32% 加速、相位穿树，不是隐身）一旦用来拉开，就等于自己喂伤害。血魔再用血之祭祀（2.9 秒后 600 半径沉默 3~6 秒）封住荆棘/橡果/大招：跑出祭祀会被割裂罚，站住则被沉默。她仍可站桩反打，但低血时血魔的嗜血渴望还会加速追击；公开统计仅 14 局，方向支持但样本太小。",
       "basis": "mobility"
     },
     {
@@ -1234,7 +1234,7 @@
       "hero_id": "arc-warden",
       "relation": "countered_by",
       "target_id": "natures-prophet",
-      "reason": "天穹守望者的磁流(Flux)只在目标周围没有其它敌方单位时才施加伤害，先知带一堆树人在场会让 Flux 直接失效，爆发链断掉",
+      "reason": "磁流（Flux）是单体持续 6 秒的 15/30/45/60 每秒伤害与 20~35% 减速，但只要目标周围 225 半径内还有另一个敌方单位，伤害就直接不结算；先知自然召唤一次 2~5 个树人（425~500 血、持续 50 秒），很容易让磁流只剩减速。天穹可用 Spark Wraith 逐步清树人、Magnetic Field 保命，但树人数量多且 Curse of the Oldgrowth 会反打；先知的全球大招也能补伤害。公开统计仅 6 局，天穹 33.33% 落后，样本太小，只能算机制上有条件克制。",
       "basis": "aoe"
     },
     {
@@ -1255,7 +1255,7 @@
       "hero_id": "rubick",
       "relation": "synergy",
       "target_id": "enigma",
-      "reason": "拉比克的隔空取物(Telekinesis)把目标抬起再摔下、落地眩晕周围敌人，等于给谜团黑洞提供无需贴脸的定位与停顿",
+      "reason": "隔空取物（Telekinesis）先抬升 0.95~1.7 秒，再指定落点抛出，落地在 300~375 半径造成 0.9~1.5 秒眩晕；投掷距离最多 375，能把单个目标补进黑洞（420 半径、4 秒引导）边缘，但抬升本身不穿 BKB，落点也要预判。它的价值是给谜团补第二段定位/停顿，不是替代跳刀先手；对位统计里拉比克 vs 谜团 55 局仅 41.82%（自身 51.26%），说明同队配合不能只看单挑数据。",
       "basis": "control"
     },
     {
@@ -1311,7 +1311,7 @@
       "hero_id": "lone-druid",
       "relation": "countered_by",
       "target_id": "batrider",
-      "reason": "熊灵离德鲁伊过远就无法攻击，且德鲁伊在熊灵死亡时还会吃最大生命百分比的反噬；蝙蝠的枷锁能把其中一方直接拖走，拆散这对组合",
+      "reason": "熊灵离开德鲁伊过远就无法攻击；熊灵死亡时，德鲁伊会承受自身最大生命 20% 的反噬。蝙蝠骑士的枷锁（2.25/2.75/3.25 秒、穿 BKB）可以把熊灵或德鲁伊直接拖走，火焰飞行（15 秒、250 半径、20~80 每秒伤害、30~48 秒 CD）则让蝙蝠保持空中消耗。但枷锁是单体、CD 60~90 秒，德鲁伊可用 350 范围、1.1~2 秒的野性咆哮恐惧反打；公开统计 16 局德鲁伊反而 62.50%，方向与机制相反，只算操作型/条件性克制。",
       "basis": "control"
     },
     {

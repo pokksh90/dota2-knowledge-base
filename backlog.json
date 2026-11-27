@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 21:23",
+    "updated_at": "2026-11-27 22:24",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -495,10 +495,27 @@
       "status": "done",
       "desc": "继续对全库 reason 最短的 10 条逐条对照 ability_base/7.42 文本，修正失准表述、补足机制细节，并标注统计反向/持平的样本。",
       "note": "第十九轮：改写剩余 52~57 字的 10 条（164~207 字）；覆盖 control/vision/damage-type/mobility/aoe；修正月神之箭眩晕上限与斯拉克锁链表述；pair/relation/basis 不变。"
+    },
+    {
+      "id": "quality-audit-global-shortest-3",
+      "title": "质量审查：第三批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取剩余 57~62 字的 10 条，逐条对照 ability_base 与 matchup_stats 复核机制、补足反制窗口，并标注统计反向/样本过小。",
+      "note": "第二十轮：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet；10/10；pair/relation/basis 不变；全库最短 reason 63（snapfire+sven）"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 22:24",
+      "task": "quality-audit 第二十轮：第三批最短 10 条理由改写（0.6.46）",
+      "added": "queue 全 done，继续按 reason 长度取 57~62 字 10 条：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet。补足投掷最近单位/落点、割裂距离伤害、球状闪电半径、隔空取物抬升/落点、Enrage 强驱散、追踪真视时长、雷神之怒 600 真视、潮汐使者锥形顺劈、熊灵反噬 20%、磁流 225 孤立阈值；修正 Tiny+Enigma 投掷方向、宙斯全图真视误述、潮汐使者全屏 AOE 误述；对统计反向/样本过小条目标注 caveat。",
+      "result": "10 条改写（194~258 字，原 57~62 字）；matchups 271、basis 分布不变；全库最短 reason 63（snapfire+sven）；index 0.6.46、updated_at 2026-11-27 22:24；本轮桌面同步与 GitHub 推送结果待补。",
+      "note": "保留原 pair/relation/basis；Tiny+Enigma 属同队组合，matchup_stats 只测对位，不能证明组合强度；Venomancer→Ursa、Lone Druid←Batrider 的公开统计方向与机制相反，已降为软/条件克制；Muerta←Storm、Zeus→Riki 样本过小，已标注。"
+    },
     {
       "time": "2026-11-27 21:21",
       "task": "quality-audit 第十九轮：全库最短 10 条理由改写（0.6.45）",
