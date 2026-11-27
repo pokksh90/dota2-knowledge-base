@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 17:21",
+    "updated_at": "2026-11-27 17:24",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -476,7 +476,7 @@
       "time": "2026-11-27 17:21",
       "task": "quality-audit 第十五轮：vision 18 条全量复核 + 10 处改写 + 1 条检测层推理",
       "added": "逐条对照 ability_base 与 7.42 技能文本：① 斯拉达腐蚀之雾 CD 5 秒、持续 18 秒，旧条目「力丸等大招 CD」不成立；② 树精自然掩护要 2.75 秒不受伤进 Tree Walking、再在树旁主动开（CD 36），伐木机死亡旋风 325 半径清树、CD 6~7.5；③ 宙斯雷神之怒真视 600/3 秒、CD 130，不是常驻全图；④ 赏金追踪/斯拉达腐蚀之雾是单体真视+视野；⑤ 工兵感应地雷不吃真视，赏金真视不能排雷，但 27 局统计工兵 37.04% 反而落后；⑥ 赏金 vs 斯拉达 34 局 67.65% 与机制方向相反，降为软克制。另修树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点；新增推理 detection-layers-and-scope。",
-      "result": "vision 18 条全量复核，10 处理由改写；inference 88→89；heroes 4 条要点校正；index 0.6.42；quality_audit 0 error / 0 warning / 1 info；GitHub 待推送；桌面同步待执行"
+      "result": "vision 18 条全量复核，10 处理由改写；inference 88→89；heroes 4 条要点校正；index 0.6.42；quality_audit 0 error / 0 warning / 1 info；GitHub 已推送 8fc7a8d，commit 固定地址核验通过；桌面 .cache/kb 0.6.42（14 模块 / 89 推理），src/data/kb-snapshot 与 dist/win-unpacked/resources/kb-snapshot 均 0.6.42；kb-embeddings 770 条 / 6.77MB；verify-kb 与 verify-kb-semantic 通过。"
     },
     {
       "time": "2026-11-27 16:24",
