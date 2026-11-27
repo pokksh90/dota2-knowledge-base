@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.36",
+    "version": "0.6.37",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-27",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-27 12:29"
+    "updated_at": "2026-11-27 13:26"
   },
   "modules": [
     {
@@ -25,9 +25,9 @@
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 83,
+      "count": 84,
       "status": "stable",
-      "note": "83 条（verified 25 / reasoned 58）；新增 mana-shield-is-a-pre-layer-not-magic-resistance（魔法盾是前置总格挡，纯粹伤害也要按 1 蓝挡 2 伤害折算，不是靠纯伤破盾）；第九轮 damage-type 审查同步修正"
+      "note": "84 条（verified 25 / reasoned 59）；新增 attack-event-passives-reward-attack-frequency（按「被攻击」触发的被动吃攻击频率、不吃命中；按「受伤」触发的才吃命中）"
     },
     {
       "file": "data/heroes.json",
@@ -48,7 +48,7 @@
       "title": "克制与搭配",
       "count": 271,
       "status": "stable",
-      "note": "271 条；resource 15 条全量复核，15 处改写（2 处方向反转：WK 克 AM、美杜莎克军团；「魔法盾」/「再装填」/「魔爪」/「奥法鹰隼」等译名修正，另 5 处跨条旧译名同步）；damage-type 24、control 72、主语覆盖 127/127、counter 145 / countered_by 90 / synergy 36"
+      "note": "271 条；physical 29 条全量复核、29 处改写（2 处方向反转：巨魔克幻影刺客、凤凰克巨魔；斧王反击螺旋改为按 7/6/5/4 次攻击触发、斯拉达固定减甲、玛尔斯竞技场双向挡弹道等；译名统一）"
     },
     {
       "file": "scripts/fetch_data.py",
