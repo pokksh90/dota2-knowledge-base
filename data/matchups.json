@@ -14,7 +14,7 @@
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
     "last_updated": "2026-11-27",
-    "mechanism_note": "第十三轮审查 basis=mobility 的 42 条：逐条对照 ability_base/官方技能描述，重点修正 7.42 技能/innate 带来的「无位移」误判。① 明确有自移动/短位移：水晶室女 Crystal Clone（滑步+disjoint）、莉娜 Flame Cloak（无碰撞移动）+Fiery Soul（移速）、熊战士 Earthshock（250 码小跳）、狙击手 Concussive Grenade（自推）+Headshot 击退、修补匠 Keen Conveyance（引导传送建筑/友军）。② 修正机制错误：大地之灵 Geomagnetic Grip 只拉残岩/友军、不拉敌人；真正贴脸靠 Boulder Smash 踢残岩 + Rolling Boulder；裂魂人冲锋是锁定单位、Crystal Clone 不能取消锁定。③ 改写 13 条过短/失准理由，保留原 pair 与 basis；未改动其他正确条目。",
+    "mechanism_note": "第十三轮审查 basis=mobility 的 42 条：逐条对照 ability_base/官方技能描述，重点修正 7.42 技能/innate 带来的「无位移」误判。① 明确有自移动/短位移：水晶室女 Crystal Clone（滑步+disjoint）、莉娜 Flame Cloak（无碰撞移动）+Fiery Soul（移速）、熊战士 Earthshock（250 码小跳）、狙击手 Concussive Grenade（自推）+Headshot 击退、修补匠 Keen Conveyance（引导传送建筑/友军）。② 修正机制错误：大地之灵 Geomagnetic Grip 只拉残岩/友军、不拉敌人；真正贴脸靠 Boulder Smash 踢残岩 + Rolling Boulder；裂魂人冲锋是锁定单位、Crystal Clone 不能取消锁定。③ 改写 15 条过短/失准理由（含 batrider→crystal-maiden、sniper←warlock 两条漏网的「无位移」表述），保留原 pair 与 basis；未改动其他正确条目。",
     "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）",
     "mirror_dedup_note": "早期批次曾以反方向重复书写同一条克制（如 medusa countered_by anti-mage 与 anti-mage counter medusa），已按「同关系互为镜像即合并、保留描述更完整的一条」清理 8 组；disruptor↔faceless-void 保留双向，因 countered_by 与 synergy 是两条不同结论。"
   },
@@ -1500,7 +1500,7 @@
       "hero_id": "batrider",
       "relation": "counter",
       "target_id": "crystal-maiden",
-      "reason": "燃烧枷锁穿透技能免疫，命中后不能移动、攻击或施法，无位移的脆皮辅助被拖走即死",
+      "reason": "燃烧枷锁穿透技能免疫，命中后不能移动、攻击或施法；水晶室女有晶体克隆（Crystal Clone）的短滑步和冰封禁制定身，但被枷锁锁住后这两个技能都放不出来，仍会被拖走集火。冰女要提前用克隆或定身卡住蝙蝠的进场，不能等枷锁命中再交。",
       "basis": "control"
     },
     {
@@ -1655,7 +1655,7 @@
       "relation": "countered_by",
       "target_id": "warlock",
       "basis": "aoe",
-      "reason": "致命连接把多个可见的敌方单位绑在一起，任意一个受到的伤害都会按比例分摊到其他被绑单位身上：狙击手是全队最脆的目标之一，站位又常贴着辅助与远程身边，一旦被绑进链子，他吃到的爆发会被复制到队友身上、队友吃到的伤害也会回头压到他。剧变的减速与地狱火这类可被投放的贴身单位，又让这个没有位移的射手很难离开被集火的区域。"
+      "reason": "致命连接把多个可见的敌方单位绑在一起，任意一个受到的伤害都会按比例分摊到其他被绑单位身上：狙击手是全队最脆的目标之一，站位又常贴着辅助与远程身边，一旦被绑进链子，他吃到的爆发会被复制到队友身上、队友吃到的伤害也会回头压到他。剧变的减速与地狱火这类可被投放的贴身单位，又让狙击手很难离开被集火的区域——他只有震荡手雷的自推和爆头击退，能把双方推开一小段，但挡不住地狱火贴脸和剧变持续减速。"
     },
     {
       "hero_id": "pangolier",

@@ -444,9 +444,9 @@
   "run_log": [
     {
       "time": "2026-11-27 15:25",
-      "task": "quality-audit 第十三轮：mobility 42 条全量复核 + 13 处改写 + 1 条位移/视野推理",
-      "added": "逐条对照 ability_base/官方技能描述，重点修正 7.42 技能/innate 带来的「无位移」误判：水晶室女 Crystal Clone、莉娜 Flame Cloak+Fiery Soul、熊战士 Earthshock 250 码小跳、狙击手 Concussive Grenade 自推+Headshot 击退、修补匠 Keen Conveyance 引导传送；修正大地之灵 Geomagnetic Grip 只拉残岩/友军、不拉敌人，真正贴脸靠 Boulder Smash+Rolling Boulder；新增推理 mobility-value-is-distance-plus-vision（位移=缩短进入时间+绕地形，视野为前提）。",
-      "result": "mobility 42 条全量复核，13 处理由改写；inference 86→87；index 0.6.40；quality_audit 0 error / 0 warning / 1 info；GitHub 待推送。"
+      "task": "quality-audit 第十三轮：mobility 42 条全量复核 + 15 处改写 + 1 条位移/视野推理",
+      "added": "逐条对照 ability_base/官方技能描述，重点修正 7.42 技能/innate 带来的「无位移」误判：水晶室女 Crystal Clone、莉娜 Flame Cloak+Fiery Soul、熊战士 Earthshock 250 码小跳、狙击手 Concussive Grenade 自推+Headshot 击退、修补匠 Keen Conveyance 引导传送；修正大地之灵 Geomagnetic Grip 只拉残岩/友军、不拉敌人，真正贴脸靠 Boulder Smash+Rolling Boulder；新增推理 mobility-value-is-distance-plus-vision（位移=缩短进入时间+绕地形，视野为前提）。 补修 batrider→crystal-maiden、sniper←warlock 两条漏网的「无位移」表述。",
+      "result": "mobility 42 条全量复核，15 处理由改写；inference 86→87；index 0.6.40；quality_audit 0 error / 0 warning / 1 info；GitHub 已推送 3b50bc8，补修待推送。"
     },
     {
       "time": "2026-11-27 15:10",
