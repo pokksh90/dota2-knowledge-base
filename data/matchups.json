@@ -14,7 +14,7 @@
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
     "last_updated": "2026-11-27",
-    "mechanism_note": "第十五轮审查 basis=vision 的 18 条：逐条对照 ability_base 与 7.42 官方技能文本，改写 10 条过短/失准理由。重点修正：① 斯拉达「腐蚀之雾」CD 仅 5 秒、持续 18 秒，旧条目让力丸「等大招 CD」不成立；② 树精的自然掩护不是无条件隐身，需要 2.75 秒不受伤进入 Tree Walking 再在树旁主动开，伐木机的死亡旋风是 325 半径清树、CD 6~7.5 秒；③ 宙斯/雷神之怒的真视是每个英雄周围 600、3 秒，CD 130 秒，不是常驻全图反隐；④ 追踪/腐蚀之雾是单体真视+视野，不是全图；⑤ 工兵的感应地雷不能被真视侦测，赏金的真视只能点英雄、不能排雷，但公开统计 27 局工兵反而 37.04% 落后，只算排雷层软优势；⑥ 赏金 vs 斯拉达的公开统计（34 局赏金 67.65%）与机制方向相反，降为软克制。保留原 pair、relation、basis 不变；另修正树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点。 第十七轮审查 basis=control：对 10 条最短理由逐条对照 ability_base 与 7.42 文本改写，补足持续时间/半径/施法方式与反制窗口；保留原 pair、relation、basis。 第十八轮审查全库最短对位理由：按 reason 长度对 271 条排序，取最短 10 条（32~50 字，横跨 aoe/mobility/damage-type/vision/sustain）逐条对照 ability_base 与 7.42 文本改写，补足跳弹次数/眩晕时长/施法窗口与反制条件；修正「莉娜双控」「钢背高护甲」两处失准表述，保留原 pair/relation/basis。 第十九轮继续审查全库最短对位理由：对剩余 52~57 字的 10 条（death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman）逐条对照 ability_base 改写，补足半径/持续时间/蓄力窗口/位移判定；修正月神之箭「最长 2.3 秒」为满级 5 秒、斯拉克「能量转移黏住」为突袭锁链，并给统计反向的条目加上样本与基线说明。保留原 pair/relation/basis。 第二十轮继续按最短优先审查全库最短 10 条（57~62 字）：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet。补足投掷最近单位/落点、割裂距离伤害、球状闪电半径、隔空取物抬升/落点、Enrage 强驱散、追踪真视时长、雷神之怒 600 真视、潮汐使者锥形顺劈、熊灵反噬 20%、磁流 225 孤立阈值；修正 Tiny+Enigma 投掷方向、宙斯全图真视误述、潮汐使者全屏 AOE 误述。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。",
+    "mechanism_note": "第十五轮审查 basis=vision 的 18 条：逐条对照 ability_base 与 7.42 官方技能文本，改写 10 条过短/失准理由。重点修正：① 斯拉达「腐蚀之雾」CD 仅 5 秒、持续 18 秒，旧条目让力丸「等大招 CD」不成立；② 树精的自然掩护不是无条件隐身，需要 2.75 秒不受伤进入 Tree Walking 再在树旁主动开，伐木机的死亡旋风是 325 半径清树、CD 6~7.5 秒；③ 宙斯/雷神之怒的真视是每个英雄周围 600、3 秒，CD 130 秒，不是常驻全图反隐；④ 追踪/腐蚀之雾是单体真视+视野，不是全图；⑤ 工兵的感应地雷不能被真视侦测，赏金的真视只能点英雄、不能排雷，但公开统计 27 局工兵反而 37.04% 落后，只算排雷层软优势；⑥ 赏金 vs 斯拉达的公开统计（34 局赏金 67.65%）与机制方向相反，降为软克制。保留原 pair、relation、basis 不变；另修正树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点。 第十七轮审查 basis=control：对 10 条最短理由逐条对照 ability_base 与 7.42 文本改写，补足持续时间/半径/施法方式与反制窗口；保留原 pair、relation、basis。 第十八轮审查全库最短对位理由：按 reason 长度对 271 条排序，取最短 10 条（32~50 字，横跨 aoe/mobility/damage-type/vision/sustain）逐条对照 ability_base 与 7.42 文本改写，补足跳弹次数/眩晕时长/施法窗口与反制条件；修正「莉娜双控」「钢背高护甲」两处失准表述，保留原 pair/relation/basis。 第十九轮继续审查全库最短对位理由：对剩余 52~57 字的 10 条（death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman）逐条对照 ability_base 改写，补足半径/持续时间/蓄力窗口/位移判定；修正月神之箭「最长 2.3 秒」为满级 5 秒、斯拉克「能量转移黏住」为突袭锁链，并给统计反向的条目加上样本与基线说明。保留原 pair/relation/basis。 第二十轮继续按最短优先审查全库最短 10 条（57~62 字）：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet。补足投掷最近单位/落点、割裂距离伤害、球状闪电半径、隔空取物抬升/落点、Enrage 强驱散、追踪真视时长、雷神之怒 600 真视、潮汐使者锥形顺劈、熊灵反噬 20%、磁流 225 孤立阈值；修正 Tiny+Enigma 投掷方向、宙斯全图真视误述、潮汐使者全屏 AOE 误述。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。 第二十一轮继续按最短优先审查全库最短 10 条（63~73 字）：snapfire+sven、monkey-king←timbersaw、dark-willow→phantom-assassin、pugna→sven、ringmaster→phantom-lancer、bane+lina、primal-beast→witch-doctor、shadow-demon→weaver、void-spirit←silencer、muerta→phantom-assassin。补足饼干 425 跳距/300 落点眩晕、树舞坠落 3 秒、荆棘迷宫定身、衰老 3.5 秒、聚光灯 30% 幻象掉血、魔爪引导、Pulverize 575 半径/0.75 秒、Disruption 2.75 秒、Global Silence 4.5~6 秒、Spectral Slug 2.25 秒；修正暗影恶魔「Demonic Purge 可驱散缩地」误述（Shukuchi 不可驱散）与虚无之灵把 Aether Remnant 当自身位移的误述；对统计反向/样本过小条目均标注 caveat。保留原 pair/relation/basis。",
     "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）",
     "mirror_dedup_note": "早期批次曾以反方向重复书写同一条克制（如 medusa countered_by anti-mage 与 anti-mage counter medusa），已按「同关系互为镜像即合并、保留描述更完整的一条」清理 8 组；disruptor↔faceless-void 保留双向，因 countered_by 与 synergy 是两条不同结论。"
   },
@@ -947,7 +947,7 @@
       "hero_id": "ringmaster",
       "relation": "counter",
       "target_id": "phantom-lancer",
-      "reason": "聚光灯(Spotlight)对被照到的幻象按每秒百分比最大生命持续烧血，幻影长矛手靠分身数量堆输出的思路被直接瓦解；灯下隐身也会显形",
+      "reason": "百戏大王的 Spotlight 放出 3 道光束扫过 275 半径区域，照到会降 45% 命中并显形隐身单位；被照到的幻象每秒损失 30% 最大生命，离开后效果还留 0.3 秒，CD 30 秒、蓝耗 50。对幻影长矛手靠 Juxtapose 铺开的幻象池是高效清场，但本体不是幻象，光束只给他命中惩罚与显形；幻影长矛手可派幻象探路、用 Doppelganger 的 325 范围换位绕开。公开统计 23 局反而百戏大王 34.78% 落后（幻影长矛手 65.22%），样本小且方向相反，只能算清幻象的条件克制。",
       "basis": "aoe"
     },
     {
@@ -968,7 +968,7 @@
       "hero_id": "muerta",
       "relation": "counter",
       "target_id": "phantom-assassin",
-      "reason": "琼英碧灵技能组围绕虚无：幽魂子弹把目标打成虚无（物理免疫、不能攻击、受魔法伤害增加），越界让她自己也能攻击虚无目标，专门拆解依赖物理爆发的幻影刺客",
+      "reason": "琼英碧灵的 A 杖碎片技能 Spectral Slug 把目标打成虚无 2.25 秒：物理免疫、无法攻击、减速 30%、承受额外 20% 魔法伤害，并击退 250；Pierce the Veil 让她自己也能攻击虚无目标，且她或目标任一方虚无时，她的攻击伤害转为魔法伤害。幻影刺客的爆发几乎全是物理，被命中后 2.25 秒既打不出输出又吃魔法伤害，琼英碧灵可接 Dead Shot/The Calling 收尾；但幻影刺客可开 BKB 挡掉虚无，Blur/Immaterial 的闪避也可能让她空枪。公开统计 17 局琼英碧灵 70.59% 对自身 50.03%，方向支持但样本太小，不能当稳定克制。",
       "basis": "damage-type"
     },
     {
@@ -1073,7 +1073,7 @@
       "hero_id": "void-spirit",
       "relation": "countered_by",
       "target_id": "silencer",
-      "reason": "虚无之灵靠残影与异化(Dissimilate)的多段位移进出战场，沉默术士的全局沉默与遗言让他在关键窗口内无法施法，位移链一断就只能硬吃伤害",
+      "reason": "虚无之灵的机动来自 Dissimilate（1.1 秒相位、多门重聚）与 Astral Step（800~1000 码突进、130/230/330 伤害、40%/60%/80% 减速），Aether Remnant 只是 450 观察范围的拉人陷阱，不是自身位移。沉默术士的 Global Silence 持续 4.5/5.25/6 秒、穿 BKB、CD 120，Last Word 在 4 秒或施法后补 3~6 秒沉默；两段都命中时，虚无之灵在关键窗口内放不出 Dissimilate/Astral Step，位移链断裂。注意沉默只封技能不封物品，他仍可用跳刀/推推/绿杖拖时间；公开统计 50 局虚无之灵 44.00% 对自身 46.47%，样本只算弱证据。",
       "basis": "control"
     },
     {
@@ -1087,7 +1087,7 @@
       "hero_id": "monkey-king",
       "relation": "countered_by",
       "target_id": "timbersaw",
-      "reason": "齐天大圣的树上跳跃(Tree Dance)必须依附树木，死亡旋风的摧毁树木效果会让他直接从树上摔下来并被眩晕，机动与逃生同时失效",
+      "reason": "齐天大圣的 Tree Dance 最远 1000 码上树，树被摧毁时会坠落并眩晕 3 秒。伐木机的 Whirling Death 以自身 325 半径清树（CD 6~7.5 秒、100 蓝、纯粹伤害 60~240），只要大圣栖在附近树上就会被打下来，3 秒眩晕足够接 Timber Chain 与 Chakram。应对是别把树选在伐木机 325 半径内，保持远树跳跃；公开统计 40 局大圣反而 60.00% 领先（自身基线 53.28%），与机制方向相反，样本小，只能算条件性克制。",
       "basis": "mobility"
     },
     {
@@ -1129,7 +1129,7 @@
       "hero_id": "bane",
       "relation": "synergy",
       "target_id": "lina",
-      "reason": "祸乱之源的魔爪(Fiend's Grip)是长时单体持续控制并持续抽蓝，被抓住的目标无法行动，正好给火女这类高爆发法系创造稳定输出窗口",
+      "reason": "祸乱之源的 Fiend's Grip 是 4.75/5.25/5.75 秒单体引导控制，穿 BKB，每秒抽 5% 最大蓝并造成 70/110/150 纯粹伤害；被抓住的目标不能行动，莉娜可从容接 Light Strike Array（250 半径、0.5 秒延迟、1.2~2.4 秒眩晕）再 Laguna Blade（360/525/690）。代价是祸乱必须持续引导，被沉默/眩晕打断就前功尽弃；目标开 BKB 时魔爪仍能抓，但莉娜的法术伤害会被挡。同队组合不在对位统计内（Bane vs Lina 39 局 46.15% 对自身 54.41%），不能拿对位数据证明配合强度。",
       "basis": "control"
     },
     {
@@ -1164,7 +1164,7 @@
       "hero_id": "pugna",
       "relation": "counter",
       "target_id": "sven",
-      "reason": "帕格纳的衰老(Decrepify)让目标无法攻击、同时也吃额外的魔法伤害；斯温的伤害几乎全压在攻击上，被衰老期间既打不出输出又更脆",
+      "reason": "帕格纳的 Decrepify 持续 3.5 秒，令目标无法攻击、也无法被攻击，并减速 45%/50%/55%/60%、承受额外魔法伤害；CD 16/13/10/7、蓝耗 50/60/70/80。斯温的输出高度依赖普攻，被衰老时普攻输出归零，还会被幽冥爆轰与生命汲取放大；但衰老不锁技能，斯温仍可丢风暴之锤、开神之力量，开 BKB 也能直接挡掉。公开统计仅 8 局、双方各 50%，样本太小，不能当稳定克制。",
       "basis": "control"
     },
     {
@@ -1206,14 +1206,14 @@
       "hero_id": "primal-beast",
       "relation": "counter",
       "target_id": "witch-doctor",
-      "reason": "上古巨兽的捶(Pulverize)无视技能免疫，抓起目标反复砸地并对范围内敌人持续小眩晕；巫医的死亡守卫是持续施法，会被连续小眩晕打断",
+      "reason": "原始兽的 Pulverize 是 2.3 秒引导单体抓取，每 0.75 秒砸地一次，对 575 半径内敌人造成 0.2 秒小眩晕，穿 BKB；巫医的 Death Ward 需要持续引导 8 秒，任何一次小眩晕都会打断。只要原始兽抓到巫医，或砸击范围覆盖到他，死亡守卫就放不出来或被中断；但引导本身怕被第三方控制打断，且必须算好 575 半径。公开统计 33 局反而原始兽 39.39% 落后（自身基线 49.91%），方向与机制相反，只能算打断大招的条件克制。",
       "basis": "control"
     },
     {
       "hero_id": "snapfire",
       "relation": "synergy",
       "target_id": "sven",
-      "reason": "电炎绝手的饼干(Firesnap Cookie)可以让友方单位跳跃一段距离并在落点眩晕敌人；斯温不必依赖跳刀即可被送进人群开大",
+      "reason": "电炎绝手对友方单位施放 Firesnap Cookie：目标沿朝向跳 425 码，落地 300 半径内造成 60/130/200/270 伤害并眩晕 1/1.4/1.8/2.2 秒，CD 18/17/16/15、蓝耗 105。把饼干给斯温，他可不先出跳刀就被送进人群，落地眩晕接风暴之锤（250~310 半径、1~1.75 秒）形成二段控制，再开神之力量（30 秒、+110%/150%/190% 伤害）输出。代价是斯温进场后仍可能被集火；同队组合不在 matchup_stats 统计内，Snapfire vs Sven 73 局 52.05% 对自身 51.12% 只反映对位，不能证明组合强度。",
       "basis": "mobility"
     },
     {
@@ -1297,7 +1297,7 @@
       "hero_id": "dark-willow",
       "relation": "counter",
       "target_id": "phantom-assassin",
-      "reason": "邪影芳灵的荆棘迷宫(Bramble Maze)在目标区生成 8 根荆棘，踩进去即被缠绕并持续掉血，专门惩罚需要贴脸切入的近战刺客",
+      "reason": "邪影芳灵的 Bramble Maze 在 500 半径内生成 8 根荆棘，0.3 秒后生效、持续 12 秒；踩中会被定身 1/1.5/2/2.5 秒并持续掉血（每跳 50/55/60/65），CD 22 秒。幻影刺客的切入依赖 Phantom Strike 贴脸，踩迷宫会被定住，Blur 的 12% 移速和 Immaterial 的 20%~50% 闪避都救不了定身；但她可开 BKB 直接踩过，或等 12 秒迷宫结束。公开统计 22 局反而幻影刺客 63.64% 领先（邪影芳灵 36.36% 对自身 48.51%），样本太小，只能算阵地/对线条件克制。",
       "basis": "control"
     },
     {
@@ -1605,7 +1605,7 @@
       "hero_id": "shadow-demon",
       "relation": "counter",
       "target_id": "weaver",
-      "reason": "邪恶净化先驱散正面 buff 再持续减速，缩地带来的加速与隐身被抹掉，位移核失去脱离手段；但缩地本身不是免疫，别把它当成能硬吃控制的技能。",
+      "reason": "暗影恶魔的 Disruption 把编织者放逐 2.75 秒，归来时生成 2 个继承 20%/30%/40%/50% 伤害的幻象；Demonic Purge 先移除正面 buff，再持续减速 5 秒，结束时造成 300/425/550 伤害，穿 BKB。关键修正：Shukuchi 是不可驱散的，Demonic Purge 不能抹掉缩地的 550 移速与隐身，别把「驱散」误当成能断缩地；正确打法是先用 Disruption 锁住，等缩地结束或逼出 Time Lapse 后再接 Purge。公开统计 148 局暗影恶魔 64.86% 对自身 53.67%，方向支持，是这批里样本最足的一条。",
       "basis": "mobility"
     },
     {

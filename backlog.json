@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 22:27",
+    "updated_at": "2026-11-27 23:24",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -505,10 +505,27 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取剩余 57~62 字的 10 条，逐条对照 ability_base 与 matchup_stats 复核机制、补足反制窗口，并标注统计反向/样本过小。",
       "note": "第二十轮：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet；10/10；pair/relation/basis 不变；全库最短 reason 63（snapfire+sven）"
+    },
+    {
+      "id": "quality-audit-global-shortest-4",
+      "title": "质量审查：第四批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 63~73 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足反制窗口，并标注统计反向/样本过小。",
+      "note": "第二十一轮：snapfire+sven、monkey-king←timbersaw、dark-willow→phantom-assassin、pugna→sven、ringmaster→phantom-lancer、bane+lina、primal-beast→witch-doctor、shadow-demon→weaver、void-spirit←silencer、muerta→phantom-assassin；10/10；全库最短 reason 73（pangolier←axe）；pair/relation/basis 不变；修正暗影恶魔「Demonic Purge 可驱散缩地」与虚无之灵把 Aether Remnant 当自身位移两处误述。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 23:22",
+      "task": "quality-audit 第二十一轮：第四批最短 10 条理由改写（0.6.47）",
+      "added": "queue 全 done，继续按 reason 长度取 63~73 字 10 条：snapfire+sven、monkey-king←timbersaw、dark-willow→phantom-assassin、pugna→sven、ringmaster→phantom-lancer、bane+lina、primal-beast→witch-doctor、shadow-demon→weaver、void-spirit←silencer、muerta→phantom-assassin。逐条对照 ability_base/7.42 文本：补足 Firesnap Cookie 425 跳距/300 落点/1~2.2 秒眩晕、Tree Dance 树毁坠落 3 秒、Bramble Maze 8 根/1~2.5 秒定身、Decrepify 3.5 秒/45~60% 减速、Spotlight 3 光束/45% 落空/幻象 30% 最大生命每秒、Fiend's Grip 4.75~5.75 秒/5% 抽蓝、Pulverize 2.3 秒引导/575 半径/0.75 秒一次 0.2 秒小眩晕、Disruption 2.75 秒/2 幻象、Global Silence 4.5~6 秒/穿 BKB、Spectral Slug 2.25 秒/30% 减速/20% 魔法易伤。修正暗影恶魔「Demonic Purge 可驱散 Shukuchi」误述（Shukuchi 不可驱散，Purge 只清其他正面 buff 并减速）与虚无之灵把 Aether Remnant 当自身位移的误述；对 monkey-king←timbersaw、dark-willow→phantom-assassin、ringmaster→phantom-lancer、primal-beast→witch-doctor 四条统计反向，及 pugna→sven 8 局、muerta→PA 17 局、bane+lina 同队、snapfire+sven 同队，均标注样本/基线 caveat。",
+      "result": "10 条改写（203~331 字，原 63~73 字）；matchups 271、basis 分布不变（control 72 / aoe 44 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15），relation 不变（counter 143 / countered_by 92 / synergy 36）；全库最短 reason 73（pangolier←axe）；index 0.6.47、updated_at 2026-11-27 23:24；quality_audit 0 error / 0 warning / 1 info；GitHub 内容提交待推送；桌面同步待完成。",
+      "note": "保留原 pair/relation/basis；四条统计反向只作条件克制标注，不改 relation；同队组合不被 matchup_stats 覆盖，不能证明配合强度；Shukuchi 不可驱散是本轮关键修正。"
+    },
     {
       "time": "2026-11-27 22:24",
       "task": "quality-audit 第二十轮：第三批最短 10 条理由改写（0.6.46）",
