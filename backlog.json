@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 15:10",
+    "updated_at": "2026-11-27 15:19",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -446,7 +446,7 @@
       "time": "2026-11-27 15:10",
       "task": "新增当前版本公开胜率/强度分档（patch_stats，127 英雄，7.42a/7.42 混合窗口）",
       "added": "新增 data/patch_stats.json：OpenDota heroStats 最近 7 天（约 351 万场）逐英雄 win_rate/pick_rate/picks/rank/tier；档位阈值 S≥52.5/A≥51/B≥49/C≥47.5/D<47.5；新增 scripts/build_patch_stats.py 可重复生成；index 增加模块与 version_scope（机制层 7.42、统计层 7.42a 混合）。",
-      "result": "127/127 英雄；S 17 / A 14 / B 46 / C 25 / D 25；JSON 通过；index 0.6.39；GitHub 与桌面向量同步待收尾。"
+      "result": "127/127 英雄；S 17 / A 14 / B 46 / C 25 / D 25；JSON 通过；index 0.6.39；GitHub 已提交 3190cc0 并 push origin main，线上 raw 核验通过（127 英雄、力丸 56.06% S）。桌面端已刷新 .cache/kb 到 0.6.39（加载 14 个模块，含 patchStats 127；talents 保留），src/data/kb-embeddings.json 重建为 767 条 / 6.74MB（新增 128 条 patch 向量），src/data/kb-snapshot 与 dist/win-unpacked/resources/kb-snapshot 同步到 0.6.39；verify-kb 与 verify-kb-semantic 均通过。"
     },
     {
       "time": "2026-11-27 14:42",
