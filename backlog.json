@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 05:17",
+    "updated_at": "2026-11-28 06:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -575,10 +575,27 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 102~106 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第二十七轮：broodmother←lina、faceless-void→tinker、witch-doctor→chen、queen-of-pain→timbersaw、spectre→sniper、slark→sniper、faceless-void+lich、clockwerk←silencer、silencer→tinker、magnus+ursa；10/10；改写后 209~287 字；全库最短 reason 106（slardar→clinkz）；pair/relation/basis 不变；修正修补匠没有自带闪烁、时间结界冻结行动、巫医对陈不是硬克制、马格纳斯聚团不增加 Fury Swipes 层数等表述。"
+    },
+    {
+      "id": "quality-audit-global-shortest-11",
+      "title": "质量审查：第十一批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 106~113 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第二十八轮：slardar→clinkz、storm-spirit←silencer、silencer→ember-spirit、windranger←treant-protector、faceless-void←disruptor、huskar→wraith-king、silencer→puck、ancient-apparition→oracle、mars→drow-ranger、lina→meepo；10/10；改写后 220~282 字；全库最短 reason 114（axe←viper / lion←phantom-assassin）；pair/relation/basis 不变；修正全球沉默不取消已在飞行的球状闪电、沉默不锁道具/普攻、疯狂生长不禁止施法、静态风暴不穿 BKB、米波任一分身死亡带走其余分身等表述。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 06:20",
+      "task": "quality-audit 第二十八轮：第十一批最短 10 条理由改写（0.6.54）",
+      "added": "queue 全 done，继续按 reason 长度取 106~113 字 10 条：slardar→clinkz、storm-spirit←silencer、silencer→ember-spirit、windranger←treant-protector、faceless-void←disruptor、huskar→wraith-king、silencer→puck、ancient-apparition→oracle、mars→drow-ranger、lina→meepo。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足腐蚀之雾 5 秒 CD/18 秒/8~20 减甲、骨隐步 35~45 秒/25~45% 移速、扫射 3.5 秒/200 射程；遗言 4 秒触发/3~6 秒沉默、全球沉默 4.5~6 秒/120 秒 CD、球状闪电 25+7.5% 启动与 10+0.65%/100 距离；残焰 45 秒与两段施法；疯狂生长 800/3~5 秒/95 DPS、风行 50% 移速/100% 闪避；时间结界 500/3.75~4.75、静态风暴 550/6 秒/200~350 DPS 不穿 BKB、召回 4 秒；沸血矛 4~16+0.5% 最大生命/9 秒、狂血 170~320 攻速/15~30% 魔抗；相位转移 1~3.25 秒、幻象法球 1950/5.2 秒、新月之痕 350/400；冰爆 10~12 秒禁疗/12~36 DPS/12~14% 碎裂、虚妄之诺 7~10 秒/治疗翻倍；竞技场 550/5.5 秒/80~260 长矛、射手天赋 300 失效；龙破斩 65~245、光击阵 250/0.5 秒/1.2~2.4、米波地缚 220/2 秒与 Poof 400。",
+      "result": "10 条改写（220~282 字，原 106~113 字）；matchups 271、relation 不变（counter 143 / countered_by 92 / synergy 36），basis 不变（control 73 / aoe 43 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15）；全库最短 reason 114（axe←viper / lion←phantom-assassin）；index 0.6.54、updated_at 2026-11-28 06:20；quality_audit 0 error / 0 warning / 1 info。GitHub 内容提交待推送；本轮环境列表仅云主机，桌面未在线，.cache/kb、两处 kb-snapshot 与 src/data/kb-embeddings.json 未同步，待桌面恢复后补。",
+      "note": "保留原 pair/relation/basis；修正：① 全球沉默不取消已在飞行的球状闪电，只掐下一次启动；② 沉默不锁道具/普攻，灰烬与帕克仍可 TP/物品拖时间；③ 疯狂生长不禁止施法，风行者仍可开风步、放强力击/束缚击；④ 静态风暴不穿 BKB，且干扰者不能被时间结界锁在圈内；⑤ 米波任一分身死亡会带走其余分身，不再写「放大金钱经验损失」。统计：slardar n69 53.62% 对 50.08%（轻度支持）；storm n79 48.10% 对 50.36%（略反）；silencer vs ember n88 双方 50.00%（中性）；windranger←treant n108 31.48% 对 50.68%（强支持）；faceless-void←disruptor n59 62.71% 对 48.28%（反向）；huskar n12 41.67% 对 53.62%（反向，样本极小）；silencer vs puck n77 33.77% 对 47.34%（明显反向）；AA n15 40.00% 对 47.68%（反向，样本小）；mars n53 58.49% 对 46.51%（支持）；lina vs meepo n6 50.00%（样本极小）。"
+    },
     {
       "time": "2026-11-28 05:17",
       "task": "quality-audit 第二十七轮：第十批最短 10 条理由改写（0.6.53）",
