@@ -13,8 +13,8 @@
       "sustain": "续航/复活/保命(治疗/薄葬) → rules.positioning-economy(容错)",
       "physical": "物理对抗(护甲/减甲/近战克制) → rules.armor-formula / inference.minus-armor-linear-scaling"
     },
-    "last_updated": "2026-11-27",
-    "mechanism_note": "第十五轮审查 basis=vision 的 18 条：逐条对照 ability_base 与 7.42 官方技能文本，改写 10 条过短/失准理由。重点修正：① 斯拉达「腐蚀之雾」CD 仅 5 秒、持续 18 秒，旧条目让力丸「等大招 CD」不成立；② 树精的自然掩护不是无条件隐身，需要 2.75 秒不受伤进入 Tree Walking 再在树旁主动开，伐木机的死亡旋风是 325 半径清树、CD 6~7.5 秒；③ 宙斯/雷神之怒的真视是每个英雄周围 600、3 秒，CD 130 秒，不是常驻全图反隐；④ 追踪/腐蚀之雾是单体真视+视野，不是全图；⑤ 工兵的感应地雷不能被真视侦测，赏金的真视只能点英雄、不能排雷，但公开统计 27 局工兵反而 37.04% 落后，只算排雷层软优势；⑥ 赏金 vs 斯拉达的公开统计（34 局赏金 67.65%）与机制方向相反，降为软克制。保留原 pair、relation、basis 不变；另修正树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点。 第十七轮审查 basis=control：对 10 条最短理由逐条对照 ability_base 与 7.42 文本改写，补足持续时间/半径/施法方式与反制窗口；保留原 pair、relation、basis。 第十八轮审查全库最短对位理由：按 reason 长度对 271 条排序，取最短 10 条（32~50 字，横跨 aoe/mobility/damage-type/vision/sustain）逐条对照 ability_base 与 7.42 文本改写，补足跳弹次数/眩晕时长/施法窗口与反制条件；修正「莉娜双控」「钢背高护甲」两处失准表述，保留原 pair/relation/basis。 第十九轮继续审查全库最短对位理由：对剩余 52~57 字的 10 条（death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman）逐条对照 ability_base 改写，补足半径/持续时间/蓄力窗口/位移判定；修正月神之箭「最长 2.3 秒」为满级 5 秒、斯拉克「能量转移黏住」为突袭锁链，并给统计反向的条目加上样本与基线说明。保留原 pair/relation/basis。 第二十轮继续按最短优先审查全库最短 10 条（57~62 字）：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet。补足投掷最近单位/落点、割裂距离伤害、球状闪电半径、隔空取物抬升/落点、Enrage 强驱散、追踪真视时长、雷神之怒 600 真视、潮汐使者锥形顺劈、熊灵反噬 20%、磁流 225 孤立阈值；修正 Tiny+Enigma 投掷方向、宙斯全图真视误述、潮汐使者全屏 AOE 误述。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。 第二十一轮继续按最短优先审查全库最短 10 条（63~73 字）：snapfire+sven、monkey-king←timbersaw、dark-willow→phantom-assassin、pugna→sven、ringmaster→phantom-lancer、bane+lina、primal-beast→witch-doctor、shadow-demon→weaver、void-spirit←silencer、muerta→phantom-assassin。补足饼干 425 跳距/300 落点眩晕、树舞坠落 3 秒、荆棘迷宫定身、衰老 3.5 秒、聚光灯 30% 幻象掉血、魔爪引导、Pulverize 575 半径/0.75 秒、Disruption 2.75 秒、Global Silence 4.5~6 秒、Spectral Slug 2.25 秒；修正暗影恶魔「Demonic Purge 可驱散缩地」误述（Shukuchi 不可驱散）与虚无之灵把 Aether Remnant 当自身位移的误述；对统计反向/样本过小条目均标注 caveat。保留原 pair/relation/basis。",
+    "last_updated": "2026-11-28",
+    "mechanism_note": "第十五轮审查 basis=vision 的 18 条：逐条对照 ability_base 与 7.42 官方技能文本，改写 10 条过短/失准理由。重点修正：① 斯拉达「腐蚀之雾」CD 仅 5 秒、持续 18 秒，旧条目让力丸「等大招 CD」不成立；② 树精的自然掩护不是无条件隐身，需要 2.75 秒不受伤进入 Tree Walking 再在树旁主动开，伐木机的死亡旋风是 325 半径清树、CD 6~7.5 秒；③ 宙斯/雷神之怒的真视是每个英雄周围 600、3 秒，CD 130 秒，不是常驻全图反隐；④ 追踪/腐蚀之雾是单体真视+视野，不是全图；⑤ 工兵的感应地雷不能被真视侦测，赏金的真视只能点英雄、不能排雷，但公开统计 27 局工兵反而 37.04% 落后，只算排雷层软优势；⑥ 赏金 vs 斯拉达的公开统计（34 局赏金 67.65%）与机制方向相反，降为软克制。保留原 pair、relation、basis 不变；另修正树精「活体护甲=加甲」、斯拉克「怕真视」、赏金/工兵视野要点。 第十七轮审查 basis=control：对 10 条最短理由逐条对照 ability_base 与 7.42 文本改写，补足持续时间/半径/施法方式与反制窗口；保留原 pair、relation、basis。 第十八轮审查全库最短对位理由：按 reason 长度对 271 条排序，取最短 10 条（32~50 字，横跨 aoe/mobility/damage-type/vision/sustain）逐条对照 ability_base 与 7.42 文本改写，补足跳弹次数/眩晕时长/施法窗口与反制条件；修正「莉娜双控」「钢背高护甲」两处失准表述，保留原 pair/relation/basis。 第十九轮继续审查全库最短对位理由：对剩余 52~57 字的 10 条（death-prophet→invoker、windranger←zeus、ringmaster→clinkz、mirana+kunkka、treant-protector→tusk、batrider→monkey-king、ringmaster←silencer、night-stalker→enigma、enchantress→phantom-lancer、slark→shadow-shaman）逐条对照 ability_base 改写，补足半径/持续时间/蓄力窗口/位移判定；修正月神之箭「最长 2.3 秒」为满级 5 秒、斯拉克「能量转移黏住」为突袭锁链，并给统计反向的条目加上样本与基线说明。保留原 pair/relation/basis。 第二十轮继续按最短优先审查全库最短 10 条（57~62 字）：tiny+enigma、hoodwink←bloodseeker、muerta←storm-spirit、rubick+enigma、venomancer→ursa、weaver←bounty-hunter、zeus→riki、kunkka→phantom-lancer、lone-druid←batrider、arc-warden←natures-prophet。补足投掷最近单位/落点、割裂距离伤害、球状闪电半径、隔空取物抬升/落点、Enrage 强驱散、追踪真视时长、雷神之怒 600 真视、潮汐使者锥形顺劈、熊灵反噬 20%、磁流 225 孤立阈值；修正 Tiny+Enigma 投掷方向、宙斯全图真视误述、潮汐使者全屏 AOE 误述。保留原 pair/relation/basis；对统计反向/样本过小条目均标注 caveat。 第二十一轮继续按最短优先审查全库最短 10 条（63~73 字）：snapfire+sven、monkey-king←timbersaw、dark-willow→phantom-assassin、pugna→sven、ringmaster→phantom-lancer、bane+lina、primal-beast→witch-doctor、shadow-demon→weaver、void-spirit←silencer、muerta→phantom-assassin。补足饼干 425 跳距/300 落点眩晕、树舞坠落 3 秒、荆棘迷宫定身、衰老 3.5 秒、聚光灯 30% 幻象掉血、魔爪引导、Pulverize 575 半径/0.75 秒、Disruption 2.75 秒、Global Silence 4.5~6 秒、Spectral Slug 2.25 秒；修正暗影恶魔「Demonic Purge 可驱散缩地」误述（Shukuchi 不可驱散）与虚无之灵把 Aether Remnant 当自身位移的误述；对统计反向/样本过小条目均标注 caveat。保留原 pair/relation/basis。 第二十二轮继续按最短优先审查全库最短 10 条（73~79 字）：pangolier←axe、slark→drow-ranger、underlord→natures-prophet、phantom-lancer←lina、queen-of-pain→dragon-knight、tidehunter←silencer、warlock→meepo、grimstroke+lina、gyrocopter→templar-assassin、vengeful-spirit+axe。补足地雷滚滚 550 移速/1.2 秒眩晕、狂战士之吼 315/2.1~3 秒、突袭 700/拴绳 400/2.5~3.25 秒、衰退光环 900/8%~32%、自然召唤 2~5 树人、并列幻象 600% 承伤/15% 输出、龙破斩与光击阵 CD、超声冲击波 450/350、遗言与奥术诅咒、致命连接 700/6 目标/18 秒、缚魂 600/6~8 秒、火箭弹幕 30 实例、折光 3~6 层/30 屏障、换位 150~450/CD 46~30 秒；修正孽主旧称「深渊领主」、缚魂绑「最近友方英雄」而非敌方、致命连接是额外伤害放大而非分摊、潮汐海妖外壳可强驱散沉默（需算 450~600 阈值）、卓尔并非无位移（狂风/冰川可击退）、BKB 当前额外免疫纯粹伤害（超声冲击波可被 BKB 硬吃）。保留原 pair/relation/basis。",
     "stat_layer": "data/matchup_stats.json：每个英雄对各对手的样本量与胜率（OpenDota 公开聚合），delta 相对自身基线；用于校验而非覆盖机制结论（样本小，仅弱证据）",
     "mirror_dedup_note": "早期批次曾以反方向重复书写同一条克制（如 medusa countered_by anti-mage 与 anti-mage counter medusa），已按「同关系互为镜像即合并、保留描述更完整的一条」清理 8 组；disruptor↔faceless-void 保留双向，因 countered_by 与 synergy 是两条不同结论。"
   },
@@ -198,7 +198,7 @@
       "hero_id": "tidehunter",
       "relation": "countered_by",
       "target_id": "silencer",
-      "reason": "全局沉默覆盖全场并穿透技能免疫，潮汐的先手大招在沉默里根本放不出来；遗言还会在施法后补一层沉默，让「先小技能再大招」的连招断在中间，先手节奏直接失能。",
+      "reason": "全局沉默持续 4.5/5.25/6 秒、全图生效并穿透减益免疫，CD 120 秒；遗言在 4 秒后或目标施法时再补 3~6 秒沉默，形成两段沉默链；奥术诅咒还会因施法延长 2 秒，惩罚他在沉默边缘试技能。潮汐的毁灭是 1250 半径、2~2.4 秒群体眩晕，但被沉默时根本放不出；海妖外壳在 7 秒内累计 450~600 伤害后触发强驱散，可以解掉沉默。因此沉默术士要算阈值：沉默期间别把潮汐的累计伤害打进 450~600，否则外壳反而帮他解控；更稳的是先在没有沉默时打出一段伤害逼掉强驱散，再等累计窗口重置后开大，或配合高爆发在阈值前秒掉。公开统计 98 局潮汐 45.92%、自身基线 48.13%，方向支持沉默，但样本只作弱证据。",
       "basis": "control"
     },
     {
@@ -499,7 +499,7 @@
       "hero_id": "phantom-lancer",
       "relation": "countered_by",
       "target_id": "lina",
-      "reason": "幻象单位血量极低，龙破斩是穿透直线 AOE，一波就能清掉一片幻象、剥掉真身的掩护；反过来幻影长矛手分身时不要排成一条直线，AOE 的收益随命中数上升。",
+      "reason": "幻影长矛手的并列幻象吃 600% 伤害，本体每击有 40%/45%/50% 造幻象、单次最多 6/8/10 个，幻象再以 9% 概率继续分裂，但幻象只造成 15% 伤害，主要作用是掩护与磨血。莉娜的龙破斩是直线 AOE、光击阵是 250 半径/0.5 秒延迟/1.2~2.4 秒眩晕、神灭斩是单体 360/525/690；前两者一次能清掉一排幻象，后者能直接点本体。反制在冷却：龙破斩 8~11 秒、光击阵 7~13 秒，幻影长矛手可分波投入幻象、用神行百变（325 范围、1 秒延迟）骗技能，等 AOE 交完再让真身贴脸；公开统计 26 局幻影长矛手 46.15%、自身基线 45.78%，几乎持平，只算机制上的 AOE 克制。",
       "basis": "aoe"
     },
     {
@@ -562,7 +562,7 @@
       "hero_id": "slark",
       "relation": "counter",
       "target_id": "drow-ranger",
-      "reason": "突袭(Pounce)的拴绳把卓尔游侠钉在原地，能量转移(Essence Shift)每次攻击偷敏捷，越打越脆；无位移的远程核心被贴身后无法拉开距离。",
+      "reason": "突袭是 700 码跳跃，命中后拴绳 2.5/2.75/3/3.25 秒、半径 400，目标只能在该圈内移动；能量转移每次攻击偷 1 点三属性并给自己 +3 敏捷，持续 10 秒，贴住后卓尔游侠的攻击与有效生命会一起缩水。卓尔没有跳跃，但狂风的 250 宽击退最远 450 码、并沉默 3/4/5/6 秒，能把斯拉克推出拴绳半径；冰川（A 杖碎片）的击退与 +200 射程也能救急。斯拉克要先骗出狂风、或从侧后方切入，被击退后不要直线追，否则会吃霜冻之箭的 15%~45% 减速风筝。公开统计 24 局斯拉克 45.83%、自身基线 51.02%，样本小且方向相反，只算机制克制。",
       "basis": "mobility"
     },
     {
@@ -1038,7 +1038,7 @@
       "hero_id": "vengeful-spirit",
       "relation": "synergy",
       "target_id": "axe",
-      "reason": "复仇之魂的移形换位(Nether Swap)是瞬发位移，可把敌方核心直接换进斧王的狂战士之吼(Berserker's Call)的范围，也能把被吼住的队友换出来",
+      "reason": "移形换位是瞬发换位，可对敌我英雄使用，伤害/护盾 150/300/450、CD 46/38/30 秒，并穿透减益免疫；复仇之魂可把敌方核心换进斧王狂战士之吼的 315 半径，或把被吼住的队友换出来。斧王的吼持续 2.1/2.4/2.7/3 秒、给自身 12~15 护甲，CD 18/16/14/12 秒，同拍时敌方核心要在圈内挨打 2~3 秒；恐怖波动的 -3~-6 护甲与 10%~25% 攻击削减还能叠上。注意换位是单体指向，Linken 能挡，但斧王的吼是无目标 AOE、Linken 挡不住；BKB 也挡不住控制，只会把换位的魔法伤害按开盾后的总魔抗大幅减掉。同队组合不被对位统计覆盖（复仇之魂 vs 斧王 67 局 50.75% 仅作参考）。",
       "basis": "control"
     },
     {
@@ -1108,14 +1108,14 @@
       "hero_id": "underlord",
       "relation": "counter",
       "target_id": "natures-prophet",
-      "reason": "深渊领主的衰减光环(Atrophy Aura)削减周围敌方单位的基础攻击力，先知靠树人与小兵数量推进的打法伤害骤降；召唤物阵亡还会给深渊领主叠攻击力",
+      "reason": "衰退光环是 900 半径被动：敌方单位基础攻击力削 8%/16%/24%/32%，敌人在效果下死亡时孽主按小兵死亡 +2~8、英雄死亡 +30~45 叠攻击，持续 30~60 秒。先知靠自然召唤的 2~5 棵树人（425~500 血、15~45 攻、50 秒）推线，树人在光环内变弱，被火雨（425 半径、6 波 30~105，并附带最大生命 1.5%~3% 的灼烧）或怨念深渊（400 半径、12 秒、每 3.6 秒定身 1.5~1.8 秒）清掉后还会给孽主送攻击。反过来先知可用全球传送避开 900 半径，在另一路分推；所以这是阵地/推线克制，不是全图克制。公开统计 59 局孽主 47.46%、自身基线 46.51%，仅微弱正向。",
       "basis": "aoe"
     },
     {
       "hero_id": "warlock",
       "relation": "counter",
       "target_id": "meepo",
-      "reason": "术士的致命链接(Fatal Bonds)把多个敌方单位绑在一起、任一目标受伤其余分摊，米波的分身越多被链接的目标越多，等于把「多单位」优势变成集体掉血",
+      "reason": "致命连接在 700 半径内最多绑 6 个可见敌人，持续 18 秒；任一被绑单位受伤，其余单位额外承受该伤害的 15%/18%/21%/24%，不是把原伤害分摊，而是总伤害被放大。米波靠分则能成最多 5 只，且任一只死亡全部死亡；被链接的米波越多，单点爆发与混乱之祭 600 半径、0.8 秒眩晕加地狱火的范围伤害收益越高。米波可以分散站位、只让 1~2 只进 700 链接范围，但推塔/集火时多只聚在一起很难避免。公开统计仅 11 局术士 54.55%、自身基线 47.49%，样本太小，只作机制参考。",
       "basis": "aoe"
     },
     {
@@ -1157,7 +1157,7 @@
       "hero_id": "grimstroke",
       "relation": "synergy",
       "target_id": "lina",
-      "reason": "天涯墨客的缚魂(Soulbind)把目标敌人与最近的敌方英雄绑在一起，并且任一被绑单位吃到的单体指向技能也会施加到另一个身上，等于把火女的单体爆发直接翻倍",
+      "reason": "缚魂把目标敌人与 600 半径内最近的友方英雄绑 6/7/8 秒，任一被绑单位吃到的单体指向技能会复制到另一个；它只复制单体指向技能，不复制光击阵这种点地 AOE。所以配合重点是莉娜的神灭斩（360/525/690）和以英雄为目标的龙破斩：一次施法打出两份单体爆发，缚魂 70/65/60 秒 CD 与神灭斩 70/60/50 秒大致同拍。注意缚魂本身穿透减益免疫，但复制出的神灭斩会被 BKB 的额外 60% 魔抗大幅减伤（常规总魔抗 70%）；墨客可先用幻影之拥 5 秒缠绕/沉默或墨涌 375 半径眩晕创造窗口。同队组合不被对位统计覆盖（墨客 vs 莉娜 52 局 46.15% 对自身 49.95%，仅作参考）。",
       "basis": "control"
     },
     {
@@ -1171,7 +1171,7 @@
       "hero_id": "queen-of-pain",
       "relation": "counter",
       "target_id": "dragon-knight",
-      "reason": "超声冲击波(Sonic Wave)是纯粹伤害且穿透技能免疫，还能把目标推回；龙骑士靠高护甲与古龙形态站前排，纯粹伤害绕开护甲，推回又打断他的贴身节奏。",
+      "reason": "超声冲击波是 450 最大半径的纯粹伤害，325/455/585，击退 350 码并穿透减益免疫；龙骑士的龙族血统只给 2 点护甲与 2 点生命恢复，真龙形态再提高 50%，这些对纯粹伤害都不作数，击退还会把他从贴脸距离推开。龙骑士的反制是龙尾 1.8~2.4 秒单体眩晕、火焰气息 20%~32% 攻击力削减，以及 60 秒真龙形态的远程攻击；痛苦女王必须靠 6~12 秒 CD 的闪烁拉扯，不能站桩对拼。BKB 现在额外免疫纯粹伤害，龙骑士开出 7~9 秒 BKB 就能硬吃这一发；公开统计 155 局痛苦女王 48.39%、自身基线 48.10%，几乎持平，只算伤害类型上的软克制。",
       "basis": "damage-type"
     },
     {
@@ -1227,7 +1227,7 @@
       "hero_id": "pangolier",
       "relation": "countered_by",
       "target_id": "axe",
-      "reason": "石鳞剑士的地雷滚滚(Rolling Thunder)给的是减益免疫+80%魔法抗性，斧王的狂战士之吼无视减益免疫，能在滚球状态把他钉住并让队友集火",
+      "reason": "地雷滚滚让石鳞剑士获得减益免疫、80% 魔法抗性与 550 移动速度，可穿树、撞人击退并在落点造成 1.2 秒眩晕，持续 10/11/12 秒；但它是减益免疫而非技能免疫。斧王的狂战士之吼是 315 半径、2.1/2.4/2.7/3 秒的强制嘲讽，穿透减益免疫，被吼者不能施法/用道具、只能攻击斧王；石鳞剑士会被从滚球状态拽停，且吼的 CD 18/16/14/12 秒远短于地雷滚滚的 100/90/80 秒。石鳞剑士应先用虚张声势或甲盾冲击逼出吼再进场；公开统计 140 局石鳞剑士 44.29%、自身基线 49.68%，方向支持斧王，但样本只作弱证据。",
       "basis": "control"
     },
     {
@@ -1276,7 +1276,7 @@
       "hero_id": "gyrocopter",
       "relation": "counter",
       "target_id": "templar-assassin",
-      "reason": "直升机的火箭弹幕(Rocket Barrage)是短时间内多段魔法伤害，圣堂的折光(Refraction)只抵挡有限次数的伤害实例，多段小伤害会迅速把层数打空",
+      "reason": "火箭弹幕在 400 半径内每秒发射 10 发、持续 3 秒，单发 8/14/20/26，共 30 个伤害实例，CD 5.5~7 秒；圣堂的折光只有 3/4/5/6 层、每层 30 点屏障，面对 30 发小伤害不到 1 秒就被打空，之后失去格挡与额外攻击。折光的机制是「单次伤害超过剩余屏障则整段吸收」，所以不怕单发大伤害，最怕高频小伤害；直升机的高射火炮 1050 半径 4~7 次攻击也能压血。圣堂的反制是灵能陷阱 20%~50% 减速、隐匿 50~200 额外伤害与 -2~-8 护甲；但直升机要进 400 半径才能开弹幕，圣堂可先用陷阱拉开。公开统计 88 局直升机 60.23%、自身基线 48.56%，方向支持且样本较足。",
       "basis": "damage-type"
     },
     {
