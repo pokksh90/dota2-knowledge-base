@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.35",
+    "version": "0.6.36",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-27",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-27 11:21"
+    "updated_at": "2026-11-27 12:29"
   },
   "modules": [
     {
@@ -20,14 +20,14 @@
       "title": "底层规则(公理层)",
       "count": 63,
       "status": "verified-partial",
-      "note": "63 条；新增 disable-taxonomy（沉默 Silence/锁道具 Mute/破坏 Break/定身 Root 的作用面分层）；按官方 7.42 更新日志校准：被动金固定 90/min、击杀金 100+10×等级、T1 塔 75/100（全队 475）、肉山团队 125、总经验 66600、每智力 0.125% 魔抗、基础生命 200/每力量 20"
+      "note": "63 条；新增 disable-taxonomy（沉默 Silence/锁道具 Mute/破坏 Break/定身 Root 的作用面分层）；按官方 7.42 更新日志校准：被动金固定 90/min、击杀金 100+10×等级、T1 塔 75/100（全队 475）、肉山团队 125、总经验 66600、每智力 0.125% 魔抗、基础生命 200/每力量 20；2026-11-27 统一美杜莎「魔法盾」译名（原「法力护盾」）"
     },
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 82,
+      "count": 83,
       "status": "stable",
-      "note": "82 条（verified 24 / reasoned 58）；新增 percent-hp-damage-still-uses-damage-type（百分比生命伤害仍按伤害类型结算，不是真实伤害）；第九轮 damage-type 审查同步修正"
+      "note": "83 条（verified 25 / reasoned 58）；新增 mana-shield-is-a-pre-layer-not-magic-resistance（魔法盾是前置总格挡，纯粹伤害也要按 1 蓝挡 2 伤害折算，不是靠纯伤破盾）；第九轮 damage-type 审查同步修正"
     },
     {
       "file": "data/heroes.json",
@@ -48,7 +48,7 @@
       "title": "克制与搭配",
       "count": 271,
       "status": "stable",
-      "note": "271 条；damage-type 24 条全量复核，13 处机制/命名修正（OD 的星体禁锢是偷蓝非吸智力、尖刺外壳每来源只挡一次、午夜凋零仍吃魔抗与侧背减伤、自然秩序只清基础甲/基础魔抗、地雷滚滚/超声冲击波译名等）；control 72、主语覆盖 127/127 不变"
+      "note": "271 条；resource 15 条全量复核，15 处改写（2 处方向反转：WK 克 AM、美杜莎克军团；「魔法盾」/「再装填」/「魔爪」/「奥法鹰隼」等译名修正，另 5 处跨条旧译名同步）；damage-type 24、control 72、主语覆盖 127/127、counter 145 / countered_by 90 / synergy 36"
     },
     {
       "file": "scripts/fetch_data.py",
