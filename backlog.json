@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 19:27",
+    "updated_at": "2026-11-27 20:21",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -475,10 +475,26 @@
       "current": 10,
       "target": 10,
       "note": "第十七轮：basis=control 72 条中最短 10 条（31~50 字）逐条对照 ability_base/7.42 文本改写，补足半径、持续时间、施放方式与反制窗口；control 最短理由提升到 52 字，pair/relation/basis 不变。"
+    },
+    {
+      "id": "quality-audit-global-shortest",
+      "title": "质量审查 全库最短理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "对全库 reason 最短的 10 条逐条对照 ability_base/7.42 文本，修正失准表述并补足机制细节。",
+      "note": "第十八轮：271 条按理由长度排序取最短 10 条（32~50 字），覆盖 aoe/mobility/damage-type/vision/sustain；10/10 改写，pair/relation/basis 不变；修正「莉娜双控」「钢背高护甲」。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 20:21",
+      "task": "quality-audit 第十八轮：全库最短 10 条理由改写（0.6.44）",
+      "added": "backlog 全 done，转质量审查。按 reason 长度对 271 条排序，取最短 10 条逐条对照 ability_base/7.42：witch-doctor→phantom-lancer、spirit-breaker→shadow-fiend、storm-spirit→drow-ranger、bristleback←zeus、bounty-hunter→riki、terrorblade←lion、terrorblade←lina、sven→phantom-lancer、tusk→ancient-apparition、enchantress+beastmaster。补足跳弹次数/眩晕时长/施法窗口/反制条件；修正「莉娜双控」「钢背高护甲」失准表述。",
+      "result": "10 条改写（132~187 字，原 32~50 字）；matchups 271、basis 分布不变；index 0.6.44、updated_at 2026-11-27 20:21；quality_audit 0/0/1；pair/relation/basis 不变。"
+    },
     {
       "time": "2026-11-27 19:27",
       "task": "quality-audit 第十七轮：control 10 条最短理由改写（0.6.43）",
