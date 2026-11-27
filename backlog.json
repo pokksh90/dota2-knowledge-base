@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 23:24",
+    "updated_at": "2026-11-27 23:26",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -523,7 +523,7 @@
       "time": "2026-11-27 23:22",
       "task": "quality-audit 第二十一轮：第四批最短 10 条理由改写（0.6.47）",
       "added": "queue 全 done，继续按 reason 长度取 63~73 字 10 条：snapfire+sven、monkey-king←timbersaw、dark-willow→phantom-assassin、pugna→sven、ringmaster→phantom-lancer、bane+lina、primal-beast→witch-doctor、shadow-demon→weaver、void-spirit←silencer、muerta→phantom-assassin。逐条对照 ability_base/7.42 文本：补足 Firesnap Cookie 425 跳距/300 落点/1~2.2 秒眩晕、Tree Dance 树毁坠落 3 秒、Bramble Maze 8 根/1~2.5 秒定身、Decrepify 3.5 秒/45~60% 减速、Spotlight 3 光束/45% 落空/幻象 30% 最大生命每秒、Fiend's Grip 4.75~5.75 秒/5% 抽蓝、Pulverize 2.3 秒引导/575 半径/0.75 秒一次 0.2 秒小眩晕、Disruption 2.75 秒/2 幻象、Global Silence 4.5~6 秒/穿 BKB、Spectral Slug 2.25 秒/30% 减速/20% 魔法易伤。修正暗影恶魔「Demonic Purge 可驱散 Shukuchi」误述（Shukuchi 不可驱散，Purge 只清其他正面 buff 并减速）与虚无之灵把 Aether Remnant 当自身位移的误述；对 monkey-king←timbersaw、dark-willow→phantom-assassin、ringmaster→phantom-lancer、primal-beast→witch-doctor 四条统计反向，及 pugna→sven 8 局、muerta→PA 17 局、bane+lina 同队、snapfire+sven 同队，均标注样本/基线 caveat。",
-      "result": "10 条改写（203~331 字，原 63~73 字）；matchups 271、basis 分布不变（control 72 / aoe 44 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15），relation 不变（counter 143 / countered_by 92 / synergy 36）；全库最短 reason 73（pangolier←axe）；index 0.6.47、updated_at 2026-11-27 23:24；quality_audit 0 error / 0 warning / 1 info；GitHub 内容提交待推送；桌面同步待完成。",
+      "result": "10 条改写（203~331 字，原 63~73 字）；matchups 271、basis 分布不变（control 72 / aoe 44 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15），relation 不变（counter 143 / countered_by 92 / synergy 36）；全库最短 reason 73（pangolier←axe）；index 0.6.47、updated_at 2026-11-27 23:24；quality_audit 0 error / 0 warning / 1 info；GitHub 内容提交 0c5b6d1。桌面按 jsDelivr 固定提交 0c5b6d1 刷新成功：.cache/kb 0.6.47 / fetchBase https://cdn.jsdelivr.net/gh/pokksh90/dota2-knowledge-base@0c5b6d1（15 个 JSON，127 英雄 / 70 装备 / 271 对位 / 63 规则 / 89 推理；14 模块加载 / 1 跳过，790 技能 / 127 天赋 / 48 中立 / 127 matchupStats / 127 patchStats）；src/data/kb-snapshot 与 dist/win-unpacked/resources/kb-snapshot 均 15 个 JSON / 0.6.47 / updated_at 23:24 / 271 对位；kb-embeddings.json 770 条 / 6.78MB（kbVersion 0.6.47、重嵌 10 / 复用 760、contentHash 225c3c9e081c27307c6041f72ef2cfbad122561c、createdAt 2026-11-27T15:24:45.314Z）；verify-kb OK（v0.6.47 / snapshot）；verify-kb-semantic OK（真实索引 0.6.47 / 770 条 / doubao-embedding-vision-251215；“问题向量失败”为模拟分支）。",
       "note": "保留原 pair/relation/basis；四条统计反向只作条件克制标注，不改 relation；同队组合不被 matchup_stats 覆盖，不能证明配合强度；Shukuchi 不可驱散是本轮关键修正。"
     },
     {
