@@ -28,18 +28,20 @@
 ├── schema/
 │   └── knowledge-schema.json # 各数据文件的字段契约（JSON Schema）
 ├── data/
-│   ├── rules.json            # ① 公理层：49 条底层机制（对局结构+机制细节）
-│   ├── inference.json        # ② 定理层：26 条可回溯推导
+│   ├── rules.json            # ① 公理层：63 条底层机制（对局结构+机制细节）
+│   ├── inference.json        # ② 定理层：86 条可回溯推导
 │   ├── heroes.json           # ③ 英雄与定位（含 aliases 绰号）
 │   ├── items.json            # ③ 装备与出装
 │   ├── matchups.json         # ③ 克制与搭配
+│   ├── patch_stats.json      # ③ 当前版本公开胜率/强度分档（127 英雄）
 │   ├── tactics.json          # ③ 战术与节奏
 │   ├── hero_base.json        # 基础数据层：英雄属性 + 技能索引
-│   ├── ability_base.json     # 基础数据层：759 条技能明细
+│   ├── ability_base.json     # 基础数据层：790 条技能明细
 │   └── item_base.json        # 基础数据层：303 件道具价格与属性
 └── scripts/
     ├── fetch_data.py         # 从公开 API 拉取数值并回填
     ├── build_base_data.py     # 从公开常量库重建基础数据层（可重复运行）
+    ├── build_patch_stats.py   # 从 OpenDota heroStats 重建当前版本胜率/分档
     └── push_to_github.sh     # 一键建仓/推送
 ```
 
@@ -52,6 +54,7 @@
 | `heroes.json` | 英雄定位 1-5、主/副定位、玩法要点 | 选人、阵容分析 |
 | `items.json` | 装备分类、用途、分位置核心出装与情境选择 | 出装建议 |
 | `matchups.json` | 英雄 counter / synergy，每条带机制依据 `basis` | 对位与 BP 分析 |
+| `patch_stats.json` | 当前版本公开对局胜率/选取率与 S/A/B/C/D 分档；标注样本、窗口与补丁纯度 | 「这版本强不强 / 胜率多少」的统计参考 |
 | `tactics.json` | 分线职责、关键时间点、地图目标、团战决策 | 战术节奏建议 |
 | `hero_base.json` | 英雄基础属性（三围/血量/护甲/移速/视野）+ 技能 key 索引 | 数值查询、对线强度估算 |
 | `ability_base.json` | 每个技能的伤害类型、蓝耗、冷却、是否穿透 BKB、关键数值 | 「这招能不能被 BKB/驱散挡」 |
@@ -130,11 +133,13 @@ const ctx = {
 定位与机制类知识属稳定常识；权威数值取自公开常量库，可重复刷新：
 
 - **dotaconstants**（公开的英雄/技能/道具常量库，由 Valve 官方本地化数据构建）：`hero_base.json`、`ability_base.json`、`item_base.json`
-- OpenDota API / Stratz GraphQL：动态统计（胜率、出场率）需要时另行核对
+- OpenDota API：动态统计（胜率、出场率）；`patch_stats.json` 用 `/api/heroStats` 最近 7 天滚动窗口，补当前版本公开胜率/强度分档（7.42a/7.42 混合，非纯补丁）
+- Builds Forge 7.42a Tier List：仅用于档位阈值与方向交叉核对，不作为数值主源
 
 ```bash
 python3 scripts/build_base_data.py    # 重建基础数据层（需访问公开常量库）
 python3 scripts/fetch_data.py         # 回填动态统计
+python3 scripts/build_patch_stats.py  # 重建当前版本公开胜率/强度分档（OpenDota heroStats）
 ```
 
 版本更新后重新运行即可刷新；基础数据不带任何统计口径，纯为「这个技能/道具本身是什么」。

@@ -45,6 +45,7 @@ def main():
     tactics = load("tactics.json")
     talents = load("talents.json")
     neutral = load("neutral_items.json")
+    patch_stats = load("patch_stats.json")
 
     # ---- 基础结构 ----
     hero_ids = set()
@@ -195,6 +196,42 @@ def main():
             n = sum(len(g.get("items", g)) if isinstance(g, dict) else len(g) for g in v.get("groups", [])) if isinstance(v, dict) else 0
             if isinstance(v, dict) and len(v.get("groups", [])) != 4:
                 err(f"neutral_items.json: class {k} 组数 {len(v.get('groups', []))} != 4")
+    if patch_stats:
+        ps = patch_stats.get("heroes", [])
+        if not isinstance(ps, list):
+            err("patch_stats.json: heroes 不是数组")
+            ps = []
+        if len(ps) != len(hero_ids):
+            warn(f"patch_stats.json: 英雄数 {len(ps)} != heroes.json {len(hero_ids)}")
+        seen = set()
+        for h in ps:
+            hid = h.get("id")
+            if not hid:
+                err("patch_stats.json: 缺少 id")
+                continue
+            if hid in seen:
+                err(f"patch_stats.json: 重复 id {hid}")
+            seen.add(hid)
+            if hero_ids and hid not in hero_ids:
+                err(f"patch_stats.json: 引用不存在的英雄 {hid}")
+            if h.get("tier") not in ("S", "A", "B", "C", "D"):
+                err(f"patch_stats.json: {hid} tier 非法 {h.get('tier')}")
+            for field in ("win_rate", "pick_rate"):
+                v = h.get(field)
+                if not isinstance(v, (int, float)) or not (0 <= v <= 100):
+                    err(f"patch_stats.json: {hid} {field} 越界 {v}")
+        keys = {"S", "A", "B", "C", "D"}
+        meta = patch_stats.get("meta", {})
+        if meta.get("patch_purity") != "mixed":
+            warn("patch_stats.json: patch_purity 不是 mixed，请确认统计窗口是否纯当前补丁")
+        tiers = patch_stats.get("tiers", {})
+        if set(tiers) != keys:
+            warn("patch_stats.json: tiers 键不是 S/A/B/C/D")
+        else:
+            flat = [x for k in keys for x in tiers.get(k, [])]
+            if len(flat) != len(ps) or set(flat) != seen:
+                err("patch_stats.json: tiers 与 heroes 不一致")
+
     # ---- index 计数同步 ----
     idx = json.loads((Path(ROOT) / "index.json").read_text(encoding="utf-8")) if os.path.exists(os.path.join(ROOT, "index.json")) else None
     if idx:
@@ -205,6 +242,7 @@ def main():
             "data/matchups.json": len(matchups.get("matchups", [])) if matchups else 0,
             "data/items.json": len(items.get("items", [])) if items else 0,
             "data/tactics.json": len([k for k in tactics if k != "meta"]) if tactics else 0,
+            "data/patch_stats.json": len(patch_stats.get("heroes", [])) if patch_stats else 0,
         }
         for mod in idx.get("modules", []):
             f = mod.get("file")

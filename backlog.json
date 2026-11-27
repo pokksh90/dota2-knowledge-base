@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 14:45",
+    "updated_at": "2026-11-27 15:10",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -428,10 +428,26 @@
       "status": "done",
       "desc": "aoe 44 条全量复核：机制数值/译名/方向/统计冲突标注。",
       "note": "第十二轮完成：21 处改写、2 处方向反转（斧王被米波、尸王被米波）、3 处统计冲突标注、新增 2 条 AOE 推理；audit 0/0/1。"
+    },
+    {
+      "id": "current-patch-stats",
+      "title": "接入当前版本公开胜率/强度分档",
+      "file": "data/patch_stats.json",
+      "current": 127,
+      "target": 127,
+      "status": "done",
+      "desc": "补当前版本（7.42a）公开对局胜率/选取率/S-A-B-C-D 分档，供教练回答「这版本强不强」；不编造，样本/窗口/补丁纯度全部标注。",
+      "note": "OpenDota heroStats 最近 7 天，约 351 万场；127/127；S17 A14 B46 C25 D25；7.42a/7.42 混合窗口；Buildsforge 7.42a 仅用于阈值/方向交叉核对，max delta 0.85pp"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 15:10",
+      "task": "新增当前版本公开胜率/强度分档（patch_stats，127 英雄，7.42a/7.42 混合窗口）",
+      "added": "新增 data/patch_stats.json：OpenDota heroStats 最近 7 天（约 351 万场）逐英雄 win_rate/pick_rate/picks/rank/tier；档位阈值 S≥52.5/A≥51/B≥49/C≥47.5/D<47.5；新增 scripts/build_patch_stats.py 可重复生成；index 增加模块与 version_scope（机制层 7.42、统计层 7.42a 混合）。",
+      "result": "127/127 英雄；S 17 / A 14 / B 46 / C 25 / D 25；JSON 通过；index 0.6.39；GitHub 与桌面向量同步待收尾。"
+    },
     {
       "time": "2026-11-27 14:42",
       "task": "quality-audit 第十二轮：aoe 44 条全量复核 + 21 处改写（2 处方向反转）+ 2 条 AOE 推理",

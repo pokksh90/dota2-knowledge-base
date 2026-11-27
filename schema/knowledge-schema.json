@@ -229,5 +229,72 @@
         "$ref": "#/definitions/source"
       }
     }
+  },
+  "patch_stats_hero": {
+    "type": "object",
+    "required": [
+      "id",
+      "hero_id",
+      "name_zh",
+      "name_en",
+      "win_rate",
+      "pick_rate",
+      "picks",
+      "tier",
+      "rank"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "与 heroes.json 一致的稳定英雄 id"
+      },
+      "hero_id": {
+        "type": "integer",
+        "description": "Dota 2 数字英雄 id"
+      },
+      "name_zh": {
+        "type": "string"
+      },
+      "name_en": {
+        "type": "string"
+      },
+      "win_rate": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "公开对局胜率百分比"
+      },
+      "pick_rate": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "每场选取率百分比"
+      },
+      "picks": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "选取样本数"
+      },
+      "wins": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "tier": {
+        "type": "string",
+        "enum": [
+          "S",
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "description": "按公开胜率阈值分档，不代表职业 BP 强度"
+      },
+      "rank": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "按胜率降序排名"
+      }
+    }
   }
 }
