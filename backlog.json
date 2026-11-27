@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 14:42",
+    "updated_at": "2026-11-27 14:45",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -436,7 +436,7 @@
       "time": "2026-11-27 14:42",
       "task": "quality-audit 第十二轮：aoe 44 条全量复核 + 21 处改写（2 处方向反转）+ 2 条 AOE 推理",
       "added": "① 逐条核对 basis=aoe 的 44 条（dotaconstants abilities + 官方 schinese herodata）。方向反转：axe←meepo 改为斧王被米波克制（米波忽悠爆发绕开反击螺旋，OpenDota 82 局斧王 25.0%）；undying←meepo 改为尸王被米波克制（墓碑 5/6/7/8 次攻击可被 5 分身快速拆掉，OpenDota 82 局尸王 28.6%）。② 机制/译名修正：回音击、裂地、脉冲新星、冰火交加、烈焰焚身、山崩、分则能成等；沙尘暴是持续伤害+隐身、不提供致盲；狂战士之吼是嘲讽不是聚拢；分则能成的装备加成按克隆体数量均分、任一分身死亡全灭；崩裂禁锢幻象 20%~50% 出伤 + 20~65 基础攻击加成；幻影长矛手幻象承受 600%/只造成 15%。③ 统计冲突标注：leshrac→meepo（82 局 25.0%，高分局反向）、earthshaker→broodmother（61 局 38.9%，高分局反向）、brewmaster←sand-king（16 局样本，软克制）。④ 新增 inference.shared-death-turns-aoe-into-execute（verified）与 inference.aoe-clump-value-is-setup-dependent（reasoned）。",
-      "result": "matchups 271 条不变（aoe 44/44 已复核；counter 143 / countered_by 92 / synergy 36；主语覆盖 127/127）；inference 84→86（verified 26 / reasoned 60）；rules 63 / heroes 127 / items 70 未动；JSON 全部通过；audit 0 error / 0 warning / 1 info（disruptor↔faceless-void 有意双向）；index 0.6.38；GitHub 与桌面向量同步见本轮收尾。"
+      "result": "matchups 271 条不变（aoe 44/44 已复核；counter 143 / countered_by 92 / synergy 36；主语覆盖 127/127）；inference 84→86（verified 26 / reasoned 60）；rules 63 / heroes 127 / items 70 未动；JSON 全部通过；audit 0 error / 0 warning / 1 info（disruptor↔faceless-void 有意双向）；index 0.6.38；GitHub 已同步 923560e；桌面 .cache/kb 已刷新到 0.6.38，kb-embeddings 重建 639 条（25 条新嵌入 / 614 条复用 / 5.64MB），verify-kb-semantic 通过。"
     },
     {
       "time": "2026-11-27 13:26",
