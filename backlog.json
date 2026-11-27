@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 10:25",
+    "updated_at": "2026-11-27 11:21",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -415,6 +415,13 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-27 11:21",
+      "task": "quality-audit 第九轮：damage-type 24 条全量复核 + 13 处机制/命名修正 + 1 条百分比伤害推理",
+      "added": "① 逐条核对 basis=damage-type 的 24 条（dotaconstants abilities + 官方 schinese herodata）。机制修正：OD 的「奥术天球」是按剩余魔法追加纯粹伤害，「星体禁锢」是窃取最大魔法值（不是吸智力），恐怖利刃/龙骑士/斯温三条全部改写；尖刺外壳每个伤害来源只反弹/抵消一次，天怒的多段爆发不会被整段吃掉；午夜凋零是魔法百分比伤害，绕护甲但仍吃魔抗与钢背兽侧背减伤，不是真实伤害；自然秩序只移除基础护甲与基础魔抗，龙族血统的额外护甲（古龙形态再 +50%）不会被清，原文「双抗全清」过度；酸雾只削总护甲、不直接削龙族血统回血；守墓人斗篷是分层减伤屏障而非护盾。命名修正：超声冲击波(Sonic Wave)替代「音爆/超声波」；地雷滚滚(Rolling Thunder)替代「珠穆朗玛滚」；莱恩技能改为妖术/裂地尖刺/死亡之指；冰封路径的「定身」改为「眩晕」；「基础驱散免疫/驱散免疫」改为「减益免疫」；莱娜→莉娜。② 新增 inference.percent-hp-damage-still-uses-damage-type（premises: damage-types/damage-pipeline/armor-formula/magic-resistance，confidence verified）。",
+      "result": "matchups 271 条不变（damage-type 24/24 已复核；control 72、主语覆盖 127/127 不变）；inference 81→82（verified 24 / reasoned 58）；rules 63 / heroes 127 / items 70 未动；JSON 全部通过；audit 0 error / 0 warning / 1 info（disruptor↔faceless-void 有意双向）",
+      "next": "复核 basis=resource 15 条；补齐 7.42 建筑赏金 T2/T3/T4/兵营完整表；逐条审计 heroes.json 其余 coach_note 旧机制"
+    },
     {
       "time": "2026-11-27 10:25",
       "task": "quality-audit 第八轮：control 71 条全量复核 + 10 条机制修正 + 旧译名统一 + 1 条规则/1 条推理",
