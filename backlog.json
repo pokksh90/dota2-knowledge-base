@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 18:26",
+    "updated_at": "2026-11-27 19:24",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -468,6 +468,13 @@
       "status": "done",
       "desc": "所有 basis 已分批判完，做一次跨层终审：检查 rules→inference→matchups 的引用、版本口径、index/backlog/README 计数与 quality_report 是否一致。",
       "note": "第十六轮终审完成：schema 127/70/271/9/127 全通过，rules→inference→matchups/basis 映射与 tactics premises 全通过，index 计数一致，README 版本/计数/T1–T4 已对齐；quality_audit.py 增加 README 校验。"
+    },
+    {
+      "id": "quality-audit-control",
+      "status": "done",
+      "current": 10,
+      "target": 10,
+      "note": "第十七轮：basis=control 72 条中最短 10 条（31~50 字）逐条对照 ability_base/7.42 文本改写，补足半径、持续时间、施放方式与反制窗口；control 最短理由提升到 52 字，pair/relation/basis 不变。"
     }
   ],
   "completed": [],
