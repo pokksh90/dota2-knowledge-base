@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 18:21",
+    "updated_at": "2026-11-27 18:26",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -476,7 +476,7 @@
       "time": "2026-11-27 18:21",
       "task": "quality-audit 第十六轮：全库一致性终审",
       "added": "复核三层引用与版本口径：inference premises 89 条全部可回溯，无环；matchups 271 条英雄 id/basis 全合法，basis_legend 映射全部命中；tactics 38 处 premises 全存在；heroes/items/matchups/timings/patch_stats 逐条通过 schema；index 12 个 JSON 模块计数一致。发现并修正 README 仍写中立装备 T1–T5（7.42 已取消第 5 档），补齐 matchup_stats/talents/neutral_items 模块说明与版本状态；quality_audit.py 新增 README 版本、规则/推理计数、T1–T4 档位校验。",
-      "result": "error 0 / warning 0 / info 1（disruptor↔faceless-void 双向成对）；README 0.6.42 / 63 条 / 89 条 / T1–T4 对齐；index.updated_at 18:21；GitHub 待推送。"
+      "result": "error 0 / warning 0 / info 1（disruptor↔faceless-void 双向成对）；README 0.6.42 / 63 条 / 89 条 / T1–T4 对齐；GitHub 已推送 25c7774，commit 固定地址核验通过；桌面 .cache/kb 0.6.42（fetchBase 25c7774，14 模块 / 1 跳过 / 89 推理），src/data/kb-snapshot 与 dist/win-unpacked/resources/kb-snapshot 均 0.6.42；kb-embeddings 770 条 / 6.77MB；verify-kb 与 verify-kb-semantic 通过。"
     },
     {
       "time": "2026-11-27 17:21",
