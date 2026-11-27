@@ -1033,6 +1033,19 @@
       "conclusion": "对持续回复型目标，禁疗/减疗的价值等于删掉其 EHP 的回复项；对没有回复的目标，禁疗不产生额外收益。",
       "application": "教练端先问「他靠什么回血」：靠吸血→禁疗或拉开距离；靠技能治疗→禁疗/沉默；靠重生→先打掉重生或直接控到死。别把禁疗当通用增伤。",
       "confidence": "reasoned"
+    },
+    {
+      "id": "doom-base-silences-not-mutes",
+      "title": "基础末日封技能与治疗，但不封道具",
+      "premises": [
+        "disable-taxonomy",
+        "dispel-tiers",
+        "first-move-value"
+      ],
+      "derivation": "disable-taxonomy 把 Silence 与 Mute 分开：沉默只封主动技能并打断技能引导，Mute 才封主动道具；末日的基础描述只写「无法施放技能或获得任何治疗」，20 级天赋才赋予 Mute。dispel-tiers 说明 BKB/撒旦这类道具即使能开，也解不掉不可驱散的末日；first-move-value 说明被点名者仍有道具可用，反打窗口没有完全归零。",
+      "conclusion": "基础末日只封技能与治疗，道具仍可开；只有带 Mute 的天赋/技能才连道具一起锁。",
+      "application": "教练端报「末日来了」时补一句「还能开 BKB/撒旦，但解不掉末日」；对面有 20 级 Mute 天赋时改口「连道具也按不了」。评估熊战士/变体精灵这类靠主动技能吃饭的英雄时，末日拿走的是技能窗口，不是全部反打手段。",
+      "confidence": "reasoned"
     }
   ]
 }

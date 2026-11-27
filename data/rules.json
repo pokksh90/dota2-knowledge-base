@@ -1487,6 +1487,25 @@
       "source": "官方 7.41/7.42 更新日志（先天技能调整）；dotaconstants build/abilities.json（is_innate）",
       "patch": "7.42",
       "verified_at": "2026-11-27"
+    },
+    {
+      "id": "disable-taxonomy",
+      "category": "控制与状态",
+      "title": "控制的作用面：沉默、锁道具(Mute)、破坏、定身",
+      "certainty": "verified",
+      "statement": "控制的作用面不同：沉默（Silence）禁用主动技能并打断技能引导，但不封主动道具；沉默（Mute）禁用主动道具并打断道具引导，但不封技能；破坏（Break）只关被动；定身/缠绕（Root）禁止移动与多数位移技能，通常仍可攻击和施法，只有附带缴械（Bind，旧称 Entangle）时才同时禁止攻击；眩晕/妖术同时停止移动、攻击与施法。",
+      "detail": "Liquipedia 将 Silence 与 Mute 分为两套：Silence 只作用于技能，Mute 只作用于道具；两者都会打断对应类型的持续施法/引导（技能引导 vs 道具引导）。Root 只锁移动与多数位移，不默认缴械——疯狂生长、冰封禁制这类「禁止攻击」的定身，是 Root 之外再挂了缴械（Bind）。妖术(Hex)同时提供沉默、缴械并把移速压到 100，因此是最接近「全停」的单体控制。末日(Doom)的基础描述只写「无法施放技能或获得任何治疗」，官方 20 级天赋才有「Doom applies Mute」；因此不能把基础末日当成技能+道具双封。",
+      "values": {
+        "silence": "主动技能 + 打断技能引导；不封道具",
+        "mute": "主动道具 + 打断道具引导；不封技能",
+        "break": "只关被动",
+        "root": "移动/多数位移；通常仍可攻击与施法；Bind 才附加缴械",
+        "hex": "沉默+缴械+移速100"
+      },
+      "key_implication": "报控制时先问「封的是技能、道具还是被动」；同一个「沉默」在中文里可能指 Silence 或 Mute，必须用英文/效果区分。",
+      "source": "Liquipedia Dota 2 Wiki: Silence / Mute / Channel；官方 Doom 英雄页（20 级天赋 Doom applies Mute）",
+      "patch": "7.42",
+      "verified_at": "2026-11-27"
     }
   ]
 }

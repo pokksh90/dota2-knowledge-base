@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.33",
+    "version": "0.6.34",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-27",
@@ -12,22 +12,22 @@
       "layer3": "heroes/items/matchups/tactics —— 应用/结论：具体英雄/装备/克制/战术，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning）",
-    "updated_at": "2026-11-27 06:20"
+    "updated_at": "2026-11-27 10:25"
   },
   "modules": [
     {
       "file": "data/rules.json",
       "title": "底层规则(公理层)",
-      "count": 62,
+      "count": 63,
       "status": "verified-partial",
-      "note": "62 条；新增 innate-abilities（先天技能：7.36 引入、7.41 重做、部分可 Break，191 条 is_innate 不等于英雄数）；按官方 7.42 更新日志校准：被动金固定 90/min、击杀金 100+10×等级、T1 塔 75/100（全队 475）、肉山团队 125、总经验 66600、每智力 0.125% 魔抗、基础生命 200/每力量 20"
+      "note": "63 条；新增 disable-taxonomy（沉默 Silence/锁道具 Mute/破坏 Break/定身 Root 的作用面分层）；按官方 7.42 更新日志校准：被动金固定 90/min、击杀金 100+10×等级、T1 塔 75/100（全队 475）、肉山团队 125、总经验 66600、每智力 0.125% 魔抗、基础生命 200/每力量 20"
     },
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 80,
+      "count": 81,
       "status": "stable",
-      "note": "80 条（verified 23 / reasoned 57）；新增 anti-heal-targets-recovery-not-hp；sustain 批审同步修正 11 处"
+      "note": "81 条（verified 23 / reasoned 58）；新增 doom-base-silences-not-mutes（基础末日只封技能与治疗，20 级 Mute 天赋才锁道具）；control 批审同步修正"
     },
     {
       "file": "data/heroes.json",
@@ -46,9 +46,9 @@
     {
       "file": "data/matchups.json",
       "title": "克制与搭配",
-      "count": 270,
+      "count": 271,
       "status": "stable",
-      "note": "270 条；sustain 27 条全量复核，修 12 处：亚巴顿误写深渊领主已重写、寒冬飞龙极寒之拥非禁疗、viper 条目实为剧毒术士已改 hero_id、冰晶爆轰与天光现世等技能名统一"
+      "note": "271 条；control 71 条全量复核，10 条机制改写（伐木机活性护甲被动、虚空→龙骑士归属改 faceless-void、末日基础不锁道具、斧王嘲讽只强迫普攻、风行定身不移除闪避等）+ 旧译名统一；补 viper→huskar 恢复主语覆盖 127/127"
     },
     {
       "file": "scripts/fetch_data.py",
