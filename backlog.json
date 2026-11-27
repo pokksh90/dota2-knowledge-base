@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-27 16:24",
+    "updated_at": "2026-11-27 16:28",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -466,7 +466,7 @@
       "time": "2026-11-27 16:24",
       "task": "quality-audit 第十四轮：sustain 27 条全量复核 + 11 处改写 + 1 条免死作用面推理",
       "added": "逐条对照 ability_base/7.42 官方技能文本，修正 11 条：① 淘汰之刃 275/375/475 纯粹伤害，目标进处决线直接死亡且该死亡不能被薄葬阻止，旧「薄葬挡斩杀」写反，改为戴泽靠治疗把血线抬出处决区；② 冥魂大帝绝冥再生是死亡/复活结算，满血满蓝复活并清掉死亡驱散的寒霜诅咒，旧「复活后仍禁疗」错误；决斗奖励在 WK 第一条命死亡时已结算，不是「奖励落空」；③ 无光之盾只吸伤害不免控；④ 活体护甲是 12 秒治疗 + 递减格挡，不是护甲、不叠加；⑤ 盛宴伤害走物理吃护甲，回复按目标最大生命不吃护甲；⑥ Ghost Shroud 只挡攻击，不挡淘汰之刃这类指向法术。另修正 axe/wraith-king 英雄要点。新增推理 save-effect-scope-is-not-absolute。",
-      "result": "sustain 27 条全量复核，11 处理由改写；inference 87→88；heroes axe/wraith-king 要点校正；index 0.6.41；quality_audit 0 error / 0 warning / 1 info；GitHub 与桌面同步待执行。"
+      "result": "sustain 27 条全量复核，11 处理由改写；inference 87→88；heroes axe/wraith-king 要点校正；index 0.6.41；quality_audit 0 error / 0 warning / 1 info；GitHub 已推送 bbaf3de，commit 固定地址核验通过；桌面 .cache/kb 0.6.41（14 模块 / 88 推理），src/data/kb-snapshot 与 dist/win-unpacked/resources/kb-snapshot 均 0.6.41；kb-embeddings 769 条 / 6.76MB；verify-kb 与 verify-kb-semantic 通过。"
     },
     {
       "time": "2026-11-27 15:25",
