@@ -1239,6 +1239,36 @@
       "conclusion": "开雾的成败判据是「接敌前有没有进过 1025 检测圈」，不是「烟开没开」。路线选择优先于开雾时机：绕远但避开塔与英雄的路径，优于直线但贴着塔走的路径；烟只给 50 秒，绕路时间也要算进去。",
       "application": "教练给开雾路线时不要只说「开雾抓人」，要说清「从哪绕、避开哪座塔、谁先手、破雾后几秒内要贴到脸」。如果路线必须经过塔或敌方英雄 1025 内，先换路线或先制造别的压力，不要把烟当成免死金牌。",
       "confidence": "reasoned"
+    },
+    {
+      "id": "vision-depth-follows-map-control",
+      "title": "眼位深度跟着「安全区边界」走，不是固定坐标",
+      "premises": [
+        "map-control",
+        "tower-triple-compounding",
+        "safe-farm-area-sets-gpm",
+        "warding-basics",
+        "vision-information"
+      ],
+      "derivation": "地图控制由视野、线权、目标压力组成（map-control）；塔同时给金钱、区域视野与野区安全（tower-triple-compounding），而核心的刷钱上限由可安全刷的区域面积决定（safe-farm-area-sets-gpm）。观察者只活 360 秒、视野 1600（warding-basics、vision-information），它必须被放在「当前安全区边界」附近：太浅会和塔的固定视野重叠，信息增量接近零；太深会落到对方控制区，插眼者进不去、眼也守不住，360 秒寿命大概率变成对方的赏金。因此眼位深度不是一个地图坐标，而是当前塔线与安全区边界的函数：己方塔线前推，眼区整体往对方野区/二塔后平移；己方塔线后撤，眼区收回己方野区入口/二塔前/高地坡道。",
+      "conclusion": "判断「该往哪插」先判断「哪片区域现在算我方安全区」：顺风眼往对方野区与目标区推，均势守河道/中线与己方入口，逆风收回己方入口与高地坡道；塔线一变，眼区就要整体平移一层，而不是继续守旧点。",
+      "application": "教练每次报眼位前先看塔数差与下一波兵线：己方一塔掉，就把防守眼退到二塔前/野区入口；敌方一塔掉，才把进攻眼往对方二塔后推。没有塔线支撑的深眼，不要建议辅助单独去插。",
+      "confidence": "reasoned"
+    },
+    {
+      "id": "vision-coverage-audit",
+      "title": "缺眼与重复眼，用「下一步决策」做审计，不靠感觉",
+      "premises": [
+        "map-control",
+        "ward-purpose-taxonomy",
+        "vision-budget-is-two-accounts",
+        "support-vision-cadence",
+        "warding-basics"
+      ],
+      "derivation": "每只眼只服务一个决策问题（ward-purpose-taxonomy），而假眼是 135 秒补货的配额（support-vision-cadence、vision-budget-is-two-accounts）。所以「缺不缺眼」不能按地图上有没有亮点判断，而要按「接下来 2 分钟要做哪个决策、这个决策必须看清哪 1~2 条来路」判断：决策依赖的来路没有眼，就是缺眼；两只眼覆盖同一条来路，或一只眼和己方塔的固定视野重叠，就是重复。观察者 1600 半径、360 秒寿命（warding-basics）意味着重复眼的机会成本很高：同一片区域叠两只眼，不会让信息变多，只会让另一片必须看的区域空着。",
+      "conclusion": "视野审计的输出不是「再插一只」，而是「哪只眼该搬走」：先列下一步决策与必经来路，再看现有眼覆盖；空区补、重复撤、目标区没眼就先别开目标。",
+      "application": "教练每 2 分钟带辅助过一遍：①下一步打魔方/守塔/刷野/肉山/上高？②必须看清哪两条来路？③现在哪只眼覆盖了、哪只没覆盖？④有没有两只眼在看同一条路、或和塔视野重叠？答完再决定补还是搬。",
+      "confidence": "reasoned"
     }
   ]
 }

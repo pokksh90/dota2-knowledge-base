@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.62",
+    "version": "0.6.63",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-28",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics/patch_stats —— 应用/结论：具体英雄/装备/克制/战术/当前版本公开胜率，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-28 13:36",
+    "updated_at": "2026-11-28 13:48",
     "version_scope": {
       "mechanism": "7.42",
       "stats": "7.42a（最近 7 天滚动，7.42/7.42a 混合）",
@@ -30,9 +30,9 @@
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 95,
+      "count": 97,
       "status": "stable",
-      "note": "95 条；新增 6 条辅助视野推理：ward-purpose-taxonomy（五类眼位）、ward-timing-before-objective（目标前 30~60 秒）、night-ward-asymmetry（夜间 800 vs 眼 1600）、sentry-does-not-replace-observer（真眼不是地图视野/反眼有风险）、support-vision-cadence（两只战略假眼常亮+真眼按事件）、smoke-path-detection（开雾避开 1025 检测圈）；原 detection-layers-and-scope 保留"
+      "note": "97 条；在 6 条辅助视野推理基础上新增 vision-depth-follows-map-control（眼深跟塔线/安全区边界走，顺推均守逆收）与 vision-coverage-audit（用下一步决策审计缺眼/重复眼，输出「哪只眼该搬」）；原 detection-layers-and-scope 保留"
     },
     {
       "file": "data/heroes.json",
@@ -67,7 +67,7 @@
       "title": "战术与节奏",
       "count": 7,
       "status": "stable",
-      "note": "7 板块：新增 support_vision 辅助视野执行清单（先定目的、目标前 30~60 秒、假眼押战略点/真眼押事件、反眼算退出路径、夜前深眼、开雾避 1025 检测圈）；timings 9 / objectives 8 / decisions 16 保留；BKB 时长 9→8→7 秒（CD 95）"
+      "note": "7 板块；support_vision 原则 6→14 条，新增六类眼区、0-10/10-20/20-35/35+ 四阶段主眼区、顺风/均势/逆风眼深、每 2 分钟缺眼/重复眼审计、反眼四档优先级；timings 9 / objectives 8 / decisions 16 保留"
     },
     {
       "file": "data/hero_base.json",

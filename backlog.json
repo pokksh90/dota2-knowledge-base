@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 13:40",
+    "updated_at": "2026-11-28 13:48",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -665,10 +665,28 @@
       "status": "done",
       "desc": "按用户要求补充辅助视野知识：1 条烟雾规则、6 条视野推理、2 件守卫装备、1 个 support_vision 战术板块；同时修正 vision-information 的观察者视野笔误。",
       "note": "新增 smoke-detection；ward-purpose-taxonomy / ward-timing-before-objective / night-ward-asymmetry / sentry-does-not-replace-observer / support-vision-cadence / smoke-path-detection；observer-ward / sentry-ward；tactics.support_vision。修正 vision-information「观察者守卫视野 360」→「1600 地面视野/持续 360 秒」。"
+    },
+    {
+      "id": "support-vision-macro",
+      "title": "应用层补充：辅助插眼的宏观逻辑",
+      "file": "data/inference.json / data/tactics.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "按用户要求补充宏观插眼逻辑：按阶段、局势、区域、缺眼/重复眼审计与反眼优先级，不写具体坐标。",
+      "note": "新增 inference 2 条：vision-depth-follows-map-control、vision-coverage-audit；support_vision 原则 6→14：六类眼区、0-10/10-20/20-35/35+ 四阶段、顺/均/逆眼深、每 2 分钟审计、反眼四档。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 13:48",
+      "task": "辅助插眼宏观逻辑补充（0.6.63）",
+      "added": "新增 10 条：① inference.vision-depth-follows-map-control：眼深=塔线/安全区边界，顺风推对方野区/二塔后、均势守河道与己方入口、逆风收己方入口与高地坡道；② inference.vision-coverage-audit：用「下一步决策+必经来路」审计缺眼/重复眼，输出「哪只眼该搬」；③ support_vision 8 条原则：六类眼区（己方野区入口/河道中线/敌方野区/目标区/高地坡道塔后/己方线后）、0-10 保核心防游走抢符、10-20 眼区随一塔平移并布魔方、20-35 肉山与二塔侧翼、35+ 高地坡道与守高、顺/均/逆眼深、每 2 分钟缺眼/重复审计、反眼 A/B/C/D 四档。",
+      "result": "本地已改并校验；inference 95→97、support_vision 原则 6→14、tactics 仍 7 板块；quality_audit 0 error / 0 warning / 1 info；index 0.6.63 / updated_at 2026-11-28 13:48。",
+      "note": "本轮只做宏观区域/阶段/局势逻辑，不写具体树底/山坡坐标；数值仍引用 rules.warding-basics、vision-information、day-night-cycle、roshan-value 等已有条款。",
+      "next": "推送 GitHub 后同步桌面缓存/快照/向量；下一轮继续按 backlog 最短理由审查。"
+    },
     {
       "time": "2026-11-28 13:36",
       "task": "辅助视野知识补充（0.6.62）",

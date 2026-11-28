@@ -29,7 +29,7 @@
 │   └── knowledge-schema.json # 各数据文件的字段契约（JSON Schema）
 ├── data/
 │   ├── rules.json            # ① 公理层：64 条底层机制（对局结构+机制细节）
-│   ├── inference.json        # ② 定理层：95 条可回溯推导
+│   ├── inference.json        # ② 定理层：97 条可回溯推导
 │   ├── heroes.json           # ③ 英雄与定位（含 aliases 绰号）
 │   ├── items.json            # ③ 装备与出装
 │   ├── matchups.json         # ③ 克制与搭配
@@ -59,7 +59,7 @@
 | `matchups.json` | 英雄 counter / synergy，每条带机制依据 `basis` | 对位与 BP 分析 |
 | `matchup_stats.json` | 127 英雄对各对手的公开样本量/胜率/相对自身基线 delta；`patch=pending`，仅作弱证据 | 校验机制克制结论 |
 | `patch_stats.json` | 当前版本公开对局胜率/选取率与 S/A/B/C/D 分档；标注样本、窗口与补丁纯度 | 「这版本强不强 / 胜率多少」的统计参考 |
-| `tactics.json` | 分线职责、关键时间点、地图目标、团战决策、辅助视野清单 | 战术节奏建议 |
+| `tactics.json` | 分线职责、关键时间点、地图目标、团战决策、辅助视野宏观清单 | 战术节奏建议 |
 | `hero_base.json` | 英雄基础属性（三围/血量/护甲/移速/视野）+ 技能 key 索引 | 数值查询、对线强度估算 |
 | `ability_base.json` | 每个技能的伤害类型、蓝耗、冷却、是否穿透 BKB、关键数值 | 「这招能不能被 BKB/驱散挡」 |
 | `item_base.json` | 道具价格、合成件、属性、主动效果 | 出装成本与属性对比 |
@@ -179,4 +179,4 @@ GITHUB_TOKEN=ghp_xxx bash scripts/push_to_github.sh   # 或直接 git push origi
 
 ## 版本与状态
 
-当前版本 **`0.6.62`**（见 `index.json` 的 `meta`）。机制层按 **7.42**；统计层 `patch_stats.json` 为最近 7 天滚动窗口，覆盖 **7.42 / 7.42a 混合样本**（`patch_purity=mixed`），因此只能回答公开对局胜率与分档，不能当作纯 7.42a 排名。结构完整，基础数值已按公开常量库重建；逐项机制数值待 7.42a 改动回填，对位统计 `matchup_stats.json` 的补丁标记仍为 `pending`。完善进度见 `backlog.json`。
+当前版本 **`0.6.63`**（见 `index.json` 的 `meta`）。机制层按 **7.42**；统计层 `patch_stats.json` 为最近 7 天滚动窗口，覆盖 **7.42 / 7.42a 混合样本**（`patch_purity=mixed`），因此只能回答公开对局胜率与分档，不能当作纯 7.42a 排名。结构完整，基础数值已按公开常量库重建；逐项机制数值待 7.42a 改动回填，对位统计 `matchup_stats.json` 的补丁标记仍为 `pending`。完善进度见 `backlog.json`。
