@@ -733,7 +733,7 @@
       "time": "2026-11-28 18:22",
       "task": "quality-audit 第四十轮：全库最短 10 条理由改写（0.6.68）",
       "added": "改写 10 条最短对位理由（181~191 字→307~420 字）：bristleback→razor、kez←axe、largo+zeus、earth-spirit→sniper、sven→phantom-lancer、techies→bounty-hunter、slark←wraith-king、ringmaster→clinkz、anti-mage→tinker、nyx-assassin←bounty-hunter；补足反击螺旋、Sai 格挡、朗戈回响、宙斯全球雷击、残岩 2000/2 倍翻滚、斯温分裂 400~700、工兵警示牌、斯拉克三围偷取/骨卫、百戏魔盒、AM 法力虚空/激光致盲、夜魔复仇等半径、持续时间、层数与统计样本；修正旧文把英雄 ID 当对局数：钢背 15 局实为雷泽 ID 15（真实 n=86）、凯 2 局实为斧王 ID 2（真实 n=122 且凯 54.92% 高于基线）、斯拉克 42 局实为冥魂大帝 ID 42（真实 n=11）；保留原 pair/relation/basis。",
-      "result": "待 GitHub 推送与桌面同步后回填。",
+      "result": "GitHub 内容提交 8081f4e；线上核验 index 0.6.68 / 18:22 / matchups 271 / min 192。桌面 .cache/kb 与两处 kb-snapshot 均 0.6.68（cache 16 JSON + _cache-meta；index/matchups/_cache-meta/quality_report 三处哈希一致 2726355487A9/AD99500079CA/31FBD8C8F117/DF3B1718AAA4，README 两处快照一致 8BA2772A4625；fetchBase 固定 8081f4e）；kb-embeddings 796 条 / 7.00MB / 7,343,165 bytes / dim 1024 / kbVersion 0.6.68 / contentHash 593186d557d71f28af1b80c51c5a7eac3ab0a453（本次新嵌 10 / 复用 786）；verify:kb OK、verify:kb-semantic OK（真实索引 796 条；问题向量失败为模拟分支）。",
       "note": "本轮只改 matchups.reason，未改 pair/relation/basis；改写后全库最短 reason 由 181 抬到 192，最长 506。",
       "next": "下一轮从 192 的 windranger←zeus、193 sniper←warlock、194 tiny+enigma 继续；之后处理 7.42a 数值回填与 Muerta 六项技能空字段。"
     },
