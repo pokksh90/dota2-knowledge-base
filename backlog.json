@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 14:30",
+    "updated_at": "2026-11-28 15:29",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -685,10 +685,28 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 157~163 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计弱支持/样本过小。",
       "note": "第三十六轮：axe→phantom-lancer、nyx-assassin→skywrath-mage、shadow-demon→terrorblade、doom→ursa、medusa+crystal-maiden、natures-prophet←broodmother、omniknight←ancient-apparition、beastmaster→broodmother、bounty-hunter→clinkz、abaddon←ancient-apparition；10/10；改写后 268~370 字；全库最短 reason 163；pair/relation/basis 不变；修正 Doom 锁道具天赋为 25 级、兽王 Rugged 是 100% 触发但每次仅 16 点非英雄格挡（不是全额免伤）、PL Doppelwalk / 幻影冲锋译名；明确 Fury Swipes 仍可叠、只是失去 80% 减伤；统计反向/小样本补 caveat。"
+    },
+    {
+      "id": "quality-audit-global-shortest-20",
+      "title": "质量审查：第三十七轮最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 163~166 字 10 条，逐条对照 ability_base、talents 与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计弱支持/样本过小。",
+      "note": "第三十七轮：spirit-breaker→shadow-fiend、tusk→ancient-apparition、terrorblade←lina、elder-titan→terrorblade、mirana+kunkka、ogre-magi+troll-warlord、storm-spirit→sniper、batrider→monkey-king、bounty-hunter→templar-assassin、warlock+queen-of-pain；10/10；改写后 323~390 字；全库最短 reason 167；pair/relation/basis 不变；修正 ET 统计 n=7 误写 109 局、蝙蝠基线错配、巨魔基础攻击间隔 1.7、Lina Slow Burn 为额外 64% 燃烧伤害；统计反向/小样本均标 caveat。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 15:29",
+      "task": "quality-audit 第三十七轮：全库最短 10 条理由改写（0.6.65）",
+      "added": "改写 10 条最短对位理由（163~166 字→323~390 字）：spirit-breaker→shadow-fiend、tusk→ancient-apparition、terrorblade←lina、elder-titan→terrorblade、mirana+kunkka、ogre-magi+troll-warlord、storm-spirit→sniper、batrider→monkey-king、bounty-hunter→templar-assassin、warlock+queen-of-pain；补足技能数值/持续时间/施放方式/幻象承伤与反制窗口；修正 ET 统计把英雄 ID 109 当 109 局（实为 n=7）、蝙蝠基线 53.08 误配、巨魔基础攻击间隔 1.4→1.7、Lina Slow Burn 为额外 64% 燃烧伤害；pair/relation/basis 不变。",
+      "result": "GitHub 内容提交 48ed791；线上核验 index 0.6.65 / 15:24 / matchups 271。桌面 .cache/kb 与两处 kb-snapshot 均 0.6.65（15 JSON + _cache-meta；index/matchups/inference/tactics/rules/items 哈希一致）；kb-embeddings 796 条 / 7.00MB / dim 1024 / kbVersion 0.6.65 / contentHash f68f69d919be47383d62882ac2117b2a74dc9f8e（本次新嵌 10 / 复用 786）；verify:kb OK、verify:kb-semantic OK（真实索引 796 条；问题向量失败为模拟分支）。",
+      "note": "本轮只做 matchups.reason 质量审查，未改 pair/relation/basis；改写后全库最短 reason 由 163 抬到 167，剩余最短 167 为 lina←spectre 与 enchantress+beastmaster。ET 条目的旧「109 局」实为英雄 ID 109，真实 n=7；蝙蝠旧基线 53.08 实为猴王基线，蝙蝠自身 53.28。巨魔基础攻击间隔按 heroes.json 为 1.7，不是 1.4。Lina Slow Burn 是额外 64% 燃烧伤害，不是把原伤害延后。",
+      "next": "下一轮继续按最短理由审查 167~171 字段落；随后处理 7.42a 逐项机制数值回填与 ability_base 中 Muerta 六项技能 desc/attrib 为空的问题。"
+    },
     {
       "time": "2026-11-28 14:25",
       "task": "quality-audit 第三十六轮：全库最短 10 条理由改写（0.6.64）",
