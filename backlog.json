@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 15:29",
+    "updated_at": "2026-11-28 16:27",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -695,10 +695,28 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 163~166 字 10 条，逐条对照 ability_base、talents 与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计弱支持/样本过小。",
       "note": "第三十七轮：spirit-breaker→shadow-fiend、tusk→ancient-apparition、terrorblade←lina、elder-titan→terrorblade、mirana+kunkka、ogre-magi+troll-warlord、storm-spirit→sniper、batrider→monkey-king、bounty-hunter→templar-assassin、warlock+queen-of-pain；10/10；改写后 323~390 字；全库最短 reason 167；pair/relation/basis 不变；修正 ET 统计 n=7 误写 109 局、蝙蝠基线错配、巨魔基础攻击间隔 1.7、Lina Slow Burn 为额外 64% 燃烧伤害；统计反向/小样本均标 caveat。"
+    },
+    {
+      "id": "quality-audit-global-shortest-21",
+      "title": "质量审查：第三十八轮最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 167~171 字 10 条，逐条对照 ability_base、talents 与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计弱支持/样本过小。",
+      "note": "第三十八轮：enchantress+beastmaster、lina←spectre、sand-king→phantom-lancer、sven←phantom-assassin、templar-assassin+dark-seer、keeper-of-the-light→phantom-assassin、lion→tinker、leshrac→phantom-lancer、legion-commander←medusa、doom→medusa；10/10；改写后 310~432 字；全库最短 reason 171；pair/relation/basis 不变；修正斯温旧统计 44 局→13 局、光法旧统计 44 局→27 局且低于自身基线、幻影长矛手不同来源幻象承伤 600%/500%/400% 混用；Lina←Spectre n20 与 KotL→PA n27 均标统计反向/不支持。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 16:27",
+      "task": "quality-audit 第三十八轮：全库最短 10 条理由改写（0.6.66）",
+      "added": "改写 10 条最短对位理由（167~171 字→310~432 字）：enchantress+beastmaster、lina←spectre、sand-king→phantom-lancer、sven←phantom-assassin、templar-assassin+dark-seer、keeper-of-the-light→phantom-assassin、lion→tinker、leshrac→phantom-lancer、legion-commander←medusa、doom→medusa；补足技能半径/持续时间/层数/施法窗口/统计样本与基线；修正斯温旧统计 44 局实为 13 局、光法旧统计 44 局实为 27 局且低于自身基线、幻影长矛手不同来源幻象承伤 600%/500%/400% 混用；pair/relation/basis 不变。",
+      "result": "GitHub 内容提交 9e2cd05；线上核验 index 0.6.66 / 16:24 / matchups 271。桌面 .cache/kb 与两处 kb-snapshot 均 0.6.66（index/matchups/_cache-meta/README/quality_report 哈希一致；fetchBase 固定 9e2cd05）；kb-embeddings 796 条 / 7.00MB / dim 1024 / kbVersion 0.6.66 / contentHash 57fd92f0a1afd99e1beed24fa22263bacd272512（本次新嵌 10 / 复用 786）；verify:kb OK、verify:kb-semantic OK（真实索引 796 条；问题向量失败为模拟分支）。",
+      "note": "本轮只做 matchups.reason 质量审查，未改 pair/relation/basis；改写后全库最短 reason 由 167 抬到 171，剩余最短 171 为 troll-warlord←phoenix，其后 172 bane→medusa、173 chaos-knight←underlord、174 night-stalker→enigma。Lina←Spectre 公开 n20 莉娜 60% 对自身 48.44%，与 relation 方向相反；KotL→PA n27 光法 51.85% 低于自身 55.63%，统计不支持稳定克制；两条均保留原 relation 并写 caveat。",
+      "next": "下一轮继续按最短理由审查 171~178 字段落；随后处理 7.42a 逐项机制数值回填与 ability_base 中 Muerta 六项技能 desc/attrib 为空的问题。"
+    },
     {
       "time": "2026-11-28 15:29",
       "task": "quality-audit 第三十七轮：全库最短 10 条理由改写（0.6.65）",
