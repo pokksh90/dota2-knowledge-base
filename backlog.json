@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 17:25",
+    "updated_at": "2026-11-28 17:27",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -719,6 +719,14 @@
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 17:27",
+      "task": "quality-audit 第三十九轮：全库最短 10 条理由改写（0.6.67）",
+      "added": "改写 10 条最短对位理由（171~178 字→363~506 字）：troll-warlord←phoenix、bane→medusa、chaos-knight←underlord、night-stalker→enigma、anti-mage←wraith-king、enchantress→phantom-lancer、visage←troll-warlord、death-prophet→invoker、juggernaut→phoenix、treant-protector→tusk；补足烈火精灵/守墓人斗篷/魔爪/衰退光环/绝冥再生/超新星/疯狂生长等半径、持续时间、层数、施法窗口与统计样本；修正旧文把英雄 ID 当对局数（凤凰 110、巨魔 95）、维萨吉旧统计 95 局实为 n=3 且方向反、祸乱魔爪需同时计算偷蓝与魔法盾耗蓝、孽主光环只削基础攻击；将 enchantress→phantom-lancer 的 basis 由 aoe 改为 mobility（Impetus 是单体，不是 AOE 清场），其余 pair/relation/basis 不变。",
+      "result": "GitHub 内容提交 f7ffa6d；线上核验 index 0.6.67 / 17:25 / matchups 271。桌面 .cache/kb 与两处 kb-snapshot 均 0.6.67（cache 16 JSON + _cache-meta；index/matchups/_cache-meta/quality_report 三处哈希一致，README 两处快照一致；fetchBase 固定 f7ffa6d）；kb-embeddings 796 条 / 7.00MB / dim 1024 / kbVersion 0.6.67 / contentHash 95ba6ed4a9b90ffa81e1560dc5bdd9fbd269eee7（本次新嵌 10 / 复用 786）；verify:kb OK、verify:kb-semantic OK（真实索引 796 条；问题向量失败为模拟分支）。",
+      "note": "本轮以 matchups.reason 质量审查为主，只改 1 条 basis（enchantress→phantom-lancer：aoe→mobility），未改 pair/relation。改写后全库最短 reason 由 171 抬到 181，剩余最短 181 为 bristleback→razor，其后 183 kez←axe / largo+zeus。troll-warlord←phoenix 的旧「110 局」实为凤凰英雄 ID 110，真实 n=31；visage←troll-warlord 的旧「95 局巨魔 66.7%」实为巨魔英雄 ID 95，真实 n=3 且维萨吉 66.7% 占优，统计与 relation 反向；两条均保留原 relation 并写 caveat。",
+      "next": "下一轮继续按最短理由审查 181~190 字段落；随后处理 7.42a 逐项机制数值回填与 ability_base 中 Muerta 六项技能 desc/attrib 为空的问题。"
+    },
     {
       "time": "2026-11-28 16:27",
       "task": "quality-audit 第三十八轮：全库最短 10 条理由改写（0.6.66）",
