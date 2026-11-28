@@ -179,4 +179,4 @@ GITHUB_TOKEN=ghp_xxx bash scripts/push_to_github.sh   # 或直接 git push origi
 
 ## 版本与状态
 
-当前版本 **`0.6.67`**（见 `index.json` 的 `meta`）。机制层按 **7.42**；统计层 `patch_stats.json` 为最近 7 天滚动窗口，覆盖 **7.42 / 7.42a 混合样本**（`patch_purity=mixed`），因此只能回答公开对局胜率与分档，不能当作纯 7.42a 排名。结构完整，基础数值已按公开常量库重建；逐项机制数值待 7.42a 改动回填，对位统计 `matchup_stats.json` 的补丁标记仍为 `pending`。完善进度见 `backlog.json`。
+当前版本 **`0.6.68`**（见 `index.json` 的 `meta`）。机制层按 **7.42**；统计层 `patch_stats.json` 为最近 7 天滚动窗口，覆盖 **7.42 / 7.42a 混合样本**（`patch_purity=mixed`），因此只能回答公开对局胜率与分档，不能当作纯 7.42a 排名。结构完整，基础数值已按公开常量库重建；逐项机制数值待 7.42a 改动回填，对位统计 `matchup_stats.json` 的补丁标记仍为 `pending`。完善进度见 `backlog.json`。

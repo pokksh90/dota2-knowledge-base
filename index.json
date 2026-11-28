@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.67",
+    "version": "0.6.68",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-28",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics/patch_stats —— 应用/结论：具体英雄/装备/克制/战术/当前版本公开胜率，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-28 17:25",
+    "updated_at": "2026-11-28 18:22",
     "version_scope": {
       "mechanism": "7.42",
       "stats": "7.42a（最近 7 天滚动，7.42/7.42a 混合）",
@@ -53,7 +53,7 @@
       "title": "克制与搭配",
       "count": 271,
       "status": "stable",
-      "note": "271 条；第三十九轮按最短 10 条理由改写（171~178 字→363~506 字），覆盖 physical/resource/control/mobility；补足烈火精灵/守墓人斗篷/魔爪/衰退光环/绝冥再生/超新星等半径、持续时间、层数与统计样本基线；修正凤凰旧统计 110 局实为 31 局、巨魔旧统计 95 局实为 n=3 且方向反、祸乱魔爪需同时计算偷蓝与魔法盾耗蓝、孽主光环只削基础攻击；并将 enchantress→phantom-lancer 的 basis 由 aoe 改为 mobility（Impetus 单体，不是 AOE 清场）。"
+      "note": "271 条；第四十轮按最短 10 条理由改写（181~191 字→307~420 字），覆盖 physical/resource/mobility/control/vision；修正钢背/凯/斯拉克旧文把英雄 ID（15/2/42）当对局数，真实 n=86/122/11；补足反击螺旋、朗戈回响、残岩翻滚、斯温分裂、工兵警示牌、斯拉克三围偷取、百戏魔盒、AM 法力虚空、夜魔复仇等数值与统计 caveat；保留 pair/relation/basis。"
     },
     {
       "file": "scripts/fetch_data.py",
