@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-29 00:32",
+    "updated_at": "2026-11-29 01:30",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -785,10 +785,28 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 226~232 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第四十六轮：slark→sniper、zeus→weaver、lone-druid←batrider、silencer→ember-spirit、windranger←treant-protector、pudge←wraith-king、primal-beast→witch-doctor、abaddon→lina、drow-ranger→batrider、clockwerk←silencer；10/10；改写后 408~441 字；全库最短 reason 233；pair/relation/basis 不变；修正无光之盾强驱散只在施放瞬间生效、被光击阵晕住后不能开盾，210 盾量挡不住莉娜上千爆发，亚巴顿真正克制点是借魂；修正 WK 绝冥再生要蓝且不在 CD、CD 中先进入 4.25 秒冥魂形态后不能重生，n=71 统计反而屠夫 59.15% 占优；修正卓尔狂风不穿 BKB、击退不解除燃烧枷锁，n=21 卓尔 38.10% 反向；补足蝙蝠枷锁拖熊/拖本体（n=16 德鲁伊 62.50% 反向）、原始兽粉碎 575/0.75/0.2 断巫医 8 秒死亡守卫（n=33 反向）、全球沉默封灰烬两段施法（n=88 双方 50%）、宙斯 3/5 秒真视窗口（n=22 弱支持）、发条 n=54 61.11% 反向。"
+    },
+    {
+      "id": "quality-audit-global-shortest-30",
+      "title": "质量审查：第四十七轮最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 233~241 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第四十七轮：kunkka→phantom-lancer、silencer+faceless-void、broodmother←lina、skywrath-mage←invoker、anti-mage→medusa、templar-assassin←slardar、mars→sniper、axe→phantom-assassin、chen←axe、luna←nyx-assassin；10/10；改写后 390~468 字；全库最短 reason 242；pair/relation/basis 不变；修正旧文把英雄 ID 当样本数：沉默+虚空旧「41 局」实为虚空 ID 41（真实 n=52）、玛尔斯→狙击手旧「35 局」实为狙击手 ID 35（真实 n=120）；明确 PA 闪避来自 Immaterial（飘忽不定 20/30/40/50%），Blur 是 20 秒隐身/12% 移速/弹道规避；狂战士之吼穿 BKB 且锁施法/道具；陈的野怪被吼锁技能但 n=32 陈 62.50% 反向；AM→美杜莎 n=24 反向（AM 41.67%）、昆卡潮汐使者 650~1025 正面锥形顺劈且 CD 4~13 秒、育母 n=9 反向、天怒←祈求者 n=116 弱支持、圣堂←斯拉达 n=100 弱支持、露娜←夜魔刺客 n=61 弱支持。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-29 01:30",
+      "task": "quality-audit 第四十七轮：全库最短 10 条理由改写（0.6.75）",
+      "added": "改写 10 条最短对位理由（233~241 字→390~468 字）：kunkka→phantom-lancer、silencer+faceless-void、broodmother←lina、skywrath-mage←invoker、anti-mage→medusa、templar-assassin←slardar、mars→sniper、axe→phantom-assassin、chen←axe、luna←nyx-assassin；补足潮汐使者 650~1025/150%/CD 4~13、PL Doppelganger 325/1 秒/8 秒、Juxtapose 6~10/40~50%/600% 承伤、时间结界 500/3.75~4.75/CD 155~135 与全球沉默 4.5~6/120/穿 BKB、小蜘蛛 325 血与莉娜龙破斩 245+光击阵 215、祈求者 EMP 675/2.9 秒/100~700 蓝、美杜莎魔法盾 98%/每蓝抵 2 伤与石化凝视 1200、斯拉达腐蚀 18 秒/5 秒 CD/折光 6 层 30、玛尔斯竞技场 550/5.5 与狙击手 935/1010、斧王吼 315/2.1~3/穿 BKB 与反击螺旋 7/6/5/4、陈上帝之手 200~400+20~40 与劝化 4 只、夜魔刺客穿刺 1.25~2/复仇 300~460+4 秒破坏；修正旧文把英雄 ID 当样本数：沉默+虚空旧「41 局」实为虚空 ID 41（真实 n=52）、玛尔斯→狙击手旧「35 局」实为狙击手 ID 35（真实 n=120）；明确 PA 闪避来自 Immaterial 20/30/40/50%，Blur 是 20 秒隐身/12% 移速/弹道规避；狂战士之吼锁施法/道具且穿 BKB；标注 kunkka→PL n=17 弱支持（58.82/52.54）、silencer+FV n=52 对手样本（沉默 38.46/47.34、虚空 61.54/48.28）、brood←lina n=9 反向小样本（55.56/53.68）、sky←invoker n=116 弱支持（44.83/46.83）、AM→medusa n=24 反向（41.67/47.87）、TA←slardar n=100 弱支持（47.00/49.26）、mars→sniper n=120 反向（43.33/46.51）、axe→PA n=30 支持（56.67/49.98）、chen←axe n=32 反向（62.50/57.12）、luna←nyx n=61 弱支持（44.26/48.74）；保留原 pair/relation/basis。",
+      "result": "GitHub 内容提交 65cefd9（0.6.75）；线上核验 index 0.6.75 / 01:23 / matchups 271 / min 242 / max 506。桌面 .cache/kb 与两处 kb-snapshot 均 0.6.75（cache 16 JSON = 15 数据 JSON + _cache-meta；三处 index/matchups/_cache-meta/quality_report 哈希一致 6AB0F2945ADA / CE77384DF171 / 28F92BCAB6B9 / DF3B1718AAA4，两处快照 README 哈希一致 20C85977AF5A；fetchBase 固定 65cefd9；fetchedAt 2026-11-28T17:29:11.084Z）；kb-embeddings 796 条 / 7.00MB / 7,341,056 bytes / dim 1024 / kbVersion 0.6.75 / contentHash 19f0c82d4f58a7441340b997847ba9c1b06b7c7f / createdAt 2026-11-28T17:29:17.754Z（本次新嵌 10 / 复用 786）；verify:kb OK（快照 v0.6.75，127 英雄 / 271 对位）、verify:kb-semantic OK（真实索引 v0.6.75 / 796 条；“问题向量失败”为模拟分支）。",
+      "note": "本轮只改 matchups.reason，未改 pair/relation/basis；改写后全库最短 reason 由 233 抬到 242，最长 506。",
+      "next": "下一轮从 242 的 monkey-king←timbersaw 继续；之后 242 earth-spirit→rubick、244 disruptor→ember-spirit、244 axe←meepo、245 tinker→crystal-maiden，246 witch-doctor→chen 等。"
+    },
     {
       "time": "2026-11-29 00:32",
       "task": "quality-audit 第四十六轮：全库最短 10 条理由改写（0.6.74）",
