@@ -3,7 +3,7 @@
     "title": "装备与出装",
     "description": "装备分类、用途、分位置核心出装思路。coach_note 供 LLM 消费：什么情况出、克制什么、给谁出。cost 为 dotaconstants 总价，已与 7.42 新道具价格交叉核对。",
     "source_note": "用途/克制为稳定常识(source=stable)；cost 取自 dotaconstants build/items.json 的 cost 字段(总价)，并用 7.42 新道具(bloodslinger 925 / caduceus 5400 / ristuls_devotion 3800 / sabatons 5950 / skypiercer 6000 / starforge 6000)对齐验证，确认该数据集已更新到 7.42。",
-    "last_updated": "2026-11-27 06:20",
+    "last_updated": "2026-11-28 13:35",
     "corrections": [
       "删除误录的「永恒战靴 Eon Boots」：7.42 道具全表(dotaconstants items.json 已含 7.42 全部新道具)无此条目，替换为实际存在的「永世之蔽 Eternal Shroud」。",
       {
@@ -41,6 +41,12 @@
         "item": "black-king-bar",
         "finding": "`spell_reduce 60` 语义核实：官方 items.txt 只给数值 60；dotaconstants 的 Avatar 描述为 Grants 60% magic resistance and immunity to reflected and pure damage；Liquipedia 记 Magic Resist Bonus 60%、开盾时总魔抗 70%（与基础乘算）、并给 debuff immunity 与 pure damage immunity",
         "action": "purpose/coach_note 由「魔法伤害削减口径」改为「60% 额外魔抗（乘算→常规 70%）+ 减益免疫 + 纯粹伤害免疫」，并补 7.41b 固定时长"
+      },
+      {
+        "time": "2026-11-28 13:35",
+        "item": "observer-ward / sentry-ward",
+        "finding": "dotaconstants 的 ward_dispenser 仍保留旧价 observer 75 / sentry 100；rules.warding-basics 与 Liquipedia 7.42 口径为 observer 0 / sentry 50。",
+        "action": "新增两件消耗品，价格按 rules 口径写入；旧 ward_dispenser 数值不采用。"
       }
     ]
   },
@@ -1113,6 +1119,36 @@
       "source": "stable",
       "cost": 4650,
       "cost_source": "官方 items.txt ItemCost=4650（7.41e 记录总价未变），与 Liquipedia Gleipnir 4650 一致"
+    },
+    {
+      "id": "observer-ward",
+      "name_zh": "观察者守卫（假眼）",
+      "name_en": "Observer Ward",
+      "category": "consumable",
+      "purpose": "7.42：0 金；库存初始 2/上限 4、每 135 秒补 1；提供 1600 半径地面视野、持续 360 秒；放置范围 500；英雄 2 下、非英雄 10 下拆除；被拆赏金每分钟 +4 金 / +8 经验。",
+      "coach_note": "假眼是「配额」不是「钱」：别把 4 只全倒在同一路线口，优先让 1~2 个战略点常亮（目标入口、己方野区入口、敌方游走路径）。插在己方塔前等于重复塔的固定视野；插在对方 1050~1600 环带边缘更耐拆。目标前 30~60 秒布，先反对方真眼；被拆等于送钱+送经验，插之前先算退出路径。",
+      "core_for": [
+        4,
+        5
+      ],
+      "source": "stable",
+      "cost": 0,
+      "cost_source": "rules.warding-basics（Liquipedia 7.42：观察者守卫 0 金）"
+    },
+    {
+      "id": "sentry-ward",
+      "name_zh": "哨兵守卫（真眼）",
+      "name_en": "Sentry Ward",
+      "category": "consumable",
+      "purpose": "50 金（卖 25）；库存初始 3/上限 8、每 70 秒补 1；提供 1050 半径真视、持续 420 秒；本身不提供地面视野；放置范围 500；落点 150 半径/12 秒飞行视野；英雄 2 下、非英雄 10 下拆除。",
+      "coach_note": "真眼是「事件工具」，不是地图视野：只在要反隐、反眼、过某条隐身路径时买。它不替代假眼，必须和假眼/英雄/兵线提供的正常视野配对；反眼要走进 1050 才能拆，而敌方观察者在 1600 就能先看见你，所以先算接应与退出路径。只能揭示隐形单位与守卫，不能排感应地雷；不要拿真眼当假眼铺图。",
+      "core_for": [
+        4,
+        5
+      ],
+      "source": "stable",
+      "cost": 50,
+      "cost_source": "官方 items.txt ItemCost=50；rules.warding-basics 一致"
     }
   ],
   "builds": [

@@ -348,18 +348,21 @@
       "statement": "视野提供敌方位置与动向信息，信息决定决策质量；缺乏信息导致被 gank/被先手。英雄基础视野白天 1800、夜晚 800（少数英雄例外），全队视野共享；战争迷雾内的敌人不能被指定为目标，但仍会被非指向技能命中。",
       "certainty": "stable",
       "key_implication": "眼/反隐的「信息价值」远高于其金钱成本，视野投入产出比极高。",
-      "detail": "地面视野会被树木、高地和视野遮挡物挡住，飞行视野不受限；单位对 1800 内的敌人施放指向技能或攻击时，会给对方 150 半径、2 秒的地面视野（防止从雾里无代价消耗）。观察者守卫视野 360，岗哨守卫不提供视野（只给真视）。视野上限 4000。 注意：真视只对普通隐身/隐匿生效；标注「免疫侦测」的技能（如影舞 Shadow Dance）在持续期间不吃真视，只能靠伤害或范围技能处理，教练不能把「有真视」直接说成「一定能看见」。",
+      "detail": "地面视野会被树木、高地和视野遮挡物挡住，飞行视野不受限；单位对 1800 内的敌人施放指向技能或攻击时，会给对方 150 半径、2 秒的地面视野（防止从雾里无代价消耗）。观察者守卫提供 1600 半径地面视野、持续 360 秒；岗哨守卫不提供地面视野（只给真视）。视野上限 4000。 注意：真视只对普通隐身/隐匿生效；标注「免疫侦测」的技能（如影舞 Shadow Dance）在持续期间不吃真视，只能靠伤害或范围技能处理，教练不能把「有真视」直接说成「一定能看见」。",
       "values": {
         "hero_day": 1800,
         "hero_night": 800,
-        "observer_ward": 360,
+        "observer_ward": 1600,
         "sentry_ward": 0,
         "caster_vision": {
           "radius": 150,
           "duration": 2,
           "trigger_range": 1800
         },
-        "max_vision": 4000
+        "max_vision": 4000,
+        "observer_ward_duration": 360,
+        "sentry_ward_true_sight": 1050,
+        "sentry_ward_duration": 420
       },
       "source": "Liquipedia Dota 2 Wiki: Vision / Observer_Ward / Sentry_Ward",
       "patch": "7.42",
@@ -1506,6 +1509,28 @@
       "source": "Liquipedia Dota 2 Wiki: Silence / Mute / Channel；官方 Doom 英雄页（20 级天赋 Doom applies Mute）",
       "patch": "7.42",
       "verified_at": "2026-11-27"
+    },
+    {
+      "id": "smoke-detection",
+      "category": "视野机制",
+      "title": "烟雾是「免疫真视的团队隐身」，只按接近/攻击破雾",
+      "statement": "烟雾（Smoke of Deceit）售价 50，使用后以 1200 半径把施法者与友方玩家控制单位带入隐身，并给 +25% 移速，持续 50 秒；隐身档位为免疫真视，真眼、宝石与技能真视在破雾前都看不见。破雾条件只有两种：攻击，或移动到敌方英雄/防御塔 1025 半径内。",
+      "certainty": "verified",
+      "key_implication": "开雾的成败由「路线是否进入 1025 检测圈」决定，不由「有没有真眼」决定；塔与敌方英雄是固定/移动检测点，开雾进塔或贴脸等于自己关掉隐身。",
+      "detail": "烟雾每次只能给同一友军应用一次；已隐身者可把 300 半径内后来跟上的友军带上烟。它不提供伤害、护甲或回蓝，唯一产出是把「被发现」推迟到 1025 内。因为免疫真视，反隐方不能靠真眼/宝石提前揭雾，只能靠塔、英雄站位、范围伤害与预判；开雾方也不能把烟当成「永久隐身」，攻击或进入检测圈都会立刻破雾。",
+      "values": {
+        "cost": 50,
+        "duration": 50,
+        "application_radius": 1200,
+        "secondary_application_radius": 300,
+        "visibility_radius": 1025,
+        "bonus_move_speed_pct": 25,
+        "break_condition": "攻击，或移动到敌方英雄/防御塔 1025 半径内",
+        "true_sight_interaction": "隐身免疫真视"
+      },
+      "source": "官方 items.txt / dotaconstants（7.42）：Smoke of Deceit",
+      "patch": "7.42",
+      "verified_at": "2026-11-28"
     }
   ]
 }

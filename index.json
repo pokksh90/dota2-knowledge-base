@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.61",
+    "version": "0.6.62",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-28",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics/patch_stats —— 应用/结论：具体英雄/装备/克制/战术/当前版本公开胜率，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-28 13:23",
+    "updated_at": "2026-11-28 13:36",
     "version_scope": {
       "mechanism": "7.42",
       "stats": "7.42a（最近 7 天滚动，7.42/7.42a 混合）",
@@ -23,16 +23,16 @@
     {
       "file": "data/rules.json",
       "title": "底层规则(公理层)",
-      "count": 63,
+      "count": 64,
       "status": "verified-partial",
-      "note": "63 条；新增 disable-taxonomy（沉默 Silence/锁道具 Mute/破坏 Break/定身 Root 的作用面分层）；按官方 7.42 更新日志校准：被动金固定 90/min、击杀金 100+10×等级、T1 塔 75/100（全队 475）、肉山团队 125、总经验 66600、每智力 0.125% 魔抗、基础生命 200/每力量 20；2026-11-27 统一美杜莎「魔法盾」译名（原「法力护盾」）"
+      "note": "64 条；新增 smoke-detection（烟雾 50 金/1200 半径/50 秒/+25% 移速；隐身免疫真视，攻击或进入敌方英雄/塔 1025 内破雾）；修正 vision-information 中「观察者守卫视野 360」为「提供 1600 半径地面视野、持续 360 秒」；其余 7.42 数值口径不变"
     },
     {
       "file": "data/inference.json",
       "title": "逻辑推理(定理层)",
-      "count": 89,
+      "count": 95,
       "status": "stable",
-      "note": "89 条；新增 detection-layers-and-scope（反隐分三层：检测免疫/普通隐身/隐藏物；真视覆盖是局部短时或单体持续，不是全图常驻）"
+      "note": "95 条；新增 6 条辅助视野推理：ward-purpose-taxonomy（五类眼位）、ward-timing-before-objective（目标前 30~60 秒）、night-ward-asymmetry（夜间 800 vs 眼 1600）、sentry-does-not-replace-observer（真眼不是地图视野/反眼有风险）、support-vision-cadence（两只战略假眼常亮+真眼按事件）、smoke-path-detection（开雾避开 1025 检测圈）；原 detection-layers-and-scope 保留"
     },
     {
       "file": "data/heroes.json",
@@ -44,9 +44,9 @@
     {
       "file": "data/items.json",
       "title": "装备与出装",
-      "count": 70,
+      "count": 72,
       "status": "stable",
-      "note": "70 件（1 条 removed → 可推荐 69）；black-king-bar 的 spell_reduce 60 三源核实为「额外 60% 魔抗（乘算→常规 70%）+ 减益免疫 + 纯粹伤害免疫」，7.41b 起时长为固定 9/8/7"
+      "note": "72 件（1 条 removed → 可推荐 71）；新增 observer-ward（0 金/1600 视野 360 秒/库存 2-4/补货 135 秒）与 sentry-ward（50 金/1050 真视 420 秒/无地面视野/库存 3-8/补货 70 秒）；dotaconstants 的 ward_dispenser 旧价 75/100 未采用，按 rules 7.42 口径"
     },
     {
       "file": "data/matchups.json",
@@ -65,9 +65,9 @@
     {
       "file": "data/tactics.json",
       "title": "战术与节奏",
-      "count": 6,
+      "count": 7,
       "status": "stable",
-      "note": "6 板块：timings 9 / objectives 8 / decisions 16；BKB 时长由 10 秒更正为 9→8→7 秒（CD 95）"
+      "note": "7 板块：新增 support_vision 辅助视野执行清单（先定目的、目标前 30~60 秒、假眼押战略点/真眼押事件、反眼算退出路径、夜前深眼、开雾避 1025 检测圈）；timings 9 / objectives 8 / decisions 16 保留；BKB 时长 9→8→7 秒（CD 95）"
     },
     {
       "file": "data/hero_base.json",

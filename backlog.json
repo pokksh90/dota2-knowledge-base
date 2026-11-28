@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 13:26",
+    "updated_at": "2026-11-28 13:36",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -655,10 +655,28 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 151~156 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计弱支持/样本过小。",
       "note": "第三十五轮：ursa←drow-ranger、hoodwink←treant-protector、slark←zeus、spirit-breaker→crystal-maiden、storm-spirit→drow-ranger、enigma→bristleback、bounty-hunter→riki、dark-willow+enigma、ursa←viper、bristleback←zeus；10/10；改写后 298~435 字；全库最短 reason 157；pair/relation/basis 不变；修正赏金追踪是单体真视、裂魂人暗影冲刺是额外 275~425 移速、怒意层数按 8~20 秒未攻击重置、午夜凋零非真实伤害、侧背减伤对魔法生效、荆棘迷宫不穿 BKB。"
+    },
+    {
+      "id": "support-vision-expand",
+      "title": "应用层补充：辅助做视野",
+      "file": "data/rules.json / data/inference.json / data/items.json / data/tactics.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "按用户要求补充辅助视野知识：1 条烟雾规则、6 条视野推理、2 件守卫装备、1 个 support_vision 战术板块；同时修正 vision-information 的观察者视野笔误。",
+      "note": "新增 smoke-detection；ward-purpose-taxonomy / ward-timing-before-objective / night-ward-asymmetry / sentry-does-not-replace-observer / support-vision-cadence / smoke-path-detection；observer-ward / sentry-ward；tactics.support_vision。修正 vision-information「观察者守卫视野 360」→「1600 地面视野/持续 360 秒」。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 13:36",
+      "task": "辅助视野知识补充（0.6.62）",
+      "added": "新增 10 条：① rules.smoke-detection：烟雾 50 金、1200 半径、50 秒、+25% 移速；隐身免疫真视，攻击或进入敌方英雄/防御塔 1025 内破雾；② inference 6 条：ward-purpose-taxonomy（线眼/防守眼/进攻眼/目标眼/反隐眼五类）、ward-timing-before-objective（目标前 30~60 秒布、先反后插）、night-ward-asymmetry（夜间英雄 800 vs 观察者 1600）、sentry-does-not-replace-observer（真眼 1050 无地面视野、反眼要进 1050 且敌方观察者 1600 先看见你）、support-vision-cadence（观察者 2/4、135 秒补货、360 秒寿命；两只战略假眼常亮+真眼按事件）、smoke-path-detection（开雾避开 1025 检测圈）；③ items.observer-ward / sentry-ward（0 金/50 金，1600/1050，360/420 秒，库存 2-4/3-8，补货 135/70）；④ tactics.support_vision 六条执行清单。修正：vision-information 旧文「观察者守卫视野 360」改为「1600 半径地面视野/持续 360 秒」。",
+      "result": "本地四个内容文件已改并校验；rules 63→64、inference 89→95、items 70→72、tactics 6→7 板块；quality_audit 0 error / 0 warning / 1 info；index 0.6.62 / updated_at 2026-11-28 13:36。",
+      "note": "本轮是用户直接要求的知识补充，不涉及 GSI/内存/对手资料；数值来自 rules.warding-basics、官方 items.txt/dotaconstants 与既有 7.42 规则。",
+      "next": "推送 GitHub 后同步桌面 .cache/kb、两处 kb-snapshot 与 kb-embeddings；下一轮继续按 backlog 最短理由审查。"
+    },
     {
       "time": "2026-11-28 13:23",
       "task": "quality-audit 第三十五轮：第十八批最短 10 条理由改写（0.6.61）",
