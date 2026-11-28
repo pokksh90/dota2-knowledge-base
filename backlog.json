@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 10:24",
+    "updated_at": "2026-11-28 11:23",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -625,10 +625,27 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 136~139 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第三十二轮：alchemist→dragon-knight、leshrac+enigma、silencer→enigma、sniper→ursa、medusa←phantom-lancer、razor→sven、terrorblade←lion、winter-wyvern→huskar、anti-mage+io、beastmaster←batrider；10/10；改写后 206~280 字；全库最短 reason 140（magnus+sven 等）；pair/relation/basis 不变；补足酸雾/龙族血统、黑洞/裂地/闪电/脉冲、全球沉默/遗言、霰弹/爆头/怒意、魔法盾/PL 幻象、静电连接/等离子场/风暴之拳、莱恩三连、极寒之拥/寒冬诅咒、羁绊/过载/传送、粘性燃油/枷锁数值。修正羁绊共享「回复量」非直接灌蓝、莱恩三招不穿 BKB、炼金对 DK 受龙族血统/古龙形态限制且 n32 反向、极寒之拥非禁疗、枷锁穿 BKB 但 TP 可断。"
+    },
+    {
+      "id": "quality-audit-global-shortest-16",
+      "title": "质量审查：第十六批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 140~143 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第三十三轮：magnus+sven、enigma+faceless-void、jakiro→broodmother、sand-king→meepo、phoenix→razor、ursa→medusa、crystal-maiden←slark、omniknight→sven、faceless-void→dragon-knight、chaos-knight←luna；10/10；改写后 287~376 字；全库最短 reason 143；pair/relation/basis 不变；修正沙王先穿刺再读 2 秒地震不成立、虚空与黑洞同秒叠控会浪费且可能冻住谜团、冰女 275 滑步不解 Pounce 400 拴绳；补足 RP/Empower/God's Strength、黑洞/时间结界、冰火交加/烈焰焚身/冰封路径、地震 20 段 8000、静电连接、魔法盾每蓝抵 2 伤害、Crystal Clone、守护天使、月刃/月蚀。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 11:23",
+      "task": "quality-audit 第三十三轮：第十六批最短 10 条理由改写（0.6.59）",
+      "added": "queue 71 项全 done，继续按 reason 长度取 140~143 字 10 条：magnus+sven、enigma+faceless-void、jakiro→broodmother、sand-king→meepo、phoenix→razor、ursa→medusa、crystal-maiden←slark、omniknight→sven、faceless-void→dragon-knight、chaos-knight←luna。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足两极反转 430/2.5~3.5 秒、Empower +16%~40%/30~39 秒、God's Strength +110%~190%/30 秒、Great Cleave 60%~90%/400~700；黑洞 420/4 秒/90~180 纯粹、时间结界 500/3.75~4.75 且会冻住己方；冰火交加 150→275/5 秒/25~40% 减速、烈焰焚身 500/10 秒/100~180 DPS、冰封路径 150/0.2 秒/1.25~2 秒；地震 2 秒前摇/12~20 段/60~80/450+13、米波 5 本体、20 段理论 8000；静电连接 10 秒/6~24/12~18 秒、火精灵 35~140 攻速减速、太阳光束 1.5%~6% 最大生命；魔法盾 98%/每蓝抵 2 伤害/100 税后物理=2 血+49 蓝、怒意 80%/50%/强驱散；Crystal Clone 275/150 血/425 冰封、Pounce 700/400/2.5~3.25、Frostbite 1.5~3 秒、Dark Pact 1.5 秒强驱散；守护天使 700/4~5.5 秒、洗礼 90~300/260；古龙形态 25~40/350 射程/60 秒、龙族血统古龙 +50%；月刃 500/3~6 次/50~35% 递减、Phantasm 3 个/350% 承伤、月蚀 675/6~12/最多 5 道。修正：① 沙王不能先穿刺再等 2 秒地震，旧理由的控制窗口不成立；② 虚空与黑洞同秒叠控会浪费，且可能把引导中的谜团冻住；③ 冰女 275 滑步不能解除 Pounce 400 拴绳；④ 虚空时间结界会冻住己方，不能把自家核心和龙骑罩一起。统计：jakiro→broodmother n36 58.33/49.81；phoenix→razor n114 64.91/53.28；ursa→medusa n26 50.0/47.38；crystal-maiden←slark n31 38.71/49.38；omniknight→sven n12 58.33/51.65；faceless-void→dragon-knight n38 57.89/48.28；chaos-knight←luna n75 42.67/47.53；sand-king→meepo n4 50/50；magnus+sven、enigma+faceless-void 同队不在统计。",
+      "result": "GitHub 内容提交待本轮提交后回填；matchups 271 条、全库最短 reason 143、relation/basis 分布不变。",
+      "note": "queue 72 项全 done；下一轮继续按最短优先处理 143~144 字条目。"
+    },
     {
       "time": "2026-11-28 10:24",
       "task": "quality-audit 第三十二轮：第十五批最短 10 条理由改写（0.6.58）",
