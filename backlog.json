@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 19:20",
+    "updated_at": "2026-11-28 20:25",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -735,10 +735,28 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 192~200 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第四十一轮：windranger←zeus、sniper←warlock、tiny+enigma、brewmaster←sand-king、pugna→skywrath-mage、elder-titan→dragon-knight、ursa→bristleback、phoenix←ursa、lifestealer←slardar、bounty-hunter←slardar；10/10；改写后 326~461 字；全库最短 reason 201；pair/relation/basis 不变；修正酒仙旧统计 16 局实为沙王 ID 16（真实 n=42）、熊战士旧统计 99 局实为钢背 ID 99（真实 n=64）、凤凰旧统计 70 局实为熊战士 ID 70（真实 n=150）、噬魂鬼旧统计 28 局实为斯拉达 ID 28（真实 n=85）；修正狙击手「震荡手雷自推」为击退敌人、沙王地震「逐段 +13 伤害」为半径 +13、龙骑「双抗全清」为只削基础双抗。"
+    },
+    {
+      "id": "quality-audit-global-shortest-25",
+      "title": "质量审查：第四十二轮最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 201~206 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第四十二轮：treant-protector←timbersaw、razor→ursa、pugna→sven、lion→storm-spirit、ancient-apparition→treant-protector、slark←bloodseeker、ursa←phantom-assassin、slark→shadow-shaman、silencer→enigma、hoodwink←bloodseeker；10/10；改写后 302~357 字；全库最短 reason 206；pair/relation/basis 不变；修正雷泽旧统计 70 局实为熊战士 ID 70（真实 n=55，52.73% vs 49.17%）、熊战士旧统计 44 局实为幻影刺客 ID 44（真实 n=43，58.14% vs 47.38%，统计与标签相反）；修正活体护甲能格挡冰爆多段伤害（每段耗 20 点格挡）、真正克制点是禁疗+12~14% 碎死；修正斯拉克被沉默后不能施放黑暗契约、需预读；补足树精自然掩护清树重置 2.75 秒、Timber Chain 落点反噬；标注远古冰魄 n=44 统计反向、沉默术士 n=13/森海飞霞 n=14 样本过小。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 20:25",
+      "task": "quality-audit 第四十二轮：全库最短 10 条理由改写（0.6.70）",
+      "added": "改写 10 条最短对位理由（201~206 字→302~357 字）：treant-protector←timbersaw、razor→ursa、pugna→sven、lion→storm-spirit、ancient-apparition→treant-protector、slark←bloodseeker、ursa←phantom-assassin、slark→shadow-shaman、silencer→enigma、hoodwink←bloodseeker；补足自然掩护 2.75 秒/清树、静电连接 10 秒/240、衰老 3.5 秒/幽冥守卫、球状闪电蓝耗/妖术/法力吸取、活体护甲 12 秒/格挡 -20/冰爆碎死、割裂距离伤害/嗜血渴望、怒意狂击/飘忽不定闪避、突袭锁链/Fowl Play、全球沉默/黑洞 420、Scurry/Bushwhack 等；修正旧文把英雄 ID 当样本数：雷泽 70 局实为熊战士 ID 70（真实 n=55）、熊战士 44 局实为幻影刺客 ID 44（真实 n=43）；修正活体护甲「挡不住冰爆持续魔法伤害」、斯拉克被沉默后放黑暗契约两处逻辑；保留原 pair/relation/basis。",
+      "result": "待推送与桌面同步后回填",
+      "note": "本轮只改 matchups.reason，未改 pair/relation/basis；改写后全库最短 reason 由 201 抬到 206，最长 506。",
+      "next": "下一轮从 206 的 dark-seer→phantom-lancer、207 的 ringmaster←silencer、rubick+enigma、undying←meepo、208 的 anti-mage←slardar、templar-assassin←zeus 继续；之后处理 7.42a 数值回填、Muerta 六项空字段与 item_base 守卫价格冲突。"
+    },
     {
       "time": "2026-11-28 19:20",
       "task": "quality-audit 第四十一轮：全库最短 10 条理由改写（0.6.69）",
