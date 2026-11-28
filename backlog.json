@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 22:27",
+    "updated_at": "2026-11-28 23:28",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -765,10 +765,28 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 212~219 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第四十四轮：dazzle+huskar、anti-mage→zeus、muerta←storm-spirit、centaur-warrunner←lifestealer、anti-mage←axe、dazzle←bounty-hunter、clockwerk→sniper、wraith-king←ancient-apparition、spectre→sniper、faceless-void+lich；10/10；改写后 353~433 字；全库最短 reason 220；pair/relation/basis 不变；修正旧文把英雄 ID 当样本数：戴泽←赏金旧「62 局」实为赏金 ID 62（真实 n=27，48.15% vs 49.64%）、发条→狙击旧「35 局」实为狙击手 ID 35（真实 n=38，57.89% vs 51.29%）、半人马←噬魂鬼旧「54 局」实为噬魂鬼 ID 54（真实 n=157，49.68% vs 50.87%）；修正薄葬治疗增强只放大治疗实例、不放大狂血自然回血；冰爆禁疗不阻止绝冥再生设置生命，Wraith Delay 是 min-health；标注 AM→宙斯 n=30 反向、AM←斧王 n=28 中性、WK←冰魂 n=11 反向。"
+    },
+    {
+      "id": "quality-audit-global-shortest-28",
+      "title": "质量审查：第四十五轮最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 220~226 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第四十五轮：riki←slardar、troll-warlord→phantom-assassin、lifestealer→dragon-knight、weaver←bounty-hunter、viper→huskar、zeus→riki、anti-mage→storm-spirit、naga-siren→anti-mage、oracle←bounty-hunter、slardar→clinkz；10/10；改写后 368~497 字；全库最短 reason 226；pair/relation/basis 不变；修正旧文把英雄 ID 当样本数：巨魔→幻影刺客旧「44 局」实为 PA id 44（真实 n=6，66.67% vs 48.72%）、神谕←赏金旧「62 局」实为赏金 id 62（真实 n=4，25.00% vs 50.37%）；补足雷神之怒 600 半径/3 秒真视与 130 秒 CD、蝮蛇突袭 BKB 穿透且 Life Break 的 debuff 免疫挡不住 Break、噬魂鬼盛宴回血按最大生命不随护甲缩水、娜迦缠绕不阻止施法；标注 AM→风暴 n=74 反向、viper→huskar n=52 中性、zeus→riki n=7、naga→AM n=8、oracle←bounty n=4 样本过小。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 23:28",
+      "task": "quality-audit 第四十五轮：全库最短 10 条理由改写（0.6.73）",
+      "added": "改写 10 条最短对位理由（220~226 字→368~497 字）：riki←slardar、troll-warlord→phantom-assassin、lifestealer→dragon-knight、weaver←bounty-hunter、viper→huskar、zeus→riki、anti-mage→storm-spirit、naga-siren→anti-mage、oracle←bounty-hunter、slardar→clinkz；补足腐蚀之雾 18 秒/5 秒 CD、斯拉达 Bash/Crush/Sprint、巨魔飞斧 450/60%/5 秒与缠绕 BKB 穿透、Feast 1.45~3.25%/古龙 Dragon Blood +50%、Shukuchi 4 秒/550/15~6 秒 CD、Viper Strike 6 秒/70~150 DPS/Break/BKB 穿透、雷神之怒 600/3 秒/130 秒 CD、球状闪电 25+7.5% 与 10+0.65%/100、娜迦缠绕 2.75~5 秒/歌 7 秒、虚妄之诺 7~10 秒/治疗 +100%、骨隐步 35~45 秒/Strafe 3.5 秒；修正旧文把英雄 ID 当样本数（巨魔→幻影刺客 44 局实为 PA id 44，真实 n=6；神谕←赏金 62 局实为赏金 id 62，真实 n=4）；修正盛宴回血不随护甲缩水、娜迦缠绕不阻止施法、Viper Strike 穿透 Life Break 的 debuff 免疫；标注 AM→风暴 n=74 反向（45.95/47.87、54.05/50.36）、viper→huskar n=52 中性（46.15/49.61、53.85/53.62）、zeus→riki n=7、naga→AM n=8、oracle←bounty n=4 样本过小；保留原 pair/relation/basis。",
+      "result": "GitHub 内容提交 39bef29（0.6.73）；线上核验 index 0.6.73 / 23:25 / matchups 271 / min 226 / max 506。桌面 .cache/kb 与两处 kb-snapshot 均 0.6.73（16 JSON = 15 数据 JSON + _cache-meta；三处 index/matchups/_cache-meta/quality_report 哈希一致 75D480704D0A / F06AB15C39EC / 8CC5BA6BB30B / DF3B1718AAA4，两处快照 README 哈希一致 919AF2AFDE41；fetchBase 固定 39bef29；fetchedAt 2026-11-28T15:27:17.107Z）；kb-embeddings 796 条 / 7.00MB / 7,342,336 bytes / dim 1024 / kbVersion 0.6.73 / contentHash d236bb160ae25fff090ff2f66ed5a5596715227c / createdAt 2026-11-28T15:27:42.794Z（本次新嵌 10 / 复用 786）；verify:kb OK、verify:kb-semantic OK（真实索引 v0.6.73 / 796 条；“问题向量失败”为模拟分支）。",
+      "note": "本轮只改 matchups.reason，未改 pair/relation/basis；改写后全库最短 reason 由 220 抬到 226，最长 506。",
+      "next": "下一轮从 226 的 slark→sniper、zeus→weaver 继续；之后 227 lone-druid←batrider、silencer→ember-spirit、windranger←treant-protector，228 pudge←wraith-king，230 primal-beast→witch-doctor 等。"
+    },
     {
       "time": "2026-11-28 22:27",
       "task": "quality-audit 第四十四轮：全库最短 10 条理由改写（0.6.72）",
