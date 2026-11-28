@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 12:28",
+    "updated_at": "2026-11-28 13:23",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -645,10 +645,27 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 143~151 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第三十四轮：death-prophet→storm-spirit、doom→huskar、earthshaker→broodmother、earthshaker→naga-siren、marci←phoenix、storm-spirit→tinker、crystal-maiden→slardar、broodmother←leshrac、underlord←ursa、grimstroke+doom；10/10；改写后 251~305 字；全库最短 reason 151；pair/relation/basis 不变；修正死亡先知沉默的弹道/道具口径、末日 Basic Dispel 与哈斯卡跳大减益免疫、回音击与沟壑数值、凤凰冲击回原点、Keen Conveyance 分级、冰女定身对冲刺减速抗性、裂地是眩晕不是定身、衰退光环只削基础攻击力、缚魂绑定半径。"
+    },
+    {
+      "id": "quality-audit-global-shortest-18",
+      "title": "质量审查：第十八批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 151~156 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计弱支持/样本过小。",
+      "note": "第三十五轮：ursa←drow-ranger、hoodwink←treant-protector、slark←zeus、spirit-breaker→crystal-maiden、storm-spirit→drow-ranger、enigma→bristleback、bounty-hunter→riki、dark-willow+enigma、ursa←viper、bristleback←zeus；10/10；改写后 298~435 字；全库最短 reason 157；pair/relation/basis 不变；修正赏金追踪是单体真视、裂魂人暗影冲刺是额外 275~425 移速、怒意层数按 8~20 秒未攻击重置、午夜凋零非真实伤害、侧背减伤对魔法生效、荆棘迷宫不穿 BKB。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 13:23",
+      "task": "quality-audit 第三十五轮：第十八批最短 10 条理由改写（0.6.61）",
+      "added": "queue 73 项全 done，按 reason 长度取 151~156 字 10 条：ursa←drow-ranger、hoodwink←treant-protector、slark←zeus、spirit-breaker→crystal-maiden、storm-spirit→drow-ranger、enigma→bristleback、bounty-hunter→riki、dark-willow+enigma、ursa←viper、bristleback←zeus。逐条对照 ability_base/7.42 文本与 matchup_stats：补足卓尔冰箭 15%~45%、狂风 250 宽波/450 击退/3~6 秒沉默、冰川 +200 射程/25% 高打低、Marksmanship 300 内禁用；树精 Overgrowth 800/3~5 秒、Scurry 20%~32%/3.5~5 秒、Bushwhack 275/1.4~2 秒；宙斯雷神之怒 275/425/575+600/3 秒、雷击 600/5 秒/0.35 秒、静电场 3.45% 当前生命；冰女 Crystal Clone 275/5 秒/150 血、冰封 1.5~3 秒/100 DPS、裂魂人冲锋额外 275~425 移速/1.3~2.2 秒、幽冥一击 150~350、Bulldoze 40%~70% 状态抗性；风暴球状闪电 25+7.5%/10+0.65%/100、电子涡流 180~300、残影 300/100~280、Overload 80%；谜团午夜凋零 600/9~12 秒/5+4%~10% 当前生命、黑洞 420/4 秒/90~180 纯粹；赏金追踪 25 秒/6%~14% 易伤/CD 6~5~4、手里剑 100~310/0.35 秒/1200 跳、力丸烟雾 400/55%~70%；荆棘迷宫 500/8 根/0.3 秒/1~2.5 秒定身/12 秒；剧毒 6 层 -18%~-72% 移速/每层 -4%~10% 魔抗、Viper Strike 6 秒 -60%~-80%/禁用被动；宙斯弧电 450/5~11 跳、钢背侧背 8%~20%/16%~40%、刺针 700/25~85+30/上限 500、Warpath 8~12 层。修正：① 赏金追踪是单体真视，不是周围视野；② 裂魂人暗影冲刺是额外 275~425 移速，不是 275%~425%；③ 熊战士被推走后怒意层数不会立即清零，只按 8~20 秒未攻击同一目标重置；④ 午夜凋零是当前生命百分比魔法，不是真实伤害；⑤ 钢背侧背减伤对魔法仍生效；⑥ 荆棘迷宫不穿 BKB，敌人开 BKB 时只剩黑洞硬控。统计：n44 ursa 45.45/47.38、n157 hoodwink 39.49/50.44、n25 slark 48.0/51.02、n112 spirit-breaker 56.25/50.73、n70 storm 54.29/50.36、n34 enigma 58.82/59.30、n3 bounty 66.67/54.61、n73 ursa 46.58/47.38、n48 bristleback 41.67/46.29；dark-willow+enigma 同队不在统计。",
+      "result": "待推送",
+      "note": "queue 74 项全 done；下一轮继续按最短优先处理 157~158 字条目。"
+    },
     {
       "time": "2026-11-28 12:25",
       "task": "quality-audit 第三十四轮：第十七批最短 10 条理由改写（0.6.60）",
