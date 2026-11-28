@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 23:28",
+    "updated_at": "2026-11-29 00:32",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -775,10 +775,28 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 220~226 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第四十五轮：riki←slardar、troll-warlord→phantom-assassin、lifestealer→dragon-knight、weaver←bounty-hunter、viper→huskar、zeus→riki、anti-mage→storm-spirit、naga-siren→anti-mage、oracle←bounty-hunter、slardar→clinkz；10/10；改写后 368~497 字；全库最短 reason 226；pair/relation/basis 不变；修正旧文把英雄 ID 当样本数：巨魔→幻影刺客旧「44 局」实为 PA id 44（真实 n=6，66.67% vs 48.72%）、神谕←赏金旧「62 局」实为赏金 id 62（真实 n=4，25.00% vs 50.37%）；补足雷神之怒 600 半径/3 秒真视与 130 秒 CD、蝮蛇突袭 BKB 穿透且 Life Break 的 debuff 免疫挡不住 Break、噬魂鬼盛宴回血按最大生命不随护甲缩水、娜迦缠绕不阻止施法；标注 AM→风暴 n=74 反向、viper→huskar n=52 中性、zeus→riki n=7、naga→AM n=8、oracle←bounty n=4 样本过小。"
+    },
+    {
+      "id": "quality-audit-global-shortest-29",
+      "title": "质量审查：第四十六轮最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 226~232 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第四十六轮：slark→sniper、zeus→weaver、lone-druid←batrider、silencer→ember-spirit、windranger←treant-protector、pudge←wraith-king、primal-beast→witch-doctor、abaddon→lina、drow-ranger→batrider、clockwerk←silencer；10/10；改写后 408~441 字；全库最短 reason 233；pair/relation/basis 不变；修正无光之盾强驱散只在施放瞬间生效、被光击阵晕住后不能开盾，210 盾量挡不住莉娜上千爆发，亚巴顿真正克制点是借魂；修正 WK 绝冥再生要蓝且不在 CD、CD 中先进入 4.25 秒冥魂形态后不能重生，n=71 统计反而屠夫 59.15% 占优；修正卓尔狂风不穿 BKB、击退不解除燃烧枷锁，n=21 卓尔 38.10% 反向；补足蝙蝠枷锁拖熊/拖本体（n=16 德鲁伊 62.50% 反向）、原始兽粉碎 575/0.75/0.2 断巫医 8 秒死亡守卫（n=33 反向）、全球沉默封灰烬两段施法（n=88 双方 50%）、宙斯 3/5 秒真视窗口（n=22 弱支持）、发条 n=54 61.11% 反向。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-29 00:32",
+      "task": "quality-audit 第四十六轮：全库最短 10 条理由改写（0.6.74）",
+      "added": "改写 10 条最短对位理由（226~232 字→408~441 字）：slark→sniper、zeus→weaver、lone-druid←batrider、silencer→ember-spirit、windranger←treant-protector、pudge←wraith-king、primal-beast→witch-doctor、abaddon→lina、drow-ranger→batrider、clockwerk←silencer；补足突袭 700/拴绳 400/2.5~3.25、狙击手手雷 475 断链、雷神之怒 600/3 秒、编织者缩地 4 秒/时间倒流 5 秒、熊灵离体不能攻击/20% 反噬、全球沉默 4.5~6 秒/120 秒、疯狂生长 800/3~5 秒/95 DPS、肢解 2.75 秒、粉碎 575/0.75/0.2、无光之盾 120~210、狂风 450/3~6 秒、钩爪 175/1.2~1.6；修正无光之盾强驱散只在施放瞬间生效、被光击阵晕住后不能开盾，210 盾量挡不住莉娜上千爆发，亚巴顿真正克制点是借魂；修正 WK 绝冥再生要蓝且不在 CD、CD 中先进入 4.25 秒冥魂形态后不能重生；修正卓尔狂风不穿 BKB、击退不解除燃烧枷锁；标注 slark→sniper n=33 支持（66.67/51.02）、zeus→weaver n=22 弱支持（54.55/47.75）、lone←batrider n=16 反向（62.50/59.77）、silencer→ember n=88 中性（50/50）、windranger←treant n=108 强支持（31.48/50.68）、pudge←WK n=71 反向（59.15/50.10）、primal→WD n=33 反向（39.39/49.91）、abaddon→lina n=25 反向（44.00/50.89）、drow→batrider n=21 反向（38.10/49.53）、clock←silencer n=54 反向（61.11/51.29）；保留原 pair/relation/basis。",
+      "result": "GitHub 内容提交 9061911（0.6.74）；线上核验 index 0.6.74 / 00:24 / matchups 271 / min 233 / max 506。桌面 .cache/kb 与两处 kb-snapshot 均 0.6.74（cache 16 JSON = 15 数据 JSON + _cache-meta；三处 index/matchups/_cache-meta/quality_report 哈希一致 9BC447690707 / 36AA22267FEE / D91EEE713FFB / DF3B1718AAA4，两处快照 README 哈希一致 838FFE978806；fetchBase 固定 9061911；fetchedAt 2026-11-28T16:31:14.766Z）；kb-embeddings 796 条 / 7.00MB / 7,341,617 bytes / dim 1024 / kbVersion 0.6.74 / contentHash 8479da8f1b8c0a48ecf4b1873d49208dd71006a9 / createdAt 2026-11-28T16:31:33.556Z（本次新嵌 10 / 复用 786）；verify:kb OK（快照 v0.6.74，127 英雄 / 271 对位）、verify:kb-semantic OK（真实索引 v0.6.74 / 796 条；“问题向量失败”为模拟分支）。",
+      "note": "本轮只改 matchups.reason，未改 pair/relation/basis；改写后全库最短 reason 由 226 抬到 233，最长 506。",
+      "next": "下一轮从 233 的 kunkka→phantom-lancer 继续；之后 236 silencer→faceless-void、broodmother←lina、skywrath-mage←invoker，239 anti-mage→medusa、templar-assassin←slardar、mars→sniper，240 axe→phantom-assassin、chen←axe 等。"
+    },
     {
       "time": "2026-11-28 23:28",
       "task": "quality-audit 第四十五轮：全库最短 10 条理由改写（0.6.73）",
