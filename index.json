@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.65",
+    "version": "0.6.66",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-28",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics/patch_stats —— 应用/结论：具体英雄/装备/克制/战术/当前版本公开胜率，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-28 15:24",
+    "updated_at": "2026-11-28 16:24",
     "version_scope": {
       "mechanism": "7.42",
       "stats": "7.42a（最近 7 天滚动，7.42/7.42a 混合）",
@@ -53,7 +53,7 @@
       "title": "克制与搭配",
       "count": 271,
       "status": "stable",
-      "note": "271 条；第三十七轮按最短 10 条理由改写（163~166 字→323~390 字），覆盖 mobility/damage-type/physical/control/vision/aoe；修正 ET 统计 n=7 误写 109 局、蝙蝠基线错配、巨魔基础攻击间隔 1.7、Lina Slow Burn 为额外 64% 燃烧伤害；保留原 pair/relation/basis。"
+      "note": "271 条；第三十八轮按最短 10 条理由改写（167~171 字→310~432 字），覆盖 sustain/mobility/aoe/physical/resource；补足技能半径、持续时间、层数与统计样本基线；修正斯温旧统计 44 局实为 13 局、光法旧统计 44 局实为 27 局且低于自身基线、幻影长矛手不同来源幻象承伤 600%/500%/400% 混用；保留原 pair/relation/basis。"
     },
     {
       "file": "scripts/fetch_data.py",
