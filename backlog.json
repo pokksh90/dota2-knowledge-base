@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 13:36",
+    "updated_at": "2026-11-28 13:40",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -673,8 +673,8 @@
       "time": "2026-11-28 13:36",
       "task": "辅助视野知识补充（0.6.62）",
       "added": "新增 10 条：① rules.smoke-detection：烟雾 50 金、1200 半径、50 秒、+25% 移速；隐身免疫真视，攻击或进入敌方英雄/防御塔 1025 内破雾；② inference 6 条：ward-purpose-taxonomy（线眼/防守眼/进攻眼/目标眼/反隐眼五类）、ward-timing-before-objective（目标前 30~60 秒布、先反后插）、night-ward-asymmetry（夜间英雄 800 vs 观察者 1600）、sentry-does-not-replace-observer（真眼 1050 无地面视野、反眼要进 1050 且敌方观察者 1600 先看见你）、support-vision-cadence（观察者 2/4、135 秒补货、360 秒寿命；两只战略假眼常亮+真眼按事件）、smoke-path-detection（开雾避开 1025 检测圈）；③ items.observer-ward / sentry-ward（0 金/50 金，1600/1050，360/420 秒，库存 2-4/3-8，补货 135/70）；④ tactics.support_vision 六条执行清单。修正：vision-information 旧文「观察者守卫视野 360」改为「1600 半径地面视野/持续 360 秒」。",
-      "result": "本地四个内容文件已改并校验；rules 63→64、inference 89→95、items 70→72、tactics 6→7 板块；quality_audit 0 error / 0 warning / 1 info；index 0.6.62 / updated_at 2026-11-28 13:36。",
-      "note": "本轮是用户直接要求的知识补充，不涉及 GSI/内存/对手资料；数值来自 rules.warding-basics、官方 items.txt/dotaconstants 与既有 7.42 规则。",
+      "result": "GitHub 内容提交 6dc7f92；线上 raw 核验：index 0.6.62 / 13:36、rules 64、inference 95、items 72、tactics 7 板块（含 support_vision）、README 0.6.62。桌面已同步：.cache/kb 与两处 kb-snapshot 均 0.6.62（15 JSON、72 装备、64 规则、95 推理、271 对位；index/matchups/ability_base/rules/inference/items/tactics 哈希一致）；kb-embeddings 786 条 / 6.92MB / dim 1024 / kbVersion 0.6.62 / contentHash 71bdc9a03030c6b455d1fa1ead1ea119677a03ef（本次新嵌 16 / 复用 770）；verify:kb OK、verify:kb-semantic OK（真实索引 786 条；‘问题向量失败’为模拟分支）；实测 query「辅助做视野怎么插眼、什么时候反眼」top1=support-vision:1（0.735），overview=0.715。",
+      "note": "本轮是用户直接要求的知识补充，不涉及 GSI/内存/对手资料；数值来自 rules.warding-basics、官方 items.txt/dotaconstants 与既有 7.42 规则。桌面 scripts/build-kb-embeddings.mjs 已扩展 support_vision（overview+6 条原则，共 7 个 chunk），否则新板块不会进语义索引；打包版 dist/win-unpacked/resources/app.asar 未重打包：数据快照已更新，开发模式可直接用，打包 exe 仍受旧 asar 限制。",
       "next": "推送 GitHub 后同步桌面 .cache/kb、两处 kb-snapshot 与 kb-embeddings；下一轮继续按 backlog 最短理由审查。"
     },
     {
