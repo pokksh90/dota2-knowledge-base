@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 08:20",
+    "updated_at": "2026-11-28 09:26",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -605,16 +605,33 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 125~130 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第三十轮：sven←outworld-destroyer、weaver←tiny、timbersaw←silencer、disruptor→meepo、undying→centaur-warrunner、storm-spirit+io、ancient-apparition→necrophos、phantom-assassin→drow-ranger、kez→crystal-maiden、tidehunter→meepo；10/10；改写后 281~330 字；全库最短 reason 131；pair/relation/basis 不变；修正斯温不能只靠战吼、山崩不是数秒、沉默不关活性护甲、冻伤不阻止 DoT、卓尔不只有一个击退、潮汐不是稳克六处。"
+    },
+    {
+      "id": "quality-audit-global-shortest-14",
+      "title": "质量审查：第十四批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 131~135 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第三十一轮：outworld-destroyer→terrorblade、outworld-destroyer→dragon-knight、leshrac→naga-siren、witch-doctor→phantom-lancer、tiny→meepo、mirana+juggernaut、dawnbreaker←faceless-void、jakiro+tidehunter、phantom-assassin+magnus、morphling←doom；10/10；改写后 247~376 字；全库最短 reason 136（alchemist→dragon-knight）；pair/relation/basis 不变；修正 7.38 已移除 Avatoss 投掷翻倍、月神之箭满级 5 秒、末日锁物品天赋 25 级、两极反转拉到 Magnus 身边而非压成一点、山崩 5 段总额、冰封路径 0.2 秒延迟、魂断/变身法力被星体压缩等表述。 另修正 weaver←tiny 旧 Avatoss 720/>1000 算法。"
     }
   ],
   "completed": [],
   "run_log": [
     {
+      "time": "2026-11-28 09:26",
+      "task": "quality-audit 第三十一轮：第十四批最短 10 条理由改写（0.6.57）",
+      "added": "queue 全 done，继续按 reason 长度取 131~135 字 10 条：outworld-destroyer→terrorblade、outworld-destroyer→dragon-knight、leshrac→naga-siren、witch-doctor→phantom-lancer、tiny→meepo、mirana+juggernaut、dawnbreaker←faceless-void、jakiro+tidehunter、phantom-assassin+magnus、morphling←doom。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足奥术天球 9~12%/20% 当前法力、星体 16~25% 最大法力/30~60 秒、神智之蚀 0.35 最大法力差；山崩 5 段/0.3 秒、投掷 275/90~360；月神之箭 3000 射程/满级 5 秒、无敌斩 425/3~3.5 秒；时间结界 500/3.75~4.75 与 Solar Guardian 落地；毁灭 1250/冰封路径/烈焰焚身；授予力量/两极反转/PA 暴击；末日 12~16 秒/22~66 DPS/25 级锁闭；地雷滚滚 10~12 秒/550/1.2 秒。修正：① 7.38 已把 Avatoss 2× 削到 1×，7.42 不能按旧 0.75 秒翻倍；② 月神之箭满级眩晕 5 秒不是 2.3 秒；③ 末日锁物品天赋 25 级不是 20 级；④ 两极反转是拉到 Magnus 身边不是压成一点；⑤ 山崩 5 段总额 90~360；⑥ 冰封路径 0.2 秒延迟需等毁灭命中；⑦ 魂断/变身都要法力，星体削最大法力会压这两笔。",
+      "result": "10 条改写（247~376 字，原 131~135 字）；matchups 271、relation 不变（counter 143 / countered_by 92 / synergy 36），basis 不变（control 73 / aoe 43 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15）；全库最短 reason 136（alchemist→dragon-knight）；另修正 weaver←tiny 旧 Avatoss 720/>1000 算法；index 0.6.57、updated_at 2026-11-28 09:26；quality_audit 0 error / 0 warning / 1 info。GitHub 内容提交待推送；本轮环境列表仅云主机，桌面未在线，.cache/kb、两处 kb-snapshot 与 src/data/kb-embeddings.json 未同步，待桌面恢复后补。",
+      "note": "保留原 pair/relation/basis；统计：OD→TB n21 OD 47.62/46.29 近中性；OD→DK n68 47.06/46.29 轻度；Leshrac→Naga n22 50.00/50.79 中性；WD→PL n24 54.17/49.29 轻度；Tiny→Meepo n21 66.67/49.67 强支持；Mirana+Jugg 同队不在统计，作为对手 n26 米拉娜 42.31、剑圣 57.69；Dawnbreaker←FV n80 33.75/48.70 强支持；Jakiro+Tide 同队不在统计，作为对手 n271 49.08/50.92；PA+Magnus 同队不在统计，作为对手 n11 36.36/63.64；Morphling←Doom n28 32.14/47.38 强支持；pangolier→lion n125 64.00/49.68 强支持。 另修正 weaver←tiny 的旧 Avatoss 720/>1000 算法（7.38 后 2× 已移除）。"
+    },
+    {
       "time": "2026-11-28 08:20",
       "task": "quality-audit 第三十轮：第十三批最短 10 条理由改写（0.6.56）",
-      "added": "queue 全 done，继续按 reason 长度取 125~130 字 10 条：sven←outworld-destroyer、weaver←tiny、timbersaw←silencer、disruptor→meepo、undying→centaur-warrunner、storm-spirit+io、ancient-apparition→necrophos、phantom-assassin→drow-ranger、kez→crystal-maiden、tidehunter→meepo。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足奥术天球 9~12% 剩余法力纯粹、星体偷 16~25% 最大法力 30~60 秒、Objurgation 150~300+9~12% 最大法力盾；山崩 1.5 秒 5 段 90~360 与投掷 0.75 秒内翻倍、满级 720；活性护甲每次英雄攻击 4 层、0.4~0.7 甲、10~40 层；静态风暴 550/6 秒/20 跳/200~350 DPS、动能立场 350/1 秒、召回 4 秒；腐朽 4 力量/35 秒/无上限叠层与半人马力量缩放；球状闪电 25+7.5%+10+0.65%/100、过载 35~110 攻速与羁绊 55~115%/1000、召回 12 秒；冰爆 10~12 秒禁疗/12~14% 碎/12~36 DPS、冰涡 14~20% 加深；卓尔 Marksmanship 300 内禁用、Gust 450/3~6 秒、PA 突袭 0.1 秒/80~200 攻速、Blur 600；凯 Talon Toss 2~2.75 秒沉默/Falcon Rush 525、冰女克隆 275/5 秒/150 血、冰封 1.5~3 秒、Glacial Guard 30% 耗蓝物理盾；毁灭 1250/2~2.4 秒、海妖外壳 450~600/7 秒、A杖 Dig 4 秒/50%。",
+      "added": "queue 全 done，继续按 reason 长度取 125~130 字 10 条：sven←outworld-destroyer、weaver←tiny、timbersaw←silencer、disruptor→meepo、undying→centaur-warrunner、storm-spirit+io、ancient-apparition→necrophos、phantom-assassin→drow-ranger、kez→crystal-maiden、tidehunter→meepo。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足奥术天球 9~12% 剩余法力纯粹、星体偷 16~25% 最大法力 30~60 秒、Objurgation 150~300+9~12% 最大法力盾；山崩 1.5 秒 5 段 90~360；7.38 后无 Avatoss 翻倍，满级仍 360（第三十一轮修正）；活性护甲每次英雄攻击 4 层、0.4~0.7 甲、10~40 层；静态风暴 550/6 秒/20 跳/200~350 DPS、动能立场 350/1 秒、召回 4 秒；腐朽 4 力量/35 秒/无上限叠层与半人马力量缩放；球状闪电 25+7.5%+10+0.65%/100、过载 35~110 攻速与羁绊 55~115%/1000、召回 12 秒；冰爆 10~12 秒禁疗/12~14% 碎/12~36 DPS、冰涡 14~20% 加深；卓尔 Marksmanship 300 内禁用、Gust 450/3~6 秒、PA 突袭 0.1 秒/80~200 攻速、Blur 600；凯 Talon Toss 2~2.75 秒沉默/Falcon Rush 525、冰女克隆 275/5 秒/150 血、冰封 1.5~3 秒、Glacial Guard 30% 耗蓝物理盾；毁灭 1250/2~2.4 秒、海妖外壳 450~600/7 秒、A杖 Dig 4 秒/50%。",
       "result": "10 条改写（281~330 字，原 125~130 字）；matchups 271、relation 不变（counter 143 / countered_by 92 / synergy 36），basis 不变（control 73 / aoe 43 / mobility 42 / physical 29 / sustain 27 / damage-type 24 / vision 18 / resource 15）；全库最短 reason 131；index 0.6.56、updated_at 2026-11-28 08:20；quality_audit 0 error / 0 warning / 1 info。GitHub 内容提交 b1833bf；本轮环境列表仅云主机，桌面未在线，.cache/kb、两处 kb-snapshot 与 src/data/kb-embeddings.json 未同步，待桌面恢复后补。",
-      "note": "保留原 pair/relation/basis；修正：① 斯温不能只靠战吼硬扛 OD，天球/星体/神智之蚀都吃 BKB，必须用 BKB 拖过再打物理爆发；② 小小山崩是 1.5 秒 5 段、投掷 0.75 秒内接上才翻倍，不是「数秒内」；③ 沉默只封伐木机主动，活性护甲仍叠且沉默术士普攻会喂 4 层/次；④ 冰爆禁疗不阻止自身 DoT，幽魂护罩会多吃 20% 魔法伤害；⑤ 卓尔不只有一个击退，冰川生成时也推开近身敌人，且 Marksmanship 在 300 内失效；⑥ 潮汐毁灭不是稳克，A杖米波 Dig 可预开躲、公开统计反向。统计：sven←OD n36 44.44/48.59 略偏 OD；weaver←Tiny n102 34.31/44.40 强支持；timbersaw←Silencer n58 46.55/48.67 略反；disruptor→meepo n30 50.00/47.40 中性；undying→centaur n104 51.92/47.12 轻度；storm+io n29 72.41/50.36 强正相关、样本小；AA→necrophos n25 60.00/47.68 小样本支持；PA→drow n18 50.00/44.68 中性；kez→CM n45 53.33/52.41 几乎中性；tide→meepo n14 42.86/48.13 反向、样本极小。"
+      "note": "保留原 pair/relation/basis；修正：① 斯温不能只靠战吼硬扛 OD，天球/星体/神智之蚀都吃 BKB，必须用 BKB 拖过再打物理爆发；② 小小山崩是 1.5 秒 5 段、7.38 后投掷不再翻倍（第三十一轮修正），不是「数秒内」；③ 沉默只封伐木机主动，活性护甲仍叠且沉默术士普攻会喂 4 层/次；④ 冰爆禁疗不阻止自身 DoT，幽魂护罩会多吃 20% 魔法伤害；⑤ 卓尔不只有一个击退，冰川生成时也推开近身敌人，且 Marksmanship 在 300 内失效；⑥ 潮汐毁灭不是稳克，A杖米波 Dig 可预开躲、公开统计反向。统计：sven←OD n36 44.44/48.59 略偏 OD；weaver←Tiny n102 34.31/44.40 强支持；timbersaw←Silencer n58 46.55/48.67 略反；disruptor→meepo n30 50.00/47.40 中性；undying→centaur n104 51.92/47.12 轻度；storm+io n29 72.41/50.36 强正相关、样本小；AA→necrophos n25 60.00/47.68 小样本支持；PA→drow n18 50.00/44.68 中性；kez→CM n45 53.33/52.41 几乎中性；tide→meepo n14 42.86/48.13 反向、样本极小。"
     },
     {
       "time": "2026-11-28 07:22",
