@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 09:26",
+    "updated_at": "2026-11-28 10:24",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -615,10 +615,27 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 131~135 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第三十一轮：outworld-destroyer→terrorblade、outworld-destroyer→dragon-knight、leshrac→naga-siren、witch-doctor→phantom-lancer、tiny→meepo、mirana+juggernaut、dawnbreaker←faceless-void、jakiro+tidehunter、phantom-assassin+magnus、morphling←doom；10/10；改写后 247~376 字；全库最短 reason 136（alchemist→dragon-knight）；pair/relation/basis 不变；修正 7.38 已移除 Avatoss 投掷翻倍、月神之箭满级 5 秒、末日锁物品天赋 25 级、两极反转拉到 Magnus 身边而非压成一点、山崩 5 段总额、冰封路径 0.2 秒延迟、魂断/变身法力被星体压缩等表述。 另修正 weaver←tiny 旧 Avatoss 720/>1000 算法。"
+    },
+    {
+      "id": "quality-audit-global-shortest-15",
+      "title": "质量审查：第十五批最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 136~139 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第三十二轮：alchemist→dragon-knight、leshrac+enigma、silencer→enigma、sniper→ursa、medusa←phantom-lancer、razor→sven、terrorblade←lion、winter-wyvern→huskar、anti-mage+io、beastmaster←batrider；10/10；改写后 206~280 字；全库最短 reason 140（magnus+sven 等）；pair/relation/basis 不变；补足酸雾/龙族血统、黑洞/裂地/闪电/脉冲、全球沉默/遗言、霰弹/爆头/怒意、魔法盾/PL 幻象、静电连接/等离子场/风暴之拳、莱恩三连、极寒之拥/寒冬诅咒、羁绊/过载/传送、粘性燃油/枷锁数值。修正羁绊共享「回复量」非直接灌蓝、莱恩三招不穿 BKB、炼金对 DK 受龙族血统/古龙形态限制且 n32 反向、极寒之拥非禁疗、枷锁穿 BKB 但 TP 可断。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 10:24",
+      "task": "quality-audit 第三十二轮：第十五批最短 10 条理由改写（0.6.58）",
+      "added": "queue 全 done，继续按 reason 长度取 136~139 字 10 条：alchemist→dragon-knight、leshrac+enigma、silencer→enigma、sniper→ursa、medusa←phantom-lancer、razor→sven、terrorblade←lion、winter-wyvern→huskar、anti-mage+io、beastmaster←batrider。逐条对照 ability_base/7.42 技能文本与 matchup_stats：补足酸雾 350~500/15 秒/25~40 DPS/固定 -3~-6 甲与龙族血统成长、黑洞 420/4 秒/90~180 纯粹、裂地 150~210/0.35/1.7、闪电 450/5~11、脉冲 500/80~180、全球沉默 4.5~6/120 秒穿 BKB、遗言 4 秒窗口、霰弹 400~475/10 秒/30~75/10~25%、爆头 40%/0.2~0.5/100%、魔法盾 98%/2 伤害每蓝、PL 幻象 15%/400~600%、静电连接 10 秒/6~24、等离子场 700/25~40、风暴之拳 1~1.75/250~310、妖术 2~3.2、穿刺 1.3~2.2、神灭斩 570~800、极寒之拥 4 秒/32~56+1.5~4.5%、寒冬诅咒 525/2~6/+50~80、羁绊 1000/6~12%/55~115%、过载 35~110/8~14%/0.5~0.8%、传送 3~3.5/12 秒、粘性燃油 375/7 秒/10 层/2~8%、枷锁 2.25~3.25/125~375。修正：① 羁绊共享艾欧的回复量不是直接给 AM 灌蓝；② 莱恩三招都不穿 BKB；③ 炼金对 DK 的护甲压制受龙族血统成长/古龙形态限制，公开统计 n32 反向，保留 counter 但降为软压制；④ 极寒之拥不是禁疗；⑤ 燃烧枷锁穿 BKB，BKB 只挡燃油，TP/传送才断枷锁。统计：alchemist→DK n32 40.63/53.02 反向；silencer→Enigma n13 53.85/47.34；sniper→Ursa n98 62.24/52.84；medusa←PL n13 23.08/44.46；razor→Sven n32 53.12/49.17；TB←Lion n75 45.33/49.76；WW→Huskar n24 58.33/50.79；AM+Io 同队不在统计，作为对手 n8；Beastmaster←Batrider n118 41.53/51.47。",
+      "result": "GitHub 内容提交待推送；本轮 matchups 271 条、全库最短 reason 140、relation/basis 分布不变。",
+      "note": "queue 71 项全 done；下一轮继续按最短优先处理 140~143 字条目。"
+    },
     {
       "time": "2026-11-28 09:26",
       "task": "quality-audit 第三十一轮：第十四批最短 10 条理由改写（0.6.57）",
