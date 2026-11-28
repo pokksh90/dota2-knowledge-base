@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Dota2 专业知识库（三层可回溯）",
-    "version": "0.6.68",
+    "version": "0.6.69",
     "status": "rules-inference-applied",
     "description": "供 LLM 应用消费的刀塔领域知识库，采用「规则(公理)→推理(定理)→应用(结论)」三层架构，结论可回溯、可自证；只含公开通用知识。",
     "last_updated": "2026-11-28",
@@ -12,7 +12,7 @@
       "layer3": "heroes/items/matchups/tactics/patch_stats —— 应用/结论：具体英雄/装备/克制/战术/当前版本公开胜率，应能回溯到上两层依据"
     },
     "quality": "data/quality_report.json（由 scripts/quality_audit.py 生成，0 error / 0 warning / 1 info）",
-    "updated_at": "2026-11-28 18:22",
+    "updated_at": "2026-11-28 19:20",
     "version_scope": {
       "mechanism": "7.42",
       "stats": "7.42a（最近 7 天滚动，7.42/7.42a 混合）",
@@ -53,7 +53,7 @@
       "title": "克制与搭配",
       "count": 271,
       "status": "stable",
-      "note": "271 条；第四十轮按最短 10 条理由改写（181~191 字→307~420 字），覆盖 physical/resource/mobility/control/vision；修正钢背/凯/斯拉克旧文把英雄 ID（15/2/42）当对局数，真实 n=86/122/11；补足反击螺旋、朗戈回响、残岩翻滚、斯温分裂、工兵警示牌、斯拉克三围偷取、百戏魔盒、AM 法力虚空、夜魔复仇等数值与统计 caveat；保留 pair/relation/basis。"
+      "note": "271 条；第四十一轮按最短 10 条理由改写（192~200 字→326~461 字），覆盖 damage-type/aoe/control/resource/physical/vision；修正酒仙「16 局」实为沙王 ID 16（真实 n=42）、熊战士「99 局」实为钢背 ID 99（真实 n=64）、凤凰「70 局」实为熊战士 ID 70（真实 n=150）、噬魂鬼「28 局」实为斯拉达 ID 28（真实 n=85）；补足震荡手雷击退、地震半径 +13/2 秒前摇、自然秩序只削基础双抗、幽冥守卫耐久、投掷 300 半径、赏金追踪隐身施放等 caveat；保留 pair/relation/basis。"
     },
     {
       "file": "scripts/fetch_data.py",

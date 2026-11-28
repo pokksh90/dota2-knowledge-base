@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 18:22",
+    "updated_at": "2026-11-28 19:20",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -725,10 +725,28 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 181~191 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
       "note": "第四十轮：bristleback→razor、kez←axe、largo+zeus、earth-spirit→sniper、sven→phantom-lancer、techies→bounty-hunter、slark←wraith-king、ringmaster→clinkz、anti-mage→tinker、nyx-assassin←bounty-hunter；10/10；改写后 307~420 字；全库最短 reason 192；pair/relation/basis 不变；修正钢背旧统计 15 局实为雷泽 ID 15（真实 n=86）、凯旧统计 2 局实为斧王 ID 2（真实 n=122 且凯 54.92% 高于基线、统计不支持硬克制）、斯拉克旧统计 42 局实为冥魂大帝 ID 42（真实 n=11 但 72.73% 样本很小）；补足凯多段攻击触发反击螺旋、Sai 格挡不挡 AoE 纯粹、朗戈回响每消耗魔法缩 0.5 秒、宙斯全球雷击、ES 残岩 2000/2 倍翻滚、斯温分裂 400~700、工兵警示牌无敌+15%、斯拉克三围偷取/骨卫、百戏魔盒、AM 法力虚空 1:1 与激光致盲、夜魔复仇 300~460/破坏 4 秒。"
+    },
+    {
+      "id": "quality-audit-global-shortest-24",
+      "title": "质量审查：第四十一轮最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 192~200 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第四十一轮：windranger←zeus、sniper←warlock、tiny+enigma、brewmaster←sand-king、pugna→skywrath-mage、elder-titan→dragon-knight、ursa→bristleback、phoenix←ursa、lifestealer←slardar、bounty-hunter←slardar；10/10；改写后 326~461 字；全库最短 reason 201；pair/relation/basis 不变；修正酒仙旧统计 16 局实为沙王 ID 16（真实 n=42）、熊战士旧统计 99 局实为钢背 ID 99（真实 n=64）、凤凰旧统计 70 局实为熊战士 ID 70（真实 n=150）、噬魂鬼旧统计 28 局实为斯拉达 ID 28（真实 n=85）；修正狙击手「震荡手雷自推」为击退敌人、沙王地震「逐段 +13 伤害」为半径 +13、龙骑「双抗全清」为只削基础双抗。"
     }
   ],
   "completed": [],
   "run_log": [
+    {
+      "time": "2026-11-28 19:20",
+      "task": "quality-audit 第四十一轮：全库最短 10 条理由改写（0.6.69）",
+      "added": "改写 10 条最短对位理由（192~200 字→326~461 字）：windranger←zeus、sniper←warlock、tiny+enigma、brewmaster←sand-king、pugna→skywrath-mage、elder-titan→dragon-knight、ursa→bristleback、phoenix←ursa、lifestealer←slardar、bounty-hunter←slardar；补足风步/弧形闪电/雷击、致命连接/剧变/地狱火、投掷 300 半径/黑洞 420、地震 12~20 段/半径 +13/2 秒前摇、幽冥守卫 1400/3~6 耐久、自然秩序 375/基础双抗、怒意狂击 12~36/8~20 秒、超新星 6/8/10 点、鱼人碎击/深海重击/腐蚀之雾、追踪 25 秒/赏金 67.65% 等；修正旧文把对手英雄 ID 当样本数：酒仙 16 局实为沙王 ID 16（真实 n=42）、熊战士 99 局实为钢背 ID 99（真实 n=64）、凤凰 70 局实为熊战士 ID 70（真实 n=150）、噬魂鬼 28 局实为斯拉达 ID 28（真实 n=85）；修正狙击手震荡手雷「自推」、沙王地震「逐段 +13 伤害」、龙骑「双抗全清」三处失准；保留原 pair/relation/basis。",
+      "result": "",
+      "note": "本轮只改 matchups.reason，未改 pair/relation/basis；改写后全库最短 reason 由 192 抬到 201，最长 506。",
+      "next": "下一轮从 201 的 treant-protector←timbersaw、202 razor→ursa、203 pugna→sven、205 lion→storm-spirit、205 ancient-apparition→treant-protector 继续；之后处理 7.42a 数值回填、Muerta 六项空字段与 item_base 守卫价格冲突。"
+    },
     {
       "time": "2026-11-28 18:22",
       "task": "quality-audit 第四十轮：全库最短 10 条理由改写（0.6.68）",
