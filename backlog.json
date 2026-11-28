@@ -763,7 +763,7 @@
       "time": "2026-11-28 21:24",
       "task": "quality-audit 第四十三轮：全库最短 10 条理由改写（0.6.71）",
       "added": "改写 10 条最短对位理由（206~211 字→347~392 字）：dark-seer→phantom-lancer、ringmaster←silencer、undying←meepo、rubick+enigma、anti-mage←slardar、templar-assassin←zeus、timbersaw→phantom-assassin、queen-of-pain→timbersaw、leshrac→meepo、silencer→tinker；补足墓碑 5/6/7/8 耐久与 5 米波齐拆、隔空取物/黑洞两段控、腐蚀雾霭 18 秒/深海重击、折光 3~6 层/雷云 2.5 秒、活性护甲 10~40 层/纯伤三件套、脉冲 500/恶魔赦令 40 爆、全球沉默掐再装填/基恩；修正旧文把英雄 ID 当样本数：不朽尸王 82 局实为米波 ID 82（真实 n=7）、敌法师 28 局实为斯拉达 ID 28（真实 n=18）、伐木机 44 局实为幻影刺客 ID 44（真实 n=21）、拉席克 82 局实为米波 ID 82（真实 n=4）；保留原 pair/relation/basis。",
-      "result": "pending",
+      "result": "GitHub 内容提交 cbc7eeb；线上核验 index 0.6.71 / 21:24 / matchups 271 / min 212 / max 506。桌面 .cache/kb 与两处 kb-snapshot 均 0.6.71（cache 16 JSON = 15 数据 JSON + _cache-meta；三处 index/matchups/_cache-meta/quality_report 哈希一致 730CBC9B565F / 5BE3A7C24700 / 738A31FFD6C7 / DF3B1718AAA4，两处快照 README 哈希一致 645E522CD403；fetchBase 固定 cbc7eeb；fetchedAt 2026-11-28T13:26:39.871Z）；kb-embeddings 796 条 / 7.00MB / 7,342,836 bytes / dim 1024 / kbVersion 0.6.71 / contentHash dc210b1f050ecb60d42ba86c8c8b52f16aad435b / createdAt 2026-11-28T13:27:02.949Z（本次新嵌 10 / 复用 786）；verify:kb OK、verify:kb-semantic OK（真实索引 v0.6.71 / 796 条；“问题向量失败”为模拟分支）。",
       "note": "本轮只改 matchups.reason，未改 pair/relation/basis；改写后全库最短 reason 由 206 抬到 212，最长 506。",
       "next": "下一轮从 212 的 dazzle+huskar、anti-mage→zeus、muerta←storm-spirit、centaur-warrunner←lifestealer、axe←anti-mage、dazzle←bounty-hunter、clockwerk→sniper 等继续；之后处理 7.42a 数值回填、Muerta 六项空字段与 item_base 守卫价格冲突。"
     },
