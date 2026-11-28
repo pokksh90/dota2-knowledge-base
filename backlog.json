@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "记录知识库待完善项与进度，供「Dota2知识库自动完善」定时任务每轮读取：挑当前最弱项做增量→回写进度。",
-    "updated_at": "2026-11-28 16:27",
+    "updated_at": "2026-11-28 17:25",
     "how_to_use": "每轮开始先读本文件，从 queue 里选 status!=done 且当前最缺/最少的一项做 5~10 条高质量增量；做完把该项 progress 更新、必要时标 done；全 done 后转 quality-audit。"
   },
   "queue": [
@@ -705,6 +705,16 @@
       "status": "done",
       "desc": "queue 已全部 done；按 reason 长度取 167~171 字 10 条，逐条对照 ability_base、talents 与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计弱支持/样本过小。",
       "note": "第三十八轮：enchantress+beastmaster、lina←spectre、sand-king→phantom-lancer、sven←phantom-assassin、templar-assassin+dark-seer、keeper-of-the-light→phantom-assassin、lion→tinker、leshrac→phantom-lancer、legion-commander←medusa、doom→medusa；10/10；改写后 310~432 字；全库最短 reason 171；pair/relation/basis 不变；修正斯温旧统计 44 局→13 局、光法旧统计 44 局→27 局且低于自身基线、幻影长矛手不同来源幻象承伤 600%/500%/400% 混用；Lina←Spectre n20 与 KotL→PA n27 均标统计反向/不支持。"
+    },
+    {
+      "id": "quality-audit-global-shortest-22",
+      "title": "质量审查：第三十九轮最短对位理由",
+      "file": "data/matchups.json",
+      "current": 10,
+      "target": 10,
+      "status": "done",
+      "desc": "queue 已全部 done；按 reason 长度取 171~178 字 10 条，逐条对照 ability_base、7.42 技能文本与 matchup_stats 复核机制、补足数值与反制窗口，并标注统计反向/样本过小。",
+      "note": "第三十九轮：troll-warlord←phoenix、bane→medusa、chaos-knight←underlord、night-stalker→enigma、anti-mage←wraith-king、enchantress→phantom-lancer、visage←troll-warlord、death-prophet→invoker、juggernaut→phoenix、treant-protector→tusk；10/10；改写后 363~506 字；全库最短 reason 181；修正旧文把英雄 ID 当对局数（凤凰 110、巨魔 95）、维萨吉旧统计 95 局实为 n=3 且方向反、祸乱魔爪需同时计算偷蓝与魔法盾耗蓝、孽主光环只削基础攻击；enchantress→phantom-lancer 的 basis 由 aoe 改为 mobility（Impetus 是单体，不是 AOE 清场），其余 pair/relation/basis 不变。"
     }
   ],
   "completed": [],
